@@ -26,6 +26,10 @@ main {
   height: 80vh;
 }
 
+.page-title {
+  font-size: 35px;
+}
+
 /* CSS for navigation bar */
 
 .navbar {
@@ -157,13 +161,19 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 25px;
+  margin-top: 45px;
+  margin-bottom: 15px;
+}
+
+.form-information h1 {
+  padding-bottom: 10px;
 }
 
 #contact-form {
   display: flex;
   flex-direction: column;
   width: 400px;
+  margin-top: 25px;
 }
 
 input,
@@ -171,7 +181,6 @@ textarea {
   background: rgb(250, 249, 246);
   border: 1px solid lightgray;
   height: 35px;
-  
 }
 
 input[type="submit"] {
