@@ -64,15 +64,23 @@ main {
 .navbar a {
   color: rgb(250, 249, 246);
   font-weight: bold;
-  margin: 0 12px;
+  margin: 0 6px;
   text-decoration: none;
   letter-spacing: 2px;
+  padding: 12px;
+}
+
+.nav-list a:hover {
+  text-decoration: underline;
+  background: rgb(250, 249, 246);
+  color: #3a5a40;
 }
 
 .monogram {
   padding-left: 20px;
   width: 215px;
 }
+
 /* CSS for page footer */
 
 .footer {
