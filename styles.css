@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-color: white;
+  background-color: rgb(250, 249, 246);
   font-family: "Inter", sans-serif;
   position: relative;
   min-height: 100vh;
@@ -17,6 +17,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: rgb(250, 249, 246);
 }
 
 /* CSS for navigation bar */
@@ -34,8 +35,8 @@ main {
   align-items: center;
   text-align: center;
 
-  background-color: black;
-  color: white;
+  background-color: #3a5a40;
+  color: rgb(250, 249, 246);
   padding: 0px 0px;
 
   /* Debug border */
@@ -51,7 +52,7 @@ main {
 }
 
 .navbar a {
-  color: white;
+  color: rgb(250, 249, 246);
   font-weight: bold;
   margin: 0 12px;
   text-decoration: none;
@@ -64,10 +65,21 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  color: white;
+  background-color: #3a5a40;
+  color: rgb(250, 249, 246);
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 2.5rem;
+}
+
+[download] {
+  background: #3a5a40;
+  color: rgb(250, 249, 246);
+  padding: 8px;
+  text-decoration: none;
+}
+
+[download]:hover {
+  background: #588157;
 }
