@@ -32,28 +32,29 @@
       </ul>
     </nav>
     <main>
-      <h1 class="page-title">Contact Me</h1>
-      <p>Feel free to contact me!</p>
-      <form id="contact-form">
-        <label for="text">Name</label>
-        <input type="text" id="name" name="name" required />
-        <br />
+      <div class="contact-form-holder">
+        <section class="form-information">
+          <h1 class="page-title">Contact Me</h1>
+          <p class="comment">Feel free to contact me!</p>
+        </section>
+        <section class="form">
+          <form id="contact-form">
+            <label for="text">Name</label>
+            <input type="text" id="name" name="name" required />
+            <br />
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-        <br />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+            <br />
 
-        <label for="comments">Comments</label>
-        <textarea
-          id="comments"
-          name="comments"
-          placeholder="comments"
-          required
-        ></textarea>
-        <br />
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments" required></textarea>
+            <br />
 
-        <input type="submit" value="submit" />
-      </form>
+            <input type="submit" value="Submit" />
+          </form>
+        </section>
+      </div>
     </main>
     <footer class="footer">
       <p>© 2023 Aidan Nesbitt's Website | All Rights Reserved</p>

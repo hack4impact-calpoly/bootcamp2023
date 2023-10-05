@@ -135,3 +135,49 @@ main {
 [download]:hover {
   background: #588157;
 }
+
+/* CSS For Contact Form Page */
+
+.contact-form-holder {
+  border: 1px solid lightgray;
+  background: #f1f1f1;
+  border-radius: 5px;
+  width: 550px;
+  height: 550px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.comment {
+  font-style: italic;
+}
+
+.form-information {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+input,
+textarea {
+  background: rgb(250, 249, 246);
+  border: 1px solid lightgray;
+  height: 35px;
+  
+}
+
+input[type="submit"] {
+  background: #588157;
+  color: rgb(250, 249, 246);
+  padding: 5px;
+  margin-top: 20px;
+  border: none;
+}
