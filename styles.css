@@ -97,11 +97,12 @@ main {
   width: 60%;
   height: auto;
   justify-content: center;
-  padding: 30px;
+  padding: 32px 12px;
 }
 
 #profile-image {
-  width: 400px;
+  height: 500px;
+  width: auto;
   border-radius: 3px 0px 0px 3px;
   background: yellow;
 }
