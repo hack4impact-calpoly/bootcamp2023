@@ -60,6 +60,10 @@ main {
   letter-spacing: 2px;
 }
 
+.monogram {
+  padding-left: 20px;
+  width: 215px;
+}
 /* CSS for page footer */
 
 .footer {
