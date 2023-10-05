@@ -24,10 +24,21 @@ main {
   justify-content: center;
   background: rgb(250, 249, 246);
   height: 80vh;
+  overflow: auto;
 }
 
 .page-title {
   font-size: 35px;
+}
+
+.green-emphasis {
+  color: #3a5a40;
+  font-weight: 600;
+}
+
+.underline {
+  color: #3a5a40;
+  font-style: italic;
 }
 
 /* CSS for navigation bar */
@@ -265,4 +276,18 @@ input[type="submit"] {
 
 h2.project-name {
   margin-bottom: 10px;
+}
+
+/* CSS For Resume Page */
+
+.resume-content {
+  margin-top: 550px; /* This is included so that the resume content is not hidden under the nav bar */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background: #f1f1f1;
+  padding-top: 20px;
 }
