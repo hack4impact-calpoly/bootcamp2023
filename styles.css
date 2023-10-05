@@ -216,3 +216,54 @@ input[type="submit"] {
 .blog-content h1 {
   margin-bottom: 15px;
 }
+
+/* CSS For Portfolio Page */
+
+.portfolio-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background: #f1f1f1;
+  width: 50%;
+}
+
+.portfolio-content h1 {
+  padding-top: 30px;
+  margin-bottom: 20px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-name {
+  padding-bottom: 10px;
+}
+
+.project img {
+  margin-bottom: 20px;
+}
+
+.project-description {
+  text-align: center;
+  margin-bottom: 10px;
+  width: 600px;
+}
+
+h2.project-name {
+  margin-bottom: 10px;
+}
