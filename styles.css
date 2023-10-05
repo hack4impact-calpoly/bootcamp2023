@@ -4,6 +4,7 @@ html {
 
 body {
   background-color: white;
+  font-family: "Inter", sans-serif;
   position: relative;
   min-height: 100vh;
   padding: 0;
