@@ -123,8 +123,7 @@ main {
 #profile-image {
   height: 500px;
   width: auto;
-  border-radius: 3px 0px 0px 3px;
-  background: yellow;
+  border-radius: 3px;
 }
 .about-text {
   padding: 25px;
