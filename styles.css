@@ -23,8 +23,12 @@ main {
   align-items: center;
   justify-content: center;
   background: rgb(250, 249, 246);
-  height: 80vh;
+  height: 85vh;
   overflow: auto;
+}
+
+ul {
+  margin-left: 15px;
 }
 
 .page-title {
@@ -281,7 +285,7 @@ h2.project-name {
 /* CSS For Resume Page */
 
 .resume-content {
-  margin-top: 550px; /* This is included so that the resume content is not hidden under the nav bar */
+  margin-top: 1275px; /* This is included so that the resume content is not hidden under the nav bar */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -303,6 +307,44 @@ h2.project-name {
   width: 175px;
 }
 
+section.section {
+  margin-bottom: 20px;
+}
+
+section.section,
+section.section-end {
+  width: 750px;
+  border-bottom: 2px solid #f1f1f1;
+}
+
+h2.section-title {
+  margin-bottom: 17px;
+}
+
+h3.entry-title-end {
+  margin-bottom: 8px;
+}
+
 .resume {
-  border: 2px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+}
+.entry-info,
+.list-title {
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.list-description {
+  margin-bottom: 12px;
+}
+.entry {
+  margin-bottom: 20px;
+}
+
+.skill-list {
+  margin-bottom: 20px;
 }
