@@ -10,13 +10,13 @@ const blogData: Blog[] = [
     title: "Introduction to Typescript",
     date: new Date("2023-10-16"),
     description: "Working on milestone 1 assignment.",
-    slug: "temp",
+    slug: "./blog/blog-entry1.html",
   },
   {
     title: "Weather",
     date: new Date("2023-10-16"),
     description: "The weather was very nice today.",
-    slug: "temp2",
+    slug: "./blog/blog-entry2.html",
   },
 ];
 
@@ -33,7 +33,7 @@ function populateBlog(blogs: Blog[]) {
     entry.innerHTML = `<h2>${blog.title}</h2>
                             <div>${blog.date}</div>
                             <p>${blog.description}</p>
-                            <a href="${blog.slug}"></a>`;
+                            <a href="${blog.slug}">More details</a>`;
     container.appendChild(entry);
   });
 }
