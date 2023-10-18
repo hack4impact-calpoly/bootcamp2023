@@ -10,24 +10,38 @@
         <a href="index.html">Personal Website</a>
       </h1>
       <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../resume.html">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
       </ul>
     </nav>
     <main>
       <div clsas="blog-content">
+        <img src="typescript.png" />
         <div class="blog-title">Introduction to Typescript</div>
         <div class="blog-date">
           Sun Oct 15 2023 17:00:00 GMT-0700 (Pacific Daylight Time)
         </div>
         <div class="blog-description">Working on milestone 1 assignment.</div>
       </div>
+      <div class="comment-container">
+        <h2>Comments</h2>
+        <div class="comment-item">
+          <div class="comment-name">Sample name</div>
+          <div class="comment-description">Sample Comment</div>
+        </div>
+      </div>
+      <form class="comment-form">
+        <input type="text" id="name" placeholder="Name" />
+        <textarea id="description"></textarea>
+        <input type="submit" />
+      </form>
     </main>
     <footer class="footer">
       © 2023 My Personal Website | All Rights Reserved | Made with love ♥
     </footer>
+    <script src="../scripts/comments.js"></script>
   </body>
 </html>
