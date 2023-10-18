@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: white;
+  position: relative;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  padding: 0 0px 40px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-title {
+  font-family: 'Merienda';
+}
+
+.about {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('images/MaroonBells.jpeg'); 
+  background-size: cover;
+  background-position: center;
+}
+
+.about-container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 20px auto 40px auto;
+  max-width: 70%;
+}
+
+.about-text {
+  font-family: 'Merienda';
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  text-align: left;
+  max-width: 60%;
+  align-self: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .about-text {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    text-align: center;
+    max-width: 80%;
+  }
+}
+
+.about-image {
+  width: 300px;
+  height: 300px;
+  align-self: center;
+}
+
+.side-by-side {
+  display: flex;
+  align-items:baseline;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 1000px) {
+  .side-by-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
+.contact {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('images/TopOfGraysPeak.jpeg'); 
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 20px auto 40px auto;
+  max-width: 70%;
+}
+
+.contact-text {
+  font-family: 'Merienda';
+}
+
+.resume {
+  font-family: 'Merienda';
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('images/YosemiteTrees.png'); 
+  background-size: cover;
+  background-position: center;
+}
+
+.resume-sections {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 20px auto 40px auto;
+  max-width: 80%;
+}
+
+.pdf-container {
+  margin: 20px auto 0 auto;
+}
+
+table {
+  margin: 0 auto; 
+  border-collapse: collapse; 
+  width: 80%; 
+}
+
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.project-section {
+  font-family: 'Merienda';
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('images/LookoutMountain.jpg'); 
+  background-size: cover;
+  background-position: center;
+}
+
+.project-container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 20px auto 40px auto;
+  max-width: 80%;
+}
+
+.project-details {
+  max-width:50%;
+}
+
+.project-details-2 {
+  max-width:40%;
+}
+
+@media screen and (max-width: 1000px) {
+  .project-details {
+    max-width:70%;
+  }
+  
+  .project-details-2 {
+    max-width:70%;
+  }
+}
+
+.project-title {
+  max-width:80%;
+  transform: translateX(10%);
+}
+
+.project-description {
+  text-align: left;
+}
+
+.p-side-by-side {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items:center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-bottom: 1px solid black;
+}
+
+.p-side-by-side-end {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items:center;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 1000px) {
+  .p-side-by-side {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: 1px solid black;
+  }
+
+  .p-side-by-side-end {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
+.blog {
+  font-family: 'Merienda';
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('images/RedRock.jpeg'); 
+  background-size: cover;
+  background-position: center;
+}
+
+.blog-posts {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 20px auto 40px auto;
+  max-width: 70%;
+}
+
+.covid-game-container {
+  font-family: 'Merienda';
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('images/MistRainbow.jpg'); 
+  background-size: cover;
+  background-position: center;
+}
+
+.covid-game-inner-container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 20px auto 40px auto;
+  max-width: 50%;
+}
+
+.urban-unrest-container {
+  font-family: 'Merienda';
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('images/UrbanUnrestBackground.jpeg'); 
+  background-size: cover;
+  /*background-position: center;*/
+}
+
+.urban-unrest-inner-container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 20px auto 40px auto;
+  max-width: 80%;
+}
+
+.urban-unrest-q-title {
+  max-width:60%;
+  align-self: center;
+}
+
+.urban-unrest-q-description {
+  text-align: left;
+  max-width: 80%;
+  align-self: center;
+}
+
+.urban-unrest-q-description-2 {
+  text-align: left;
+  max-width: 95%;
+  align-self: center;
+}
+
+.urban-unrest-q-img {
+  max-width: 95%;
+  align-self: center;
+}
+
+.urban-unrest-q {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-bottom: 1px solid black;
+}
+
+.urban-unrest-q-end {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+
+.navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  height: 75px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  background-color: black;
+  color: white;
+  padding: 0px 0px;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: 30px;
+  list-style: none;
+}
+
+.navbar a {
+  font-family: 'Merienda';
+  color: white;
+  font-weight: bold;
+  margin: 0px 12px;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.navbar img {
+  height: 70px;
+}
+
+
+
+/* CSS for page footer */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.footer p { 
+  font-family: 'Merienda';
+  text-align: center;
+}
