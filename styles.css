@@ -1,0 +1,166 @@
+html {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: white;
+  position: relative;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  padding: 0 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main strong {
+  text-decoration: underline;
+}
+
+/* CSS for navigation bar */
+
+.navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 7%;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  background-color: #2d2d2d;
+  color: white;
+  padding: 0px 0px;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: 30px;
+  list-style: none;
+}
+
+.navbar a {
+  color: white;
+  font-weight: bold;
+  margin: 0 12px;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+/* CSS for page footer */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d2d2d;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%; /* Makes the image a circle */
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  transition: transform 0.3s ease; /* Adds a smooth hover effect */
+}
+.about {
+  display: flex;
+  max-width: 80%;
+  height: auto;
+  align-items: center;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 80%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 16px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.project img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #2d2d2d;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project img:hover {
+  transform: translateY(-5px); /* Lift the div slightly */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add a box shadow */
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+}
+
+.project a {
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.project p {
+  text-align: center;
+}
+
+.project-name {
+  font-weight: bold;
+}
+
+.resume-download {
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 70%;
+}
+
+form input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #2d2d2d;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
