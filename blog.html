@@ -24,11 +24,15 @@
     </nav>
     <main>
       <div class="blog">
-        <div class="blog-posts">
+        <div class="blog-inner-container">
           <h1 class="page-title">Welcome to the Blog!</h1>
-          <p>Blog in progress, come back soon!</p>
-          <p>For now enjoy this picture of Red Rocks Amphitheatre,
-             AKA my favorite place in the world.</p>
+          <div class="blog-posts" id="blog-posts">
+          </div>
+          <script src="./scripts/blogPosts.js">
+          </script>
+          <script>
+            createBlogElements();
+          </script>
         </div>
       </div>
     </main>

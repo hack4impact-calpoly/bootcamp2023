@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Robert303V - Blog</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1 class="logo">
+        <a href="../index.html">
+          <img
+            src="../images/HeadshotCircle.png"
+            alt="My Headshot Cropped in a Circle"
+          />
+        </a>
+      </h1>
+      <ul class="nav-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../site-files/contact.html">Contact Info</a></li>
+        <li><a href="../site-files/resume.html">Resume</a></li>
+        <li><a href="../site-files/portfolio.html">Portfolio</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="blog">
+        <div class="blog-inner-container">
+            <h4>
+                <a href="../blog.html">
+                    Click To Go Back To Blog
+                </a>
+            </h4>
+            <div class="blog-posts" id="blog-posts">
+            </div>
+            <script src="../scripts/blogPosts.js">
+            </script>
+            <script>
+              addSinglePostToDOM(0);
+            </script>
+            <img
+                src="../images/blog/barry.png"
+                alt="First blog post image"
+                height="300px"
+            />
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>© 2023 Robert Vermeulen's Personal Website
+         <br>
+         All Rights Reserved - All Background Images Taken Myself
+      </p>
+    </footer>
+  </body>
+</html>
