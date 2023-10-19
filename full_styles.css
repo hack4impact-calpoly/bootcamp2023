@@ -109,8 +109,8 @@ main {
   /* border: 2px solid blue; */
 }
 
-.hikes{
-  display: flex;
+.hikes {
+  display: block;
 }
 
 .item-link {
