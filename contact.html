@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Contact</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="img/png" href="images/personal-icon.png" class="icon">
+</head>
+<body style="background-color: #192f56;">
+  
+  <nav class="navbar" style="background-color: #1f3e74">
+    <h1 class="logo">Contact</h1>
+
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+  </nav>
+  
+  <main id="main-contact" style="margin: auto">
+    <div style="text-align: center;font-size: 25px; padding-bottom: 3%; padding-top: 5%;">
+      Send Me A Message!
+    </div>
+    <form action="https://formsubmit.co/d4bfdbfaf27de75625447ad09d769f24" method="POST">
+      <label for="name">Name: </label>
+      <input name="Name" type="text" id="name">
+      <label for="email">Email: </label>
+      <input type="email" name="email" id="email">
+      <label for="message-box">Message: </label>
+      <textarea name="Message "id="message-box" style="color: black"></textarea>
+      <div style="text-align: center;">
+        <input type="submit" id="submit">
+      </div>
+    </form>
+    <div style="text-align: center;font-size: 25px; padding-bottom: 3%; padding-top: 5%;">
+      More Ways to Connect With Me
+    </div>
+    <div>
+      <div style="display: flex; padding-left: 10%">
+        <img class="contact-images" src="images/phone-icon.png" alt="phone icon">
+        <p style="padding-top: 5px; width: auto; padding-right: 45%">
+          (831)210-3348
+        </p>
+        <img  class="contact-images" src="images/mail-icon.png" alt="mail icon">
+        <p style="padding-top: 5px;">
+          holdenevers@gmail.com
+        </p>
+      </div>
+      <div style="display: flex; padding-left: 10%">
+        <img class="contact-images" src="images/linked-in-icon.png" alt="linkedIn icon">
+        <p style="padding-top: 10px; padding-right: 35%;">
+          <a href="https://www.linkedin.com/in/holden-evers/">linkedin.com/in/holden-evers</a>
+        </p>
+        <img class="contact-images" src="images/git-hub-icon.png" alt="github icon">
+        <p style="padding-top: 10px;">
+          <a href="https://github.com/HoldenEv">github.com/HoldenEv</a>
+        </p>
+      </div>
+    </div>
+
+  </main>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

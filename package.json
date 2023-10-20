@@ -1,0 +1,27 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "This is created using the hackforimpact started project <hopfully future enployers will be able to see this and gain a better understanding of me.> [Visit it Here!](https://HoldenEv.github.io)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoldenEv/bootcamp-project-2023.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HoldenEv/bootcamp-project-2023/issues"
+  },
+  "homepage": "https://github.com/HoldenEv/bootcamp-project-2023#readme",
+  "devDependencies": {
+    "tsc": "^2.0.4",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "typescipt": "^1.0.0"
+  }
+}
