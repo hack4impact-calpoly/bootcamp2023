@@ -48,3 +48,4 @@ function addBlogsDOM (blogPosts: Post[]){
         }
     )
 }
+addBlogsDOM(Posts);

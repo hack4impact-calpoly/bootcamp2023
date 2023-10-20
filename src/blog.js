@@ -37,3 +37,4 @@ function addBlogsDOM(blogPosts) {
         }
     });
 }
+addBlogsDOM(Posts);
