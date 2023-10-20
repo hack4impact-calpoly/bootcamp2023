@@ -94,7 +94,6 @@ main strong {
   flex: 1;
   min-width: 80%;
   text-align: center;
-  font-size: 18px;
 }
 
 .projects-grid {
@@ -145,6 +144,10 @@ main strong {
 
 .resume-download {
   padding: 10px;
+}
+
+.blog-entry {
+  cursor: pointer;
 }
 
 form {
