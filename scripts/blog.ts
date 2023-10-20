@@ -33,7 +33,7 @@ function populateBlog(blogs: Blog[]) {
     entry.innerHTML = `<h2>${blog.title}</h2>
                             <div>${blog.date}</div>
                             <p>${blog.description}</p>
-                            <a href="${blog.slug}">More details</a>`;
+                            <a href="${blog.slug}"><button class="blog-btn">Read More</button></a>`;
     container.appendChild(entry);
   });
 }

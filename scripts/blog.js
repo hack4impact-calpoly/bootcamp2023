@@ -21,7 +21,7 @@ function populateBlog(blogs) {
     blogs.forEach(function (blog) {
         var entry = document.createElement("div");
         entry.className = "blog-item";
-        entry.innerHTML = "<h2>".concat(blog.title, "</h2>\n                            <div>").concat(blog.date, "</div>\n                            <p>").concat(blog.description, "</p>\n                            <a href=\"").concat(blog.slug, "\">More details</a>");
+        entry.innerHTML = "<h2>".concat(blog.title, "</h2>\n                            <div>").concat(blog.date, "</div>\n                            <p>").concat(blog.description, "</p>\n                            <a href=\"").concat(blog.slug, "\"><button class=\"blog-btn\">Read More</button></a>");
         container.appendChild(entry);
     });
 }
