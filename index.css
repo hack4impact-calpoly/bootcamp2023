@@ -1,0 +1,30 @@
+.about-text{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.about-images, .interest-images{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.about-images img{
+    width: 28%;
+}
+
+.interest-images img{
+    width: 31%;
+}
+
+.rickroll{
+    display: flex;
+    justify-content: center;
+}
+  
+.rickroll img{
+    width: 100%; 
+}
+  
+  
+  
