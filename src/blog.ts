@@ -32,7 +32,7 @@ function addBlogsDOM (blogPosts: Post[]){
             newPost.appendChild(date);
             description.innerHTML = post.description;
             newPost.appendChild(description);
-            slug.href = `blog/${slug}.html`;
+            slug.href = `blogs/${slug}.html`;
             slug.innerHTML = "Read More";
             newPost.appendChild(slug);
 
