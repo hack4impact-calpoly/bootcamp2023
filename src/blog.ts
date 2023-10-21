@@ -7,15 +7,9 @@ type Post = {
 const Posts: Post[] = [
     {
         title: "My first blog post",
-        date: "October 10, 2023",
+        date: "2023-10-10",
         description: "Starting milestone 1!",
-        slug: "Idk",
-    },
-    {
-        title: "My second blog post",
-        date: "October 10, 2023",
-        description: "Having some confusion.",
-        slug: "Idk",
+        slug: "firstblog",
     },
 ];
 
@@ -41,6 +35,12 @@ function addBlogsDOM (blogPosts: Post[]){
             slug.href = `blog/${slug}.html`;
             slug.innerHTML = "Read More";
             newPost.appendChild(slug);
+
+            newPost.className = "blog-entry";
+
+            newPost.addEventListener("click", () => {
+              window.location.href = "blogs/" + post.slug + ".html";
+            });
 
             if(container){
                 container.appendChild(newPost);
