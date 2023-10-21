@@ -20,3 +20,18 @@ const currentBlogList: Blog[] = [
     },
 ]
 
+function addBlogs(blogList: Blog[]) {
+    let blogContainer = document.querySelector(".blogWrapper");
+
+    blogList.forEach(blog => {
+        let newBlogDiv = document.createElement("div")
+        newBlogDiv.innerHTML = `
+                                <h1>${blog.title}</h1> 
+                                <p>${blog.date}</p>
+                                <p>${blog.description}</p>
+                                <a href="${blog.slug}"> Read Here</a>`
+        blogContainer?.appendChild(newBlogDiv)
+    })
+}
+
+addBlogs(currentBlogList)
