@@ -5,7 +5,7 @@ type Blog = {
     slug: string;
 };
 
-const people: Blog[] = [
+const blogs: Blog[] = [
     {
         title: "Everything is Going Great",
         date: "01-01-2002",
@@ -28,3 +28,10 @@ const people: Blog[] = [
     }
 ];
 
+blogs.forEach(item => {
+    const element = document.createElement('div')
+    const innerHTML = element.innerHTML = 'New blog piece'
+    const addingBlog = document.getElementById('blog')!;
+    addingBlog.appendChild(element)
+    console.log(addingBlog)
+})
