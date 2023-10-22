@@ -24,7 +24,8 @@ function createBlogs(blogs) {
 function createEntry(blog) {
     var blog_entry = document.createElement("div");
     blog_entry.className = "blog-entry";
-    var blog_title = document.createElement("h1");
+    blog_entry.classList.add('blog-entry');
+    var blog_title = document.createElement("h2");
     blog_title.innerHTML = blog.title;
     blog_entry.appendChild(blog_title);
     var blog_date = document.createElement("div");

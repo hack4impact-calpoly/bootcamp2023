@@ -36,7 +36,7 @@ function createEntry(blog: Blog){
     blog_entry.className = "blog-entry";
     blog_entry.classList.add('blog-entry');
 
-    const blog_title = document.createElement("h1");
+    const blog_title = document.createElement("h2");
     blog_title.innerHTML = blog.title;
     blog_entry.appendChild(blog_title);
 
