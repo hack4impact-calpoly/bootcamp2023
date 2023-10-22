@@ -1,11 +1,4 @@
-type Blog = {
-    title: string
-    date: string
-    description: string
-    slug: string
-}
-
-const blogs: Blog[] = [
+var blogs = [
     {
         title: "First Blog",
         date: "10-21-2023",
@@ -19,46 +12,34 @@ const blogs: Blog[] = [
         slug: "blog-entry2"
     },
 ];
-
-function createBlogs(blogs: Blog[]){
-    const container = document.getElementById('blog-container');
+function createBlogs(blogs) {
+    var container = document.getElementById('blog-container');
     if (container == null) {
         return null;
     }
-
-    blogs.forEach((blog: Blog) => {
+    blogs.forEach(function (blog) {
         container.appendChild(createEntry(blog));
-    })
+    });
 }
-    
-function createEntry(blog: Blog){
-    const blog_entry = document.createElement("div");
+function createEntry(blog) {
+    var blog_entry = document.createElement("div");
     blog_entry.className = "blog-entry";
-
-    const blog_title = document.createElement("h1");
+    var blog_title = document.createElement("h1");
     blog_title.innerHTML = blog.title;
     blog_entry.appendChild(blog_title);
-
-    const blog_date = document.createElement("div");
+    var blog_date = document.createElement("div");
     blog_date.innerHTML = blog.date;
     blog_entry.appendChild(blog_date);
-
-    const blog_description = document.createElement("p");
+    var blog_description = document.createElement("p");
     blog_description.innerHTML = blog.description;
     blog_entry.appendChild(blog_description);
-
-    const blog_slug = document.createElement("a");
-    blog_slug.href = `${blog.slug}.html`;
+    var blog_slug = document.createElement("a");
+    blog_slug.href = "".concat(blog.slug, ".html");
     blog_slug.innerHTML = "Click More";
     blog_entry.appendChild(blog_slug);
-
-    blog_entry.addEventListener("click", () => {
+    blog_entry.addEventListener("click", function () {
         window.location.href = blog.slug;
     });
-
-    return blog_entry
+    return blog_entry;
 }
-
-createBlogs(blogs)
-
-
+createBlogs(blogs);
