@@ -9,10 +9,10 @@ type Blog = {
 //list of Blog objects that will be inserted to HTML page
 const blogs: Blog[] = [
     {
-        title: "Sample Blog 1",
+        title: "Yosemite Hike",
         date: "2023-10-18",
-        description: "The first sample blog.",
-        slug: "sample-blog-1"
+        description: "My most recent hike to Yosemite!",
+        slug: "yosemite-hike"
     },
     {
         title: "Sample Blog 2",
@@ -31,7 +31,7 @@ function displayBlog() {
     //allowing for access of properties as variables
     blogs.forEach(({title, date, description, slug}) => {
         const link = document.createElement("a");
-        link.href = `blog/${slug}.html`;
+        link.href = `${slug}.html`;
         link.innerHTML = "Read More";
 
         const postBlog = document.createElement("div");
