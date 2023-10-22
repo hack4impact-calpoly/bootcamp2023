@@ -3,13 +3,13 @@ var blogs = [
         title: "First Blog",
         date: "10-21-2023",
         description: "Hello World",
-        slug: "blog-entry1"
+        slug: "blog-entry1.html"
     },
     {
         title: "Milestone 1",
         date: "10-21-2023",
         description: "Learning Javascript and Typescript",
-        slug: "blog-entry2"
+        slug: "blog-entry2.html"
     },
 ];
 function createBlogs(blogs) {
@@ -34,8 +34,7 @@ function createEntry(blog) {
     blog_description.innerHTML = blog.description;
     blog_entry.appendChild(blog_description);
     var blog_slug = document.createElement("a");
-    blog_slug.href = "".concat(blog.slug, ".html");
-    blog_slug.innerHTML = "Click More";
+    blog_slug.href = "".concat(blog.slug);
     blog_entry.appendChild(blog_slug);
     blog_entry.addEventListener("click", function () {
         window.location.href = blog.slug;
