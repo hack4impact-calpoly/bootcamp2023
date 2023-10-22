@@ -1,10 +1,10 @@
-## Developer: {Full Name}
+## Developer: Belal Elshenety
 
 Closes #{ISSUE NUMBER HERE}
 
 ### Pull Request Summary
 
-{Describe the purpose of your pull request}
+To submit my work for milestone 1
 
 ## Special Instructions (optional)
 
