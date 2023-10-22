@@ -10,13 +10,13 @@ const blogList: Blog[] = [
     title: "The Fellowship Of The Ring",
     date: "10/21/2023",
     description: "The first movie in the Trilogy",
-    slug: "",
+    slug: "resume.html",
   },
   {
     title: "The Two Towers",
     date: "10/21/2023",
     description: "The second movie in the Trilogy",
-    slug: "",
+    slug: "index.html",
   },
 ];
 
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const createDiv = document.createElement("div");
     createDiv.className = "blog_entry";
     const createLink = document.createElement("a");
-    createLink.href = "./index.html";
+    createLink.href = blog.slug;
     createLink.textContent = blog.description;
     createDiv.append(createLink);
     if (parent) {
