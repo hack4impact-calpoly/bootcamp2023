@@ -16,3 +16,14 @@ const blogs: Blog[] = [
     slug: "secondBlogPost",
   },
 ];
+
+function addBlogsToHTML(blogs: Blog[]) {
+
+    var blogContainer = document.getElementById('blog-list');
+
+    blogs.forEach(blog => {
+        const blogPost = document.createElement('div');
+        blogPost.innerHTML = blog.description;
+        blogContainer.appendChild(blogPost);
+    })
+};
