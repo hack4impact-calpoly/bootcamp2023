@@ -107,7 +107,8 @@ html {
   form,
   .project,
   .resume,
-    .about-me-text{
+  .about-me-text,
+  .blog-content{
     font-size: 18px;
     font-weight: lighter;
     color: whitesmoke;
