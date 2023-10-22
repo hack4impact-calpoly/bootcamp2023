@@ -10,15 +10,15 @@ type Blog = {
 const blogs: Blog[] = [
     {
         title: "Yosemite Hike",
-        date: "2023-10-18",
-        description: "My most recent hike to Yosemite!",
+        date: "10-18-2023",
+        description: "My most recent hike at Yosemite!",
         slug: "yosemite-hike"
     },
     {
-        title: "Sample Blog 2",
-        date: "2023-10-19",
-        description: "The second sample blog.",
-        slug: "sample-blog-2"
+        title: "Avila Hike",
+        date: "10-19-2023",
+        description: "A hike I did recently by Avila beach!",
+        slug: "avila-hike"
     }
 ]
 
