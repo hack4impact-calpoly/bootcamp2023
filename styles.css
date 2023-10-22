@@ -62,8 +62,11 @@ html {
     color: goldenrod;
   }
   
-  
-    a{
+  h2{
+    color: white;
+  }
+
+  a{
     color: white;
     font-weight: bold;
     margin: 10px 12px;
@@ -108,7 +111,8 @@ html {
   .project,
   .resume,
   .about-me-text,
-  .blog-content{
+  .blog-content,
+  .blog-entry{
     font-size: 18px;
     font-weight: lighter;
     color: whitesmoke;
@@ -116,7 +120,12 @@ html {
     border: 15px double darkred;
     padding: 20px;
 
-    margin: 0;
+    margin: 10px 0px ;
+  }
+
+  .blog-entry:hover{
+    background-color: rgb(12, 25, 37);
+    text-decoration: underline;
   }
 
   .project-name,

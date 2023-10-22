@@ -29,6 +29,8 @@ blogs.forEach(blog => {
     let title = document.createElement("h3")
     let date = document.createElement("h4")
     let description = document.createElement("p")
+    div.className = "blog-entry"
+
     title.innerHTML = blog.title
     date.innerHTML = blog.date
     description.innerHTML = blog.description

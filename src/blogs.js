@@ -19,6 +19,7 @@ blogs.forEach(function (blog) {
     var title = document.createElement("h3");
     var date = document.createElement("h4");
     var description = document.createElement("p");
+    div.className = "blog-entry";
     title.innerHTML = blog.title;
     date.innerHTML = blog.date;
     description.innerHTML = blog.description;
