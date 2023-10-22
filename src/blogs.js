@@ -3,13 +3,13 @@ var blogs = [
         title: "Blog Uno",
         date: "10/21/2023",
         description: "This is my blog primero",
-        slug: "first",
+        slug: "blogs/blog_entry_Blog_Uno.html",
     },
     {
         title: "Blog Dos",
         date: "10/22/2023",
         description: "This is my blog segundo",
-        slug: "second",
+        slug: "blogs/blog_entry_Blog_Dos.html",
     }
 ];
 var blogEntries = document.getElementsByClassName("blogs-list")[0];
@@ -26,4 +26,7 @@ blogs.forEach(function (blog) {
     div.appendChild(date);
     div.appendChild(description);
     blogEntries.appendChild(div);
+    div.addEventListener("click", function () {
+        window.location.href = blog.slug;
+    });
 });
