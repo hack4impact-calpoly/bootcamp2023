@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Personal blog</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1 class="logo">
+        <a href="index.html">Belal Elshenety</a>
+      </h1>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="portofolio.html">Portofolio</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+        <div class="blog-content">
+          <img src="typescript.png" />
+          <h2 class="blog-title">Introduction to Typescript</h2>
+          <div class="blog-date">
+            Sun Oct 15 2023 17:00:00 GMT-0700 (Pacific Daylight Time)
+          </div>
+          <div class="blog-description">Working on milestone 1 assignment.</div>
+        </div>
+        <div class="comment-container">
+          <h2>Comments</h2>
+          <div class="comment-item">
+            <div class="comment-description">Sample Comment</div>
+          </div>
+        </div>
+        <form class="comment-form">
+          <textarea id="description"></textarea>
+          <input type="submit" />
+        </form>
+      </main>
+    <footer class="footer">
+      "© 2023 Belal Elshenety | All Rights Reserved"
+    </footer>
+    <script src="./src/Blog.js"></script>
+  </body>
+</html>

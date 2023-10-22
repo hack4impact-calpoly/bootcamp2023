@@ -1,6 +1,6 @@
 type Blog = {
     title : string;
-    date : string;
+    date : Date;
     description : string;
     slug : string;
 }
@@ -8,20 +8,20 @@ type Blog = {
 const blogs: Blog[] = [
 	{
 		title: "My new blog",
-		date: "10-21-2023",
+		date: new Date("2023-10-22"),
 		description: "I have made a new blog using Hack4Impact bootcamp",
         slug: "my.calpoly.edu"
 	},
 	{
 		title: "My linear analysis homework",
-		date: "10-21-2023",
+		date: new Date("2023-10-22"),
 		description: "I have really with understanding vector spaces, subspaces, and spans",
         slug: "my.calpoly.edu"
 	},
 ];
 
 function appendBlogsToContainer(blogs: Blog[]): void {
-    const container = document.getElementById('blog-container');
+    const container = document.querySelector(".blog-container");
 
     if (container) {
         blogs.forEach((blog) => {
@@ -30,7 +30,7 @@ function appendBlogsToContainer(blogs: Blog[]): void {
                 <h2>${blog.title}</h2>
                 <p>Date: ${blog.date}</p>
                 <p>${blog.description}</p>
-                <a href="${blog.slug}" target="_blank">Read More</a>
+                <a href="${blog.slug}"><button class="blog-btn">Read More</button></a>;
             `;
 
             container.appendChild(blogElement);
@@ -39,3 +39,5 @@ function appendBlogsToContainer(blogs: Blog[]): void {
         console.error('Container not found.');
     }
 }
+
+appendBlogsToContainer(blogs);
