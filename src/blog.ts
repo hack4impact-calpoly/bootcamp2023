@@ -1,3 +1,4 @@
+// Type Blog Created
 type Blog = {
     title: string
     date: string
@@ -5,6 +6,7 @@ type Blog = {
     slug: string
 }
 
+// Blog Data Created
 const blogs: Blog[] = [
     {
         title: "First Blog",
@@ -20,6 +22,7 @@ const blogs: Blog[] = [
     },
 ];
 
+// Populates All Blogs by DOM Manipulation
 function createBlogs(blogs: Blog[]){
     const container = document.getElementById('blog-container');
     if (container == null) {
@@ -30,7 +33,8 @@ function createBlogs(blogs: Blog[]){
         container.appendChild(createEntry(blog));
     })
 }
-    
+   
+// Creates a Blog Entry by DOM Manipulation
 function createEntry(blog: Blog){
     const blog_entry = document.createElement("div");
     blog_entry.className = "blog-entry";
