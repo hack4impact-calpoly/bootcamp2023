@@ -233,7 +233,7 @@ main {
 
 .resume h2 {
   font-family: Georgia;
-  background-color: yellow;
+  /* background-color: yellow; */
   flex: 1;
 }
 
@@ -247,21 +247,20 @@ main {
 }
 
 .resume .entry {
-  background-color: orange;
+  /* background-color: orange; */
   flex: 1;
   justify-content: flex-start;
   justify-items: flex-start;
   flex-direction: column;
-  bo
 }
 
 .resume .entry-title {
-  background-color: purple;
+  /* background-color: purple; */
   flex: 1;
 }
 
 .resume .entry-info {
-  background-color: green;
+  /* background-color: green; */
   flex: 1;
 }
 
