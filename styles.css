@@ -1,0 +1,129 @@
+/* general styling (on multiple) */
+h1,  #resume h3, h2 {
+    text-align: center;
+    font-family: 'Nunito', sans-serif; 
+}
+
+.learn_more_btn {
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    width: 45%;
+    transition: all 0.5s;
+    margin: 5px;
+    padding: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.learn_more_btn:hover {
+    color: #20275B;
+}
+
+/* home page styling */
+#learn_more {
+    background-color: #D9AE94;
+}
+
+/* resume page styling */
+#resume {
+    width: 85%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 25px;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+#resume h4, #dte div p span {
+    font-family: 'Nunito', sans-serif; 
+}
+
+#resume-header a{
+    text-decoration: none;
+    color: #20275B;
+}
+
+/* portfolio page styling */
+#dte div {
+    text-align: center;
+    margin: 20px;
+}
+
+.port-btn {
+    background-color: #919C7B;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* contact page styling */
+.form-container {
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.form-container h3 {
+    font-family: 'Nunito', sans-serif; 
+    font-size: larger;
+}
+
+.form-input {
+    margin-top: 5px;
+}
+
+#name, #email {
+    width: 45%;
+}
+
+#subject, #message {
+    width: 91%;
+}
+
+#message {
+    height: 10em;
+    margin-bottom: 10px;
+}
+
+.form-container i {
+    font-size: large;
+}
+
+/* nav-bar main styling */
+body {
+    background-color: #D5D5D5;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.navbar-brand {
+    font-family: 'Nunito', sans-serif; 
+}
+
+main {
+    margin-top: 80px;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    background-color: #F3E5E1;
+    color: #333;
+}
+
+.navbar .navbar-nav .nav-link {
+    padding: 0.6em;
+}
+
+.navbar .navbar-brand {
+    padding: 0 0.6em;
+}
+
+@media only screen and (min-width: 992px) {
+    .navbar {
+        padding: 0;
+    }
+    .navbar .navbar-nav .nav-link {
+        padding: 1em 0.7em;
+    }
+    .navbar .navbar-brand {
+        padding: 0 0.8em;
+    }
+}
