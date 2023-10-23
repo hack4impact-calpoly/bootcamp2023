@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Resume</title>
+  <link rel="stylesheet" href="styles.css"> 
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    
+
+    .logo {
+      font-size: 24px;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .page-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #57b846;
+    }
+
+    .section p {
+      font-size: 16px;
+    }
+
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <h1 class="logo"><a href="index.html">Dhvani's Personal Website ♥</a></h1>
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+
+    <h2>Contact Me!</h2>
+    <div class="about">
+      <div class="about-image"></div>
+      <div class="about-text">
+
+      <form>
+ 
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Name" style="width: 450px;" required />
+        <br><br>
+      
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" style="width: 450px;"/>
+        <br><br>
+        
+        <label for="comments">Message</label>
+        <textarea
+          id="comments"
+          name="comments"
+          placeholder="Comments"
+          style="width: 450px;"
+          required
+        ></textarea>
+        <br><br>
+        <input type="submit" value="Submit" />
+        
+          
+      </div>
+    </div>
+
+    <div class="footer">
+        <footer>© 2023 My Personal Website | All Rights Reserved | Made with love ♥</footer>
+    </div>
+    </main>
+  </body>
+</html>
+
