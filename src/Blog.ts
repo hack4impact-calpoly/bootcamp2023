@@ -25,8 +25,9 @@ function displayBlog() {
   blogs.forEach(({ title, date, description, slug }) => {
     const link = document.createElement("a");
     link.href = `blog/${slug}.html`;
+    link.innerHTML = "Read More";
     const createPost = document.createElement("div");
-    createPost.classList.add("blog-post");
+    createPost.classList.add("create-post");
     createPost.innerHTML = `
             <h2 class="post-title">${title}<h2>
             <h3 class="post-subtitle"> ${date}<h3>
