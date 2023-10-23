@@ -1,15 +1,15 @@
 var blogPosts = [
     {
-        title: "Test Post 1",
-        date: "10-22-2023",
-        description: "First blog post!",
-        slug: "test_post_1"
+        title: "Chicken Soup",
+        date: "9-25-2023",
+        description: "chicken soup",
+        slug: "chicken_soup"
     },
     {
-        title: "Test Post 1",
-        date: "10-22-2023",
-        description: "Second blog post!",
-        slug: "test_post_2"
+        title: "Curry Egg Noodles",
+        date: "10-21-2023",
+        description: "curry egg noodles",
+        slug: "curry_egg_noodles"
     },
 ];
 function blogPreview() {

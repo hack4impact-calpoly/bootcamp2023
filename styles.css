@@ -96,5 +96,23 @@ html {
   }
 
   .blog-description {
+    text-align: left;
+  }
+
+  /* .blog-list {
+    text-align: center;
+  } */
+
+  .page-title {
     text-align: center;
   }
+
+  .post-preview {
+    text-align: center;
+    border: 3px solid #042908;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
