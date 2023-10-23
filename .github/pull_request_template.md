@@ -1,4 +1,4 @@
-## Developer: {Full Name}
+## Developer: Grace Boye-Williams
 
 Closes #{ISSUE NUMBER HERE}
 
