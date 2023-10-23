@@ -1,3 +1,9 @@
+# Angela Chen's Personal Website
+
+This is a personal website built using the Hack4Impact Starter Pack!
+It includes a portfolio, resume, and contact information.
+[Visit it Here!](https://anvch.github.io)
+
 # Developer Bootcamp 2023
 
 This is how we will be tracking your milestones throughout bootcamp! By the end of bootcamp, you will have a fullstack personal portfolio website.
