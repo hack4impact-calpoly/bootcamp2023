@@ -19,18 +19,16 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    <main id="parent">
-        <h1 class="page-title">Blog</h1>
+    <main id="main">
+      <h1 class="page-title">Blog</h1>
+      <div class="content">
+        <ul id="blog-list">
+        </ul>
+      </div>
     </main>
     <footer class="footer">
         <p class="footer-text">© 2023 <Personal Website Name> | All Rights Reserved</p>
       </footer>
   </body>
-  <script type="text/javascript" src="Blog.ts">
-    const parent = document.getElementById('parent')
-    blogs.forEach((Blog) => {
-      const createBlog = document.createElement('div')
-      const addBlog = parent.appendChild(createBlog)
-    });
-  </script>
+  <script src="./scripts/Blog.js"></script>
 </html>
