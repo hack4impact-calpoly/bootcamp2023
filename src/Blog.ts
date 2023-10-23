@@ -8,20 +8,21 @@ type Blog = {
 const blogs: Blog[] = [
   {
     title: "Japan and Korea",
-    date: "03-20-2023",
-    description: "...",
-    slug: "",
+    date: "09-01-2023",
+    description: "Trip to Japan and Korea!",
+    slug: "JK23",
   },
   {
     title: "Thailand and Singapore",
-    date: "03-20-2023",
-    description: "...",
-    slug: "",
+    date: "09-13-2022",
+    description: "Going to Thailand and Singapore for the first time!",
+    slug: "TS22",
   },
 ];
 
 function displayBlog() {
   const blogList = document.getElementById("blog-list");
+  console.log(blogList);
   blogs.forEach(({ title, date, description, slug }) => {
     const link = document.createElement("a");
     link.href = `blog/${slug}.html`;
