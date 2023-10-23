@@ -28,10 +28,29 @@ const blogs: Blog[] = [
     }
 ];
 
-blogs.forEach(item => {
-    const element = document.createElement('div')
-    const innerHTML = element.innerHTML = 'New blog piece'
-    const addingBlog = document.getElementById('blog')
-    addingBlog.appendChild(element)
-    console.log(addingBlog)
-})
+function blogDisplay() {
+    const bloglist = document.getElementById("blog")
+
+    blogs.forEach(({title, date, desc, slug}) => {
+        const element = document.createElement("a");
+        element.href = `blo/${slug}.html`;
+        element.innerHTML = 'New blog piece';
+        const blogPrev = document.createElement("div");
+        blogPrev.classList.add("story-preview");
+        blogPrev.innerHTML = 
+            `<h2 class = "post-title"> ${title} </h2>
+            <h3 class = "post-subtitle"> ${date} </h3>
+            <p class = "post-desc"> ${desc} </p>`;
+    
+        blogPrev.appendChild(element);
+        if (bloglist) {
+            bloglist.appendChild(blogPrev);
+        }
+    
+    
+    
+    });
+
+}
+
+blogDisplay();
