@@ -17,23 +17,11 @@
     </nav>
     <main>
       <h1 class="page-title">Blog</h1>
-      <div class="container_test" id="container_id"></div>
-      <p>Form</p>
+      <h2 class="page-subtitle">Posts</h2>
+      <div class="blog-list" id="blog-list"></div>
     </main>
     <footer class="footer">© 2023 Sean M. Nguyen | All Rights Reserved</footer>
   </body>
 
   <script src="./src/blog.js"></script>
-
-  <!-- <script>
-    import { blogList } from "src/blogs.ts";
-    const parent = document.querySelector("#container_id");
-
-    blogList.forEach((blog) => {
-      const create = document.createElement("div");
-      const innerHtml = (create.innerHTML = blog.description);
-      parent.append(create);
-      console.log(create);
-    });
-  </script> -->
 </html>

@@ -7,30 +7,38 @@ type Blog = {
 
 const blogList: Blog[] = [
   {
-    title: "The Fellowship Of The Ring",
+    title: "Cinque Terre",
     date: "10/21/2023",
-    description: "The first movie in the Trilogy",
-    slug: "resume.html",
+    description: "My first weekend trip exploring another part of Italy!",
+    slug: "cinque-terre.html",
   },
   {
-    title: "The Two Towers",
+    title: "Tuscany",
     date: "10/21/2023",
-    description: "The second movie in the Trilogy",
-    slug: "index.html",
+    description: "The program-organized event, covering Flourence and Pisa",
+    slug: "tuscany.html",
   },
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
-  const parent = document.querySelector("#container_id");
+  const parent = document.querySelector("#blog-list");
   // const parent = document.getElementById("container_id");
 
   blogList.forEach((blog) => {
     const createDiv = document.createElement("div");
-    createDiv.className = "blog_entry";
-    const createLink = document.createElement("a");
-    createLink.href = blog.slug;
-    createLink.textContent = blog.description;
-    createDiv.append(createLink);
+    createDiv.className = "blog-entry";
+    const createTitle = document.createElement("a");
+    const createDate = document.createElement("p");
+    const createDescription = document.createElement("p");
+
+    createTitle.href = blog.slug;
+    createTitle.textContent = blog.title;
+    createDate.textContent = blog.date;
+    createDescription.textContent = blog.description;
+
+    createDiv.append(createTitle);
+    createDiv.append(createDate);
+    createDiv.append(createDescription);
     if (parent) {
       parent.append(createDiv);
     }
