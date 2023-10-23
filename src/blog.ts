@@ -31,7 +31,7 @@ const blogs: Blog[] = [
 blogs.forEach(item => {
     const element = document.createElement('div')
     const innerHTML = element.innerHTML = 'New blog piece'
-    const addingBlog = document.getElementById('blog')!;
+    const addingBlog = document.getElementById('blog')
     addingBlog.appendChild(element)
     console.log(addingBlog)
 })
