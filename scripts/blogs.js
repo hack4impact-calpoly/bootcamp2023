@@ -23,7 +23,7 @@ function displayBlogs() {
             "<h2 class=\"entry-title\">".concat(title, "</h2>\n        <h3 class=\"entry-date\">").concat(date, "</h2>\n        <p class=\"entry-description\">").concat(description, "</p>");
         // creating link: slug
         var link = document.createElement("a");
-        link.href = "blog/".concat(slug, ".html");
+        link.href = "blog_content/".concat(slug, ".html");
         link.innerHTML = "Read More";
         // appending blog entries to blog postings element in HTML
         blogEntry.appendChild(link);
