@@ -4,17 +4,16 @@ const currentBlogList = [
         title: "Cal Poly Classes",
         date: "10-20-2023",
         description: "Discussions on Cal Poly CS Classes",
-        slug: '/blogs/blog1',
+        slug: "./blogsFolder/blog1.html",
     },
     {
         title: "TypeScript and NextJS",
         date: "10-20-2023",
         description: "Discussions on New Technologies",
-        slug: '/blogs/blog2',
+        slug: "./blogsFolder/blog2.html",
     },
 ];
 function addBlogs(blogList) {
-    console.log("hi");
     let blogContainer = document.querySelector(".blogWrapper");
     blogList.forEach(blog => {
         let newBlogDiv = document.createElement("div");
