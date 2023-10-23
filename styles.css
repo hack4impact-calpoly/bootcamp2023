@@ -205,6 +205,30 @@ main {
   line-height: 1.5;
 }
 
+/* CSS for blog page */
+.blog .blog-list {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}
+
+.blog-entry {
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: white;
+  margin-bottom: 10px;
+  column-gap: 5px;
+}
+
+.blog-pic {
+  height: 50%;
+  width: 50%;
+}
+
 /* CSS for resume page */
 .resume {
   padding: 0px 0px 0px 0px;
