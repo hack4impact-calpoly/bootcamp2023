@@ -22,20 +22,23 @@ const blogList: Blog[] = [
 
 document.addEventListener("DOMContentLoaded", function () {
   const parent = document.querySelector("#blog-list");
-  // const parent = document.getElementById("container_id");
 
   blogList.forEach((blog) => {
+    // container representing a row that will hold the blog post info
     const createDiv = document.createElement("div");
     createDiv.className = "blog-entry";
-    const createTitle = document.createElement("a");
-    const createDate = document.createElement("p");
-    const createDescription = document.createElement("p");
 
+    const createTitle = document.createElement("a"); // link to blog post
     createTitle.href = blog.slug;
     createTitle.textContent = blog.title;
+
+    const createDate = document.createElement("p"); // date blog post created
     createDate.textContent = blog.date;
+
+    const createDescription = document.createElement("p"); // brief description of blog post
     createDescription.textContent = blog.description;
 
+    // add all the elements to the container row
     createDiv.append(createTitle);
     createDiv.append(createDate);
     createDiv.append(createDescription);

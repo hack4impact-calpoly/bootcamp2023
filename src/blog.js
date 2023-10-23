@@ -14,17 +14,18 @@ var blogList = [
 ];
 document.addEventListener("DOMContentLoaded", function () {
     var parent = document.querySelector("#blog-list");
-    // const parent = document.getElementById("container_id");
     blogList.forEach(function (blog) {
+        // container representing a row that will hold the blog post info
         var createDiv = document.createElement("div");
         createDiv.className = "blog-entry";
-        var createTitle = document.createElement("a");
-        var createDate = document.createElement("p");
-        var createDescription = document.createElement("p");
+        var createTitle = document.createElement("a"); // link to blog post
         createTitle.href = blog.slug;
         createTitle.textContent = blog.title;
+        var createDate = document.createElement("p"); // date blog post created
         createDate.textContent = blog.date;
+        var createDescription = document.createElement("p"); // brief description of blog post
         createDescription.textContent = blog.description;
+        // add all the elements to the container row
         createDiv.append(createTitle);
         createDiv.append(createDate);
         createDiv.append(createDescription);
