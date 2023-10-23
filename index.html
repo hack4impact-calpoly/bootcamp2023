@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Wesley's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0c181b6e0f.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"> <img src="img/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times-circle" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#mh-skills">Skills</a></li>
+                    <li><a href="Wesley_Resume_1 (1).pdf">Resume</a></li>
+                    <li><a href="#about-me">About Me</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <div class="text-box">
+          <h1>Wesley Luu Portfolio</h1>
+          <h3><br>A computer engineering student, who is a highly motivated individual seeking to use programming and analytical skills to create meaningful impact. I am a quick learner and intrested in the field of software development.</h3>
+        </div>  
+      </section>
+
+
+      <section class="about-me" id="about-me">
+        <div class="text-box">
+            <h1>About Me</h1>
+            <h3><br> Heyo, I computer engineering student, who is a highly motivated individual seeking to use programming and analytical skills to create meaningful impact. I am a quick learner and intrested in the field of software development.<br> 
+                <br> Over the years I have been working with Cal Poly CCI as a discord developer where I maintain their support ticket system for their CTF like events <br>
+                <br> In my free time, I when I am not coding like cooking, playing video games and I recently got into rock climbing
+            </h3>
+        </div>    
+      </section>
+
+      
+<!---Toggle Menu --->
+    <script>
+        var navLinks = document.getElementById(navLinks)
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+<!-------Skills Page-------->
+    <!-- <br><br><br><br><br><br><br><br> -->
+    <section class="mh-skills" id="mh-skills">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="mk-skills-inner">
+                        <div class="mh-professional-skill">
+                            <h3>Technical Skills</h3>
+                            <div class="each-skills">
+                                <div class="candidatos">
+                                    <div class="parcial">
+                                        <div class="info">
+                                            <div class="nome">Python</div>
+                                            <div class="percentage-num">95%</div>
+                                        </div>
+                                        <div class="progressBar">
+                                            <div class="percentagem" style="width: 95%;"></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                
+                                <div class="candidatos">
+                                    <div class="parcial">
+                                        <div class="info">
+                                            <div class="nome">Java</div>
+                                            <div class="percentage-num">75%</div>
+                                        </div>
+                                        <div class="progressBar">
+                                            <div class="percentagem" style="width: 75%;"></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="candidatos">
+                                    <div class="parcial">
+                                        <div class="info">
+                                            <div class="nome">Javascript</div>
+                                            <div class="percentage-num">80%</div>
+                                        </div>
+                                        <div class="progressBar">
+                                            <div class="percentagem" style="width: 50%;"></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="candidatos">
+                                    <div class="parcial">
+                                        <div class="info">
+                                            <div class="nome">HTML</div>
+                                            <div class="percentage-num">80%</div>
+                                        </div>
+                                        <div class="progressBar">
+                                            <div class="percentagem" style="width: 50%;"></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <br><br><br><br>
+            </div>
+        </div>
+    </section>
+  </body>
+</html>
