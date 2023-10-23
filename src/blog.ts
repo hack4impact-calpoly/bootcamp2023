@@ -29,7 +29,7 @@ function addBlogs(blogList: Blog[]) {
                                 <h1>${blog.title}</h1> 
                                 <h3>${blog.date}</h3>
                                 <p>${blog.description}</p>
-                                <a href="${blog.slug}">Read More</a>`
+                                <a href="${blog.slug}">Read More<br><br><br></a>`
         blogContainer?.appendChild(newBlogDiv)
     })
 }

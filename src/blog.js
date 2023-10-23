@@ -17,7 +17,7 @@ function addBlogs(blogList) {
     blogList.forEach(function (blog) {
         var newBlogDiv = document.createElement("div");
         // newBlogDiv.className = "about"
-        newBlogDiv.innerHTML = "\n                                <h1>".concat(blog.title, "</h1> \n                                <h3>").concat(blog.date, "</h3>\n                                <p>").concat(blog.description, "</p>\n                                <a href=\"").concat(blog.slug, "\">Read More</a>");
+        newBlogDiv.innerHTML = "\n                                <h1>".concat(blog.title, "</h1> \n                                <h3>").concat(blog.date, "</h3>\n                                <p>").concat(blog.description, "</p>\n                                <a href=\"").concat(blog.slug, "\">Read More<br><br><br></a>");
         blogContainer === null || blogContainer === void 0 ? void 0 : blogContainer.appendChild(newBlogDiv);
     });
 }
