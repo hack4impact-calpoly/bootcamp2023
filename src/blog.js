@@ -9,7 +9,7 @@ var blogs = [
         title: "365 ledger",
         date: "10/21/2023",
         description: "Switched the implementation of my potions shop for 365 to use a \
-        ledger based design instead of keeping a global inventory.",
+        ledger based design instead of keeping a global inventory.git",
         slug: "blog1"
     }
 ];
