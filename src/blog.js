@@ -4,20 +4,20 @@ const blogs = [
         title: "First Blog Post",
         date: "12/21/2018",
         description: "This is my very first blog post. Welcome!",
-        slug: "blogs/blog_entry_first_blog.html",
+        slug: "firstblog",
     },
     {
         title: "Second Blog Post",
         date: "04/23/2023",
         description: "I am still alive. Welcome to my second blog post.",
-        slug: "blogs/blog_entry_second_blog.html",
+        slug: "secondblog",
     }
 ];
 function displayBlogs() {
     const blogList = document.getElementById("Blog-list"); // getting blog list div element from HTML
     blogs.forEach(({ title, date, description, slug }) => {
         const link = document.createElement("a");
-        link.href = `blog_content/${slug}.html`;
+        link.href = `blog_pages/${slug}.html`;
         link.innerHTML = "Read More";
         const blogEntry = document.createElement("div");
         blogEntry.classList.add("blog-entry");
