@@ -45,7 +45,7 @@ function createBlogList() {
       
   
       if (container != null) {
-        container.appendChild(blogDiv); // Add the lineDiv to the container
+        container.appendChild(blogDiv); 
       } else {
         console.log("ehehe");
       }
