@@ -37,7 +37,7 @@ function displayBlogs() { // displays blog entries to the blog postings element 
 
         // creating link: slug
         const link = document.createElement("a");
-        link.href = `blog/${slug}.html`;
+        link.href = `blog_content/${slug}.html`;
         link.innerHTML = "Read More";
 
         // appending blog entries to blog postings element in HTML
