@@ -18,3 +18,6 @@ Closes #{Milestone1}
 - [x] Ask for a review in communication channels
 
 ### Screenshots/Screencast
+![Blog List](image.png)
+![Food Blog](image-1.png)
+
