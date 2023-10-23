@@ -28,13 +28,13 @@ function showBlogCards() {      // creates HTML elements for each blog entry in 
 
     blogsArray.forEach(({slug, title, date, description}) => {
         const createBlog = document.createElement("div");   // the blog preview card
-
+        createBlog.classList.add("blogCard")                // gives each blog card a class blogCard for styling
         const blogLink = document.createElement("a");       // link to the full blog (slug.html)
         blogLink.href = `blog/${slug}.html`;
         
         createBlog.innerHTML = `
-        <h2 class="blogTitle">${title}</h1>
-        <h3 class="blogDate">${date}</h2>
+        <h1 class="blogTitle">${title}</h1>
+        <h2 class="blogDate">${date}</h2>
         <p class="blogDescription">${description}</p>
         `;
 
