@@ -16,25 +16,25 @@ const blogPosts: Blog[] = [
   }
 ];
 
-function displayBlogPosts(){
+function displayBlogPost(){
   blogPosts.sort((a,b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
   
   // might need to add <ul > element inside of blog-container
-  const listOfBlogPosts = document.getElementById("list-of-blog-posts");
+  const listOfBlogPosts = document.getElementById("blog-posts");
   
   blogPosts.forEach(({title, date, description, slug}) => {
       const link = document.createElement("a");
-        link.href = `blog/${slug}.html`;
-        link.innerHTML = "Read More";
-        const postPreview = document.createElement("div");
-        postPreview.classList.add("post-preview");
-        postPreview.innerHTML = `
-            <h2 class="post-title">${title}</h2>
-            <h3 class="post-subtitle">${date}</h3>
-            <p class="post-description">${description}</p>
-        `;
+      link.href = `blog/${slug}.html`;
+      link.innerHTML = "Read More";
+      const postPreview = document.createElement("div");
+      postPreview.classList.add("post-preview");
+      postPreview.innerHTML = `
+        <h2 class="post-title">${title}</h2>
+        <h3 class="post-subtitle">${date}</h3>
+        <p class="post-description">${description}</p>
+      `;
         postPreview.appendChild(link);
         if (listOfBlogPosts) {
           listOfBlogPosts.appendChild(postPreview);
@@ -42,4 +42,4 @@ function displayBlogPosts(){
   })
 }
 
-displayBlogPosts();
+displayBlogPost();
