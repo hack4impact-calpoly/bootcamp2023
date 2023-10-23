@@ -1,12 +1,12 @@
 var blogsArray = [
     {
-        slug: "blogCats.html",
+        slug: "blogCat",
         title: "Cats I Like",
         date: "October 22, 2023",
         description: "A talk about the types of cats I like"
     },
     {
-        slug: "blogFoods.html",
+        slug: "blogFoods",
         title: "Foods I Like",
         date: "October 22, 2023",
         description: "A talk about some of the food I enjoy"
@@ -20,7 +20,7 @@ function showBlogCards() {
         var createBlog = document.createElement("div"); // the blog preview card
         createBlog.classList.add("blogCard"); // gives each blog card a class blogCard for styling
         var blogLink = document.createElement("a"); // link to the full blog (slug.html)
-        blogLink.href = "blog/".concat(slug, ".html");
+        blogLink.href = "blogs/".concat(slug, ".html");
         createBlog.innerHTML = "\n        <h1 class=\"blogTitle\">".concat(title, "</h1>\n        <h2 class=\"blogDate\">").concat(date, "</h2>\n        <p class=\"blogDescription\">").concat(description, "</p>\n        ");
         createBlog.appendChild(blogLink);
         if (blogList) {

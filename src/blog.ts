@@ -8,13 +8,13 @@ type Blog = {
 
 const blogsArray: Blog[] = [     // the list separted by {},
     {
-    slug: "blogCats.html",
+    slug: "blogCat",
     title: "Cats I Like",
     date: "October 22, 2023",
     description: "A talk about the types of cats I like"
     },
     {
-    slug: "blogFoods.html",
+    slug: "blogFoods",
     title: "Foods I Like",
     date: "October 22, 2023",
     description: "A talk about some of the food I enjoy"
@@ -30,7 +30,7 @@ function showBlogCards() {      // creates HTML elements for each blog entry in 
         const createBlog = document.createElement("div");   // the blog preview card
         createBlog.classList.add("blogCard")                // gives each blog card a class blogCard for styling
         const blogLink = document.createElement("a");       // link to the full blog (slug.html)
-        blogLink.href = `blog/${slug}.html`;
+        blogLink.href = `blogs/${slug}.html`;
         
         createBlog.innerHTML = `
         <h1 class="blogTitle">${title}</h1>
