@@ -127,3 +127,40 @@ main {
         padding: 0 0.8em;
     }
 }
+
+/* blog page (element) styling */
+#blog-wrapper {
+    margin: 0;
+    width: 70%;
+}
+
+.blog-post {
+    margin: 20px;
+    padding: 20px;
+    background-color: #C9B7C4;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.blog-title {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+}
+
+.blog-date {
+    color: #303133;
+}
+
+.blog-img {
+    height: 100%;
+    width: 100%;
+    border-radius: 2.5px;
+}
+
+.blog-link {
+    background-color: #C498B8;
+}
+
+.blog-link:hover {
+    background-color: #A26E94!important;
+}
