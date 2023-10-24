@@ -1,3 +1,3 @@
 # Yasemin's Personal Website
-This is a personal website built using the Hack4Impact Starter Pack!<br>
-[Visit it right here:] (https://YaseminAkkaya.github.io)
+This is a personal that's being developed through the H4I bootcamp<br>
+
