@@ -1,9 +1,9 @@
 type Blog = {
-    title: string;
-    date: string;
-    description: string;
-    img: string;
-    slug: string;
+    title: string; // title of blog post
+    date: string; // date written for blog post
+    description: string; // a short description of the blog post
+    img: string; // source of a preview image for post
+    slug: string; // source for the blog post
 };
 
 const blogPosts: Blog[] = [
@@ -30,6 +30,7 @@ const blogPosts: Blog[] = [
     }
 ];
 
+// appends to preview each blog post to the blog-wrapper div in on blog.html
 function blogPreview() {
     let blog_container = document.querySelector("#blog-wrapper");
 

@@ -22,6 +22,7 @@ const blogPosts = [
         slug: "../blog-posts/blog1.html"
     }
 ];
+// appends to preview each blog post to the blog-wrapper div in on blog.html
 function blogPreview() {
     let blog_container = document.querySelector("#blog-wrapper");
     blogPosts.forEach(blog => {
