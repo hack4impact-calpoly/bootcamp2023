@@ -20,11 +20,11 @@ const blogs = [
     }
 ];
 function blogDisplay() {
-    const bloglist = document.getElementById("blog-list");
+    const bloglist = document.getElementById("blog-list")
 
     blogs.forEach(({title, date, desc, slug}) => {
         const element = document.createElement("a");
-        element.href = `blo/${slug}.html`;
+        element.href = `blog/${slug}.html`;
         element.innerHTML = 'New blog piece';
         const blogPrev = document.createElement("div");
         blogPrev.classList.add("story-preview");
