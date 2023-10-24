@@ -41,11 +41,9 @@ function addBlogsToHTML(blogs: Blog[]) {
       blogDescription.innerHTML = blog.description;
       blogTitle.innerHTML = blog.title;
       blogDate.innerHTML = blog.date;
-      blogPost
-        .appendChild(blogTitle)
-        .appendChild(blogDescription)
-        .appendChild(blogDate);
-
+      blogPost.appendChild(blogTitle);
+      blogPost.appendChild(blogDescription);
+      blogPost.appendChild(blogDate);
       blogContainer?.appendChild(blogPost); // why need optional chaining here? if already checking for null?
     });
   }
