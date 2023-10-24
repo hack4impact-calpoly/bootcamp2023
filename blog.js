@@ -1,20 +1,28 @@
-var blogs = [
+"use strict";
+const blogs = [
     {
-        title: "10 ways to stay healthy",
+        title: "5 ways to stay healthy",
         date: "10-jan-2023",
         description: "This blog talks about different ways to stay healthy both physically and mentally",
         slug: "blog1",
     },
     {
-        title: "A peek into wildlife",
+        title: "5 Essential Study Tips",
         date: "13-july-2023",
-        description: "This blog gives an overview of the wildlife in San Luis Obispo",
+        description: "This blog gives 5 Essential Study Tips for Academic Success",
         slug: "blog2",
     },
 ];
 function addblogs() {
-    blogs.forEach(function (element) {
-        var htmlData = "\n\t\t<h1> ".concat(element.title, " </h1>\n\t\t<h3> ").concat(element.date, " </h3>\n\t\t<h3> ").concat(element.description, " </h3>\n\t\t<h3><a href=\"./").concat(element.slug, ".html\">View full blog</h3>\n\n\t\t<br>\n\t");
+    blogs.forEach((element) => {
+        var htmlData = `
+		<h1> ${element.title} </h1>
+		<h3> ${element.date} </h3>
+		<h3> ${element.description} </h3>
+		<h3><a href="./${element.slug}.html">View full blog</h3>
+
+		<br>
+	`;
         document.getElementsByClassName("blog-container")[0].innerHTML += htmlData;
     });
 }
