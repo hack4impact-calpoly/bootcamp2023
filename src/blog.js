@@ -21,7 +21,8 @@ function ListBlogs() {
     blogs.forEach(function (item) {
         console.log(item);
         var ablog = document.createElement("div");
-        ablog.innerHTML = "<h1>".concat(item.title, "</h1><p>").concat(item.date, "</p><p>").concat(item.description, "</p><img style=\"height: 250px\" src=").concat(item.image, "></img><a href=\"").concat(item.slug, "\">Read More</a>");
+        ablog.innerHTML =
+            "<style>\n\t\t\th1 {text-align: center}\n\t\t\tp {text-align: center}\n\t\t\ta {text-align: center}\n\t\t</style>\n\t\t<h1>".concat(item.title, "</h1>\n\t\t<p>").concat(item.date, "</p>\n\t\t<p>").concat(item.description, "</p>\n\t\t<img style=\"height: 250px\" src=").concat(item.image, "></img>\n\t\t<br>\n\t\t<a href=\"").concat(item.slug, "\">Read More</a>");
         myblog.appendChild(ablog);
     });
 }
