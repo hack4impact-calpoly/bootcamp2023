@@ -1,11 +1,4 @@
-type Blog = {
-    title: string;
-    date: string;
-    description: string;
-    slug: string;
-};
-
-const blogs: Blog[] = [
+var blogs = [
     {
         title: "My First Blog",
         date: "10-22-2023",
@@ -19,25 +12,21 @@ const blogs: Blog[] = [
         slug: "./blogs/blog2.html", //I'll work on the nomenclature 
     }
 ];
-
 function addBlogs() {
-    const container = document.getElementById("blog-container");
-    if (!container) return;
-
-    blogs.forEach(blog => {
-        const blogElement = document.createElement("div");
+    var container = document.getElementById("blog-container");
+    if (!container)
+        return;
+    blogs.forEach(function (blog) {
+        var blogElement = document.createElement("div");
         blogElement.className = "blog";
-
-        const headingElement = document.createElement("h2");
+        var headingElement = document.createElement("h2");
         headingElement.style.border = "1px solid #000";
-        const titleElement = document.createElement("a");
+        var titleElement = document.createElement("a");
         titleElement.href = blog.slug;
         titleElement.textContent = blog.title;
-
         headingElement.appendChild(titleElement);
         blogElement.appendChild(headingElement);
         container.appendChild(blogElement);
     });
 }
-
 addBlogs();
