@@ -224,12 +224,12 @@ input[type="submit"] {
   border: 1px solid lightgray;
   border-radius: 5px;
   background: #f1f1f1;
-  padding: 100px 50px;
-  width: 50%;
+  padding: 50px 15px;
+  width: 35%;
 }
 
 .blog-content h1 {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .individual-blog-post {
@@ -257,15 +257,31 @@ input[type="submit"] {
 
 .blog-page-information {
   padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .blog-post-image {
   width: 350px;
   height: 350px;
+  border: 1px solid black;
+  padding: 5px;
 }
 
+.blog-post-description {
+  margin-bottom: 8px;
+}
+
+.blog-post-date {
+  margin-bottom: 30px;
+  font-style: italic;
+}
 .blog-post-content {
   width: 70%;
+  margin-bottom: 30px;
+  text-align: center;
 }
 /* CSS For Portfolio Page */
 
