@@ -7,23 +7,23 @@ type Blog = {
 
 const blogs: Blog[] = [
     {
-        title: "Everything is Going Great",
-        date: "01-01-2002",
-        desc: "New Year's Day could not be going better.",
+        title: "Hello there",
+        date: "10-18-2023",
+        desc: "A slight introduction",
         slug: "blog_piece1"
     },
 
     {
-        title: "My Life in Shambles",
-        date: "01-02-2022",
-        desc: "The tough start to a new year.",
+        title: "Another Day another Sunset",
+        date: "10-19-2023",
+        desc: "The origins of the sloset",
         slug: "blog_piece2",
     },
 
     {
-        title: "Back to Doing Better",
-        date: "-1-03-2022",
-        desc: "False alarm on that last post there, all is well again.",
+        title: "Visiting Seattle",
+        date: "10-20-2023",
+        desc: "Time well spent in an awesome city",
         slug: "blog_piece3",
     }
 ];
