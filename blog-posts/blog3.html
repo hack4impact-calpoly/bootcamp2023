@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&family=Nunito:wght@700&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/icon.ico" type="image/x-icon" />
+    <link rel="icon" href="../assets/icon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="../styles.css">
 </head>
@@ -49,12 +49,54 @@
     </nav>
 
     <main>
-      <div class="container-fluid">
-        <h1>Cal Poly's Hui 'O Hawai'i Club</h1>
-        <div id="content">
+        <div class="container-fluid d-flex flex-column align-items-center">
+          <div class="row justify-content-around align-items-center" style="text-align:center; width:85%; margin:15px;">
+              <div class="col" style="margin:17px;">
+                <div id="hawaii-club-blog" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#hawaii-club-blog" data-bs-slide-to="0" class="active"></button>
+                      <button type="button" data-bs-target="#hawaii-club-blog" data-bs-slide-to="1"></button>
+                      <button type="button" data-bs-target="#hawaii-club-blog" data-bs-slide-to="2"></button>
+                      <button type="button" data-bs-target="#hawaii-club-blog" data-bs-slide-to="3"></button>
+                      <button type="button" data-bs-target="#hawaii-club-blog" data-bs-slide-to="4"></button>
+                      <button type="button" data-bs-target="#hawaii-club-blog" data-bs-slide-to="5"></button>
+                      <button type="button" data-bs-target="#hawaii-club-blog" data-bs-slide-to="6"></button>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="../assets/blog/post3/1.jpg" class="d-block" style="width:100%">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="../assets/blog/post3/2.jpg" class="d-block" style="width:100%">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="../assets/blog/post3/3.jpg" class="d-block" style="width:100%">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="../assets/blog/post3/4.jpg" class="d-block" style="width:100%">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="../assets/blog/post3/5.jpg" class="d-block" style="width:100%">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="../assets/blog/post3/6.jpg" class="d-block" style="width:100%">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="../assets/blog/post3/7.jpg" class="d-block" style="width:100%">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#hawaii-club-blog" data-bs-slide="prev"> <span class="carousel-control-prev-icon"></span></button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#hawaii-club-blog" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                </div>
+              </div>
+              <div class="col d-flex flex-column align-items-center">
+                <h1>Cal Poly's Hui 'O Hawai'i Club</h1>
+                <p>I was born and raised in Honolulu, Hawaii. Coming to Cal Poly, which is around 2500 miles away from home, I wanted to still be connected to my roots, so I joined Hawaii Club at Cal Poly!</p>
+                <p>So far, we have been to Avila Barn, spam musubi making, intramural sports, and so much more! We are currently in the process of revealing for big/little.</p>
+              </div>
+            </div>
         </div>
-      </div>
-    </main>
+      </main>
 
     <footer class="bg-dark text-center text-white mt-auto">
       <div class="container pt-5">
