@@ -241,6 +241,10 @@ input[type="submit"] {
   margin-bottom: 20px;
 }
 
+.individual-blog-post:hover {
+  cursor: pointer;
+}
+
 #blog-list {
   width: 100%;
   display: flex;
@@ -250,11 +254,16 @@ input[type="submit"] {
 }
 
 .blog-page-information {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   padding-bottom: 30px;
+}
+
+.blog-post-image {
+  width: 350px;
+  height: 350px;
+}
+
+.blog-post-content {
+  width: 70%;
 }
 /* CSS For Portfolio Page */
 
