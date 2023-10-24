@@ -20,28 +20,21 @@ const blogs = [
     }
 ];
 function blogDisplay() {
-    const bloglist = document.getElementById("blog-list")
-
-    blogs.forEach(({title, date, desc, slug}) => {
+    const bloglist = document.getElementById("blog-list");
+    blogs.forEach(({ title, date, desc, slug }) => {
         const element = document.createElement("a");
-        element.href = `blog/${slug}.html`;
+        element.href = `${slug}.html`;
         element.innerHTML = 'New blog piece';
         const blogPrev = document.createElement("div");
         blogPrev.classList.add("story-preview");
-        blogPrev.innerHTML = 
+        blogPrev.innerHTML =
             `<h3 class = "post-title"> ${title} </h3>
             <h4 class = "post-date"> ${date} </h4>
             <p class = "post-desc"> ${desc} </p>`;
-    
         blogPrev.appendChild(element);
         if (bloglist) {
             bloglist.appendChild(blogPrev);
         }
-    
-    
-    
     });
-
 }
-
 blogDisplay();

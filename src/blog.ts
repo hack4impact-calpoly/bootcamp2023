@@ -33,7 +33,7 @@ function blogDisplay() {
 
     blogs.forEach(({title, date, desc, slug}) => {
         const element = document.createElement("a");
-        element.href = `blog/${slug}.html`;
+        element.href = `${slug}.html`;
         element.innerHTML = 'New blog piece';
         const blogPrev = document.createElement("div");
         blogPrev.classList.add("story-preview");
