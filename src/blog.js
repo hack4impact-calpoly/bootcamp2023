@@ -1,13 +1,13 @@
 var blogs = [
     {
         title: "Japan and Korea",
-        date: "09-01-2023",
+        date: "10-23-2023",
         description: "Trip to Japan and Korea!",
         slug: "JK23",
     },
     {
         title: "Thailand and Singapore",
-        date: "09-13-2022",
+        date: "10-23-2022",
         description: "Going to Thailand and Singapore for the first time!",
         slug: "TS22",
     },
