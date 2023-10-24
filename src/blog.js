@@ -1,4 +1,4 @@
-var blog = [
+var blogPosts = [
     {
         title: "The Competitive Space of Grace Hopper",
         date: "10-23-2023",
@@ -12,15 +12,20 @@ var blog = [
         slug: "halloween-movies"
     },
 ];
-function blog_lists() {
-    var container = document.querySelector(".blog-container");
-    if (container) {
-        blog.forEach(function (blog) {
-            var element = document.createElement("div");
-            element.classList.add("blog-item");
-            element.innerHTML = "\n                <h2><a href=\"".concat(blog.slug, ".html\">").concat(blog.title, "</a></h2>\n                <p>").concat(blog.date, "</p>\n                <p>").concat(blog.description, "</p>\n            ");
-            container.appendChild(element);
-        });
-    }
+function blogPreview() {
+    var blogList = document.getElementById("blog-list");
+    blogPosts.forEach(function (_a) {
+        var title = _a.title, date = _a.date, description = _a.description, slug = _a.slug;
+        var link = document.createElement("a");
+        link.href = "".concat(slug, ".html");
+        link.innerHTML = "Read More";
+        var postPreview = document.createElement("div");
+        postPreview.classList.add("post-preview");
+        postPreview.innerHTML = "\n          <h2 class=\"post-title\">".concat(title, "</h2>\n          <h3 class=\"post-subtitle\">").concat(date, "</h3>\n          <p class=\"post-description\">").concat(description, "</p>\n      ");
+        postPreview.appendChild(link);
+        if (blogList) {
+            blogList.appendChild(postPreview);
+        }
+    });
 }
-blog_lists();
+blogPreview();
