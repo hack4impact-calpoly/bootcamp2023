@@ -239,10 +239,12 @@ input[type="submit"] {
   padding: 20px;
   width: 50%;
   margin-bottom: 20px;
+  transition: transform 0.2s;
 }
 
 .individual-blog-post:hover {
   cursor: pointer;
+  transform: scale(1.03);
 }
 
 #blog-list {
