@@ -5,7 +5,7 @@ type Blog = {
     slug: string;
 };
 
-const blogPosts: Blog[] = [
+const blogs: Blog[] = [
     {
         title: "The Competitive Space of Grace Hopper",
         date: "10-23-2023",
@@ -22,23 +22,19 @@ const blogPosts: Blog[] = [
 
 function blogPreview() 
 {
-  const blogList = document.getElementById("blog-list");
+  const container = document.querySelector(".blog-container");
 
-  blogPosts.forEach(({ title, date, description, slug }) => {
-      const link = document.createElement("a");
-      link.href = `${slug}.html`;
-      link.innerHTML = "Read More";
-      const postPreview = document.createElement("div");
-      postPreview.classList.add("post-preview");
-      postPreview.innerHTML = `
-          <h2 class="post-title">${title}</h2>
-          <h3 class="post-subtitle">${date}</h3>
-          <p class="post-description">${description}</p>
-      `;
-      postPreview.appendChild(link);
-      if (blogList) {
-          blogList.appendChild(postPreview);
-      }
-  });
+  if (container) {
+    blogs.forEach((blog) => {
+      const element = document.createElement("div");
+      element.classList.add("blog-item");
+      element.innerHTML = `
+                <h2><a href="${blog.slug}.html">${blog.title}</a></h2>
+                <p>${blog.date}</p>
+                <p>${blog.description}</p>
+            `;
+      container.appendChild(element);
+    });
+  }
 }
 blogPreview();
