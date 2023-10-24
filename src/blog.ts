@@ -31,10 +31,11 @@ function showBlogCards() {      // creates HTML elements for each blog entry in 
         createBlog.classList.add("blogCard")                // gives each blog card a class blogCard for styling
         const blogLink = document.createElement("a");       // link to the full blog (slug.html)
         blogLink.href = `blogs/${slug}.html`;
+        blogLink.innerHTML = '<p>Read Here</p>'
         
         createBlog.innerHTML = `
         <h1 class="blogTitle">${title}</h1>
-        <h2 class="blogDate">${date}</h2>
+        <p class="blogDate">${date}</p>
         <p class="blogDescription">${description}</p>
         `;
 

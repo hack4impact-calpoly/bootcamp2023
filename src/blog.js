@@ -21,7 +21,8 @@ function showBlogCards() {
         createBlog.classList.add("blogCard"); // gives each blog card a class blogCard for styling
         var blogLink = document.createElement("a"); // link to the full blog (slug.html)
         blogLink.href = "blogs/".concat(slug, ".html");
-        createBlog.innerHTML = "\n        <h1 class=\"blogTitle\">".concat(title, "</h1>\n        <h2 class=\"blogDate\">").concat(date, "</h2>\n        <p class=\"blogDescription\">").concat(description, "</p>\n        ");
+        blogLink.innerHTML = '<p>Read Here</p>';
+        createBlog.innerHTML = "\n        <h1 class=\"blogTitle\">".concat(title, "</h1>\n        <p class=\"blogDate\">").concat(date, "</p>\n        <p class=\"blogDescription\">").concat(description, "</p>\n        ");
         createBlog.appendChild(blogLink);
         if (blogList) {
             blogList.appendChild(createBlog);
