@@ -17,7 +17,7 @@ function addBlogsToHTML(blogs) {
     if (blogContainer) {
         blogs.forEach(function (blog) {
             var blogPost = document.createElement("div");
-            blogContainer === null || blogContainer === void 0 ? void 0 : blogContainer.classList.add("individual-blog-post"); // why need optional chaining here? if already checking for null?
+            blogPost === null || blogPost === void 0 ? void 0 : blogPost.classList.add("individual-blog-post"); // why need optional chaining here? if already checking for null?
             var blogTitle = document.createElement("h2");
             blogTitle.classList.add("blog-post-title");
             var blogDescription = document.createElement("p");

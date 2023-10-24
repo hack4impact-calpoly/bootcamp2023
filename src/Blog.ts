@@ -26,7 +26,7 @@ function addBlogsToHTML(blogs: Blog[]) {
   if (blogContainer) {
     blogs.forEach((blog) => {
       const blogPost = document.createElement("div");
-      blogContainer?.classList.add("individual-blog-post"); // why need optional chaining here? if already checking for null?
+      blogPost?.classList.add("individual-blog-post"); // why need optional chaining here? if already checking for null?
 
       const blogTitle = document.createElement("h2");
       blogTitle.classList.add("blog-post-title");
