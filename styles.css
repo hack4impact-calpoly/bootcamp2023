@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+:root {
+    /* Color variables */
+    --cg-black: #333; /* Dark text color */
+    --cg-pink: #ff6b81; /* Pink color */
+    --cg-light-pink: #f7e0e5; /* Light pink background */
+    --cg-white: #fff; /* White color */
+    --cg-grey: #f8f8f8; /* Light grey background */
+    --cg-blue: #2462ff; /* Blue color */
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  body {
+    background: var(--cg-light-pink);
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* CSS for navigation */
+  
+  .navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 7%;
+    z-index: 10;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  
+    background-color: var(--cg-white);
+    color: var(--cg-pink);
+    padding: 0px 0px;
+  }
+  
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 30px;
+    list-style: none;
+  }
+  
+  .navbar a {
+    color: var(--cg-pink);
+    font-weight: bold;
+    margin: 0 12px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar a:hover {
+    font-size: 15px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center; /* Center align the logo content */
+    padding: 10px 20px; /* Add padding to the logo */
+    border-radius: 5px; /* Add rounded corners */
+  }
+  
+  .logo a {
+    font-family: 'Satisfy', cursive;
+    font-size: 30px;
+    display: flex; /* Make the logo a flex container */
+    align-items: center; /* Center align the logo content */
+    margin-right: 40px;
+  }
+
+  .logo a:hover {
+    font-size: 30px;;
+  }
+
+  .nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Center vertically within the navbar */
+  }
+  
+  .nav-list li {
+    margin-right: 20px;
+  }
+  
+  .nav-list a {
+    text-decoration: none;
+    color: var(--cg-pink);
+    font-weight: bold;
+  }
+  
+  main {
+    padding: 0 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .page-title {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-family: 'Sacramento', cursive;
+    color: var(--cg-pink); /* Pink page title color */
+  }
+  
+  /* CSS for portfolio grid */
+  
+  .project {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .project img {
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    object-fit: cover;
+  }
+  
+  .project-details {
+    padding: 20px;
+  }
+
+  .project-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--cg-pink);
+  }
+  
+  .project-description {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    color: var(--cg-black);
+    
+  }
+  
+  .project a{
+    width: 70%;
+    color: var(--cg-pink);
+    text-decoration: none;
+  }
+
+  .project a:hover{
+    width: 70%;
+    color: var(--cg-pink);
+    text-decoration: underline;
+  }
+  
+  /* CSS for home page */
+  
+  .about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--cg-grey); /* Light grey background */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .about-image img {
+    max-width: 300px;
+    border-radius: 3px;
+    margin-left: 40px;
+  }
+  
+  .about-text {
+    flex: 1;
+    margin: 20px 100px;
+    margin-left: 50px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .about-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .about-text p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .about-text strong {
+    color: var(--cg-pink);
+  }
+
+  /* CSS for resume page */
+  
+  .resume {
+    padding: 20px 20px;
+    width: 70%;
+    margin: 20px;
+    background-color: var(--cg-white);
+    text-align: left;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--cg-pink);
+  }
+  
+  .entry {
+    margin-bottom: 15px;
+  }
+
+  .entry-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .entry-info {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .entry-description {
+    font-size: 16px;
+    color: #333;
+  }
+
+  .skill-list, .course-list {
+    margin-top: 10px;
+  }
+  
+  .skill-list li, .course-list li {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+
+  /* CSS for blog */
+
+  .blog-text {
+    color: var(--cg-pink);
+    font-family: 'Satisfy', cursive;
+    font-size: 50px;
+    padding: 80px 100px;
+    background-color: var(--cg-white);
+  }
+
+  /* CSS for blog previews */
+  .post-preview {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-title {
+    font-size: 24px;
+    color: var(--cg-pink); 
+    margin: 0;
+  }
+  
+  .post-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  .post-description {
+    font-size: 18px;
+    color: var(--cg-black); 
+    margin: 10px 0;
+  }
+  
+  .post-preview a {
+    text-decoration: none;
+    color: var(--cg-pink); 
+  }
+  
+  .post-preview a:hover {
+    text-decoration: underline;
+  }  
+/* CSS for blog entries */
+  .blog {
+    margin: 20px;
+    background-color: var(--cg-white);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .blog-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--cg-pink);
+  }
+
+  .blog-date {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .blog-image {
+    text-align: center;
+  }
+
+  .blog-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  .blog-content {
+    line-height: 1.6;
+    margin-top: 20px;
+    color: var(--cg-black);
+  }
+
+  .comment-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--cg-grey);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .comment-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--cg-pink);
+    margin-bottom: 10px;
+  }
+  
+  .comment-form label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    color: var(--cg-pink);
+  }
+
+  .comment-form {
+    margin-right: 30px;
+  }
+  
+  .comment-form input,
+  .comment-form textarea {
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .comment-form button {
+    background-color: var(--cg-pink);
+    color: var(--cg-white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* CSS for contact form */
+  .contact-page p{
+    color: var(--cg-pink);
+    
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: Georgia;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+  }
+  
+  form {
+    width: 500px;
+    margin: 30px auto;
+  }
+
+  
+  
+  /* CSS for footer */
+  
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cg-pink);
+    color: var(--cg-white);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+  }
+  
