@@ -22,12 +22,12 @@ const blogList: Blog[] = [
 ];
 
  
+let blogContainer = document.querySelector(".blogs_added");
 
                 
 function addNewBlogs(blogs: Blog[]) {
 
 
-    let blogContainer = document.querySelector(".blogs_added");
 
     for(let i = 0; i < blogList.length; i++){
         let newBlogDiv = document.createElement("div")
