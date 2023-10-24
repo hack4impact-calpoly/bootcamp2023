@@ -1,43 +1,40 @@
-// type pic = {
-//     title: string;
-//     description: string;
-//   };
-  
-//   const pics: pic[] = [
-//     {
-//       title: "",
-//       description: "",
-//     },
-//     {
-//       title: "",
-//       description: "",
-//     },
-//     {
-//       title: "",
-//       description: "",
-//     },
-//     {
-//       title: "",
-//       description: "",
-//     },
-//   ];
-  
-//   function displayPics() {
-//     const picsList = document.getElementById("visuals");
-//     pics.forEach(({ description, title }) => {
-//       const image = document.createElement("img");
-//       image.src = `blog/imgs/${title}.JPG`;
-//       const createCaption = document.createElement("div");
-//       createCaption.classList.add("create-caption");
-//       createCaption.innerHTML = `
-//           <p class"caption">${description}<p>
-//       `;
-//       createCaption.appendChild(image);
-//       if (picsList) {
-//         picsList.appendChild(createCaption);
-//       }
-//     });
-//   }
-  
-//   displayPics();
-  
+type picture = {
+  title: string;
+  description: string;
+};
+
+const pictures: picture[] = [
+  {
+    title: "TSimg1",
+    description: "Traditional outfit at a palace~",
+  },
+  {
+    title: "TSimg2",
+    description: "It was so pretty >.<",
+  },
+  {
+    title: "TSimg3",
+    description: "!!",
+  },
+  {
+    title: "TSimg4",
+    description: "POV: you try a bidet for the first time",
+  },
+];
+
+function displayPics() {
+  const picsList = document.getElementById("visuals");
+  pictures.forEach(({ description, title }) => {
+    const createPost = document.createElement("div");
+    createPost.classList.add("create-img");
+    createPost.innerHTML = `
+          <img width="200px" height="250px" src="../blog/imgs/${title}.JPG">
+          <p class="caption">${description}<p>
+      `;
+    if (picsList) {
+      picsList.appendChild(createPost);
+    }
+  });
+}
+
+displayPics();
