@@ -12,7 +12,7 @@ function handleSubmit(event) {
     //create comment-item element
     var element = document.createElement("div");
     element.className = "comment-item";
-    element.innerHTML = "<div class=comment-description>".concat(description, "<div>");
+    element.innerHTML = "<div class=\"comment-description\">".concat(description, "<div>");
     //append new element to comment container
     container.appendChild(element);
 }
