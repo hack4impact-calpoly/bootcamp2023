@@ -7,17 +7,17 @@ type Blog = {
 
 const blogs: Blog[] = [
   {
-    title: "10 ways to stay healthy",
+    title: "5 ways to stay healthy",
     date: "10-jan-2023",
     description:
       "This blog talks about different ways to stay healthy both physically and mentally",
     slug: "blog1",
   },
   {
-    title: "A peek into wildlife",
+    title: "5 Essential Study Tips",
     date: "13-july-2023",
     description:
-      "This blog gives an overview of the wildlife in San Luis Obispo",
+      "This blog gives 5 Essential Study Tips for Academic Success",
     slug: "blog2",
   },
 ];
