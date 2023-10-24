@@ -14,7 +14,7 @@ const blogs: Blog[] = [
   },
   {
     date: "10/22/23",
-    title: "Second Post!",
+    title: "veggie dish???",
     description: "This is my second Blog post!",
     slug: "secondBlogPost",
   },
