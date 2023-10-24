@@ -30,7 +30,18 @@ function ListBlogs() {
 	blogs.forEach(function (item) {
 		console.log(item)
 		const ablog = document.createElement("div");
-		ablog.innerHTML = `<h1>${item.title}</h1><p>${item.date}</p><p>${item.description}</p><img style="height: 250px" src=${item.image}></img><a href="${item.slug}">Read More</a>`
+		ablog.innerHTML =
+		`<style>
+			h1 {text-align: center}
+			p {text-align: center}
+			a {text-align: center}
+		</style>
+		<h1>${item.title}</h1>
+		<p>${item.date}</p>
+		<p>${item.description}</p>
+		<img style="height: 250px" src=${item.image}></img>
+		<br>
+		<a href="${item.slug}">Read More</a>`
 		myblog.appendChild(ablog);
 	});
 }
