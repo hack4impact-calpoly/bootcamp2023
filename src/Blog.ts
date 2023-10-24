@@ -22,7 +22,6 @@ const blogs: Blog[] = [
 
 function displayBlog() {
   const blogList = document.getElementById("blog-list");
-  console.log(blogList);
   blogs.forEach(({ title, date, description, slug }) => {
     const link = document.createElement("a");
     link.href = `blog/${slug}.html`;
