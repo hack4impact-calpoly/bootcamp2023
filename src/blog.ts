@@ -1,10 +1,10 @@
 // Type Blog Created
-type Blog = {
-    title: string
-    date: string
-    description: string
-    slug: string
-}
+// type Blog = {
+//     title: string
+//     date: string
+//     description: string
+//     slug: string
+// }
 
 // Blog Data Created
 const blogs: Blog[] = [
