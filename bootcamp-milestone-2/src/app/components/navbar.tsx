@@ -3,7 +3,7 @@ import style from "./navbar.module.css";
 
 export default function Navbar() {
   return (
-    <header className={style.navb}>
+    <header className={style.container}>
       <nav id="nav">
       <div id="Header">
         <h1>Welcome to Ray's Website</h1>

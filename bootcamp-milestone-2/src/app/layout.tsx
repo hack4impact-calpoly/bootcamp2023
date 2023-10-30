@@ -2,6 +2,7 @@ import "./globals.css";
 import Navbar from "@/app/components/navbar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google"; // You can change the font to anything you want.
+import About from "@/app/about/page"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar/>
+        <Navbar></Navbar>
         {children}
       </body>
     </html>
