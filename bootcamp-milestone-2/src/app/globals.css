@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+:root {
+    /* Color variables */
+    --cg-black: #333; /* Dark text color */
+    --cg-pink: #ff6b81; /* Pink color */
+    --cg-light-pink: #f7e0e5; /* Light pink background */
+    --cg-white: #fff; /* White color */
+    --cg-grey: #f8f8f8; /* Light grey background */
+    --cg-blue: #2462ff; /* Blue color */
+  }
+  
+.html {
+    height: 100%;
+  }
+  
+.body {
+    background: var(--cg-light-pink);
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  

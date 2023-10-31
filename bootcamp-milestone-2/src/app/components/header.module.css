@@ -1,0 +1,7 @@
+.page-title {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-family: 'Sacramento', cursive;
+    color: var(--cg-pink); /* Pink page title color */
+  }
