@@ -20,6 +20,10 @@ export default function RootLayout({
             <body>
                 <Navbar />
                 {children}
+                <footer className="footer">
+                    © 2023 My Personal Website | All Rights Reserved | Made with
+                    love ♥
+                </footer>
             </body>
         </html>
     );
