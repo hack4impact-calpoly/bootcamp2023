@@ -10,13 +10,13 @@ const blogs: Blog[] = [
         title: "Introduction to Typescript",
         date: new Date("2023-10-16"),
         description: "Working on milestone 1 assignment.",
-        slug: "./public/typescript.png",
+        slug: "./blog",
     },
     {
         title: "Weather",
         date: new Date("2023-10-16"),
         description: "The weather was very nice today.",
-        slug: "./public/weather.png",
+        slug: "./blog",
     },
 ];
 
