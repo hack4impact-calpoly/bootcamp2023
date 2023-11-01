@@ -1,7 +1,6 @@
 import React from "react";
 import blogs from "../blogData";
 import { Blog } from "../blogData";
-import Link from "next/link";
 import BlogPreview from "@/components/blogPreview";
 
 export default function Blog() {
@@ -14,6 +13,7 @@ export default function Blog() {
                         title={blog.title}
                         description={blog.description}
                         slug={blog.slug}
+                        image={blog.image}
                         date={blog.date}
                     />
                 ))}

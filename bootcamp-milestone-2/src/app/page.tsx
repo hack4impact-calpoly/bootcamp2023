@@ -1,7 +1,3 @@
-import styles from "./page.module.css";
-import BlogPreview from "@/components/blogPreview";
-import blogs from "./blogData";
-
 export default function Home() {
     return (
         <main>
