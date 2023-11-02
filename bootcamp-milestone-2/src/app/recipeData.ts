@@ -21,7 +21,7 @@ export interface Recipe {
       description: "Straight meat",
       image: "/steak.jpg",
       ingredients: ["Meat"],
-      instructions: ["cook dat B"]
+      instructions: ["cook it"]
     }
   ];
   

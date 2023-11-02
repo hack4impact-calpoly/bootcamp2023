@@ -17,17 +17,12 @@
     padding:0;
     box-sizing: border-box;
     color:white;
-    font-size:2vw;
+    font-size:3vw;
     font-family:Roboto Slab;
 }
-.navLinks {
-    width:70%;
-    display:flex;
-    justify-content: space-around;
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    color:white;
-    font-size:2vw;
-    font-family:Roboto Slab;
+
+
+.header > *{
+    font-size:4vh;
+
 }

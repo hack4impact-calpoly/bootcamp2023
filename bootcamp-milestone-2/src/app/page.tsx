@@ -4,14 +4,14 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.about}>
         <div id='profPic'>
           <Image id={styles.profPic} src="/PicForWebsite.jpeg" alt='A pic of me' width={200} height={250}></Image>
         </div>
         <div className={styles.aboutTexts}>
-          <h1>Who Am I?</h1>
-          <p>
+          <h1 className={styles.para}>Who Am I?</h1>
+          <p className={styles.para}>
             I'm a Student Computer Engineer currently pursuing my degree at Cal
             Poly SLO. My academic journey has been marked by a profound passion
             for Web Development and Software Engineering, as well as a
