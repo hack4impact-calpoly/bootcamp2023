@@ -1,0 +1,39 @@
+.Header {
+    font-family: Roboto Slab;
+    color:white; 
+    display:flex;
+    justify-content: center;
+    
+   
+}
+
+.imgDiv {
+    display:flex;
+    justify-content: center;
+}
+
+.description, .ingredients, .instructions {
+    font-family: Roboto Slab;
+    color:white;
+}
+
+.postedOn {
+    font-family: Roboto Slab;
+    color:white;
+}
+
+
+.headerDiv{
+    width:80%;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.innerDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}

@@ -1,0 +1,7 @@
+.header {
+    font-family:Roboto Slab;
+    font-size: large;
+    color:white;
+    display:flex;
+    justify-content: center;
+}

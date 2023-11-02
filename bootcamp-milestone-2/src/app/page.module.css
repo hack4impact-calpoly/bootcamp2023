@@ -1,3 +1,5 @@
+
+
 .main {
   display: flex;
   flex-direction: column;
@@ -226,4 +228,42 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+
+/*
+Everything beyond is custom developed by me
+*/
+
+.about {
+  align-items: center;
+  display:flex;
+}
+
+#profPic {
+  width:100%;
+}
+.aboutTexts {
+  padding:1vw;
+  width:40%;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+  text-align: center;
+}
+.aboutTexts > * {
+  padding:1vh;
+  color:white;
+}
+
+.about {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:4vw;
+}
+
+#profPic {
+  border-radius:1vh;
 }

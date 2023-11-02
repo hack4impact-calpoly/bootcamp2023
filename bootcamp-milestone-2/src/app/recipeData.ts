@@ -1,27 +1,29 @@
+// recipeData.ts
 
 export interface Recipe {
-    name: string;
+    foodname: string;
     description: string;
     image: string;
     ingredients: string[];
     instructions: string[];
-  };
-
-const recipeArray: Recipe[] = [
+  }
+  
+  const recipeArray: Recipe[] = [
     {
-        name: "Nachos",
-        description: "chips with cheese and protein on top",
-        image: "bootcamp-milestone-2/public/nachos.jpg",
-        ingredients: ["chips", "salsa", "cheese", "meat", "beans", "jalapenos"],
-        instructions: ["chips in first, then beans, then meat, then cheese, then salsa, then eat"],
+      foodname: "Nachos",
+      description: "chips with cheese and protein on top",
+      image: "/nachos.jpg",
+      ingredients: ["chips", "salsa", "cheese", "meat", "beans", "jalapenos"],
+      instructions: ["chips in first, then beans, then meat, then cheese, then salsa, then eat"],
     },
     {
-        name: "Steak",
-        description: "Straight meat",
-        image: "bootcamp-milestone-2/public/steak.jpg",
-        ingredients: ["Meat"],
-        instructions: ["cook dat B"]
+      foodname: "Steak",
+      description: "Straight meat",
+      image: "/steak.jpg",
+      ingredients: ["Meat"],
+      instructions: ["cook dat B"]
     }
-];  
-
-export default recipeArray;
+  ];
+  
+  export { recipeArray };
+  
