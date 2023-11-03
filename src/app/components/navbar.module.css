@@ -1,0 +1,40 @@
+
+#nav {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    color:white;
+    font-size:2vw;
+    font-family:Roboto Slab;
+}
+#nav > * {
+    padding:2vw;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    color:white;
+    font-size:3vw;
+    font-family:Roboto Slab;
+}
+
+
+.header > *{
+    font-size:4vh;
+
+}
+
+.aTag {
+    padding:.5vh 2vh;
+    border-bottom: 2px solid white;
+}
+
+.titleTag {
+    padding:.5vh 2vh;
+    border-bottom: 2px solid white;
+    font-size:5vh;
+    margin:30px
+}

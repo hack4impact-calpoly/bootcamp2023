@@ -1,0 +1,14 @@
+
+.header {
+    color:white;
+    font-family:roboto slab;
+    display:flex;
+    justify-content: center;
+    font-weight:200;
+}
+
+.container {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
