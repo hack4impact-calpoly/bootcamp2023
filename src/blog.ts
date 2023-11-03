@@ -7,39 +7,45 @@ type Blog = {
 
 const blogs: Blog[] = [
     {
-        title: "Blog 1",
+        title: "My Internship @ Wells Fargo Technology",
         date: new Date(),
-        description: "My first blog post!",
+        description: "I spent this past summer developing internal tools for Wells Fargo Technology using the full stack!",
         slug: "blogentry1.html"
     },
     {
-        title: "Blog 2",
+        title: "Joining Hack4Impact as a Developer!",
         date: new Date(),
-        description: "My second blog post!",
+        description: "I just joined as a software developer at Hack4Impact, a 501c3 non-profit organization that develops software projects for local non-profits in the local community!",
         slug: "blogentry2.html"
     }
 ]
 
-function addBlogEntries(): void {
-    const container: HTMLElement | null = document.getElementById("entry");
+const container = document.getElementById("container");
+blogs.forEach(blog => {
+    const blogEntry = document.createElement("div");
+    blogEntry.className = "blog-entry";
 
-    if (container) {
-        blogs.forEach(blog => {
-            const newBlog = document.createElement('div');
-            newBlog.className = "entry";
-            const formattedDate = blog.date.toLocaleDateString();
+    const title = document.createElement("h2");
+    title.textContent = blog.title;
 
-            newBlog.innerHTML = `
-            <h2>${blog.title}</h2>
-            <p>Date: ${formattedDate}</p>
-            <p>Description: ${blog.description}</p>
-            <p>Link: <a href="${blog.slug}" target="_blank">${blog.slug}</a></p>
-            `;
+    const date = document.createElement("p");
+    date.textContent = `Date: ${blog.date}`;
 
-            container.appendChild(newBlog);
-        });
+    const description = document.createElement("p");
+    description.textContent = blog.description;
+
+    const slug = document.createElement("a");
+    slug.href = blog.slug;
+    slug.textContent = "Visit this blog!";
+
+    blogEntry.appendChild(title);
+    blogEntry.appendChild(date);
+    blogEntry.appendChild(description);
+    blogEntry.appendChild(slug);
+    if (container){
+        container.appendChild(blogEntry);
     }
-}
+})
 
 
 

@@ -1,44 +1,35 @@
 var blogs = [
     {
-        title: "Blog 1",
-        date: new Date('2023-10-25T00:00:00.000Z'),
-        description: "My first blog post!",
-        slug: new URL("http://www.google.com")
+        title: "My Internship @ Wells Fargo Technology",
+        date: new Date(),
+        description: "I spent this past summer developing internal tools for Wells Fargo Technology using the full stack!",
+        slug: "blogentry1.html"
     },
     {
-        title: "Blog 2",
-        date: new Date('2023-10-25T00:00:00.000Z'),
-        description: "My second blog post!",
-        slug: new URL("http://www.google.com")
+        title: "Joining Hack4Impact as a Developer!",
+        date: new Date(),
+        description: "I just joined as a software developer at Hack4Impact, a 501c3 non-profit organization that develops software projects for local non-profits in the local community!",
+        slug: "blogentry2.html"
     }
 ];
-/*function addBlogEntries() = {
-    const container = document.getElementById("blog-entries");
-
-    blogs.forEach(blog => {
-        const newBlog = document.createElement('div');
-        newBlog.className = "blog-entry";
-        const formattedDate = blog.date.toLocaleDateString();
-
-        newBlog.innerHTML = `
-        <h2>${blog.title}</h2>
-        <p>Date: ${formattedDate}</p>
-        <p>Description: ${blog.description}</p>
-        <p>Link: <a href="${blog.slug}" target="_blank">${blog.slug}</a></p>
-        `;
-
-        container.appendChild(newBlog);
-    })
-}*/
-function addBlogEntries() {
-    var container = document.getElementById("blog-entries");
+var container = document.getElementById("container");
+blogs.forEach(function (blog) {
+    var blogEntry = document.createElement("div");
+    blogEntry.className = "blog-entry";
+    var title = document.createElement("h2");
+    title.textContent = blog.title;
+    var date = document.createElement("p");
+    date.textContent = "Date: ".concat(blog.date);
+    var description = document.createElement("p");
+    description.textContent = blog.description;
+    var slug = document.createElement("a");
+    slug.href = blog.slug;
+    slug.textContent = "Visit this blog!";
+    blogEntry.appendChild(title);
+    blogEntry.appendChild(date);
+    blogEntry.appendChild(description);
+    blogEntry.appendChild(slug);
     if (container) {
-        blogs.forEach(function (blog) {
-            var newBlog = document.createElement('div');
-            newBlog.className = "blog-entry";
-            var formattedDate = blog.date.toLocaleDateString();
-            newBlog.innerHTML = "\n            <h2>".concat(blog.title, "</h2>\n            <p>Date: ").concat(formattedDate, "</p>\n            <p>Description: ").concat(blog.description, "</p>\n            <p>Link: <a href=\"").concat(blog.slug, "\" target=\"_blank\">").concat(blog.slug, "</a></p>\n            ");
-            container.appendChild(newBlog);
-        });
+        container.appendChild(blogEntry);
     }
-}
+});
