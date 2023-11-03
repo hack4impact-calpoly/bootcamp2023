@@ -282,3 +282,9 @@ Everything beyond is custom developed by me
 .para {
   font-family:'Times New Roman', Times, serif;
 }
+.foot {
+  position: fixed;
+  bottom:0;
+  margin:0vh 200px;
+  color:white;
+}

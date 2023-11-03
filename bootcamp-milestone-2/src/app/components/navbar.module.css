@@ -26,3 +26,15 @@
     font-size:4vh;
 
 }
+
+.aTag {
+    padding:.5vh 2vh;
+    border-bottom: 2px solid white;
+}
+
+.titleTag {
+    padding:.5vh 2vh;
+    border-bottom: 2px solid white;
+    font-size:5vh;
+    margin:30px
+}

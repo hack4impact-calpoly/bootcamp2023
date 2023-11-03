@@ -21,3 +21,4 @@ export default function BlogPreview({ foodname, description, ingredients, instru
     </div>
   );
 }
+
