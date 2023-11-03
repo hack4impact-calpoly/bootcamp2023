@@ -1,0 +1,30 @@
+.blog-prev {
+    background-color: white;
+  
+    width: 45%;
+  
+    margin: 3% 10% 2% 10%;
+    border-radius: 5px;
+    padding: 2%;
+    display: flex;
+    align-items: center;
+  
+    /* Debug border */
+    /*  */
+  }
+  
+  
+  .blog-details {
+    font-size: 20px;
+    font-family: Georgia;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    color: var(--cg-navy);
+  
+  }
+
+  
+  .blog-prev h3 {
+    padding-left: 30px;
+    font-weight: bold;
+  }  
