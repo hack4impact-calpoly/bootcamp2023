@@ -19,7 +19,7 @@ export default function RootLayout({
         <header>
           <Navbar />
         </header>
-        <main>{children}</main>
+        <main className={styles.fillheight}>{children}</main>
         <footer className={styles.footer}>
           © 2023 devinhadley.github.io | All Rights Reserved
         </footer>
