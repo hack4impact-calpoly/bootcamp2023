@@ -1,4 +1,4 @@
-type Project = {
+export interface Project {
     title: string;
     date: string;
     skills: string;
@@ -15,6 +15,8 @@ const projects: Project[] = [
         urlLink: "https://noahgiboney.github.io/'"
     },
 ];
+
+export default projects;
 
 const portfolioContainer = document.getElementById('portfolio-container')
 
