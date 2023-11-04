@@ -4,12 +4,8 @@
   align-items: center;
   background-color: #2d2d2d;
   color: white;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
   height: 2.5rem;
 }
-
 /* This is to ensure that the padding and margin are reset */
 .removepm {
   padding: 0;
