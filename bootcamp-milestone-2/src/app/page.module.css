@@ -1,0 +1,32 @@
+.about {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  gap: 3%;
+  max-width: 70%;
+}
+
+.about-image img {
+  max-width: 300px;
+  border-radius: 150px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: 1s ease-out 0s fadeFromLeft;
+}
+
+.about-text {
+  flex: 1;
+  animation: 2s ease-in 0s fadeAfterDelay;
+}
+
+.about-text h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.5;
+}

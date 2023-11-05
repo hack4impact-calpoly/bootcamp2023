@@ -1,42 +1,27 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Personal Website</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <nav class="navbar">
-      <h1 class="logo">
-        <a href="index.html">Daniel's Personal Website</a>
-      </h1>
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <main>
-      <h1 class="page-title">Resume</h1>
-      <div class="resume">
-        <div class="resume-embed">
-          <embed src="resume.pdf" type="application/pdf">
-            <a href="resume.pdf" download>
+import style from "./page.module.css";
+
+export default function Resume() {
+  return (
+    <>
+      <h1 className="page-title">Resume</h1>
+      <div className={style.resume}>
+        <div className={style["resume-embed"]}>
+          <iframe src="/resume.pdf" />
+            <a href="/resume.pdf" download>
               Download Resume
             </a>
         </div>
-        <div class="resume-sections">
-          <section class="section">
-            <h2 class="section-title">
+        <div className={style["resume-sections"]}>
+          <section className={style["section"]}>
+            <h2 className={style["section-title"]}>
               <u>Work Experience</u>
             </h2>
-            <div class="entry">
+            <div className={style["entry"]}>
               <b>DoC Mapping LLC</b>
-              <p class="entry-info">
+              <p className={style["entry-info"]}>
                 <i>Junior Software Developer - Part-time</i>
               </p>
-              <p class="entry-description">
+              <p className={style["entry-description"]}>
                 o Spearheaded development of client deliverables generator through SDLC with Electron, React &
                 Context API, SCSS, MongoDB, reducing turnaround time for sites by over 20%
                 <br />
@@ -57,16 +42,16 @@
               </p>
             </div>
           </section>
-          <section class="section">
-            <h2 class="section-title">
+          <section className={style["section"]}>
+            <h2 className={style["section-title"]}>
               <u>Projects</u>
             </h2>
-            <div class="entry">
+            <div className={style["entry"]}>
               <b>Sushi Go</b>
-              <p class="entry-info">
+              <p className={style["entry-info"]}>
                 Online multiplayer card game
               </p>
-              <p class="entry-description">
+              <p className={style["entry-description"]}>
                 o Real-time multiplayer card game built with MERN stack and socket.io in TypeScript
                 <br />
                 o Validation of requests and input for fair and secure gameplay
@@ -75,30 +60,30 @@
               </p>
             </div>
           </section>
-          <section class="section">
-            <h2 class="section-title">
+          <section className={style["section"]}>
+            <h2 className={style["section-title"]}>
               <u>Education</u>
             </h2>
-            <div class="entry">
+            <div className={style["entry"]}>
               <b>Cal Poly San Luis Obispo</b> - <i>Bachelor's of Science in Computer Science</i>
-              <p class="entry-info">
+              <p className={style["entry-info"]}>
                 Activities: Hack4Impact??? :)))
               </p>
             </div>
           </section>
-          <section class="section">
-            <h2 class="section-title">
+          <section className={style["section"]}>
+            <h2 className={style["section-title"]}>
               <u>Coursework</u>
             </h2>
-            <ul class="course-list">
+            <ul className={style["course-list"]}>
               <li>Intro to Database Systems (SQL)</li>
             </ul>
           </section>
-          <section class="section">
-            <h2 class="section-title">
+          <section className={style["section"]}>
+            <h2 className={style["section-title"]}>
               <u>Technical Skills</u>
             </h2>
-            <ul class="skill-list">
+            <ul className={style["skill-list"]}>
               <li><b>Languages:</b> Python, JavaScript/HTML/CSS, TypeScript, Java, C++</li>
               <li><b>Frameworks and Libraries:</b> React.js, Node.js, Electron.js, Express.js, Sass/SCSS, exceljs, docxtemplater, jsPDF, pandas, numpy, tkinter, matplotlib, pygame, VDatum, pyproj, JavaFX</li>
               <li><b>Tools:</b> Git, Linux, SQL, MongoDB, Unix, Mathematica, XML, Assembly, Trello</li>
@@ -106,9 +91,6 @@
           </section>
         </div>
       </div>
-    </main>
-    <footer class="footer">
-      © 2023 Daniel's Personal Website | All Rights Reserved
-    </footer>
-  </body>
-</html>
+    </>
+  )
+}
