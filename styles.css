@@ -35,13 +35,13 @@ body.index {
   background-image: url("background.jpeg");
 }
 
-p {
+li, p {
   font-family: monospace;
   font-weight: bold;
   font-size: 14px;
   color: white;
 }
-p,
+a, p,
 h1,
 .titles {
   color: white;
@@ -130,3 +130,4 @@ ul.course-list {
   color: orange;
   font-weight: bold;
 }
+
