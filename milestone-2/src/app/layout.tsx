@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Inter, Sansita } from 'next/font/google'
-import './globals.css'
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
 
