@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import "../styles/website.css"
+import "../styles/portfolio.css"
 export default function Portfolio() {
     return (
         <div>

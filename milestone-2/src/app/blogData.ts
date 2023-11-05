@@ -6,8 +6,7 @@ type Blog = {
     slug: string
 }
 
-// Blog Data Created
-const blogData: Blog[] = [
+const blogs: Blog[] = [
     {
         title: "First Blog",
         date: "10-21-2023",
@@ -21,3 +20,4 @@ const blogData: Blog[] = [
         slug: "blog-entry2.html"
     },
 ];
+export default blogs;

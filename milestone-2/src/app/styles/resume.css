@@ -1,0 +1,50 @@
+.resume {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.resume-pdf {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+
+}
+
+.resume-pdf:link{
+    color: black;
+}
+
+.resume-pdf:hover{
+    color:blue
+}
+
+.section{
+    border: 1px solid #000;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.section:hover{
+    background-color: aquamarine;
+}
+
+.section-title{
+    font-size: 26px
+}
+
+.entry-title{
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.entry-info{
+    font-size: 15px;
+    font-style: oblique;
+}
+.entry-description{
+    font-size: 15px;
+}
+
+.course-list, .skill-list{
+    font-size: 15px
+}

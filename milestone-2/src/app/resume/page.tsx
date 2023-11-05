@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import "../styles/website.css"
+import "../styles/resume.css"
 export default function Resume() {
   return (
     <div>
