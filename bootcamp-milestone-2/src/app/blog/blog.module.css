@@ -1,0 +1,49 @@
+.post {
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    border:1px solid white;
+    margin:2vh;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1752%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient1753%26quot%3b)'%3e%3c/rect%3e%3cpath d='M1920 0L1668.41 0L1920 374.77z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1668.41 0L1920 374.77L1920 444.52L1395.2 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M1395.2 0L1920 444.52L1920 676.61L1223 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M1223 0L1920 676.61L1920 769.5600000000001L1084.27 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 1080L306.89 1080L0 965.05z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 965.05L306.89 1080L862.53 1080L0 690.97z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 690.97L862.53 1080L1183.3 1080L0 372.59000000000003z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 372.59000000000003L1183.3 1080L1466.07 1080L0 171.63000000000002z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1752'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='10.94%25' y1='-19.44%25' x2='89.06%25' y2='119.44%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1753'%3e%3cstop stop-color='rgba(48%2c 64%2c 110%2c 1)' offset='0.06'%3e%3c/stop%3e%3cstop stop-color='rgba(63%2c 140%2c 188%2c 1)' offset='0.53'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+
+    width:50%;
+}
+
+.postHeader {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    color:white;
+    align-items: center;
+}
+.title {
+    font-family:'Times New Roman', Times, serif;
+    font-weight:100;
+    padding:10px;
+}
+.date {
+    padding:10px;
+    font-family:'Times New Roman', Times, serif;
+    font-weight:100;
+    font-size:large;
+}
+.description, .more {
+    padding:10px;
+    font-family:'Times New Roman', Times, serif;
+    font-weight:100;
+    font-size:large;
+    color:white;
+}
+.container {
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+.sectionTitle {
+    display:flex;
+    justify-content: center;
+    font-family:'Times New Roman', Times, serif;
+    font-weight:100;
+    padding:10px;
+    color:white;
+}
