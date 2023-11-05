@@ -1,0 +1,42 @@
+.contactImages {
+  width: 7%;
+  height: 7%;
+}
+
+
+
+.mainContact {
+  margin-top: 5%;
+  width: 70%;
+}
+
+/* style.module.css */
+.contactForm {
+  width: 300px; /* Adjust the width to your liking */
+  margin: 0 auto;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.inputField,
+.textareaField {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.textareaField {
+  height: 120px; /* Adjust the height to your liking */
+}
+
+.submitButton {
+  text-align: center;
+}
