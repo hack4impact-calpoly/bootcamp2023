@@ -10,16 +10,43 @@ export default function Home() {
                     <p>My <strong>hobbies</strong> including playing basketball, playing the flute, hiking, and exploring the outdoors.</p>
                 </div>
                 <div className="about-images">
-                    <Image src="./images/computer-science.jpeg" alt = "Image of Programming"/>
+                    <Image 
+                        src="/computer-science.jpeg"
+                        width = {300} 
+                        height = {300}
+                        alt = "Image of Programming"
+                    />
                     <a className="rickroll" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                        <Image src="./images/click-here.jpeg" alt="Click Here"/>
+                        <Image 
+                            src="/click-here.jpeg" 
+                            width = {300} 
+                            height = {300}
+                            alt="Click Here"
+                        />
                     </a>
-                    <Image src="./images/AI.jpeg" alt = "Image of AI"/>
+                    <Image 
+                        src="/AI.jpeg" 
+                        width = {300} 
+                        height = {300}
+                        alt = "Image of AI"
+                    />
                 </div>
                 <div className="interest-images">
-                    <Image src="./images/basketball.jpeg" alt = "Image of Basketball"/>
-                    <Image src="./images/space.jpg" alt = "Image of Nebula"/>
-                    <Image src="./images/hiking.jpeg" alt = "Image of Mountain"/>
+                    <Image 
+                        src="/basketball.jpeg" 
+                        width = {300} 
+                        height = {300}
+                        alt = "Image of Basketball"/>
+                    <Image 
+                        src="/space.jpg" 
+                        width = {300} 
+                        height = {300}
+                        alt = "Image of Nebula"/>
+                    <Image 
+                        src="/hiking.jpeg" 
+                        width = {300} 
+                        height = {300}
+                        alt = "Image of Mountain"/>
                 </div>
                 
             </div>
