@@ -1,9 +1,11 @@
+import React from "react";
+import Link from "next/link";
 export default function Resume() {
   return (
     <div>
       <main>
             <h1 className="page-title">Resume</h1>
-            <a className = 'resume-pdf' href="resume.pdf" download >Download Resume</a>
+            <Link className = 'resume-pdf' href="resume.pdf" download >Download Resume</Link>
             <div className="resume">
                 <section className="section">
                     <h2 className="section-title">Education</h2>
