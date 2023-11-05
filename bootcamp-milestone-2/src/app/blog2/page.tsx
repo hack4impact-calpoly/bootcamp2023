@@ -21,7 +21,7 @@ export default function Blog2() {
                 <br></br>
                 Title: Blog#2<br></br>
                 Date: 12/22/2023<br></br>
-                <img src="blogimg2.jpeg"></img><br></br>
+                <Image src={"blogimg2.jpeg"} alt={"Picture of blog"}></Image>
                 Hello there, this is another blog bla bla bla.
             </div>
             </main>

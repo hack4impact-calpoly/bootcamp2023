@@ -1,22 +1,10 @@
 import React from "react"
 import Image from 'next/image'
+import Link from "next/link";
 
 export default function Home() {
   return (
-
     <>
-      <nav className="navbar">
-            <h1 className="logo">
-                <a href="index.html">Sumedha's website</a>
-            </h1>
-            <ul className="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
         <main>
             <h1></h1>
             <div className="spaced-box">
@@ -27,7 +15,7 @@ export default function Home() {
             <div className="about">
                 <div className="box">
                     <div className="about-image">
-                        <Image src={"prof.png"} alt={"Picture of Me"}></Image>
+                        <Image src={"/prof.png"} alt={"Picture of Me"} height={250} width={200}></Image>
                     </div>
                     
                 </div>
