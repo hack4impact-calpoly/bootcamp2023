@@ -1,9 +1,11 @@
 // import linkedinIcon from './images/icons/linkedin.png'; // Adjust the path as needed
 // import githubIcon from './images/icons/github.png';    // Adjust the path as needed
 // import mailIcon from './images/icons/mail.png';       // Adjust the path as needed
-import { Fragment } from 'react';
-import './page.css';
+import './home.css';
+import Link from 'next/link';
 import faceShot from 'C:/Users/noahg/OneDrive/Desktop/Github/Bootcamp-project-2023/noahgiboney.app/images/faceshot.png'
+import projects from '@/app/projects'
+import PortfolioSection from '@/components/Portfolio/portfolio';
 
 
 export default function Home() {
@@ -49,7 +51,7 @@ export default function Home() {
         <h3 id="portfolio">Portfolio</h3>
         <div className="line2"></div>
         
-        <section id="portfolio-container"></section>
+        <PortfolioSection/>
 
         <h3 id="contact">Contact</h3>
         <div className="line2"></div>

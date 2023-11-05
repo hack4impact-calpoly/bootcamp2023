@@ -14,3 +14,8 @@
     text-decoration: none;
     color: #655699 ;
   }
+
+  .round {
+    border-radius: 50%;
+    border: 1px black solid;
+  }

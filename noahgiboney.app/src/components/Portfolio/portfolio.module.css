@@ -1,0 +1,41 @@
+.portfolioContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .project{
+    text-align: center;
+    width: 40%;
+    background-color: #d8d5e7;
+    padding: 20px;
+    margin: 50px 100px 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project h2 {
+    padding-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .project h1{
+    color: #655699;
+    font-size: 1rem;
+    padding-bottom: 20px;
+    font-style: italic;
+  }
+  
+  .project p {
+    padding-bottom: 20px;
+  }
+  
+  .project:hover{
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 1);
+    cursor: pointer;
+    transform: scale(1.0055);
+  }
+  
+  .date{
+    color: #655699;
+  }
