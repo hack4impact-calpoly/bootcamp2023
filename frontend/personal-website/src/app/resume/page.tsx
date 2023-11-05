@@ -1,36 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>
-      My Resume
-    </title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <nav class="navbar">
-      <h1 class="logo"><a href="index.html">Jason Jelincic's Personal Website</a></h1>
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Connect With Me</a></li>
-        <li><a href="protfolio.html">My Protfolio</a></li>
-        <li><a href="resume.html">My Resume</a></li>
-      </ul>
-    </nav>
-    <main>
-      <div class="centered">
-        <h1 class="page-title"><a href="../images/JasonJelincicHackforImpactResumecopy.pdf">My Resume</a></h1>
-        <h3>Well, I am currently unemployed? Do you need another reason? You do? Oh....</h3>
-      <div class="resume">
-        <section class="section">
-          <h2 class="section-title">Education</h2>
+export default function Resume() {
+  return (<div>
+			<div className="centered">
+        <h1 className="title"><a href="/2023CSResume.pdf">My Resume</a></h1>
+      <div className="resume">
+        <section className="section">
+          <h2 className="section-title">Education</h2>
           <h3>Cal Poly SLO</h3>
           <p><em>Expected Graduation: June 2026</em></p>
           <p>Pursuing a BS in Computer Science and a minor in Chinese</p>
         </section>
-        <section class="section">
-          <h2 class="section-title">Experience</h2>
-          <div class="position">
+        <section className="section">
+          <h2 className="section-title">Experience</h2>
+          <div className="position">
             <h3>Outreach Officer</h3>
             <h4><em>Computer Science and Artificial Intelligence Club</em></h4>
             <p>2023 - Present</p>
@@ -39,7 +20,7 @@
                at Cal Poly to expand and improve the educational and collaborative space the club provides for over 300 members.
             </li>
           </div>
-          <div class="position">
+          <div className="position">
             <h3>Lead Instructor</h3>
             <h4><em>Galileo Learning</em></h4>
             <p>June  2021 - July  2023</p>
@@ -52,7 +33,7 @@
               Supervised Team Leaders/Assistant Instructors working in my program area and supported their professional development goals.
             </li>
           </div>
-          <div class="position">
+          <div className="position">
             <h3>Tutor</h3>
             <h4><em>Meaningful Teens</em></h4>
             <p>June 2020 - August 2020</p>
@@ -61,7 +42,7 @@
                as a second language face by facilitating and tutoring elementary students to improve their English literary skills.
             </li>
           </div>
-          <div class="position">
+          <div className="position">
             <h3>Volunteer</h3>
             <h4><em>Eden I&R</em></h4>
             <p>June 2020 - August 2020</p>
@@ -71,8 +52,8 @@
             </li>
           </div>
         </section>
-        <section class="section">
-          <h2 class="section-title">Skills</h2>
+        <section className="section">
+          <h2 className="section-title">Skills</h2>
           <strong>
             <li>Python</li>
             <li>JavaScript</li>
@@ -90,27 +71,26 @@
             <li>Engagement Management</li>
           </strong>
         </section>
-        <section class="section">
-          <h2 class="section-title">Projects</h2>
-          <div class="position">
+        <section className="section">
+          <h2 className="section-title">Projects</h2>
+          <div className="position">
             <h3>Personal Website</h3>
           </div>
-          <div class="position">
+          <div className="position">
             <h3>Wordle Clone</h3>
           </div>
-          <div class="position">
+          <div className="position">
             <h3>Workout Buddy App</h3>
           </div>
-          <div class="position">
+          <div className="position">
             <h3>Recipe Warehouse</h3>
           </div>
         </section>
-        <section class="section">
-          <h2 class="section-title">Coursework</h2>
+        <section className="section">
+          <h2 className="section-title">Coursework</h2>
           <p><strong>CSC 202, CSC 203, CPE 225</strong></p>
         </section>
       </div>
-    </main>
-    <footer class="footer">© 2023 Jason Jelincic's Personal Website | All Rights Reserved</footer>
-  </body>
-</html>
+      </div>
+			</div>) 
+}
