@@ -146,6 +146,8 @@ textarea {
 }
 
 
+
+
 /* CSS for the porfolio */
 
 .project {
@@ -216,6 +218,109 @@ textarea {
   font-weight: bold;
   font-size: 20px;
 }
+
+
+
+/* the blog CSS*/
+
+/* .blog-container{
+  display: flex;
+  
+} */
+
+.blog-post {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+
+
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+
+
+}
+
+.blog-content {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+
+ /* Please help find why it keeps showing the underline */
+
+.blog-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: left;
+  /* color: greenyellow; */
+}
+.blog-link {
+  color: black;
+  /* margin: 12px; */
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.blog-description{
+  font-size: 15px;
+  color: black;
+  text-align: left;
+}
+
+.blog-image{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.blog-date{
+font-size: 10px;
+color: gray;
+text-align: left;
+}
+
+/* CSS for about section */
+
+
+.about-image img {
+  display: inline;
+  max-width: 300px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.about-text h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+
+
+
 
 
 /* Unused code below that was used when learning what I could do with CSS */

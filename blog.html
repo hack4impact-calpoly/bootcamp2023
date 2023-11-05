@@ -4,12 +4,16 @@
         <title>
             Blog
         </title>
-        <link rel="stylesheet" href="styles.min.css"/>
+        <link rel="stylesheet" href="./styles.min.css"/>
+        <link rel="icon" type="image/png" href="images/kirpan.jpeg">
+        <meta charset="UTF-16">
+        <meta name="keywords" content="HTML, blog">
+        <!-- <meta name="viewport" content="width=device-width, intial-scale=1.0"> for mobile version -->
     </head>
     <body>
         <nav class="navbar">
             <h1 class="logo">
-                <a href="index.html">taran's personal website</a>
+                <a href="index.html">ਤਰਨ ਸਿੰਘ ਨੌਰਾ ਵਾਲਾ</a>
             </h1>
             <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
@@ -19,12 +23,80 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+
         <main>
-            <h1 class="blog">Blog</h1>
-            Blog - Coming Soon...
+            <h1 class="blog">Notes to Self</h1>
+            <div id="blog-container">
+            </div> 
+        
+            <script>
+                const masterEl = document.getElementById('blog-container')
+                console.log(masterEl) //<p id="master">i love javascript</p> 
+            </script>
+
         </main>
         <footer class="footer">
-            © 2023 Taran Singh's Personal Website | All Rights Reserved
+            © 2023 Taran Singh's Personal Website | All Rights Reserved 
         </footer>
+        
+    <script src="src/Blog.js"></script>
+
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+ <!-- <p class="master2">i love javascript</p>
+            <p class="master2">i love react</p>
+            <h1 class="master2">i want a job</h1> -->
+
+            <!-- <button id="btn">click me</button> -->
+    
+            <!-- <script>
+            
+            const btn = document.getElementById('btn')
+            var count = 0
+                    btn.addEventListener('click', function master(){
+                        // So we can get all the elements with the class name master2 from this html file
+                        var master = document.getElementsByClassName("master2");
+                        if (count % 2 == 0){
+                        master[0].innerHTML = "i really love js"
+                        master[1].innerHTML = "i really love react"
+                        master[2].innerHTML = 'i need a job';
+                        count += 1
+                        }
+                        else
+                        {
+                        master[0].innerHTML = "i really love js"
+                        master[1].innerHTML = "i really love react"
+                        master[2].innerHTML = 'i need a job';
+                        count += 1 
+                        }
+                        
+                    })
+
+            </script> -->
+
+            <!-- <p>VsCode</p>
+            <p>Atom</p>
+            <p>Sublime text</p>
+            <button id="btn">click me</button>        -->
+
+<!-- <script>
+
+        const btnn = document.getElementById('btn')
+        
+        btn.addEventListener('click', function master(){
+            let master = document.getElementsByTagName('p');
+            let masterEl = master[0].innerHTML = 'Code editors';
+            console.log(masterEl) //Code editors
+        })
+
+//<p>Atom</p> changes to <p>Code editors</p>
+</script> -->
