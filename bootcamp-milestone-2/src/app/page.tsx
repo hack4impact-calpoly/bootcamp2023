@@ -7,7 +7,7 @@ export default function Home() {
     <div className={styles.container}>
       <div className={styles.about}>
         <div id='profPic'>
-          <Image id={styles.profPic} src="/PicForWebsite.jpeg" alt='A pic of me' width={200} height={250}></Image>
+          <Image id={styles.profPic} src="/PicForWebsite.jpeg" alt='A pic of me' width={180} height={260}></Image>
         </div>
         <div className={styles.aboutTexts}>
           <h1 className={styles.para}>Who Am I?</h1>

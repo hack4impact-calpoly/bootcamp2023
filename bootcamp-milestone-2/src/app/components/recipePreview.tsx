@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./recipePreview.module.css";
 import Image from "next/image";
-import { Recipe, recipeArray } from "@/app/recipeData";
+import { Recipe} from "@/app/recipeData";
 
 export default function BlogPreview({ foodname, description, ingredients, instructions, image }: Recipe) {
   return ( 
