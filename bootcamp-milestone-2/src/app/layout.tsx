@@ -20,6 +20,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navbar />
         {children}
+        <footer className="footer">
+          © 2023 Sean M. Nguyen | All Rights Reserved
+        </footer>
       </body>
     </html>
   );
