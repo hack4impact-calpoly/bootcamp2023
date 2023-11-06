@@ -4,29 +4,27 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    // replace everything in between the <header> & <header /> tags
-    // with your navbar code from your earlier milestones
     <header className={style.navbar}>
       <h1>Kayla's Personal Website</h1>
       <nav>
         <h1>
-          <Link href="">Kayla Tran</Link>
+          <Link href="./components/home">Kayla Tran</Link>
         </h1>
         <ul>
           <li>
-            <Link href="index.html">Home</Link>
+            <Link href="./components/home">Home</Link>
           </li>
           <li>
-            <Link href="blog.html">Blog</Link>
+            <Link href="./components/blog">Blog</Link>
           </li>
           <li>
-            <Link href="portfolio.html">Portfolio</Link>
+            <Link href="./components/projects">Portfolio</Link>
           </li>
           <li>
-            <Link href="resume.html">Resume</Link>
+            <Link href="./components/resume">Resume</Link>
           </li>
           <li>
-            <Link href="contact.html">Contact</Link>
+            <Link href="./components/contact">Contact</Link>
           </li>
         </ul>
       </nav>
