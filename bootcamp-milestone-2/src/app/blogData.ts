@@ -10,13 +10,13 @@ const blogList: Blog[] = [
     title: "Cinque Terre",
     date: "10/21/2023",
     description: "My first weekend trip exploring another part of Italy!",
-    slug: "cinque-terre.html",
+    slug: "/blog/cinque_terre",
   },
   {
     title: "Tuscany",
     date: "10/21/2023",
     description: "The program-organized event, covering Flourence and Pisa",
-    slug: "tuscany.html",
+    slug: "/blog/tuscany",
   },
 ];
 
