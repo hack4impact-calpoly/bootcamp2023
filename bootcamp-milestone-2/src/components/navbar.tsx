@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import style from "./navbar.module.css";
 
 export default function Navbar() {
@@ -7,13 +8,13 @@ export default function Navbar() {
     // with your navbar code from your earlier milestones
     <header className={style.navHead} >
       <nav className={style.navbar}>
-      <h1 className={style.logo}><a href="index.html">Sean M. Nguyen</a></h1>
+      <h1 className={style.logo}><Link href="index.html">Sean M. Nguyen</Link></h1>
       <ul className={style.navList}>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blog.html">Blog</a></li> 
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><Link href="/">Home</Link></li>
+        <li><Link href="blog.html">Blog</Link></li> 
+        <li><Link href="portfolio.html">Portfolio</Link></li>
+        <li><Link href="/resume">Resume</Link></li>
+        <li><Link href="contact.html">Contact</Link></li>
       </ul>
     </nav>
     </header>
