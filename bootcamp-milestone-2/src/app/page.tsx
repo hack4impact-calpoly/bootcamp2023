@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -32,10 +33,10 @@ export default function Home() {
         <div className="about">
           <div className="about-image">
             <Image
-              src="/TempPFP.jpg"
+              src={"/TempPFP.jpg"}
               alt="Profile Picture"
-              width="200"
-              height="150"
+              width={200}
+              height={150}
             ></Image>
           </div>
           <div className="about-text">
