@@ -1,0 +1,11 @@
+.pageTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-family: Georgia;
+}
+
+.blogPic {
+  width: "200";
+  height: "200";
+}
