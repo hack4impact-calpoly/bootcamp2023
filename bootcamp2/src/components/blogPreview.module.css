@@ -1,0 +1,8 @@
+.blog_entry a{
+    color: rgb(0,0,0);
+    text-decoration: none;
+  }
+  .blog_entry a:hover {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+  }

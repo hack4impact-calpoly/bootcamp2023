@@ -1,0 +1,68 @@
+
+
+.main_content{
+  background: rgb(226, 236, 229);
+  padding: 0 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+  .page_title {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    color: rgb(27, 92, 47);
+    font-family: 'Georgia';
+  }
+
+  .about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .about_image img {
+    position: relative;
+    top: 0;
+    left: 0;
+    float: left;
+    max-width: 300px;
+    border-radius: 175px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+  }
+  .about_image .me{
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .about_image .plant{
+    position: absolute;
+    top: 203px;
+    left: 41px;
+  }
+
+  .plant:hover{
+    opacity: 0;
+  }
+
+  .about_text {
+    flex: 1;
+    margin-left: 20px;
+    font-family: 'Georgia';
+  }
+  
+  .about_text h2 {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+  
+  .about_text p {
+    font-size: 20px;
+    line-height: 1.5;
+  }
