@@ -1,0 +1,39 @@
+.navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 0;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0px, 0px;
+    background-color: rgb(41, 69, 27);
+    color: white;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    right: 40px;
+  }
+  
+  .navbar a {
+    color: white;
+    font-weight: bold;
+    margin: 12px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 20px;
+  }
+  
+  .nav-a:hover:hover {
+      color:rgb(197, 197, 255);
+      text-decoration: underline;
+  }
+
+  

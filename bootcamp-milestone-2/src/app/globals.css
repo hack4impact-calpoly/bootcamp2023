@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: white;
+    position: relative;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  
+  main {
+    padding: 0 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 0;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0px, 0px;
+    background-color: rgb(41, 69, 27);
+    color: white;
+  }
+  
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    right: 40px;
+  }
+  
+  .navbar a {
+    color: white;
+    font-weight: bold;
+    margin: 12px;
+    text-decoration: none;
+    letter-spacing: 2px;
+  }
+  
+  .nav-a:hover {
+      color:rgb(197, 197, 255);
+      text-decoration: underline;
+  }
+  
+  .about {
+    display: flex;
+    justify-content: center;
+    margin: 10px 250px 40px 250px;
+  }
+  
+  .about-text {
+    font-size: 20px;
+    padding-left: 2%;
+    line-height: 2;
+  }
+  
+  img {
+    border: 2px solid #000000;
+    border-radius: 5%;
+    margin-right:20px;
+  }
+  
+  .page-title {
+    color: rgb(41, 69, 27);
+    font-size: 50px;
+    text-align:center;
+    font-weight: bold;
+    padding: 10px;
+  }
+  
+  #contact-form {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+  }
+  
+  input {
+    width: 300px;
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 20px;
+    border-width:2px;
+    border-color:black;
+  }
+  
+  input[type="submit"] {
+    background-color: rgb(41, 69, 27);
+    color: rgb(255, 255, 255);
+    width: 300px;
+    margin-top: 0;
+  }
+
+  input[type="submit"]:hover {
+    color:rgb(197, 197, 255);
+    text-decoration: underline;
+    border-color:black;
+    border-width:3px;
+  }
+  
+  textarea {
+    width: 300px;
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 20px;
+    border-width:2px;
+    border-color:black;
+  }
+  
+  .project {
+    display: flex;
+    flex-direction: row;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  
+  .project-image {
+    border: 0;
+    border-radius: 0;
+  }
+  
+  .project-details {
+    background-color: rgb(236, 236, 236);
+    padding-left: 30px;
+  }
+  
+  .project-name {
+    font-size: 30px;
+  }
+  
+  .project-description {
+    font-size: 20px;
+  }
+  
+  .resume {
+      display: flex;
+      margin-left: 400px;
+      margin-right: 400px;
+      text-align: left;
+      flex-direction: column;
+    }
+  
+  .resume ul, ol {
+      list-style: circle;
+      font-size: 19px;
+      line-height: 50px;
+      margin-left:20px;
+    }
+  
+  .section {
+    font-size: 20px;
+  }
+
+  .section-title{
+    font-size:30px;
+    font-weight:bold;
+    padding-bottom:10px;
+  }
+  
+  .entry-title {
+    font-size: 18px;
+    font-weight:bold;
+    margin-top:18px;
+  }
+  
+  .resume-download {
+    background-color: rgb(41, 69, 27);
+    color: white;
+    padding: 18px;
+    margin:20px;
+  }
+  
+  .resume-download:hover {
+    background-color: rgb(59, 110, 251);
+    color: white;
+  }  
