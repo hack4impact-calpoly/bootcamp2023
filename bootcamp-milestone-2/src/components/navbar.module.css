@@ -6,6 +6,7 @@
   height: 7%;
   z-index: 10;
 
+  flex-direction: column;
   display: flex;
   justify-content: space-between;
   align-items: center;
