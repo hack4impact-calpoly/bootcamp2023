@@ -1,37 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./page.module.css";
+import style from "./page.module.css";
+import "./globals.css";
 
 export default function Home() {
   return (
     <div>
       {/* content goes here */}
-      {/* TODO: remove nav section here and use component instaed */}
-      <nav className="navbar">
-        <h1 className="logo">
-          <a href="index.html">Sean M. Nguyen</a>
-        </h1>
-        <ul className="nav-list">
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="blog.html">Blog</a>
-          </li>
-          <li>
-            <a href="portfolio.html">Portfolio</a>
-          </li>
-          <li>
-            <a href="resume.html">Resume</a>
-          </li>
-          <li>
-            <a href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </nav>
       <main>
-        <div className="about">
-          <div className="about-image">
+        <div className={style.about}>
+          <div className={style.aboutImage}>
             <Image
               src={"/TempPFP.jpg"}
               alt="Profile Picture"
@@ -39,8 +17,8 @@ export default function Home() {
               height={150}
             ></Image>
           </div>
-          <div className="about-text">
-            <h1 className="page-title">About</h1>
+          <div className={style.aboutText}>
+            <h1 className={style.pageTitle}>About</h1>
             <p>
               Hello, my name is <strong>Sean Nguyen (he/him/his)!</strong> I am
               currently a<em>second year </em>student at Cal Poly San Luis
@@ -61,9 +39,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <footer className="footer">
-        © 2023 Sean M. Nguyen | All Rights Reserved
-      </footer>
     </div>
   );
 }
