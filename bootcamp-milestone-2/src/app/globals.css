@@ -1,0 +1,219 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: white;
+  position: relative;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  padding: 0 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.sites {
+  list-style: none;
+}
+
+.sites > li {
+  display: inline;
+  margin-right: 8px;
+}
+
+.page-title {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+
+/* Homepage CSS */
+.intro-text {
+  border: 1px solid black;
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px;
+  align-items: center;
+  background-color: aliceblue;
+  padding: 15px;
+  border-style: inset;
+}
+
+img + p {
+  font-size: 30px;
+  line-height: 2;
+}
+
+.star {
+  margin-right: 20px;
+  width: 500px;
+  height: auto;
+}
+
+
+/* Portfolio*/
+.portfolio {
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px;
+  align-items: center;
+  background-color: aliceblue;
+  padding: 15px;
+  border-style: inset;
+  margin-bottom: 15px;
+}
+
+
+.website {
+  width: 600px;
+  height: auto;
+}
+
+.gallo {
+  height: 450px;
+  width: auto;
+}
+.gallo,
+.website,
+.joke {
+  margin-right: 15px;
+  border: 1px solid black;
+}
+
+/* Resume page CSS*/
+.resume {
+  padding: 30px;
+  padding-top: 0px;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  background-color: rgb(246, 248, 249);
+}
+
+.download {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+  font-size: 20px;
+}
+
+.invisible {
+  border-collapse: collapse;
+}
+
+.invisible td {
+  padding-right: 170px;
+}
+
+
+/* Contact CSS*/
+input {
+  border: 1px solid black;
+  display: block;
+  margin-bottom: 20px;
+}
+
+input[type="submit"] {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  font-size: 20px;
+}
+
+input[type="submit"]:active {
+  background-color: rgb(208, 212, 215);
+}
+
+#contact-form {
+  margin-top: 50px;
+  text-align: center;
+}
+
+label {
+  text-align: left;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+textarea {
+  display: block;
+}
+
+.links {
+  font-size: 20px;
+}
+
+
+/* Blog CSS */
+.blog-p {
+  font-size: 35px;
+  margin-top: 80px;
+}
+
+/* CSS for navigation bar */
+
+.navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 70%;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  background-color: black;
+  color: white;
+  padding: 0px 0px;
+
+  /* Debug border */
+  /* border: solid red; */
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: 30px;
+  list-style: none;
+}
+
+.navbar a {
+  color: white;
+  font-weight: bold;
+  margin: 0 12px;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+/* CSS for page footer */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
