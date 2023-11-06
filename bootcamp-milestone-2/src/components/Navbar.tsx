@@ -7,12 +7,17 @@ export default function Navbar() {
         // replace everything in between the <header> & <header /> tags
         // with your navbar code from your earlier milestones
         <header className={`${style.navbar} ${style.navList} }`} >
-            <h1> Brandon Wong Personal Website </h1>
-            <nav>
-                <Link href="/" >Home</Link>
-                <Link href="/about" >About Me</Link>
-                <Link href="/resume" >Resume</Link>
-            </nav>
+            
+            <nav className="navbar">
+        <h1 className="logo"><a href="index.html">Brandon's Personal Website</a></h1>
+        <ul className="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
         </header>
     );
 }
