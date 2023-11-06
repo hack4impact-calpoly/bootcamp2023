@@ -1,0 +1,43 @@
+.logo {
+  margin-left: 3rem;
+  position: sticky;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  left: 0;
+  height: 4rem;
+  justify-content: space-between;
+  display: flex;
+  background-color: #fbebff;
+  align-items: center;
+  color: black;
+}
+
+.nav-links li {
+  margin-right: 3rem;
+  list-style: none;
+  display: inline-block;
+  justify-content: space-evenly;
+  background-color: white;
+  border: 10px solid white;
+  border-radius: 100px;
+}
+
+/* Link {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+Link:visited {
+  text-decoration: none;
+}
+
+Link:hover {
+  text-decoration: solid;
+  color: #6c74e4;
+} */
