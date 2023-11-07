@@ -7,6 +7,8 @@ import "@/app/full.css"
 import naturepic from "@/app/images/nature.jpeg"
 import Image from "next/image";
 
+// Home page
+
 export default function Home() {
   return (
     <div>

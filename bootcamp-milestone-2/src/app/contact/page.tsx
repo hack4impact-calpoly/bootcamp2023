@@ -3,6 +3,8 @@ import "../../global.css";
 import Link from 'next/link';
 import "@/app/full.css" 
 
+// Contact form
+
 export default function Contact() {
   return (
     <div>

@@ -3,6 +3,7 @@ import "@/global.css";
 import "@/app/full.css" 
 import Link from 'next/link';
 
+// Resume page
 export default function Resume() {
   return (
         <div>

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import workpic from '@/app/images/work.png'
 
+// Portfolio webpage
 export default function Portfolio() {
   return (
     <div>
