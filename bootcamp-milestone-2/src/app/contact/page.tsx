@@ -1,5 +1,5 @@
 import styles from './page.module.css'
-import "../../global.css";
+import "@/global.css";
 import Link from 'next/link';
 import "@/app/full.css" 
 
