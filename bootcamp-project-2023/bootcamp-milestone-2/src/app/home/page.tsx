@@ -32,16 +32,18 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {blogs.map((blog) => (
-        <BlogPreview
-          key={blog.slug}
-          date={blog.date}
-          title={blog.title}
-          description={blog.description}
-          slug={blog.slug}
-          image={blog.image}
-        />
-      ))}
+      <div className="blogsPreviewHolder">
+        {blogs.map((blog) => (
+          <BlogPreview
+            key={blog.slug}
+            date={blog.date}
+            title={blog.title}
+            description={blog.description}
+            slug={blog.slug}
+            image={blog.image}
+          />
+        ))}
+      </div>
     </main>
   );
 }

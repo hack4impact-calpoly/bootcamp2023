@@ -15,11 +15,13 @@
   color: rgb(250, 249, 246);
   padding: 10px 0px;
 
+  font-family: "Inter", sans-serif;
+
   /* Debug border */
   /* border: solid red; */
 }
 
-.nav-list {
+.navList {
   display: flex;
   flex-direction: row;
   position: relative;

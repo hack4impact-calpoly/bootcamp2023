@@ -1,3 +1,5 @@
+import vegetableImage from "public/vegetableDishSquare.png";
+import Image from "next/image";
 export default function secondBlogPost() {
   return (
     <main>
@@ -13,8 +15,8 @@ export default function secondBlogPost() {
             inspiration, we just went to the store and bought random things and
             this is what came of that shopping spree.
           </p>
-          <img
-            src="images/vegetableDishSquare.png"
+          <Image
+            src={vegetableImage}
             alt="A pan full of sliced vegetables, topped with vodka sauce and basil."
             className="blogPostImage"
           />

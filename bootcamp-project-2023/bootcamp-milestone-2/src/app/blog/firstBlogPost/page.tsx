@@ -1,3 +1,6 @@
+import breadRolls from "public/breadRollsSquare.png";
+import Image from "next/image";
+
 export default function firstBlogPost() {
   return (
     <main>
@@ -11,8 +14,8 @@ export default function firstBlogPost() {
             what I am working on and what's going on in my life... Check out
             these bread rolls I made with my friends last week!
           </p>
-          <img
-            src="images/breadRollsSquare.png"
+          <Image
+            src={breadRolls}
             alt="Pouring honey over baked breadrolls in a pan with a spoon."
             className="blogPostImage"
           />

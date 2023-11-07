@@ -23,8 +23,6 @@ main {
   align-items: center;
   justify-content: center;
   background: rgb(250, 249, 246);
-  height: 85vh;
-  overflow: auto;
 }
 
 ul {
@@ -45,57 +43,37 @@ ul {
   font-style: italic;
 }
 
-/* CSS for navigation bar */
-
-.navbar {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 7%;
-  z-index: 10;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-
-  background-color: #3a5a40;
-  color: rgb(250, 249, 246);
-  padding: 10px 0px;
-
-  /* Debug border */
-  /* border: solid red; */
+a {
+  text-decoration: none;
 }
 
-.nav-list {
+/* CSS for Blog Page */
+
+.blogContent {
   display: flex;
   flex-direction: row;
-  position: relative;
-  right: 30px;
-  list-style: none;
-}
-
-.navbar a {
-  color: rgb(250, 249, 246);
-  font-weight: bold;
-  margin: 0 6px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background: #f1f1f1;
+  padding: 50px 15px;
+  margin-top: 150px;
+  width: 60%;
   text-decoration: none;
-  letter-spacing: 2px;
-  padding: 12px;
+  color: black;
 }
 
-.nav-list a:hover {
-  text-decoration: underline;
-  background: rgb(250, 249, 246);
-  color: #3a5a40;
+.blogContent h1 {
+  margin-bottom: 10px;
 }
 
-.monogram {
-  padding-left: 20px;
-  width: 215px;
+.blogsPreviewHolder {
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
-
 /* CSS for page footer */
 
 .footer {
@@ -122,10 +100,12 @@ ul {
   justify-content: center;
   padding: 32px 12px;
   background: #f1f1f1;
+  margin-bottom: 35px;
+  margin-top: 150px;
 }
 
 #profile-image {
-  height: 500px;
+  height: 400px;
   width: auto;
   border-radius: 3px;
 }
@@ -214,130 +194,10 @@ input[type="submit"] {
   border: none;
 }
 
-/* CSS For Blog */
-
-.blog-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  background: #f1f1f1;
-  padding: 50px 15px;
-  width: 35%;
-}
-
-.blog-content h1 {
-  margin-bottom: 10px;
-}
-
-.individual-blog-post {
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  background: #f1f1f1;
-  padding: 20px;
-  width: 50%;
-  margin-bottom: 20px;
-  transition: transform 0.2s;
-}
-
-.individual-blog-post:hover {
-  cursor: pointer;
-  transform: scale(1.03);
-}
-
-#blog-list {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.blog-page-information {
-  padding-bottom: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.blog-post-image {
-  width: 350px;
-  height: 350px;
-  border: 1px solid black;
-  padding: 5px;
-}
-
-.blog-post-description {
-  margin-bottom: 8px;
-}
-
-.blog-post-date {
-  margin-bottom: 30px;
-  font-style: italic;
-}
-.blog-post-content {
-  width: 70%;
-  margin-bottom: 30px;
-  text-align: center;
-}
-/* CSS For Portfolio Page */
-
-.portfolio-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  background: #f1f1f1;
-  width: 50%;
-}
-
-.portfolio-content h1 {
-  padding-top: 30px;
-  margin-bottom: 20px;
-}
-
-.project {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 30px;
-}
-
-.project-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.project-name {
-  padding-bottom: 10px;
-}
-
-.project img {
-  margin-bottom: 20px;
-}
-
-.project-description {
-  text-align: center;
-  margin-bottom: 10px;
-  width: 600px;
-}
-
-h2.project-name {
-  margin-bottom: 10px;
-}
-
 /* CSS For Resume Page */
 
 .resume-content {
-  margin-top: 1275px; /* This is included so that the resume content is not hidden under the nav bar */
+  margin-top: 125px; /* This is included so that the resume content is not hidden under the nav bar */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -399,4 +259,35 @@ h3.entry-title-end {
 
 .skill-list {
   margin-bottom: 20px;
+}
+
+.about-image {
+  position: relative;
+  overflow: hidden; /* Clip the image if it overflows the div */
+}
+
+/* CSS For Portfolio Page */
+
+.portfolio-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background: #f1f1f1;
+  width: 50%;
+  margin-top: 125px;
+  text-decoration: none;
+  color: black;
+}
+
+.portfolio-content h1 {
+  padding-top: 30px;
+}
+
+.blogPostImage {
+  width: 75%;
+  height: auto;
+  padding: 5px;
 }

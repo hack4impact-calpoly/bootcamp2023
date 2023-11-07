@@ -1,23 +1,23 @@
 import React from "react";
-import style from "./navbar.module.css";
+import styles from "./navbar.module.css";
 import Link from "next/link";
 import navbarLogo from "public/monogram_logo.svg";
 import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <header className={style.navbar}>
-      <nav className="navbar">
-        <h1 className="logo">
+    <header>
+      <nav className={styles.navbar}>
+        <h1 className={styles.logo}>
           <Link href="/home">
             <Image
               src={navbarLogo}
               alt="Aidan Nesbitt's Monogram"
-              className="monogram"
+              className={styles.monogram}
             />
           </Link>
         </h1>
-        <ul className="nav-list">
+        <ul className={styles.navList}>
           <li>
             <Link href="/home">Home</Link>
           </li>
