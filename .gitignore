@@ -1,3 +1,9 @@
 /node_modules
 /previous_takehomeproject
-/anvch.github.io
+anvch.github.io/.eslintrc.json
+anvch.github.io/.gitignore
+anvch.github.io/README.md
+anvch.github.io/next.config.js
+anvch.github.io/package-lock.json
+anvch.github.io/package.json
+anvch.github.io/postcss.config.js
