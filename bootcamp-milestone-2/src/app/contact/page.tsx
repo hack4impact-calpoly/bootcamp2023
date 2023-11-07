@@ -16,9 +16,6 @@ export default function Contact() {
             <input type="submit" value="Submit"/>
         </form>
         </main>
-        <footer className="footer">
-        © 2023 Ivan's Contact | All Rights Reserved
-        </footer>
     </div>
   )
 }

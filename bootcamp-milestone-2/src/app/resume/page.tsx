@@ -77,9 +77,6 @@ export default function MyResume() {
                     </section>
                 </div>
             </main>
-            <footer className="footer">
-                © 2023 Ivan's Resume | All Rights Reserved
-            </footer>
         </div>
     )
 }

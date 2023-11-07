@@ -5,14 +5,13 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <div>
-    <header>
-      <nav className={style.navbar}>
-        <h1 className={style.logo}>
-          <Link href="/index">Ivan Alvarez</Link>
+      <nav className="navbar">
+        <h1 className="logo">
+          <Link href="/">Ivan Alvarez</Link>
         </h1>
         <ul className={style.navList}>
           <li>
-          <Link href="/index">Home</Link>
+          <Link href="/">Home</Link>
           </li>
           <li>
           <Link href="/blog">Blog</Link>
@@ -28,7 +27,6 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
-    </header>
     </div>
   );
 }

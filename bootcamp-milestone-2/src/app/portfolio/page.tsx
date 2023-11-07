@@ -35,11 +35,7 @@ export default function Portfolio() {
                     <a href="https://editor.p5js.org/22ivana04/full/_KJz2BP6O">Learn More</a>
                 </div>
             </div>
-
             </main>
-            <footer className="footer">
-            © 2023 Ivan's Portfolio | All Rights Reserved
-            </footer>
         </div>
             )
 }       
