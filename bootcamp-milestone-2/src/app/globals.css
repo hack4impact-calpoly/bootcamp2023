@@ -45,21 +45,6 @@ body {
   color: black;
 }
 
-.logo {
-  margin-left: 3rem;
-  position: sticky;
-}
-
-.navLinks li {
-  margin-right: 3rem;
-  list-style: none;
-  display: inline-block;
-  justify-content: space-evenly;
-  background-color: white;
-  border: 10px solid white;
-  border-radius: 100px;
-}
-
 a {
   font-weight: bold;
   color: black;
@@ -107,18 +92,6 @@ a:hover {
   place-items: center;
 }
 
-input,
-label {
-  display: block;
-  margin: auto;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-label {
-  font-weight: bold;
-  text-align: center;
-}
-
 img {
   border-radius: 50%;
   transition: 750ms;
@@ -130,6 +103,18 @@ img:hover,
 img:focus {
   width: 60%;
   height: 90%;
+}
+
+input,
+label {
+  display: block;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+label {
+  font-weight: bold;
+  text-align: center;
 }
 
 #blog-list {

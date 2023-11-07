@@ -4,13 +4,13 @@ import style from "./resume.module.css";
 
 export default function Resume() {
   return (
-    <div className={style.resume}>
+    <div>
       <main>
-        <h1 className="pageTitle">Resume</h1>
+        <h1 className={style.pageTitle}>Resume</h1>
         <div className={style.downloadRes}>
           <a href="Resume 2023.pdf">Download Resume</a>
         </div>
-        <div className="allResume">
+        <div className={style.resume}>
           <section className="resume">
             <h2 className="sectionTitle">Education</h2>
             <div className="entry">
