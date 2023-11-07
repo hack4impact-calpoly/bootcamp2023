@@ -14,7 +14,7 @@ export default function Home() {
             height={200}
           />
           <div className="about-text">
-            <p className="text-black">Hello! My name is <strong>Brandon Wong</strong> and I am a second year
+            <p className="text-black">Hello! My name is <strong>Brandon Wong</strong> and I am a second year &nbsp;
               <strong>Computer Science
                 major</strong> at <em>Cal Poly SLO</em>
             </p>

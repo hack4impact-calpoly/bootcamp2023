@@ -1,0 +1,10 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cg-cyan);
+    color: var(--cg-white);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
