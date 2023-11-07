@@ -38,11 +38,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <footer className="footer">
-        <p className="footer-text">
-          © 2023 Kayla's Personal Website | All Rights Reserved
-        </p>
-      </footer>
     </div>
   );
 }
