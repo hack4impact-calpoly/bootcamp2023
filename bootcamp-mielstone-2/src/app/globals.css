@@ -7,11 +7,26 @@ html {
   }
   
   body {
-    background: var(--background-color);
+    background: #FFFFFD;
     position: relative;
     min-height: 100vh;
     padding: 0;
     margin: 0;
     font-family: "Roboto", serif;
-    color: var(--text-color);
+    color: #001F3F;
+  }
+
+  main {
+    padding: 0 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .page-title {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-family: "Roboto", serif;
   }

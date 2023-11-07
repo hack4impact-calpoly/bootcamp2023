@@ -1,5 +1,5 @@
 import React from "react";
-import globals from '../globals.module.css';
+import "../styles/blog.css"
 
 function Blog(){
     return(

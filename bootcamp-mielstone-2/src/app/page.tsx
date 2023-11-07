@@ -1,5 +1,7 @@
 'use client';
 import React from 'react';
+import "../app/styles/index.css"
+import "./globals.css"
 
 function toggleGallery(galleryId) {
   const galleries = document.querySelectorAll('.image-gallery');
@@ -23,9 +25,10 @@ function Home() {
           </div>
           <div className="about">
             <div className="about-image">
-              <img src="me.png" alt="me" width="244" height="363" />
+              <img src="me.png" alt="me" width="195" height="300" className="about-image-img" />
             </div>
             <div className="about-text">
+              <h2>About Me</h2>
               <p>Hey all, my name is Carson Gabler.</p>
               <p>
                 I am a second-year Computer Science major from{' '}

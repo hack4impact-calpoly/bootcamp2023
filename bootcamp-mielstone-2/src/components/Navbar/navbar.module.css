@@ -1,5 +1,4 @@
 .navbar {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   width: 100%;
@@ -15,6 +14,7 @@
 
 .navpage {
   color: #E6B422;
+  font-family: "Roboto", serif;
   font-weight: bold;
   margin: 0 12px;
   text-decoration: none;

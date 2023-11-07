@@ -1,0 +1,54 @@
+/* CSS for home page */
+  
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 2px solid #E6B422;
+    border-radius: 5px;
+  }
+  
+  .about-image img {
+    width: 195px;
+    height: 300px;
+    border-radius: 3px;
+  }
+  
+  .about-text {
+    color: #001F3F;
+    flex: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .about-text h2 {
+    color: #001F3F;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .about-text p {
+    color: #001F3F;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Added CSS for image gallery */
+  
+  .image-gallery {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border: 2px solid #E6B422;
+    margin-top: 10px;
+    max-width: 600px;
+  }
+  
+  .image-gallery img {
+    max-width: 100%;
+    height: auto;
+  }
