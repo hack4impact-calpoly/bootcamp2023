@@ -1,14 +1,18 @@
 import React from "react";
+import aidan_profile_image from "public/aidan_profile_image.png";
+import Image from "next/image";
+import blogs from "../../blogData";
+import BlogPreview from "../../components/blogPreview";
 
 export default function Home() {
   return (
     <main>
       <div className="about">
         <div className="about-image">
-          <img
-            src="images/aidan_profile_image.png"
+          <Image
+            src={aidan_profile_image}
             id="profile-image"
-            alt="Aidan Nesbitt"
+            alt="Aidan Nesbitt looking at a Redwood tree"
           />
         </div>
         <div className="about-text">
@@ -28,6 +32,15 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {blogs.map((blog) => (
+        <BlogPreview
+          name={blog.name}
+          description={blog.description}
+          image={blog.image}
+          posted={blog.posted}
+          text={blog.text}
+        />
+      ))}
     </main>
   );
 }

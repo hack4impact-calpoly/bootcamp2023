@@ -1,6 +1,8 @@
 import React from "react";
 import style from "./navbar.module.css";
 import Link from "next/link";
+import navbarLogo from "public/monogram_logo.svg";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
@@ -8,9 +10,8 @@ export default function Navbar() {
       <nav className="navbar">
         <h1 className="logo">
           <Link href="/home">
-            Home
-            <img
-              src="images/monogram_logo.svg"
+            <Image
+              src={navbarLogo}
               alt="Aidan Nesbitt's Monogram"
               className="monogram"
             />
