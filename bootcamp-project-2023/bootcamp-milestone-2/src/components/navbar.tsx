@@ -7,13 +7,14 @@ export default function Navbar() {
     <header className={style.navbar}>
       <nav className="navbar">
         <h1 className="logo">
-          <a href="index.html">
+          <Link href="/home">
+            Home
             <img
               src="images/monogram_logo.svg"
               alt="Aidan Nesbitt's Monogram"
               className="monogram"
             />
-          </a>
+          </Link>
         </h1>
         <ul className="nav-list">
           <li>
