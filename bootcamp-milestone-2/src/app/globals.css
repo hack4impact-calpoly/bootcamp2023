@@ -270,7 +270,14 @@ body {
     color: white;
 }
 
-.blogContent{
+.blogContent .blogWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blogWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
