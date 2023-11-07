@@ -1,0 +1,9 @@
+.page_title{
+    padding-block: 40px;
+    background-color: #113946;
+    color:#EAD7BB;
+    width: 100%;
+    text-align: center;
+    border:5px solid #EAD7BB;
+    border-radius: 15px;
+  }
