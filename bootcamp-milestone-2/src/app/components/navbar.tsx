@@ -6,11 +6,11 @@ export default function Navbar() {
   return (
     <header className={style.navbar}>
       <h1>Kayla's Personal Website</h1>
-      <nav>
-        <h1>
+      <nav className="navbar">
+        <h1 className="logo">
           <Link href="./components/home">Kayla Tran</Link>
         </h1>
-        <ul>
+        <ul className="navLinks">
           <li>
             <Link href="./components/home">Home</Link>
           </li>

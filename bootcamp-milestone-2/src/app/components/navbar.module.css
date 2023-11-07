@@ -17,7 +17,7 @@
   color: black;
 }
 
-.nav-links li {
+.navLinks li {
   margin-right: 3rem;
   list-style: none;
   display: inline-block;
@@ -25,6 +25,9 @@
   background-color: white;
   border: 10px solid white;
   border-radius: 100px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
 }
 
 /* Link {
