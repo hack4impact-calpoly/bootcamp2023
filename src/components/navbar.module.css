@@ -1,0 +1,37 @@
+h1.logo {
+  color: rgb(38, 152, 204);
+}
+
+/* CSS for navigation bar */
+
+style.link {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+nav.navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 7%;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  background-color: rgb(47, 98, 194);
+  color: white;
+  padding-top: 50px;
+}
+
+ul.nav-list {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: 30px;
+  list-style: none;
+}
