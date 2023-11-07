@@ -1,0 +1,31 @@
+.pageTitle {
+  margin: 3rem 3rem;
+  text-align: center;
+  background-color: white;
+  opacity: 0.85;
+  box-shadow: 10px 10px 10px black;
+  box-sizing: 50%;
+  border: 4px solid black;
+}
+
+.about {
+  margin-top: 2rem;
+}
+
+.aboutText {
+  display: grid;
+  margin: 2rem 3rem;
+  text-align: left;
+  background-color: white;
+  opacity: 0.85;
+  box-shadow: 10px 10px 10px black;
+  box-sizing: content-box;
+  padding: 1rem;
+  border: 4px solid black;
+  line-height: 23px;
+}
+
+.aboutImage {
+  display: grid;
+  place-items: center;
+}

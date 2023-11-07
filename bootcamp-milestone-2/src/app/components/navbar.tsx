@@ -20,7 +20,7 @@ export default function Navbar() {
             <Link href="./projects">Portfolio</Link>
           </li>
           <li>
-            <Link href=".resume">Resume</Link>
+            <Link href="./resume">Resume</Link>
           </li>
           <li>
             <Link href="./contact">Contact</Link>

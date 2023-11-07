@@ -4,10 +4,10 @@ import React from "react";
 export default function Home() {
   return (
     <div>
-      <main className="about-page">
-        <h1 className="page-title">Introduction</h1>
+      <main className="aboutPage">
+        <h1 className="pageTitle">Introduction</h1>
         <div className="about">
-          <div className="about-image">
+          <div className="aboutImage">
             <Image
               width={250}
               height={300}
@@ -15,8 +15,8 @@ export default function Home() {
               alt="Me"
             ></Image>
           </div>
-          <div className="about-text">
-            <p id="about-text">
+          <div className="aboutText">
+            <p id="aboutText">
               Hi there! I'm <strong>Kayla Tran</strong>. I am originally from
               Oakland, CA, but I now reside in San Luis Obispo (SLO) where I am
               a <em>software engineering major</em> in my <em>third year</em> at
