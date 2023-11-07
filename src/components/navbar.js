@@ -9,16 +9,11 @@ function Navbar() {
     return (
     // replace everything in between the <header> & <header /> tags
     // with your navbar code from your earlier milestones
-    react_1.default.createElement("header", { className: navbar_module_css_1.default.[whatever], class: true, name: true, you: true, put: true }));
+    react_1.default.createElement("header", { className: navbar_module_css_1.default.navbar },
+        react_1.default.createElement("h1", null, " Leila's Personal Website "),
+        react_1.default.createElement("nav", null,
+            react_1.default.createElement("a", { href: "/" }, "Home"),
+            react_1.default.createElement("a", { href: "/about" }, "About Me"),
+            react_1.default.createElement("a", { href: "/resume" }, "Resume"))));
 }
 exports.default = Navbar;
- >
-    (react_1.default.createElement("h1", null, " Leila's Personal Website ")
-        ,
-            react_1.default.createElement("nav", null,
-                react_1.default.createElement(Link, { href: "/" }, "Home"),
-                react_1.default.createElement(Link, { href: "/about" }, "About Me"),
-                react_1.default.createElement(Link, { href: "/resume" }, "Resume")));
-header >
-;
-;
