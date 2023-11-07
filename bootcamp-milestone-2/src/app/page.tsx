@@ -1,95 +1,84 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import React from "react";
+import style from "./page.module.css";
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+export default function HomePage() {
+    return (
+      <>
+      <section className={style.header}>
+        <div className={style.text_box}>
+          <h1>Wesley Luu Portfolio</h1>
+          <h3> <p className={style.p}> </p> A computer engineering student, who is a highly motivated individual seeking to use programming and analytical skills to create meaningful impact. I am a quick learner and intrested in the field of software development.</h3>
+        </div>  
+      </section>
+
+      <section className={style.mh_skills}>
+        <div className={style.mh_skills_container}>
+            <div className="row">
+                <div className="col-sm-12 col-md-6">
+                    <div className={style.mk_skills_inner}>
+                        <div className={style.mh_professional_skills}>
+                            <h3>Technical Skills</h3>
+                            <div className={style.each_skills}>
+                                <div className={style.candidatos}>
+                                    <div className={style.parcial}>
+                                        <div className={style.info}>
+                                            <div className={style.nome}>Python</div>
+                                            <div className={style.percentage_num}>95%</div>
+                                        </div>
+                                        <div className={style.progressBar}>
+                                            <div className={style.percentagem} style={ {width: '95%'}}></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                
+                                <div className={style.candidatos}>
+                                    <div className={style.parcial}>
+                                        <div className={style.info}>
+                                            <div className={style.nome}>Java</div>
+                                            <div className={style.percentage_num}>75%</div>
+                                        </div>
+                                        <div className={style.progressBar}>
+                                            <div className={style.percentagem} style={ {width: '75%'}}></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div className={style.candidatos}>
+                                    <div className={style.parcial}>
+                                        <div className={style.info}>
+                                            <div className={style.nome}>Javascript</div>
+                                            <div className={style.percentage_num}>80%</div>
+                                        </div>
+                                        <div className={style.progressBar}>
+                                            <div className={style.percentagem} style={ {width: '50%'}}></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div className={style.candidatos}>
+                                    <div className={style.parcial}>
+                                        <div className={style.info}>
+                                            <div className={style.nome}>HTML</div>
+                                            <div className={style.percentage_num}>80%</div>
+                                        </div>
+                                        <div className={style.progressBar}>
+                                            <div className={style.percentagem} style={ {width: '50%'}}></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
+      </>
+    );
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
 }
