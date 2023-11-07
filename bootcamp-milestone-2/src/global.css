@@ -31,9 +31,7 @@ a:link {
     background-color: black;
   }
   
-  body.index {
-    background-image: url("../background.jpeg");
-  }
+
   
   li, p {
     font-family: monospace;

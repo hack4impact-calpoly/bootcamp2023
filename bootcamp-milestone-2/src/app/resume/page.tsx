@@ -1,5 +1,6 @@
 import styles from './page.module.css'
-import "../../global.css";
+import "@/global.css";
+import "@/app/full.css" 
 import Link from 'next/link';
 
 export default function Resume() {

@@ -4,6 +4,8 @@ import "@/global.css";
 import BlogPreview from "@/components/blogPreview";
 import blogs from "@/app/blogData";
 import "@/app/full.css"
+import naturepic from "@/app/images/nature.jpeg"
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,7 +14,7 @@ export default function Home() {
         <h1 className="page-title">ABOUT ME</h1>
         <div className="about">
           <div className="about-image">
-            <img src="nature.avif" alt="Tree in a beautiful sunset" />
+            <Image src={naturepic.src} alt="Tree in a beautiful sunset" width={500} height={500}></Image>
           </div>
           <div className="about-text">
             <p>
@@ -29,16 +31,17 @@ export default function Home() {
               card magic.
             </p>
           </div>
-        </div>
+          </div>
       </main>
       {blogs.map((blog) => (
         <BlogPreview // This is how we call the component
           title={blog.title}
           description={blog.description}
-          //image={blog.image}
           date={blog.date}
+          image={blog.image}
           //text={blog.text}
           slug={blog.slug}
+
         />
       ))}
 

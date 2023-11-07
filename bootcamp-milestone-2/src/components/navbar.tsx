@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./navbar.module.css";
 import Link from "next/link";
-import "../global.css";
+import "@/global.css";
 
 
 export default function Navbar() {
