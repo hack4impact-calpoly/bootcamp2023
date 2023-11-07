@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import style from "./projects.module.css";
 
-export default function Navbar() {
+export default function Portfolio() {
   return (
     <div className={style.projects}>
       <main>

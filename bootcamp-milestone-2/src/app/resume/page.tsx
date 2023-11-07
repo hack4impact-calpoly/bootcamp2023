@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import style from "./resume.module.css";
 
-export default function Home() {
+export default function Resume() {
   return (
     <div className={style.resume}>
       <main>

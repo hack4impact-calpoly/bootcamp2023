@@ -2,9 +2,9 @@ import React from "react";
 import Link from "next/link";
 import style from "./contact.module.css";
 
-export default function Navbar() {
+export default function Contact() {
   return (
-    <div>
+    <div className={style.contact}>
       <main>
         <h1 className="pageTitle">Contact</h1>
         <form id="contactForm">
