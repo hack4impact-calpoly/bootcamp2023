@@ -269,3 +269,10 @@ body {
 .text-white {
     color: white;
 }
+
+.blogContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
