@@ -1,6 +1,10 @@
+import BlogPreview from "@/components/BlogPreview/BlogPreview";
+import { blogs } from "./data/blogData";
+
 export default function Home() {
+  const recentBlog = blogs[blogs.length-1];
   return (
-    <main className="px-20">
+    <main className="flex flex-col justify-center px-20">
       <h3 className="mb-5 text-white text-2xl font-semibold">About Asarel</h3>
       <p className="py-1.5 text-[#adb5bd] font-light">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -19,6 +23,8 @@ export default function Home() {
         id. Purus semper eget duis at tellus at urna condimentum. Commodo sed
         egestas egestas fringilla.
       </p>
+      <h3 className="my-5 text-white text-xl font-semibold">Check out my most recent blog!</h3>
+      <BlogPreview title={recentBlog.title} content={recentBlog.content} date={recentBlog.date} img={recentBlog.img} slug={recentBlog.slug} />
     </main>
   );
 }

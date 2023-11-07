@@ -17,12 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="flex bg-[#00111C]">
-          <div className="w-1/2 h-screen flex justify-center pt-24">
+      <body className="bg-[#00111C]">
+        <div className="flex">
+          <div className="w-1/2 h-screen flex justify-center py-24 fixed aboslute left-0">
             <Navbar />
           </div>
-          <div className="w-1/2 h-screen flex justify-center items-center">
+          <div className="w-1/2 h-screen flex justify-center absolute right-0">
             {children}
           </div>
         </div>

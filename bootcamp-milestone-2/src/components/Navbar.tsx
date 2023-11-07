@@ -11,7 +11,7 @@ export default function Navbar() {
             <Link href="/">Home</Link>
           </li>
           <li className="pt-2 font-semibold uppercase transition duration-150 ease-out hover:ease-in hover:scale-110">
-            <Link href="/blogs">Blog</Link>
+            <Link href="/blogs">Blogs</Link>
           </li>
           <li className="pt-2 font-semibold uppercase transition duration-150 ease-out hover:ease-in hover:scale-110">
             <Link href="/portfolio">Portfolio</Link>

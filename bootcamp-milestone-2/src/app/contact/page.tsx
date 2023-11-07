@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <main>
+    <main className="flex flex-col justify-center">
       <div className="flex flex-col text-center w-full mb-12">
         <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">
           Get In Contact
