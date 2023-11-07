@@ -1,0 +1,20 @@
+import React from 'react';
+import style from './blogPreview.module.css'
+import "@/global.css"
+import Image from 'next/image';
+import type { Blog }from "@/app/blogData"
+
+export default function BlogPreview(props: Blog) {
+  return (
+		// replace everything between the <div> & </div> tags
+		// with your code from earlier milestones
+    <div className={style.div}>
+      <h3>{props.title}</h3>
+      <div>
+				<Image src="/work.png" alt="img" width={500} height={500} ></Image>
+        <p>{props.description}</p>
+				<p>Posted on {props.date}</p>
+      </div>
+	  </div>
+  );
+}
