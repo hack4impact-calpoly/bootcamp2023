@@ -7,11 +7,12 @@ export default function Home() {
     <div>
       {blogs.map((blog: Blog) => (
         <BlogPreview
-          name={blog.name}
+          key={blog.slug}
+          date={blog.date}
+          title={blog.title}
           description={blog.description}
+          slug={blog.slug}
           image={blog.image}
-          posted={blog.posted}
-          text={blog.text}
         />
       ))}
     </div>

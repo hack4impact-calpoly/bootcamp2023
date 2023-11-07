@@ -1,11 +1,12 @@
 import React from "react";
 import style from "./blogPreview.module.css";
 import Image from "next/image";
+import Link from "next/link";
+import blog from "../blogData";
 
 export default function BlogPreview(props: Blog) {
   return (
-    // replace everything between the <div> & </div> tags
-    // with your code from earlier milestones
+    <Link href={`/blog/${props.slug}`}>
       <div className={style.individualBlogPost}>
         <h3 className={style.blogPostTitle}>{props.title}</h3>
         <Image
@@ -17,6 +18,8 @@ export default function BlogPreview(props: Blog) {
         />
         <p className={style.blogPostDescription}>{props.description}</p>
         <p className={style.blogPostDate}>{props.date}</p>
+        <p className={style.blogPostDate}>Blogs Slug {props.slug}</p>
       </div>
+    </Link>
   );
 }
