@@ -10,19 +10,19 @@ export default function Navbar() {
           <Link href="./components/home">Kayla Tran</Link>
         </h1>
         <ul className={style.navLinks}>
-          <li className={style.navLinks}>
+          <li>
             <Link href="./home">Home</Link>
           </li>
-          <li className={style.navLinks}>
+          <li>
             <Link href="./blog">Blog</Link>
           </li>
-          <li className={style.navLinks}>
+          <li>
             <Link href="./projects">Portfolio</Link>
           </li>
-          <li className={style.navLinks}>
+          <li>
             <Link href="./resume">Resume</Link>
           </li>
-          <li className={style.navLinks}>
+          <li>
             <Link href="./contact">Contact</Link>
           </li>
         </ul>
