@@ -1,8 +1,9 @@
 import styles from "./page.module.css";
 import Link from "next/link";
-import "../global.css";
+import "@/global.css";
 import BlogPreview from "@/components/blogPreview";
 import blogs from "@/app/blogData";
+import "@/app/full.css"
 
 export default function Home() {
   return (
