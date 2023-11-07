@@ -4,10 +4,12 @@ import style from "./blogPreview.module.css";
 
 export default function BlogPreview(props: Blog) {
   return (
-    <div>
-      <main id="main">
-        <h1 className={style.pageTitle}>{props.title}</h1>
-        <h2 className={style.postDate}>{props.date}</h2>
+    <div className={style.blogPreview}>
+      <main>
+        <h2>{props.title}</h2>
+        <h3>{props.date}</h3>
+        <p className={style.blogDetails}>{props.description}</p>
+        <p>See more</p>
       </main>
     </div>
   );
