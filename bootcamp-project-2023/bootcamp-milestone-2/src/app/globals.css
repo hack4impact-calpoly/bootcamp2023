@@ -30,6 +30,7 @@ ul {
 }
 
 .page-title {
+  padding-top: 25px;
   font-size: 35px;
 }
 
@@ -54,17 +55,22 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  background: #f1f1f1;
-  padding: 50px 15px;
-  margin-top: 150px;
-  width: 60%;
   text-decoration: none;
   color: black;
 }
 
-.blogContent h1 {
+.blogsHolder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background: #f1f1f1;
+  width: 50%;
+}
+
+.blogsHolder h1 {
   margin-bottom: 10px;
 }
 
@@ -287,7 +293,71 @@ h3.entry-title-end {
 }
 
 .blogPostImage {
-  width: 75%;
+  width: 50%;
   height: auto;
   padding: 5px;
+}
+
+.projectDescription {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 600px;
+}
+
+.projectDate {
+  margin-top: 5px;
+}
+
+.blogMain {
+  margin-top: 125px;
+}
+
+.individualBlogPost {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background: #f1f1f1;
+  padding: 20px;
+  width: 20%;
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+  text-decoration: none;
+  color: black;
+  margin: 20px;
+}
+
+.individualBlogPost:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+#blog-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.blogPageInformation {
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 25px;
+}
+
+.blogPostDescription {
+  margin-bottom: 8px;
+}
+
+.blogPostDate {
+  margin-bottom: 30px;
+  font-style: italic;
+}
+.blogPostContent {
+  width: 70%;
+  margin-bottom: 30px;
+  text-align: center;
 }

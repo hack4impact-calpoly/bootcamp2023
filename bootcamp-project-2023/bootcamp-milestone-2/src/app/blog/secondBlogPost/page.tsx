@@ -1,9 +1,10 @@
 import vegetableImage from "public/vegetableDishSquare.png";
 import Image from "next/image";
+
 export default function secondBlogPost() {
   return (
-    <main>
-      <section className="blogContent">
+    <main className="blogMain">
+      <div className="blogsHolder">
         <div className="blogPageInformation">
           <h1 className="pageTitle">veggie dish???</h1>
           <p className="blogPostDescription">This is my second Blog post!</p>
@@ -21,7 +22,7 @@ export default function secondBlogPost() {
             className="blogPostImage"
           />
         </div>
-      </section>
+      </div>
     </main>
   );
 }

@@ -9,7 +9,7 @@ export default function BlogPreview(props: Blog) {
     <Link className={styles.individualBlogPost} href={`/blog/${props.slug}`}>
       <h3 className={styles.blogPostTitle}>{props.title}</h3>
       <Image
-        className={styles.blogPostImage}
+        className={styles.blogPostImagePreview}
         src={props.image}
         alt="img of specific blog"
         width="500"
