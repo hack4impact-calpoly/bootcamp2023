@@ -3,7 +3,7 @@ import BlogPreview from "../../components/blogPreview";
 
 export default function Home() {
   return (
-    <main className="blogMain">
+    <main>
       <div className="blogsHolder">
         <h1 className="page-title">My Blog Posts!</h1>
         <div className="blogContent">

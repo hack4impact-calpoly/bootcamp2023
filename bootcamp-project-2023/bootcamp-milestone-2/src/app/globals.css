@@ -23,6 +23,7 @@ main {
   align-items: center;
   justify-content: center;
   background: rgb(250, 249, 246);
+  margin-top: 125px;
 }
 
 ul {
@@ -107,7 +108,6 @@ a {
   padding: 32px 12px;
   background: #f1f1f1;
   margin-bottom: 35px;
-  margin-top: 150px;
 }
 
 #profile-image {
@@ -203,7 +203,6 @@ input[type="submit"] {
 /* CSS For Resume Page */
 
 .resume-content {
-  margin-top: 125px; /* This is included so that the resume content is not hidden under the nav bar */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -283,7 +282,6 @@ h3.entry-title-end {
   border-radius: 5px;
   background: #f1f1f1;
   width: 50%;
-  margin-top: 125px;
   text-decoration: none;
   color: black;
 }
@@ -308,11 +306,6 @@ h3.entry-title-end {
 .projectDate {
   margin-top: 5px;
 }
-
-.blogMain {
-  margin-top: 125px;
-}
-
 .individualBlogPost {
   border: 1px solid lightgray;
   border-radius: 5px;

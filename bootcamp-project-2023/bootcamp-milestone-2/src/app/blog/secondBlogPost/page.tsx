@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function secondBlogPost() {
   return (
-    <main className="blogMain">
+    <main>
       <div className="blogsHolder">
         <div className="blogPageInformation">
           <h1 className="pageTitle">veggie dish???</h1>

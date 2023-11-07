@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function firstBlogPost() {
   return (
-    <main className="blogMain">
+    <main>
       <div className="blogsHolder">
         <div className="blogPageInformation">
           <h1 className="pageTitle">First Post!</h1>
