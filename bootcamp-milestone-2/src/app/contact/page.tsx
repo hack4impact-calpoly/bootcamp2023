@@ -1,14 +1,15 @@
 import React from "react";
 import Header from "../components/header";
 import Layout from '../layout';
+import Styles from './contact.module.css';
 
 export default function Contact() {
     return (
         <Layout>
-            <div className="contact-page" >
+            <div className={Styles.contactPage} >
                 <Header pageTitle="Contact"></Header>
                 <p>Fill out this form to contact me!</p>
-                <form id="contact-form">
+                <form className={Styles.contactForm}>
                     <label form="name">Name:</label>
                     <input type="text" id="name" name="name" required /><br /><br />
 

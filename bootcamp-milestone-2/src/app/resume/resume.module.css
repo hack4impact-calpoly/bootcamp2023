@@ -1,0 +1,49 @@
+.resume {
+    padding: 20px 20px;
+    width: 70%;
+    margin: 20px;
+    background-color: var(--cg-white);
+    text-align: left;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--cg-pink);
+  }
+  
+  .entry {
+    margin-bottom: 15px;
+  }
+
+  .entry-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .entry-info {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .entry-description {
+    font-size: 16px;
+    color: #333;
+  }
+
+  .skill-list, .course-list {
+    margin-top: 10px;
+  }
+  
+  .skill-list li, .course-list li {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+  }

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import React from 'react';
-import Styles from './globals.css';
+import './globals.css';
 import Navbar from "./components/navbar";
 import Footer from './components/footer';
 
@@ -16,11 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={Styles.body}>
-      <Navbar/>
-        {children}
-      <Footer />
+      <body>
+        <Navbar/>
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
-  )
+  );
 }

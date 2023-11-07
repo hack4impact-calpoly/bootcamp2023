@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className={Styles.pageTitle} >
+    <div className={Styles.pageTitle} >
       <nav className= {Styles.navbar}>
                 <h1 className= {Styles.logo}>
                     <Link href= "/">YaseminAkkaya</Link>
@@ -19,6 +19,6 @@ export default function Navbar() {
                   </ul>
                 </div>
         </nav>
-    </header>
+    </div>
   );
 }

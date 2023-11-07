@@ -1,5 +1,5 @@
 import React from "react";
-import Styles from "../globals.css";
+import Styles from "./header.module.css";
 
 interface HeaderProps {
     pageTitle: string;
@@ -9,7 +9,7 @@ const Header: React.FC<HeaderProps> = (props) => {
     const { pageTitle } = props;
   
     return (
-      <div className = {Styles}>
+      <div className = {Styles.pageTitle}>
         <title>{ pageTitle }</title>
       </div>
     );

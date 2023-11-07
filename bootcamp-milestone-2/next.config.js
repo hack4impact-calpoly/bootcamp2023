@@ -4,6 +4,17 @@ const nextConfig = {}
 module.exports = {
     ...nextConfig,
     images: {
-      domains: ['talkstar-photos.s3.amazonaws.com', 'st.adda247.com']
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: 'talkstar-photos.s3.amazonaws.com',
+          pathname: '**',
+        },
+        {
+          protocol: "https",
+          hostname: 'st.adda247.com',
+          pathname: '**',
+        }
+      ]
     },
 }
