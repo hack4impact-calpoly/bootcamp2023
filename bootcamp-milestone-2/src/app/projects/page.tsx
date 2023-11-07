@@ -5,27 +5,27 @@ import style from "./projects.module.css";
 
 export default function Portfolio() {
   return (
-    <div className={style.projects}>
+    <div>
       <main>
-        <h1 className="pageTitle">Portfolio</h1>
-        <div className="project">
+        <h1 className={style.pageTitle}>Portfolio</h1>
+        <div>
           <Link href="./home">
             <Image
-              className="projectImage"
+              className={style.projectImage}
               height={150}
-              width={100}
+              width={250}
               src={"/website.jpg"}
               alt="Personal website project!"
             ></Image>
-            <div className="projectDetails">
+            <div className={style.projectDetails}>
               <div className="projectInfo">
-                <p className="projectName">My Personal Website</p>
-                <p className="projectDescription">
+                <p className={style.projectName}>My Personal Website</p>
+                <p className={style.projectDescription}>
                   This is a website I built from scratch to showcase some of my
                   experience and work!
                 </p>
               </div>
-              <div id="projectMore">
+              <div id={style.projectMore}>
                 <Link href="./home">Learn More</Link>
               </div>
             </div>

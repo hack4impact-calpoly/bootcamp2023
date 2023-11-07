@@ -7,7 +7,7 @@ export default function Resume() {
     <div className={style.resume}>
       <main>
         <h1 className="pageTitle">Resume</h1>
-        <div className="downloadRes">
+        <div className={style.downloadRes}>
           <a href="Resume 2023.pdf">Download Resume</a>
         </div>
         <div className="allResume">

@@ -4,20 +4,21 @@ import style from "./home.module.css";
 
 export default function Home() {
   return (
-    <div className={style.home}>
-      <main className="aboutPage">
-        <h1 className="pageTitle">Introduction</h1>
+    <div>
+      <main className={style.about}>
+        <h1 className={style.pageTitle}>Introduction</h1>
         <div className="about">
-          <div className="aboutImage">
-            <Image
+          <div className={style.aboutImage}>
+            <Image 
+              id={style.imgStyle}
               width={250}
               height={300}
               src={"/headshot.jpg"}
               alt="Me"
             ></Image>
           </div>
-          <div className="aboutText">
-            <p id="aboutText">
+          <div className={style.aboutText}>
+            <p id={style.aboutText}>
               Hi there! I'm <strong>Kayla Tran</strong>. I am originally from
               Oakland, CA, but I now reside in San Luis Obispo (SLO) where I am
               a <em>software engineering major</em> in my <em>third year</em> at

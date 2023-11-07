@@ -6,23 +6,23 @@ export default function Navbar() {
   return (
     <header className={style.navbar}>
       <nav className="navbar">
-        <h1 className="logo">
+        <h1 className={style.logo}>
           <Link href="./components/home">Kayla Tran</Link>
         </h1>
-        <ul className="navLinks">
-          <li>
+        <ul className={style.navLinks}>
+          <li className={style.navLinks}>
             <Link href="./home">Home</Link>
           </li>
-          <li>
+          <li className={style.navLinks}>
             <Link href="./blog">Blog</Link>
           </li>
-          <li>
+          <li className={style.navLinks}>
             <Link href="./projects">Portfolio</Link>
           </li>
-          <li>
+          <li className={style.navLinks}>
             <Link href="./resume">Resume</Link>
           </li>
-          <li>
+          <li className={style.navLinks}>
             <Link href="./contact">Contact</Link>
           </li>
         </ul>
