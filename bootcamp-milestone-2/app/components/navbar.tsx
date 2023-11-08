@@ -4,8 +4,6 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    // replace everything in between the <header> & <header /> tags
-    // with your navbar code from your earlier milestones
     <header className={style.navbar}>
       <h1 className="logo">
         <Link href="/">Sohini's Personal Website</Link>

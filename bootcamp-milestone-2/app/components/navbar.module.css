@@ -32,3 +32,14 @@
     color: var(--cg-pink);
     text-decoration: underline;
   }  
+
+  .logo a {
+    font-family: Georgia, serif;
+    color: var(--cg-light-beige);
+    text-decoration: none;
+  }
+  
+  .logo a:hover {
+    text-decoration: none;
+  }
+  
