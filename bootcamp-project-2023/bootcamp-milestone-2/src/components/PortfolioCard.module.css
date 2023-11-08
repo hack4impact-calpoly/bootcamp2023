@@ -1,0 +1,41 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: black;
+}
+
+.projectDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+}
+
+.projectName {
+  padding-bottom: 10px;
+}
+
+.project img {
+  margin-bottom: 20px;
+}
+
+.projectDescription {
+  text-align: center;
+  margin-bottom: 10px;
+  width: 600px;
+  border: 2px solid yellow;
+}
+
+h2.projectName {
+  margin-bottom: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
