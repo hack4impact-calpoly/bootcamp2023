@@ -1,6 +1,14 @@
-import blogs from '@/static/blogData.ts';
+import React from 'react';
+import BlogPreview from '../components/blogPreview';
+import { blogs } from './blogData';
 import '../../../styles.css';
 
-{blogs.map(blog => 
-      /* we will soon add BlogPreview here */
-)}
+export default function BlogList() {
+  return (
+    <div>
+      {blogs.map((blog, index) => (
+        <BlogPreview key={index} {...blog} />
+      ))}
+    </div>
+  );
+}

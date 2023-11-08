@@ -1,10 +1,11 @@
 import React from 'react';
 import '../../styles.css';
-import BlogPreview from '@/components/blogPreview';
+import BlogPreview from './components/blogPreview';
+import { blogs } from './blog/blogData';
 
 function Page() {
   return (
-    <html>
+    <div>
       <head>
         <title>Sammy's Website!</title>
         <link rel="stylesheet" href="styles.css" />
@@ -23,12 +24,12 @@ function Page() {
             </div>
           </div>
           {blogs.map(blog => 
-            <BlogPreview /> // This is how we call the component
+            <BlogPreview {...blog} />
 		      )}
         </main>
         <footer className="footer">© 2023 Sammy Paykel | All Rights Reserved</footer>
       </body>
-    </html>
+    </div>
   );
 }
 

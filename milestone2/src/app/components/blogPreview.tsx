@@ -1,16 +1,15 @@
 import React from 'react';
-import type { Blog } from "@/typings/blog"
-import style from './blogPreview.module.css'
+import style from './blogPreview.module.css';
+import { Blog } from "@/typings/blog";
+import Link from 'next/link';
 
 export default function BlogPreview(props: Blog) {
   return (
-    <div>
-      <h3> {props.name} </h3>
-      <div>
-        <Image src="./imageLinkHere" alt="img" width={500} height={500} ></Image>
-        <p>{props.description}</p>
-	    <p>{props.posted}</p>
-      </div>
-	  </div>
+    <div className={style.blogPreview}>
+      <h1>{props.title}</h1>
+      <p>{props.description}</p>
+      <p>Date: {props.date}</p>
+      <Link href={props.slug}><u>Read More</u></Link>
+    </div>
   );
 }
