@@ -1,0 +1,64 @@
+/* CSS for portfolio grid */
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 0 2em 0;
+  }
+  
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    margin: 1em 0;
+    text-align: center;
+    font-family: "Roboto", serif;
+  }
+  
+  .project-link {
+    width: 100%;
+  }
+  
+  .project-name {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .project-image {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    border: 2px solid #E6B422;
+    padding: 0px;
+    border-radius: 5px;
+  }
+  
+  .project-description {
+    background-color: #FFFFFD;
+    padding: 15px;
+    border: 1px solid #E6B422;
+    border-radius: 5px;
+  }
+  
+  .project-details a {
+    font-family: "Roboto", serif;
+    color: #001F3F;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .project-details a:hover {
+    color: #E6B422;
+    text-decoration: underline;
+  }
+  
+  .project-details {
+    font-weight: lighter;
+    margin-top: 10px;
+  }
+  

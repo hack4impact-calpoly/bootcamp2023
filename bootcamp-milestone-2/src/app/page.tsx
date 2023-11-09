@@ -1,15 +1,15 @@
-'use client';
-import React from 'react';
-import "../app/styles/index.css"
-import "./globals.css"
+"use client";
+import React from "react";
+import "./styles/index.css";
+import "./globals.css";
 
 function toggleGallery(galleryId) {
-  const galleries = document.querySelectorAll('.image-gallery');
+  const galleries = document.querySelectorAll(".image-gallery");
   galleries.forEach((gallery) => {
-    gallery.style.display = 'none';
+    gallery.style.display = "none";
   });
   const gallery = document.getElementById(galleryId);
-  gallery.style.display = 'block';
+  gallery.style.display = "block";
 }
 
 function Home() {
@@ -25,52 +25,72 @@ function Home() {
           </div>
           <div className="about">
             <div className="about-image">
-              <img src="me.png" alt="me" width="195" height="300" className="about-image-img" />
+              <img
+                src="me.png"
+                alt="me"
+                width="195"
+                height="300"
+                className="about-image-img"
+              />
             </div>
             <div className="about-text">
               <h2>About Me</h2>
               <p>Hey all, my name is Carson Gabler.</p>
               <p>
-                I am a second-year Computer Science major from{' '}
-                <strong>Portland, Oregon</strong>. Here are some things I did this summer!
+                I am a second-year Computer Science major from{" "}
+                <strong>Portland, Oregon</strong>. Here are some things I did
+                this summer!
               </p>
               <p>
-                I <strong>
-                  <a href="#" onClick={() => toggleGallery('gallery-soccer')}>
+                I{" "}
+                <strong>
+                  <a href="#" onClick={() => toggleGallery("gallery-soccer")}>
                     love soccer
                   </a>
-                </strong>. I have played it my whole life
+                </strong>
+                . I have played it my whole life
               </p>
               <p>
-                I was also able to <strong>
-                  <a href="#" onClick={() => toggleGallery('gallery-gym')}>
+                I was also able to{" "}
+                <strong>
+                  <a href="#" onClick={() => toggleGallery("gallery-gym")}>
                     work out
                   </a>
-                </strong> with all my friends.
+                </strong>{" "}
+                with all my friends.
               </p>
               <p>
-                I went to visit my good friends at Oregon State.{' '}
+                I went to visit my good friends at Oregon State.{" "}
                 <strong>
-                  <a href="#" onClick={() => toggleGallery('gallery-beavs')}>
+                  <a href="#" onClick={() => toggleGallery("gallery-beavs")}>
                     GO BEAVS
                   </a>
                 </strong>
               </p>
               <p>
-                I attended a couple <strong>
-                  <a href="#" onClick={() => toggleGallery('gallery-concerts')}>
+                I attended a couple{" "}
+                <strong>
+                  <a href="#" onClick={() => toggleGallery("gallery-concerts")}>
                     concerts
                   </a>
-                </strong> and <strong>
-                  <a href="#" onClick={() => toggleGallery('gallery-music-festivals')}>
+                </strong>{" "}
+                and{" "}
+                <strong>
+                  <a
+                    href="#"
+                    onClick={() => toggleGallery("gallery-music-festivals")}
+                  >
                     music festivals
                   </a>
-                </strong>.
+                </strong>
+                .
               </p>
               <p>
-                Finally, I was able to <strong>
+                Finally, I was able to{" "}
+                <strong>
                   <a href="resume.html">intern</a>
-                </strong> with my local high school and my favorite teacher. Focusing in{' '}
+                </strong>{" "}
+                with my local high school and my favorite teacher. Focusing in{" "}
                 <em>software development, testing algorithms, and teaching!</em>
               </p>
             </div>
@@ -91,7 +111,9 @@ function Home() {
             <img src="festival.jpeg" alt="Music Festivals" />
           </div>
           <div className="gallery-text">
-            <h4 className="image-gallery-text">Click an image to check out my image gallery!</h4>
+            <h4 className="image-gallery-text">
+              Click an image to check out my image gallery!
+            </h4>
           </div>
         </main>
       </body>

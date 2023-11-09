@@ -1,0 +1,80 @@
+/* CSS for resume page */
+
+.button {
+    background-color: #001F3F;
+    border: none;
+    color: #FFFFFF;
+    font-family: "Roboto", serif;
+    padding: 5px 7px;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #E6B422;
+  }
+  
+  .resume h2 {
+    font-family: "Roboto", serif;
+  }
+  
+  .resume {
+    font-family: "Roboto", serif;
+    margin: 20px;
+  }
+  
+  .section {
+    margin: 20px 0;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #001F3F;
+    margin-bottom: 10px;
+  }
+  
+  .entry {
+    margin-bottom: 20px;
+  }
+  
+  .entry-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #001F3F;
+  }
+  
+  .entry-info {
+    font-style: italic;
+    font-size: 14px;
+    color: #001F3F;
+    margin-bottom: 10px;
+  }
+  
+  .entry-description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .skill-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .skill-list li {
+    margin-bottom: 5px;
+    color: #001F3F;
+  }
+  
+  .footer {
+    background-color: #E6B422;
+    color: #001F3F;
+    text-align: center;
+    padding: 10px;
+    font-family: "Roboto", serif;
+    font-size: 14px;
+  }
+  
