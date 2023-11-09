@@ -8,9 +8,14 @@ export default function Navbar() {
     <header className={style.navbar} >
       <h1> Leila's Personal Website </h1>
       <nav>
-        <a href="/" >Home</a>
-        <a href="/about" >About Me</a>
-				<a href="/resume" >Resume</a>
+      <ul className = "nav-list" >
+        <a href = "index.html"> Home |</a>
+        <a href = "blog.html"> Blog |</a>
+        <a href = "portfolio.html"> Portfolio |</a>
+        <a href = "resume.html"> Resume |</a>
+        <a href = "contact.html"> Contact </a>
+      </ul>
+
       </nav>
     </header>
   );
