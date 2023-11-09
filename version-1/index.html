@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html class="home-html">
+  <head>
+    <title>Kyle's Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="home-body">
+    <nav class="navbar">
+      <h1 class="logo">
+        <a href="#name-section">Kyle Taschek</a>
+      </h1>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="page-container">
+      <section>
+        <div class="hidden" id="name-section">
+          <p class="title-name">
+            <a
+              target="”_blank”"
+              href="https://www.linkedin.com/in/kyle-taschek-555923223/"
+              >Kyle<br />
+              Taschek
+            </a>
+          </p>
+        </div>
+      </section>
+      <section class="p2">
+        <div class="hidden" id="about-me-section">
+          <div class="about-box">
+            <div class="container">
+              <img src="images/kyle_plants.JPG" />
+            </div>
+            <div class="about-text">
+              <h5>About Me</h5>
+              <p>
+                Hey All! I'm a third year computer science major at Cal Poly!
+                <br />
+                I enjoy playing video games, playing volleyball and crocheting.
+                Right now I'm working on a massive green worm named Phil. And of
+                course I love plants!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="p3">
+        <div class="hidden" id="about-me-section">
+          <div class="about-box">
+            <div class="container" id="whale">
+              <img src="images/whale.jpg" />
+            </div>
+            <div class="about-text">
+              <h5>Crochet</h5>
+              <p>
+                I started crocheting in 2021 because my girlfriend got me into
+                it. Since then I've made a few things like this whale and I have
+                a lot more unfinished. Aside from the green worm, I'm excited to
+                start a burger snail!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="p4">
+        <div class="hidden" id="about-me-section">
+          <div class="about-box">
+            <div class="container" id="plant">
+              <img src="images/plant.jpg" />
+            </div>
+            <div class="about-text">
+              <h5>Plants</h5>
+              <p>
+                I got my first plant from the Poly Plant shop in 2022 and I
+                haven't stopped getting them since. I still have those original
+                ones growing and I'll soon have to repot them. Let me know if
+                you have any plant recommendations!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">"© 2023 Kyle Taschek | All Rights Reserved"</footer>
+    <script>
+      let sections = document.querySelectorAll(".hidden");
+
+      window.onscroll = () => {
+        sections.forEach((sec) => {
+          var windowHeight = window.innerHeight;
+          var revealtop = sec.getBoundingClientRect().top;
+          var revealpoint = 150;
+          if (revealtop < windowHeight - revealpoint) {
+            sec.classList.add("show");
+          } else {
+            sec.classList.remove("show");
+          }
+        });
+      };
+    </script>
+  </body>
+</html>
