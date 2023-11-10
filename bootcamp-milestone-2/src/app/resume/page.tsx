@@ -84,11 +84,11 @@ export default function Resume() {
                                 </p>
                             </div>
                         </section>
-                        <section class = "section"> 
-                            <div class = "entry"> 
-                                <h3 class = "entry-title"> Pay Inequality Website
+                        <section className = "section"> 
+                            <div className = "entry"> 
+                                <h3 className = "entry-title"> Pay Inequality Website
                                 </h3>
-                                <p class = "entry-description"> 
+                                <p className = "entry-description"> 
                                     <ul>
                                         <li> During the Girls Who Code Summer Immersion Program, built website highlighting the gender wage gap in the United States.</li>
                                         <li> Main focus on design of website with CSS.</li>
