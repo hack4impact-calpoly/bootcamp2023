@@ -1,0 +1,16 @@
+.resume {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(4, 9, 30, 0.3);
+    border: 5px solid black;
+    border-radius: 10px;
+    border-style: double;
+    font-size: 15pt;
+}
+
+.resume a {
+    align-self: center;
+    color: black;
+}
