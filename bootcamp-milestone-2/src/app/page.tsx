@@ -22,7 +22,7 @@ export default function Home() {
         <div className = "about" > 
             <div className = "about-text"> 
             <div className = "about-image" > 
-                <Image src = {'/boat2.JPG'} width = {200} height = {300} alt = "Photo of me on a ferry boat." className = "boat"> </Image>
+                <Image src = {'/boat2.JPG'} width = {200} height = {300} alt = "Photo of me on a ferry boat." className = "boat"/>
             </div>
 
                 <p> Leila Touati is a second year <strong> Journalism </strong> major with a minor in <strong> Computer Science.</strong></p>
