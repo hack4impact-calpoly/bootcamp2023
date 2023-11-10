@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./page.module.css";
+import Image from "next/image";
 
 export default function Home() {
   return (<div>
@@ -7,7 +8,7 @@ export default function Home() {
             <h1>Welcome to my First Website!</h1>
             <div className={style.about}>
                 <div className={style["about-image"]}>
-                    <img src="images/profile.jpg" alt="A silly profile picture. Me posing with a random cat" ></img>
+                    <Image src="images/profile.jpg" alt="A silly profile picture. Me posing with a random cat" />
                     <figcaption>This is a random cat I found</figcaption>
                 </div>
                 <div className={style["about-text"]}>
@@ -17,7 +18,7 @@ export default function Home() {
                         enthusiastic about the prospect of creating meaningful projects with H4I this year!</p>
                 </div>
                 <div className={style["about-image2"]}>
-                    <img src="images/profile2.jpg" alt="A picture of me by a pond." ></img>
+                    <Image src="images/profile2.jpg" alt="A picture of me by a pond." />
                 </div>
             </div> 
         </main>

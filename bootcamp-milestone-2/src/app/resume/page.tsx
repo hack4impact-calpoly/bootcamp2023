@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./page.module.css";
+import Link from "next/link";
 
 export default function Resume() {
   return (
@@ -11,7 +12,7 @@ export default function Resume() {
         <main>
             <h1 className={style["page-title"]}>Resume</h1>
             <div className={style["resume"]}>
-                <a href="resume.pdf" download><strong>Download Resume</strong></a>
+                <Link href="/resume.pdf" download><strong>Download Resume</strong></Link>
                 <section className={style["section"]}>
                     <h2 className={style["section-title"]}>Education</h2>
                     <div className={style["entry"]}>

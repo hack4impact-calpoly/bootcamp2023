@@ -1,5 +1,7 @@
 import React from "react";
 import style from "./navbar.module.css";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
@@ -8,15 +10,15 @@ export default function Navbar() {
     <header className={style.navbar} >
     <nav>
         <h1 className="logo">
-            <a href="index.html">My First Website: James' Junction</a>
+            <a href="/">My First Website: James' Junction</a>
         </h1>
-        <img src="public/junction.png"></img>
+        <Image src="images/junction.png" alt="junction logo"/>
         <ul className="nav-list">
-            <link href="index.html">Home</link>
-            <link href="resume.html">Resume</link>
-            <link href="portfolio.html">Portfolio</link>
-            <link href="blog.html">Blog</link>
-            <link href="contact.html">Contact</link>
+            <Link href="/">Home</Link>
+            <Link href="/resume">Resume</Link>
+            <Link href="/portfolio">Portfolio</Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/contact">Contact</Link>
         </ul>
     </nav>
     </header>

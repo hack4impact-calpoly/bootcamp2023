@@ -5,7 +5,7 @@ export default function Contact() {
   return (<div>
             <main>
                 <h1 className="page-title">Contact</h1>
-                <form id="contact-form" />
+                <form id={Style["contact-form"]} />
                     <label htmlFor="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Name" required />
                     <br/>
