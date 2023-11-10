@@ -1,6 +1,8 @@
 import styles from './page.module.css'
+import Link from "next/link";
 
 export default function Resume() {
+    <Link href = "/resume"></Link>
   return (
     <>
         <nav className = "navbar"> 
