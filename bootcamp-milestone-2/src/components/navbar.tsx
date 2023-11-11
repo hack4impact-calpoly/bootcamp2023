@@ -8,19 +8,17 @@ export default function Navbar() {
     // replace everything in between the <header> & <header /> tags
     // with your navbar code from your earlier milestones
     <header className={style.navbar} >
-    <nav>
-        <h1 className="logo">
-            <a href="/">My First Website: James' Junction</a>
+        <h1 className={style["logo"]}>
+            <Link href="/">My First Website</Link>
         </h1>
-        <Image src="images/junction.png" alt="junction logo"/>
-        <ul className="nav-list">
+        <Image className={style["img"]} src="/images/junction.png" alt="junction logo" width="50" height="50"/>
+        <ul className={style["nav-list"]}>
             <Link href="/">Home</Link>
             <Link href="/resume">Resume</Link>
             <Link href="/portfolio">Portfolio</Link>
             <Link href="/blog">Blog</Link>
             <Link href="/contact">Contact</Link>
         </ul>
-    </nav>
     </header>
   );
 }

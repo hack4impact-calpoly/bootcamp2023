@@ -9,8 +9,9 @@
     z-index: 10;
 
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items:center;
     text-align: center;
 
     background-color:rgba(4, 9, 30, 0.3);
@@ -21,11 +22,13 @@
     /* border: solid red; */
 }
 
+.img {
+    justify-self: center;
+}
+
 .nav-list {
     display: flex;
     flex-direction: row;
-    position: relative;
-    right: 30px;
     list-style: none;
 }
 
@@ -36,10 +39,6 @@
     text-decoration: none;
     letter-spacing: 2px;
 
-}
-
-.navbar img {
-    max-width: 50px;
 }
 
 .navbar a:hover {

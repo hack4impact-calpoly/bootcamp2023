@@ -14,3 +14,16 @@
     align-self: center;
     color: black;
 }
+
+.resume section {
+    padding: 20px;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+.entry {
+    padding: 5px;
+}
