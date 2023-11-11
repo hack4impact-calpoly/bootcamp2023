@@ -10,10 +10,7 @@ export default function Blog() {
           {blogs.map(
             (blog) => (
               <BlogPreview
-                title={blog.title}
-                date={blog.date}
-                description={blog.description}
-                slug={blog.slug}
+                {...blog}
               />
             ) // This is how we call the component
           )}
