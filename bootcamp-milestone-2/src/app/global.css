@@ -1,0 +1,71 @@
+:root {
+    /* variables */
+    --cg-black: rgb(30, 32, 32);
+    --cg-blue: rgb(36, 94, 255);
+    --cg-grey: rgb(243, 243, 243);
+    --cg-white: rgb(255, 255, 255);
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  body {
+    background: var(--cg-grey);
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+  }
+
+  main {
+    padding: 0 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: Georgia;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+  }
+  
+  /* Add some spacing to the form */
+  form {
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  body::after {
+    content: '';
+    height: 2.5rem;
+    display: block;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+main {
+    padding: 20px;
+  }
