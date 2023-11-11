@@ -1,6 +1,6 @@
-// import linkedinIcon from './images/icons/linkedin.png'; // Adjust the path as needed
-// import githubIcon from './images/icons/github.png';    // Adjust the path as needed
-// import mailIcon from './images/icons/mail.png';       // Adjust the path as needed
+import linkedinIcon from 'images/icons/linkedin.png'; 
+import githubIcon from 'images/icons/github.png';    
+import mailIcon from 'images/icons/mail.png';  
 import './home.css';
 import Link from 'next/link';
 import faceShot from 'C:/Users/noahg/OneDrive/Desktop/Github/Bootcamp-project-2023/noahgiboney.app/images/faceshot.png'
@@ -17,13 +17,13 @@ export default function Home() {
           <div className="line"></div>
           <div className="socials-container">
             <a href="https://www.linkedin.com/in/noah-giboney-896847261/" target="_blank" rel="noopener noreferrer">
-              <img src="images/icons/linkedin.png" className="round" alt="LinkedIn" />
+              <img src={linkedinIcon.src} className="round" alt="LinkedIn" />
             </a>
             <a href="https://github.com/noahgiboney" target="_blank" rel="noopener noreferrer">
-              <img src="images/icons/github.png" alt="GitHub" />
+              <img src={githubIcon.src} alt="GitHub" />
             </a>
             <a href="#contact">
-              <img src="images/icons/mail.png" alt="Email" />
+              <img src={mailIcon.src} alt="Email" />
             </a>
           </div>       
         </section>

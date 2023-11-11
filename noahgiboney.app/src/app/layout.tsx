@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Josefin_Sans } from 'next/font/google'
+import  { Josefin_Sans }  from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar/navbar';
 import Footer from '@/components/Footer/footer';
 
-const inter = Josefin_Sans({ subsets: ['latin'] })
+const jose = Josefin_Sans({ subsets: ['latin'], weight: ['300']})
 
 export const metadata: Metadata = {
   title: 'Noah Giboney Portfolio',
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={jose.className}>
         <Navbar/>
         {children}
         <Footer/>
