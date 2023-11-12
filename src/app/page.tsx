@@ -6,15 +6,16 @@ import Link from 'next/link';
 import faceShot from 'C:/Users/noahg/OneDrive/Desktop/Github/Bootcamp-project-2023/images/faceshot.png'
 import projects from '@/app/projects'
 import PortfolioSection from '@/components/Portfolio/portfolio';
+import VantaFog from '@/components/VantaFog/VantaFog';
 
 
 export default function Home() {
   return (
     <div>
       <div id="particles-js" className="particles-js">
+      <VantaFog/>
         <section className="home-container">
           <h2>Noah Giboney</h2>
-          <div className="line"></div>
           <div className="socials-container">
             <a href="https://www.linkedin.com/in/noah-giboney-896847261/" target="_blank" rel="noopener noreferrer">
               <img src={linkedinIcon.src} className="round" alt="LinkedIn" />
@@ -28,9 +29,6 @@ export default function Home() {
           </div>       
         </section>
       </div>
-      <section className="arrow-container">
-        <a href="#about"><div className="arrow"></div></a> 
-      </section>
       <div className="main-container">
         <h3 id="about">About</h3> 
         <div className="line2"></div>
