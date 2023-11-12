@@ -1,0 +1,24 @@
+.foodEntry {
+  color: black;
+  display: flex;
+  justify-content: left;
+  flex-direction: column; /* Change to column direction */
+  max-width: 100%;
+  margin: 2em 0 4em 0; /* Increased bottom margin */
+  border: 1px solid #ccc;
+  background-color: var(--cg-bggrey);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.foodEntry p{
+    margin-bottom: 0px;
+
+}
+.foodEntry ul{
+    margin-top: 10px;
+}
+.foodImage img {
+  max-width: 500px;
+  border-radius: 3px;
+}

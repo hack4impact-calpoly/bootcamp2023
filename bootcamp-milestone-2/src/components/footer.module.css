@@ -1,0 +1,11 @@
+  /* FOOTER CSS */
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cg-bggrey);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+  }

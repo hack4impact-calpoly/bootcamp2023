@@ -1,0 +1,11 @@
+.blogEntry {
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: left;
+  flex-direction: column; /* Change to column direction */
+  max-width: 100%;
+  margin: 1em 0 4em 0; /* Increased bottom margin */
+  background-color: var(--cg-bggrey);
+  border-radius: 5px;
+  padding: 10px;
+}

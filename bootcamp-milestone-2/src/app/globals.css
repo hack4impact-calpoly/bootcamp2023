@@ -1,0 +1,188 @@
+:root {
+    /* variables */
+    --cg-text: rgb(255, 255, 255);
+    --cg-darkgrey: rgb(25, 25, 25);
+    --cg-blue: rgb(36, 94, 255);
+    --cg-white: rgb(233, 230, 230);
+    --cg-bggrey: rgb(227, 227, 227);
+  }
+  html {
+    height: 100%;
+  }
+  
+  body {
+    background: var(--cg-darkgrey);
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+  }
+  
+  .logo a {
+    font-family: Georgia;
+    background-color: black;
+  }
+  .logo a:hover {
+    text-decoration: None;
+  }
+  main {
+    padding: 0 20px 40px 20px;
+    color: var(--cg-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .page-title {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-family: Georgia;
+  }
+  
+  /* PORTFOLIO PAGE CSS */
+  .project {
+    color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    max-width: 45%;
+    margin: 1em 0 2em 0;
+    border: 1px solid #ccc;
+    background-color: var(--cg-bggrey);
+    border-radius: 5px;
+  }
+  .project-image {
+    object-fit: contain;
+    width: 100%;
+    height: 200px;
+    flex-basis: 50px;
+    flex-grow: 2;
+  }
+  .project-details {
+    display: flex;
+    width: 30%;
+    height: 200px;
+    flex-shrink: 1;
+    padding: 0 20px;
+    margin: 0px;
+    line-height: 1;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+  .project-details a {
+    color: #ff8c00;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  .project-details a:hover {
+    color: blue;
+    text-decoration: underline;
+  }
+  .project-details {
+    font-weight: lighter;
+  }
+  .project-description {
+    padding: 0;
+  }
+  .project-name {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  /* INDEX PAGE CSS */
+  .about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    padding-bottom: 20px;
+    background-color: var(--cg-bggrey);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .about-image img {
+    max-width: 300px;
+    border-radius: 3px;
+  }
+  .about-text {
+    flex: 1;
+    margin-left: 20px;
+    color: black;
+  }
+  .about-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .about-text p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* CSS for resume page */
+  .resume h2 {
+    font-family: Georgia;
+  }
+  .resume-link {
+    border: 1px solid #757575;
+    background-color: #696969;
+    border-radius: 3px;
+    color: #ff8c00;
+    padding: 0px 2px 2px 2px;
+  }
+  
+  /* CONTACT PAGE CSS */
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: Georgia;
+    font-weight: bold;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+  }
+  
+  
+
+  .topWords{
+    color: var(--cg-text);
+  }
+  .personal-blog-title{
+    font-family: Georgia;
+
+    color: var(--cg-text);
+    font-size: 30px;
+
+  }
+  .personal-blog {
+    color: var(--cg-text);
+    text-align: center;
+  }
+  .personal-image img {
+    max-width: 500px;
+    border-radius: 3px;
+  }
+  
+  .personal-text p {
+    color: var(--cg-text);
+    margin-top: 0;
+  }
+  
+  .personal-text strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  
