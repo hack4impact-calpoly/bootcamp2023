@@ -2,11 +2,9 @@ import linkedinIcon from 'images/icons/linkedin.png';
 import githubIcon from 'images/icons/github.png';    
 import mailIcon from 'images/icons/mail.png';  
 import './home.css';
-import Link from 'next/link';
-import faceShot from 'C:/Users/noahg/OneDrive/Desktop/Github/Bootcamp-project-2023/images/faceshot.png'
-import projects from '@/app/projects'
+import faceShot from 'images/faceShot.png'
 import PortfolioSection from '@/components/Portfolio/portfolio';
-import VantaFog from '@/components/VantaFog/VantaFog';
+import VantaFog from '@/components/VantaFog/vantaFog';
 
 
 export default function Home() {
@@ -17,14 +15,14 @@ export default function Home() {
         <section className="home-container">
           <h2>Noah Giboney</h2>
           <div className="socials-container">
-            <a href="https://www.linkedin.com/in/noah-giboney-896847261/" target="_blank" rel="noopener noreferrer">
-              <img src={linkedinIcon.src} className="round" alt="LinkedIn" />
+            <a href="https://www.linkedin.com/in/noah-giboney-896847261/" target="_blank">
+              <img src={linkedinIcon.src} className="round" alt="LinkedIn"/>
             </a>
-            <a href="https://github.com/noahgiboney" target="_blank" rel="noopener noreferrer">
-              <img src={githubIcon.src} alt="GitHub" />
+            <a href="https://github.com/noahgiboney" target="_blank">
+              <img src={githubIcon.src} className="round" alt="GitHub"/>
             </a>
             <a href="#contact">
-              <img src={mailIcon.src} alt="Email" />
+              <img src={mailIcon.src}  className="round" alt="Email"/>
             </a>
           </div>       
         </section>
