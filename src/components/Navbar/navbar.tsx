@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./navbar.module.css";
 
-export default function Navbar() {
+export default function NavBar() {
   return (
     <header className={style.navigation}>
     <ul> 

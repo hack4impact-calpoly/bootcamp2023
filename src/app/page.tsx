@@ -3,7 +3,7 @@ import githubIcon from 'images/icons/github.png';
 import mailIcon from 'images/icons/mail.png';  
 import './home.css';
 import Link from 'next/link';
-import faceShot from 'C:/Users/noahg/OneDrive/Desktop/Github/Bootcamp-project-2023/noahgiboney.app/images/faceshot.png'
+import faceShot from 'C:/Users/noahg/OneDrive/Desktop/Github/Bootcamp-project-2023/images/faceshot.png'
 import projects from '@/app/projects'
 import PortfolioSection from '@/components/Portfolio/portfolio';
 
