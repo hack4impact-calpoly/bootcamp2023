@@ -3,8 +3,9 @@ import githubIcon from 'images/icons/github.png';
 import mailIcon from 'images/icons/mail.png';  
 import './home.css';
 import faceShot from 'images/faceShot.png'
-import PortfolioSection from '@/components/Portfolio/portfolio';
 import VantaFog from '@/components/VantaFog/vantaFog';
+import PortfolioSection from '@/components/Portfolio/portfolio';
+import BlogSection from '@/components/Blog/blogpreview';
 
 
 export default function Home() {
@@ -42,6 +43,7 @@ export default function Home() {
               <img src={faceShot.src} alt="Noah Giboney" />
             </div>
           </div>
+          <BlogSection/>
         </section>
 
         <h3 id="portfolio">Portfolio</h3>

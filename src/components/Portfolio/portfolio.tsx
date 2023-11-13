@@ -1,6 +1,5 @@
-// components/PortfolioSection.tsx
 import React from 'react';
-import projects from '@/app/projects'; // Adjust the import path if necessary
+import projects from '@/components/Portfolio/projects'; 
 import Style from '@/components/Portfolio/portfolio.module.css'
 import Link from 'next/link';
 
