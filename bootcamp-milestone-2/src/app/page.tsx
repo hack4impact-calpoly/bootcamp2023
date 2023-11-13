@@ -33,7 +33,6 @@ export default function Home() {
                 
               </div>
         </main>
-        <footer className="footer">© 2023 My Website | All Rights Reserved</footer>
     </>
   )
 }
