@@ -9,11 +9,18 @@ let connection: typeof mongoose;
  * Call this function at the start of api routes and data fetches
  * @returns {Promise<typeof mongoose>}
  */
-const connectDB = async () => {
-    if (!connection) {
-        connection = await mongoose.connect(url);
-        return connection;
+async function connectDB() {
+    try {
+        if (!connection) {
+            console.log("start");
+            connection = await mongoose.connect(`${process.env.MONGO_URI}`);
+            console.log("end");
+            return connection;
+        }
+    } catch (err) {
+        console.log("ERRORED ON CONNECT DB");
+        console.error(err);
     }
-};
+}
 
 export default connectDB;
