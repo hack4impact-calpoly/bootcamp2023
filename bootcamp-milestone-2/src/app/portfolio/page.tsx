@@ -19,17 +19,14 @@ export default function Home() {
         
     </nav>
     <main> 
-        <h1 className = "page-title"> Home </h1>
-
-        <div className = "about" > 
-            <div className = "about-text"> 
-            <div className = "about-image" > 
-                <Image src = {'/boat2.JPG'} width = {200} height = {300} alt = "Photo of me on a ferry boat." className = "boat"/>
-            </div>
-
-                <p> Leila Touati is a second year <strong> Journalism </strong> major with a minor in <strong> Computer Science.</strong></p>
-                <p> Leila loves peppermint tea, <em>Scout Coffee</em> matcha, and reading during her free time.</p>
-            </div> 
+        <h1 className = "page-title"> Portfolio </h1>
+        <div className = "project" > 
+            <a id = "screenshot" href = "index.html" > <Image src = {"screenshot.jpg"} width = {400} height = {300} alt = "screenshot of Home page" className = "screen" /> </a> 
+        </div>
+        <div className = "project-details"> 
+            <p className = "project-name"> <strong>Personal Website 2023</strong></p>
+            <p className = "project-description"> After completing the Hack4Impact Starter Pack, I learned the skills of HTML, CSS, and JavaScript to create an updated website with all working links. </p>
+                <a id = "learn-more" href = "index.html"> LEARN MORE </a>
         </div>
     </main>
     <footer className = "footer" > © 2023 Leila's World | All Rights Reserved </footer>
