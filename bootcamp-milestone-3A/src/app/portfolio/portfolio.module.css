@@ -1,0 +1,54 @@
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projectsgrid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(500px, 1fr)
+  ); /* adjust the minmax values as needed */
+  gap: 16px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column; /* corrected from 'flexdirection' */
+  background-color: #f8f8f8; /* corrected from 'backgroundcolor' */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 16px;
+  align-items: center; /* corrected from 'alignitems' */
+  justify-content: center; /* corrected from 'justifycontent' */
+}
+
+.project img {
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #2d2d2d;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* corrected from 'boxshadow' */
+  max-width: 100%;
+}
+
+.project img:hover {
+  transform: translateY(-5px); /* changed to negative for a 'lift' effect */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* corrected from 'boxshadow' */
+  cursor: pointer;
+}
+
+.project a {
+  align-items: center; /* corrected from 'alignitems' */
+  justify-content: center; /* corrected from 'justifycontent' */
+  align-self: center; /* corrected from 'alignself' */
+}
+
+.project p {
+  text-align: center; /* corrected from 'textalign' */
+}
+
+.project-name {
+  font-weight: bold; /* corrected from 'fontweight' */
+}

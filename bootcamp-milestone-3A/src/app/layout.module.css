@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d2d2d;
+  color: white;
+  height: 2.5rem;
+}
+
+/* This is to ensure that the padding and margin are reset */
+.removepm {
+  padding: 0;
+  margin: 0;
+  /* other styles like box-sizing, etc. */
+}
+
+.fillheight {
+  min-height: 100vh;
+}
