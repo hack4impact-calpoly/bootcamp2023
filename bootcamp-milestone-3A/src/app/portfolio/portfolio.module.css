@@ -11,6 +11,7 @@
     minmax(500px, 1fr)
   ); /* adjust the minmax values as needed */
   gap: 16px;
+  padding: 10px;
 }
 
 .project {
