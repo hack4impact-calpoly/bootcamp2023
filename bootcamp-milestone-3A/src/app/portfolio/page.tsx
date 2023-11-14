@@ -1,23 +1,48 @@
-import Image from "next/image";
 import styles from "./portfolio.module.css";
-import projects from "./projects";
+import connectDB from "../database/db";
+import Project from "../database/projectSchema";
 
-export default function Portfolio() {
+interface ProjectData {
+  name: string;
+  description: string;
+  link: string;
+  image: string;
+}
+
+export default async function Portfolio() {
+  async function getProjects() {
+    await connectDB(); // function from db.ts before
+
+    try {
+      // query for all blogs and sort by date
+      const blogs = await Project.find().sort({ date: -1 }).orFail();
+      // send a response as the blogs as the message
+      return blogs;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  const projects = await getProjects();
+
   return (
     <div className={styles.portfolio}>
       <h1 className={styles.portfoliotitle}>Portfolio</h1>
       <div className={styles.projectsgrid}>
-        {projects.map((project, index) => (
-          <div key={index} className={styles.project}>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              <img src={project.image} alt={project.name} />
-            </a>
-            <div className={styles.projectdetails}>
-              <p className={styles.projectname}>{project.name}</p>
-              <p className={styles.projectdescription}>{project.description}</p>
+        {projects &&
+          projects.map((project: ProjectData, index) => (
+            <div key={index} className={styles.project}>
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                <img src={project.image} alt={project.name} />
+              </a>
+              <div className={styles.projectdetails}>
+                <p className={styles.projectname}>{project.name}</p>
+                <p className={styles.projectdescription}>
+                  {project.description}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );
