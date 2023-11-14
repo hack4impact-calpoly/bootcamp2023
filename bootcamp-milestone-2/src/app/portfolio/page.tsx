@@ -3,7 +3,7 @@ import styles from './page.module.css'
 import Link from "next/link";
 
 export default function Home() {
-  <Link href = "/home"></Link>
+  <Link href = "/portfolio"></Link>
   return (
     <>
     <nav className = "navbar"> 
