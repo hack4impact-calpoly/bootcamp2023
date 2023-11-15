@@ -21,7 +21,7 @@ export default function Home() {
     <main> 
         <h1 className = "page-title"> Portfolio </h1>
         <div className = "project" > 
-            <a id = "screenshot" href = "index.html" > <Image src = {"screenshot.jpg"} width = {400} height = {300} alt = "screenshot of Home page" className = "screen" /> </a> 
+            <a id = "screenshot" href = "index.html" > <Image src = {"/screenshot.jpg"} width = {400} height = {300} alt = "screenshot of Home page" className = "screen" /> </a> 
         </div>
         <div className = "project-details"> 
             <p className = "project-name"> <strong>Personal Website 2023</strong></p>

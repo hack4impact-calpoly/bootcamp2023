@@ -10,7 +10,7 @@ export default function Home() {
         <h1 className = "Leila"> 
             <a href = "index.html" > personal website </a> </h1>
             <ul className = "nav-list" >
-            <Link href = "/home"> Home |</Link>
+                <Link href = "/home"> Home |</Link>
                  <Link href = "/blog"> Blog |</Link>
                  <Link href = "/portfolio"> Portfolio |</Link>
                  <Link href = "/resume"> Resume |</Link>
