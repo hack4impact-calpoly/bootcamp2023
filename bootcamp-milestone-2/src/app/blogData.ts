@@ -1,28 +1,19 @@
-
+import connectDB from "./helpers/db";
+//import Blog from "./database/blogSchema";
+import IBlog from "./database/blogSchema"
+import { get } from "http";
+import { connect } from "http2";
+import getBlogs from "./blog/page";
 
 export interface Blog {
-    image: string;
+    content: string;
 	title: string;
     date: string;
     description: string;
     slug: string;
+    comments: string;
 }
 
-const blogs: Blog[] = [
-    {
-        image: "/headphones.webp",
-        title: "Some of my Favorite Artists",
-        date: "October 21, 2023",
-        description: "The Foals, Michael Jackson, Yung Pinch, Chance the Rapper are some of my favorite music artists.",
-        slug: "blog-artists.html",
-    },
-    {
-        image: "/classSchedule.png",
-        title: "The Classes I am Taking",
-        date: "October 21, 2023",
-        description: "I am taking CSC 307, CSC 349, Calc IV, and Bio/BMED 213",
-        slug: "blog-classes.html",
-    },
-];
+const blogs = getBlogs();
 
 export default blogs; // This will allow us to access this data anywhere!

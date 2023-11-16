@@ -2,6 +2,7 @@ import React from "react";
 import style from "./blogPreview.module.css";
 import Image from "next/image";
 import { Blog } from "../blogData";
+import Link from "next/link";
 export default function BlogPreview(props: Blog) {
   return (
     // replace everything between the <div> & </div> tags
@@ -9,9 +10,10 @@ export default function BlogPreview(props: Blog) {
     <div className={style.blog}>
       <div>
         <h3>{props.title}</h3>
-        <Image src={props.image} alt="img" width={400} height={300}></Image>
+        <p>{props.date.toString()}</p>
+        <Image src={props.content} alt="img" width={400} height={300}></Image>
         <p>{props.description}</p>
-        <p>{props.date}</p>
+        <Link href={"blogs/" + props.slug}>Read More</Link>
       </div>
     </div>
   );
