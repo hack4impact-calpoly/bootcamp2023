@@ -11,5 +11,9 @@
   "keywords": [],
   "devDependencies": {
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "mongodb": "^6.2.0",
+    "mongoose": "^8.0.0"
   }
 }
