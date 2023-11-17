@@ -6,7 +6,7 @@ type IComment = {
 
 export interface Blog {
   title: string;
-  date: Date;
+  date: string;
   description: string;
   slug: string;
   content: string; // for individual blog page
@@ -16,7 +16,7 @@ export interface Blog {
 const blogList: Blog[] = [
   {
     title: "Cinque Terre",
-    date: new Date("2023-10-21"),
+    date: "2023-10-21",
     description: "My first weekend trip exploring another part of Italy!",
     slug: "/blog/cinque_terre",
     content: "",
@@ -24,7 +24,7 @@ const blogList: Blog[] = [
   },
   {
     title: "Tuscany",
-    date: new Date("2023-10-21"),
+    date: "2023-10-21",
     description: "The program-organized event, covering Flourence and Pisa",
     slug: "/blog/tuscany",
     content: "",
