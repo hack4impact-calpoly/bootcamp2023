@@ -1,7 +1,6 @@
 # Developer Bootcamp 2023
 
 This is how we will be tracking your milestones throughout bootcamp! By the end of bootcamp, you will have a fullstack personal portfolio website.
-
 ---
 
 ## Setup:
