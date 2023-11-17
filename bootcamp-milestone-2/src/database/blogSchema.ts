@@ -6,7 +6,7 @@ import { Blog } from "../app/blogData";
 const blogSchema = new Schema<Blog>({
   title: { type: String, required: true },
   slug: { type: String, required: true },
-  date: { type: Date, required: false, default: new Date() },
+  date: { type: String, required: false }, //{ type: Date, required: false, default: new Date() },
   description: { type: String, required: true },
   content: { type: String, requierd: true },
   comments: {
