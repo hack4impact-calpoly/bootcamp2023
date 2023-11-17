@@ -1,24 +1,9 @@
 import { Schema } from "mongoose";
 import mongoose from "mongoose";
-
-type IComment = {
-  user: string;
-  comment: string;
-  time: Date;
-};
-
-// typescript type (can also be an interface)
-type IBlog = {
-  title: string;
-  slug: string;
-  date: Date;
-  description: string; // for preview
-  content: string; // for individual blog page
-  comments: IComment[]; // array for comments
-};
+import { Blog } from "../app/blogData";
 
 // mongoose schema
-const blogSchema = new Schema<IBlog>({
+const blogSchema = new Schema<Blog>({
   title: { type: String, required: true },
   slug: { type: String, required: true },
   date: { type: Date, required: false, default: new Date() },
