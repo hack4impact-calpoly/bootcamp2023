@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import style from "./page.module.css";
 import "./globals.css";
-import connectDB from "../helper/db"
+import connectDB from "../helpers/db"
 import Blog from "../database/blogSchema";
 
 export default function Home() {
