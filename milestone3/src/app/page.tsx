@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 export default function Home() {
     return (
         <main>
