@@ -95,7 +95,7 @@ export default function ProjectEntry({ params }: { params: { id: number } }) {
                         {project?.comments.map((c) => (
                             <div className="comment-item">
                                 <div className="comment-date">
-                                    {c.time.toLocaleDateString()}
+                                    {c.time.toString()}
                                 </div>
                                 <div className="comment-user">{c.user}</div>
                                 <div className="comment-description">

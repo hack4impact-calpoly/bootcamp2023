@@ -82,6 +82,7 @@ export default function Resume() {
                         <li>ExpressJS</li>
                         <li>ReactJS</li>
                         <li>MongoDB</li>
+                        <li>Django Rest Framework</li>
                         <li>Git/Github</li>
                     </ul>
                 </section>
