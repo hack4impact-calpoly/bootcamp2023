@@ -21,14 +21,6 @@ export type IBlog = {
 const blogSchema = new Schema<IBlog>({
     title: { type: String, required: true },
     date: { type: Date, required: false, default: new Date() },
-    description: { type: String, required: true },
-    slug: {
-        type: String,
-        required: true,
-        default: function () {
-            return `./blog/${this._id}`;
-        },
-    },
     image: { type: String, required: true },
     comments: [
         {
