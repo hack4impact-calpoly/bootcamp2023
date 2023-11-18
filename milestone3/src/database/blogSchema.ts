@@ -8,12 +8,12 @@ export type IComment = {
 
 // typescript type (can also be an interface)
 export type IBlog = {
+    _id: string;
     title: string;
     date: Date;
     description: string; // for preview
     slug: string;
     image: string; // for individual blog page
-    blogNum: Number;
     comments: IComment[]; // array for comments
 };
 
@@ -22,9 +22,14 @@ const blogSchema = new Schema<IBlog>({
     title: { type: String, required: true },
     date: { type: Date, required: false, default: new Date() },
     description: { type: String, required: true },
-    slug: { type: String, required: true },
+    slug: {
+        type: String,
+        required: true,
+        default: function () {
+            return `./blog/${this._id}`;
+        },
+    },
     image: { type: String, required: true },
-    blogNum: { type: Number, reqiured: true },
     comments: [
         {
             user: { type: String, required: true },

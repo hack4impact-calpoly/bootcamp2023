@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import type { Blog } from "../app/blogData";
+import type { IBlog } from "../database/blogSchema";
 
-export default function BlogPreview(props: Blog) {
+export default function BlogPreview(props: IBlog) {
     return (
         <div className="blog-item">
             <h2>{props.title}</h2>
