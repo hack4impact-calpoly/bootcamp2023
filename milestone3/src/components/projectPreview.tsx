@@ -7,7 +7,7 @@ export default function ProjectPreview(props: IProject) {
         <div className="blog-item">
             <h2>{props.title}</h2>
             <p>{props.description}</p>
-            <Link href={`./blog/${props._id}`}>
+            <Link href={`./portfolio/${props._id}`}>
                 <button className="blog-btn">Read More</button>
             </Link>
         </div>

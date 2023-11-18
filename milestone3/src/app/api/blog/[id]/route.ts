@@ -37,7 +37,7 @@ export async function GET(req: NextRequest, { params }: IParams) {
 }
 
 export async function POST(req: NextRequest, { params }: IParams) {
-    await connectDB;
+    await connectDB();
     const { id } = params;
 
     try {
