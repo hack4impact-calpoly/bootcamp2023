@@ -8,7 +8,7 @@ let aboutInfos: AboutInfo[] = [
     {
         title: "About Me",
         description: "Hey All! I'm a third year computer science major at Cal Poly! I enjoy playing video games, playing volleyball and crocheting. Right now I'm working on a massive green worm named Phil. And of course I love plants!",
-        image: "/kyle_plants.JPG"
+        image: "/IMG_9284.JPG"
     },
     {
         title: "Crochet",

@@ -1,22 +1,41 @@
 import BlogPreview from "../components/blogPreview";
-import blogs from "../blogData";
 import style from "./page.module.css";
+import BlogModel from "../../database/blogSchema";
+import connectDB from "../../helpers/db";
+import { IBlog } from "../../database/blogSchema";
 
-export default function Blog() {
+async function getBlogs() {
+  await connectDB(); // function from db.ts before
+
+  try {
+    // query for all blogs and sort by date
+    const blogs = await BlogModel.find().sort({ date: -1 }).orFail();
+    // send a response as the blogs as the message
+    return blogs;
+  } catch (err) {
+    return null;
+  }
+}
+
+export default async function Blog() {
+  const blogData = await getBlogs();
   return (
     <div className={style.blog}>
       <h1 className={style.title}>Blogs</h1>
-      {blogs.map(
-        (blog) => (
+      {blogData ? (
+        blogData.map((blog: IBlog) => (
           <BlogPreview
             slug={blog.slug}
             title={blog.title}
             description={blog.description}
-            image={blog.image}
             date={blog.date}
-            text={blog.text}
+            content={blog.content}
+            imagePath={blog.imagePath}
+            comments={blog.comments}
           />
-        ) // This is how we call the component
+        ))
+      ) : (
+        <div className={style.title}>No Entries</div>
       )}
     </div>
   );
