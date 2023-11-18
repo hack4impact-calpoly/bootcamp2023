@@ -12,7 +12,6 @@ export type IBlog = {
     title: string;
     date: Date;
     description: string; // for preview
-    slug: string;
     image: string; // for individual blog page
     comments: IComment[]; // array for comments
 };

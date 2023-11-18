@@ -9,7 +9,7 @@ export default function BlogPreview(props: IBlog) {
             <h2>{props.title}</h2>
             <div>{props.date.toLocaleDateString()}</div>
             <p>{props.description}</p>
-            <Link href={props.slug}>
+            <Link href={`./blog/${props._id}`}>
                 <button className="blog-btn">Read More</button>
             </Link>
         </div>

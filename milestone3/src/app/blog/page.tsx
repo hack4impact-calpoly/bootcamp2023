@@ -26,7 +26,6 @@ export default function Blog() {
                             _id={blog._id}
                             title={blog.title}
                             description={blog.description}
-                            slug={`./blog/${blog._id}`}
                             image={blog.image}
                             date={blog.date}
                             comments={blog.comments}
