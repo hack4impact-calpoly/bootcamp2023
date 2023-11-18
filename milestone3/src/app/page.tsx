@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 export default function Home() {
     return (
         <main>
-            <p>{`${process.env.TEST}`}</p>
             <h1>Hello World!</h1>
             <img src="chess.png" />
             <div className="about">

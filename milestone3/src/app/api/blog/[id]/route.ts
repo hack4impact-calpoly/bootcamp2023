@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/helpers/db";
-import Blogs from "@/database/blogSchema";
+import Blogs, { IComment } from "@/database/blogSchema";
 
 type IParams = {
     params: {
@@ -30,8 +30,33 @@ export async function GET(req: NextRequest, { params }: IParams) {
 
     try {
         const blog = await Blogs.findOne({ _id: id }).orFail();
-        return NextResponse.json(blog);
+        return NextResponse.json(blog, { status: 200 });
     } catch (err) {
         return NextResponse.json("Blog not found.", { status: 404 });
+    }
+}
+
+export async function POST(req: NextRequest, { params }: IParams) {
+    await connectDB;
+    const { id } = params;
+
+    try {
+        //get blog with specified id
+        const blog = await Blogs.findById(id).orFail();
+
+        //parse request body
+        const { user, comment, time }: IComment = await req.json();
+
+        //add new comment to blog
+        blog.comments.push({
+            user: user,
+            comment: comment,
+            time: time,
+        });
+        await blog.save();
+
+        return NextResponse.json("Comment added successfully", { status: 200 });
+    } catch (err) {
+        return NextResponse.json("Comment not added.", { status: 400 });
     }
 }

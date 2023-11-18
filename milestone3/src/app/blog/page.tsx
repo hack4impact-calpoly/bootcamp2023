@@ -22,6 +22,7 @@ export default function Blog() {
                 <div className="blog-container">
                     {blogs?.map((blog) => (
                         <BlogPreview
+                            key={blog._id}
                             _id={blog._id}
                             title={blog.title}
                             description={blog.description}
