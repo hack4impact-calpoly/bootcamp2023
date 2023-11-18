@@ -11,7 +11,7 @@ export type IProject = {
     _id: string;
     title: string;
     description: string; // for preview
-    details: string[];
+    url: string;
     image: string; // for individual blog page
     comments: IComment[]; // array for comments
 };
@@ -20,12 +20,7 @@ export type IProject = {
 const projectSchema = new Schema<IProject>({
     title: { type: String, required: true },
     description: { type: String, required: true },
-    details: [
-        {
-            type: String,
-            required: true,
-        },
-    ],
+    url: { type: String, required: false },
     image: { type: String, required: true },
     comments: [
         {

@@ -47,7 +47,6 @@ export default function BlogEntry({ params }: { params: { id: number } }) {
                     title: blog?.title || "",
                     date: blog?.date || new Date(),
                     description: blog?.description || "",
-                    slug: blog?.slug || "",
                     image: blog?.image || "",
                     comments: blog
                         ? [...blog.comments, newComment]

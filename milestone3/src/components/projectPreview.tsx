@@ -1,12 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import type { IBlog } from "../database/blogSchema";
+import type { IProject } from "../database/projectSchema";
 
-export default function BlogPreview(props: IBlog) {
+export default function ProjectPreview(props: IProject) {
     return (
         <div className="blog-item">
             <h2>{props.title}</h2>
-            <div>{props.date.toLocaleDateString()}</div>
             <p>{props.description}</p>
             <Link href={`./blog/${props._id}`}>
                 <button className="blog-btn">Read More</button>
