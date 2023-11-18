@@ -13,9 +13,7 @@ export default function BlogPreview(props: IBlog) {
         <h3 className={style.blog_title}> {props.title} </h3>
         <div className={style.blog_info}>
           <Image
-            src={
-              props.imagePath ? props.imagePath : "/5O_1di3yc-0yQiCpsQ576w.jpg"
-            }
+            src={props.img ? props.img : "/5O_1di3yc-0yQiCpsQ576w.jpg"}
             alt="img"
             width={500}
             height={500}

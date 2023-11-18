@@ -13,7 +13,7 @@ export type IBlog = {
     date: Date;
     description: string; // for preview
     content: string; // for individual blog page
-    imagePath: string;
+    img: string;
     comments: IComment[]; // array for comments
 };
 
@@ -25,7 +25,7 @@ const blogSchema = new Schema<IBlog>({
     date: { type: Date, required: false, default: new Date()},
     description: { type: String, required: true },
     content: { type: String, required: true },
-    imagePath: { type: String, required: true },
+    img: { type: String, required: true },
     comments: {
         user: {type: String, required: true},
         comment: {type: String, required: true},

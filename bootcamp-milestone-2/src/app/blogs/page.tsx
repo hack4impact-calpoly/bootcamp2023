@@ -30,7 +30,7 @@ export default async function Blog() {
             description={blog.description}
             date={blog.date}
             content={blog.content}
-            imagePath={blog.imagePath}
+            img={blog.img}
             comments={blog.comments}
           />
         ))

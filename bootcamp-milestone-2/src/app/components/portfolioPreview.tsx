@@ -1,16 +1,16 @@
 import React from "react";
 import style from "./portfolioPreview.module.css";
 import Link from "next/link";
-import { Project } from "../portfolioData";
 import Image from "next/image";
+import { IPortfolio } from "../../database/portfolioSchema";
 
-export default function PortfolioPreview(props: Project) {
+export default function PortfolioPreview(props: IPortfolio) {
   return (
     <>
       <div className={style.about_box}>
         <div className={style.container} id="portfolio-container">
           <Link href={props.slug}>
-            <Image src={props.image} alt="img" width={500} height={500} />
+            <Image src={props.img} alt="img" width={500} height={500} />
           </Link>
         </div>
         <div className={style.about_text}>
