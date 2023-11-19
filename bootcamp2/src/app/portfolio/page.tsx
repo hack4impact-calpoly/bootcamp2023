@@ -1,21 +1,28 @@
 import styles from './page.module.css'
 import Link from "next/link";
+import getProjects from './projectData'
+import ProjectPreview from '@/components/projectPreview';
 
-export default function Home() {
-    return (  
-        <main className = {styles.main_content}>
-            <div className={styles.project}>
-                <a href = "index.html">
-                    <img src="lilypads.JPG" alt = "A picture of a nice plant" width = "281" height = "500"/>
-                </a>
-                <div className = {styles.project_details}>
-                    <p className = {styles.project_name}>Super Cool Website</p>
-                    <p className = {styles.project_description}>Hack4Impact personal website to help learn HTML</p>
-                    <Link href = "/">LEARN MORE</Link>
+
+
+export default async function Home() {
+    const projectPosts = await getProjects()
+
+    if(projectPosts){
+        return(  
+            <main className = {styles.main}>
+                <div className = "blog_container">
+                {projectPosts.map(project => (
+                /* we will soon add RecipePreview here */
+                <div key={project._id}> 
+                    <ProjectPreview  {...project._doc} /> 
                 </div>
-            
-            </div>
-        </main>
-    )
+                )
+                )}
+                </div>
+            </main>     
+        )
+    }
+   
 }
   

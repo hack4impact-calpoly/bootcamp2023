@@ -3,6 +3,7 @@ import Image from 'next/image';
 import style from './blogPreview.module.css';
 import Link from "next/link";
 
+
 type Blog = {
   title: string;
   date: string;
@@ -11,11 +12,13 @@ type Blog = {
 }
 
 export default function BlogPreview(props: Blog) {
+  console.log("1")
   return (
 		// replace everything between the <div> & </div> tags
 		// with your code from earlier milestones
+    
     <div className={style.blog_entry}>
-      <Link href = {`blog/${props.slug}`}>
+      <Link href = {`blog/${props.slug}`} >
         <h2>
           {props.title}
         </h2>

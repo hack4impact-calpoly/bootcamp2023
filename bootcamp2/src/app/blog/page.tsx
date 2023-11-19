@@ -1,18 +1,33 @@
-import styles from './page.module.css'
-import  {blogs}  from '../blogData';
-import BlogPreview from '@/components/blogPreview';
+import styles from "./page.module.css";
+import BlogPreview from "@/components/blogPreview";
+import getBlogs from "../blogData";
+/*
+const handleClick = () => {
 
-export default function Home() {
-    return(  
-        <main className = {styles.main}>
-            <div className = "blog_container">
-            {blogs.map(blog => 
+}*/
+
+export default async function Home() {
+  const blogPosts = await getBlogs();
+
+  if (blogPosts) {
+    return (
+      <main className={styles.main}>
+        <div className="blog_container">
+          {blogPosts.map((blog) => (
             /* we will soon add RecipePreview here */
-            <BlogPreview  {...blog} /> 
-            )}
+            <div key={blog._id}>
+              <BlogPreview {...blog._doc} />
             </div>
-            <img className = "flower" src="flowers.JPG" alt = "flowers" width = "650" height = "1000"/>
-        </main>     
-    )
+          ))}
+        </div>
+        <img
+          className="flower"
+          src="flowers.JPG"
+          alt="flowers"
+          width="650"
+          height="1000"
+        />
+      </main>
+    );
+  }
 }
-
