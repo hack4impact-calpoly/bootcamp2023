@@ -13,7 +13,3 @@ export interface Blog {
     slug: string;
     comments: string;
 }
-
-const blogs = getBlogs();
-
-export default blogs; // This will allow us to access this data anywhere!
