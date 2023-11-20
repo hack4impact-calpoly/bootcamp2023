@@ -13,6 +13,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "allowImportingTsExtensions": true, // I added this allow statment
     "plugins": [
       {
         "name": "next"
