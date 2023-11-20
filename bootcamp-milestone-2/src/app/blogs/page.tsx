@@ -1,18 +1,20 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Link from "next/link";
+// import blogs from '@/blogData';
+// import BlogPreview from '../components/blogPreview';
 import blogs from '@/static/blogData.ts'
 import BlogPreview from '@/components/blogPreview'
 
-export default function Home() {
-  <Link href = "/home"></Link>
+export default function Blogs() {
+  <Link href = "/page.tsx"></Link>
   return (
     <>
     <nav className = "navbar"> 
         <h1 className = "Leila"> 
-            <a href = "index.html" > personal website </a> </h1>
+            <a href = "/page.tsx" > personal website </a> </h1>
             <ul className = "nav-list" >
-                <Link href = "/home"> Home |</Link>
+                <Link href = "/page.tsx"> Home |</Link>
                  <Link href = "/blog"> Blog |</Link>
                  <Link href = "/portfolio"> Portfolio |</Link>
                  <Link href = "/resume"> Resume |</Link>
