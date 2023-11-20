@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import linkedinIcon from 'images/icons/linkedin.png'; 
 import githubIcon from 'images/icons/github.png';    
 import mailIcon from 'images/icons/mail.png';  
@@ -5,10 +6,26 @@ import './home.css';
 import faceShot from 'images/faceShot.png'
 import VantaFog from '@/components/VantaFog/vantaFog';
 import PortfolioSection from '@/components/Portfolio/portfolio';
+import connectDB from '@/database/helpers/db'
+import Blog from '@/database/blogSchema';
 import BlogSection from '@/components/Blog/blogpreview';
 
 
+async function getBlogs(){
+	await connectDB() // function from db.ts before
+
+	try {
+			// query for all blogs and sort by date
+	    const blogs = await Blog.find().sort({ date: -1 }).orFail()
+			// send a response as the blogs as the message
+	    return blogs
+	} catch (err) {
+	    return null
+	}
+}
+
 export default function Home() {
+
   return (
     <div>
       <div id="particles-js" className="particles-js">
