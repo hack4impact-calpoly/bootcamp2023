@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { IBlog, IComment } from "@/database/blogSchema";
+import BlogView from "@/components/blogView";
 import Comment from "@/components/comment";
 import axios from "axios";
 
@@ -83,14 +84,7 @@ export default function BlogEntry({ params }: { params: { id: number } }) {
         <main>
             {blog ? (
                 <>
-                    <div className="blog-content">
-                        <img src={blog?.image} />
-                        <h2 className="blog-title">{blog?.title}</h2>
-                        <div className="blog-date">{blog?.date.toString()}</div>
-                        <div className="blog-description">
-                            {blog?.description}
-                        </div>
-                    </div>
+                    <BlogView blog={blog} />
                     <div className="comment-container">
                         <h2>Comments</h2>
                         {blog?.comments.map((c) => (
