@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/helpers/db";
-import Blogs, { IComment } from "@/database/blogSchema";
+import Blogs from "@/database/blogSchema";
+import Comments, { IComment } from "@/database/commentSchema";
 
 type IParams = {
     params: {
@@ -29,7 +30,10 @@ export async function GET(req: NextRequest, { params }: IParams) {
     const { id } = params; // another destructure
 
     try {
-        const blog = await Blogs.findOne({ _id: id }).orFail();
+        //get blog object, and popualte comments from their reference ids
+        const blog = await Blogs.findOne({ _id: id })
+            .populate("comments")
+            .orFail();
         return NextResponse.json(blog, { status: 200 });
     } catch (err) {
         return NextResponse.json("Blog not found.", { status: 404 });
@@ -44,15 +48,17 @@ export async function POST(req: NextRequest, { params }: IParams) {
         //get blog with specified id
         const blog = await Blogs.findById(id).orFail();
 
-        //parse request body
-        const { user, comment, time }: IComment = await req.json();
-
-        //add new comment to blog
-        blog.comments.push({
+        //parse request body and create new comment object
+        const { user, comment, date }: IComment = await req.json();
+        const newComment = new Comments({
             user: user,
             comment: comment,
-            time: time,
+            date: date,
         });
+        await newComment.save();
+
+        //add new comment to blog
+        blog.comments.push(newComment._id);
         await blog.save();
 
         return NextResponse.json("Comment added successfully", { status: 200 });

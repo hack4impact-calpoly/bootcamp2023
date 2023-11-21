@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/helpers/db";
-import Projects, { IComment } from "@/database/projectSchema";
+import Projects from "@/database/projectSchema";
+import Comments, { IComment } from "@/database/commentSchema";
 
 type IParams = {
     params: {
@@ -29,7 +30,10 @@ export async function GET(req: NextRequest, { params }: IParams) {
     const { id } = params; // another destructure
 
     try {
-        const project = await Projects.findOne({ _id: id }).orFail();
+        //get project, and populate comments from their reference ids
+        const project = await Projects.findOne({ _id: id })
+            .populate("comments")
+            .orFail();
         return NextResponse.json(project, { status: 200 });
     } catch (err) {
         return NextResponse.json("Project not found.", { status: 404 });
@@ -45,14 +49,16 @@ export async function POST(req: NextRequest, { params }: IParams) {
         const project = await Projects.findById(id).orFail();
 
         //parse request body
-        const { user, comment, time }: IComment = await req.json();
-
-        //add new comment to project
-        project.comments.push({
+        const { user, comment, date }: IComment = await req.json();
+        const newComment = new Comments({
             user: user,
             comment: comment,
-            time: time,
+            date: date,
         });
+        await newComment.save();
+
+        //add new comment to project
+        project.comments.push(newComment._id);
         await project.save();
 
         return NextResponse.json("Comment added successfully", { status: 200 });
