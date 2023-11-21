@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "canvas": "^2.11.2",
+    "mongoose": "^8.0.1",
     "nan": "^2.18.0",
     "next": "14.0.0",
     "node-gyp": "^10.0.0",
