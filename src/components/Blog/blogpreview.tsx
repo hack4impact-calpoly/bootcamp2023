@@ -1,20 +1,28 @@
+// Importing necessary components and types
 import React from 'react';
-import blogs from '@/components/Blog/blogs'; 
-import Style from '@/components/Blog/blog.module.css'
-import Link from 'next/link';
+import BlogComponent from './BlogComponent';
+import { IBlog } from '@/database/blogSchema'; // Adjust the import path as necessary
 
-const BlogSection: React.FC = () => {
+// Defining the props type for BlogPreview
+interface BlogPreviewProps {
+  blogs: IBlog[];
+}
+
+// BlogPreview component
+const BlogPreview: React.FC<BlogPreviewProps> = ({ blogs }) => {
+  // If no blogs are found or the array is empty, display a message
+  if (!blogs || blogs.length === 0) {
+    return <div>No blogs found.</div>;
+  }
+
+  // Render the list of blogs
   return (
-    <section className={Style.blogContainer}>
-        {blogs.map((blogs, index) => (
-          <Link key={index} href={blogs.urlLink} className={Style.blog}>
-            <h2 className={Style.blogTitle}>{blogs.title}</h2>
-            <p className={Style.blogDate}>{blogs.date}</p>
-            <p>{blogs.description}</p>
-          </Link>
-        ))}
-  </section>
+    <div className="blogs-section">
+      {blogs.map(blog => (
+        <BlogComponent key={blog._id} blog={blog} />
+      ))}
+    </div>
   );
 };
 
-export default BlogSection;
+export default BlogPreview;

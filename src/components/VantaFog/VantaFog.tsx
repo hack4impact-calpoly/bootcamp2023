@@ -17,7 +17,7 @@ const VantaFog: React.FC = () => {
           midtoneColor: 0x8569b9,
           lowlightColor: 0xb1b1dc,
           baseColor: 0xe1e1e1,
-          speed: 2.0,
+          speed: 0.5,
           zoom: 1.8,
           blurFactor: 0.57
         })
