@@ -1,7 +1,7 @@
-.portfolioContainer{
+.projectContainer{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-direction: row;
   }
   
   .project{
@@ -12,6 +12,7 @@
     margin: 50px 100px 50px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
   }
   
   .project h2 {

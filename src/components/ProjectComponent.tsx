@@ -1,6 +1,6 @@
 import React from 'react';
 import { IProject } from '@/database/projectSchema';
-import style from '@/styles/blog.module.css'
+import style from '@/styles/projects.module.css'
 import Link from 'next/link';
 
 interface ProjectComponentProps {
@@ -9,9 +9,9 @@ interface ProjectComponentProps {
 
 const ProjectComponent: React.FC<ProjectComponentProps> = ({ projects }) => {
   return (
-    <div className={style.blogContainer}>
+    <div className={style.projectContainer}>
       {projects.map(project => (
-        <Link href={`/projects${project.slug}`} key={project.slug} className={style.blog}>
+        <Link href={`/projects${project.slug}`} key={project.slug} className={style.project}>
             <h2>{project.title}</h2>
             <p>{project.timeframe}</p>
             <p>{project.description}</p>
