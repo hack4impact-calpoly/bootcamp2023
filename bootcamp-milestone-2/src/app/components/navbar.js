@@ -3,17 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const react_1 = __importDefault(require("react"));
+const jsx_runtime_1 = require("react/jsx-runtime");
 const navbar_module_css_1 = __importDefault(require("./navbar.module.css"));
+const link_1 = __importDefault(require("next/link"));
 function Navbar() {
     return (
     // replace everything in between the <header> & <header /> tags
     // with your navbar code from your earlier milestones
-    react_1.default.createElement("header", { className: navbar_module_css_1.default.navbar },
-        react_1.default.createElement("h1", null, " Leila's Personal Website "),
-        react_1.default.createElement("nav", null,
-            react_1.default.createElement("a", { href: "/" }, "Home"),
-            react_1.default.createElement("a", { href: "/about" }, "About Me"),
-            react_1.default.createElement("a", { href: "/resume" }, "Resume"))));
+    (0, jsx_runtime_1.jsxs)("header", { className: navbar_module_css_1.default.navbar, children: [(0, jsx_runtime_1.jsx)("h1", { children: " Leila's Personal Website " }), (0, jsx_runtime_1.jsx)("nav", { children: (0, jsx_runtime_1.jsxs)("ul", { className: "nav-list", children: [(0, jsx_runtime_1.jsx)(link_1.default, { href: "index.html", children: " Home |" }), (0, jsx_runtime_1.jsx)(link_1.default, { href: "blog.html", children: " Blog |" }), (0, jsx_runtime_1.jsx)(link_1.default, { href: "portfolio.html", children: " Portfolio |" }), (0, jsx_runtime_1.jsx)(link_1.default, { href: "resume.html", children: " Resume |" }), (0, jsx_runtime_1.jsx)(link_1.default, { href: "contact.html", children: " Contact " })] }) })] }));
 }
 exports.default = Navbar;

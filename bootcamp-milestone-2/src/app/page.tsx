@@ -11,7 +11,7 @@ export default function Home() {
             <a href = "page.tsx" > personal website </a> </h1>
             <ul className = "nav-list" >
                 <Link href = "page.tsx"> Home |</Link>
-                 <Link href = "/blog"> Blog |</Link>
+                 <Link href = "/blogs"> Blog |</Link>
                  <Link href = "/portfolio"> Portfolio |</Link>
                  <Link href = "/resume"> Resume |</Link>
                  <Link href = "/contact"> Contact </Link>

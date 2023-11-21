@@ -1,27 +1,32 @@
-export interface Blog {
+import { ReactNode } from "react";
 
+export interface Blog {
+  [x: string]: ReactNode;
 }
 const blogs: Blog[] = [
-    {
-        title: "Hello there",
-        date: "10-18-2023",
-        desc: "A slight introduction",
-        slug: "blog_piece1"
-    },
+  {
+    name: "Hello there",
+    description: "A slight introduction",
+    image: "/beach.jpg",
+    posted: "10-18-2023",
+    text: "This is an introductory blog post with plenty of styling to come!",
+  },
 
-    {
-        title: "Another Day another Sunset",
-        date: "10-19-2023",
-        desc: "The origins of the sloset",
-        slug: "blog_piece2",
-    },
+  {
+    name: "Hello there",
+    description: "A slight introduction",
+    image: "/sky.jpg",
+    posted: "10-18-2023",
+    text: "This is an introductory blog post with plenty of styling to come!",
+  },
 
-    {
-        title: "Visiting Seattle",
-        date: "10-20-2023",
-        desc: "Time well spent in an awesome city",
-        slug: "blog_piece3",
-    }
+  {
+    name: "Hello there",
+    description: "A slight introduction",
+    image: "/mountain.jpg",
+    posted: "10-18-2023",
+    text: "This is an introductory blog post with plenty of styling to come!",
+  },
 ];
 
 export default blogs;
