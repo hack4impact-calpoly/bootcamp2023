@@ -10,11 +10,11 @@ export default function Navbar() {
       <h1> Leila's Personal Website </h1>
       <nav>
       <ul className = "nav-list" >
-        <Link href = "index.html"> Home |</Link>
-        <Link href = "blog.html"> Blog |</Link>
-        <Link href = "portfolio.html"> Portfolio |</Link>
-        <Link href = "resume.html"> Resume |</Link>
-        <Link href = "contact.html"> Contact </Link>
+        <Link href = "/page.tsx"> Home |</Link>
+        <Link href = "/blogs"> Blog |</Link>
+        <Link href = "/portfolio"> Portfolio |</Link>
+        <Link href = "/resume"> Resume |</Link>
+        <Link href = "/contact"> Contact </Link>
       </ul>
 
       </nav>
