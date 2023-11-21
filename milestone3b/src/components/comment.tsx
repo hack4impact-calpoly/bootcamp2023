@@ -1,4 +1,4 @@
-import { IComment } from "@/database/blogSchema";
+import { IComment } from "@/database/commentSchema";
 
 type CommentProps = {
     comment: IComment;
@@ -9,7 +9,7 @@ type CommentProps = {
 		Makes your code look nicer and allows for better readability.
 	*/
 }
-function parseCommentTime(time: Date) {
+function parseCommentTime(date: Date) {
     /*
     Parses MongoDB/TS date object
     :param time: date object
@@ -17,7 +17,7 @@ function parseCommentTime(time: Date) {
     */
     // Convert to Los Angeles time
     const losAngelesDate = new Date(
-        time.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })
+        date.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })
     );
 
     // Format the date as desired
@@ -35,7 +35,7 @@ function parseCommentTime(time: Date) {
 function Comment({ comment }: CommentProps) {
     return (
         <div className="comment-item">
-            <div className="comment-date">{parseCommentTime(comment.time)}</div>
+            <div className="comment-date">{parseCommentTime(comment.date)}</div>
             <div className="comment-user">{comment.user}</div>
             <div className="comment-description">{comment.comment}</div>
         </div>

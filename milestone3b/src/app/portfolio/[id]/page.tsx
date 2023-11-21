@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import { IProject, IComment } from "@/database/projectSchema";
+import { IProject } from "@/database/projectSchema";
+import { IComment } from "@/database/commentSchema";
 import Comment from "@/components/comment";
 import ProjectView from "@/components/projectView";
 import axios from "axios";
@@ -32,7 +33,7 @@ export default function ProjectEntry({ params }: { params: { id: number } }) {
             const newComment: IComment = {
                 user: nameInput?.value || "",
                 comment: descriptionText?.value || "",
-                time: new Date(),
+                date: new Date(),
             };
             //clear form data
             if (nameInput) nameInput.value = "";
@@ -91,9 +92,10 @@ export default function ProjectEntry({ params }: { params: { id: number } }) {
                             <Comment
                                 key={c.time.toString()}
                                 comment={{
+                                    _id: c._id,
                                     user: c.user,
                                     comment: c.comment,
-                                    time: c.time,
+                                    date: c.date,
                                 }}
                             />
                         ))}

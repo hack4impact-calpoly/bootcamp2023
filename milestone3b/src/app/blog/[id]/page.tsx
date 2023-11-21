@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import { IBlog, IComment } from "@/database/blogSchema";
+import { IBlog } from "@/database/blogSchema";
+import { IComment } from "@/database/commentSchema";
 import BlogView from "@/components/blogView";
 import Comment from "@/components/comment";
 import axios from "axios";

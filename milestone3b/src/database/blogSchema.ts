@@ -1,10 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-
-export type IComment = {
-    user: string;
-    comment: string;
-    time: Date;
-};
+import { IComment } from "./commentSchema";
 
 // typescript type (can also be an interface)
 export type IBlog = {
