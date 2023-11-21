@@ -11,7 +11,7 @@ const BlogComponent: React.FC<BlogComponentProps> = ({ blogs }) => {
   return (
     <div className={style.blogContainer}>
       {blogs.map(blog => (
-        <Link href={`/blogs/${blog.slug}`} key={blog.slug} className={style.blog}>
+        <Link href={`/blogs${blog.slug}`} key={blog.slug} className={style.blog}>
             <h2>{blog.title}</h2>
             <p>{blog.description}</p>
         {/* ... */}

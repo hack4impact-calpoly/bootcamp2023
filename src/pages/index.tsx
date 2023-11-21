@@ -2,18 +2,18 @@ import linkedinIcon from 'images/icons/linkedin.png';
 import githubIcon from 'images/icons/github.png';    
 import mailIcon from 'images/icons/mail.png';  
 import style from '@/styles/index.module.css'
-import blogStyle from '@/styles/blog.module.css'
 import faceShot from 'images/faceShot.png';
 import VantaFog from '@/components/VantaFog/vantaFog';
-import PortfolioSection from '@/components/Portfolio/portfolio';
 import Blog from '@/database/blogSchema';
 import connectDB from '@/database/helpers/db';
-import mongoose from 'mongoose';
 import {IBlog} from '@/database/blogSchema'
+import Project, {IProject} from '@/database/projectSchema'
 import BlogComponent from '@/components/BlogComponent';
+import ProjectComponent from '@/components/ProjectComponent';
 
 interface HomeProps {
   blogs: IBlog[];
+  projects: IProject[];
 }
 
 
@@ -21,7 +21,18 @@ async function getBlogs() {
   await connectDB(); // Connect to the database
 
   try {
-      const blogs = await Blog.find().sort({ date: -1 }).orFail();
+      const blogs = await Blog.find().sort({ date: -1 });
+      return blogs;
+  } catch (err) {
+      return null;
+  }
+}
+
+async function getProjects(){
+  await connectDB(); // Connect to the database
+
+  try {
+      const blogs = await Project.find().sort({ date: -1 });
       return blogs;
   } catch (err) {
       return null;
@@ -30,17 +41,21 @@ async function getBlogs() {
 
 export async function getStaticProps() {
   let blogs = await getBlogs();
-  // Convert the Mongoose documents to a JSON serializable format
+  let projects = await getProjects();
+  //mongoose to json
   blogs = JSON.parse(JSON.stringify(blogs));
+  projects = JSON.parse(JSON.stringify(projects));
   return {
+    // Pass the blogs as a prop or an empty array if null
       props: {
-          blogs: blogs || [], // Pass the blogs as a prop or an empty array if null
+          blogs: blogs || [], 
+          projects: projects || [], 
       },
   };
 }
 
 
-export default function Home({blogs}: HomeProps) {
+export default function Home({blogs, projects}: HomeProps) {
 
   return (
     <div>
@@ -82,7 +97,7 @@ export default function Home({blogs}: HomeProps) {
         <h3 id="portfolio">Portfolio</h3>
         <div className={style.purpleLine}></div>
         
-        <PortfolioSection/>
+        <ProjectComponent projects={projects}/>
 
         <h3 id="contact">Contact</h3>
         <div className={style.purpleLine}></div>
