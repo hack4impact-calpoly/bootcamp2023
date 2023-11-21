@@ -8,6 +8,7 @@ import axios from "axios";
 
 export default function BlogEntry({ params }: { params: { id: number } }) {
     const [blog, setBlog] = useState<IBlog | null>(null);
+    const [comments, setComments] = useState<IComment[]>([]);
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         /*
@@ -30,10 +31,10 @@ export default function BlogEntry({ params }: { params: { id: number } }) {
                 );
 
             // Explicitly cast e.target to HTMLFormElement
-            const newComment: IComment = {
+            const newComment = {
                 user: nameInput?.value || "",
                 comment: descriptionText?.value || "",
-                time: new Date(),
+                date: new Date(),
             };
             //clear form data
             if (nameInput) nameInput.value = "";
@@ -44,17 +45,10 @@ export default function BlogEntry({ params }: { params: { id: number } }) {
                 `/api/blog/${params.id}`,
                 newComment
             );
-            if (response.status === 200)
-                setBlog({
-                    _id: blog?._id || "",
-                    title: blog?.title || "",
-                    date: blog?.date || new Date(),
-                    description: blog?.description || "",
-                    image: blog?.image || "",
-                    comments: blog
-                        ? [...blog.comments, newComment]
-                        : [newComment],
-                });
+            if (response.status === 200) {
+                const addedComment: IComment = response.data;
+                setComments([...comments, addedComment]);
+            }
         } catch (err) {
             console.error(err);
         }
@@ -88,13 +82,14 @@ export default function BlogEntry({ params }: { params: { id: number } }) {
                     <BlogView blog={blog} />
                     <div className="comment-container">
                         <h2>Comments</h2>
-                        {blog?.comments.map((c) => (
+                        {comments?.map((c) => (
                             <Comment
-                                key={c.time.toString()}
+                                key={c.date.toString()}
                                 comment={{
+                                    _id: c._id,
                                     user: c.user,
                                     comment: c.comment,
-                                    time: c.time,
+                                    date: c.date,
                                 }}
                             />
                         ))}

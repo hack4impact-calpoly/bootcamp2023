@@ -61,7 +61,7 @@ export async function POST(req: NextRequest, { params }: IParams) {
         blog.comments.push(newComment._id);
         await blog.save();
 
-        return NextResponse.json("Comment added successfully", { status: 200 });
+        return NextResponse.json(newComment, { status: 200 });
     } catch (err) {
         return NextResponse.json("Comment not added.", { status: 400 });
     }
