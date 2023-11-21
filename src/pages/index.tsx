@@ -1,19 +1,44 @@
-import { GetServerSideProps } from 'next';
 import linkedinIcon from 'images/icons/linkedin.png'; 
 import githubIcon from 'images/icons/github.png';    
 import mailIcon from 'images/icons/mail.png';  
 import style from '@/styles/index.module.css'
+import blogStyle from '@/styles/blog.module.css'
 import faceShot from 'images/faceShot.png';
 import VantaFog from '@/components/VantaFog/vantaFog';
 import PortfolioSection from '@/components/Portfolio/portfolio';
-import BlogPreview from '@/components/Blog/BlogPreview';
 import Blog from '@/database/blogSchema';
 import connectDB from '@/database/helpers/db';
-import { IBlog } from '@/database/blogSchema';
+import mongoose from 'mongoose';
+import {IBlog} from '@/database/blogSchema'
+import BlogComponent from '@/components/BlogComponent';
 
 interface HomeProps {
   blogs: IBlog[];
 }
+
+
+async function getBlogs() {
+  await connectDB(); // Connect to the database
+
+  try {
+      const blogs = await Blog.find().sort({ date: -1 }).orFail();
+      return blogs;
+  } catch (err) {
+      return null;
+  }
+}
+
+export async function getStaticProps() {
+  let blogs = await getBlogs();
+  // Convert the Mongoose documents to a JSON serializable format
+  blogs = JSON.parse(JSON.stringify(blogs));
+  return {
+      props: {
+          blogs: blogs || [], // Pass the blogs as a prop or an empty array if null
+      },
+  };
+}
+
 
 export default function Home({blogs}: HomeProps) {
 
@@ -51,7 +76,7 @@ export default function Home({blogs}: HomeProps) {
               <img src={faceShot.src} alt="Noah Giboney" />
             </div>
           </div>
-          <BlogPreview blogs={blogs}/>
+          <BlogComponent blogs={blogs}/>
         </section>
 
         <h3 id="portfolio">Portfolio</h3>
@@ -74,20 +99,3 @@ export default function Home({blogs}: HomeProps) {
     </div>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  await connectDB();
-
-  let blogs: IBlog[] = [];
-  try {
-    blogs = await Blog.find().sort({ date: -1 }).lean();
-  } catch (err) {
-    console.error('Error fetching blogs:', err);
-  }
-
-  return {
-    props: {
-      blogs: JSON.parse(JSON.stringify(blogs)),
-    },
-  };
-};

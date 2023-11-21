@@ -4,7 +4,7 @@ import 'src/styles/global.css'
 import NavBar from '@/components/Navbar/navbar';
 import Footer from '@/components/Footer/footer';
 
-const jose = Josefin_Sans({ subsets: ['latin'], weight: ['300']})
+const jose = Josefin_Sans({ subsets: ['vietnamese'], weight: ['300']})
 
 const metadata: Metadata = {
   title: 'Noah Giboney Portfolio',
