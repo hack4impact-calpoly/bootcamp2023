@@ -60,8 +60,9 @@ export async function POST(req: NextRequest, { params }: IParams) {
         //add new comment to project
         project.comments.push(newComment._id);
         await project.save();
+        await project.populate("comments");
 
-        return NextResponse.json(newComment, { status: 200 });
+        return NextResponse.json(project, { status: 200 });
     } catch (err) {
         return NextResponse.json("Comment not added.", { status: 400 });
     }

@@ -77,12 +77,14 @@ export default function Resume() {
                         <li>Java</li>
                         <li>C</li>
                         <li>Javascript</li>
+                        <li>Typescript</li>
                         <li>SQL</li>
+                        <li>Django Rest Framework</li>
                         <li>NodeJS</li>
                         <li>ExpressJS</li>
                         <li>ReactJS</li>
+                        <li>NextJs</li>
                         <li>MongoDB</li>
-                        <li>Django Rest Framework</li>
                         <li>Git/Github</li>
                     </ul>
                 </section>

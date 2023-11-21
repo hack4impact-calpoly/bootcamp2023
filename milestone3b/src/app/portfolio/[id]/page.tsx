@@ -1,14 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import { IProject } from "@/database/projectSchema";
-import { IComment } from "@/database/commentSchema";
 import Comment from "@/components/comment";
 import ProjectView from "@/components/projectView";
 import axios from "axios";
 
 export default function ProjectEntry({ params }: { params: { id: number } }) {
     const [project, setProject] = useState<IProject | null>(null);
-    const [comments, setComments] = useState<IComment[]>([]);
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         /*
@@ -46,8 +44,8 @@ export default function ProjectEntry({ params }: { params: { id: number } }) {
                 newComment
             );
             if (response.status === 200) {
-                const addedComment: IComment = response.data;
-                setComments([...comments, addedComment]);
+                const updatedProject: IProject = response.data;
+                setProject(updatedProject);
             }
         } catch (err) {
             console.error(err);
@@ -56,12 +54,15 @@ export default function ProjectEntry({ params }: { params: { id: number } }) {
 
     async function fetchProjectData() {
         /*
-        This function requests data for a project specified by id in url
+        This function requests data for a project specified by id in url and updates page.
         */
         try {
+            //get project data
             const response = await axios.get(`/api/portfolio/${params.id}`);
             if (response.status === 200) {
                 const projectData: IProject = await response.data;
+
+                //update page
                 setProject(projectData);
             } else {
                 console.error("Failed to fetch project data");
@@ -82,7 +83,7 @@ export default function ProjectEntry({ params }: { params: { id: number } }) {
                     <ProjectView project={project} />
                     <div className="comment-container">
                         <h2>Comments</h2>
-                        {comments?.map((c) => (
+                        {project.comments?.map((c) => (
                             <Comment
                                 key={c.date.toString()}
                                 comment={{

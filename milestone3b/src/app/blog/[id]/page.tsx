@@ -1,14 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import { IBlog } from "@/database/blogSchema";
-import { IComment } from "@/database/commentSchema";
 import BlogView from "@/components/blogView";
 import Comment from "@/components/comment";
 import axios from "axios";
 
 export default function BlogEntry({ params }: { params: { id: number } }) {
     const [blog, setBlog] = useState<IBlog | null>(null);
-    const [comments, setComments] = useState<IComment[]>([]);
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         /*
@@ -46,8 +44,8 @@ export default function BlogEntry({ params }: { params: { id: number } }) {
                 newComment
             );
             if (response.status === 200) {
-                const addedComment: IComment = response.data;
-                setComments([...comments, addedComment]);
+                const updatedBlog: IBlog = response.data;
+                setBlog(updatedBlog);
             }
         } catch (err) {
             console.error(err);
@@ -56,15 +54,16 @@ export default function BlogEntry({ params }: { params: { id: number } }) {
 
     async function fetchBlogData() {
         /*
-        This function requests data for a blog specified by id in url
+        This function requests data for a blog specified by id in url and updates page.
         */
         try {
+            //get blog data
             const response = await axios.get(`/api/blog/${params.id}`);
             if (response.status === 200) {
                 const blogData: IBlog = await response.data;
-                console.log(blogData);
+
+                //update page
                 setBlog(blogData);
-                setComments(blogData.comments);
             } else {
                 console.error("Failed to fetch blog data");
             }
@@ -84,7 +83,7 @@ export default function BlogEntry({ params }: { params: { id: number } }) {
                     <BlogView blog={blog} />
                     <div className="comment-container">
                         <h2>Comments</h2>
-                        {comments?.map((c) => (
+                        {blog.comments?.map((c) => (
                             <Comment
                                 key={c.date.toString()}
                                 comment={{

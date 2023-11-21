@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import { IComment } from "./commentSchema";
 
 // typescript type (can also be an interface)
 export type IProject = {
@@ -7,7 +8,7 @@ export type IProject = {
     description: string; // for preview
     url: string;
     image: string; // for individual blog page
-    comments: mongoose.Types.ObjectId; // array for comments
+    comments: IComment[]; // array for comments
 };
 
 // mongoose schema
