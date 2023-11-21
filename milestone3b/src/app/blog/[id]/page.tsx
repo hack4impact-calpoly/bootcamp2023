@@ -62,7 +62,9 @@ export default function BlogEntry({ params }: { params: { id: number } }) {
             const response = await axios.get(`/api/blog/${params.id}`);
             if (response.status === 200) {
                 const blogData: IBlog = await response.data;
+                console.log(blogData);
                 setBlog(blogData);
+                setComments(blogData.comments);
             } else {
                 console.error("Failed to fetch blog data");
             }

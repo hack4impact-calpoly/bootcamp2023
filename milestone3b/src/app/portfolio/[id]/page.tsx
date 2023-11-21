@@ -8,6 +8,7 @@ import axios from "axios";
 
 export default function ProjectEntry({ params }: { params: { id: number } }) {
     const [project, setProject] = useState<IProject | null>(null);
+    const [comments, setComments] = useState<IComment[]>([]);
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         /*
@@ -30,7 +31,7 @@ export default function ProjectEntry({ params }: { params: { id: number } }) {
                 );
 
             // Explicitly cast e.target to HTMLFormElement
-            const newComment: IComment = {
+            const newComment = {
                 user: nameInput?.value || "",
                 comment: descriptionText?.value || "",
                 date: new Date(),
@@ -44,17 +45,10 @@ export default function ProjectEntry({ params }: { params: { id: number } }) {
                 `/api/portfolio/${params.id}`,
                 newComment
             );
-            if (response.status === 200)
-                setProject({
-                    _id: project?._id || "",
-                    title: project?.title || "",
-                    description: project?.description || "",
-                    url: project?.url || "",
-                    image: project?.image || "",
-                    comments: project
-                        ? [...project.comments, newComment]
-                        : [newComment],
-                });
+            if (response.status === 200) {
+                const addedComment: IComment = response.data;
+                setComments([...comments, addedComment]);
+            }
         } catch (err) {
             console.error(err);
         }
@@ -88,9 +82,9 @@ export default function ProjectEntry({ params }: { params: { id: number } }) {
                     <ProjectView project={project} />
                     <div className="comment-container">
                         <h2>Comments</h2>
-                        {project?.comments.map((c) => (
+                        {comments?.map((c) => (
                             <Comment
-                                key={c.time.toString()}
+                                key={c.date.toString()}
                                 comment={{
                                     _id: c._id,
                                     user: c.user,

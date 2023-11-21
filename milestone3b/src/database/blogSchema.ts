@@ -8,7 +8,7 @@ export type IBlog = {
     date: Date;
     description: string; // for preview
     image: string; // for individual blog page
-    comments: IComment[]; // array for comments
+    comments: IComment[];
 };
 
 // mongoose schema
@@ -19,9 +19,8 @@ const blogSchema = new Schema<IBlog>({
     image: { type: String, required: true },
     comments: [
         {
-            user: { type: String, required: true },
-            comment: { type: String, required: true },
-            time: { type: Date, required: false, default: new Date() },
+            type: Schema.Types.ObjectId,
+            ref: "comments",
         },
     ],
 });

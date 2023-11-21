@@ -55,6 +55,7 @@ export async function POST(req: NextRequest, { params }: IParams) {
             comment: comment,
             date: date,
         });
+
         await newComment.save();
 
         //add new comment to blog
@@ -63,6 +64,7 @@ export async function POST(req: NextRequest, { params }: IParams) {
 
         return NextResponse.json(newComment, { status: 200 });
     } catch (err) {
+        console.error(err);
         return NextResponse.json("Comment not added.", { status: 400 });
     }
 }

@@ -16,7 +16,12 @@ const projectSchema = new Schema<IProject>({
     description: { type: String, required: true },
     url: { type: String, required: false },
     image: { type: String, required: true },
-    comments: [],
+    comments: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "comments",
+        },
+    ],
 });
 
 // Define the model or use the existing one if it has already been defined
