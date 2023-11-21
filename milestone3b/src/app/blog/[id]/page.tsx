@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { IBlog, IComment } from "@/database/blogSchema";
+import Comment from "@/components/comment";
 import axios from "axios";
 
 export default function BlogEntry({ params }: { params: { id: number } }) {
@@ -93,15 +94,14 @@ export default function BlogEntry({ params }: { params: { id: number } }) {
                     <div className="comment-container">
                         <h2>Comments</h2>
                         {blog?.comments.map((c) => (
-                            <div className="comment-item">
-                                <div className="comment-date">
-                                    {c.time.toString()}
-                                </div>
-                                <div className="comment-user">{c.user}</div>
-                                <div className="comment-description">
-                                    {c.comment}
-                                </div>
-                            </div>
+                            <Comment
+                                key={c.time.toString()}
+                                comment={{
+                                    user: c.user,
+                                    comment: c.comment,
+                                    time: c.time,
+                                }}
+                            />
                         ))}
                     </div>{" "}
                 </>
