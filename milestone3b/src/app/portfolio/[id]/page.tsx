@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { IProject, IComment } from "@/database/projectSchema";
+import Comment from "@/components/comment";
+import ProjectView from "@/components/projectView";
 import axios from "axios";
 
 export default function ProjectEntry({ params }: { params: { id: number } }) {
@@ -82,26 +84,18 @@ export default function ProjectEntry({ params }: { params: { id: number } }) {
         <main>
             {project ? (
                 <>
-                    <div className="blog-content">
-                        <img src={project?.image} />
-                        <h2 className="blog-title">{project?.title}</h2>
-                        <a href={project?.url}>See Project</a>
-                        <div className="blog-description">
-                            {project?.description}
-                        </div>
-                    </div>
+                    <ProjectView project={project} />
                     <div className="comment-container">
                         <h2>Comments</h2>
                         {project?.comments.map((c) => (
-                            <div className="comment-item">
-                                <div className="comment-date">
-                                    {c.time.toString()}
-                                </div>
-                                <div className="comment-user">{c.user}</div>
-                                <div className="comment-description">
-                                    {c.comment}
-                                </div>
-                            </div>
+                            <Comment
+                                key={c.time.toString()}
+                                comment={{
+                                    user: c.user,
+                                    comment: c.comment,
+                                    time: c.time,
+                                }}
+                            />
                         ))}
                     </div>{" "}
                 </>
