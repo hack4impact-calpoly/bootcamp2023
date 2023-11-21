@@ -15,16 +15,21 @@ function parseCommentTime(time: Date) {
     :param time: date object
     :return: string reprsenting date
     */
-    const options: Intl.DateTimeFormatOptions = {
-        timeZone: "America/Los_Angeles",
-        hour12: true,
+    // Convert to Los Angeles time
+    const losAngelesDate = new Date(
+        time.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })
+    );
+
+    // Format the date as desired
+    const formattedDate = losAngelesDate.toLocaleString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
         hour: "numeric",
-        minute: "numeric",
-        second: "numeric",
-    };
-    const losAngelesTime = time.toLocaleString("en-US", options);
-    console.log(losAngelesTime);
-    return losAngelesTime;
+        minute: "2-digit",
+        hour12: true,
+    });
+    return formattedDate;
 }
 
 function Comment({ comment }: CommentProps) {
