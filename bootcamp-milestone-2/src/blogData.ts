@@ -13,20 +13,20 @@ const blogs: Blog[] = [
   },
 
   {
-    name: "Hello there",
-    description: "A slight introduction",
+    name: "Another day, another sunset",
+    description: "The origin of the sloset",
     image: "/sky.jpg",
     posted: "10-19-2023",
     text: "A friend of mine calls the sunsets in San Luis Obispo slosets, which I've recently adopted into my own vocabulary. Enjoy this photo of the sunset highlighting the cascading clouds near Pismo.",
   },
 
   {
-    name: "Hello there",
-    description: "A slight introduction",
+    name: "The Seattle visit",
+    description: "Gone to the PNW",
     image: "/mountain.jpg",
     posted: "10-20-2023",
     text: "This summer, I visited Seattle with friends and took over 200 photos on my phone. I was an insufferable tourist, dragging Seattle locals to go to Pike Place Market, the Space Needle, and Gasworks Park.",
   },
-];
+]
 
 export default blogs;
