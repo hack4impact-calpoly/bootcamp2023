@@ -1,3 +1,4 @@
+
 .web_blog_post{
     display: flex;
     flex-direction: column;
@@ -11,7 +12,7 @@
     font-family: Arial, Helvetica, sans-serif;
   
   
-    width: 700px;
+    width: 640px;
     padding: 0px;
     margin: 15px
 
