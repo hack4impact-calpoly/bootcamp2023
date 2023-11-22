@@ -1,7 +1,7 @@
 import { GetServerSideProps, NextPage } from 'next';
-import mongoose from 'mongoose';
 import Blog, { IBlog } from '@/database/blogSchema';
 import connectDB from '@/database/helpers/db';
+import style from '@/styles/blog.module.css'
 
 interface BlogPageProps {
   blog: IBlog | null;
@@ -14,7 +14,7 @@ const BlogPage: NextPage<BlogPageProps> = ({ blog }) => {
 
   // Render the blog post using the data
   return (
-    <div>
+    <div className={style.blogContainer}>
       <h1>{blog.title}</h1>
       <p>{blog.date}</p>
       <article>{blog.content}</article>
