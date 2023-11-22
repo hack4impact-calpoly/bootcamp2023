@@ -9,10 +9,10 @@ export default function Navbar() {
     <header className={styles.navbar}>
         <nav className={styles.navbar}>
           <h1 className={styles.logo}>
-              <Link href="https://www.linkedin.com/in/tarannssingh/">Taran&apos;s Personal Website</Link>
+              <Link href="/">Taran&apos;s Personal Website</Link>
+              {/* https://www.linkedin.com/in/tarannssingh/ */}
           </h1>
           <ul className={styles.nav_list}>
-            
               <li><Link href="/">Home</Link></li>
               <li><Link href="/blog">Blog</Link></li>
               <li><Link href="/portfolio">Portfolio</Link></li>

@@ -1,9 +1,46 @@
 // import Image from ''
-import styles from 'resume.module.css'
+import styles from './resume.module.css'
+import Link from "next/link"
+import PdfViewer from '../components/resumeEmbed'
+
 
 export default function Resume() { 
-    return(
-    <div>
+    return (
+    <>
+    <h1>Resume</h1>
+      {/* <div className={styles.highlights}>
+        <h1> Highlights </h1>
+        {
+
+        }
+        <h2> Knowledge </h2>
+        {
+          // What I know and from Where
+        }
+        <h2> Experience </h2>
+        {
+          // Things I have done 
+        }
+        <h2> Projects </h2>
+        {
+          // Projects
+        }
+      </div> */}
+
+      <div className={styles.embed}>
+        <center> 
+            <span className={styles.download}>
+              <Link className={styles.link} href="/PDFs/resume100.pdf" download>Download a Copy</Link>
+            </span>
+            <PdfViewer></PdfViewer>
+        </center> 
+      </div>
+    </>
+    )
+  }
+
+
+  {/* <div>
         <h1 className="e">Resume</h1>
         <a href="resume100.pdf" download>Download Resume</a>
         <div className="resume">
@@ -117,5 +154,4 @@ export default function Resume() {
             </section>
         </div>
     </div>
-    )
-  }
+    </> */}
