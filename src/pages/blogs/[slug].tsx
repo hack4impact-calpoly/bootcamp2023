@@ -2,6 +2,7 @@ import { GetServerSideProps, NextPage } from 'next';
 import Blog, { IBlog } from '@/database/blogSchema';
 import connectDB from '@/database/helpers/db';
 import style from '@/styles/blog.module.css'
+import Comment from '@/components/Comment';
 
 interface BlogPageProps {
   blog: IBlog | null;
@@ -12,12 +13,21 @@ const BlogPage: NextPage<BlogPageProps> = ({ blog }) => {
     return <div>Blog not found</div>;
   }
 
-  // Render the blog post using the data
   return (
     <div className={style.blogContainer}>
       <h1>{blog.title}</h1>
       <p>{blog.date}</p>
       <article>{blog.content}</article>
+      <section>
+        <h2>Comments</h2>
+        {blog.comments && blog.comments.length > 0 ? (
+          blog.comments.map((comment, index) => (
+            <Comment key={index} comment={comment} />
+          ))
+        ) : (
+          <p>No comments</p>
+        )}
+      </section>
     </div>
   );
 };
