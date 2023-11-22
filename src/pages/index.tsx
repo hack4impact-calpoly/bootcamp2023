@@ -3,12 +3,12 @@ import githubIcon from 'images/icons/github.png';
 import mailIcon from 'images/icons/mail.png';  
 import style from '@/styles/index.module.css'
 import faceShot from 'images/faceShot.png';
-import VantaFog from '@/components/VantaFog/vantaFog';
+import VantaFog from '@/components/VantaGlobe/vantaGlobe';
 import Blog from '@/database/blogSchema';
 import connectDB from '@/database/helpers/db';
 import {IBlog} from '@/database/blogSchema'
 import Project, {IProject} from '@/database/projectSchema'
-import BlogComponent from '@/components/BlogComponent';
+import BlogPreviewComponent from '@/components/BlogPreviewComponent';
 import ProjectComponent from '@/components/ProjectComponent';
 
 interface HomeProps {
@@ -91,7 +91,7 @@ export default function Home({blogs, projects}: HomeProps) {
               <img src={faceShot.src} alt="Noah Giboney" />
             </div>
           </div>
-          <BlogComponent blogs={blogs}/>
+          <BlogPreviewComponent blogs={blogs}/>
         </section>
 
         <h3 id="portfolio">Portfolio</h3>

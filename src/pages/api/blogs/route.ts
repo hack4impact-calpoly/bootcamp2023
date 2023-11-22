@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import connectDB from '@/database/helpers/db'
-import Blog from '@/database/blogSchema'
-
+import Blog, { blogSchema } from '@/database/blogSchema'
 
 type IParams = {
 		params: {
@@ -17,7 +16,7 @@ type IParams = {
 	object directly and conveniently, 
 	such as the `params` property.
 
-	If we didn't do this, to obtain slug would look messy,
+	If we didn't do this, to obtain slug ould look messy,
 	ex.
 	const slug = params.params.slug
 

@@ -7,11 +7,11 @@ interface BlogComponentProps {
   blogs: IBlog[];
 }
 
-const BlogComponent: React.FC<BlogComponentProps> = ({ blogs }) => {
+const BlogPreviewComponent: React.FC<BlogComponentProps> = ({ blogs }) => {
   return (
     <div className={style.blogContainer}>
       {blogs.map(blog => (
-        <Link href={`/blogs${blog.slug}`} key={blog.slug} className={style.blog}>
+        <Link href={`/blogs/${blog.slug}`} key={blog.slug} className={style.blog}>
             <h2 className={style.blogTitle}>{blog.title}</h2>
             <p className={style.blogDate}>{blog.date}</p>
             <p>{blog.description}</p>
@@ -21,4 +21,4 @@ const BlogComponent: React.FC<BlogComponentProps> = ({ blogs }) => {
   );
 };
 
-export default BlogComponent;
+export default BlogPreviewComponent;
