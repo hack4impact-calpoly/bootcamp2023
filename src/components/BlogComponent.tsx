@@ -12,9 +12,9 @@ const BlogComponent: React.FC<BlogComponentProps> = ({ blogs }) => {
     <div className={style.blogContainer}>
       {blogs.map(blog => (
         <Link href={`/blogs${blog.slug}`} key={blog.slug} className={style.blog}>
-            <h2>{blog.title}</h2>
+            <h2 className={style.blogTitle}>{blog.title}</h2>
+            <p className={style.blogDate}>{blog.date}</p>
             <p>{blog.description}</p>
-        {/* ... */}
         </Link>
       ))}
     </div>
