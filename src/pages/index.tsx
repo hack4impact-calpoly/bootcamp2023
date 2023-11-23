@@ -103,7 +103,8 @@ export default function Home({blogs, projects}: HomeProps) {
         <div className={style.purpleLine}></div>
         <section className={style.contactContainer}>
           <p>Feel free to reach out to me on <a href="https://www.linkedin.com/in/noah-giboney-896847261/" className="link">LinkedIn</a>, also available through email at <a href="mailto:noahgiboney@gmail.com" className="link">noahgiboney@gmail.com</a>.</p>
-          <p>↓ Check out my Resume below ↓</p>
+          <br></br>
+          <p>Check out my Resume, GitHub, and LinkedIn below!</p>
           <div className={style.buttonContainer}>
             <a className={style.button} href="documents/Noah Giboney Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
             <a className={style.button} href="https://github.com/noahgiboney" target="_blank" rel="noopener noreferrer">GitHub</a>

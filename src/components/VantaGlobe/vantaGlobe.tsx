@@ -12,7 +12,7 @@ const VantaGlobe: React.FC = () => {
         setVantaEffect(
           GLOBE({
           el: vantaRef.current,
-          THREE: THREE, 
+          THREE: THREE,
           color: 0x0,
           color2: 0xb2aacf,
           backgroundColor: 0xfcfcfd,
