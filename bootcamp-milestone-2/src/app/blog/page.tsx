@@ -9,6 +9,18 @@ export default function Resume() {
     <div>
 
         <main>
+          {blogs.map((blog) => (
+          <BlogPreview // This is how we call the component
+
+          title={blog.title}
+          date={blog.date}
+          description={blog.description}
+          image={blog.image}
+          slug={blog.slug}
+          content={blog.content}
+          comments={blog.comments}
+    />
+          ))}
 
             <div className={style.footer}>
                 <footer>
@@ -17,16 +29,7 @@ export default function Resume() {
             </div>
         </main>
         <script src="./blog.js"></script>
-        {blogs.map((blog) => (
-        <BlogPreview // This is how we call the component
-
-        title={blog.title}
-        image={blog.image}
-        date={blog.date}
-        description={blog.description}
-        slug={blog.slug}
-    />
-  ))}
+        
     </div>
       );
     }

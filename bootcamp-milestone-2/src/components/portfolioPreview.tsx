@@ -1,11 +1,11 @@
 import React from "react";
-import type { IBlog } from "../database/blogSchema";
+import type { IPortfolio } from "../database/portfolioSchema";
 import style from "@/app/home.module.css";
 import Image from "next/image";
 
 //<Image src={props.image} alt="img" width={500} height={300}></Image>
 
-export default function BlogPreview(props: IBlog) {
+export default function PortfolioPreview(props: IPortfolio) {
   return (
     // replace everything between the <div> & </div> tags
     // with your code from earlier milestones
@@ -14,13 +14,13 @@ export default function BlogPreview(props: IBlog) {
         <h3>{props.title} </h3>
         <div>
           <p>{props.description}</p>
+          <p>Posted on {props.date.toDateString()}</p>
           <Image
             src={"/" + props.image}
             alt="img"
-            width={600}
-            height={400}
+            width={500}
+            height={300}
           ></Image>
-          <p>Posted on {props.date.toDateString()}</p>
         </div>
       </div>
     </div>

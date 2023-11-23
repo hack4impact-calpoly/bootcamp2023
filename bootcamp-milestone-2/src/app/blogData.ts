@@ -1,29 +1,28 @@
-export interface Blog {
-    title: string;
-    image:string;
-    date: string;
-    description: string;
-    slug: string;
-  };
+import connectDB from '../helpers/db'
+import Blog from '../database/blogSchema'
+import type { IBlog } from '../database/blogSchema'
+
+
   
-  const blogs: Blog[] = [
-    {
-      title: "5 ways to stay healthy",
-      image:"/blog1.avif",
-      date: "10-jan-2023",
-      description:
-        "This blog talks about different ways to stay healthy both physically and mentally",
-      slug: "blog1",
-    },
-    {
-      title: "5 Essential Study Tips",
-      image:"/blog2.webp",
-      date: "13-july-2023",
-      description:
-        "This blog gives 5 Essential Study Tips for Academic Success",
-      slug: "blog2",
-    },
-  ];
+  const blogs: IBlog[] = await getBlogs()
+
+  let x=await getBlogs()
+  console.log(x)
+
+  async function getBlogs(){
+    await connectDB() // function from db.ts before
+  
+    try {
+        // query for all blogs and sort by date
+        const blogs = await Blog.find().sort({ date: -1 }).orFail()
+        console.log(blogs)
+        // send a response as the blogs as the message
+        return blogs
+    } catch (err) {
+        console.log(err)
+        return []
+    }
+  }
   
  /* function addblogs() {
     blogs.forEach((element) => {
