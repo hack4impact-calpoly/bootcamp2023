@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# is this necessary? There's a part ".env*.local" a few lines above
+.env
