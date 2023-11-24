@@ -22,7 +22,7 @@ async function getBlog(slug: string) {
   }
 }
 
-export default async function blogPage({ params: { slug } }: IParams) {
+export default async function BlogPage({ params: { slug } }: IParams) {
   const blogData = await getBlog(slug);
   if (!blogData) {
     return <div>Not Found</div>;

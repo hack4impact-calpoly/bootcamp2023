@@ -9,7 +9,7 @@ export default function PortfolioPreview(props: IPortfolio) {
     <>
       <div className={style.about_box}>
         <div className={style.container} id="portfolio-container">
-          <Link href={props.slug}>
+          <Link href={`portfolio/${props.slug}`}>
             <Image src={props.img} alt="img" width={500} height={500} />
           </Link>
         </div>
