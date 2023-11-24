@@ -8,9 +8,9 @@ export default function Portfolio() {
     <>
     <nav className = "navbar"> 
         <h1 className = "Leila"> 
-            <a href = "/page.tsx" > personal website </a> </h1>
+            <a href = "/home" > personal website </a> </h1>
             <ul className = "nav-list" >
-            <Link href = "/page.tsx"> Home |</Link>
+            <Link href = "/home"> Home |</Link>
                  <Link href = "/blogs"> Blog |</Link>
                  <Link href = "/portfolio"> Portfolio |</Link>
                  <Link href = "/resume"> Resume |</Link>
