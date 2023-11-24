@@ -2,7 +2,7 @@ import Image from "next/image";
 import BlogModel from "../../../database/blogSchema";
 import connectDB from "../../../helpers/db";
 import Comment from "@/app/components/comment";
-import { IComment } from "../../../database/blogSchema";
+import { IComment, IBlog } from "../../../database/blogSchema";
 import style from "./page.module.css";
 
 type IParams = {
@@ -23,35 +23,39 @@ async function getBlog(slug: string) {
 }
 
 export default async function BlogPage({ params: { slug } }: IParams) {
-  const blogData = await getBlog(slug);
+  const blogData: IBlog = await getBlog(slug);
   if (!blogData) {
     return <div>Not Found</div>;
   }
-  const comments = blogData.comments;
   return (
     <>
       <div className={style.blog}>
-        <h1 className={style.title}>Blogs</h1>
-        <h6>{blogData.date.toISOString().substring(0, 10)}</h6>
-        <Image
-          src={blogData.img ? blogData.img : "/5O_1di3yc-0yQiCpsQ576w.jpg"}
-          alt="img"
-          width={500}
-          height={500}
-        ></Image>
-        <p>{blogData.content}</p>
+        <h1 className={style.title}>{blogData.title}</h1>
+        <h6 className={style.date}>
+          {blogData.date.toISOString().substring(0, 10)}
+        </h6>
+        <div className={style.img}>
+          <Image
+            src={blogData.img ? blogData.img : "/5O_1di3yc-0yQiCpsQ576w.jpg"}
+            alt="img"
+            width={500}
+            height={500}
+          ></Image>
+        </div>
+        <div className={style.content_container}>
+          <p
+            className={style.content}
+            dangerouslySetInnerHTML={{ __html: blogData.content }}
+          ></p>
+        </div>
       </div>
-      <div>
-        {comments
-          ? comments.map((comment: IComment) => (
-              <Comment
-                user={comment.user}
-                comment={comment.comment}
-                time={comment.time}
-              ></Comment>
+      {/* <div>
+        {blogData.comments
+          ? blogData.comments.map((comment: IComment, index: number) => (
+              <Comment key={index} {...comment} />
             ))
           : null}
-      </div>
+      </div> */}
     </>
   );
 }

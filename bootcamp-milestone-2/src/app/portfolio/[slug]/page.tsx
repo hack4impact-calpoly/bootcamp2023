@@ -27,17 +27,21 @@ export default async function ProjectPage({ params: { slug } }: IParams) {
   }
   return (
     <>
-      <div className={style.blog}>
+      <div className={style.project}>
         <h1 className={style.title}>{projectData.title}</h1>
-        <Image
-          src={
-            projectData.img ? projectData.img : "/5O_1di3yc-0yQiCpsQ576w.jpg"
-          }
-          alt="img"
-          width={500}
-          height={500}
-        ></Image>
-        <p>{projectData.description}</p>
+        <div className={style.img}>
+          <Image
+            src={
+              projectData.img ? projectData.img : "/5O_1di3yc-0yQiCpsQ576w.jpg"
+            }
+            alt="img"
+            width={500}
+            height={500}
+          ></Image>
+        </div>
+        <div className={style.description_container}>
+          <p>{projectData.description}</p>
+        </div>
       </div>
     </>
   );
