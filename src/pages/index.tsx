@@ -59,6 +59,7 @@ export default function Home({blogs, projects}: HomeProps) {
 
   return (
     <div>
+
       <div className={style.vantaContainer}>
       <VantaFog/>
         <section className={style.homeContainer}>
@@ -76,9 +77,11 @@ export default function Home({blogs, projects}: HomeProps) {
           </div>       
         </section>
       </div>
+
       <div className={style.mainContainer}>
+
         <h3 id="about">About</h3> 
-        <div className={style.purpleLine}></div>
+        <div id='sectionLine'></div>
         <section className={style.aboutContainer}> 
           <div className={style.innerAboutContainer}>
             <div className={style.textContainer}>
@@ -94,14 +97,15 @@ export default function Home({blogs, projects}: HomeProps) {
         </section>
 
         <h3 id="portfolio">Portfolio</h3>
-        <div className={style.purpleLine}></div>
+        <div id='sectionLine'></div>
         <ProjectComponent projects={projects}/>
 
         <h3 id="blogs">Blogs</h3>
-        <div className={style.purpleLine}></div>
+        <div id='sectionLine'></div>
         <BlogPreviewComponent blogs={blogs}/>
+
         <h3 id="contact">Contact</h3>
-        <div className={style.purpleLine}></div>
+        <div id='sectionLine'></div>
         <section className={style.contactContainer}>
           <p>Feel free to reach out to me on <a href="https://www.linkedin.com/in/noah-giboney-896847261/" className="link">LinkedIn</a>, also available through email at <a href="mailto:noahgiboney@gmail.com" className="link">noahgiboney@gmail.com</a>.</p>
           <br></br>

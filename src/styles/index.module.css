@@ -33,13 +33,6 @@
   font-size: 4rem;
 }
 
-.purpleLine {
-  height: 3px;
-  width: 40%;
-  background-color: #655699;
-  margin: 50px 0;
-}
-
 .socialsContainer img {
   width: 50px;
   height: 50px;
@@ -110,6 +103,7 @@
 .mainContainer p {
   font-weight: bold;
   color: #020203;
+  padding-bottom: 10px;
 }
 
 @media screen and (max-width: 500px) {

@@ -1,21 +1,27 @@
 * {  
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
   }
 
-  html{
-    scroll-behavior: smooth;
+html{
+  scroll-behavior: smooth;
+}
+
+a{
+  text-decoration: none;
+  color: #655699 ;
   }
 
-  a{
-    text-decoration: none;
-    color: #655699 ;
-  }
+.round {
+  border-radius: 50%;
+  border: 1px black solid;
+}
 
-  .round {
-    border-radius: 50%;
-    border: 1px black solid;
-  }
-
+#sectionLine {
+  height: 3px;
+  width: 60%;
+  background-color: #655699;
+  margin: 50px 0;
+}
 
