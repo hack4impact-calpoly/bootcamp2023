@@ -9,6 +9,7 @@ export default function NavBar() {
         <li><Link href={'/'}>Home</Link></li>
         <li><Link href={'/#about'}>About</Link></li>
         <li><Link href={'/#portfolio'}>Portfolio</Link></li>
+        <li><Link href={'/blogs/page'}>Blog</Link></li>
         <li><Link href={'/#contact'}>Contact</Link></li>
     </ul>
     </header>

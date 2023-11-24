@@ -91,14 +91,15 @@ export default function Home({blogs, projects}: HomeProps) {
               <img src={faceShot.src} alt="Noah Giboney" />
             </div>
           </div>
-          <BlogPreviewComponent blogs={blogs}/>
         </section>
 
         <h3 id="portfolio">Portfolio</h3>
         <div className={style.purpleLine}></div>
-        
         <ProjectComponent projects={projects}/>
 
+        <h3 id="blogs">Blogs</h3>
+        <div className={style.purpleLine}></div>
+        <BlogPreviewComponent blogs={blogs}/>
         <h3 id="contact">Contact</h3>
         <div className={style.purpleLine}></div>
         <section className={style.contactContainer}>
