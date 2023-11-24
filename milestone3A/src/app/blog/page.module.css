@@ -1,0 +1,18 @@
+    /* CSS for Blog Page */
+    .blogList {
+        display:flex;
+        flex-direction: row;  
+    }
+        
+    .blogCard{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: rgb(223, 225, 230, 0.2);
+        border: 5px solid black;
+        border-radius: 10px;
+        border-style: double;
+        font-size: 15pt;
+        margin: 0 5px;
+    }
