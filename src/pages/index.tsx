@@ -9,7 +9,7 @@ import connectDB from '@/database/helpers/db';
 import {IBlog} from '@/database/blogSchema'
 import Project, {IProject} from '@/database/projectSchema'
 import BlogPreviewComponent from '@/components/BlogPreviewComponent';
-import ProjectComponent from '@/components/ProjectComponent';
+import ProjectComponent from '@/components/ProjectPreviewComponent';
 
 interface HomeProps {
   blogs: IBlog[];
@@ -32,8 +32,8 @@ async function getProjects(){
   await connectDB(); // Connect to the database
 
   try {
-      const blogs = await Project.find().sort({ date: -1 });
-      return blogs;
+      const projects = await Project.find().sort({ order: 1 });
+      return projects;
   } catch (err) {
       return null;
   }
@@ -74,8 +74,11 @@ export default function Home({blogs, projects}: HomeProps) {
             <a href="#contact">
               <img src={mailIcon.src}  className="round" alt="Email"/>
             </a>
-          </div>       
+          </div>   
         </section>
+        <div className={style.arrowContainer}>
+          <a href='#about'><div className={style.arrow}></div></a>
+        </div>
       </div>
 
       <div className={style.mainContainer}>
@@ -86,6 +89,7 @@ export default function Home({blogs, projects}: HomeProps) {
           <div className={style.innerAboutContainer}>
             <div className={style.textContainer}>
               <h2>My name is <span className="name">Noah Giboney</span></h2>
+              <h4>CS @ Cal Poly Slo</h4>
               <p>I'm a computer science major at Cal Poly, San Luis Obispo.</p>
               <p>Currently interested in iOS Development and Software Engineering</p>
               <p>Connect with me on <a href="https://www.linkedin.com/in/noah-giboney-896847261/" className="link">LinkedIn</a> and check out my projects below</p>
@@ -98,7 +102,12 @@ export default function Home({blogs, projects}: HomeProps) {
 
         <h3 id="portfolio">Portfolio</h3>
         <div id='sectionLine'></div>
-        <ProjectComponent projects={projects}/>
+
+        <section className={style.portfolioContainer}>
+          <p>Click each project for more information.</p>
+          <ProjectComponent projects={projects}/>
+        </section>
+        
 
         <h3 id="blogs">Blogs</h3>
         <div id='sectionLine'></div>

@@ -15,7 +15,8 @@ const BlogPage: NextPage<BlogPageProps> = ({ blog }) => {
 
   return (
     <div className={style.blogContainer}>
-      <h1>{blog.title}</h1>
+      <h3>{blog.title}</h3>
+      <div className={style.sectionLine}></div>
       <p>{blog.date}</p>
       <article>{blog.content}</article>
       <section>

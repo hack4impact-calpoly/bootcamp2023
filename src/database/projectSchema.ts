@@ -7,7 +7,8 @@ export type IProject= {
     slug: string; 
     timeframe: string;
     description: string; 
-    technologies: string
+    technologies: string;
+    order: number
 };
 
 
@@ -17,7 +18,8 @@ export const projectSchema = new Schema<IProject>({
     slug: { type: String, required: true },
     timeframe: { type: String, required: false,},
     description: { type: String, required: true },
-    technologies: {type: String, required: true}
+    technologies: {type: String, required: true},
+    order: {type: Number, required: true},
 })
 
 // defining the collection and model
