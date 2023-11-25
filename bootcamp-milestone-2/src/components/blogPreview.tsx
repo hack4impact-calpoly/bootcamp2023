@@ -14,7 +14,7 @@ export default function BlogPreview(props: IBlog) {
                         <Image src={`${props.imagePath}`} alt="img" width={500} height={500} ></Image>
                         <p>Blog description {props.description}</p>
                         <p>Posted on {props.date.toString()}</p>
-                        <Link className="readMore" href={props.slug}>Read More</Link>
+                        <Link className="readMore" href={`/blog/${props.slug}`}>Read More</Link>
                     </div>
                 </div>
             </div>
