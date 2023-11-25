@@ -1,0 +1,160 @@
+
+body {
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  border-spacing: 30px;
+}
+
+h1 {
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+h3 {
+  color: #ffc400;
+  font-size: 25px;
+}
+
+p {
+  margin-top: 5px;
+  color: white;
+  font-size: 20px;
+}
+
+main {
+  margin-left: 25%;
+  margin-top: 100px;
+}
+
+.period {
+  color: #ffc400;
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+.entry {
+  margin-left: 10px;
+}
+
+.entry-center{
+  margin-left: -25%;
+  text-align: center;
+}
+
+
+/* Style each list item */
+li {
+  color: white;
+}
+
+header {
+  text-align: right;
+  margin-top: 35px;
+  margin-right: 100px;
+}
+footer{
+  margin-bottom: 50px;
+}
+
+/* Style for the download button */
+.downloadButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffc400;;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.downloadButton:hover {
+  background-color: white; /* Change to the color you prefer on hover */
+  color: #ffc400;
+}
+
+.intro {
+  margin-top: 5px;
+  color: white;
+  font-size: 20px;
+  width: 50%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.round-img{
+  border-radius: 20px;
+  margin-left: 75px;
+}
+
+.contact-form { 
+  color: white;
+  font-size: 25px;
+}
+
+input {
+  border-radius: 5px;
+  background-color: #131313;
+  outline: none;
+  height: 50px;
+  width: 50%;
+  display: block;
+  margin-top: 20px;
+  padding-left: 10px;
+}
+
+input:focus{
+  border-color: #ffc400;
+  border-width: 2px;
+}
+
+textarea {
+  border-radius: 5px;
+  background-color: #131313;
+  outline: none;
+  width: 50%;
+  display: block;
+  margin-top: 20px;
+  padding-left: 10px;
+}
+
+
+.submit-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffc400;;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 150px;
+}
+
+/* Hover effect */
+.submit-button:hover {
+  background-color: white; /* Change to the color you prefer on hover */
+  color: #ffc400;
+}
+
+.blog{
+  width: 75%;
+}
+
+
