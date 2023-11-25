@@ -1,16 +1,35 @@
 import BlogPreview from '@/components/blogPreview';
-import currentBlogList from '../blogData';
+import connectDB from '@/helpers/db';
+import Blog from '@/database/blogSchema';
 
-export default function BlogPage() {
+async function getBlogs() {
+    await connectDB() // function from db.ts before
+
+    try {
+        // query for all blogs and sort by date
+        const blogs = await Blog.find().sort({ date: -1 }).orFail()
+        // send a response as the blogs as the message
+        return blogs
+    } catch (err) {
+        return null
+    }
+}
+export default async function BlogPage() {
+    const blogs = await getBlogs()
     return (
         <>
             <h1 className="page-title">Blog Page</h1>
-
-            <div>
-                {currentBlogList.map(blog =>
-                    <BlogPreview  {...blog} /> // This is how we call the component
-                )}
-            </div>
+            {blogs == null ? (
+                <div>
+                    There was an error in retrieving blogs
+                </div>)
+                :
+                <div>
+                    {blogs.map(blog =>
+                        <BlogPreview  {...blog.toObject()} /> // This is how we call the component
+                    )}
+                </div>
+            }
         </>
     )
 }
