@@ -8,14 +8,13 @@ import { IProject } from '@/database/projectSchema';
 export default function ProjectPreview(props: IProject) {
     return (
         <>
-           <h1 className="page-title">{props.title}</h1>
                     <div className="project">
                         <Link href="/">
                             <Image src={props.imagePath} alt="websiteScreenshot" width={500} height={500} />
                         </Link>
 
                         <div className="project-details">
-                            <p className="project-name text-black">My Personal Website</p>
+                            <p className="project-name text-black">{props.title}</p>
                             <p className="project-description text-black">{props.description}</p>
                             <Link href={props.project_url}> Learn More </Link>
                         </div>
