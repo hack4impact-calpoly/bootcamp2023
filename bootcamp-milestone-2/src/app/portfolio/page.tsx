@@ -1,25 +1,38 @@
-import Image from "next/image"
 import Link from "next/link"
-export default function PortfolioPage() {
+import connectDB from "@/helpers/db"
+import Project, { projectSchema } from "@/database/projectSchema"
+import ProjectPreview from "@/components/projectPreview"
+
+async function getProjects() {
+    await connectDB() // function from db.ts before
+
+    try {
+        // query for all blogs and sort by date
+        const projects = await Project.find().sort({ date: -1 }).orFail()
+        // send a response as the blogs as the message
+        return projects
+    } catch (err) {
+        return null
+    }
+}
+
+export default async function PortfolioPage() {
+    const projects = await getProjects()
+
     return (
         <>
 
-            <main>
-                <h1 className="page-title">Portfolio Page</h1>
-                <div className="project">
-                    <Link href="/">
-                        <Image src="/CalPolySLOImage.jpg " alt="websiteScreenshot" width={500} height={500}/>
-                    </Link>
+            {projects == null ?
+                (<div>
+                    Error retrieving projects
+                </div>)
+                :
+                (<div>
+                    {projects.map((project) =>
+                        <ProjectPreview  {...project.toObject()} /> // This is how we call the component
+                    )}
+                </div>)}
 
-                    <div className="project-details">
-                        <p className="project-name text-black">My Personal Website</p>
-                        <p className="project-description text-black">My personal website made using HTML and CSS through
-                            Hack4Impact's
-                            Stater Pack</p>
-                        <Link href="/"> Learn More </Link>
-                    </div>
-                </div>
-            </main>
         </>
     )
 }
