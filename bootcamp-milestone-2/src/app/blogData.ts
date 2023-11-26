@@ -9,7 +9,7 @@ export interface Blog
 const blogs: Blog[] = [
     {
         title: "The Competitive Space of Grace Hopper",
-        date: "10-23-2023",
+        date: "10-24-2023",
         description: "My experience as a Grace Hopper attendee, this year.",
         slug: "blog1",
     },
