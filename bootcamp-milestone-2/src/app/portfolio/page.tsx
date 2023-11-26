@@ -21,12 +21,12 @@ export default function Portfolio() {
     <main> 
         <h1 className = "page-title"> Portfolio </h1>
         <div className = "project" > 
-            <a id = "screenshot" href = "index.html" > <Image src = {"/screenshot.jpg"} width = {400} height = {300} alt = "screenshot of Home page" className = "screen" /> </a> 
+            <a id = "screenshot" href = "/home" > <Image src = {"/screenshot.jpg"} width = {400} height = {300} alt = "screenshot of Home page" className = "screen" /> </a> 
         </div>
         <div className = "project-details"> 
             <p className = "project-name"> <strong>Personal Website 2023</strong></p>
             <p className = "project-description"> After completing the Hack4Impact Starter Pack, I learned the skills of HTML, CSS, and JavaScript to create an updated website with all working links. </p>
-                <a id = "learn-more" href = "index.html"> LEARN MORE </a>
+                <a id = "learn-more" href = "/home"> LEARN MORE </a>
         </div>
     </main>
     <footer className = "footer" > © 2023 Leila's World | All Rights Reserved </footer>
