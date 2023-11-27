@@ -20,26 +20,6 @@ async function getBlogs() {
 }
 
 export default async function Blog() {
-  // const [blogList, setBlogList] = useState([]);
-
-  // useEffect(() => {
-  //   async function fetchBlogs() {
-  //     try {
-  //       const result = await getBlogs();
-  //       if (result != null) {
-  //         setBlogList(result);
-  //       }
-  //       else{
-  //         console.log("null");
-  //       }
-  //     } catch (err) {
-  //       console.error("Error fetching blogs:", err);
-  //     }
-  //   }
-
-  //   fetchBlogs();
-  // }, []);
-
   const blogPosts = await getBlogs();
 
   if (blogPosts) {
