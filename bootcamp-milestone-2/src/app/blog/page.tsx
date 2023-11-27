@@ -43,8 +43,10 @@ export default async function Blog() {
       </div>
     );
   } else {
-    <div className="flex flex-col gap-16">
-      <h1 className="text-2xl font-bold">No blog posts found</h1>
-    </div>
+    return (
+      <div className="flex flex-col gap-16">
+        <h1 className="text-2xl font-bold">No blog posts found</h1>
+      </div>
+    );
   }
 }
