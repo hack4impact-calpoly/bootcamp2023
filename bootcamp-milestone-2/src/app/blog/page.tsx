@@ -1,10 +1,7 @@
 import style from "./blog.module.css";
-import blogs from "../blogData";
 import BlogPreview from "../../components/blogPreview";
 import connectDB from "../../helpers/db";
 import BlogComp from "../../database/blogSchema";
-import React, { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
 
 async function getBlogs() {
   const connection = await connectDB(); // function from db.ts before
