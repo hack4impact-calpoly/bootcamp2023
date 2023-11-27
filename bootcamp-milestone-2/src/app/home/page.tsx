@@ -1,4 +1,4 @@
-import portrait from "../images/portrait.jpeg";
+import portrait from "../../../public/portrait.jpeg";
 import Image from "next/image";;
 
 export default function Home() {

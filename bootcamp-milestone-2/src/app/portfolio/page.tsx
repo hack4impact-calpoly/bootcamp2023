@@ -1,20 +1,45 @@
 import portrait from "../images/portrait.jpeg";
-import Image from "next/image";;
+import Image from "next/image";
+import connectDB from "../database/db";
+import Project from "../database/projectSchema";
+import PortfolioProject from "../components/portfolioProject";
 
-export default function Portfolio() {
-    return (
+
+async function getProjects(){
+	await connectDB() // function from db.ts before
+
+	try {
+			// query for all blogs and sort by date
+	    const projects = await Project.find().sort({ date: -1 }).orFail()
+			// send a response as the blogs as the message
+	    return projects
+	} catch (err) {
+	    return null
+	}
+}
+
+
+export default async function portfolioLoader() {
+    const portfolioProjects = await getProjects();
+  
+    if (portfolioProjects) {
+      return (
         <main>
             <h1 className="page-title"> Portfolio </h1>
-            <div className="project"> 
-                <a href="index.html"> <Image src={portrait} width="1800" alt="Portrait image of Elaina Lyons" /> </a>
-                <div className="project-details">
-                    <p className="project-name"> <strong> Elaina Lyons' Personal Website</strong> </p>
-                    <p className="project-description"> This project involved the use of HTML and CSS to independently create an
-                        interactive website. With a home page and information on Elaina Lyons' blog, resume, and portfolio, this website
-                        also contains a form prompting viewers to submit their contact information. </p>
-                    <a href="index.html"> LEARN MORE </a>
-                </div>
-            </div>
+            {portfolioProjects.map ((project) => {
+                return (
+                    <PortfolioProject
+                    title={project.title}
+                    description={project.description}
+                    image={project.image}
+                    slug={project.slug}
+                    />
+                );
+            })}
         </main>
-    )
-}
+      );
+    } else {
+      return <h1>No portfolio projects found</h1>;
+    }
+  }
+  

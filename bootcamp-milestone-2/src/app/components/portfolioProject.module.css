@@ -1,0 +1,24 @@
+.project {
+    display: flex;
+    flex-direction: row;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  
+  .project-image {
+    border: 0;
+    border-radius: 0;
+  }
+  
+  .projectDetails {
+    background-color: rgb(236, 236, 236);
+    padding-left: 30px;
+  }
+  
+  .projectName {
+    font-size: 25px;
+  }
+  
+  .projectDescription {
+    font-size: 20;
+  }
