@@ -41,7 +41,7 @@ const blogSchema = new mongoose_1.Schema({
     name: { type: String, required: true },
     slug: { type: String, required: true },
     description: { type: String, required: true },
-    image: { type: String, required: false },
+    image: { type: String, required: true },
     posted: { type: Date, required: true },
     text: { type: String, required: true },
 });

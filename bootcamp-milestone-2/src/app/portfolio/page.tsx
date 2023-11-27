@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Link from "next/link";
+import portfolio from "@/portfolioData";
+import PortfolioPreview from "../components/portfolioPreview";
 
 export default function Portfolio() {
   <Link href = "/portfolio"></Link>
@@ -20,14 +22,16 @@ export default function Portfolio() {
     </nav>
     <main> 
         <h1 className = "page-title"> Portfolio </h1>
-        <div className = "project" > 
-            <a id = "screenshot" href = "/home" > <Image src = {"/screenshot.jpg"} width = {400} height = {300} alt = "screenshot of Home page" className = "screen" /> </a> 
-        </div>
-        <div className = "project-details"> 
-            <p className = "project-name"> <strong>Personal Website 2023</strong></p>
-            <p className = "project-description"> After completing the Hack4Impact Starter Pack, I learned the skills of HTML, CSS, and JavaScript to create an updated website with all working links. </p>
-                <a id = "learn-more" href = "/home"> LEARN MORE </a>
-        </div>
+        <ul id="portfolio-list" className="portfolio-list">
+            {" "}
+        </ul>
+        {portfolio.map((portfolio) => (
+          <PortfolioPreview
+            projectName={portfolio.projectName}
+            projectDescription={portfolio.projectDescription}
+            image={portfolio.image}
+          />
+        ))}
     </main>
     <footer className = "footer" > © 2023 Leila's World | All Rights Reserved </footer>
     </>
