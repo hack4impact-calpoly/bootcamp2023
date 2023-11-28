@@ -3,14 +3,15 @@ import styles from "./blogPreview.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import blog from "../blogData";
+import IBlog from "../database/blogSchema";
 
-export default function BlogPreview(props: Blog) {
+export default function BlogPreview(props: IBlog) {
   return (
     <Link className={styles.individualBlogPost} href={`/blog/${props.slug}`}>
       <h3 className={styles.blogPostTitle}>{props.title}</h3>
       <Image
-        className={styles.blogPostImagePreview}
         src={props.image}
+        className={styles.blogPostImagePreview}
         alt="img of specific blog"
         width="500"
         height="500"
