@@ -7,7 +7,7 @@ type CommentProps = {
 };
 
 function parseComentTime(time: Date) {
-  return time.toDateString();
+  return new Date(time).toDateString();
 }
 
 export default function Comment({ comment }: CommentProps) {

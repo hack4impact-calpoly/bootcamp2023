@@ -1,6 +1,4 @@
 import Image from "next/image";
-import BlogModel from "../../../database/blogSchema";
-import connectDB from "../../../helpers/db";
 import Comment from "@/app/components/comment";
 import { IComment, IBlog } from "../../../database/blogSchema";
 import style from "./page.module.css";
@@ -58,11 +56,11 @@ export default async function Blog({ params: { slug } }: IParams) {
           ></p>
         </div>
       </div>
-      {/* <div>
+      <div>
         {blogData.comments.map((comment: IComment, index: number) => (
-          <Comment key={index} {...comment} />
+          <Comment key={index} comment={comment} />
         ))}
-      </div> */}
+      </div>
     </>
   );
 }
