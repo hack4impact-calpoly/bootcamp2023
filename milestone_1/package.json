@@ -1,0 +1,15 @@
+{
+  "name": "bootcamp-project-2023",
+  "version": "1.0.0",
+  "description": "Brandon's Personal Website This is a personal website built using the Hack4Impact Starter Pack! I like matcha ice cream. [Visit it Here!](https://bdon101.github.io)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.2.2"
+  }
+}
