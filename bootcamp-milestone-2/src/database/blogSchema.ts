@@ -1,19 +1,19 @@
 import mongoose,{ Schema } from "mongoose";
 
 export type IComment = {
-    user: string;
-    comment: string;
-    time: Date;
+  user: string;
+  comment: string;
+  time: Date;
 }
 
 export type IBlog = {
-    title: string;
+  title: string;
   slug: string; 
-    date: Date;
-    description: string; // for preview
+  date: Date;
+  description: string; // for preview
   content: string; // for individual blog page
   img: string;
-    comments: IComment[]; // array for comments
+  comments: IComment[]; // array for comments
 };
 
 
@@ -25,6 +25,7 @@ const blogSchema = new Schema<IBlog>({
     date: { type: Date, required: false, default: new Date()},
     description: { type: String, required: true },
     content: { type: String, required: true },
+
 })
 
 // defining the collection and model

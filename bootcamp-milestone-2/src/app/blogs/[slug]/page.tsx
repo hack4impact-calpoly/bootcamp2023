@@ -15,7 +15,7 @@ async function getBlog(slug: string) {
   await connectDB(); // function from db.ts before
 
   try {
-    const blog = await BlogModel.findOne({ slug: slug }).orFail();
+    const blog: IBlog = await BlogModel.findOne({ slug: slug }).orFail();
     return blog;
   } catch (err) {
     return null;
@@ -23,7 +23,7 @@ async function getBlog(slug: string) {
 }
 
 export default async function BlogPage({ params: { slug } }: IParams) {
-  const blogData: IBlog = await getBlog(slug);
+  const blogData: IBlog | null = await getBlog(slug);
   if (!blogData) {
     return <div>Not Found</div>;
   }
@@ -50,11 +50,9 @@ export default async function BlogPage({ params: { slug } }: IParams) {
         </div>
       </div>
       {/* <div>
-        {blogData.comments
-          ? blogData.comments.map((comment: IComment, index: number) => (
-              <Comment key={index} {...comment} />
-            ))
-          : null}
+        {blogData.comments.map((comment: IComment, index: number) => (
+          <Comment key={index} {...comment} />
+        ))}
       </div> */}
     </>
   );

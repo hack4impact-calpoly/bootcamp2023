@@ -8,7 +8,7 @@ export default function Comment(props: IComment) {
       <div className={style.comment_info_container}>
         <h5 className={style.comment_title}>{props.user}</h5>
         <p className={style.comment_description}>
-          {props.time.toISOString().substring(0, 9)}
+          {new Date(props.time).toDateString()}
         </p>
       </div>
       <div className={style.comment_comment}>{props.comment}</div>
