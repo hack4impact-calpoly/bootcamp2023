@@ -1,0 +1,35 @@
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: "Merriweather", Georgia;
+    font-weight: bold;
+  }
+  
+  /* input[type="text"],
+  input[type="email"], */
+  /* textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--cg-darkest-green);
+    background-color: var(--cg-ivory);
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+    font-family: "Merriweather";
+  } */
+  
+  #contact-form label {
+    color: var(--cg-ivory);
+  }
+  
+  #contact-form .submit {
+    background-color: var(--cg-ivory);
+    border-color: var(--cg-darkest-green);
+    border-radius: 8%;
+    border-width: 2px;
+    font-family: "Merriweather";
+    color: rgb(51, 59, 36);
+  }
+  

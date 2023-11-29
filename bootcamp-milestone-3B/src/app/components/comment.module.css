@@ -1,0 +1,26 @@
+.comment_container{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: var(--cg-ivory);
+    border-radius: 5px;
+    border-color: var(--cg-dark-iory);
+    padding: 1rem;
+    margin-top: 0.2rem;
+}   
+
+.comment_name{
+    color: var(--cg-darkest-green);
+    margin: 0;
+
+}
+
+.comment_time{
+    margin: 0;
+    color: var(--cg-darkest-green);
+
+}
+
+.comment_comment{
+    color: var(--cg-darkest-green);
+}
