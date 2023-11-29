@@ -9,7 +9,7 @@ export default function Portfolio() {
         <main>
             <h1 className="page-title">Portfolio</h1>
             <div className="project">
-                <Link className="project-image" href="index.html">
+                <Link className="project-image" href="/home">
                     <Image 
                         src="/website.png"
                         width = {300} 
