@@ -41,7 +41,7 @@ export default async function Blog({ params: { slug } }: IParams) {
       <div className={style.blog}>
         <h1 className={style.title}>{blogData.title}</h1>
         <h6 className={style.date}>{date}</h6>
-        <div className={style.img}>
+        <div className={style.img_container}>
           <Image
             src={blogData.img ? blogData.img : "/5O_1di3yc-0yQiCpsQ576w.jpg"}
             alt="img"
@@ -56,10 +56,15 @@ export default async function Blog({ params: { slug } }: IParams) {
           ></p>
         </div>
       </div>
+      <h1 className={style.title}>Comments</h1>
       <div>
-        {blogData.comments.map((comment: IComment, index: number) => (
-          <Comment key={index} comment={comment} />
-        ))}
+        {blogData.comments ? (
+          blogData.comments.map((comment: IComment, index: number) => (
+            <Comment key={index} comment={comment} />
+          ))
+        ) : (
+          <h6 className={style.date}>No Comments Yet!</h6>
+        )}
       </div>
     </>
   );

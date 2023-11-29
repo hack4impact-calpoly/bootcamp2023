@@ -29,7 +29,7 @@
     color: var(--cg-darkest-green);  
 }
 
-.img {
+.img_container {
     display: flex;
     justify-content: center;
     align-items: center;
