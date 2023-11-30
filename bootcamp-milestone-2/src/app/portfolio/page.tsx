@@ -1,22 +1,37 @@
 import PortfolioCard from "../../components/portfolioCard";
-import portfolios from "../../portfolioData";
+import getPortfolios from "../../lib/getPortfolios";
 
-export default function Home() {
+export default async function Home() {
+  const portfolios = await getPortfolios();
+
   return (
     <main>
-      <section className="portfolio-content">
+      <div className="portfolio-content">
         <h1 className="page-title">Portfolio</h1>
-        {portfolios.map((portfolio: Portfolio) => (
-          <PortfolioCard
-            key={portfolio.slug}
-            date={portfolio.date}
-            projectName={portfolio.projectName}
-            description={portfolio.description}
-            slug={portfolio.slug}
-            image={portfolio.image}
-          />
-        ))}
-      </section>
+        {/* Only renders the portfolio content if portfolio data retrieved successfully*/}
+        {portfolios && portfolios.length > 0 && (
+          <div className="generalContent">
+            {portfolios.map((portfolio) => (
+              <PortfolioCard
+                key={portfolio.slug}
+                date={portfolio.date}
+                projectName={portfolio.projectName}
+                description={portfolio.description}
+                slug={portfolio.slug}
+                image={portfolio.image}
+              />
+            ))}
+          </div>
+        )}
+        {/* If portfolios is null, display error message.*/}
+        {!portfolios && (
+          <div className="generalContent">
+            <p className="contentNotLoaded">
+              There was an issue loading portfolio content.
+            </p>
+          </div>
+        )}
+      </div>
     </main>
   );
 }
