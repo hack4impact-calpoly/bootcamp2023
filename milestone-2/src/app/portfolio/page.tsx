@@ -24,7 +24,7 @@ export default function Portfolio() {
                     <p className="project-description">
                         Website about me created with HTML and CSS
                     </p>
-                    <Link href="index.html">
+                    <Link href="/home">
                         Learn More
                     </Link>
                 </div>
