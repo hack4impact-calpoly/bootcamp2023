@@ -7,7 +7,7 @@ type IBlog = {
   slug: string;
   date: Date;
   description: string; // for preview
-  image: HTMLImageElement; // for individual blog page
+  image: string; // for individual blog page
   content: string;
 };
 
@@ -17,7 +17,7 @@ const blogSchema = new Schema<IBlog>({
   slug: { type: String, required: true },
   date: { type: Date, required: false, default: new Date() },
   description: { type: String, required: true },
-  image: { type: HTMLImageElement, required: false },
+  image: { type: String, required: false },
   content: { type: String, required: true },
 });
 
