@@ -1,3 +1,9 @@
+export const metadata = {
+  title: {
+    default: "Contact Me",
+  },
+};
+
 export default function Home() {
   return (
     <main>

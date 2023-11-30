@@ -4,6 +4,12 @@ import Image from "next/image";
 import BlogPreview from "../../components/blogPreview";
 import getBlogs from "../../lib/getBlogs";
 
+export const metadata = {
+  title: {
+    default: "Home Page",
+  },
+};
+
 export default async function Home() {
   const blogPosts = await getBlogs();
 

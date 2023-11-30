@@ -1,5 +1,11 @@
 import React from "react";
 
+export const metadata = {
+  title: {
+    default: "Aidan's Resume",
+  },
+};
+
 export default function Resume() {
   return (
     <main>

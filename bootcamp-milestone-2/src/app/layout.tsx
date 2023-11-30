@@ -5,8 +5,9 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Aidan's Personal Website",
+  template: "%s",
   description: "A personal website for Aidan Nesbitt",
 };
 

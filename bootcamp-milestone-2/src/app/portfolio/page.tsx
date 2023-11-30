@@ -1,6 +1,12 @@
 import PortfolioCard from "../../components/portfolioCard";
 import getPortfolios from "../../lib/getPortfolios";
 
+export const metadata = {
+  title: {
+    default: "Aidan's Portfolio",
+  },
+};
+
 export default async function Home() {
   const portfolios = await getPortfolios();
 

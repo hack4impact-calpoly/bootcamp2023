@@ -1,6 +1,12 @@
 import BlogPreview from "../../components/blogPreview";
 import getBlogs from "../../lib/getBlogs";
 
+export const metadata = {
+  title: {
+    default: "Aidan's Blogs",
+  },
+};
+
 export default async function Home() {
   const blogPosts = await getBlogs();
 
