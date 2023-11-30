@@ -1,10 +1,12 @@
 import React from "react";
 import aidan_profile_image from "public/aidan_profile_image.png";
 import Image from "next/image";
-import blogs from "../../blogData";
 import BlogPreview from "../../components/blogPreview";
+import getBlogs from "../../lib/getBlogs";
 
-export default function Home() {
+export default async function Home() {
+  const blogPosts = await getBlogs();
+
   return (
     <main>
       <div className="about">
@@ -32,18 +34,27 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="blogsPreviewHolder">
-        {blogs.map((blog) => (
-          <BlogPreview
-            key={blog.slug}
-            date={blog.date}
-            title={blog.title}
-            description={blog.description}
-            slug={blog.slug}
-            image={blog.image}
-          />
-        ))}
-      </div>
+      {/* Only Renders the Blog Posts if Blog Data Retrieved Successfully*/}
+      {blogPosts && blogPosts.length > 0 && (
+        <div className="blogsPreviewHolder">
+          {blogPosts.map((blog) => (
+            <BlogPreview
+              key={blog.slug}
+              date={blog.date}
+              title={blog.title}
+              description={blog.description}
+              slug={blog.slug}
+              image={blog.image}
+            />
+          ))}
+        </div>
+      )}
+      {/* If Blog Posts is null, display error message.*/}
+      {!blogPosts && (
+        <div className="blogsPreviewHolder">
+          <p>There was an issue loading blog content.</p>
+        </div>
+      )}
     </main>
   );
 }

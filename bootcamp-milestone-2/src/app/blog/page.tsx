@@ -1,30 +1,17 @@
 import BlogPreview from "../../components/blogPreview";
-import connectDB from "@/db";
-import IBlog from "../../database/blogSchema";
-
-//fetches the blogs from the Database
-async function getBlogs() {
-  await connectDB(); // function from db.ts before
-  try {
-    // query for all blogs and sort by date
-    const blogs = await IBlog.find().sort({ date: -1 }).orFail();
-    // send a response as the blogs as the message
-    return blogs;
-  } catch (err) {
-    return null;
-  }
-}
+import getBlogs from "../../lib/getBlogs";
 
 export default async function Home() {
   const blogPosts = await getBlogs();
 
-  if (blogPosts) {
-    return (
-      <main>
-        <div className="blogsHolder">
-          <h1 className="page-title">My Blog Posts!</h1>
+  return (
+    <main>
+      <div className="blogsHolder">
+        <h1 className="page-title">My Blog Posts!</h1>
+        {/* Only Renders the Blog Posts if Blog Data Retrieved Successfully*/}
+        {blogPosts && blogPosts.length > 0 && (
           <div className="blogContent">
-            {blogPosts.map((blog: IBlog) => (
+            {blogPosts.map((blog) => (
               <BlogPreview
                 key={blog.slug}
                 date={blog.date}
@@ -35,8 +22,14 @@ export default async function Home() {
               />
             ))}
           </div>
-        </div>
-      </main>
-    );
-  }
+        )}
+        {/* If Blog Posts is null, display error message.*/}
+        {!blogPosts && (
+          <div className="blogContent">
+            <p className="noBlogs">There was an issue loading blog content.</p>
+          </div>
+        )}
+      </div>
+    </main>
+  );
 }
