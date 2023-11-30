@@ -9,7 +9,7 @@ export default function BlogPreview(props: Blog) {
         <h2>{props.title}</h2>
         <h3>{props.date}</h3>
         <p className={style.blogDetails}>{props.description}</p>
-        <p>See more</p>
+        <p>Learn more</p>
       </main>
     </div>
   );
