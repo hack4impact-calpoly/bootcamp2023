@@ -1,12 +1,17 @@
 import React from "react";
-import blogs from "./blogData";
 import BlogPreview from "../components/blogPreview";
 import blogSchema from "../database/blogSchema";
 import connectDB from "../database/db";
 
 export default async function Blogs() {
   const blogs = await getBlogs();
-  if(blogs){
+  if (blogs == null) {
+    return (
+      <div>
+        <p>No blogs currently.</p>
+      </div>
+    );
+  } else {
     return (
       <div>
         {blogs.map((blog) => (
