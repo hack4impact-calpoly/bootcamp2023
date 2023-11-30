@@ -5,7 +5,8 @@ import style from "./page.module.css";
 export default function Home() {
   return (
     <main>
-      <h1>Hi! Welcome to my website!</h1>
+      <div></div>
+      <h1 className={style.page_title}> Hello & Welcome! </h1>
       <div className={style.about}>
         <div className={style.about_image}>
           <img
@@ -18,9 +19,10 @@ export default function Home() {
         <div className={style.about_text}>
           <p>
             My name is <strong>Grace</strong> and I am a freshman
-            <em>computer science</em> major
+            <em> computer science</em> major
           </p>
-          <p>
+        
+          <p className={style.about_textp}>
             My hobbies include: <br />
             -hiking
             <br />
