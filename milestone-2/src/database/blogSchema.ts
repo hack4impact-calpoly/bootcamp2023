@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
-type IComment = {
+export type IComment = {
     user: string;
     comment: string;
     time: Date;
 }
 
-type IBlog = {
+export type IBlog = {
     title: string;
     slug: string; 
     date: Date;
@@ -31,7 +31,6 @@ const blogSchema = new Schema<IBlog>({
 })
 
 // defining the collection and model
-const Blog = mongoose.models['blogs'] ||
-mongoose.model('blogs', blogSchema);
+const Blogs = mongoose.models['blogs'] || mongoose.model('blogs', blogSchema);
 
-export default Blog;
+export default Blogs;
