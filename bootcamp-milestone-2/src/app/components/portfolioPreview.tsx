@@ -3,7 +3,7 @@ import style from "./portfolioPreview.module.css";
 import Image from "next/image";
 import { Portfolio } from "@/portfolioData";
 
-export default function BlogPreview(props: Portfolio) {
+export default function PortfolioPreview(props: Portfolio) {
   return (
     // replace everything between the <div> & </div> tags
     // with your code from earlier milestones

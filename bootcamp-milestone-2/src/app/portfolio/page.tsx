@@ -28,8 +28,10 @@ export default function Portfolio() {
         {portfolio.map((portfolio) => (
           <PortfolioPreview
             projectName={portfolio.projectName}
+            slug={portfolio.slug}
             projectDescription={portfolio.projectDescription}
             image={portfolio.image}
+            learnMore={portfolio.learnMore}
           />
         ))}
     </main>
