@@ -2,8 +2,10 @@ import style from "./blog.module.css";
 import BlogPreview from "../../components/blogPreview";
 import connectDB from "../../helpers/db";
 import BlogComp from "../../database/blogSchema";
+// import BlogPage from "./[slug]/page";
 
 async function getBlogs() {
+  console.log("fetching blogs...");
   const connection = await connectDB(); // function from db.ts before
 
   try {
@@ -17,6 +19,7 @@ async function getBlogs() {
 }
 
 export default async function Blog() {
+  // const blogPosts = await BlogPage();
   const blogPosts = await getBlogs();
 
   if (blogPosts) {

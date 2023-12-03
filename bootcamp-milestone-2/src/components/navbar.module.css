@@ -8,20 +8,24 @@
 
   flex-direction: column;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
+  justify-content: space-around;
+  align-items: flex-start;
+  text-align: left;
 
   background-color: var(--cg-black);
   color: var(--cg-white);
   padding: 0px 0px;
+
+  /* Debug border */
+  /* border-color: white;
+  border-width: 2px; */
 }
 
 .navList {
   display: flex;
   flex-direction: row;
   position: relative;
-  right: 30px;
+  left: 15px;
   list-style: none;
 
   /* Debug border */
@@ -45,6 +49,11 @@
 
 .navbar a:active {
   color: var(--cg-blue);
+}
+
+.logo {
+  position: relative;
+  left: 15px;
 }
 
 .logo a {
