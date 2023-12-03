@@ -1,6 +1,5 @@
 import React, { PropsWithRef } from "react";
 import style from "./blogPreview.module.css";
-// import type { Blog } from ""
 import Link from "next/link";
 import Image from "next/image";
 

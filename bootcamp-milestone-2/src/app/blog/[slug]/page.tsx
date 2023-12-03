@@ -3,10 +3,6 @@ import Image from "next/image";
 import React from 'react';
 import style from "./blog_post.module.css";
 
-interface BlogProps {
-  slug: string;
-}
-
 export async function fetchBlog(slug: string) {
   try {
     const res = await fetch(`http://localhost:3000/api/${slug}`, {
@@ -25,17 +21,6 @@ export async function fetchBlog(slug: string) {
   }
 }
 
-// const BlogPost: NextPage<BlogProps> = ({ slug }) => {
-//   console.log("inside slug page");
-//   return (
-//     <div>
-//       <h1>hi</h1>
-//     </div>
-//   );
-// };
-
-// export default BlogPost;
-
 export default async function Blog({ params }: { params: { slug: string } }) {
   const slug = params.slug;
   const blog = await fetchBlog(slug);
@@ -46,8 +31,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
     paragraphs.push(<li key={i}>Item {i+1}</li>);
     i++;
   }
-
-  //   add stuff to make the blog page here
+  
 return (
     <div>
       <main>
