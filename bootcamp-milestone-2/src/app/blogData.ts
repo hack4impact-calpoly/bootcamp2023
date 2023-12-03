@@ -9,7 +9,7 @@ export interface Blog {
   date: string;
   description: string;
   slug: string;
-  content: string; // for individual blog page
+  content: string[]; // for individual blog page
   comments: IComment[]; // array for comments
 };
 
@@ -19,7 +19,7 @@ const blogList: Blog[] = [
     date: "2023-10-21",
     description: "My first weekend trip exploring another part of Italy!",
     slug: "/blog/cinque_terre",
-    content: "",
+    content: [],
     comments: [],
   },
   {
@@ -27,7 +27,7 @@ const blogList: Blog[] = [
     date: "2023-10-21",
     description: "The program-organized event, covering Flourence and Pisa",
     slug: "/blog/tuscany",
-    content: "",
+    content: [],
     comments: [],
   },
 ];

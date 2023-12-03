@@ -1,7 +1,8 @@
 import { NextPage } from "next";
 import Image from "next/image";
-import React from 'react';
+import React from "react";
 import style from "./blog_post.module.css";
+import Comment from "../../../components/comment";
 
 export async function fetchBlog(slug: string) {
   try {
@@ -14,6 +15,7 @@ export async function fetchBlog(slug: string) {
     }
 
     const res_j = await res.json();
+    console.log("Blog Data: ", res_j);
     return res_j;
   } catch (err: unknown) {
     console.log(`error: ${err}`);
@@ -24,25 +26,40 @@ export async function fetchBlog(slug: string) {
 export default async function Blog({ params }: { params: { slug: string } }) {
   const slug = params.slug;
   const blog = await fetchBlog(slug);
-  const paragraphs = [];
+  const contents = blog.content;
+  let paragraphs = [];
   let i = 0;
 
-  while(i < 5) {
-    paragraphs.push(<li key={i}>Item {i+1}</li>);
+  // checks that blog exists
+  if(!blog || !blog.content) {
+    return <div>Blog not found or has no content</div>;
+  }
+
+  // creates different paragraphs for content
+  while (i < contents.length) {
+    paragraphs.push(
+      <li className={style.blogContent} key={i}>
+        {blog.content[i]}
+      </li>
+    );
+    paragraphs.push(<br/>);
     i++;
   }
-  
-return (
+
+  return (
     <div>
       <main>
         <h1 className={style.pageTitle}>{blog.title}</h1>
         <h2 className={style.pageDate}>
           <em>{blog.date}</em>
         </h2>
-        {/* <ul className="paragraphs">{paragraphs}</ul> */}
-        <p className={style.blogContent}>
-          {blog.content}
-        </p>
+        <ul className="paragraphs">{paragraphs}</ul>
+        {/* <p className={style.blogContent}>{blog.content}</p> */}
+
+        {blog.comments.map((comment, index: number) => (
+          <Comment key={index} comment={comment} />
+        ))}
+
         <Image
           src="/cinque_terre_1.jpg"
           alt="view of one of the five towns during our hike"
@@ -96,4 +113,3 @@ return (
     </div>
   );
 }
-
