@@ -13,23 +13,32 @@ type Props = {
 };
 
 export default function BlogPreview(props: Props) {
-  console.log(props.slug);
-  return (
-    <div className={style.blogPreview}>
-      <h3 className={style.blogPreviewTitle}>
-        <Link href="/blog/[slug]" as={`/blog/${props.slug}`}>{props.title}</Link>{" "}
-      </h3>
-      <div className={style.blogPreviewInfo}>
-        <Image
-          className={style.blogPreviewPic}
-          src={props.pic}
-          alt="img"
-          width="500"
-          height="500"
-        ></Image>
-        <p className={style.blogPreviewDescription}>{props.description}</p>
-        <p className={style.blogPreviewDate}>Posted on: {props.date}</p>
+  if (props != null) {
+    return (
+      <div className={style.blogPreview}>
+        <h3 className={style.blogPreviewTitle}>
+          <Link href="/blog/[slug]" as={`/blog/${props.slug}`}>
+            {props.title}
+          </Link>{" "}
+        </h3>
+        <div className={style.blogPreviewInfo}>
+          <Image
+            className={style.blogPreviewPic}
+            src={props.pic}
+            alt="img"
+            width="500"
+            height="500"
+          ></Image>
+          <p className={style.blogPreviewDescription}>{props.description}</p>
+          <p className={style.blogPreviewDate}>Posted on: {props.date}</p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div>
+        <p>Blog not found :/</p>
+      </div>
+    );
+  }
 }
