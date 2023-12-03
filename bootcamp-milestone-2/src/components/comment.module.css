@@ -1,0 +1,15 @@
+.container {
+    background-color: white;
+}
+
+.user {
+    font-size: 24px;
+}
+
+.comment {
+    font-size: 16px;
+}
+
+.time {
+    font-size: 12px;
+}
