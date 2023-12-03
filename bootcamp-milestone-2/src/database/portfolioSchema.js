@@ -36,7 +36,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const db_1 = __importDefault(require("@/helpers/db"));
-const portfolioData_1 = require("@/portfolioData");
 const mongoose_1 = __importStar(require("mongoose"));
 const portfolioSchema = new mongoose_1.Schema({
     projectName: { type: String, required: true },
@@ -45,14 +44,14 @@ const portfolioSchema = new mongoose_1.Schema({
     image: { type: String, required: true },
     learnMore: { type: String, required: true },
 });
-const Blog = mongoose_1.default.models["portfolio"] || mongoose_1.default.model("portfolio", portfolioSchema);
-exports.default = portfolioData_1.Portfolio;
+const Portfolio = mongoose_1.default.models["portfolio"] || mongoose_1.default.model("portfolio", portfolioSchema);
+exports.default = Portfolio;
 function getPortfolios() {
     return __awaiter(this, void 0, void 0, function* () {
         yield (0, db_1.default)(); // function from db.ts before
         try {
             // query for all blogs and sort by date
-            const portfolio = yield portfolioData_1.Portfolio.find().sort({ date: -1 }).orFail();
+            const portfolio = yield Portfolio.find().sort({ date: -1 }).orFail();
             // send a response as the blogs as the message
             return portfolio;
         }

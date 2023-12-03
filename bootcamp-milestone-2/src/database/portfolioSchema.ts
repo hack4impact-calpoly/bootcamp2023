@@ -19,7 +19,7 @@ const portfolioSchema = new Schema<IPortfolio>({
 
 });
 
-const Blog = mongoose.models["portfolio"] || mongoose.model("portfolio", portfolioSchema);
+const Portfolio = mongoose.models["portfolio"] || mongoose.model("portfolio", portfolioSchema);
 
 export default Portfolio;
 
