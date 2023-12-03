@@ -1,15 +1,35 @@
 .container {
-    background-color: white;
+  flex-direction: column;
+  width: 50%;
+
+  margin-bottom: 10px;
+  border-radius: 15px;
+  padding: 10px;
+
+  background-color: white;
+  border-color: #bbb;
+  border-width: 3px;
+}
+
+.heading {
+  flex-direction: row;
 }
 
 .user {
-    font-size: 24px;
+  font-size: 20px;
+  flex: 1;
 }
 
 .comment {
-    font-size: 16px;
+  margin-left: 10px;
+  flex-wrap: wrap;
+
+  font-size: 16px;
+  font-style: italic;
 }
 
 .time {
-    font-size: 12px;
+  flex: 1;
+
+  font-size: 12px;
 }
