@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import Image from "next/image";
 import React from "react";
 import style from "./blog_post.module.css";
-import Comment from "../../../components/comment";
+import Comment, { IComment } from "../../../components/comment";
 
 export async function fetchBlog(slug: string) {
   try {
@@ -57,7 +57,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
           <ul className={style.paragraphList}>{paragraphs}</ul>
           <div className={style.pageComments}>
             <h3 className={style.pageCommentsHeader}>Comments</h3>
-            {blog.comments.map((comment, index: number) => (
+            {blog.comments.map((comment: IComment, index: number) => (
               <Comment key={index} comment={comment} />
             ))}
           </div>
