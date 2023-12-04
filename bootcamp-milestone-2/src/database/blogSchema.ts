@@ -2,7 +2,7 @@ import { Schema } from "mongoose";
 import mongoose from "mongoose";
 import { Blog } from "../app/blogData";
 
-const IComment = new mongoose.Schema({
+export const IComment = new mongoose.Schema({
     user: { type: String, required: true },
     comment: { type: String, required: true },
     time: { type: Date, requierd: false, default: new Date() },

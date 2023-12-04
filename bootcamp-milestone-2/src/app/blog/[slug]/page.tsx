@@ -15,7 +15,6 @@ export async function fetchBlog(slug: string) {
     }
 
     const res_j = await res.json();
-    console.log("Blog Data: ", res_j);
     return res_j;
   } catch (err: unknown) {
     console.log(`error: ${err}`);
@@ -31,18 +30,18 @@ export default async function Blog({ params }: { params: { slug: string } }) {
   let i = 0;
 
   // checks that blog exists
-  if(!blog || !blog.content) {
+  if (!blog || !blog.content) {
     return <div>Blog not found or has no content</div>;
   }
 
   // creates different paragraphs for content
   while (i < contents.length) {
     paragraphs.push(
-      <li className={style.blogContent} key={i}>
+      <li className={style.paragraph} key={i}>
         {blog.content[i]}
       </li>
     );
-    paragraphs.push(<br/>);
+    paragraphs.push(<br />);
     i++;
   }
 
@@ -53,62 +52,66 @@ export default async function Blog({ params }: { params: { slug: string } }) {
         <h2 className={style.pageDate}>
           <em>{blog.date}</em>
         </h2>
-        <ul className="paragraphs">{paragraphs}</ul>
-        {/* <p className={style.blogContent}>{blog.content}</p> */}
+
+        <div className={style.pageContents}>
+          <ul className={style.paragraphList}>{paragraphs}</ul>
+          <div className={style.pageImages}>
+            <Image
+              src="/cinque_terre_1.jpg"
+              alt="view of one of the five towns during our hike"
+              className={style.blogPic}
+              width="350"
+              height="350"
+            />
+            <Image
+              src="/cinque_terre_2.jpg"
+              alt="view of one of the five towns during our hike"
+              className={style.blogPic}
+              width="350"
+              height="350"
+            />
+            <Image
+              src="/cinque_terre_3.jpg"
+              alt="view of one of the five towns during our hike"
+              className={style.blogPic}
+              width="350"
+              height="350"
+            />
+            <Image
+              src="/cinque_terre_4.jpg"
+              alt="view of one of the five towns during our hike"
+              className={style.blogPic}
+              width="350"
+              height="350"
+            />
+            <Image
+              src="/cinque_terre_sunrise.jpg"
+              alt="sunrise at the first town, Monterosso"
+              className={style.blogPic}
+              width="350"
+              height="350"
+            />
+            <Image
+              src="/cinque_terre_water.jpg"
+              alt="picture of crystal-clear water from the hike"
+              className={style.blogPic}
+              width="350"
+              height="350"
+            />
+            <Image
+              src="/cinque_terre_me.jpg"
+              alt="me at Riomaggiore on the second day"
+              className={style.blogPic}
+              width="350"
+              height="350"
+            />
+          </div>
+        </div>
 
         {blog.comments.map((comment, index: number) => (
           <Comment key={index} comment={comment} />
         ))}
 
-        <Image
-          src="/cinque_terre_1.jpg"
-          alt="view of one of the five towns during our hike"
-          className={style.blogPic}
-          width="350"
-          height="350"
-        />
-        <Image
-          src="/cinque_terre_2.jpg"
-          alt="view of one of the five towns during our hike"
-          className={style.blogPic}
-          width="350"
-          height="350"
-        />
-        <Image
-          src="/cinque_terre_3.jpg"
-          alt="view of one of the five towns during our hike"
-          className={style.blogPic}
-          width="350"
-          height="350"
-        />
-        <Image
-          src="/cinque_terre_4.jpg"
-          alt="view of one of the five towns during our hike"
-          className={style.blogPic}
-          width="350"
-          height="350"
-        />
-        <Image
-          src="/cinque_terre_sunrise.jpg"
-          alt="sunrise at the first town, Monterosso"
-          className={style.blogPic}
-          width="350"
-          height="350"
-        />
-        <Image
-          src="/cinque_terre_water.jpg"
-          alt="picture of crystal-clear water from the hike"
-          className={style.blogPic}
-          width="350"
-          height="350"
-        />
-        <Image
-          src="/cinque_terre_me.jpg"
-          alt="me at Riomaggiore on the second day"
-          className={style.blogPic}
-          width="350"
-          height="350"
-        />
       </main>
     </div>
   );

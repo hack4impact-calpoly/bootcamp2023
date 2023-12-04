@@ -5,7 +5,32 @@
   font-family: Georgia;
 }
 
+.pageContents {
+  display: flex;
+  flex-direction: row;
+
+  /* overflow: scroll; */
+}
+
+.paragraphList {
+  flex: 2;
+  /* height: 575px; */
+
+  /* overflow: scroll; */
+}
+
+.pageImages {
+  flex: 1;
+  flex-direction: column;
+  padding-left: 5%;
+  height: 575px;
+  
+  overflow: scroll;
+}
+
 .blogPic {
-  width: "200";
-  height: "200";
+  /* width: 200px; */
+  /* height: 200px; */
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
