@@ -32,6 +32,7 @@ export default async function BlogLoader() {
                 description={blog.description}
                 image={blog.image}
                 slug={blog.slug}
+                comments={[]}
               />
             );
           })}
