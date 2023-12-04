@@ -2,12 +2,11 @@ import React from 'react';
 import style from './blogPreview.module.css'
 import "@/global.css"
 import Image from 'next/image';
-import type { Blog }from "@/app/blogData"
+import type { Blog }from "@/app/blogData";
+import connectDB from '@/helpers/db';
 
 export default function BlogPreview(props: Blog) {
   return (
-		// replace everything between the <div> & </div> tags
-		// with your code from earlier milestones
     <div className={style.div}>
       <h3>{props.title}</h3>
       <div>
