@@ -1,7 +1,7 @@
 import style from "./comment.module.css";
 import { format } from "react-string-format";
 
-type IComment = {
+export type IComment = {
   user: string;
   comment: string;
   time: Date;
