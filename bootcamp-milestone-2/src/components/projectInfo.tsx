@@ -17,7 +17,7 @@ export default function ProjectInfo(props: Props) {
   if (props.order % 2 == 0) {
     return (
       <div className={style.project}>
-        <Link href={props.slug}>
+        <Link href={props.slug} target="_blank">
           <Image
             className={style.projectImage}
             src={props.image}
@@ -29,7 +29,7 @@ export default function ProjectInfo(props: Props) {
         <div className={style.projectDetails}>
           <p className={style.projectName}>{props.title}</p>
           <p className={style.projectDescription}>{props.description}</p>
-          <Link href={props.slug}>LEARN MORE</Link>
+          <Link href={props.slug} target="_blank">LEARN MORE</Link>
         </div>
       </div>
     );
@@ -39,9 +39,9 @@ export default function ProjectInfo(props: Props) {
         <div className={style.projectDetails}>
           <p className={style.projectName}>{props.title}</p>
           <p className={style.projectDescription}>{props.description}</p>
-          <Link href={props.slug}>LEARN MORE</Link>
+          <Link href={props.slug} target="_blank">LEARN MORE</Link>
         </div>
-        <Link href={props.slug}>
+        <Link href={props.slug} target="_blank">
           <Image
             className={style.projectImage}
             src={props.image}
