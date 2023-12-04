@@ -1,14 +1,14 @@
 .container {
   flex-direction: column;
-  width: 50%;
+  width: 80%;
 
   margin-bottom: 10px;
   border-radius: 15px;
   padding: 10px;
 
   background-color: white;
-  border-color: #bbb;
-  border-width: 3px;
+  /* border-color: #bbb;
+  border-width: 3px; */
 }
 
 .heading {

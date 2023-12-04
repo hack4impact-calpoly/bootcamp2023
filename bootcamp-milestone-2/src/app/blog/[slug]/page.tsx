@@ -55,63 +55,64 @@ export default async function Blog({ params }: { params: { slug: string } }) {
 
         <div className={style.pageContents}>
           <ul className={style.paragraphList}>{paragraphs}</ul>
-          <div className={style.pageImages}>
-            <Image
-              src="/cinque_terre_1.jpg"
-              alt="view of one of the five towns during our hike"
-              className={style.blogPic}
-              width="350"
-              height="350"
-            />
-            <Image
-              src="/cinque_terre_2.jpg"
-              alt="view of one of the five towns during our hike"
-              className={style.blogPic}
-              width="350"
-              height="350"
-            />
-            <Image
-              src="/cinque_terre_3.jpg"
-              alt="view of one of the five towns during our hike"
-              className={style.blogPic}
-              width="350"
-              height="350"
-            />
-            <Image
-              src="/cinque_terre_4.jpg"
-              alt="view of one of the five towns during our hike"
-              className={style.blogPic}
-              width="350"
-              height="350"
-            />
-            <Image
-              src="/cinque_terre_sunrise.jpg"
-              alt="sunrise at the first town, Monterosso"
-              className={style.blogPic}
-              width="350"
-              height="350"
-            />
-            <Image
-              src="/cinque_terre_water.jpg"
-              alt="picture of crystal-clear water from the hike"
-              className={style.blogPic}
-              width="350"
-              height="350"
-            />
-            <Image
-              src="/cinque_terre_me.jpg"
-              alt="me at Riomaggiore on the second day"
-              className={style.blogPic}
-              width="350"
-              height="350"
-            />
+          <div className={style.pageComments}>
+            <h3 className={style.pageCommentsHeader}>Comments</h3>
+            {blog.comments.map((comment, index: number) => (
+              <Comment key={index} comment={comment} />
+            ))}
           </div>
         </div>
-
-        {blog.comments.map((comment, index: number) => (
-          <Comment key={index} comment={comment} />
-        ))}
-
+        <div className={style.pageImages}>
+          <Image
+            src="/cinque_terre_1.jpg"
+            alt="view of one of the five towns during our hike"
+            className={style.blogPic}
+            width="350"
+            height="350"
+          />
+          <Image
+            src="/cinque_terre_2.jpg"
+            alt="view of one of the five towns during our hike"
+            className={style.blogPic}
+            width="350"
+            height="350"
+          />
+          <Image
+            src="/cinque_terre_3.jpg"
+            alt="view of one of the five towns during our hike"
+            className={style.blogPic}
+            width="350"
+            height="350"
+          />
+          <Image
+            src="/cinque_terre_4.jpg"
+            alt="view of one of the five towns during our hike"
+            className={style.blogPic}
+            width="350"
+            height="350"
+          />
+          <Image
+            src="/cinque_terre_sunrise.jpg"
+            alt="sunrise at the first town, Monterosso"
+            className={style.blogPic}
+            width="350"
+            height="350"
+          />
+          <Image
+            src="/cinque_terre_water.jpg"
+            alt="picture of crystal-clear water from the hike"
+            className={style.blogPic}
+            width="350"
+            height="350"
+          />
+          <Image
+            src="/cinque_terre_me.jpg"
+            alt="me at Riomaggiore on the second day"
+            className={style.blogPic}
+            width="350"
+            height="350"
+          />
+        </div>
       </main>
     </div>
   );
