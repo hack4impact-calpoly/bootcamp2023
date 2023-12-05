@@ -8,8 +8,10 @@ export default function BlogPreview(props: IBlog) {
       <main>
         <h2>{props.title}</h2>
         <h3>{props.date}</h3>
-        <p className={style.blogDetails}>{props.description}</p>
-        <p>Learn more</p>
+        <div>
+          <p className={style.blogDetails}>{props.description}</p>
+          <p className={style.blogMore}>Learn more</p>
+        </div>
       </main>
     </div>
   );
