@@ -1,26 +1,13 @@
-import mongoose, { Schema } from "mongoose";
+import CommentType from "../types/commentType";
+import BlogType from "../types/blogType";
 
-type CommentType = {
-  user: string;
-  comment: string;
-  time: Date;
-};
+import mongoose, { Schema } from "mongoose";
 
 const subSchema = new Schema<CommentType>({
   user: { type: String, required: true },
   comment: { type: String, required: true },
-  time: { type: Date, required: false, default: new Date() },
-})
-// typescript type (can also be an interface)
-type BlogType = {
-  title: string;
-  date: Date;
-  description: string;
-  slug: string;
-  image: string;
-  comments: CommentType[];
-  blogNum: number;
-};
+  date: { type: Date, required: false, default: new Date() },
+});
 
 // mongoose schema
 const blogSchema = new Schema<BlogType>({

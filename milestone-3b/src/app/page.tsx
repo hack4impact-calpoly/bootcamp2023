@@ -54,16 +54,19 @@ export default function Home() {
                 text="Download Resume"
                 onPress={() => {}}
                 download={true}
+                homepage={true}
               />
               <Button
                 text="Portfolio"
                 onPress={() => router.push("/portfolio")}
                 download={false}
+                homepage={true}
               />
               <Button
                 text="Contact Me"
                 onPress={() => router.push("/contact")}
                 download={false}
+                homepage={true}
               />
             </div>
           </div>

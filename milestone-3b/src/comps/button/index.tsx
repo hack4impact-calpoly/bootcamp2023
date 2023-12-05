@@ -7,6 +7,7 @@ interface ButtonProps {
   text: string;
   onPress: () => void;
   download: boolean;
+  homepage: boolean;
 }
 
 const downloadResume = () => {
@@ -19,16 +20,24 @@ const downloadResume = () => {
   document.body.removeChild(link);
 };
 
-const Button = ({ text, onPress, download }: ButtonProps) => {
+const Button = ({ text, onPress, download, homepage }: ButtonProps) => {
   if (download) {
     return (
-      <button className={styles.button} onClick={downloadResume} type="button">
+      <button
+        className={homepage ? styles.button : styles.buttonNH}
+        onClick={downloadResume}
+        type="button"
+      >
         {text}
       </button>
     );
   }
   return (
-    <button className={styles.button} onClick={onPress} type="button">
+    <button
+      className={homepage ? styles.button : styles.buttonNH}
+      onClick={onPress}
+      type="button"
+    >
       {text}
     </button>
   );

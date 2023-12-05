@@ -1,39 +1,34 @@
-import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 
 import farq from "../../../../public/blog/farquaad.png";
 import huh from "../../../../public/blog/huh.png";
-import barry from "../../../../public/blog/barry.png"
+import barry from "../../../../public/blog/barry.png";
 
 import EndFiller from "../../../comps/endFiller";
+import BlogComment from "../../../comps/blogComment";
+
+import CommentType from "../../../types/commentType";
 
 import styles from "../page.module.css";
 
-import connectDB from "../../../helpers/db";
-import blogSchema from "../../../database/blogSchema";
+import getBlog from "../../../helpers/getBlog";
 
-
-async function getBlogs(slug: string){
-	await connectDB()
-
-	try {
-      const blog = await blogSchema.findOne({ slug }).orFail()
-	    return blog
-	} catch (err) {
-      console.error("Error Getting Data From DB: ", err);
-	    return null
-	}
-}
-
-
-  
-
-async function BlogPost ({ params }: { params: { slug: string } }) {
-  const blogPost = await getBlogs(params.slug);
+async function BlogPost({ params }: { params: { slug: string } }) {
+  let blogPost = await getBlog(params.slug);
 
   if (!blogPost) {
-    return <p>blog post not found</p>;
+    return (
+      <div className={styles.blog}>
+        <div className={styles.blogInnerContainer}>
+          <h4>
+            <Link href="/blog">Click To Go Back To Blog</Link>
+          </h4>
+          <p className="blogPostMessage">This Blog Post Does Not Exist</p>
+        </div>
+        <EndFiller />
+      </div>
+    );
   }
 
   let image = farq;
@@ -43,8 +38,7 @@ async function BlogPost ({ params }: { params: { slug: string } }) {
   if (blogPost.image == "barry") {
     image = barry;
   }
-  let dateString = String(blogPost.date)
-  //dateString.split()
+  let dateString = String(blogPost.date).slice(0, 15);
 
   return (
     <div className={styles.blog}>
@@ -60,19 +54,32 @@ async function BlogPost ({ params }: { params: { slug: string } }) {
             </div>
             <p className="blogPostMessage">{blogPost.description}</p>
             <Image
-                className={styles.aboutImage}
-                src={image}
-                alt="My Headshot"
-                width={300}
-                height={300}
-              />
+              className={styles.aboutImage}
+              src={image}
+              alt="My Headshot"
+              width={300}
+              height={300}
+            />
+            {blogPost.comments[0] ? (
+              <>
+                <h2>Comments Section</h2>
+                {blogPost.comments.map((blogCommentObj: CommentType) => (
+                  <BlogComment
+                    user={blogCommentObj.user}
+                    comment={blogCommentObj.comment}
+                    date={blogCommentObj.date}
+                    key={blogCommentObj.user + String(blogCommentObj.date)}
+                  />
+                ))}
+              </>
+            ) : null}
           </div>
         </div>
       </div>
       <EndFiller />
     </div>
   );
-};
+}
 
 export default BlogPost;
 
