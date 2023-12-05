@@ -309,3 +309,7 @@ form {
 .hike-description {
   margin-bottom: 20px;
 }
+
+.content {
+  width: 300px;
+}

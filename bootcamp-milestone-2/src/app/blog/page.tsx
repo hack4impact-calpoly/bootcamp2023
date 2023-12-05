@@ -1,22 +1,43 @@
 import blogs from '@/app/blogData';
 import BlogPreview from '../components/blogPreview';
+import blogSchema from '@/database/blogSchema';
+import connectDB from '@/helpers/db';
 
+async function getBlogs(){
+      //connect to the database
+        await connectDB() 
+        try {
+            const blogs = await blogSchema.find({}).orFail()
+            return blogs
+        } catch (err) {
+            return null
+        }
+  }
 
-export default function Blog() {
-      return(
-            <div>
-            <h1 className="page-title">My Blogs</h1>
-            <main>
-                  {blogs.map(blog => 
-                        <BlogPreview 
-                        title={blog.title}
-                        date={blog.date}
-                        description={blog.description}
-                        slug={blog.slug}
-                        />
-                  )}
-            </main>
-            </div>
-      )
+export default async function Blog() {
+      const blogPosts = await getBlogs();
+      if (blogPosts) {
+            return(
+                  <div>
+                  <h1 className="page-title">My Blogs</h1>
+                  <main>
+                        {blogs.map(blog => 
+                              <BlogPreview 
+                              title={blog.title}
+                              date={blog.date}
+                              description={blog.description}
+                              slug={blog.slug}
+                              />
+                        )}
+                  </main>
+                  </div>
+            )
+      } else {
+            return (
+                  <div>
+                        <h1>No blog posts found</h1>
+                  </div>
+            )
+      }
 }
 
