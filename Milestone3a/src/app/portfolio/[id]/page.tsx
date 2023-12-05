@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { IProject, IComment } from "@/database/projectSchema";
 import axios from "axios";
+import parseCommentTime from "@/app/util/commentFormat";
 
 export default function ProjectEntry({ params }: { params: { id: number } }) {
     const [project, setProject] = useState<IProject | null>(null);
@@ -96,7 +97,7 @@ export default function ProjectEntry({ params }: { params: { id: number } }) {
                         {project?.comments.map((c) => (
                             <div className="comment-item">
                                 <div className="comment-date">
-                                    {c.time.toString()}
+                                    {parseCommentTime(c.time)}
                                 </div>
                                 <div className="comment-user">{c.user}</div>
                                 <div className="comment-description">

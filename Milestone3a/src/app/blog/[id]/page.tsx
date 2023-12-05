@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { IBlog, IComment } from "@/database/blogSchema";
 import axios from "axios";
+import parseCommentTime from "@/app/util/commentFormat";
+
 
 export default function BlogEntry({ params }: { params: { id: number } }) {
     const [blog, setBlog] = useState<IBlog | null>(null);
@@ -86,7 +88,7 @@ export default function BlogEntry({ params }: { params: { id: number } }) {
                     <div className="blog-content">
                         <img src={blog?.image} />
                         <h2 className="blog-title">{blog?.title}</h2>
-                        <div className="blog-date">{blog?.date.toString()}</div>
+                        <div className="blog-date">{parseCommentTime(blog?.date)}</div>
                         <div className="blog-description">
                             {blog?.description}
                         </div>
@@ -96,7 +98,7 @@ export default function BlogEntry({ params }: { params: { id: number } }) {
                         {blog?.comments.map((c) => (
                             <div className="comment-item">
                                 <div className="comment-date">
-                                    {c.time.toString()}
+                                    {parseCommentTime(c.time)}
                                 </div>
                                 <div className="comment-user">{c.user}</div>
                                 <div className="comment-description">

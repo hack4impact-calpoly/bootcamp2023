@@ -3,7 +3,7 @@ export default function Home() {
         <main>
             <center>
             <h1>Hello Everyone!</h1>
-            <img width= "400px" src="Belal Elshenety.jpeg" />
+            <img src="Belal Elshenety.jpeg" />
             <div>
                 <div>
                     <p className="para">

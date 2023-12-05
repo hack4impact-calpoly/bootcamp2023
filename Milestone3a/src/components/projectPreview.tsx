@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import type { IProject } from "../database/projectSchema";
 
+
 export default function ProjectPreview(props: IProject) {
     return (
         <div className="blog-item">
