@@ -1,7 +1,7 @@
 import React from "react";
 // import Image from "next/image";
 // import Link from "next/link";
-import style from "./projects.module.css";
+import style from "./portfolio.module.css";
 import projectSchema from "../database/projectSchema";
 import connectDB from "../database/db";
 import Project from "../components/project";
