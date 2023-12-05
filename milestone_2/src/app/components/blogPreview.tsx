@@ -10,8 +10,8 @@ export default function BlogPreview(props: Blog) {
         <h3><Link href={props.slug}> {props.title} </Link></h3>
         <div>
             <p> {props.description} </p>
-            <p> {props.date} </p>
+            <p> {props.date.toLocaleDateString()} </p>
         </div>
 	</div>
   );
-}
+} 
