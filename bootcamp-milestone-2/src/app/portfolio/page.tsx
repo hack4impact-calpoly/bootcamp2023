@@ -1,7 +1,7 @@
 import React from "react";
 // import Image from "next/image";
 // import Link from "next/link";
-// import style from "./projects.module.css";
+import style from "./projects.module.css";
 import projectSchema from "../database/projectSchema";
 import connectDB from "../database/db";
 import Project from "../components/project";
@@ -32,6 +32,7 @@ export default async function Projects() {
     return (
       <main>
         <div>
+          <h1 className={style.pageTitle}>Portfolio</h1>
           {projects.map((project) => (
             <Project
               title={project.title}

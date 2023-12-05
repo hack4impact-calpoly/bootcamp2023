@@ -7,7 +7,6 @@ import style from "../portfolio/projects.module.css";
 export default function Projects(props: IProject) {
   return (
     <div>
-      <h1 className={style.pageTitle}>Blog</h1>
       <main>
         <h2 className={style.pageTitle}>{props.title}</h2>
         <div className={style.projectImage}>

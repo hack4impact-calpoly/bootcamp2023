@@ -2,6 +2,7 @@ import React from "react";
 import BlogPreview from "../components/blogPreview";
 import blogSchema from "../database/blogSchema";
 import connectDB from "../database/db";
+import style from "./blog.module.css";
 
 async function getBlog() {
   const res = await fetch("localhost:3000/api/blog/" + slug);
@@ -25,6 +26,7 @@ export default async function Blogs() {
     return (
       <main>
         <div>
+          <h1 className={style.pageTitle}>Blog</h1>
           {blogs.map((blog) => (
             <BlogPreview
               title={blog.title}
