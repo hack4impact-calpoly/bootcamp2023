@@ -1,10 +1,10 @@
 import React from "react";
-import type { Blog } from "../blog";
+import type { IBlog } from "../database/blogSchema";
 import style from "./blogPreview.module.css";
 
-export default function BlogPreview(props: Blog) {
+export default function BlogPreview(props: IBlog) {
   return (
-    <div className={style.blogPreview}>
+    <div className={style.pageTitle}>
       <main>
         <h2>{props.title}</h2>
         <h3>{props.date}</h3>

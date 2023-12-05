@@ -2,26 +2,23 @@ import { Schema } from "mongoose";
 import mongoose from "mongoose";
 
 // typescript type (can also be an interface)
-export type IBlog = {
+export type IProject = {
   title: string;
   slug: string;
-  date: String;
-  description: string; // for preview
-  image: string; // for individual blog page
-  content: string;
+  description: string;
+  image: string;
 };
 
 // mongoose schema
-const blogSchema = new Schema<IBlog>({
+const projectSchema = new Schema<IProject>({
   title: { type: String, required: true },
   slug: { type: String, required: true },
-  date: { type: String, required: true },
   description: { type: String, required: true },
   image: { type: String, required: false },
-  content: { type: String, required: true },
 });
 
 // defining the collection and model
-const Blog = mongoose.models["blogs"] || mongoose.model("blogs", blogSchema);
+const Project =
+  mongoose.models["projects"] || mongoose.model("projects", projectSchema);
 
-export default Blog;
+export default Project;

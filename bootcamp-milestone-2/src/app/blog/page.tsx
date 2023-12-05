@@ -13,8 +13,7 @@ async function getBlog() {
 }
 
 export default async function Blogs() {
-  const blogs = await Page();
-  // const individualBlog = await getBlog();
+  const blogs = await Blog();
   if (blogs == null) {
     return (
       <main>
@@ -30,7 +29,7 @@ export default async function Blogs() {
             <BlogPreview
               title={blog.title}
               description={blog.description}
-              date={JSON.stringify(blog.date)}
+              date={blog.date}
               slug={blog.slug}
               image={""}
               content={""}
@@ -42,7 +41,7 @@ export default async function Blogs() {
   }
 }
 
-async function Page() {
+async function Blog() {
   await connectDB(); // function from db.ts before
 
   try {
