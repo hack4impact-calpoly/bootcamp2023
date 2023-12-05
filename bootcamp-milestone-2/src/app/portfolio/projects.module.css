@@ -18,7 +18,8 @@
 }
 
 .projectImage {
-  display: block;
+  display: grid;
+  place-items: center;
   margin: 1rem auto;
 }
 
@@ -35,7 +36,7 @@
   line-height: 23px;
 }
 
-#projectMore {
+.projectMore {
   font-family: Arial, Helvetica, sans-serif;
   text-align: right;
 }
