@@ -3,9 +3,9 @@ import connectDB from "@/helpers/db"
 import blogSchema from '@/database/blogSchema'
 
 type IParams = {
-		params: {
-			slug: string
-		}
+	params: {
+		slug: string
+	}
 }
 
 export async function GET(req: NextRequest, { params }: IParams) {
