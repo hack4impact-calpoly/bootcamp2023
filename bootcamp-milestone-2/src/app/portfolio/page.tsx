@@ -3,11 +3,11 @@ import Image from 'next/image'
 import projects from '@/app/projectData'
 import ProjectPreview from '@/app/components/projectPreview';
 
-export default function Portfolio() {
+export default async function Portfolio() {
     return (
         <>
         <div className="smth">
-        {projects.map(project => 
+        {(await projects).map((project: { title: string; description: string; github: string; image: string; }) => 
         <ProjectPreview
             title={project.title}
             description={project.description}

@@ -1,23 +1,20 @@
-export interface Project {
-    title: string;
-    description: string
-    github:string
-    image: string
+import connectDB from "@/helpers/db";
+import Project from "@/database/projectSchema"
+
+
+async function getProjects(){
+	await connectDB() // function from db.ts before
+
+	try {
+			// query for all blogs and sort by date
+	    const projects = await Project.find().orFail()
+			// send a response as the blogs as the message
+	    return projects
+	} catch (err) {
+	    return []
+	}
 }
 
-const projects: Project[]=[
-    {
-        title:"This Website",
-        description:"Used HTML, CSS.",
-        github: "https://github.com/SumedhaKun/SumedhaKun.github.io",
-        image:"/website_shot.png"
-    },
-    {
-        title:"Vybe",
-        description:"Used Python, JupyterLab, etc.",
-        github: "https://github.com/SumedhaKun/Vybe",
-        image:"/vybe_2.png"
-    }
-];
+const projects=getProjects()
 
 export default projects;

@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './projectPreview.module.css'
 import Image from 'next/image';
-import type { Project } from "@/app/projectData"
+import type Project from "@/app/projectData"
 export default function ProjectPreview(props: Project) {
   return (
     
