@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './blogPreview.module.css'
 import Image from 'next/image';
-import type { Blog } from "@/app/blogData"
+import Blog from '@/database/blogSchema'
 export default function BlogPreview(props: Blog) {
   return (
     
@@ -10,7 +10,6 @@ export default function BlogPreview(props: Blog) {
     <div className={style.div} id='blogClass'>
       <h3> <a href={props.slug}>{props.title}</a> </h3>
       <div>
-		
         <p>{props.description}</p>
 				<p>Posted on {props.date}</p>
       </div>
