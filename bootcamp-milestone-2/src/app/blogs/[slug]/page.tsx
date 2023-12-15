@@ -1,4 +1,4 @@
-import Comment from "@/components/commentPreview"
+import Comment from "@/components/commentPreview";
 
 type Props = {
   params: { slug: string };
