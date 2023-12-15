@@ -1,25 +1,23 @@
+import {IComment} from "@/database/blogSchema";
+
 type CommentProps = {
-    comment: IComment;
-}
+  comment: IComment;
+};
 
 
-{/* Modularizing code into seperate functions is useful.
-		Makes your code look nicer and allows for better readability.
-	*/}
-function parseCommentTime(time: Date){
-	/*
-		Implementation up to you...
-	*/
+function parseCommentTime(time: Date) {
+  var theTime = JSON.parse(String(time))
+  return theTime
 }
 
 function Comment({ comment }: CommentProps) {
-    return (
-        <div>
-            <h4>{comment.user}</h4>
-            <p>{comment.comment}</p>
-            <span>{parseCommentTime(comment.time)}</span>
-        </div>
-    );
+  return (
+    <div>
+      <h4>{comment.user}</h4>
+      <p>{comment.comment}</p>
+      <span>{parseCommentTime(comment.time)}</span>
+    </div>
+  );
 }
 
 export default Comment;

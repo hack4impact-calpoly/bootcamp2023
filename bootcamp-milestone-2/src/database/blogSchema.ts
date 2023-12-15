@@ -8,6 +8,13 @@ type IBlog = {
   image: string;
   posted: Date;
   text: string;
+  comments: IComment[];
+};
+
+type IComment = {
+  user: string;
+  comment: string;
+  time: Date;
 };
 
 const blogSchema = new Schema<IBlog>({
@@ -23,15 +30,15 @@ const Blog = mongoose.models["blogs"] || mongoose.model("blogs", blogSchema);
 
 export default Blog;
 
-async function getBlogs(){
-	await connectDB() // function from db.ts before
+async function getBlogs() {
+  await connectDB(); // function from db.ts before
 
-	try {
-			// query for all blogs and sort by date
-	    const blogs = await Blog.find().sort({ date: -1 }).orFail()
-			// send a response as the blogs as the message
-	    return blogs
-	} catch (err) {
-	    return null
-	}
+  try {
+    // query for all blogs and sort by date
+    const blogs = await Blog.find().sort({ date: -1 }).orFail();
+    // send a response as the blogs as the message
+    return blogs;
+  } catch (err) {
+    return null;
+  }
 }
