@@ -11,8 +11,7 @@ const blogs: Blog[] = [
         date:  "12/21/2018",
         description:  "This is my very first blog post. Welcome!",
         slug: "firstblog",
-    }
-    ,
+    },
     {
         title: "Second Blog Post",
         date:  "04/23/2023",
