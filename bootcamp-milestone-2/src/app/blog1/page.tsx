@@ -9,7 +9,8 @@ export default function Blog1() {
                 <br></br>
                 Title: Blog#1<br></br>
                 Date: 2/2/2024<br></br>
-                <Image src={"/blogimg.jpeg"} alt={"Picture of blog"} height={200} width={200}></Image>
+                <br></br>
+                <Image src={"/blogimg.jpeg"} alt={"Picture of blog"} height={200} width={200}></Image> <br></br>
                 HI, this is a blog bla bla bla
             </div>
             </main>

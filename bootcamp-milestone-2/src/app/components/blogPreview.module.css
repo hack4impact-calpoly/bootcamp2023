@@ -1,4 +1,15 @@
 #blogClass{
-  padding: 20px;
+  padding-left: 200px;
+  text-align: center;
+  color: white;
+  background-color: white;
+}
+.blogContainer {
+  padding-left: 200px;
+  text-align: center;
 
+}
+
+#description {
+  padding: 200px;
 }

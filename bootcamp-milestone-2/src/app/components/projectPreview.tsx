@@ -7,12 +7,14 @@ export default function ProjectPreview(props: Project) {
     
 		// replace everything between the <div> & </div> tags
 		// with your code from earlier milestones
-    <div className={style.div} id='project-id'>
+    <main>
+      <div className={style.div} id='project-id'>
       <p className="project-name"><b>{props.title}</b></p>
                 <div className="box2">
                         <Image src={props.image} alt="Picture of Website" height={200} width={250}></Image>
                         <p>{props.description}  <a href={props.github}>Github</a></p>
                 </div>
 	  </div>
+    </main>
   );
 }

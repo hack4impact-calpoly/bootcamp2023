@@ -4,6 +4,9 @@ html {
   .about {
     display: flex;
   }
+  .about-text {
+    padding: 20px;
+  }
   h1 {
     color: aliceblue;
     font-family: Arial, Helvetica, sans-serif;
@@ -23,6 +26,14 @@ html {
     height: 325px;
     width: 245px;
     border-radius: 5%;
+  }
+
+  .box3 {
+    background-color: white;
+    height: 200px;
+    width: 600px;
+    border-radius: 5%;
+    text-align: center;
   }
   p {
     font-family: 'Courier New', Courier, monospace;
@@ -55,6 +66,9 @@ html {
     align-items: center;
   }
   
+  .content {
+    text-align: center;
+  }
   
   /* CSS for page footer */
   
