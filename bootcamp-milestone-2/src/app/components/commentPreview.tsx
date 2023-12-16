@@ -1,4 +1,10 @@
-import {IComment} from "@/database/blogSchema";
+// import IComment from "@/database/blogSchema";
+
+type IComment = {
+  user: string;
+  comment: string;
+  time: Date;
+};
 
 type CommentProps = {
   comment: IComment;

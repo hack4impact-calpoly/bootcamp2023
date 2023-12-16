@@ -5,12 +5,11 @@ import { Blog } from "@/blogData";
 
 export default function BlogPreview(props: Blog) {
   return (
-    // replace everything between the <div> & </div> tags
-    // with your code from earlier milestones
+
     <div className={style.div}>
       <h3> {props.name} </h3>
       <div>
-        <Image src="/props.image" alt="img" width={500} height={500}></Image>
+        <Image src={"props.image"} alt="img" width={500} height={500}></Image>
         <p>{props.description}</p>
         <p>{props.posted}</p>
       </div>
