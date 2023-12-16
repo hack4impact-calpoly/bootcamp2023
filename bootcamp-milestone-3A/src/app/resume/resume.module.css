@@ -1,0 +1,13 @@
+.resumeMain {
+  margin-top: 3%;
+  width: 90%;
+  border-radius: 10px;
+  margin-left: 5%;
+}
+
+.sectionTitle {
+  border-style: solid;
+  border-color: white;
+  text-align: center;
+}
+

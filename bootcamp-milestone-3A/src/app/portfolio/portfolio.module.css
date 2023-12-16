@@ -1,0 +1,29 @@
+.project { 
+  text-align: center;
+  padding-top: 5%;
+}
+
+.projectDetails {
+  border-style: solid;
+  border-color: white;
+  border-radius: 20px;
+}
+
+.projectName {
+  font-size: 30px;
+  font-style: italic;
+  padding-bottom: 5%;
+}
+
+.projectDescription {
+  padding-bottom: 2%;
+}
+
+.learnMoreLink {
+  text-decoration: underline;
+}
+
+.learnMoreLink:hover {
+  color: lightblue;
+}
+
