@@ -28,12 +28,16 @@ export const Contact = () => {
   return (
     <form ref={form} onSubmit={sendEmail}>
       <div className={style.contactFormContainer}>
-        <label>Name</label>
-        <input type="text" name="from_name" id='inputName'/>
-        <label>Email</label>
-        <input type="email" name="from_email" id='inputEmail'/>
-        <label>Message</label>
-        <textarea name="message" id='inputMessage' />
+        <div className={style.innerContainer}>
+          <label>Name</label>
+          <input type="text" name="from_name" id='inputName'/>
+          <label>Email</label>
+          <input type="email" name="from_email" id='inputEmail'/>
+        </div>
+          <div className={style.messageContainer}>
+            <label>Message</label>
+            <textarea name="message" id='inputMessage' />
+        </div>
         <input type="submit" value="Send" />
       </div>
     </form>
