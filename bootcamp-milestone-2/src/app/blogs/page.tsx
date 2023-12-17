@@ -39,6 +39,7 @@ export default function Blogs() {
             image={blog.image}
             posted={blog.posted}
             text={blog.text}
+            comments={blog.comments}
           />
         ))}
       </main>
