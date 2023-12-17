@@ -1,14 +1,49 @@
+import { useEffect, useState } from 'react';
 import { GetServerSideProps, NextPage } from 'next';
 import Blog, { IBlog } from '@/database/blogSchema';
-import connectDB from '@/database/helpers/db';
-import style from '@/styles/blog.module.css'
-import Comment from '@/components/Comment';
+import style from '@/styles/blog.module.css';
+import Comment from '@/components/Blog/Comment';
+import CommentForm from '@/components/Blog/CommentForm'; 
 
 interface BlogPageProps {
-  blog: IBlog | null;
+  slug: string;
 }
 
-const BlogPage: NextPage<BlogPageProps> = ({ blog }) => {
+const BlogPage: NextPage<BlogPageProps> = ({ slug }) => {
+  const [blog, setBlog] = useState<IBlog | null>(null);
+
+  useEffect(() => {
+    const fetchBlogData = async () => {
+      try {
+        const response = await fetch(`/api/blog/${slug}`);
+        if (response.ok) {
+          const data = await response.json();
+          setBlog(data);
+        } else {
+          console.error('Blog fetch error:', response.status, response.statusText);
+          setBlog(null);
+        }
+      } catch (error) {
+        console.error('Error fetching blog data:', error);
+        setBlog(null);
+      }
+    };
+
+    fetchBlogData();
+  }, [slug]);
+
+  const refreshComments = async () => {
+    try {
+      const response = await fetch(`/api/blog/${slug}`);
+      if (response.ok) {
+        const updatedBlog = await response.json();
+        setBlog(updatedBlog);
+      }
+    } catch (error) {
+      console.error('Error refreshing comments:', error);
+    }
+  };
+
   if (!blog) {
     return <div>Blog not found</div>;
   }
@@ -28,6 +63,7 @@ const BlogPage: NextPage<BlogPageProps> = ({ blog }) => {
         ) : (
           <p>No comments</p>
         )}
+        <CommentForm blogSlug={slug} onCommentAdded={refreshComments} />
       </section>
     </div>
   );
@@ -35,20 +71,7 @@ const BlogPage: NextPage<BlogPageProps> = ({ blog }) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const slug = context.params?.slug as string;
-
-  if (!slug) {
-    return { props: { blog: null } };
-  }
-
-  await connectDB();
-
-  const blog = await Blog.findOne({ slug }).lean();
-
-  if (!blog) {
-    return { props: { blog: null } };
-  }
-
-  return { props: { blog: JSON.parse(JSON.stringify(blog)) } };
+  return { props: { slug } };
 };
 
 export default BlogPage;

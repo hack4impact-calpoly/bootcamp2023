@@ -8,7 +8,7 @@ import Blog from '@/database/blogSchema';
 import connectDB from '@/database/helpers/db';
 import {IBlog} from '@/database/blogSchema'
 import Project, {IProject} from '@/database/projectSchema'
-import BlogPreviewComponent from '@/components/BlogPreviewComponent';
+import BlogPreviewComponent from '@/components/Blog/BlogPreviewComponent';
 import ProjectComponent from '@/components/ProjectPreviewComponent';
 import {Contact} from '@/components/Contact'
 
