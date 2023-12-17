@@ -1,44 +1,66 @@
+"use client";
 import { NextPage } from "next";
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import style from "./blog_post.module.css";
 import Comment, { IComment } from "../../../components/comment";
+import { fetchBlog } from "../../../utils/fetchBlog";
+import { addComment } from "../../../utils/addComment";
 
-export async function fetchBlog(slug: string) {
-  try {
-    const res = await fetch(`http://localhost:3000/api/${slug}`, {
-      cache: "no-store",
-    });
+// async function upload(formData) {
+//   console.log("uploading");
+//   const name = formData.get("name");
+//   const comment = formData.get("comment");
+//   const date = new Date();
+//   console.log(name, comment, date);
+// }
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch blog");
-    }
+export default function Blog({ params }: { params: { slug: string } }) {
+  const [newComment, setNewComment] = useState({
+    name: "",
+    comment: "",
+    date: null,
+  });
+  const [blog, setTestData] = useState(null);
 
-    const res_j = await res.json();
-    return res_j;
-  } catch (err: unknown) {
-    console.log(`error: ${err}`);
-    return null;
-  }
-}
-
-export default async function Blog({ params }: { params: { slug: string } }) {
   const slug = params.slug;
-  const blog = await fetchBlog(slug);
-  const contents = blog.content;
   let paragraphs = [];
   let i = 0;
 
+  useEffect(() => {
+    debugger;
+    const fetchBlogData = async () => {
+      const data = await fetchBlog(slug);
+      setTestData(data);
+    };
+
+    fetchBlogData();
+    console.log("testing useEffect in page");
+    console.log(blog);
+  }, [slug]);
+
   // checks that blog exists
-  if (!blog || !blog.content) {
+  if (!blog) {
     return <div>Blog not found or has no content</div>;
   }
+
+  const contents = blog.content;
+
+  const handleCommentChange = (event) => {
+    const { name, value } = event.target;
+    setNewComment((prevNewComment) => ({ ...prevNewComment, [name]: value }));
+  };
+
+  const handleCommentUpload = (event) => {
+    event.preventDefault();
+    console.log("submimt pressed");
+  };
 
   // creates different paragraphs for content
   while (i < contents.length) {
     paragraphs.push(
       <li className={style.paragraph} key={i}>
-        {blog.content[i]}
+        {contents[i]}
       </li>
     );
     paragraphs.push(<br />);
@@ -62,6 +84,29 @@ export default async function Blog({ params }: { params: { slug: string } }) {
             ))}
           </div>
         </div>
+        <form className={style.pageAddComment} onSubmit={handleCommentUpload}>
+          <label htmlFor="name">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={newComment.name}
+            onChange={handleCommentChange}
+            placeholder="Your Name"
+            required
+          />
+          <label htmlFor="comment">Your Thoughts...</label>
+          <textarea
+            id="comment"
+            name="comment"
+            value={newComment.comment}
+            onChange={handleCommentChange}
+            placeholder="Tell me what you think!"
+            required
+          ></textarea>
+          <button type="submit">Submit</button>
+        </form>
+        <br />
         <div className={style.pageImages}>
           <Image
             src="/cinque_terre_1.jpg"
