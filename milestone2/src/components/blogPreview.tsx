@@ -10,7 +10,7 @@ export default function BlogPreview(props: typeof Blog) {
     // with your code from earlier milestones
     <>
       <main>
-        <a href={blog_info.slug}>
+        <a href={"/blogs/" + blog_info.slug}>
           <div className={styles.blog_div}>
             <h1>{blog_info.title}</h1>
             <p>{blog_info.date.toLocaleString()}</p>
