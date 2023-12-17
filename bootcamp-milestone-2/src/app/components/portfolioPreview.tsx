@@ -8,7 +8,7 @@ export default function PortfolioPreview(props: Portfolio) {
     <div className={style.div}>
       <h3> {props.projectName} </h3>
       <div>
-        <Image src={"props.image"} alt="img" width={500} height={500}></Image>
+        <Image src="{props.image}" alt="img" width={500} height={500}></Image> {/*not using props.image properly with src... same with blogPreview */}
         <p>{props.projectDescription}</p>
         <p>{props.learnMore}</p>
       </div>
