@@ -23,7 +23,7 @@
 }
 
 .messageContainer label{
-    margin-bottom: 5px;
+    padding-bottom: 10px;
 }
 
 .messageContainer textarea {
