@@ -5,8 +5,6 @@ import { Portfolio } from "@/portfolioData";
 
 export default function PortfolioPreview(props: Portfolio) {
   return (
-    // replace everything between the <div> & </div> tags
-    // with your code from earlier milestones
     <div className={style.div}>
       <h3> {props.projectName} </h3>
       <div>
