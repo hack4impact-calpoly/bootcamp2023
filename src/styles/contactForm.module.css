@@ -1,0 +1,4 @@
+.contactFormContainer{
+    display: flex;
+    flex-direction: column;
+}

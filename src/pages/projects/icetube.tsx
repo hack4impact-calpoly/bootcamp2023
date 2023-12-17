@@ -46,7 +46,7 @@ export default function Home() {
             <img src={solder.src}></img>
           </div>
           <br></br>
-          <p>Throught the process, it was imporant to perform various voltage readings using a multimeter to check if the electrical components are functional. Doing this required care as it could be easy to cause a short</p>         
+          <p>Throught the process, it was imporant to perform various voltage readings using a multimeter to check if =m the electrical components are functional. Doing this required care as it could be easy to cause a short</p>         
           <div className={style.imageContainer}>
             <img src={PCB.src}></img>
             <img src={clock2.src}></img>

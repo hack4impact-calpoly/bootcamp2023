@@ -10,6 +10,7 @@ import {IBlog} from '@/database/blogSchema'
 import Project, {IProject} from '@/database/projectSchema'
 import BlogPreviewComponent from '@/components/BlogPreviewComponent';
 import ProjectComponent from '@/components/ProjectPreviewComponent';
+import {Contact} from '@/components/Contact'
 
 interface HomeProps {
   blogs: IBlog[];
@@ -125,6 +126,7 @@ export default function Home({blogs, projects}: HomeProps) {
             <a className={style.button} href="https://www.linkedin.com/in/noah-giboney-896847261/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </section>
+        <Contact/>
       </div>
     </div>
   );
