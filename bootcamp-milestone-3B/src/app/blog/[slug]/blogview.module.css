@@ -1,0 +1,66 @@
+.blogView {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.blogContent {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.blogTitle {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.blogDate {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.blogDescription {
+  color: #444;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.blogBody {
+  color: #333;
+  line-height: 1.6;
+}
+
+.blogComments {
+  margin-top: 30px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.comment {
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.comment:first-child {
+  border-top: none;
+}
+
+.commentUser {
+  font-weight: bold;
+  color: #333;
+}
+
+.commentText {
+  color: #555;
+  margin: 5px 0;
+}
+
+.commentDate {
+  font-size: 12px;
+  color: #999;
+}

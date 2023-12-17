@@ -1,6 +1,7 @@
 import styles from "./blog.module.css";
 import connectDB from "../database/db";
 import Blog from "../database/blogSchema";
+import Link from "next/link";
 
 export default async function BlogList() {
   async function getBlogs() {
@@ -19,9 +20,11 @@ export default async function BlogList() {
   function BlogPreview({ blog, index }: { blog: any; index: number }) {
     return (
       <div className={styles.blogpost}>
-        <h4 className={styles.smallHeading}>{blog.title}</h4>
-        <p className={styles.date}>{blog.date.toString()}</p>
-        <p className={styles.description}>{blog.description}</p>
+        <Link href={`blog/${blog.slug}`}>
+          <h4 className={styles.smallHeading}>{blog.title}</h4>
+          <p className={styles.date}>{new Date(blog.date).toLocaleString()}</p>
+          <p className={styles.description}>{blog.description}</p>
+        </Link>
       </div>
     );
   }

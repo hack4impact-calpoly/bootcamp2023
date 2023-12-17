@@ -1,4 +1,5 @@
-import styles from "./contact.module.css";
+import React from "react"; // Import React module
+import styles from "./contact.module.css"; // Import CSS module
 
 export default function Contact() {
   return (
