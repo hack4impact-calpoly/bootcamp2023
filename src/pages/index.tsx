@@ -10,7 +10,7 @@ import {IBlog} from '@/database/blogSchema'
 import Project, {IProject} from '@/database/projectSchema'
 import BlogPreviewComponent from '@/components/Blog/BlogPreviewComponent';
 import ProjectComponent from '@/components/ProjectPreviewComponent';
-import {Contact} from '@/components/Contact'
+import {Contact} from '@/components/ContactForm'
 
 interface HomeProps {
   blogs: IBlog[];
