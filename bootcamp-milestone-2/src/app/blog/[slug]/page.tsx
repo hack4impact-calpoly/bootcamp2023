@@ -5,9 +5,10 @@ import style from "./blog_post.module.css";
 import Comment, { IComment } from "../../../components/comment";
 import { fetchBlog } from "../../../utils/fetchBlog";
 import { addComment } from "../../../utils/addComment";
+import { Blog } from "../../blogData";
 
 export default function Blog({ params }: { params: { slug: string } }) {
-  const [blog, setBlog] = useState();
+  const [blog, setBlog] = useState<Blog>();
   const [inputCommentData, setInputCommentData] = useState({
     name: "",
     comment: "",
