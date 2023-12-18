@@ -8,11 +8,13 @@ var blogSchema = new mongoose.Schema({
   date: { type: Date, required: false, default: new Date() },
   description: { type: String, required: true },
   content: { type: String, required: true },
-  comments: {
-    user: { type: String, required: true },
-    comment: { type: String, required: true },
-    time: { type: Date, required: false, default: new Date() },
-  },
+  comments: [
+    {
+      user: { type: String, required: true },
+      comment: { type: String, required: true },
+      time: { type: Date, required: false, default: new Date() },
+    },
+  ],
 });
 // defining the collection and model
 var Blog = mongoose.models["Blog"] || mongoose.model("Blog", blogSchema);

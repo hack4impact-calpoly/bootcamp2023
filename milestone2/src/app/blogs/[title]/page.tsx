@@ -1,3 +1,4 @@
+import Comment from "@/components/comment";
 type Props = {
   params: { title: string };
 };
@@ -23,6 +24,21 @@ export default async function Blog({ params: { title } }: Props) {
     return (
       <div>
         <h1>{blog.title}</h1>
+        <h2>{blog.date} </h2>
+        <h3>{blog.description}</h3>
+        <p>{blog.content}</p>
+
+        <hr></hr>
+        <h2> Comments </h2>
+        {blog.comments.map((comment: any, index: any) => (
+          <Comment key={index} comment={comment} />
+        ))}
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <h1> 404 Blog Not Found</h1>
       </div>
     );
   }
