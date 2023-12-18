@@ -1,35 +1,42 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import PortfolioPreview from '@/app/components/portfolioPreview';
 import "../styles/website.css"
 import "../styles/portfolio.css"
-export default function Portfolio() {
-    return (
+import connectDB from "@/helpers/db";
+import Projects from "@/database/projectSchema"
+
+async function getProjects(){
+	await connectDB() // function from db.ts before
+
+	try {
+			// query for all blogs and sort by date
+	    const blogs = await Projects.find().sort({ date: -1 }).orFail()
+			// send a response as the blogs as the message
+	    return blogs
+	} catch (err) {
+	    return null
+	}
+}
+
+export default async function Portfolio() {
+    const projects = await getProjects();
+    return(
+    <main>
+        <h2 className="page-title">Projects</h2>
         <div>
-        <main>
-            <h1 className="page-title">Portfolio</h1>
-            <div className="project">
-                <Link className="project-image" href="/home">
-                    <Image 
-                        src="/website.png"
-                        width = {300} 
-                        height = {300}
-                        alt="Image of a Nebula"
-                    />
-                </Link>
-                <div className="project-details">
-                    <p className="project-name">
-                        Personal Website
-                    </p>
-                    <p className="project-description">
-                        Website about me created with HTML and CSS
-                    </p>
-                    <Link href="/home">
-                        Learn More
-                    </Link>
+            {projects == null ? (
+                <div className = "no-project">
+                    No Projects Yet
+                </div>):
+                <div>
+                    {projects.map(project =>
+                        <PortfolioPreview  {...project.toObject()} />
+                    )}
                 </div>
-            </div>
-        </main>
+            }
         </div>
-    )
+    </main>
+        
+    );
+
 }
