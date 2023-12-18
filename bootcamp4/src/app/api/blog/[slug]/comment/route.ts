@@ -17,7 +17,7 @@ export async function POST(req: NextRequest, { params }: IParams ) {
   await connectDB();
 	// validate body
 	if (!body) {
-		return "invalid ):"
+		return NextResponse.json("Invalid comment", { status: 404 });
 	}
     try {
         const blog = await Blog.findOneAndUpdate(
