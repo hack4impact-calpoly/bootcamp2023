@@ -32,7 +32,7 @@ export default function Home({ params: { slug } }: IParams) {
     });
 
     const submitData = async () => {
-        const response = await fetch(`http://localhost:3000/api/portfolio/${slug}/comment`, {
+        const response = await fetch(`https://bootcamp-project-2023-elhagen13s-projects.vercel.app/api/portfolio/${slug}/comment`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ export default function Home({ params: { slug } }: IParams) {
 
     useEffect(() => {
         const fetchProjectData = async () => {
-          const response = await fetch(`http://localhost:3000/api/portfolio/${slug}`);
+          const response = await fetch(`https://bootcamp-project-2023-elhagen13s-projects.vercel.app/api/portfolio/${slug}`);
           const data = await response.json();
           console.log("data", data)
           setProjectData(data);
