@@ -1,5 +1,4 @@
 "use client";
-import { NextPage } from "next";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import style from "./blog_post.module.css";
@@ -7,31 +6,25 @@ import Comment, { IComment } from "../../../components/comment";
 import { fetchBlog } from "../../../utils/fetchBlog";
 import { addComment } from "../../../utils/addComment";
 
-// async function upload(formData) {
-//   console.log("uploading");
-//   const name = formData.get("name");
-//   const comment = formData.get("comment");
-//   const date = new Date();
-//   console.log(name, comment, date);
-// }
-
 export default function Blog({ params }: { params: { slug: string } }) {
-  const [newComment, setNewComment] = useState({
+  const [blog, setBlog] = useState();
+  const [inputCommentData, setInputCommentData] = useState({
     name: "",
     comment: "",
-    date: null,
   });
-  const [blog, setTestData] = useState(null);
 
   const slug = params.slug;
+  console.log("Blog Post opened, printing slug: ");
+  console.log(slug);
+  console.log("Params.slug = ");
+  console.log(params.slug);
   let paragraphs = [];
   let i = 0;
 
   useEffect(() => {
-    debugger;
     const fetchBlogData = async () => {
       const data = await fetchBlog(slug);
-      setTestData(data);
+      setBlog(data);
     };
 
     fetchBlogData();
@@ -46,15 +39,21 @@ export default function Blog({ params }: { params: { slug: string } }) {
 
   const contents = blog.content;
 
-  const handleCommentChange = (event) => {
+  const handleCommentChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
-    setNewComment((prevNewComment) => ({ ...prevNewComment, [name]: value }));
+    setInputCommentData((prevInputCommentData) => ({ ...prevInputCommentData, [name]: value }));
   };
 
-  const handleCommentUpload = (event) => {
+  function handleCommentUpload(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log("submimt pressed");
-  };
+    console.log("submit pressed");
+    const newComment = {
+      user: inputCommentData.name,
+      comment: inputCommentData.comment,
+      time: new Date(),
+    };
+    addComment(slug, newComment);
+  }
 
   // creates different paragraphs for content
   while (i < contents.length) {
@@ -90,7 +89,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
             type="text"
             id="name"
             name="name"
-            value={newComment.name}
+            value={inputCommentData.name}
             onChange={handleCommentChange}
             placeholder="Your Name"
             required
@@ -99,7 +98,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
           <textarea
             id="comment"
             name="comment"
-            value={newComment.comment}
+            value={inputCommentData.comment}
             onChange={handleCommentChange}
             placeholder="Tell me what you think!"
             required

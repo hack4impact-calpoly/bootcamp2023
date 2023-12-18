@@ -2,14 +2,8 @@ import { Schema } from "mongoose";
 import mongoose from "mongoose";
 import { Blog } from "../app/blogData";
 
-// export const IComment = new mongoose.Schema({
-//   user: { type: String, required: true },
-//   comment: { type: String, required: true },
-//   time: { type: Date, requierd: false, default: new Date() },
-// });
-
 // mongoose schema
-interface Comment {
+export interface Comment {
   user: string;
   comment: string;
   time: Date;
