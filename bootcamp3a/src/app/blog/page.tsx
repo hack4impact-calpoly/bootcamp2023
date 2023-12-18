@@ -22,7 +22,7 @@ export default async function Home() {
         </div>
         <img
           className="flower"
-          src="flowers.JPG"
+          src="/flowers.JPG"
           alt="flowers"
           width="650"
           height="1000"

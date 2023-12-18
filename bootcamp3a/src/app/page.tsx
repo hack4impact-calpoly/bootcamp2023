@@ -7,8 +7,8 @@ export default function Home() {
         <h1 className = {styles.page_title}>Introduction</h1>
           <div className={styles.about}>
               <div className={styles.about_image}>
-                  <img className = {styles.me} src="me.jpeg" alt = "me" width = "250" height = "374"/>
-                  <img className = {styles.plant} src="image.JPG" alt = "A picture of a nice plant" width = "250" height = "374"/>               
+                  <img className = {styles.me} src="/me.jpeg" alt = "me" width = "250" height = "374"/>
+                  <img className = {styles.plant} src="/image.JPG" alt = "A picture of a nice plant" width = "250" height = "374"/>               
               </div>
               <div className={styles.about_text}>
                   <p>Hi! I'm Ella Hagen, a second year <b>computer science major</b>!</p>

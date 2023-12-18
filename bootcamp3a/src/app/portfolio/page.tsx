@@ -4,10 +4,9 @@ import getProjects from './projectData'
 import ProjectPreview from '@/components/projectPreview';
 
 
-
 export default async function Home() {
     const projectPosts = await getProjects()
-
+    console.log(projectPosts)
     if(projectPosts){
         return(  
             <main className = {styles.main}>

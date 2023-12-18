@@ -12,7 +12,7 @@ type Blog = {
 }
 
 export default function BlogPreview(props: Blog) {
-  console.log("1")
+
   return (
 		// replace everything between the <div> & </div> tags
 		// with your code from earlier milestones

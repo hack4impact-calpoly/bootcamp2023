@@ -1,9 +1,8 @@
 import mongoose, { Schema } from 'mongoose';
 
-type IComment = {
+export type IComment = {
     user: string;
     comment: string;
-    time: String;
 }
 
 // typescript type (can also be an interface)

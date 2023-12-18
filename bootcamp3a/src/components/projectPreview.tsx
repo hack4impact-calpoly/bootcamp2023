@@ -2,11 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import styles from '@/app/portfolio/page.module.css';
 import Link from "next/link";
+import {useState, useEffect} from 'react';
 
 type Comment = {
     user: string;
     comment: string;
-    time: String;
 }
 type Project = {
     title: string;
@@ -16,6 +16,7 @@ type Project = {
     image_height: string;
     project_link: string;
     comments: Comment[];
+    slug: string;
 };
 
 export default function ProjectPreview(props: Project) {
@@ -32,17 +33,9 @@ export default function ProjectPreview(props: Project) {
                 <p className = {styles.project_name}>{props.title}</p>
                 <p className = {styles.project_description}>{props.description}</p>
                 {props.project_link && (
-                    <Link href = {props.project_link}>LEARN MORE</Link>
+                    <Link href = {`portfolio/${props.slug}`}>LEARN MORE</Link>
                 )}   
             </div>
-        </div>
-        <div className = {styles.comments}>
-                {props.comments.map((comment, index) => (
-                    <div key = {index} className = {styles.comment}> 
-                        <p className = {styles.user}>{comment.user}</p>
-                        <p>{comment.comment}</p>
-                    </div>
-                ))}
         </div>
     </main>
   );

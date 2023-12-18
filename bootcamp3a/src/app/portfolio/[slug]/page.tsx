@@ -1,16 +1,10 @@
 "use client";
-import styles from '../page.module.css'
-import BlogPreview from '@/components/blogPreview';
-import Link from "next/link";
-import { NextRequest, NextResponse } from 'next/server'
-import connectDB from "@/helpers/db"
-import Blog from '@/database/blogSchema';
+import styles from '../../blog/page.module.css';
 import React, {useState, useEffect} from 'react'
 
 type Comment = {
     user: string;
     comment: string;
-    time: string;
 }
 
 type IParams = {
@@ -20,14 +14,16 @@ type IParams = {
 }
 
 export default function Home({ params: { slug } }: IParams) {
-    const [blogData, setBlogData] = useState({
+    const [projectData, setProjectData] = useState({
         title: '',
-        date: '',
+        description: '',
         content: '',
-        image: '',
+        image_link: '',
         image_width: 0,
         image_height: 0,
         comments: [],
+        project_link: '',
+        slug: '',
       });
 
     const [newComment, setNewComment] = useState({
@@ -36,7 +32,7 @@ export default function Home({ params: { slug } }: IParams) {
     });
 
     const submitData = async () => {
-        const response = await fetch(`http://localhost:3000/api/blog/${slug}/comment`, {
+        const response = await fetch(`http://localhost:3000/api/portfolio/${slug}/comment`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -46,8 +42,8 @@ export default function Home({ params: { slug } }: IParams) {
             comment: newComment.comment,
         }),
         });
-        const updatedBlogData = await response.json();
-        setBlogData(updatedBlogData);
+        const updatedProjectData = await response.json();
+        setProjectData(updatedProjectData);
 
         setNewComment({
             username: '',
@@ -55,28 +51,26 @@ export default function Home({ params: { slug } }: IParams) {
         });
     }
 
-    
     useEffect(() => {
-        const fetchBlogData = async () => {
-          const response = await fetch(`http://localhost:3000/api/blog/${slug}`);
+        const fetchProjectData = async () => {
+          const response = await fetch(`http://localhost:3000/api/portfolio/${slug}`);
           const data = await response.json();
-          setBlogData(data);
+          console.log("data", data)
+          setProjectData(data);
+          console.log(projectData)
         };
     
-        fetchBlogData();
+        fetchProjectData();
       }, [slug]); 
 
     return(  
         <main className = {styles.main}>
-        <h2>{blogData.title}</h2>
-        <h3>Date: {blogData.date}</h3>
-        <p>{blogData.content}
+        <h2>{projectData.title}</h2>
+        <p className = {styles.content}>
+            {projectData.content}
         </p>
-        <div className = {styles.blogImage}>
-        <img src={blogData.image} width = {blogData.image_width} height ={blogData.image_height}/>
-        </div>
         <div className = {styles.comments}>
-            {blogData.comments?.map((comment : Comment, index: number) => (
+            {projectData.comments?.map((comment : Comment, index: number) => (
                     <div key = {index} className = {styles.comment}> 
                         <p className = {styles.user}>{comment.user}</p>
                         <p>{comment.comment}</p>
