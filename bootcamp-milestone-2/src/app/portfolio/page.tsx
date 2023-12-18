@@ -15,7 +15,7 @@ export default async function Home() {
       <div className="portfolio-content">
         <h1 className="page-title">Portfolio</h1>
         {/* Only renders the portfolio content if portfolio data retrieved successfully*/}
-        {portfolios && portfolios.length > 0 && (
+        {portfolios && portfolios.length > 0 ? (
           <div className="generalContent">
             {portfolios.map((portfolio) => (
               <PortfolioCard
@@ -28,9 +28,7 @@ export default async function Home() {
               />
             ))}
           </div>
-        )}
-        {/* If portfolios is null, display error message.*/}
-        {!portfolios && (
+        ) : (
           <div className="generalContent">
             <p className="contentNotLoaded">
               There was an issue loading portfolio content.

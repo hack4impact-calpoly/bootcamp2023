@@ -41,7 +41,7 @@ export default async function Home() {
         </div>
       </div>
       {/* Only Renders the Blog Posts if Blog Data Retrieved Successfully*/}
-      {blogPosts && blogPosts.length > 0 && (
+      {blogPosts && blogPosts.length > 0 ? (
         <div className="blogsPreviewHolder">
           {blogPosts.map((blog) => (
             <BlogPreview
@@ -54,9 +54,7 @@ export default async function Home() {
             />
           ))}
         </div>
-      )}
-      {/* If Blog Posts is null, display error message.*/}
-      {!blogPosts && (
+      ) : (
         <div className="blogsPreviewHolder">
           <p>There was an issue loading blog content.</p>
         </div>

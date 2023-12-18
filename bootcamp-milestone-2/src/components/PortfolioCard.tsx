@@ -14,7 +14,7 @@ export default function PortfolioCard(props: Portfolio) {
         />
         <div className={styles.projectDetails}>
           <h2 className="projectName">
-            <strong>{props.projectName}</strong>
+            {props.projectName}
           </h2>
           <p className="projectDate">{props.date}</p>
           <p className="projectDescription">{props.description}</p>

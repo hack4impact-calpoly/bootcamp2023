@@ -15,7 +15,7 @@ export default async function Home() {
       <div className="blogsHolder">
         <h1 className="page-title">My Blog Posts!</h1>
         {/* Only renders the blog posts if blog data retrieved successfully*/}
-        {blogPosts && blogPosts.length > 0 && (
+        {blogPosts && blogPosts.length > 0 ? (
           <div className="blogContent">
             {blogPosts.map((blog) => (
               <BlogPreview
@@ -28,9 +28,7 @@ export default async function Home() {
               />
             ))}
           </div>
-        )}
-        {/* If blogPosts is null, display error message.*/}
-        {!blogPosts && (
+        ) : (
           <div className="blogContent">
             <p className="noBlogs">There was an issue loading blog content.</p>
           </div>
