@@ -1,7 +1,6 @@
 import React from "react";
 import PortfolioPreview from '@/app/components/portfolioPreview';
 import "../styles/website.css"
-import "../styles/portfolio.css"
 import connectDB from "@/helpers/db";
 import Projects from "@/database/projectSchema"
 
