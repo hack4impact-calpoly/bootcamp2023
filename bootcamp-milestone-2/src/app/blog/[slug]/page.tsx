@@ -39,9 +39,14 @@ export default function Blog({ params }: { params: { slug: string } }) {
 
   const contents = blog.content;
 
-  const handleCommentChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleCommentChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = event.target;
-    setInputCommentData((prevInputCommentData) => ({ ...prevInputCommentData, [name]: value }));
+    setInputCommentData((prevInputCommentData) => ({
+      ...prevInputCommentData,
+      [name]: value,
+    }));
   };
 
   function handleCommentUpload(event: React.FormEvent<HTMLFormElement>) {
@@ -81,30 +86,34 @@ export default function Blog({ params }: { params: { slug: string } }) {
             {blog.comments.map((comment: IComment, index: number) => (
               <Comment key={index} comment={comment} />
             ))}
+            <form
+              className={style.pageAddComment}
+              onSubmit={handleCommentUpload}
+            >
+              <h3 className="pageAddCommentTitle">Write A Comment!</h3>
+              <label htmlFor="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={inputCommentData.name}
+                onChange={handleCommentChange}
+                placeholder="Name"
+                required
+              />
+              <label htmlFor="comment">Your Thoughts...</label>
+              <textarea
+                id="comment"
+                name="comment"
+                value={inputCommentData.comment}
+                onChange={handleCommentChange}
+                placeholder="Tell me what you think!"
+                required
+              ></textarea>
+              <button type="submit">Submit</button>
+            </form>
           </div>
         </div>
-        <form className={style.pageAddComment} onSubmit={handleCommentUpload}>
-          <label htmlFor="name">Your Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={inputCommentData.name}
-            onChange={handleCommentChange}
-            placeholder="Your Name"
-            required
-          />
-          <label htmlFor="comment">Your Thoughts...</label>
-          <textarea
-            id="comment"
-            name="comment"
-            value={inputCommentData.comment}
-            onChange={handleCommentChange}
-            placeholder="Tell me what you think!"
-            required
-          ></textarea>
-          <button type="submit">Submit</button>
-        </form>
         <br />
         <div className={style.pageImages}>
           <Image

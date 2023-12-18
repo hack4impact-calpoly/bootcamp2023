@@ -27,7 +27,7 @@
   overflow-x: scroll;
 
   width: 90%;
-  max-height: 400px; 
+  max-height: 400px;
 }
 
 .blogPic {
@@ -72,4 +72,62 @@
   background-color: white;
   /* border-color: #bbb;
   border-width: 3px; */
+}
+
+.pageAddComment {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  width: 80%;
+  border-radius: 15px;
+  padding: 10px;
+  
+  background-color: white;
+
+  /* debugging */
+  /* border-color: black;
+  border-width: 2px; */
+}
+
+.pageAddComment h3 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: underline;
+  margin-bottom: 2%;
+
+  /* TODO: figure out center align */
+  text-align: center;
+  align-self: center;
+
+  /* debugging */
+  /* border-color: purple;
+  border-width: 2px; */
+}
+
+.pageAddComment input, .pageAddComment textarea {
+  background-color: #ddd;
+  border-radius: 7px;
+  text-indent: 1.5%;
+  margin-bottom: 2%;
+}
+
+.pageAddComment button {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-self: center;
+
+  width:fit-content;
+  padding: 5px 10px;
+  border-radius: 7px;
+  background-color: #eee;
+  
+  /* debugging */
+  /* border-color: red;
+  border-width: 2px; */
 }
