@@ -20,7 +20,7 @@ async function getBlogs(){
 			// send a response as the blogs as the message
 	    return blogs
 	} catch (err) {
-	    return []
+	    return null
 	}
 }
 
