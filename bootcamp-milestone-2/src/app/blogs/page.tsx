@@ -13,11 +13,16 @@ export default async function Home() {
   } else {
     return (
       <div>
-        {blogs.map((blog) => (
-          <BlogPreview {...blog} />
-        ))}
+        {blogs.map((blog) => {
+          const logAndRender = () => {
+            console.log(blog);
+            return <BlogPreview key={blog.id} {...blog} />;
+          };
+          return logAndRender();
+        })}
       </div>
     );
+    
   }
 }
 
