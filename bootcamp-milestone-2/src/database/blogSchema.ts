@@ -7,6 +7,8 @@ type IBlog = {
   description: string; // for preview
   slug: string;
   image: string; // for individual blog page
+  imagealt: string;
+  content: string;
   comments: IComment[]; // array for comments
 };
 
@@ -17,6 +19,8 @@ const blogSchema = new mongoose.Schema<IBlog>({
   description: { type: String, required: true },
   slug: { type: String, required: true },
   image: { type: String, required: true },
+  imagealt: {type: String, required: true},
+  content: { type: String, required: true },
 });
 
 // defining the collection and model
