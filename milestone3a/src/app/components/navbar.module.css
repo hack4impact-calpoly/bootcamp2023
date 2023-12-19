@@ -1,0 +1,298 @@
+.root {
+    /* variables */
+    --cg-black: #540B0E;
+    --cg-blue: #9E2A2B;
+    --cg-grey: #E09F3E;
+    --cg-white: #FFF3B0;
+  }
+  
+.html {
+    height: 100%;
+  }
+  
+.body {
+    background: var(--cg-grey);
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  /* CSS for navigation */
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 10;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  
+    background-color: var(--cg-black);
+    color: var(--cg-white);
+    padding: 20px 10px;
+}
+
+  
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 30px;
+    list-style: none;
+  }
+  
+  .navbar a {
+    color: var(--cg-white);
+    font-weight: bold;
+    margin: 0 12px;
+    text-decoration: none;
+    letter-spacing: 2px;
+  
+    font-family: monospace;
+  }
+  
+  .navbar a:hover {
+    color: var(--cg-blue);
+    text-decoration: underline;
+  }
+  
+  .navbar a:active {
+    color: var(--cg-blue);
+  }
+  
+  .logo a {
+    display: flex;
+    font-family: Georgia;
+  }
+  
+  .logo a:hover {
+    text-decoration: None;
+  }
+  
+.main {
+    padding: 0 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .page-title {
+    display: flex;
+    justify-content: right;
+    font-size: 40px;
+    font-family:'Courier New', Courier, monospace;
+  }
+  
+  /* CSS for portfolio grid */
+  
+  .project {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 1em 0 2em 0;
+    align-items: center;
+  
+    /* Debug border */
+    /* border: 2px solid blue; */
+  }
+  
+  .item-link {
+    width: 70%;
+  
+    /* Debug border */
+    /* border: 2px solid red; */
+  }
+  
+  .project-image {
+    object-fit: contain;
+    width: 100%;
+    height: 500px;
+    flex-basis: 50px;
+    flex-grow: 2;
+  
+    /* Debug border */
+    /* border: 2px solid black; */
+  }
+  
+  .project-details {
+    display: flex;
+    background-color: var(--cg-white);
+    width: 460px;
+    height: fit-content;
+    flex-shrink: 1;
+    padding: 0 20px;
+    margin: 0px;
+    line-height: 1.5;
+    overflow: scroll;
+  
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  
+    /* Debug border */
+    /* border: 2px solid green; */
+  }
+  
+  .project-details a {
+    color: var(--cg-black);
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .project-details a:hover {
+    color: var(--cg-blue);
+    text-decoration: underline;
+  }
+  
+  .project-details {
+    font-weight: lighter;
+  }
+  
+  .project-name {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  /* CSS for home page */
+  
+  .about {
+    display: contents;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #FFF3B0;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .about-image img {
+    max-width: 300px;
+    border-radius: 3px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+  }
+  
+  .about-text {
+    flex: 1;
+    margin: 250px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .about-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .about-text p {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+  
+  /* CSS for resume page */
+  
+  .button {
+    background-color: var(--cg-black);
+    border: none;
+    color: var(--cg-white);
+  
+    font-family: monospace;
+  
+    padding: 5px 7px;
+    text-align: center;
+  
+    border-radius: 2px;
+  }
+  
+  .button:hover {
+    background-color: var(--cg-blue);
+  }
+  
+  .resume h2 {
+    text-align: center;
+    font-family: Georgia;
+  }
+
+  .resume {
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 25px;
+    padding-top: 50px;
+  }
+  
+  /* CSS for contact form */
+  
+  .label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: Georgia;
+    font-weight: bold;
+  }
+  /*
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #FFF3B0;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+    color: #9E2A2B;
+    background-color: #FFF3B0;
+  }
+  
+  /* Add some spacing to the form */
+.form {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  /* CSS for footer */
+  
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cg-black);
+    color: var(--cg-white);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+  }
+
+  /* Change the style of the submit button */
+.submit-button {
+    background-color: #9E2A2B; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+}
+
+/* Change the style on hover */
+.submit-button:hover {
+    background-color: #FFF3B0;
+}
+
+.socials {
+    padding: 30px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 40px;    
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
