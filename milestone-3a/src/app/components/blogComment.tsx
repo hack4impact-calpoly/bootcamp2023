@@ -1,4 +1,4 @@
-import { IBlog, IComment } from "@/database/blogSchema";
+import { IComment } from "@/database/blogSchema";
 
 {/* When we pass props, the name that we use to pass values
 		is the key for the type

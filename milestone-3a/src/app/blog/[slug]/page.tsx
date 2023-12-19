@@ -1,4 +1,5 @@
-import { IBlog, IComment } from "@/database/blogSchema";
+import { IComment } from "@/database/blogSchema";
+import Comment from "../../components/blogComment";
 import Link from "next/link";
 type Props = {
     params: { slug: string }
@@ -23,12 +24,18 @@ export default async function Blog({ params: { slug } }: Props) {
     }
 
     const blog = await getBlog(slug);
+    
     if(blog){
         return (
             <div>
                 <h3>{blog.title}</h3>
                 <p>{blog.date.toDateString()}</p>
                 <p>{blog.content}</p>
+                <div>
+                    {blog.comments.map((comment: IComment, index:number) => (
+                        <Comment key={index} comment={comment} />
+                    ))}
+                </div>
                 <Link href="/blog">Back</Link>
             </div>
         )
