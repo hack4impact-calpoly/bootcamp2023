@@ -1,0 +1,32 @@
+/* CSS for contact form */
+
+.myForm {
+    display: block;
+    margin-top: 0em;
+}
+
+.myLabel {
+    display: block;
+    margin-bottom: 8px;
+    font-family: Georgia;
+    font-weight: bold;
+}
+
+.myInput,
+.myTextArea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+  }
+
+
+  /* .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } */
