@@ -1,6 +1,7 @@
 import Blog from "./components/blog/page";
 
 export interface Blog {
+    comments: CommentProps;
     title: string;
     date: Date;
     description: string;

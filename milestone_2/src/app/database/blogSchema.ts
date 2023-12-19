@@ -4,7 +4,7 @@ import { Schema } from "mongoose";
 type IComment = {
     user: string;
     comment: string;
-    time: Date;
+    time: string;
 }
 
 // typescript type (can also be an interface)
@@ -28,7 +28,7 @@ const blogSchema = new Schema<IBlog>({
     comments: {
         user: {type: String, required: true},
         comment: {type: String, required: true},
-        time: {type: Date, required: false, default: new Date()}
+        time: {type: String, required: false, default: new Date()}
     }
 })
 
@@ -36,3 +36,4 @@ const blogSchema = new Schema<IBlog>({
 const Blog = mongoose.models['blogs'] || mongoose.model('blogs', blogSchema);
 
 export default Blog;
+export type { IComment };
