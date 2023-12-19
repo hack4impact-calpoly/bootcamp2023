@@ -19,6 +19,6 @@ const blogSchema = new Schema<IBlog>({
 });
 
 // defining the collection and model
-const Blog = mongoose.models["blogs"] || mongoose.model("blogs", blogSchema);
+const Blog = mongoose.models['blogs'] || mongoose.model('blogs', blogSchema);
 
 export default Blog;
