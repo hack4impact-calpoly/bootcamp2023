@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import blogs from "./blogData.ts";
+import blogs from "../database/legacyData/blogData.ts";
 import BlogPreview from "./components/blogPreview.tsx";
 
 export default function Home() {

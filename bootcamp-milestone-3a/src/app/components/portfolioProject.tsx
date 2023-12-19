@@ -3,7 +3,7 @@ import styles from "./portfolioProject.module.css"
 import Image from "next/image"
 import Link from "next/link"
 
-import type { Project } from "../portfolioData.ts"; // This helps us expect the aspects of project as our props
+import type { Project } from "../../database/legacyData/portfolioData.ts"; // This helps us expect the aspects of project as our props
 
 export default function PortfolioProject(props: Project) {
     const width = 350

@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "../Blog.tsx"
+    "../Blog.tsx",
+    "src/database/legacyData/blogData.ts"
   ],
   "exclude": ["node_modules"]
 }
