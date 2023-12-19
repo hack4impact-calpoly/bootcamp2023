@@ -1,23 +1,7 @@
 import styles from "./page.module.css"
-// import blogs from "../blogData.ts"
 import { blogSchema } from '../../database/blogSchema';
 import BlogPreview from '../components/blogPreview';
 import connectDB from "../../helpers/db";
-
-
-// I removed this and made an api Get call
-// async function getBlogs(){
-//   await connectDB() // function from db.ts before  
-//   let blogs: any[] = []
-//   try {
-//       // query for all blogs and sort by date
-//       blogs = await Blogs.find().sort({ date: -1 }).orFail()
-//       // send a response as the blogs as the message
-//       return blogs
-//   } catch (err) {
-//       return null
-//   }
-// }
 
 
 async function getBlogs() {
@@ -35,7 +19,7 @@ async function getBlogs() {
 
   } catch (error) {
     console.log(error)
-    return
+    return null
   } 
 }
 // for data base
