@@ -10,7 +10,7 @@ export default function PortfolioPreview(props: IProject) {
             <h2>{props.title}</h2>
             <p>{props.date.toDateString()}</p>
             <p>{props.description}</p>
-            <Link className="Read More" href={props.slug}>Read More</Link>
+            <Link className="Read More" href={`portfolio/${props.slug}`}>Read More</Link>
       </div>
 	</div>
     )

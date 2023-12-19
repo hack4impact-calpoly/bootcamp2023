@@ -10,7 +10,7 @@ export default function BlogPreview(props: IBlog) {
             <h3>{props.title}</h3>
             <p>{props.date.toDateString()}</p>
 			<p>{props.description}</p>
-            <Link className="Read More" href={props.slug}>Read More</Link>
+            <Link className="Read More" href={`blog/${props.slug}`}>Read More</Link>
       </div>
 	</div>
     )
