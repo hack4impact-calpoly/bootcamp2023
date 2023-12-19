@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import connectDB from "@/helpers/db"
 import blogSchema from '@/database/blogSchema'
+import Blog from '@/database/blogSchema'
+import blogs from '@/blogData'
+import { ObjectId } from 'mongodb'
+
 
 type IParams = {
 	params: {
@@ -18,4 +22,28 @@ export async function GET(req: NextRequest, { params }: IParams) {
 	    } catch (err) {
 	        return NextResponse.json('Blog not found.', { status: 404 })
 	    }
+}
+
+export async function POST(req: NextRequest) {
+	const body = req.body
+	const BlogSlug = // what to place here...
+	// validate body
+	if (!body) {
+		return NextResponse.json('Comment does not exist.', {status: 404})
+	}
+	
+	// push comment object to document
+	Blog.update(
+		{
+			_id: new ObjectId('655fcb47d5fc316161185eb8')
+		}, {
+			$push: { "comments": {
+				"0": "user527",
+				"1": "What a wonderful time!",
+				"2": "time"
+			}
+
+			}
+		}
+	)
 }
