@@ -20,7 +20,7 @@ export default async function PortfolioPage() {
     const projects = await getProjects()
 
     return (<div>
-        <h1 className="page-title">Blog</h1>
+        <h1 className="page-title">Portfolio</h1>
           <main>
             { projects && projects.length > 0 ? (
                 projects.map(project => 
