@@ -15,9 +15,7 @@ export default async function Portfolio() {
 
     try {
       // query for all blogs and sort by date
-      const blogs = await Project.find().sort({ date: -1 }).orFail();
-      // send a response as the blogs as the message
-      return blogs;
+      return await Project.find().sort({ date: -1 }).orFail();
     } catch (err) {
       return null;
     }

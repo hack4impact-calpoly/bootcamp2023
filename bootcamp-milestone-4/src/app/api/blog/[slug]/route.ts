@@ -27,7 +27,6 @@ type IParams = {
 export async function GET(req: NextRequest, { params }: IParams) {
   await connectDB(); // function from db.ts before
   const { slug } = params; // another destructure
-
   try {
     const blog = await blogSchema.findOne({ slug }).orFail();
     return NextResponse.json(blog);
