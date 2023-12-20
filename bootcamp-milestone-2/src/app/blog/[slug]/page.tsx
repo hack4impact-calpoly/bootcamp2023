@@ -49,7 +49,8 @@ export default async function Blog({ params }: { params: { slug: string } }) {
             <p>{blog.content}</p>
           </div>
         </div>
-        <div>
+        <div className={style.comments}>
+          <h2 className={style.commentTitle}>Comment Section</h2>
           {blog.comments.map((comment: any, index: React.Key | null | undefined ) => (
 	                <Comment key={index} comment={comment} />
 	        ))}

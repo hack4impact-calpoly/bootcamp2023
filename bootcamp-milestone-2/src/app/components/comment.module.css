@@ -1,13 +1,22 @@
 .commentSection {
-    margin: 3rem 3rem;
-    text-align: center;
-    box-sizing: 50%;
-    width: auto;
-    border: 4px solid black;
-    display: block;
-    position: relative;
-    background-color: white;
-    opacity: 0.85;
-    padding: 0.5rem;
-    line-height: 23px;
+  margin: 3rem 3rem;
+  text-align: left;
+  box-sizing: 50%;
+  width: auto;
+  display: block;
+  position: relative;
+  background-color: white;
+  opacity: 0.85;
+  padding: 0.5rem;
+  line-height: 23px;
+  border: 2px solid black;
+}
+
+.comment {
+  margin: 1px 2rem;
+}
+
+.date {
+  font-size: xx-small;
+  font-weight: lighter;
 }

@@ -33,8 +33,8 @@ function Comment({ comment }: CommentProps) {
   return (
     <div className={style.commentSection}>
       <h4>{comment.user}</h4>
-      <p>{comment.comment}</p>
-      <span>{parseCommentTime(comment.time)}</span>
+      <p className={style.comment}>{comment.comment}</p>
+      <span className={style.date}>{parseCommentTime(comment.time)}</span>
     </div>
   );
 }
