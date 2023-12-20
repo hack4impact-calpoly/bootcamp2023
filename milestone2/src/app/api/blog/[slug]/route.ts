@@ -35,3 +35,22 @@ export async function GET(req: NextRequest, { params }: IParams) {
     return NextResponse.json("Blog not found.", { status: 404 });
   }
 }
+
+export async function POST(req: NextRequest, { params }: IParams) {
+  await connectDB();
+  let passedValue = await new Response(req.body).text();
+  let bodyreq = JSON.parse(passedValue);
+  const { slug } = params;
+  if (!bodyreq) {
+    return new Response("Invalid request body", { status: 400 });
+  }
+  try {
+    await Blog.findOneAndUpdate(
+      { slug: slug },
+      { $push: { comments: bodyreq } }
+    );
+  } catch (error) {
+    console.log(error);
+  }
+  return new Response("Invalid request body", { status: 200 });
+}

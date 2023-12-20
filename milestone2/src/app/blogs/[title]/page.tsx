@@ -1,11 +1,19 @@
+"use client";
+import { useEffect, useState } from "react";
 import Comment from "@/components/comment";
 type Props = {
   params: { title: string };
 };
 
+type IComment = {
+  user: string;
+  comment: string;
+  time: Date;
+};
+
 async function getBlog(title: string) {
   try {
-    const res = await fetch(`http://localhost:3000/blog/${title}`);
+    const res = await fetch(`http://localhost:3000/api/blog/${title}`);
     if (!res.ok) {
       throw new Error("Failed to fetch blog");
     }
@@ -17,8 +25,57 @@ async function getBlog(title: string) {
   }
 }
 
-export default async function Blog({ params: { title } }: Props) {
-  const blog = await getBlog(title);
+export default function Blog({ params: { title } }: Props) {
+  const [blog, setBlog] = useState(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getBlog(title);
+      setBlog(data);
+    };
+    fetchData();
+  }, [title]);
+
+  const [formData, setFormData] = useState({
+    user: "",
+    comment: "",
+    time: new Date(),
+  });
+
+  const handleInput = (e) => {
+    const fieldName = e.target.name;
+    const fieldValue = e.target.value;
+    setFormData((prevState) => ({
+      ...prevState,
+      [fieldName]: fieldValue,
+    }));
+  };
+
+  const addNewComment = async (e: any, title: string) => {
+    e.preventDefault();
+    const comment_user = formData.user;
+    const comment = formData.comment;
+    const comment_obj = {
+      user: comment_user,
+      comment: comment,
+      time: new Date(),
+    };
+    if (!comment_user || !comment) {
+      alert("Please enter in a username and comment");
+      return null;
+    }
+    try {
+      await fetch(`/api/blog/${title}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(comment_obj),
+      });
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   if (blog) {
     return (
@@ -33,6 +90,13 @@ export default async function Blog({ params: { title } }: Props) {
         {blog.comments.map((comment: any, index: any) => (
           <Comment key={index} comment={comment} />
         ))}
+        <form name="new-comment" onSubmit={(e) => addNewComment(e, title)}>
+          <label>Username</label>
+          <input type="text" name="user" onChange={handleInput} />
+          <label>Comment</label>
+          <textarea name="comment" onChange={handleInput}></textarea>
+          <input type="submit" />
+        </form>
       </div>
     );
   } else {
