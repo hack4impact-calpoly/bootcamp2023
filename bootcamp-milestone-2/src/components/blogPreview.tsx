@@ -14,7 +14,7 @@ export default function BlogPreview(props: Blog) {
 				<Image src={props.image} alt="img" width={500} height={500} ></Image>
         <p>{props.description}</p>
 				<p>Posted on {props.date}</p>
-        <Link href={`../api/blog/${props.slug}`}>
+        <Link href={`../blog/${props.slug}`}>
                 <button className="blog-btn">Read More</button>
         </Link>
       </div>

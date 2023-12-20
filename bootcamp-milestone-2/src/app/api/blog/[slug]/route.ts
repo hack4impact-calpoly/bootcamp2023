@@ -31,6 +31,7 @@ type IParams = {
 	
 		try {
 			const blog = await Blog.findOne({ slug: slug }).orFail();
+
 			return NextResponse.json(blog, { status: 200 });
 		} catch (err) {
 			return NextResponse.json("Blog not found.", { status: 404 });
