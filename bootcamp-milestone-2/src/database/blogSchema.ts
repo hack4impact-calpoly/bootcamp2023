@@ -1,5 +1,17 @@
 import * as mongoose from "mongoose";
 
+type IComment = {
+  user: string;
+  comment: string;
+  time: Date;
+};
+
+const commentSchema = new mongoose.Schema<IComment>({
+  user: {type: String, required: true},
+  comment: {type: String, required: true},
+  time: {type: Date, required: true},
+})
+
 // typescript type (can also be an interface)
 type IBlog = {
   date: string;
@@ -11,6 +23,8 @@ type IBlog = {
   content: string;
   comments: IComment[]; // array for comments
 };
+
+
 
 // mongoose schema
 const blogSchema = new mongoose.Schema<IBlog>({

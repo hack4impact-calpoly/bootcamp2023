@@ -1,0 +1,21 @@
+.commentTopBar {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 5px;
+}
+
+.commentTime {
+  color: gray;
+  padding-left: 15px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  width: 97 + 1px;
+  border-top: 2px solid gray;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
