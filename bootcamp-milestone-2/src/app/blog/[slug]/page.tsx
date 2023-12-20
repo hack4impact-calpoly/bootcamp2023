@@ -41,9 +41,9 @@ export default async function Blog({ params }: { params: { slug: string } }) {
           <h1 className={style.pageTitle}>{blog.title}</h1>
           <div className={style.blog}>
             <Image
-              src={`/${blog.image}`}
+              src={blog.image}
               alt=""
-              height={150}
+              height={300}
               width={250}
             ></Image>
             <p>{blog.content}</p>
