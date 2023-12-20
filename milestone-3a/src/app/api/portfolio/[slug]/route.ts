@@ -4,7 +4,7 @@ import Projects from "@/database/projectSchema";
 
 type IParams = {
     params: {
-        id: string;
+        slug: string;
     };
 };
 
@@ -22,10 +22,10 @@ type IParams = {
  */
 export async function GET(req: NextRequest, { params }: IParams) {
     await connectDB(); // function from db.ts before
-    const { id } = params; // another destructure
+    const { slug } = params; // another destructure
 
     try {
-        const project = await Projects.findOne({ _id: id }).orFail();
+        const project = await Projects.findOne({ _id: slug }).orFail();
         return NextResponse.json(project, { status: 200 });
     } catch (err) {
         return NextResponse.json("Project not found.", { status: 404 });

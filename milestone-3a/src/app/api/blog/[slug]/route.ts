@@ -4,7 +4,7 @@ import Blogs from "@/database/blogSchema";
 
 type IParams = {
     params: {
-        id: string;
+        slug: string;
     };
 };
 
@@ -22,10 +22,10 @@ type IParams = {
  */
 export async function GET(req: NextRequest, { params }: IParams) {
     await connectDB(); // function from db.ts before
-    const { id } = params; // another destructure
+    const { slug } = params; // another destructure
 
     try {
-        const blog = await Blogs.findOne({ _id: id }).orFail();
+        const blog = await Blogs.findOne({ _id: slug }).orFail();
         return NextResponse.json(blog, { status: 200 });
     } catch (err) {
         return NextResponse.json("Blog not found.", { status: 404 });
