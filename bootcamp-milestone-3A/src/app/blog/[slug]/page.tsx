@@ -1,5 +1,5 @@
 import React from "react"
-
+import Comment from "@/app/components/comment";
 type Props = {
     params: { slug: string }
 }
@@ -25,6 +25,8 @@ async function getBlog(slug: string) {
 export default async function Page({params: {slug}}: Props) {
 	//slug = params.slug;
 	const blog = await getBlog(slug);
+    console.log("ji")
+    console.log(blog.comments);
 	
     if(blog !=null){
         return (
@@ -37,16 +39,26 @@ export default async function Page({params: {slug}}: Props) {
                     <br></br>
                     <img src={`/${blog.image}`} height={200} width={200}></img>
                      <br></br>
-                    {blog.content}
+                    {blog.content} <br></br>
+                    <br></br>
+                    
+                    
                 </div>
+                
                 </main>
+                <div className="comments_box">
+                    <h2>Comment Section:</h2>
+                    {blog.comments.map((comment: any, index: React.Key | null | undefined) => (
+	                <Comment key={index} comment={comment} />
+	            ))}
+                    </div>
                 <footer className="footer">© 2023 My Website | All Rights Reserved</footer>
             </>
         )
     }
     else{
         return (
-            <>Nothing to see here</>
+            <>Blog not found.</>
         )
     }
 }
