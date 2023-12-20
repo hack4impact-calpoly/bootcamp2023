@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sophia Peckner Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src="src/script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- nav bar -->
+    <nav class="navbar">
+      <ul class="nav_list">
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="#resume">RESUME</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="index.html">HOME</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- introduction -->
+      <div class="about_container">
+        <div class="about_text">
+          <h1>Sophia Peckner</h1>
+          <p>
+            I'm a first year software engineering major at Cal Poly SLO. In my
+            free time you may find me reading, Ripstiking, or swimming.
+          </p>
+
+          <div class="contact">
+            <p id="contact_me">Contact me!</p>
+            <a href="https://www.instagram.com/sophiapeckner/"
+              ><i class="fab fa-instagram fa-xl"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/sophia-peckner-2a613a1b0"
+              ><i class="fab fa-linkedin fa-xl"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="about_image">
+          <picture>
+            <source
+              id="profile_pic"
+              srcset="images/profile_rect.png"
+              media="(max-width: 400px)"
+            />
+            <source
+              id="profile_pic"
+              srcset="images/profile_circle.png"
+              media="(max-width: 1200px)"
+            />
+            <source
+              id="profile_pic"
+              srcset="images/profile_large_screens.png"
+              media="(max-width: 1500)"
+            />
+            <source
+              id="profile_pic"
+              srcset="images/profile_large_screens.png"
+            />
+            <img
+              id="profile_pic"
+              src="images/profile_large_screens.png"
+              alt="Sophia Peckner profile picture"
+              style="width: auto"
+            />
+          </picture>
+        </div>
+      </div>
+
+      <!-- my projects/ portfolio -->
+      <div class="container">
+        <h1 id="projects">projects</h1>
+        <h2 class="subheading">~click on image to learn more!~</h1>
+        <br />
+        <div class="item">
+          <h2 class="item_title">
+            Alzheimer’s Screening Chrome Extension | spring'22
+          </h2>
+          <p class="item_description">
+            Convenient at-home screening tool that continuously monitors
+            cognitive health by tracking character per minute and pauses per
+            minute which have been found by a study to be good indicators of
+            cognitive impairment
+          </p>
+          <p class="tools">Tech stack: JS, CSS, HTML</p>
+          <a href="https://github.com/sophiapeckner/AD_Extension">
+            <i class="fab fa-github fa-xl"></i>
+          </a>
+          
+          <div class="process">
+            <a id="ad_description" title="collaborated w 6 others to create an Alzheimer's screening & treatement solution">
+              <img class="process" id="ad_image" src="images/ad_0.png" onclick="next('ad')"/>
+            </a>
+          </div>
+        </div>
+
+        <div class="item">
+          <h2 class="item_title">Barrier | fall'21</h2>
+          <p class="item_description">
+            Mental health awareness app visually demonstrating the barriers
+            people face when seeking out mental health services in the United
+            States
+          </p>
+
+          <p class="tools">Tech stack: Java Processing</p>
+          <a href="https://github.com/sophiapeckner/barrier">
+            <i class="fab fa-github fa-xl"></i>
+          </a>
+
+          <div class="process">
+            <a id="barrier_description" title="found a hackathon focused on social justice issues">
+              <img class="process" id="barrier_image" src="images/barrier_0.png" onclick="next('barrier')"/>
+            </a>
+          </div>
+        </div>
+
+        <div class="item">
+          <h2 class="item_title">School Reopening Calculator | fall'20</h2>
+          <p class="item_description">
+            Helps school administrators create hybrid school schedules for
+            elementary students amidst the pandemic by gauging cohorts needed
+            per week, students per cohort etc
+          </p>
+          
+          <p class="tools">Tech stack: JS, CSS, HTML</p>
+          <a href="https://github.com/sophiapeckner/reopenSchool">
+            <i class="fab fa-github fa-xl"></i>
+          </a>
+
+          <div class="process">
+            <a id="school_description" title="connected w a mentor who was creating a business that helped companies create hybrid work schedules during the pandemic">
+              <img class="process" id="school_image" src="images/school_0.png" onclick="next('school')"/>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- my resume -->
+      <div class="container">
+        <h1 id="resume">resume</h1>
+        <h2 class="subheading">~click <a href="https://docs.google.com/document/d/1UEfitPCU642rZ1atnyGYLpvuJjxP6e-4kpYRqklVIbY/edit?usp=sharing">here</a> for full resume!~</h1>
+        <br />
+        <div class="item">
+          <h2 class="item_title">
+            <span><i class="fa fa-graduation-cap"></i></span>
+            Education
+          </h2>
+          <p class="item_description">
+            B.S. Software Engineering @ Cal Poly San Luis Obispo
+          </p>
+        </div>
+
+        <div class="item">
+          <h2 class="item_title">
+            <span><i class="fa fa-book"></i></span>
+            Relevant Coursework
+          </h2>
+          <p class="item_description">
+            Data Structures | AP Computer Science
+          </p>
+        </div>
+
+        <div class="item">
+          <h2 class="item_title">
+            <span><i class="fa fa-wrench"></i></span>
+            Skills
+          </h2>
+          <p class="item_description">
+            Python | Java | Web Dev | iOS App Dev | Computer Vision
+          </p>
+        </div>
+
+        <div class="item">
+          <h2 class="item_title">
+            <span><i class="fas fa-desktop"></i></span>
+            Experience
+          </h2>
+          <ul>
+            <p class="item_description">
+              University of Chicago Data Science Institute: Supported the Schmidt Ocean Institute, a nonprofit conducting
+              global marine research by implementing a deep learning pipeline
+              using Python that detects and labels marine organisms in video
+              samples
+            </p>
+            <p class="item_description">
+              Girls Who Code: Co-President since 2021 at Lowell HS's Girls Who Code club where I
+              taught Python and web development
+              samples
+            </p>
+            <p class="item_description">
+              New York Academy of Sciences: Competed in 3 global collaborative healthcare innovation challenges one of which
+              I prototyped a Chrome extension with HTML and JavaScript intended
+              to screen for Alzheimer’s
+              samples
+            </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      © 2023 Sophia Peckner Website | All Rights Reserved
+    </footer>
+  </body>
+</html>
