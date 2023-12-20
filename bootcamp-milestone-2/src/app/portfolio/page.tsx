@@ -19,21 +19,22 @@ async function getProjects() {
 export default async function PortfolioPage() {
     const projects = await getProjects()
 
-    return (
-        <>
+    return (<div>
+        <h1 className="page-title">Blog</h1>
+          <main>
+            { projects && projects.length > 0 ? (
+                projects.map(project => 
+                    <ProjectPreview
 
-            {projects == null ?
-                (<div>
-                    Error retrieving portfolio projects
-                </div>)
-                :
-                (<div>
-                    <h1 className="page-title">Portfolio</h1>
-                    {projects.map((project) =>
-                        <ProjectPreview  {...project.toObject()} /> // This is how we call the component
-                    )}
-                </div>)}
-
-        </>
-    )
+                    title={project.title}
+                    description={project.description}
+                    imagePath={project.imagePath}
+                    url={project.url}
+                    slug={project.slug}
+                  />
+            )) : (
+                <p>No projects available</p>
+            )}
+          </main>
+</div>) 
 }
