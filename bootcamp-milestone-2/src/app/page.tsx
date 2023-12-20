@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import style from "./about.module.css";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <div className="about">
           <div className="aboutImage">
             <Image
+              className={style.img}
               width={250}
               height={300}
               src={"/headshot.jpg"}
