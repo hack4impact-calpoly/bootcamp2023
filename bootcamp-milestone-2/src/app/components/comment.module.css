@@ -3,13 +3,17 @@
   text-align: left;
   box-sizing: 50%;
   width: auto;
-  display: block;
   position: relative;
   background-color: white;
   opacity: 0.85;
   padding: 0.5rem;
   line-height: 23px;
   border: 2px solid black;
+}
+
+.user{
+  display: flex;
+  align-items: center;
 }
 
 .comment {
@@ -19,4 +23,5 @@
 .date {
   font-size: xx-small;
   font-weight: lighter;
+  margin-left: 5px;
 }
