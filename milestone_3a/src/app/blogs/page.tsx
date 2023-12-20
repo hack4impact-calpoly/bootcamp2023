@@ -18,12 +18,12 @@ async function getBlogs() {
 }
 
 export default function Blog() {
-    return getBlogs().then((blogs: any[])=> {
+    return getBlogs().then((blogs)=> {
         return (
             <main>
                 <h1 className="blog">Blog</h1>
                 <div className="blog-container">
-                    {blogs.map((blog) => (
+                    {blogs?.map((blog) => (
                         <BlogPreview 
                             key={blog.slug}
                             title={blog.title}

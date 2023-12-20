@@ -1,0 +1,35 @@
+/* ProjectPreview.module.css */
+.container {
+    width: 300px;
+    background: #333;
+    color: #fff;
+    border-radius: 8px;
+    overflow: 'hidden';
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px; /* space between cards */
+  }
+  
+  .image {
+    width: 100%;
+    display: block;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .projectName {
+    margin-bottom: 10px;
+  }
+  
+  .pointList {
+    list-style: inside; /* or 'disc' if you want the bullets outside */
+  }
+  
+  .viewProjectLink {
+    color: #4caf50;
+    text-decoration: none;
+    display: inline-block; /* makes the link align correctly */
+    margin-top: 10px; /* adds space above the link */
+  }
+  

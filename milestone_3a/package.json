@@ -9,10 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "fetch": "^1.1.0",
+    "isomorphic-unfetch": "^4.0.2",
     "mongoose": "^8.0.3",
     "next": "14.0.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "swr": "^2.2.4",
+    "unfetch": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
