@@ -99,11 +99,11 @@ a:hover {
   box-shadow: 10px 10px 10px black;
 } */
 
-img:hover,
+/* img:hover,
 img:focus {
   width: 30%;
   height: 90%;
-}
+} */
 
 input,
 label {

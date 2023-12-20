@@ -27,6 +27,7 @@ export default async function Blogs() {
               slug={blog.slug}
               image={blog.image}
               content={blog.content}
+              comment
             />
           ))}
         </div>

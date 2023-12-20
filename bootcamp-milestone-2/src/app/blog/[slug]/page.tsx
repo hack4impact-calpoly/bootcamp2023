@@ -1,8 +1,7 @@
 import React from "react";
-import BlogPage from "../../components/blogPreview";
-import blogSchema from "../../database/blogSchema";
 import style from "../blog.module.css";
 import Image from "next/image";
+import Comment from "@/app/components/comment";
 
 type Props = {
   slug: string;
@@ -42,13 +41,18 @@ export default async function Blog({ params }: { params: { slug: string } }) {
           <h1 className={style.pageTitle}>{blog.title}</h1>
           <div className={style.blog}>
             <Image
-              src={"/{blog.image}"}
+              src={`/${blog.image}`}
               alt=""
               height={150}
               width={250}
             ></Image>
             <p>{blog.content}</p>
           </div>
+        </div>
+        <div>
+          {blog.comments.map((comment: any, index: React.Key | null | undefined ) => (
+	                <Comment key={index} comment={comment} />
+	        ))}
         </div>
       </main>
     );
