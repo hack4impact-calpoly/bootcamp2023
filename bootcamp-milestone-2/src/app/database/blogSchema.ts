@@ -5,8 +5,8 @@ import mongoose from "mongoose";
 export type IBlog = {
   title: string;
   slug: string;
-  date: String;
-  description: string; // for preview
+  date: string;
+  description: String; // for preview
   image: string; // for individual blog page
   content: string;
 };
@@ -18,7 +18,7 @@ const blogSchema = new Schema<IBlog>({
   date: { type: String, required: true },
   description: { type: String, required: true },
   image: { type: String, required: false },
-  content: { type: String, required: true },
+  content: { type: String, required: false },
 });
 
 // defining the collection and model

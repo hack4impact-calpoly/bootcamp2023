@@ -4,14 +4,6 @@ import blogSchema from "../database/blogSchema";
 import connectDB from "../database/db";
 import style from "./blog.module.css";
 
-async function getBlog() {
-  const res = await fetch("localhost:3000/api/blog/" + slug);
-  if (res.ok) {
-    return await res.json();
-  } else {
-    return null;
-  }
-}
 
 export default async function Blogs() {
   const blogs = await Blog();
@@ -33,8 +25,8 @@ export default async function Blogs() {
               description={blog.description}
               date={blog.date}
               slug={blog.slug}
-              image={""}
-              content={""}
+              image={blog.image}
+              content={blog.content}
             />
           ))}
         </div>
