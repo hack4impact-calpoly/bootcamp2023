@@ -21,12 +21,57 @@ export type CommentProps = {
 // In blog, will set up the maping for the comments, for now we are just worring about the front end of a comment
 // Geta profile image for this and in public
 
-function parseCommentTime(time: Date){
-	/*
-		Implementation up to you...
-	*/
-    return (time)
+function parseCommentTime(date : Date){
+    
+    let months = ['dummy month for 1 to 1 ordering', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    let tLocation = date.indexOf("T")
+    
+    // Date Logic
+    let newDate = date.slice(0, tLocation)
+    let year = newDate.slice(0, newDate.indexOf("-"))
+        newDate = newDate.slice(newDate.indexOf("-") + 1, newDate.length)
+    let month = newDate.slice(0, newDate.indexOf("-"))
+        newDate = newDate.slice(newDate.indexOf("-") + 1, newDate.length)
+    let day = newDate.slice(0, newDate.length)
+    
+    // Time of Day Logic
+        // T16:23:57.000Z
+    let newTime = date.slice(tLocation + 1)
+    let hour = newTime.slice(0, 2)
+        newTime = newTime.slice(newDate.indexOf(":") + 1, newDate.length)
+    let minute = newTime.slice(0,2) 
+
+    let hourNumber = parseInt(hour)
+    let A_PM = "AM"
+    if ( hourNumber / 12 > 1  ){
+         A_PM = "PM"
+    } 
+
+    hourNumber %= 12 // Get the actual time
+
+    console.log(date)
+
+   return( `${months[parseInt(month)]} ${day}, ${year} - ${hourNumber}:${minute} ${A_PM}`)
+
 }
+
+const parseDate = (date: string) => {
+    let tLocation = date.indexOf("T")
+    let newDate = date.slice(0, tLocation)
+    let year = newDate.slice(2, newDate.indexOf("-"))
+        newDate = newDate.slice(newDate.indexOf("-") + 1, newDate.length)
+    let month = newDate.slice(0, newDate.indexOf("-"))
+        newDate = newDate.slice(newDate.indexOf("-") + 1, newDate.length)
+    let day = newDate.slice(0, newDate.length)
+  
+    const dateFormated = `${month}/${day}/${year}`
+    return dateFormated
+    // Getting
+    // 2023-11-03
+    // Desired
+    // 11/03/23
+  }
+
 
 function Comment({ comment }: CommentProps) {
     return (

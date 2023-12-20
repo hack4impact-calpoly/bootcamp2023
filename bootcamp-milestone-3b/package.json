@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "isodate-traverse": "^0.3.2",
     "mongoose": "^8.0.1",
+    "months": "^2.1.0",
     "next": "14.0.1",
     "react": "^18",
     "react-dom": "^18",
