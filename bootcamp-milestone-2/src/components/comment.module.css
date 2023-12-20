@@ -1,0 +1,13 @@
+.User {
+    font-size: medium;
+    font-weight: bold;
+}
+
+.comment {
+    font-size: small;
+    color: black;
+}
+
+.time {
+    font-size: medium;
+}
