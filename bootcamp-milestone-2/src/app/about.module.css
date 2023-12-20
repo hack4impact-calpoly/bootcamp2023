@@ -2,5 +2,25 @@
     border-radius: 50%;
     transition: 750ms;
     border: 4px solid black;
-    box-shadow: 10px 10px 10px black;
+  }
+
+  .about {
+    margin-top: 2rem;
+  }
+  
+  .aboutText {
+    display: grid;
+    margin: 2rem 3rem;
+    text-align: left;
+    background-color: white;
+    opacity: 0.85;
+    border: 4px solid black;
+    box-sizing: content-box;
+    padding: 1rem;
+    line-height: 23px;
+  }
+  
+  .aboutImage {
+    display: grid;
+    place-items: center;
   }

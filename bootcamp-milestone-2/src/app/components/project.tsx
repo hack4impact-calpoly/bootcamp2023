@@ -16,7 +16,9 @@ export default function Projects(props: IProject) {
         </div>
         <div>
           <p className={style.projectDescription}>{props.description}</p>
-          <p className={style.projectMore}>Learn more</p>
+          <Link href={props.slug}>
+            <p className={style.projectMore}>Learn more</p>
+          </Link>
         </div>
       </main>
     </div>
