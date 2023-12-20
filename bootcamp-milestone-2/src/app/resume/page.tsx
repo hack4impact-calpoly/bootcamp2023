@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import style from "./resume.module.css";
 
@@ -8,7 +7,7 @@ export default function Resume() {
       <main>
         <h1 className={style.pageTitle}>Resume</h1>
         <div className={style.downloadRes}>
-          <a href="Resume 2023.pdf">Download Resume</a>
+          <a href="resume2023.pdf">Download Resume</a>
         </div>
         <div className={style.resume}>
           <section className="resume">
