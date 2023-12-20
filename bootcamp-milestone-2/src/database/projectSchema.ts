@@ -9,11 +9,11 @@ export type IComment = {
 }
 export type IBlog = {
     title: string;
-    slug: string; 
+  slug: string; 
     date: string;
     description: string; // for preview
-    content: string; // for individual blog page
-    image: string
+  content: string; // for individual blog page
+  image: string;
     comments: IComment[]; // array for comments
 };
 
@@ -24,11 +24,12 @@ const blogSchema = new Schema<IBlog>({
     slug: { type: String, required: true },
     date: { type: String, required: true}, //default: new Date()},
     description: { type: String, required: true },
-    image: {type: String, required: false},
     content: { type: String, required: true },
+    image: { type: String, required: false }
 })
 
 // defining the collection and model
-const Blog = mongoose.models['blogs'] || mongoose.model("blogs", blogSchema);
+const Blog = mongoose.models['blogs'] ||
+mongoose.model('blogs', blogSchema);
 
 export default Blog;

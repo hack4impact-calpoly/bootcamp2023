@@ -1,4 +1,5 @@
 import styles from './page.module.css'
+import React from 'react';
 import "@/global.css";
 import Link from 'next/link';
 import "@/app/full.css" 
@@ -29,9 +30,8 @@ export default function Blog() {
           slug={blog.slug}
 
         />
-      ))}
+      ))}x
         <footer>© 2023 Dhanvi Ganti | All Rights Reserved</footer>
-        <script src="./src/blog.js"></script>
     </div>
   )
 }

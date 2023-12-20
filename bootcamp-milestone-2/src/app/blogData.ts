@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
-import bagelspic from "@/app/images/bagels.jpeg"
-import uniqueinterviewpic from "@/app/images/uniqueinterviewskills.webp"
+//import bagelspic from "@/app/images/bagels.jpeg"
+//import uniqueinterviewpic from "@/app/images/uniqueinterviewskills.webp"
 import connectDB from "@/helpers/db";
 import Blog from "@/database/blogSchema";
 
@@ -40,6 +40,7 @@ export interface Blog {
 			// query for all blogs and sort by date
 	    const blogs = await Blog.find().sort({ date: -1 }).orFail()
 			// send a response as the blogs as the message
+
 	    return blogs
 	} catch (err) {
 	    return null
@@ -53,12 +54,12 @@ async function initializeBlogs() {
 	  // Populate the blogs array if fetching is successful
 	  blogs.push(...fetchedBlogs);
 	}
-  }
+}
   
-  console.log(blogs)
+console.log(blogs)
 
-  // Call the initialization function
-  initializeBlogs();
+// Call the initialization function
+initializeBlogs();
 
 
 export default blogs;
