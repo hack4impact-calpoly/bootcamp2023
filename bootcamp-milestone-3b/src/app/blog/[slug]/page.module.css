@@ -1,0 +1,17 @@
+.error {
+    font-family: monospace;
+    color: white;
+    /* This makes our div take up the screen */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    /* This allows us to play with centering */
+    display: flex;
+    /* This double centers content */
+    align-items: center;
+    justify-content: center;
+
+
+}
