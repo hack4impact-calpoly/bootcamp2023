@@ -1,6 +1,6 @@
 import BlogPreview from "@/components/blogPreview";
 import connectDB from "@/helpers/db";
-import Blog from "@/database/blogSchema";
+import BlogModel, { Blog } from "@/database/blogSchema";
 
 export default async function Home() {
   const blogs = await getBlogs();
@@ -16,7 +16,7 @@ export default async function Home() {
         {blogs.map((blog) => {
           const logAndRender = () => {
             console.log(blog);
-            return <BlogPreview key={blog.id} {...blog} />;
+            return <BlogPreview {...blog} />;
           };
           return logAndRender();
         })}
@@ -26,15 +26,20 @@ export default async function Home() {
   }
 }
 
-async function getBlogs() {
+async function getBlogs(): Promise<Blog[] | null> {
   await connectDB(); // function from db.ts before
 
   try {
     // query for all blogs and sort by date
-    const blogs = await Blog.find().sort({ date: -1 }).orFail();
+    const blogs = await BlogModel.find().sort({ date: -1 }).lean();
+    const mappedBlogs: Blog[] = blogs.map((blog) => {
+      const { _id, ...rest } = blog as Blog & { _id: unknown }; // Exclude _id
+      return rest;
+    });
     // send a response as the blogs as the message
-    return blogs;
+    return mappedBlogs as Blog[];
   } catch (err) {
     return null;
   }
 }
+
