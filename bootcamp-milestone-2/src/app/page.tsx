@@ -6,7 +6,7 @@ export default function Home() {
           <h1 className={style.page_title}>Sameer Maheshwari</h1>
           <div className={style.about}>
               <div className={style.about_image_div}>
-                  <img className={style.about_image} src="../img/family_photo.jpg" alt="Photo of Sameer and his family"/>
+                  <img className={style.about_image} src="./images/family_photo.jpg" alt="Photo of Sameer and his family"/>
               </div>
               <div className={style.about_text}>
                   <h2 className={style.h2_about_text}>About Me</h2>
