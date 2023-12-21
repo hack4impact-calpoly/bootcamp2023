@@ -13,8 +13,8 @@ type Params = {
 
 const identity = {
 	name : "Taran",
-	dob : "may 11",
-	age : "18",
+	dob : "April 23",
+	age : "57",
 }
 
 // descturving the input [slug] as {params} gives us what is inside the label params as the variable params
