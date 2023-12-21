@@ -1,0 +1,17 @@
+html{
+    background-color: rgb(230, 251, 255);
+    color: rgb(0, 0, 0);
+    height: 100%;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.page-title{
+    text-align: center;
+    font-size: 32px;
+}
