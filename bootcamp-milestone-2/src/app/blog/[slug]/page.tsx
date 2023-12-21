@@ -51,6 +51,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
               <Comment key={index} comment={comment} />
             )
           )}
+          
           <div className={style.newComments}>
             <form className={style.new}>
               <input type="text" className={style.newName} name="name" placeholder="Name" />

@@ -18,6 +18,20 @@ export default function Projects(props: IProject) {
         <Link href={props.slug}>
           <p className={style.projectMore}>Learn more</p>
         </Link>
+        <h2 className={style.commentTitle}>Comments</h2>
+        <div className={style.newComments}>
+            <form className={style.new}>
+              <input type="text" className={style.newName} name="name" placeholder="Name" />
+              <textarea 
+                className={style.newComment}
+                rows={5}
+                id={style.message}
+                name="message"
+                placeholder="Type your comment here"
+                ></textarea>
+              <button type="submit" className={style.button}>Submit</button>
+            </form>
+          </div>
       </div>
     </main>
   );
