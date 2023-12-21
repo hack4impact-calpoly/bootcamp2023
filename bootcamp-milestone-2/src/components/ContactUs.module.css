@@ -1,0 +1,27 @@
+.label {
+}
+
+.inputText,
+.inputEmail {
+}
+
+.inputMessage {
+}
+
+.inputSubmit {
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+
+  width: 80%;
+  height: 100%;
+}
+.componentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}

@@ -1,8 +1,11 @@
 import React from "react";
-import { IBlog, IComment } from "../../../database/blogSchema";
+import IBlog from "../../../database/blogSchema";
+import IComment from "../../../database/blogSchema";
 import Image from "next/image";
-import CommentSection from "../../../components/CommentSection";
 import Comment from "../../../components/Comment";
+import ContactUs from "../../../components/ContactUs";
+import getBlog from "../../../helpers/getblog";
+import postComment from "../../../helpers/postComment";
 
 type Props = {
   params: { slug: string };
@@ -11,46 +14,6 @@ type Props = {
 type CommentsProps = {
   comment: IComment;
 };
-
-async function getBlog(slug: string) {
-  try {
-    const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
-      cache: "no-store",
-    });
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch blog");
-    }
-
-    return res.json();
-  } catch (err: unknown) {
-    console.log(`error: ${err}`);
-    return null;
-  }
-}
-
-async function postComment(
-  slug: string,
-  comment: { name: string; content: string }
-) {
-  try {
-    const res = await fetch(`http://localhost:3000/api/blog/${slug}/comment`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(comment),
-      cache: "no-store",
-    });
-
-    if (!res.ok) {
-      throw new Error("Failed to post comment");
-    }
-  } catch (err: unknown) {
-    console.log(`error: ${err}`);
-  }
-}
-
 
 //renders the Blog on the page?
 export default async function Blog({ params: { slug } }: Props) {
@@ -85,12 +48,12 @@ export default async function Blog({ params: { slug } }: Props) {
             />
           </div>
         </div>
-        <div className="comments-container">
-          <div className="comments-header">
+        <div className="commentsContainer">
+          <div className="commentsHeader">
             <h2>Comments</h2>
           </div>
-          <div className="comments-list">
-            {blog.comments.map((comment: IComment, index) => (
+          <div className="commentsList">
+            {blog.comments.map((comment: typeof IComment, index) => (
               <Comment key={index} comment={comment} />
             ))}
           </div>
