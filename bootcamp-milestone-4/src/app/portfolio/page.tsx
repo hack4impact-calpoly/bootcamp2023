@@ -118,6 +118,7 @@ export default function Portfolio() {
         </div>
       </div>
       <hr />
+      <h2 style={{ paddingLeft: "1rem" }}>Comments</h2>
       <CommentSection comments={comments} createComment={createComment} />
     </div>
   );

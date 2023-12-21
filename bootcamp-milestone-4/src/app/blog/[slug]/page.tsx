@@ -88,6 +88,8 @@ export default function Blog({ params: { slug } }: Props) {
           </p>
           <p className={styles.blogDescription}>{blog.description}</p>
           <div className={styles.blogBody}>{blog.content}</div>
+          <hr/>
+          <h2>Comments</h2>
           <CommentSection
             comments={blog.comments}
             createComment={createComment}
