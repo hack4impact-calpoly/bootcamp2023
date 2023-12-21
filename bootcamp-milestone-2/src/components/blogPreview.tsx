@@ -12,7 +12,7 @@ export default function BlogPreview(props: Blog) {
       <h2>{props.title}</h2>
       <p>Date: {props.date?.toLocaleString()}</p>
       <p>{props.desc}</p>
-      <Link href={props.slug}>Read More</Link>
+      <Link href={`/blogs/${props.slug}`}>Read More</Link>
     </div>
   );
 }

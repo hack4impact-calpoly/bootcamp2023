@@ -2,6 +2,7 @@ import BlogPreview from "@/components/blogPreview";
 import connectDB from "@/helpers/db";
 import BlogModel, { Blog } from "@/database/blogSchema";
 
+
 export default async function Home() {
   const blogs = await getBlogs();
   if (blogs == null) {
@@ -15,7 +16,7 @@ export default async function Home() {
       <div>
         {blogs.map((blog) => {
           const logAndRender = () => {
-            console.log(blog);
+            //console.log(blog);
             return <BlogPreview {...blog} />;
           };
           return logAndRender();
