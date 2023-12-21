@@ -1,19 +1,18 @@
-
 import React from "react";
 
 export default async function Page({ params }: { params: { slug: string } }) {
-    const response = await fetch(`http://localhost:3000/api/blog/${params.slug}`);
-    const data = await response.json();
+    const res = await fetch(`http://localhost:3000/api/blog/${params.slug}`, {cache: "no-store"});
+    const blogData = await res.json();
 
-    if(data != null) {
+    if(blogData != null) {
         return(
             <div>
-                <p>Debug Slug: {data.slug}</p>
-                <p>Title: {data.title}</p>
-                <p>Date: {data.date}</p>
-                <p>Description: {data.description}</p>
-                <p>Content: {data.content}</p>
-                <p>Comments: {data.comments}</p>
+                <p>Debug Slug: {blogData.slug}</p>
+                <p>Title: {blogData.title}</p>
+                <p>Date: {blogData.date}</p>
+                <p>Description: {blogData.description}</p>
+                <p>Content: {blogData.content}</p>
+                <p>Comments: {blogData.comments}</p>
             </div>
         )
     }

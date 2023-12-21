@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
-// NOTE FOR SELF: IBlog and IComment use convention where I in front signifies that it is an interface
+// NOTE: IBlog and IComment use convention where I in front signifies that it is an interface
 // make Comment interface (type)
 export type IComment = {
     user: string;
     comment: string;
-    time: string;
+    time: Date;
 }
 
 // typescript type (can also be an interface)
@@ -27,6 +27,15 @@ const blogSchema = new Schema<IBlog>({
     date: { type: String, required: true},
     description: { type: String, required: true },
     content: { type: String, required: true },
+    comments: [
+        {
+            user: { type: String, required: true },
+            comment: { type: String, required: true },
+            // the default is so that we do not have to define dates in DB
+            // TODO: replace later with required date, this should have been created when putting comment into DB from site
+            time: { type: Date, required: false, default: new Date() }
+        }
+    ]
 })
 
 // defining the collection and model

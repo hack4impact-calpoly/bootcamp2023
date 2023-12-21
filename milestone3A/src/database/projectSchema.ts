@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
-// NOTE FOR SELF: IBlog and IComment use convention where I in front signifies that it is an interface
+// NOTE: IBlog and IComment use convention where I in front signifies that it is an interface
 
 // typescript type (can also be an interface)
 export type IProject = {
