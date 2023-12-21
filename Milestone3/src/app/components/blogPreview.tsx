@@ -11,9 +11,9 @@ export default function BlogPreview(props: Blog) {
       <div>
         <h3>{props.title}</h3>
         <p>{props.date.toString()}</p>
-        <Image src={props.content} alt="img" width={400} height={300}></Image>
+        <Image src={props.content} alt="img" width={200} height={150}></Image>
         <p>{props.description}</p>
-        <Link href={"blogs/" + props.slug}>Read More</Link>
+        <Link href={"blogs/" + props._id}>Read More</Link>
       </div>
     </div>
   );
