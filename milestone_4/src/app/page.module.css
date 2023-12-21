@@ -1,0 +1,201 @@
+.p {
+  margin-bottom: 20px; /* Add a border to the bottom of each paragraph */
+}
+
+.header{
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(../../public/img/backgroundr.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.text_box{
+  width: 90%;
+  color: white;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -85%);
+  text-align: center;
+  font-size: 20px;
+}
+
+.text_box{
+  width: 90%;
+  color: white;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -85%);
+  text-align: center;
+  font-size: 20px;
+}
+
+.mh_skills{
+  background-image: url(../../public/img/backgroundr.png);
+  background-size: cover;
+  height: 100%;
+  /* background-position: center; */
+}
+
+.mh_skills_container {
+  /* display: flex; */
+  /* flex-direction: column; */
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.mh_skills .mh_professional_skill{
+  padding-right: 60px;
+  color: white;
+}
+
+.mh_skills .mh-professional_skill h3{
+  padding-top: 50px;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 50px;
+  font-family: 'Poppins',sans-serif;
+}
+
+.mh_professional_skills{
+  padding-left: 5%;
+}
+
+.mh_professional_skills h3{
+  padding-right: 8%;
+  padding-top: 80px;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 60px;
+  font-family: 'Poppins',sans-serif;
+  color: white;
+}
+
+.mh_professional-progress li{
+  padding-top: 45px;
+  padding-right: 60px;
+  display: inline-block;
+  margin: 0 auto;
+  float: none;
+  width: 20%;
+  margin-bottom: 30px;
+  text-align: center;
+  color: white;
+}
+
+.mh_progress{
+  margin-bottom: 10px;
+  font: 300px;
+  color: white;
+}
+
+.mh_progress .progressbar_text{
+  color: inherit !important;
+  font-family: 'Poppins', sans-serif;
+}
+
+.pprogress_line{
+  height: 10px;
+  margin-right: 60px;
+}
+
+.progress_line .progress_text{
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 50px;
+  transform: translateY(-35%);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+.mh_progress_circle{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+.mh_progress path:nth-child(1){
+  stroke: rgba(0,0,0,0.7);
+}
+
+.mh_progress path:nth-child(2){
+  stroke: #0bceaf !important;
+}
+
+.candidatos{
+  position: relative;
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.candidatos .parcial{
+  display: inline-block;
+  width: 55%;
+  vertical-align: middle;
+  padding-left: 318px;
+
+}
+
+.candidatos .parcial .info{
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.candidatos .parcial .info .nome{
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0.9;
+  font-family: 'Poppins', sans-serif;
+}
+
+.candidatos .parcial .info .percentage_num{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.candidatos .parcial .progressBar{
+  position: relative;
+  width: 100%;
+  height: 7px;
+  margin: 30px 0 2px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.5);
+}
+
+.candidatos .parcial .percentagem{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 7px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #0bceaf;
+  -webkit-transition: 3s all;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-name: animationProgress;
+  font-family: 'Poppins', sans-serif;
+}
+
+@keyframes animationProgress{
+  from{
+      width: 0;
+  }
+}

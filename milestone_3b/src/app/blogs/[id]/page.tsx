@@ -21,8 +21,9 @@ async function getBlog(id: number) {
 
 export default async function BlogEntry({ params } : { params: { id: number } }) {
     const blog = await getBlog(params.id);
-    console.log(blog.comments);
     if (blog) {
+        console.log(blog);
+        console.log(blog.comments);
         return (
             <main>
                 <div className="blog-content">
