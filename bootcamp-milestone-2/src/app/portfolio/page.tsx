@@ -32,6 +32,7 @@ export default function Portfolio() {
             projectDescription={portfolio.projectDescription}
             image={portfolio.image}
             learnMore={portfolio.learnMore}
+            comments={portfolio.comments}
           />
         ))}
     </main>
