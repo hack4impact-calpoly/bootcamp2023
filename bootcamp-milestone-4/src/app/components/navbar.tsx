@@ -8,7 +8,7 @@ export default function Navbar() {
     // with your navbar code from your earlier milestones
     <nav className={style.navbar}>
       <h1 className={style.logo}>
-        <a href="index.html">Devin Hadley</a>
+        <Link href="/">Devin Hadley</Link>
       </h1>
       <ul className={style.navlist}>
         <li>
