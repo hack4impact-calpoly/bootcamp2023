@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import "@/global.css";
 import "@/app/full.css"
-import naturepic from "@/app/images/nature.jpeg"
+import naturepic from "/public/images/nature.jpeg"
 import Image from "next/image";
 
 // Home page

@@ -11,7 +11,7 @@ export default function BlogPreview(props: Blog) {
     <div className={style.div}>
       <h3>{props.title}</h3>
       <div>
-				<Image src={props.image} alt="img" width={500} height={500} ></Image>
+        <Image src={`/images/${props.image}`} alt="img" height={500} width={500} />
         <p>{props.description}</p>
 				<p>Posted on {props.date}</p>
         <Link href={`../blog/${props.slug}`}>

@@ -13,7 +13,6 @@ type Props = {
 
 async function getBlog(slug: string) {
 	try {
-    console.log("just before")
 		const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
 			cache: "no-store",	
 		})
@@ -40,7 +39,7 @@ export default async function BlogPost({ params }: Props) {
               <h1>{blog.title}</h1>
             </div>
             <div className="image" id="blog">
-              <Image src={blog.image} alt="temp" height="500" width="500"/> 
+              <Image src={`/images/${blog.image}`} alt="temp" height="500" width="500"/> 
             </div>
 
             <div className="content" id="blog">
