@@ -19,3 +19,15 @@ type Params = {
       return NextResponse.json("Blog not found.", { status: 501 });
     }
   }
+
+  export async function POST(req: NextRequest) {
+    const body = req.body
+    const BlogSlug = req.params.bodySlug;
+    // validate body
+    if (BodySlug==null) {
+      return NextResponse.json("Blog not found.", {status: 501})
+    }
+    
+    // push comment object to document
+    Blog.update(...)
+  }

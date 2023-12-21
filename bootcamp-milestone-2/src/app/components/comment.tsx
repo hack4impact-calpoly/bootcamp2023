@@ -1,5 +1,5 @@
 import React from "react";
-import type { IComment } from "../database/blogSchema";
+import type { IComment } from "../database/commentSchema";
 import style from "./comment.module.css";
 
 {

@@ -7,6 +7,7 @@ export type IProject = {
   slug: string;
   description: string;
   image: string;
+  comments: mongoose.Types.ObjectId;
 };
 
 // mongoose schema
@@ -15,6 +16,7 @@ const projectSchema = new Schema<IProject>({
   slug: { type: String, required: true },
   description: { type: String, required: true },
   image: { type: String, required: false },
+  comments: [],
 });
 
 // defining the collection and model
