@@ -24,11 +24,13 @@ const portfolioSchema = new mongoose.Schema<IPortfolio>({
   description: { type: String, required: true },
   content: { type: String, required: true },
   image: { type: String },
-  comments: {
-    user: { type: String, required: true },
-    comment: { type: String, required: true },
-    time: { type: Date, required: false, default: new Date() },
-  },
+  comments: [
+    {
+      user: { type: String, required: true },
+      comment: { type: String, required: true },
+      time: { type: Date, required: false, default: new Date() },
+    },
+  ],
 });
 
 // defining the collection and model
