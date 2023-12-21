@@ -1,49 +1,39 @@
-import { IComment } from "@/database/blogSchema";
-import Comment from "../../components/blogComment";
-import Link from "next/link";
+import React from "react";
+import BlogPage from '@/app/components/blogPage';
+import "../../styles/website.css"
+import connectDB from "@/helpers/db";
+import Blogs from "@/database/blogSchema"
+
 type Props = {
-    params: { slug: string }
+    params: { slug: string };
+};
+
+async function getBlogBySlug(slug: string) {
+    await connectDB();
+
+    try {
+        // Query for a blog with the specified slug
+        const blog = await Blogs.findOne({ slug }).orFail();
+        return blog;
+    } catch (err) {
+        return null;
+    }
 }
 
-async function getBlog(slug: string) {
-    try {
-      const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
-        cache: "no-store",
-      });
-  
-      if (!res.ok) {
-        throw new Error("Failed to fetch blog");
-      }
-  
-      return res.json();
-    } catch (err: unknown) {
-      console.log(`error: ${err}`);
-      return null;
-    }
-  }
+export default async function Blog({ params }: Props) {
+    const { slug } = params;
+    const blog = await getBlogBySlug(slug);
 
-export default async function Blog({ params: { slug } }: Props) {
-    const blog = await getBlog(slug);
-    
-    if(blog){
-        return (
-            <div>
-                <h3>{blog.title}</h3>
-                <p>{blog.date.toDateString()}</p>
-                <p>{blog.content}</p>
+    return (
+        <main>
+            {blog ? (
                 <div>
-                    {blog.comments.map((comment: IComment, index:number) => (
-                        <Comment key={index} comment={comment} />
-                    ))}
+                    <h2 className="page-title">{blog.title}</h2>
+                    <BlogPage {...blog.toObject()} />
                 </div>
-                <Link href="/blog">Back</Link>
-            </div>
-        )
-    }
-    else{
-        return (
-            <h1 className="page-title">Blog not found</h1>
-        )
-    }
-        
+            ) : (
+                <div>No blog found</div>
+            )}
+        </main>
+    );
 }
