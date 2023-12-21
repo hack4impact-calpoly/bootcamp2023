@@ -1,18 +1,14 @@
 import React from "react";
-// import Image from "next/image";
-// import Link from "next/link";
 import style from "./portfolio.module.css";
 import projectSchema from "../database/projectSchema";
 import connectDB from "../database/db";
 import Project from "../components/project";
 
 async function Page() {
-  await connectDB(); // function from db.ts before
+  await connectDB();
 
   try {
-    // query for all blogs and sort by date
     const projects = await projectSchema.find().orFail();
-    // send a response as the blogs as the message
     return projects;
   } catch (err) {
     return null;
@@ -24,8 +20,10 @@ export default async function Projects() {
   if (projects == null) {
     return (
       <main>
-        <h1>Portfolio</h1>
-        <p>No projects currently.</p>
+        <div className={style.project}>
+          <h1 className={style.pageTitle}>Portfolio</h1>
+          <p>No projects currently.</p>
+        </div>
       </main>
     );
   } else {
@@ -39,6 +37,7 @@ export default async function Projects() {
               description={project.description}
               slug={project.slug}
               image={project.image}
+              comments={project.comments}
             />
           ))}
         </div>
@@ -46,36 +45,3 @@ export default async function Projects() {
     );
   }
 }
-
-// export default function Portfolio() {
-//   return (
-//     <div>
-//       <main>
-//         <h1 className={style.pageTitle}>Portfolio</h1>
-//         <div>
-//           <Link href="./home">
-//             <Image
-//               className={style.projectImage}
-//               height={150}
-//               width={250}
-//               src={"/website.jpg"}
-//               alt="Personal website project!"
-//             ></Image>
-//             <div className={style.projectDetails}>
-//               <div className="projectInfo">
-//                 <p className={style.projectName}>My Personal Website</p>
-//                 <p className={style.projectDescription}>
-//                   This is a website I built from scratch to showcase some of my
-//                   experience and work!
-//                 </p>
-//               </div>
-//               <div id={style.projectMore}>
-//                 <Link href="./home">Learn More</Link>
-//               </div>
-//             </div>
-//           </Link>
-//         </div>
-//       </main>
-//     </div>
-//   );
-// }

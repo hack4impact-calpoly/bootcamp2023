@@ -4,14 +4,15 @@ import blogSchema from "../database/blogSchema";
 import connectDB from "../database/db";
 import style from "./blog.module.css";
 
-
 export default async function Blogs() {
   const blogs = await Blog();
   if (blogs == null) {
     return (
       <main>
-        <h1>Blog</h1>
-        <p>No blogs currently.</p>
+        <div className={style.blog}>
+          <h1 className={style.pageTitle}>Blog</h1>
+          <p>No blogs currently.</p>
+        </div>
       </main>
     );
   } else {
