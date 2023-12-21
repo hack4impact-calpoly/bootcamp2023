@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+.blog-text {
+    color: var(--cg-pink);
+    font-family: 'Satisfy', cursive;
+    font-size: 50px;
+    padding: 80px 100px;
+    background-color: var(--cg-white);
+  }
+  
