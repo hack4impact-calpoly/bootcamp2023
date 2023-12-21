@@ -12,7 +12,6 @@
     flex-direction: row;
     justify-content:space-between;
     align-items:center;
-    text-align: center;
 
     background-color:rgba(4, 9, 30, 0.3);
     border-bottom: black double;
@@ -22,8 +21,12 @@
     /* border: solid red; */
 }
 
+.logo {
+    margin-right: auto;
+}
+
 .img {
-    justify-self: center;
+    margin: 0 auto;
 }
 
 .nav-list {

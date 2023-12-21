@@ -12,7 +12,7 @@ export default async function Blogs() {
       <div>No Blogs</div>
     );
   }
-  else{
+  else {
     return (<div>
         <main>
               <h1 className={style["page-title"]}>Blog</h1>

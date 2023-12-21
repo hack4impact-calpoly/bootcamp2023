@@ -1,20 +1,14 @@
-.projects {
+.projectList {
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 20px;
-    background-color: rgba(4, 9, 30, 0.3);
-    border: 5px solid black;
-    border-radius: 10px;
-    border-style: double;
-    font-size: 20pt;
 }
 
-.projects a {
-    color: white;
-}
+.projectList > div {
+    margin-bottom: 50px; /* Adjust the value as needed */
+  }
 
-.projects img{
-    max-width: 500px;
-    max-height: 500px;
+.page-title {
+    font-size: 25pt;
+    font-weight: bold;
 }

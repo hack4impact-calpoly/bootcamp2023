@@ -10,6 +10,11 @@
     font-size: 15pt;
 }
 
+.page-title {
+    font-weight: bold;
+    font-size: 25pt;
+}
+
 .resume a {
     align-self: center;
     color: black;
