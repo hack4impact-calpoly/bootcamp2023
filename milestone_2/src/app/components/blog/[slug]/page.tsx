@@ -14,7 +14,7 @@ async function getBlog(slug: string) {
 		if (!res.ok) {
 			throw new Error("Failed to fetch blog");
 		}
-
+		
 		return res.json();
 	} catch (err: unknown) {
 		console.log(`error: ${err}`);
@@ -25,12 +25,11 @@ async function getBlog(slug: string) {
 export default async function Blog({ params }: IParams) {
 	const { slug } = params;
 	const blog = await getBlog(slug);
+	blog.comments = blog.comments.lean()
 	
 	return (
         <div> 
             BlogPreview(blog)
-            <h4>Comment Section</h4>
-            new Comment(blog.comments)
         </div>
         )
 }

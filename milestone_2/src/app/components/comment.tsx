@@ -22,7 +22,7 @@ function parseCommentTime(time: Date){
 function Comment({ comment }: CommentProps) { 
     return (
         
-        <p>{comment.user}: {comment.comment}. {comment.time}</p>
+        <p>{comment.user}: {comment.comment} {comment.time}</p>
         
     );
 }

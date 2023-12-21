@@ -25,11 +25,11 @@ const blogSchema = new Schema<IBlog>({
     date: { type: Date, required: false, default: new Date()},
     description: { type: String, required: true },
     content: { type: String, required: true },
-    comments: {
+    comments: [{
         user: {type: String, required: true},
         comment: {type: String, required: true},
         time: {type: String, required: false, default: new Date()}
-    }
+    }]
 })
 
 // defining the collection and model
@@ -37,3 +37,4 @@ const Blog = mongoose.models['blogs'] || mongoose.model('blogs', blogSchema);
 
 export default Blog;
 export type { IComment };
+export type { IBlog };
