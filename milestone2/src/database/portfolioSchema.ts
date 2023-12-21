@@ -14,7 +14,13 @@ type IPortfolio = {
   description: string;
   content: string;
   image: { type: String };
-  comments: IComment[]; // array for comments
+  comments: [
+    {
+      user: { type: String; required: true };
+      comment: { type: String; required: true };
+      time: { type: Date; required: false };
+    }
+  ];
 };
 
 // mongoose schema

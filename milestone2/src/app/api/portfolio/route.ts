@@ -1,6 +1,18 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/helpers/db";
 import Portfolio from "@/database/portfolioSchema";
+
+export async function GET(req: NextRequest) {
+  await connectDB(); // function from db.ts before
+
+  try {
+    const port = await Portfolio.find().orFail();
+    return NextResponse.json(port);
+  } catch (err) {
+    console.log("cracked");
+    return NextResponse.json("Portfolio not found.", { status: 404 });
+  }
+}
 
 export async function POST(req: NextRequest) {
   await connectDB();
