@@ -28,7 +28,6 @@ export default async function Blog({ params }: Props) {
         <main>
             {blog ? (
                 <div>
-                    <h2 className="page-title">{blog.title}</h2>
                     <BlogPage {...blog.toObject()} />
                 </div>
             ) : (
