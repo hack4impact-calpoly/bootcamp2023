@@ -16,27 +16,22 @@ export default function BlogEntry({ params }: { params: { id: number } }) {
     e.preventDefault();
 
     try {
-      //get form submission event
       const formElement = e.target as HTMLFormElement;
 
-      // Access values directly from the form elements
       const nameInput =
         formElement.querySelector<HTMLInputElement>('input[name="name"]');
       const descriptionText = formElement.querySelector<HTMLTextAreaElement>(
         'textarea[name="description"]'
       );
 
-      // Explicitly cast e.target to HTMLFormElement
       const newComment = {
         user: nameInput?.value || "",
         comment: descriptionText?.value || "",
         date: new Date(),
       };
-      //clear form data
       if (nameInput) nameInput.value = "";
       if (descriptionText) descriptionText.value = "";
 
-      //Add comment to db and update UI
       const response = await axios.post(`/api/blog/${params.id}`, newComment);
       if (response.status === 200) {
         const updatedBlog: IBlog = response.data;

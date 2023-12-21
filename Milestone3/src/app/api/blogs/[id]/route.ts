@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/app/helpers/db";
 import BlogModel from "@/app/database/blogSchema";
 import { ObjectId } from "mongoose";
-//import Comments, { IComment } from "@/database/commentSchema";
-
 type IParams = {
     params: {
         id: string;
@@ -26,10 +24,7 @@ export async function GET(req: NextRequest, { params }: IParams) {
     await connectDB(); // function from db.ts before
     const { id } = params; // another destructure
     try {
-        //get blog object, and popualte comments from their reference ids
-        
         const blog = await BlogModel.findById( id )
-            //.populate("comments")
             .orFail();
 
         return NextResponse.json(blog, { status: 200 });
@@ -38,33 +33,3 @@ export async function GET(req: NextRequest, { params }: IParams) {
     }
 }
 
-/*export async function POST(req: NextRequest, { params }: IParams) {
-    await connectDB();
-    const { id } = params;
-
-    try {
-        //get blog with specified id
-        const blog = await BlogModel.findById(id).orFail();
-
-        //parse request body and create new comment object
-        const { user, comment, date }: IComment = await req.json();
-        const newComment = new Comments({
-            user: user,
-            comment: comment,
-            date: date,
-        });
-
-        await newComment.save();
-
-        //add new comment to blog
-        blog.comments.push(newComment._id);
-        await blog.save();
-        await blog.populate("comments");
-
-        //return updated blog
-        return NextResponse.json(blog, { status: 200 });
-    } catch (err) {
-        console.error(err);
-        return NextResponse.json("Comment not added.", { status: 400 });
-    }
-}*/
