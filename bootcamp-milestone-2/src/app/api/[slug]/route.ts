@@ -26,14 +26,13 @@ export async function GET(req: NextRequest, { params }: IParams) {
 
 export async function POST(req: NextRequest) {
 	const body = req.body
-	const BlogSlug = // what to place here...
+	const BlogSlug = req.url
 	// validate body
 	if (!body) {
 		return NextResponse.json('Comment does not exist.', {status: 404})
 	}
 	
-	// push comment object to document
-	Blog.update(
+	Blog.updateOne(
 		{
 			_id: new ObjectId('655fcb47d5fc316161185eb8')
 		}, {
