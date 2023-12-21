@@ -1,0 +1,75 @@
+.commentsContainer {
+  margin-top: 30px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment {
+  background-color: white;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.comment:first-child {
+  margin-top: 0;
+}
+
+.commentUser {
+  color: #000000;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.commentText {
+  color: #555;
+  margin: 5px 0;
+}
+
+.commentDate {
+  text-align: right;
+  display: block;
+  color: #888;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+}
+
+.usernameInput,
+.commentInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.commentButton {
+  width: auto;
+  background-color: #58616b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.commentButton:hover {
+  background-color: #0056b3;
+}

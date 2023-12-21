@@ -16,6 +16,12 @@ export type IBlog = {
   comments: IComment[]; // array for comments
 };
 
+const comment = {
+  user: { type: String, required: true },
+  comment: { type: String, required: true },
+  time: { type: Date, required: false, default: new Date() },
+};
+
 // mongoose schema
 const blogSchema = new Schema<IBlog>({
   title: { type: String, required: true },
@@ -23,11 +29,7 @@ const blogSchema = new Schema<IBlog>({
   date: { type: Date, required: false, default: new Date() },
   description: { type: String, required: true },
   content: { type: String, required: true },
-  comments: [{
-    user: { type: String, required: true },
-    comment: { type: String, required: true },
-    time: { type: Date, required: false, default: new Date() },
-  }],
+  comments: [comment],
 });
 
 // defining the collection and model

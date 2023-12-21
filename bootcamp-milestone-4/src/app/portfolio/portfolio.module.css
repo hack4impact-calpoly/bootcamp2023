@@ -6,23 +6,20 @@
 
 .projectsgrid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(500px, 1fr)
-  );
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 16px;
   padding: 10px;
 }
 
 .project {
   display: flex;
-  flex-direction: column; 
-  background-color: #f8f8f8; 
+  flex-direction: column;
+  background-color: #f8f8f8;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 16px;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
 }
 
 .project img {
@@ -30,26 +27,26 @@
   border-radius: 10px;
   border: 1px solid #2d2d2d;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 100%;
 }
 
 .project img:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
 
 .project a {
-  align-items: center; 
-  justify-content: center; 
-  align-self: center; 
+  align-items: center;
+  justify-content: center;
+  align-self: center;
 }
 
 .project p {
-  text-align: center; 
+  text-align: center;
 }
 
 .project-name {
-  font-weight: bold; 
+  font-weight: bold;
 }

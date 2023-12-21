@@ -1,32 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { IBlog, IComment } from "@/app/database/blogSchema"; // Adjust the import path as needed
-import styles from "./blogview.module.css"; // Adjust the import path as needed
+import { IBlog, IComment } from "@/app/database/blogSchema";
+import styles from "./blogview.module.css";
+import Comment from "@/app/components/comment";
+import CommentSection from "@/app/components/comment/CommentSection";
 
 type Props = {
   params: { slug: string };
 };
 
-type CommentProps = {
-  comment: IComment;
-};
-
-function Comment({ comment }: CommentProps) {
-  return (
-    <div className={styles.comment}>
-      <p className={styles.commentUser}>{comment.user}</p>
-      <p className={styles.commentText}>{comment.comment}</p>
-      <small className={styles.commentDate}>
-        {new Date(comment.time).toLocaleDateString()}
-      </small>
-    </div>
-  );
-}
-
 export default function Blog({ params: { slug } }: Props) {
   const [blog, setBlog] = useState<IBlog | null>(null);
-  const [username, setUsername] = useState("");
-  const [commentText, setCommentText] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -59,17 +43,13 @@ export default function Blog({ params: { slug } }: Props) {
     fetchBlog();
   }, [slug]);
 
-  async function createComment(event: any) {
-    event.preventDefault();
-
+  async function createComment(
+    commentText: string,
+    username: string
+  ): Promise<boolean> {
     if (!username || !commentText) {
-      return;
+      return false;
     }
-
-    const comment = {
-      user: username,
-      comment: commentText,
-    };
 
     const formData = new FormData();
     formData.append("comment", commentText);
@@ -90,11 +70,9 @@ export default function Blog({ params: { slug } }: Props) {
 
       const data = await res.json();
       setBlog(data);
-      setUsername("");
-      setCommentText("");
+      return true;
     } catch (err) {
-      console.error(`error: ${err}`);
-      setError("Failed to create comment");
+      return false;
     }
   }
 
@@ -111,30 +89,10 @@ export default function Blog({ params: { slug } }: Props) {
           </p>
           <p className={styles.blogDescription}>{blog.description}</p>
           <div className={styles.blogBody}>{blog.content}</div>
-          <div className={styles.blogComments}>
-            {blog.comments.map((comment: IComment, index: number) => (
-              <Comment key={index} comment={comment} />
-            ))}
-          </div>
-          <form className={styles.commentForm} onSubmit={createComment}>
-            <textarea
-              className={styles.usernameInput}
-              placeholder="Enter username."
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            ></textarea>
-
-            <textarea
-              className={styles.commentInput}
-              placeholder="Write a comment..."
-              value={commentText}
-              onChange={(e) => setCommentText(e.target.value)}
-            ></textarea>
-
-            <button className={styles.commentButton} type="submit">
-              Submit
-            </button>
-          </form>
+          <CommentSection
+            comments={blog.comments}
+            createComment={createComment}
+          />
         </div>
       ) : (
         <p className={styles.blogNotFound}>Blog not found</p>
