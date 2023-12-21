@@ -40,20 +40,30 @@ export default async function Blog({ params }: { params: { slug: string } }) {
         <div>
           <h1 className={style.pageTitle}>{blog.title}</h1>
           <div className={style.blog}>
-            <Image
-              src={blog.image}
-              alt=""
-              height={300}
-              width={250}
-            ></Image>
+            <Image src={blog.image} alt="" height={300} width={250}></Image>
             <p>{blog.content}</p>
           </div>
         </div>
         <div className={style.comments}>
           <h2 className={style.commentTitle}>Comments</h2>
-          {blog.comments.map((comment: any, index: React.Key | null | undefined ) => (
-	                <Comment key={index} comment={comment} />
-	        ))}
+          {blog.comments.map(
+            (comment: any, index: React.Key | null | undefined) => (
+              <Comment key={index} comment={comment} />
+            )
+          )}
+          <div className={style.newComments}>
+            <form className={style.new}>
+              <input type="text" className={style.newName} name="name" placeholder="Name" />
+              <textarea 
+                className={style.newComment}
+                rows={5}
+                id={style.message}
+                name="message"
+                placeholder="Type your comment here"
+                ></textarea>
+              <button type="submit" className={style.button}>Submit</button>
+            </form>
+          </div>
         </div>
       </main>
     );
