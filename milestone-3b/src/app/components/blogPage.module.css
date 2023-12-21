@@ -1,4 +1,4 @@
-.blogpage {
+.blogpage, .projectpage {
     display: flex;
     flex-direction: column;
     text-align: center;

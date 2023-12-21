@@ -21,7 +21,7 @@ export default async function Portfolio() {
     const projects = await getProjects();
     return(
     <main>
-        <h2 className="page-title">Projects</h2>
+        <h2 className="page-title">Portfolio</h2>
         <div>
             {projects == null ? (
                 <div className = "no-project">

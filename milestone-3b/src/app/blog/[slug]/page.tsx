@@ -32,7 +32,7 @@ export default async function Blog({ params }: Props) {
                     <BlogPage {...blog.toObject()} />
                 </div>
             ) : (
-                <div>No blog found</div>
+                <div className="page-title" >No Blog Found</div>
             )}
         </main>
     );

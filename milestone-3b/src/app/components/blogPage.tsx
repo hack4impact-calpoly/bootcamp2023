@@ -2,8 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import style from './blogPage.module.css';
 import { IBlog, IComment } from '@/database/blogSchema';
-import Comment from './blogComment'
-import parseCommentTime from './blogComment'
+import Comment from './comment'
 
 export default function BlogPage(blogpage: IBlog) {
     return (
