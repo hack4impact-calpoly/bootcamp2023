@@ -119,7 +119,7 @@ export default function Resume() {
             <h2 className="section-title">Projects</h2>
             <div className="entry">
               <h3 className="entry-title-end">
-                <a href="index.html">Personal Website (This site)</a>
+                <a href="home">Personal Website (This site)</a>
               </h3>
               <ul className="projects-list">
                 <li>

@@ -7,10 +7,10 @@ type IComment = {
 };
 
 const commentSchema = new mongoose.Schema<IComment>({
-  user: {type: String, required: true},
-  comment: {type: String, required: true},
-  time: {type: Date, required: true},
-})
+  user: { type: String, required: true },
+  comment: { type: String, required: true },
+  time: { type: Date, required: true },
+});
 
 // typescript type (can also be an interface)
 type IBlog = {
@@ -24,8 +24,6 @@ type IBlog = {
   comments: IComment[]; // array for comments
 };
 
-
-
 // mongoose schema
 const blogSchema = new mongoose.Schema<IBlog>({
   date: { type: String, required: true },
@@ -33,8 +31,15 @@ const blogSchema = new mongoose.Schema<IBlog>({
   description: { type: String, required: true },
   slug: { type: String, required: true },
   image: { type: String, required: true },
-  imagealt: {type: String, required: true},
+  imagealt: { type: String, required: true },
   content: { type: String, required: true },
+  comments: [
+    {
+      name: { type: String, required: true },
+      comment: { type: String, required: true },
+      time: { type: Date, required: true },
+    },
+  ],
 });
 
 // defining the collection and model
