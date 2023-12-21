@@ -4,7 +4,7 @@
 
 import connectDB from "@/helpers/db"; // Connection to MongoDB
 import Blog from "@/database/blogSchema"; // Get the Schema
-import { NextResponse } from "next/server"; //So we can do the http methods
+import { NextRequest, NextResponse } from "next/server"; //So we can do the http methods
 
 export async function GET() {
     await connectDB(); // connect to Mongo
@@ -17,3 +17,9 @@ export async function GET() {
     }    
 }
 
+export async function POST(request) {
+    const {...blog} = await request.json();
+    await connectDB();
+    await Blog.create({...blog});
+    return NextResponse.json({message: "Blog Created"}, {status: 201});
+}

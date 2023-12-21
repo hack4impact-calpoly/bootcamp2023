@@ -55,23 +55,6 @@ function parseCommentTime(date : Date){
 
 }
 
-const parseDate = (date: string) => {
-    let tLocation = date.indexOf("T")
-    let newDate = date.slice(0, tLocation)
-    let year = newDate.slice(2, newDate.indexOf("-"))
-        newDate = newDate.slice(newDate.indexOf("-") + 1, newDate.length)
-    let month = newDate.slice(0, newDate.indexOf("-"))
-        newDate = newDate.slice(newDate.indexOf("-") + 1, newDate.length)
-    let day = newDate.slice(0, newDate.length)
-  
-    const dateFormated = `${month}/${day}/${year}`
-    return dateFormated
-    // Getting
-    // 2023-11-03
-    // Desired
-    // 11/03/23
-  }
-
 
 function Comment({ comment }: CommentProps) {
     return (
