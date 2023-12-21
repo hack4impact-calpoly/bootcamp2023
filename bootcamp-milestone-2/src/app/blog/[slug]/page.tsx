@@ -3,7 +3,8 @@ import React from "react";
 import "@/global.css";
 import "@/app/full.css" 
 import Image from "next/image";
-
+import Comment from "@/components/commentView";
+import { IComment } from "@/database/blogSchema";
 
 
 type Props = {
@@ -44,6 +45,12 @@ export default async function BlogPost({ params }: Props) {
 
             <div className="content" id="blog">
               <p>{blog?.content}</p>
+            </div>
+
+            <div className="comment" id="blog">
+              {blog.comments.map((comment: IComment, index: number) => (
+	                <Comment key={index} comment={comment} />
+	            ))}
             </div>
           </main>
           <footer>© 2023 Dhanvi Ganti | All Rights Reserved</footer>
