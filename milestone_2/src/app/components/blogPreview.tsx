@@ -7,8 +7,6 @@ import { IComment } from '../database/blogSchema';
 
 
 export default function BlogPreview(props: Blog) {
-  {console.log(props.comments)}
-  {console.log(typeof props.comments)}
   return (
     <div className="bloglist">
         <h3><Link href={props.slug}> {props.title} </Link></h3>
@@ -16,6 +14,7 @@ export default function BlogPreview(props: Blog) {
             <p> {props.description} </p>
             <p> {props.date.toLocaleDateString()} </p>
         </div>
+        
         <h5>Comments</h5>
 
         <div>
