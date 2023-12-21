@@ -5,7 +5,7 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-/* text styles */
+/* universal text styles */
 h1 {
   margin: 0;
   font-size: 5vw;
@@ -39,7 +39,7 @@ li a {
 
 /* style the about section inspired by Canva post layout */
 /* see: Canva Creative Studio's Light Beige Sleek and Simple Blogger Personal Website */
-.about_container {
+.bordered_container {
   border: 2px solid black;
   display: grid;
   grid-template-columns: auto auto;
