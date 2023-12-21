@@ -1,25 +1,44 @@
-import styles from './page.module.css'
 import "@/global.css";
-import "@/app/full.css" 
+import "@/app/full.css";
 import Link from 'next/link';
 import Image from 'next/image';
-import workpic from '@/app/images/work.png'
+import workpic from '/public/images/work.png';  // Ensure the path is correct
+import ProjectPreview from "@/components/projectPreview";
+import Projects from "@/database/projectSchema";
+import connectDB from "@/helpers/db";
+
+async function getProjects() {
+  await connectDB(); // function from db.ts before
+
+  try {
+    // query for all projects and sort by date
+    const projects = await Projects.find().sort({ date: -1 }).orFail();
+    return projects;
+  } catch (err) {
+    console.error(`Error getting projects: ${err}`);
+    return null;
+  }
+}
 
 // Portfolio webpage
 export default function Portfolio() {
-  return (
-    <div>
+  return getProjects().then((projects) => {
+    return (
+      <div>
         <main>
-            <h1 className="page-title">MY WORK</h1>
-            <div className="project"><Link href="../"><Image src={workpic.src} alt="Homepage screenshot to show in portfolio." width={500} height={500} ></Image></Link></div>
-            <div className="project-details">
-                <p className="project-name"><strong>Personal Website</strong></p>
-                <p className="project-description">This is a test website made in HTML and CSS with Hack4Impact's starter pack. This project was intended for me to gain HTML/CSS experience.</p>
-                <Link href="../">Learn More</Link>
-            </div>
-            This page will be updated soon with my work experience!
+          <h1 className="page-title">MY WORK</h1>
         </main>
-        <footer>© 2023 Dhanvi Ganti | All Rights Reserved</footer>
-    </div>
-    )
+        {projects?.map((project) => (
+          <ProjectPreview
+            title={project.title}
+            description={project.description}
+            date={project.date}
+            image={project.image}
+            slug={project.slug}
+            content={project.content}
+          />
+        ))}
+      </div>
+    );
+  });
 }

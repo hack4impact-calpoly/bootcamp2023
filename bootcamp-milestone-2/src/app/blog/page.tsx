@@ -17,7 +17,6 @@ export default function Blog() {
                 </div>
             </main>
             <h1 className="page-title">MY BLOG</h1>
-            Hello World! This is my blog.
             <div className="container" id="container"></div>
         </main>
         {blogs.map((blog) => (
@@ -30,7 +29,7 @@ export default function Blog() {
           slug={blog.slug}
 
         />
-      ))}x
+      ))}
         <footer>© 2023 Dhanvi Ganti | All Rights Reserved</footer>
     </div>
   )

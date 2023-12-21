@@ -4,8 +4,8 @@ import mongoose from "mongoose";
 
 export type IComment = {
     user: string;
-    comment: string,
-    time: string
+    comment: string;
+    time: string;
 }
 export type IBlog = {
     title: string;
@@ -13,7 +13,7 @@ export type IBlog = {
     date: string;
     description: string; // for preview
     content: string; // for individual blog page
-    image: string
+    image: string;
     comments: IComment[]; // array for comments
 };
 
