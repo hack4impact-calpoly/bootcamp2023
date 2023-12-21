@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./portfolio.module.css";
 import CommentSection from "../components/comment/CommentSection";
 import { IComment } from "../database/blogSchema";
+import toast from "react-hot-toast";
+import LoadingSpinner from "../components/LoadingSpinner";
 // Import API call function if necessary, e.g., getProjectsAPI
 
 interface ProjectData {
@@ -34,12 +36,10 @@ export default function Portfolio() {
   const [projects, setProjects] = useState<ProjectData[]>([]);
   const [comments, setComments] = useState<IComment[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState("");
 
   useEffect(() => {
     const fetchProjects = async () => {
       setIsLoading(true);
-      setError("");
 
       try {
         const response = await fetch(
@@ -47,14 +47,11 @@ export default function Portfolio() {
         );
         const data = await response.json();
         setProjects(data);
-      } catch (err) {
-        setError("Failed to retrieve projects.");
-      }
+      } catch (err) {}
     };
 
     const fetchComments = async () => {
       setIsLoading(true);
-      setError("");
 
       try {
         const response = await fetch(
@@ -63,7 +60,7 @@ export default function Portfolio() {
         const data = await response.json();
         setComments(data);
       } catch (err) {
-        setError("Failed to retrieve comments.");
+        toast.error("Failed to retrieve comments.");
       } finally {
         setIsLoading(false);
       }
@@ -100,20 +97,15 @@ export default function Portfolio() {
 
       const data = await res.json();
       setComments(data);
+      toast.success("Comment created!");
       return true;
     } catch (err) {
-      setError("Failed to create comment");
+      toast.error("Failed to create comment");
       return false;
     }
   }
 
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Error loading projects</p>;
-  }
+  if (isLoading) return <LoadingSpinner />;
 
   return (
     <div>
@@ -126,10 +118,7 @@ export default function Portfolio() {
         </div>
       </div>
       <hr />
-      <CommentSection
-        comments={comments}
-        createComment={createComment}
-      />
+      <CommentSection comments={comments} createComment={createComment} />
     </div>
   );
 }

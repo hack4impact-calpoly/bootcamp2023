@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { IBlog, IComment } from "@/app/database/blogSchema";
+import { IBlog } from "@/app/database/blogSchema";
 import styles from "./blogview.module.css";
-import Comment from "@/app/components/comment";
 import CommentSection from "@/app/components/comment/CommentSection";
+import LoadingSpinner from "@/app/components/LoadingSpinner";
+import toast from "react-hot-toast";
 
 type Props = {
   params: { slug: string };
@@ -12,12 +13,10 @@ type Props = {
 export default function Blog({ params: { slug } }: Props) {
   const [blog, setBlog] = useState<IBlog | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchBlog() {
       setIsLoading(true);
-      setError(null);
       try {
         const res = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/blog/${slug}`,
@@ -33,8 +32,7 @@ export default function Blog({ params: { slug } }: Props) {
         const data = await res.json();
         setBlog(data);
       } catch (err) {
-        console.error(`error: ${err}`);
-        setError("Failed to load blog");
+        toast.error("Failed to fetch blog");
       } finally {
         setIsLoading(false);
       }
@@ -70,14 +68,15 @@ export default function Blog({ params: { slug } }: Props) {
 
       const data = await res.json();
       setBlog(data);
+      toast.success("Comment created!");
       return true;
     } catch (err) {
+      toast.error("Failed to create comment!");
       return false;
     }
   }
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (isLoading) return <LoadingSpinner />;
 
   return (
     <div className={styles.blogView}>
