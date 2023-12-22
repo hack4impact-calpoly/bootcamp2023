@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './blogPreview.module.css'
 import Image from "next/image";
-import type { IBlog } from '../database/blogSchema';
+import type { IBlog } from '@/database/blogSchema';
 
 export default function BlogPreview(props: IBlog) {
     return (
