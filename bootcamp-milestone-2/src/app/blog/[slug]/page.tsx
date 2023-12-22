@@ -1,18 +1,11 @@
 import React from "react";
-import IBlog from "../../../database/blogSchema";
-import IComment from "../../../database/blogSchema";
+import { IBlog } from "../../../database/blogSchema";
+import { IComment } from "../../../database/blogSchema";
 import Image from "next/image";
-import Comment from "../../../components/Comment";
 import getBlog from "../../../helpers/getblog";
-import postComment from "../../../helpers/postComment";
-import SubmitCommentForm from "../../../components/SubmitCommentForm";
-
+import CommentSection from "../../../components/CommentSection";
 type Props = {
   params: { slug: string };
-};
-
-type CommentsProps = {
-  comment: IComment;
 };
 
 //renders the Blog on the page?
@@ -48,17 +41,7 @@ export default async function Blog({ params: { slug } }: Props) {
             />
           </div>
         </div>
-        <div className="commentsContainer">
-          <div className="commentsHeader">
-            <h2>Comments</h2>
-          </div>
-          <div className="commentsList">
-            {blog.comments.map((comment: typeof IComment, index) => (
-              <Comment key={index} comment={comment} />
-            ))}
-          </div>
-          <SubmitCommentForm slug={slug} />
-        </div>
+        <CommentSection blog={blog} slug={slug} />
       </main>
     );
   } catch (error) {

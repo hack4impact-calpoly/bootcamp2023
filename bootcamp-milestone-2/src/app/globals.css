@@ -69,18 +69,7 @@ a {
   height: 100%;
 }
 
-.commentsContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  background: #f1f1f1;
-  width: 25%;
-  height: 100%;
-  margin-left: 25px;
-}
+
 
 .blogsHolder h1 {
   margin-bottom: 10px;

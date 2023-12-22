@@ -13,7 +13,7 @@ const commentSchema = new mongoose.Schema<IComment>({
 });
 
 // typescript type (can also be an interface)
-type IBlog = {
+export interface IBlog {
   date: string;
   title: string;
   description: string; // for preview

@@ -1,0 +1,25 @@
+.commentsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background: #f1f1f1;
+  width: 25%;
+  height: 100%;
+  margin-left: 25px;
+}
+
+.commentsList {
+  /* Set a fixed height for the commentsList */
+  height: 405px; /* Adjust the height as needed */
+  /* Add a scrollbar to the commentsList when content overflows */
+  overflow-y: auto;
+  border: 1px solid gray;
+}
+
+.scrollContainer {
+  /* Set a max-height to allow scrolling within the container */
+  max-height: 100%;
+}

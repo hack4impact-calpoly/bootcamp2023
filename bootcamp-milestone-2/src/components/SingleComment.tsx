@@ -1,4 +1,5 @@
-import styles from "./Comment.module.css";
+import styles from "./SingleComment.module.css";
+import { IComment } from "../database/blogSchema";
 
 {
   /* When we pass props, the name that we use to pass values
@@ -33,7 +34,7 @@ function parseCommentTime(time: Date) {
   return new Date(dateObject).toLocaleDateString("en-US", options);
 }
 
-export default function Comment({ comment }: CommentProps) {
+export default function SingleComment({ comment }: CommentProps) {
   return (
     <div className={styles.comment}>
       <div className={styles.commentTopBar}>

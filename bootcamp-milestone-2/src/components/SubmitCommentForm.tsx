@@ -6,7 +6,7 @@ import { IComment } from "../database/blogSchema";
 
 interface SubmitCommentFormParams {
   slug: string;
-  comment: IComment;
+  onCommentSubmit: (newComment: IComment) => void;
 }
 
 export default function SubmitCommentForm(props: SubmitCommentFormParams) {
@@ -33,6 +33,8 @@ export default function SubmitCommentForm(props: SubmitCommentFormParams) {
 
     setUser("");
     setComment("");
+
+    props.onCommentSubmit(finalComment);
   };
 
   return (

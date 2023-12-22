@@ -2,7 +2,6 @@ async function postComment(
   slug: string,
   comment: { user: string; comment: string; time: Date }
 ) {
-
   try {
     //creates a POST request at the api endpoint with the specified comment
     const res = await fetch(`http://localhost:3000/api/blog/${slug}/comment`, {
@@ -19,7 +18,6 @@ async function postComment(
       return null;
     }
     return res;
-
   } catch (err: unknown) {
     console.log(`error: ${err}`);
     return null;
