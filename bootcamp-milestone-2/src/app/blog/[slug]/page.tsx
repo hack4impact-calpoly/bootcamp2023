@@ -21,11 +21,12 @@ export default function Blog({ params }: { params: { slug: string } }) {
   useEffect(() => {
     const fetchBlogData = async () => {
       const data = await fetchBlog(slug);
+      console.log("data fetched and set!");
       setBlog(data);
     };
 
     fetchBlogData();
-  }, [blog]);
+  }, [slug]);
 
   // checks that blog exists
   // if (!blog) {
