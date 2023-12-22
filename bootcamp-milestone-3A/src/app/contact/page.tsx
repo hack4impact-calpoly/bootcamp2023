@@ -3,18 +3,19 @@ import React, { FormEvent, useRef, useState } from "react"
 import emailjs from '@emailjs/browser';
 
 export default function Contact() {
-    const form=useRef();
+    const form=useRef(null);
     const [fState, setFState]=useState({
         user_name: '',
         email: '',
         message: ''
 
     })
+    // @ts-ignore
     function onChange(e){
         const { name, value } = e.target;
         setFState(prevState => ({ ...prevState, [name]: value }));
     }
-
+    // @ts-ignore
     function sendEmail(e){
         e.preventDefault();
         console.log(fState.user_name)
