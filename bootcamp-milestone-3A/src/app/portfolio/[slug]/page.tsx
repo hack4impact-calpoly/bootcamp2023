@@ -16,7 +16,7 @@ async function getProject(slug: string) {
 			throw new Error("Failed to fetch project");
 		}
 
-		return res.json();
+		return await res.json();
 	} catch (err: unknown) {
 		console.log(`error: ${err}`);
 		return null;
