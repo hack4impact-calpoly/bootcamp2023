@@ -17,18 +17,6 @@ type Params = {
       const blog = await blogSchema.findOne({ slug:slug }).orFail();
       return NextResponse.json(blog);
     } catch (err) {
-      return NextResponse.json("Blog not found.", { status: 501 });
+      return NextResponse.json('Blog not found: ' + {slug} , { status: 404 });
     }
   }
-
-  // export async function POST(req: NextRequest) {
-  //   const body = req.body
-  //   const BlogSlug = req.params.bodySlug;
-  //   // validate body
-  //   if (BodySlug==null) {
-  //     return NextResponse.json("Blog not found.", {status: 501})
-  //   }
-    
-  //   // push comment object to document
-  //   Blog.update(...)
-  // }
