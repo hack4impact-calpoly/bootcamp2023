@@ -7,3 +7,8 @@
     margin: 2vw 5vw 2vw 5vw;
     position: relative;
 }
+
+.button_link {
+    color: white;
+    text-decoration: none;
+}

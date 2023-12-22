@@ -1,6 +1,3 @@
-import blogs from '@/app/blogData';
-import BlogPreview from '@/components/blogPreview';
-
 // You can name the function within page.tsx anything you want.
 export default function Home() {
   return (
@@ -53,10 +50,6 @@ export default function Home() {
 			</picture>
 			</div>
 		</div>
-
-		{blogs.map(blog => 
-			<BlogPreview {...blog} />
-		)}
 	  </>
 	) 
 }
