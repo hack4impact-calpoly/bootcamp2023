@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import connectDB from "@/helper/db"
-import Blogs from "@/database/blogSchema";
+import Projects from "@/database/projectSchema";
 
 
 type IParams = {
@@ -30,16 +30,17 @@ export async function POST(req: NextRequest, { params }: IParams) {
     await connectDB(); // function from db.ts before
 	const { id } = params; // another destructure
     const body = await req.json();
+    console.log("IN POST API FOR PROJECT");
     
 	try {
-		console.log("IN API FOR BLOG POST");
+        console
         const new_comment = {user: body.user, comment: body.comment, date: new Date(body.date)};
-		const blog = await Blogs.findOne({slug: `./blogs/${id}` }).orFail();
-        blog.comments.push(new_comment);
-        blog.save();
-		return NextResponse.json("Updated Blog", {status: 200});
+		const project = await Projects.findOne({slug: `./projects/${id}` }).orFail();
+        project.comments.push(new_comment);
+        project.save();
+		return NextResponse.json("Updated Project", {status: 200});
 	} catch (err) {
 		console.log("IN GET ERROR");
-		return NextResponse.json('Blog not found.', { status: 404 });
+		return NextResponse.json('Project not found.', { status: 404 });
 	}
 }
