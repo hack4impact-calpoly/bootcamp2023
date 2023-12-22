@@ -1,0 +1,8 @@
+{
+  "title": "favorite cheese",
+  "slug": "/cheeseBlog",
+  "date": ; "2023-10-26",
+  "description": "A blog of the best cheese i've tried",
+  "content": "Old Amsterdam Gouda is an explosion of flavor"
+  
+}
