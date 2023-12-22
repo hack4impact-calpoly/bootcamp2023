@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { IComment } from "../database/commentSchema";
-import style from "./commentsection.module.css";
+import style from "./commentSection.module.css";
 import { parseCommentTime } from "./comment";
 
 type CommentProps = {
