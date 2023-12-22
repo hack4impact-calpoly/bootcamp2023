@@ -8,7 +8,7 @@ type Props = {
 
 async function getProject(slug: string) {
 	try {
-		const res = await fetch(`http://localhost:3000/api/portfolio/${slug}`, {
+		const res = await fetch(`https://bootcamp-project-2023-bbgd-git-main-sumedha-kundurthis-projects.vercel.app/api/portfolio/${slug}`, {
 			cache: "no-store",	
 		})
 
