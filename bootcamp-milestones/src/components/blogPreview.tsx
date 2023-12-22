@@ -14,7 +14,7 @@ export default function BlogPreview(props: IBlog) {
                 {/* <h2>{props.date}</h2> */}
             </div>
             <Image src={props.image} alt="blog image" width={400} height={300} />
-            <button><a className={style.button_link} href={props.slug}>Read More</a></button>
+            <button><a className={style.button_link} href={`blog/${props.slug}`}>Read More</a></button>
         </div>
     );
 }
