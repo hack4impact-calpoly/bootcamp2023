@@ -11,6 +11,15 @@ type IComment = {
   time: Date;
 };
 
+type IBlog = {
+  title: string;
+  slug: string;
+  date: Date;
+  description: string; // for preview
+  content: string; // for individual blog page
+  comments: IComment[]; // array for comments
+};
+
 async function getBlog(title: string) {
   try {
     const res = await fetch(`http://localhost:3000/api/blog/${title}`);
@@ -26,7 +35,7 @@ async function getBlog(title: string) {
 }
 
 export default function Blog({ params: { title } }: Props) {
-  const [blog, setBlog] = useState(null);
+  const [blog, setBlog] = useState<IBlog | null>(null);
   useEffect(() => {
     const fetchData = async () => {
       const data = await getBlog(title);
@@ -41,7 +50,7 @@ export default function Blog({ params: { title } }: Props) {
     time: new Date(),
   });
 
-  const handleInput = (e) => {
+  const handleInput = (e: any) => {
     const fieldName = e.target.name;
     const fieldValue = e.target.value;
     setFormData((prevState) => ({
@@ -81,7 +90,7 @@ export default function Blog({ params: { title } }: Props) {
     return (
       <div>
         <h1>{blog.title}</h1>
-        <h2>{blog.date} </h2>
+        <h2>{blog.date.toLocaleString()} </h2>
         <h3>{blog.description}</h3>
         <p>{blog.content}</p>
 
