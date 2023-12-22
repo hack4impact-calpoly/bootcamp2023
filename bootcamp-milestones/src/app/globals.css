@@ -129,6 +129,15 @@ button {
   width: 25vw;
 }
 
+/* comment styles */
+.comment_container {
+  margin-top: 5vw;
+}
+
+.comment_container h2 {
+  font-size: 2.5vw;
+}
+
 /* footer styles */
 .footer {
   text-align: center;
