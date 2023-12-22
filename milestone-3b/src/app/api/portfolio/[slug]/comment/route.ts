@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/helpers/db";
-import Projects from "@/database/projectSchema";
+import Projects, {IComment} from "@/database/projectSchema";
 
 type IParams = {
     params: {
@@ -8,19 +8,22 @@ type IParams = {
     };
 };
 
+
 export async function POST(req: NextRequest, { params }: IParams) {
     await connectDB();
     const { slug } = params;
     try {
-        const blog = await Projects.findOne({ _id: slug }).orFail();
-        if (req.body) {
-            await Projects.updateOne({ slug }, { $push: { comments: req.body }});
-            return NextResponse.json("Success: Comment Added");
-        } 
-        else {
-            return NextResponse.json("Failed: Comment Not Added");
+        const { user, comment, time }: IComment = await req.json()
+        if (!user || !comment || !time) {
+            return NextResponse.json("Failed: Invalid Comment", { status: 400 });
         }
-    } catch (err) {
-        return NextResponse.json("Failed: Comment Not Added");
+        const project = await Projects.findOneAndUpdate({slug: slug}, {$push: {comments: {user: user, comment: comment, time: time}}});
+        console.log("Success: Comment Added")
+        await project.save();
+        return NextResponse.json("Success: Comment Added", { status: 200 });
+    } 
+
+    catch (err) {
+        return NextResponse.json("Failed: Comment Not Added", { status: 400 });
     }
 }

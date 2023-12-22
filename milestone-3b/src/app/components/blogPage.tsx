@@ -1,9 +1,10 @@
+'use client';
 import React from 'react';
 import Link from 'next/link';
 import style from './blogPage.module.css';
 import { IBlog, IComment } from '@/database/blogSchema';
 import Comment from './comment'
-
+import NewComment from "@/app/components/createComment";
 
 export default function BlogPage(blogpage: IBlog) {
     return (
@@ -25,18 +26,73 @@ export default function BlogPage(blogpage: IBlog) {
                 <Comment key={index} comment={comment} />
             ))}
         </div>
-        <div className=''>
-            <h3>Add Comments:</h3>
-            <form className={style.commentform}>
-                <label className = {style.label}>Name:</label>
-                <input type="text" id="name" className={style.commentname}/>
-
-                <label className = {style.label}>Comment:</label>
-                <textarea id="message" className={style.commentbody}/>
-
-                <input type="submit" id="submit" className={style.submitbutton}/>
-            </form>
-        </div>
+        <NewComment slug={blogpage.slug}/>
 	</div>
     )
 }
+
+
+
+
+    // const [blog, setBlog] = useState<IBlog | null>(null);
+    // useEffect(() => {
+    //     getBlogBySlug(blogpage.slug).then((blog: IBlog | null) => {
+    //       setBlog(blog);
+    //     });
+    //   }, [blogpage.slug]);
+
+
+
+// const [blog, setBlog] = useState<IBlog | null>(null);
+    // useEffect(() => {
+    //     getBlogBySlug(slug).then((blog: IBlog | null) => {
+    //       setBlog(blog);
+    //     });
+    //   }, [slug]);
+
+    // async function handleSumbit(e: React.FormEvent<HTMLFormElement>) {
+    //     e.preventDefault();
+    
+    //     try {
+    //       const formElement = e.target as HTMLFormElement;
+    //         const nameInput =
+    //           formElement.querySelector<HTMLInputElement>(
+    //             'input[name="name"]'
+    //           );
+    //         const descriptionText =
+    //           formElement.querySelector<HTMLTextAreaElement>(
+    //             'textarea[name="comment"]'
+    //           );
+    
+    //         const newComment: IComment = {
+    //           user: nameInput?.value || "",
+    //           comment: descriptionText?.value || "",
+    //           time: new Date(),
+    //         };
+    
+    //         const response = await fetch(
+    //           `/api/blog/${slug}/comment`, {
+    //             method: "POST",
+    //             headers: { 'Content-Type': "application/json" },
+    //             body: JSON.stringify(newComment),
+    //           });
+    
+    //         if (nameInput) nameInput.value = "";
+    //         if (descriptionText) descriptionText.value = "";
+    
+    //         if (response.status === 200)
+    //           setBlog({
+    //             title: blog?.title || "",
+    //             slug: blog?.slug || "",
+    //             date: blog?.date || new Date(),
+    //             description: blog?.description || "",
+    //             content: blog?.content || "",
+    //             comments: blog
+    //               ? [...blog.comments, newComment]
+    //               : [newComment],
+    //           });
+    //     } catch (err) {
+    //       console.error(err);
+    //     }
+    
+    // }
