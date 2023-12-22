@@ -12,3 +12,17 @@
   align-items: center;
   margin-top: 50px;
 }
+
+.inputSubmit {
+  background-color: rgba(58, 90, 64, 1);
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  transition: all 200ms linear;
+  border: none;
+}
+
+.inputSubmit:hover {
+  background-color: rgba(58, 90, 64, 2);
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

@@ -25,7 +25,12 @@ export default function ContactUs() {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          console.log("Email Sent! Server Response is: ", result.text);
+
+          //resets the three input values
+          form.current[0].value = "";
+          form.current[1].value = "";
+          form.current[2].value = "";
         },
         (error) => {
           console.log(error.text);
