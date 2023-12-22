@@ -1,24 +1,55 @@
+import React from "react";
 import BlogPreview from "../components/blogPreview";
-import blogs from "../blogData";
+import connectDB from "../helpers/db";
+import blogSchema from "../database/blogSchema";
 
-export default function Blog() {
-  return (
-    <>
-      <main>
-        <h1 className="page-title">Blog</h1>
-        <div className="blog">
-          {blogs.map(
-            (blog) => (
-              <BlogPreview
-                {...blog}
-              />
-            ) // This is how we call the component
-          )}
-        </div>
-      </main>
-      <footer className="footer">
-        © 2023 Angela Chen | All Rights Reserved
-      </footer>
-    </>
-  );
+async function getBlogs() {
+  await connectDB(); // function from db.ts before
+
+  try {
+    // query for all blogs and sort by date
+    const blogs = await blogSchema.find().sort({ date: -1 }).orFail();
+    // send a response as the blogs as the message
+    return blogs;
+  } catch (err) {
+    return null;
+  }
+}
+
+export default async function Blog() {
+  const blogPosts = await getBlogs();
+  if (blogPosts) {
+    return (
+      <>
+        <main>
+          {blogPosts.map((blog) => (
+            <BlogPreview
+              title={blog.title}
+              slug={blog.slug}
+              date={JSON.stringify(blog.date)}
+              description={blog.description}
+              content={blog.content}
+              comments={blog.content}
+              image={blog.image}
+            />
+          ))}
+        </main>
+        <footer className="footer">
+          © 2023 Angela Chen | All Rights Reserved
+        </footer>
+      </>
+    );
+  } else {
+    // handling null that may be returned if no blogs are found
+    return (
+      <>
+        <main>
+          <h1>No Blogs Found</h1>
+        </main>
+        <footer className="footer">
+          © 2023 Angela Chen | All Rights Reserved
+        </footer>
+      </>
+    );
+  }
 }
