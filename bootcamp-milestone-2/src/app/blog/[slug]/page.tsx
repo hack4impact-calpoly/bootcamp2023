@@ -25,12 +25,12 @@ export default function Blog({ params }: { params: { slug: string } }) {
     };
 
     fetchBlogData();
-  }, []);
+  }, [slug]);
 
   // checks that blog exists
-  // if (!blog) {
-  //   return <div>Blog not found or has no content</div>;
-  // }
+  if (!blog) {
+    return <div>Blog not found or has no content</div>;
+  }
 
   const contents = blog?.content;
 
