@@ -1,8 +1,7 @@
 import ProjectComponent from '@/components/project';
 import ProjectModel from '@/database/projectSchema';
 import connectDB from '@/helpers/db';
-import Image from 'next/image'
-import Link from "next/link";
+
 
 export default function Portfolio() {
     async function getProjects() {
@@ -21,7 +20,7 @@ export default function Portfolio() {
     return(
         <>
         <main>
-            <h1 className="styles.portfolio-title">Portfolio</h1>
+            <h1 className="index-title">Portfolio</h1>
             <div className="project">
             {getProjects().then(
             (projects) =>

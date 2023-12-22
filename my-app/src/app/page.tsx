@@ -19,7 +19,7 @@ export default function Home() {
             </p>
             <p>
               I'm a junior computer science student at Cal Poly interested in
-              full-stack development,<br></br>
+              full-stack development,<br></br> <br />
               and I recently transferred from Santa Barbara City College.
               <br></br>I was born and raised in Iran and in fact lived there my
               <em>entire</em> life - until 2 years ago, <br></br>
@@ -27,10 +27,10 @@ export default function Home() {
               <br /><br />
               I've recently become interested in AI and machine learning and am excited to learn more.
             </p>  
-            <p>To keep up with my latest interests, make sure to check out my blogs!</p>
+            <p>To keep up with my latest interests, make sure to check out my blogs! <br /></p>
             
-            <p>Welcome to my website! Grab a cookie on your way out.</p>
-            
+            <p>Welcome to my website! Grab a cookie on your way out. <br /></p>
+                 
           </div>
         </div>
       </main>
