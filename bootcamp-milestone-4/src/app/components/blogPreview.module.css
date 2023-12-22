@@ -1,0 +1,11 @@
+
+.blog_link {
+    text-decoration: none;
+    color: var(--cg-darkest-green);
+}
+.blog_container {
+    background-color: var(--cg-ivory) ;
+    margin: 1rem 5rem 0 5rem;
+    padding: 3vw;
+    border-radius: 5px;
+}
