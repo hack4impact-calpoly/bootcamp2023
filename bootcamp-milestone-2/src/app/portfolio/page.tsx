@@ -18,7 +18,6 @@ async function getProjects(): Promise<null | Project[]> {
 
 export default async function Portfolio() {
   const projects = await getProjects();
-  console.log(projects)
 
   if (projects === null) {
     return (
@@ -33,8 +32,6 @@ export default async function Portfolio() {
       <h1 className="page-title">Portfolio</h1>
       <div className={style.project}>
         {projects.map(project => {
-          console.log(project.src)
-          console.log(project.description)
           return (
             <>
             <Link href={`${project.href}`}>
