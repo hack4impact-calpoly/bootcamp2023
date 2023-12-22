@@ -20,7 +20,10 @@ export async function POST(req: NextRequest, { params }: IParams) {
   }
 
   if (request !== null) {
-    const { name, comment, time } = request.comment;
+    const comment = request.comment;
+    const user = request.user;
+    const time = request.time;
+
     const { slug } = params; // another destructure
 
     try {
@@ -28,9 +31,18 @@ export async function POST(req: NextRequest, { params }: IParams) {
       const result = await blogSchema.findOneAndUpdate(
         //adds the comment to the specified entry
         { slug: slug },
-        { $push: { comments: { name, comment, time } } },
+        {
+          $push: {
+            comments: { user, comment, time },
+          },
+        },
         { new: true }
       );
+
+      console.log("request: ", request);
+      console.log("user: ", request.user);
+      console.log("time: ", request.time);
+      console.log("comment: ", request.comment);
 
       console.log("Success: ", result);
 

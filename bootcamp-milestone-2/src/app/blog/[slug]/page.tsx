@@ -3,9 +3,9 @@ import IBlog from "../../../database/blogSchema";
 import IComment from "../../../database/blogSchema";
 import Image from "next/image";
 import Comment from "../../../components/Comment";
-import ContactUs from "../../../components/ContactUs";
 import getBlog from "../../../helpers/getblog";
 import postComment from "../../../helpers/postComment";
+import SubmitCommentForm from "../../../components/SubmitCommentForm";
 
 type Props = {
   params: { slug: string };
@@ -57,6 +57,7 @@ export default async function Blog({ params: { slug } }: Props) {
               <Comment key={index} comment={comment} />
             ))}
           </div>
+          <SubmitCommentForm slug={slug} />
         </div>
       </main>
     );

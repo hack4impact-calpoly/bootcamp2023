@@ -37,7 +37,7 @@ export default function Comment({ comment }: CommentProps) {
   return (
     <div className={styles.comment}>
       <div className={styles.commentTopBar}>
-        <h4 className={styles.commentName}>{comment.name}</h4>
+        <h4 className={styles.commentName}>{comment.user}</h4>
         <span className={styles.commentTime}>
           {parseCommentTime(comment.time)}
         </span>
