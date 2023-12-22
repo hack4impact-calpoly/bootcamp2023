@@ -43,8 +43,8 @@ export default async function Portfolio() {
               <div className={style["project-details"]}>
                 <p className={style["project-name"]}>{project.name}</p>
                 <p className={style["project-description"]}>{project.description}</p>
-                {project.comments.map((comment: Comment) => (
-                  <CommentComponent comment={comment} />
+                {project.comments.map((comment: Comment, idx) => (
+                  <CommentComponent key={idx} comment={comment} />
                 ))}
                 <Link href={`${project.href}`}>Learn more</Link>
               </div>

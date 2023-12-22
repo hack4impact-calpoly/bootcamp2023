@@ -40,7 +40,7 @@ export default async function Blog(params: Props) {
       <p>{blog.description}</p>
       <Image src={`${blog.src}`} alt={`${blog.alt}`} width="250" height="250" />
       {blog.comments.map((comment: Comment, idx: number) => (
-        <CommentComponent comment={comment} key={idx} />
+        <CommentComponent key={idx} comment={comment} />
       ))}
     </>
   )
