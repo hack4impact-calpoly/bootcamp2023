@@ -2,6 +2,7 @@ import React from 'react';
 import style from './projectPreview.module.css'
 import Image from 'next/image';
 import type Project from "@/app/projectData"
+// @ts-ignore
 export default function ProjectPreview(props: Project) {
   return (
     
