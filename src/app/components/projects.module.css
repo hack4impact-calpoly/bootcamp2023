@@ -1,0 +1,89 @@
+.projectTitle {
+  margin: 0rem 3rem;
+  text-align: center;
+}
+
+.projectName:hover {
+  color: #6c74e4;
+}
+
+.projectDescription {
+  font-weight: lighter;
+  text-align: center;
+}
+
+.projectImage {
+  display: grid;
+  place-items: center;
+  margin: 1rem auto;
+}
+
+.projectDetails {
+  display: block;
+  position: relative;
+  margin: 1rem 3rem;
+  background-color: white;
+  width: auto;
+  opacity: 0.85;
+  padding: 0.5rem;
+  border: 4px solid black;
+  line-height: 23px;
+}
+
+.projectMore {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: right;
+}
+
+.img {
+  border-radius: 50%;
+  transition: 750ms;
+  border: 4px solid black;
+}
+
+.commentTitle {
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+.newComments {
+  margin: 3rem 3rem;
+  text-align: left;
+  box-sizing: 50%;
+  width: auto;
+  position: relative;
+  background-color: white;
+  opacity: 0.85;
+  padding: 0.5rem;
+  line-height: 23px;
+  border: 2px solid black;
+}
+
+.new {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0 0;
+}
+
+.submit {
+  margin-left: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.newName {
+  margin-bottom: 5px;
+  align-self: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  width: 100%;
+}
+
+.newComment {
+  margin-bottom: 10px;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
