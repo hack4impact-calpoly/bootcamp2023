@@ -1,28 +1,41 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
-export default function Contact() {
+const ContactUs = () => {
+  const form = useRef();
+  const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
+  const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+  const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+
+  const sendEmail = (e: any) => {
+    console.log("here");
+    e.preventDefault();
+    if (serviceId && templateId && publicKey) {
+      emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    } else {
+      console.log(serviceId, templateId, publicKey);
+    }
+  };
+
   return (
-    <>
-      <main>
-        <h1 className="'page-title">
-          &quot;All our dreams can come true if we have the courage to pursue
-          them.&quot; - Walt Disney
-        </h1>
-        <form id="contact-form">
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" required />
-          <label for="email">Email</label>
-          <input type="email" required />
-          <label for="message">Message</label>
-          <textarea required></textarea>
-          <input type="submit" required />
-        </form>
-        <p>Hello World! This is my website.</p>
-        <p>This is a sentence.</p>
-      </main>
-      <footer className="footer">
-        © 2023 Tammy Si&apos;s Personal Website | All Rights Reserved
-      </footer>
-    </>
+    <form ref={form} onSubmit={sendEmail}>
+      <label>Name</label>
+      <input type="text" name="from_name" />
+      <label>Email</label>
+      <input type="email" name="user_email" />
+      <label>Message</label>
+      <textarea name="message" />
+      <input type="submit" value="Send" />
+    </form>
   );
-}
+};
+
+export default ContactUs;
