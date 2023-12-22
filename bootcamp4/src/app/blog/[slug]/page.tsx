@@ -20,6 +20,7 @@ type IParams = {
 }
 
 export default function Home({ params: { slug } }: IParams) {
+    const [isLoading, setLoading] = useState(true)
     const [blogData, setBlogData] = useState({
         title: '',
         date: '',
@@ -54,20 +55,25 @@ export default function Home({ params: { slug } }: IParams) {
             comment: '',
         });
     }
-
+    console.log(blogData);
     
     useEffect(() => {
         const fetchBlogData = async () => {
-          const response = await fetch(`https://bootcamp-project-2023.vercel.app/api/blog/${slug}`);
-          const data = await response.json();
-          setBlogData(data);
-        };
-    
-        fetchBlogData();
-      }, [slug]); 
+            const response = await fetch(`https://bootcamp-project-2023.vercel.app/api/blog/${slug}`);
+            const data = await response.json();
+            setBlogData(data);
+            setLoading(false);
 
-    return(  
+        };
+        fetchBlogData();
+    }, [slug]); 
+
+    return( 
         <main className = {styles.main}>
+        {isLoading ? (
+            <p>loading...</p>
+        ) :
+        (<div className = {styles.main}>
         <h2>{blogData.title}</h2>
         <h3>Date: {blogData.date}</h3>
         <p>{blogData.content}
@@ -102,6 +108,8 @@ export default function Home({ params: { slug } }: IParams) {
                 </form>
             </div>
         </div>
+        </div>)}
         </main>
     )
 }
+

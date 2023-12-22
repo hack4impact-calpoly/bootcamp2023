@@ -14,6 +14,7 @@ type IParams = {
 }
 
 export default function Home({ params: { slug } }: IParams) {
+    const [isLoading, setLoading] = useState(true)
     const [projectData, setProjectData] = useState({
         title: '',
         description: '',
@@ -57,6 +58,7 @@ export default function Home({ params: { slug } }: IParams) {
           const data = await response.json();
           console.log("data", data)
           setProjectData(data);
+          setLoading(false)
           console.log(projectData)
         };
     
@@ -65,6 +67,8 @@ export default function Home({ params: { slug } }: IParams) {
 
     return(  
         <main className = {styles.main}>
+        {isLoading ? (<p>loading...</p>) :(
+        <div className = {styles.main}>
         <h2>{projectData.title}</h2>
         <p className = {styles.content}>
             {projectData.content}
@@ -96,6 +100,8 @@ export default function Home({ params: { slug } }: IParams) {
                 </form>
             </div>
         </div>
+        </div>
+        )}
         </main>
     )
 }
