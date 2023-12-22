@@ -6,14 +6,14 @@ type Props = {
 }
 
 
-async function getBlog(slug: string) {
+async function getProject(slug: string) {
 	try {
-		const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
+		const res = await fetch(`http://localhost:3000/api/portfolio/${slug}`, {
 			cache: "no-store",	
 		})
 
 		if (!res.ok) {
-			throw new Error("Failed to fetch blog");
+			throw new Error("Failed to fetch project");
 		}
 
 		return res.json();
@@ -25,33 +25,33 @@ async function getBlog(slug: string) {
 
 export default async function Page({params: {slug}}: Props) {
 	//slug = params.slug;
-	const blog = await getBlog(slug);
+	const project = await getProject(slug);
   
-    if(blog !=null){
+    if(project !=null){
         return (
             <>
                 <main>
                 <div className="content">
                     <br></br>
-                    Title: {blog.title}<br></br>
-                    Date: {blog.date}<br></br>
+                    Title: {project.title}<br></br>
+                    Github: {project.github}<br></br>
                     <br></br>
-                    <img src={`/${blog.image}`} height={200} width={200}></img>
+                    <img src={`/${project.image}`} height={200} width={200}></img>
                      <br></br>
-                    {blog.content} <br></br>
+                    {project.content} <br></br>
                     <br></br>
                     
                     
                 </div>
                 <CommentEntry params={{
                         slug: slug,
-                        component: "blog"
+                        component:"portfolio"
                     }}></CommentEntry>
                 </main>
                 
                 <div className="comments_box">
                     <h2>Comment Section:</h2>
-                    {blog.comments.map((comment: any, index: React.Key | null | undefined) => (
+                    {project.comments.map((comment: any, index: React.Key | null | undefined) => (
 	                <Comment key={index} comment={comment} />
 	            ))}
                     </div>
