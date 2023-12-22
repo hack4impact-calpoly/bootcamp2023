@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
 	}
 	await connectDB()
 	try {
-		const blog = await fetch(`http://localhost:3000/api/portfolio/${projectSlug}`)
+		const blog = await fetch(process.env.URL + `/api/portfolio/${projectSlug}`)
 		var result=projectSchema.collection.updateOne({
 			"slug":projectSlug
 		},{
