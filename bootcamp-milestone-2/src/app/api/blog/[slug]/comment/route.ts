@@ -9,32 +9,39 @@ type IParams = {
   };
 };
 
+const extractFormData = (formData: FormData): IComment | null => {
+  if (!formData || !formData.has("user") || !formData.has("comment")) {
+      return null;
+  }
+
+  const object = Object.fromEntries(Array.from(formData.entries()));
+
+  return {
+      user: object.user.toString(),
+      comment: object.comment.toString(),
+      time: new Date(),
+  };
+};
+
 export async function POST(req: NextRequest, { params }: IParams) {
   await connectDB();
   const { slug } = params;
 
   try {
-    //get blog with specified id
     const blog = await Blog.findOne({ slug }).orFail();
+    const formData = await req.formData();
 
-    //parse request body into new comment
-    const { user, comment, time }: IComment = await req.json();
-
-    //add new comment to blog
-    try {
-      await Blog.updateOne(
-        { slug },
-        { $push: { comments: { user, comment, time } } }
-      );
-    } catch (err) {
-      console.log(err);
-      return NextResponse.json("Could not push newComment", { status: 400 });
+    const comment: IComment | null = extractFormData(formData);
+    if (!comment) {
+      return NextResponse.json("Invalid form data.", { status: 400 });
     }
 
+    blog.comments.push(comment);
     await blog.save();
 
-    return NextResponse.json("Comment added successfully", { status: 200 });
+    return NextResponse.json(blog, { status: 200 });
   } catch (err) {
-    return NextResponse.json("Comment not added.", { status: 400 });
+    console.log(err);
+    return NextResponse.json("Blog not found.", { status: 404 });
   }
 }
