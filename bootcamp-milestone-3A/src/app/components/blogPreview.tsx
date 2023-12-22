@@ -2,6 +2,7 @@ import React from 'react';
 import style from './blogPreview.module.css'
 import Image from 'next/image';
 import Blog from '@/database/blogSchema'
+// @ts-ignore
 export default function BlogPreview(props: Blog) {
   let slug=props.slug
   return (
