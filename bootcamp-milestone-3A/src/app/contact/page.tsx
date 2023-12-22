@@ -31,6 +31,7 @@ export default function Contact() {
               console.log(error.text);
           });
         e.target.reset()
+        alert("It has been sent!")
       };
     
     return (
