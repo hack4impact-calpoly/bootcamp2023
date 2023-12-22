@@ -6,8 +6,15 @@ type IProject = {
   description: string; // for preview
   github: string;
   image: string;
+  content: string;
+  comments: IComment[]
 };
 
+type IComment = {
+  user: string;
+  comment: string;
+  time: Date;
+}
 
 // mongoose schema 
 const projectSchema = new Schema<IProject>({
@@ -15,7 +22,9 @@ const projectSchema = new Schema<IProject>({
     slug: { type: String, required: true },
     description: { type: String, required: true },
     github: { type: String, required: true },
-    image:{type: String, required: true}
+    image:{type: String, required: true},
+    content:{type: String, required: true},
+    comments:{}
 })
 
 // defining the collection and model

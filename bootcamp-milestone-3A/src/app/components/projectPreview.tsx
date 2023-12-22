@@ -9,7 +9,7 @@ export default function ProjectPreview(props: Project) {
 		// with your code from earlier milestones
     <main>
       <div className={style.div} id='project-id'>
-      <p className="project-name"><b>{props.title}</b></p>
+      <h3> <a href={`/portfolio/${props.slug}`}>{props.title}</a> </h3>
                 <div className="box2">
                         <Image src={props.image} alt="Picture of Website" height={200} width={250}></Image>
                         <p>{props.description}  <a href={props.github}>Github</a></p>
