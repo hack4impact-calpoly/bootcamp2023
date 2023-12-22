@@ -33,12 +33,11 @@ export async function POST(req: NextRequest, { params }: IParams) {
     console.log("IN POST API FOR PROJECT");
     
 	try {
-        console
         const new_comment = {user: body.user, comment: body.comment, date: new Date(body.date)};
 		const project = await Projects.findOne({slug: `./projects/${id}` }).orFail();
         project.comments.push(new_comment);
         project.save();
-		return NextResponse.json("Updated Project", {status: 200});
+		return NextResponse.json(project, {status: 200});
 	} catch (err) {
 		console.log("IN GET ERROR");
 		return NextResponse.json('Project not found.', { status: 404 });

@@ -2,13 +2,14 @@ import mongoose, { Schema } from "mongoose";
 
 
 type IComment = {
+    _id: string;
     user: string;
     comment: string;
     date: Date;
 }
 
 // typescript type (can also be an interface)
-type IBlog = {
+export type IBlog = {
     title: string;
     slug: string; 
     date: Date;

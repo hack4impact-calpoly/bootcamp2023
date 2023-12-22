@@ -5,7 +5,7 @@ import Projects from "@/database/projectSchema";
 
 type IParams = {
 		params: {
-			slug: string
+			id: string
 		}
 }
 

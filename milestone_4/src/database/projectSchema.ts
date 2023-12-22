@@ -1,6 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 export type IComment = {
+    map(arg0: (c: import("./commentSchema").IComment) => import("react").JSX.Element): unknown;
     _id: string;
     user: string;
     comment: string;

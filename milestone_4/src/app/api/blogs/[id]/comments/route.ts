@@ -37,7 +37,7 @@ export async function POST(req: NextRequest, { params }: IParams) {
 		const blog = await Blogs.findOne({slug: `./blogs/${id}` }).orFail();
         blog.comments.push(new_comment);
         blog.save();
-		return NextResponse.json("Updated Blog", {status: 200});
+		return NextResponse.json(blog, {status: 200});
 	} catch (err) {
 		console.log("IN GET ERROR");
 		return NextResponse.json('Blog not found.', { status: 404 });
