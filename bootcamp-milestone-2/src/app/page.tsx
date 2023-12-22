@@ -11,7 +11,7 @@ export default function Home() {
         </div>
         <div className={style["about-text"]}>
           <p>
-            Hi I'm <strong>Daniel</strong>! I'm a new <em>3rd year </em>
+            Hi I&aposm <strong>Daniel</strong>! I&aposm a new <em>3rd year </em>
             transfer student from San Diego, CA majoring in Computer Science at Cal Poly. 
             A fun fact about me is that I can whistle through my teeth. I enjoy programming 
             and playing games.

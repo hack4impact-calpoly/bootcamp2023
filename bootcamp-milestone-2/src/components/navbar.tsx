@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav className={style.navbar}>
       <h1 className={style.logo}>
-        <Link href="/">Daniel's Personal Website</Link>
+        <Link href="/">Daniel&aposs Personal Website</Link>
       </h1>
       <ul className={style["nav-list"]}>
         <li><Link href="/">Home</Link></li>
