@@ -21,8 +21,8 @@ const ProjectComponent: React.FC<ProjectProps> = ({
         className="project-image"
         src={image}
         alt={image_alt}
-        width={500}
-        height={491}
+        width={600}
+        height={300}
       ></Image>
     </Link>
     <div className="project-details">

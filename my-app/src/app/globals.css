@@ -112,7 +112,6 @@ main {
   align-items: center;
   background-color: black;
   color: white;
-  position: absolute;
   bottom: 0;
   width: 100%;
   height: 2.5rem; 
@@ -185,6 +184,13 @@ main {
   padding: 2%;
 }
 
+.blog-title {
+  color: var(--cg-orange);
+  font-size: 32px;
+  font-weight: bold;
+  align-items: center;
+}
+
 
 .blog-component {
   display: flex;
@@ -194,4 +200,11 @@ main {
   justify-content: center;
   padding: 1%;
   /* border: 2px solid blue; */
+}
+
+
+.blog-container {
+  padding: 1%;
+  align-items: center;
+  background-color: var(--cg-cream);
 }

@@ -11,12 +11,10 @@ export default function BlogPreview({title, date, description, slug, id} : Blog)
 		// with your code from earlier milestones
     <div className={style.div}>
       <h3 className="blog-title">{title}</h3>
-      <div>
-        <div className="blog-container"></div>
+      <div className="blog-container">
         <p>{description}</p>
 		    <p>{date.toDateString()}</p>
         <Link href={slug}>Read More</Link>
-        
       </div>
 	</div>
 

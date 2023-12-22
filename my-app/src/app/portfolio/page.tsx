@@ -22,30 +22,22 @@ export default function Portfolio() {
         <>
         <main>
             <h1 className="styles.portfolio-title">Portfolio</h1>
-
-            {getProjects().then(
-          (projects) =>
-            projects &&
-            projects.map((project) => (
-              <ProjectComponent
-                name={project.name}
-                description={project.description}
-                image={project.image}
-                image_alt={project.image_alt}
-                link={project.link}
-              ></ProjectComponent>
-            ))
-        )}
             <div className="project">
-            
-                <div className="project-details">
-                    <p className="project-name">You're looking at it!</p>
-                    <Image src="/portfolio.png" alt="my-portfolio" width={600} height={300} ></Image>
-                    <p className="project-description">A forever improving portfolio website</p>
-                    <Link href="/">learn more</Link>     
-                </div>
-
+            {getProjects().then(
+            (projects) =>
+                projects &&
+                projects.map((project) => (
+                <ProjectComponent
+                    name={project.name}
+                    description={project.description}
+                    image={project.image}
+                    image_alt={project.image_alt}
+                    link={project.link}
+                ></ProjectComponent>
+                ))
+            )}
             </div>
+            
         </main>
         <br /><br />
         </>
@@ -53,3 +45,14 @@ export default function Portfolio() {
 }
 
 // <Image src="portfolio.png" alt="my-portfolio" width={500} height={500} ></Image>
+
+{/* <div className="project">
+            
+            <div className="project-details">
+                <p className="project-name">You're looking at it!</p>
+                <Image src="/portfolio.png" alt="my-portfolio" width={600} height={300} ></Image>
+                <p className="project-description">A forever improving portfolio website</p>
+                <Link href="/">learn more</Link>     
+            </div>
+
+        </div> */}
