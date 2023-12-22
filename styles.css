@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: rgb(250, 238, 221);
+}
+
+nav {
+    text-align: center;
+    margin-top: 1px;
+    padding: 1px;
+    background-color:#e0cad7;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+
+.Leila {
+    font-size: 45px;
+    text-align: center;
+}
+
+.resume {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:80%;
+}
+.entry-info {
+    text-align: left;
+}
+.entry-title {
+    font-size: 28px;
+}
+.entry-description {
+    font-size: 20px;
+}
+
+.page-title {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+}
+
+p {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 25px;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+    color:#bd6c6c;
+}
+
+.project {
+    text-align: center;
+}
+
+.project-details {
+    text-align: center;
+}
+
+#learn-more {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+.boat {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height:400px;
+    width: 400px;
+    border-radius: 30%;
+
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 1px;
+    padding: 1px;
+    background-color:#e0cad7;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+
+
+a:link {
+    color:blue;
+    text-decoration: underline;
+}
+a:visited {
+    color:rgb(196, 134, 203)
+}
+
+a.hover {
+    color:cornflowerblue;
+    text-decoration: underline;
+}
+input:focus {
+    border: 2px solid #bd6c6c;
+}
