@@ -1,0 +1,13 @@
+
+.gradient-radial {
+    background-image: var(--gradient-radial);
+    /* Add other styles as needed */
+  }
+  
+  .gradient-conic {
+    background-image: var(--gradient-conic);
+    /* Add other styles as needed */
+  }
+  
+  /* Add any other global styles here */
+  

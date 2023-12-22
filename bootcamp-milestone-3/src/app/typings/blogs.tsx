@@ -1,0 +1,2 @@
+// styles gradient
+import '../styles';
