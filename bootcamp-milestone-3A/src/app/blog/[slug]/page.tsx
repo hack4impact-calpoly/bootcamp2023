@@ -15,7 +15,7 @@ async function getBlog(slug: string) {
 		if (!res.ok) {
 			throw new Error("Failed to fetch blog");
 		}
-
+		console.log(res.json());
 		return res.json();
 	} catch (err: unknown) {
 		console.log(`error: ${err}`);
