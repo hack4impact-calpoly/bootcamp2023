@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import connectDB from "@/helper/db"
-import Project from "@/database/projectSchema";
+import Projects from "@/database/projectSchema";
 
 
 type IParams = {
@@ -26,13 +26,12 @@ type IParams = {
 
  */
 export async function GET(req: NextRequest, { params }: IParams) {
-    await connectDB() // function from db.ts before
-		const { slug } = params // another destructure
-
-	   try {
-	        const blog = await Project.findOne({ slug }).orFail()
-	        return NextResponse.json(blog)
-	    } catch (err) {
-	        return NextResponse.json('Project not found.', { status: 404 })
-	    }
+    await connectDB(); // function from db.ts before
+	const { id } = params; // another destructure
+	try {
+		const blog = await Projects.findOne({slug: `./projects/${id}` }).orFail()
+		return NextResponse.json(blog)
+	} catch (err) {
+		return NextResponse.json('Project not found.', { status: 404 })
+	}
 }

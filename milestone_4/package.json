@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.1",
     "axios": "^1.6.2",
+    "emailjs": "^4.0.3",
     "fetch": "^1.1.0",
     "isomorphic-unfetch": "^4.0.2",
     "mongodb": "^6.3.0",

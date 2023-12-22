@@ -1,7 +1,8 @@
 // ProjectPreview.tsx
 import React from 'react';
-import styles from './projectPreview.module.css'; // Adjust the import path as necessary
+import styles from './projectPreview.module.css'; 
 import type { IProject} from "../database/projectSchema";
+import Link from "next/link";
 
 
 export default function ProjectPreview(props: IProject ){
@@ -18,7 +19,13 @@ export default function ProjectPreview(props: IProject ){
             <li>{props.point3}</li>
             <br></br>
           </ul>
-          <a href={props.link} target="_blank" rel="noreferrer" className={styles.viewProjectLink}>View Project</a>
+          <Link href={props.slug}>
+                <button className={styles.p_btn}>Comments</button>
+          </Link>
+          <Link href={props.link} target="_blank" rel="noreferrer">
+            <button className={styles.p_btn}> View Project </button>
+          </Link>
+          {/* <a href={props.link} target="_blank" rel="noreferrer" className={styles.viewProjectLink}>View Project</a> */}
         </div>
       </div>
     );

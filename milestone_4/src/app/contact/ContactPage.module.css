@@ -1,0 +1,132 @@
+
+.contactFlexContainer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-top: 5rem;
+    padding-left: -10rem;
+    padding-right: 5rem;
+    min-height: 100vh;
+    background-color: #333;
+}
+
+.contactFlexContainer::before {
+    content: "";
+    background-color: rgb(99, 6, 249); 
+    width: 2px; 
+    height: 50%; 
+    opacity: 0.7; 
+    position: absolute; 
+    left: 45%; 
+    transform: translateX(-50%); 
+}
+
+.contactInfo {
+    align-items: stretch;
+    margin-top: 30px;
+    flex: 1;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-right: 2rem;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 500px;
+    margin-left: 200px;
+}
+
+.contactHeader {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.contactForm {
+    flex: 2;
+    max-width: 500px;
+    /* width: 100%; */
+    margin-top: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+}
+
+.formField {
+    background-color: #222; 
+    border: 1px solid #444;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    color: white;
+    width: 100%;
+    font-size: 1.25rem;
+    padding: 1rem; 
+}
+
+/* .formFieldInput{
+    background-color: #222; 
+    border: 1px solid #444;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    color: white;
+    width: 100%;
+    font-size: 1rem;
+    height: 1rem;
+} */
+
+.formField:focus {
+    outline: none;
+    border-color: #04AA6D; /* Accent color for focus */
+}
+
+.submitButton {
+    background-color: #04AA6D; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 1rem 1.5rem; 
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+    background-color: #037f58;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.contactItem {
+    max-height: 100px;
+    max-width: 300px;
+    width: 100%;
+    background-color: #222;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.contactItem i {
+    margin-right: 1rem;
+}
+
+
+.contactItem:hover {
+    background-color: #1f2020; /* Darker shade for hover state */
+}
