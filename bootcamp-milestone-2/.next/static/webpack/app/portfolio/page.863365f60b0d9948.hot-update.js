@@ -1,0 +1,21 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+self["webpackHotUpdate_N_E"]("app/portfolio/page",{
+
+/***/ "(app-pages-browser)/./src/app/portfolio/portfolio.module.css":
+/*!************************************************!*\
+  !*** ./src/app/portfolio/portfolio.module.css ***!
+  \************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+eval(__webpack_require__.ts("// extracted by mini-css-extract-plugin\nmodule.exports = {\"pageTitle\":\"portfolio_pageTitle__yHxgf\",\"projectTitle\":\"portfolio_projectTitle__lWBLZ\",\"projectName\":\"portfolio_projectName__t6RDQ\",\"projectDescription\":\"portfolio_projectDescription__ZIY0_\",\"projectImage\":\"portfolio_projectImage__DYVvk\",\"projectDetails\":\"portfolio_projectDetails__iMSZp\",\"projectMore\":\"portfolio_projectMore__TfdpT\",\"img\":\"portfolio_img__77UIy\",\"commentTitle\":\"portfolio_commentTitle__3kHzS\",\"newComments\":\"portfolio_newComments__VCcb1\",\"new\":\"portfolio_new__84Kre\",\"submit\":\"portfolio_submit__zbsfE\",\"newName\":\"portfolio_newName__B0yQp\",\"newComment\":\"portfolio_newComment__BsbVo\"};\n    if(true) {\n      // 1703240650964\n      var cssReload = __webpack_require__(/*! ./node_modules/next/dist/compiled/mini-css-extract-plugin/hmr/hotModuleReplacement.js */ \"(app-pages-browser)/./node_modules/next/dist/compiled/mini-css-extract-plugin/hmr/hotModuleReplacement.js\")(module.id, {\"publicPath\":\"/_next/\",\"esModule\":false,\"locals\":true});\n      module.hot.dispose(cssReload);\n      \n    }\n  \nmodule.exports.__checksum = \"82074ba2d935\"\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwcC1wYWdlcy1icm93c2VyKS8uL3NyYy9hcHAvcG9ydGZvbGlvL3BvcnRmb2xpby5tb2R1bGUuY3NzIiwibWFwcGluZ3MiOiJBQUFBO0FBQ0Esa0JBQWtCO0FBQ2xCLE9BQU8sSUFBVTtBQUNqQjtBQUNBLHNCQUFzQixtQkFBTyxDQUFDLHdNQUFnSyxjQUFjLHNEQUFzRDtBQUNsUSxNQUFNLFVBQVU7QUFDaEI7QUFDQTtBQUNBO0FBQ0EseUJBQXlCIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vX05fRS8uL3NyYy9hcHAvcG9ydGZvbGlvL3BvcnRmb2xpby5tb2R1bGUuY3NzP2I3ZWMiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5tb2R1bGUuZXhwb3J0cyA9IHtcInBhZ2VUaXRsZVwiOlwicG9ydGZvbGlvX3BhZ2VUaXRsZV9feUh4Z2ZcIixcInByb2plY3RUaXRsZVwiOlwicG9ydGZvbGlvX3Byb2plY3RUaXRsZV9fbFdCTFpcIixcInByb2plY3ROYW1lXCI6XCJwb3J0Zm9saW9fcHJvamVjdE5hbWVfX3Q2UkRRXCIsXCJwcm9qZWN0RGVzY3JpcHRpb25cIjpcInBvcnRmb2xpb19wcm9qZWN0RGVzY3JpcHRpb25fX1pJWTBfXCIsXCJwcm9qZWN0SW1hZ2VcIjpcInBvcnRmb2xpb19wcm9qZWN0SW1hZ2VfX0RZVnZrXCIsXCJwcm9qZWN0RGV0YWlsc1wiOlwicG9ydGZvbGlvX3Byb2plY3REZXRhaWxzX19pTVNacFwiLFwicHJvamVjdE1vcmVcIjpcInBvcnRmb2xpb19wcm9qZWN0TW9yZV9fVGZkcFRcIixcImltZ1wiOlwicG9ydGZvbGlvX2ltZ19fNzdVSXlcIixcImNvbW1lbnRUaXRsZVwiOlwicG9ydGZvbGlvX2NvbW1lbnRUaXRsZV9fM2tIelNcIixcIm5ld0NvbW1lbnRzXCI6XCJwb3J0Zm9saW9fbmV3Q29tbWVudHNfX1ZDY2IxXCIsXCJuZXdcIjpcInBvcnRmb2xpb19uZXdfXzg0S3JlXCIsXCJzdWJtaXRcIjpcInBvcnRmb2xpb19zdWJtaXRfX3pic2ZFXCIsXCJuZXdOYW1lXCI6XCJwb3J0Zm9saW9fbmV3TmFtZV9fQjB5UXBcIixcIm5ld0NvbW1lbnRcIjpcInBvcnRmb2xpb19uZXdDb21tZW50X19Cc2JWb1wifTtcbiAgICBpZihtb2R1bGUuaG90KSB7XG4gICAgICAvLyAxNzAzMjQwNjUwOTY0XG4gICAgICB2YXIgY3NzUmVsb2FkID0gcmVxdWlyZShcIkM6L1VzZXJzL2theWxhL09uZURyaXZlL0Rlc2t0b3AvYm9vdGNhbXAtcHJvamVjdC0yMDIzL2Jvb3RjYW1wLW1pbGVzdG9uZS0yL25vZGVfbW9kdWxlcy9uZXh0L2Rpc3QvY29tcGlsZWQvbWluaS1jc3MtZXh0cmFjdC1wbHVnaW4vaG1yL2hvdE1vZHVsZVJlcGxhY2VtZW50LmpzXCIpKG1vZHVsZS5pZCwge1wicHVibGljUGF0aFwiOlwiL19uZXh0L1wiLFwiZXNNb2R1bGVcIjpmYWxzZSxcImxvY2Fsc1wiOnRydWV9KTtcbiAgICAgIG1vZHVsZS5ob3QuZGlzcG9zZShjc3NSZWxvYWQpO1xuICAgICAgXG4gICAgfVxuICBcbm1vZHVsZS5leHBvcnRzLl9fY2hlY2tzdW0gPSBcIjgyMDc0YmEyZDkzNVwiXG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(app-pages-browser)/./src/app/portfolio/portfolio.module.css\n"));
+
+/***/ })
+
+});
