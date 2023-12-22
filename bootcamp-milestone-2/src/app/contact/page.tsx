@@ -7,26 +7,27 @@ export default function Contact() {
     <div>
       <main>
         <h1 className="pageTitle">Contact</h1>
-        <form id={style.contactForm}>
-          <label htmlFor="name">Name: </label>
-          <input type="text" id={style.name} name="name" placeholder="Name" />
-          <label htmlFor="email">Email: </label>
-          <input
-            type="text"
-            id={style.email}
-            name="email"
-            placeholder="Email"
-          />
-          <label htmlFor="message">Message: </label>
-          <textarea
-            rows={30}
-            cols={50}
-            id={style.message}
-            name="message"
-            placeholder="Type your message here..."
-          ></textarea>
-          <input type="submit" />
-        </form>
+        <div className={style.contact}>
+          <form id={style.contactForm}>
+            <label className={style.label} htmlFor="name">Name</label>
+            <input type="text" id={style.name} name="name" placeholder="Enter your name" />
+            <label className={style.label} htmlFor="email">Email</label>
+            <input
+              type="text"
+              id={style.email}
+              name="email"
+              placeholder="Enter your email"
+            />
+            <label className={style.label} htmlFor="message">Message</label>
+            <textarea
+              rows={10}
+              id={style.message}
+              name="message"
+              placeholder="Type your message here..."
+            ></textarea>
+            <input className={style.submit} type="submit" />
+          </form>
+        </div>
       </main>
     </div>
   );

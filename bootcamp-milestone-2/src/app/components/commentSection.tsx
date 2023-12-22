@@ -70,7 +70,13 @@ function CommentSection({
             type="submit"
             style={{
               marginLeft: "auto",
-              display: "flex",
+              display: "block",
+              textAlign: "center",
+              fontFamily: "Arial, Helvetica, sans-serif",
+              backgroundColor: "#c0aeeb",
+              width: "10%",
+              height: "5%",
+              padding: "5px",
             }}
           >
             Submit
