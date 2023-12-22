@@ -19,17 +19,17 @@ export default async function Blog() {
       if (blogPosts) {
             return(
                   <div>
-                  <h1 className="page-title">My Blogs</h1>
-                  <main>
-                        {blogs.map(blog => 
-                              <BlogPreview 
-                              title={blog.title}
-                              date={blog.date}
-                              description={blog.description}
-                              slug={blog.slug}
-                              />
-                        )}
-                  </main>
+                        <h1 className="page-title">My Blogs</h1>
+                        <main>
+                              {blogPosts.map(blog => 
+                                    <BlogPreview 
+                                    title={blog.title}
+                                    date={blog.date}
+                                    description={blog.description}
+                                    slug={blog.slug}
+                                    />
+                              )}
+                        </main>
                   </div>
             )
       } else {
