@@ -11,6 +11,7 @@ type Props = {
   image: string;
   alt: string;
   order: number;
+  key: number;
 };
 
 export default function ProjectInfo(props: Props) {

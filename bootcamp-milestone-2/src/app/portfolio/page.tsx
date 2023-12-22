@@ -23,7 +23,7 @@ export default async function Portfolio() {
         <main>
           <h1 className={style.pageTitle}>Portfolio</h1>
           <div className={style.projectList}>
-            {projectItems.map((project) => (
+            {projectItems.map((project, index) => (
               <ProjectInfo
                 title={project.title}
                 slug={project.slug}
@@ -32,6 +32,7 @@ export default async function Portfolio() {
                 image={project.image}
                 alt={project.alt}
                 order={project.order}
+                key={index}
               />
             ))}
           </div>
