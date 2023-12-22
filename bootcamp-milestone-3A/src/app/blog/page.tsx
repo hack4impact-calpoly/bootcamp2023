@@ -9,7 +9,8 @@ export default async function Blog() {
     if(blogs != null){
         return (
             <>
-            {(await blogs).map((blog: { title: string; description: string; slug: string; date: string}) => 
+            {// @ts-ignore: Object is possibly 'null'. 
+            (await blogs).map((blog: { title: string; description: string; slug: string; date: string}) => 
             <BlogPreview
                 title={blog.title}
                 description={blog.description}
