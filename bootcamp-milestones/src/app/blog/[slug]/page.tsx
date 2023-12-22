@@ -32,8 +32,9 @@ export default async function Blog({ params : {slug} }: Props) {
                 <h1>{blog.title}</h1>
                 {/* <p>{blog.date}</p> */}
                 <p>{blog.content}</p>
-                <h2>Comments</h2>
-                <>
+                
+                <div className="comment_container">
+                    <h2>Comments</h2>
                     {blog.comments.map((comment: IComment) => (
                         <Comment
                             comment={{
@@ -43,7 +44,7 @@ export default async function Blog({ params : {slug} }: Props) {
                             }}
                         />
                     ))}
-                </>
+                </div>
             </>
         );
     }
