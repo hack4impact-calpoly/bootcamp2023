@@ -28,11 +28,11 @@ export default function Blog({ params }: { params: { slug: string } }) {
   }, []);
 
   // checks that blog exists
-  if (!blog) {
-    return <div>Blog not found or has no content</div>;
-  }
+  // if (!blog) {
+  //   return <div>Blog not found or has no content</div>;
+  // }
 
-  const contents = blog.content;
+  const contents = blog?.content;
 
   const handleCommentChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -55,29 +55,31 @@ export default function Blog({ params }: { params: { slug: string } }) {
   }
 
   // creates different paragraphs for content
-  while (i < contents.length) {
-    paragraphs.push(
-      <li className={style.paragraph} key={i}>
-        {contents[i]}
-      </li>
-    );
-    paragraphs.push(<br />);
-    i++;
+  if (contents != undefined) {
+    while (i < contents.length) {
+      paragraphs.push(
+        <li className={style.paragraph} key={i}>
+          {contents[i]}
+        </li>
+      );
+      paragraphs.push(<br />);
+      i++;
+    }
   }
 
   return (
     <div>
       <main>
-        <h1 className={style.pageTitle}>{blog.title}</h1>
+        <h1 className={style.pageTitle}>{blog?.title}</h1>
         <h2 className={style.pageDate}>
-          <em>{blog.date}</em>
+          <em>{blog?.date}</em>
         </h2>
 
         <div className={style.pageContents}>
           <ul className={style.paragraphList}>{paragraphs}</ul>
           <div className={style.pageComments}>
             <h3 className={style.pageCommentsHeader}>Comments</h3>
-            {blog.comments.map((comment: IComment, index: number) => (
+            {blog?.comments.map((comment: IComment, index: number) => (
               <Comment key={index} comment={comment} />
             ))}
             <form
