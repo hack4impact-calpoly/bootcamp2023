@@ -9,7 +9,7 @@ type Props = {
 async function getBlog(slug: string) {
 	try {
 		console.log(' retrieving blog data ');
-		const res = await fetch("https://bootcamp-project-2023-bbgd-git-main-sumedha-kundurthis-projects.vercel.app" + `/api/blog/${slug}`, {
+		const res = await fetch(process.env.URL + `/api/blog/${slug}`, {
 			cache: "no-store",	
 		})
 
