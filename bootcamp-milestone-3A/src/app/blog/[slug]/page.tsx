@@ -8,7 +8,7 @@ type Props = {
 
 async function getBlog(slug: string) {
 	try {
-		const res = await fetch(`/api/blog/${slug}`, {
+		const res = await fetch(process.env.URL + `/api/blog/${slug}`, {
 			cache: "no-store",	
 		})
 
