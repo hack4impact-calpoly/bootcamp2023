@@ -46,25 +46,33 @@ function CommentSection({
           <Comment key={index} comment={comment} />
         ))}
       </div>
-      <div className={style.newComments}>
+      <div className={style.commentSection}>
         <form onSubmit={onCommentCreate} className={style.new}>
           <textarea
+            style={{ width: "100%" }}
             className={style.newName}
             placeholder="Enter (user)name."
             value={username}
             rows={1}
             onChange={(e) => setUsername(e.target.value)}
           ></textarea>
-
           <textarea
+            style={{ width: "100%" }}
             className={style.newComment}
             placeholder="Type a comment."
             rows={3}
             value={commentText}
             onChange={(e) => setCommentText(e.target.value)}
           ></textarea>
-
-          <button type="submit">Submit</button>
+          <button
+            type="submit"
+            style={{
+              marginLeft: "auto",
+              display: "flex",
+            }}
+          >
+            Submit
+          </button>
         </form>
       </div>
     </div>
