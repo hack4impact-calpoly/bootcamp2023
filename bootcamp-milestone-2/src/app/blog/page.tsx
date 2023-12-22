@@ -1,17 +1,16 @@
 import BlogPreview from "@/components/blogPreview";
 import connectDB from "@/helpers/db";
-import Blog from "@/database/blogSchema";
+import BlogSchema from "@/database/blogSchema";
+import { Blog } from "../blogData";
 
-async function getBlogs(){
-	await connectDB() // function from db.ts before
+async function getBlogs(): Promise<null | Blog[]> {
+	await connectDB();
 
 	try {
-			// query for all blogs and sort by date
-	    const blogs = await Blog.find().sort({ date: -1 }).orFail()
-			// send a response as the blogs as the message
-	    return blogs
+    const blogs = await BlogSchema.find().sort({ date: -1 }).orFail();
+    return blogs;
 	} catch (err) {
-	    return null
+    return null;
 	}
 }
 

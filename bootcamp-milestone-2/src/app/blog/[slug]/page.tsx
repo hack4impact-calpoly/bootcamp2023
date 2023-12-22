@@ -1,10 +1,42 @@
-import Blog from "@/components/blog";
-import blogs from "@/app/blogData";
+import Image from "next/image";
 
-export default function BlogPost({ params}: { params: Record<string, string>}) {
-  const slug = params.slug;
-  const blog = blogs.find(blog => blog.slug === `/blog/${slug}`);
-  return blog !== undefined ? (
-    <Blog blog={blog}></Blog>
-  ) : <div>No such blog exists</div>;
+type Props = {
+  params: { slug: string }
+}
+
+async function getBlog(slug: string) {
+	try {
+		const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
+			cache: "no-store",	
+		})
+
+		if (!res.ok) {
+			throw new Error("Failed to fetch blog");
+		}
+
+		return res.json();
+	} catch (err: unknown) {
+		console.log(`error: ${err}`);
+		return null;
+	}
+}
+
+export default async function Blog(params: Props) {
+  let slug = params.params.slug;
+	let blog = await getBlog(slug);
+
+  if (!blog) {
+    return (
+      <div>Blog not found</div>
+    )
+  }
+
+  return (
+    <>
+      <h1 className="blog-title">{blog.title}</h1>
+      <small>{new Date(blog.date).toLocaleDateString("US")}</small>
+      <p>{blog.description}</p>
+      <Image src={`${blog.src}`} alt={`${blog.alt}`} width="250" height="250" />
+    </>
+  )
 }

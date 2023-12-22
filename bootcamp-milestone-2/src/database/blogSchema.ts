@@ -14,6 +14,8 @@ type IBlog = {
   description: string; // for preview
   content: string; // for individual blog page
   comments: IComment[]; // array for comments
+  src: string;
+  alt: string;
 };
 
 
@@ -28,7 +30,9 @@ const blogSchema = new Schema<IBlog>({
       user: {type: String, required: true},
       comment: {type: String, required: true},
       time: {type: Date, required: false, default: new Date()}
-  }
+  },
+  src: { type: String, required: true },
+  alt: { type: String, required: true }
 })
 
 // defining the collection and model

@@ -1,20 +1,53 @@
 import Link from "next/link";
 import style from "./page.module.css";
 import Image from "next/image";
+import { Project } from "../projectData";
+import connectDB from "@/helpers/db";
+import ProjectSchema from "@/database/projectSchema";
 
-export default function Portfolio() {
+async function getProjects(): Promise<null | Project[]> {
+	await connectDB();
+
+	try {
+    const projects = await ProjectSchema.find().orFail();
+    return projects;
+	} catch (err) {
+    return null;
+	}
+}
+
+export default async function Portfolio() {
+  const projects = await getProjects();
+  console.log(projects)
+
+  if (projects === null) {
+    return (
+      <div>
+        Failed to load projects
+      </div>
+    )
+  }
+
   return (
     <>
       <h1 className="page-title">Portfolio</h1>
       <div className={style.project}>
-        <Link href="./">
-          <Image src="/webfront.PNG" alt="Logo of a website" width="5000" height="5000" />
-        </Link>
-        <div className={style["project-details"]}>
-          <p className={style["project-name"]}>Personal website</p>
-          <p className={style["project-description"]}>A website created with the Hack4Impact starter pack</p>
-          <Link href="./">Learn more</Link>
-        </div>
+        {projects.map(project => {
+          console.log(project.src)
+          console.log(project.description)
+          return (
+            <>
+            <Link href={`${project.href}`}>
+              <Image src={`${project.src}`} alt={`${project.alt}`} width="5000" height="5000" />
+            </Link>
+              <div className={style["project-details"]}>
+                <p className={style["project-name"]}>{project.name}</p>
+                <p className={style["project-description"]}>{project.description}</p>
+                <Link href={`${project.href}`}>Learn more</Link>
+              </div>
+            </>
+          )
+        })}
       </div>
     </>
   )
