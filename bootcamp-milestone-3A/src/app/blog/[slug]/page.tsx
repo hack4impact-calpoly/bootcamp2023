@@ -12,6 +12,7 @@ async function getBlog(slug: string) {
 		const res = await fetch("https://bootcamp-project-2023-bbgd-git-main-sumedha-kundurthis-projects.vercel.app" + `/api/blog/${slug}`, {
 			cache: "no-store",	
 		})
+		console.log("window location: "+ window.location.href)
 
 		console.log(` retrieving blog data status: ${res.ok} `);
 		if (!res.ok) {
