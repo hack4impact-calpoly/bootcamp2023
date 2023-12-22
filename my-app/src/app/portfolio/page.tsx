@@ -1,11 +1,41 @@
+import ProjectComponent from '@/components/project';
+import ProjectModel from '@/database/projectSchema';
+import connectDB from '@/helpers/db';
 import Image from 'next/image'
 import Link from "next/link";
 
 export default function Portfolio() {
+    async function getProjects() {
+        await connectDB();
+    
+        try {
+          // query for all blogs and sort by date
+          const projects = await ProjectModel.find().sort({ date: -1 }).orFail();
+          // send a response as the blogs as the message
+          return projects;
+        } catch (err) {
+          return null;
+        }
+      }
+
     return(
         <>
         <main>
             <h1 className="styles.portfolio-title">Portfolio</h1>
+
+            {getProjects().then(
+          (projects) =>
+            projects &&
+            projects.map((project) => (
+              <ProjectComponent
+                name={project.name}
+                description={project.description}
+                image={project.image}
+                image_alt={project.image_alt}
+                link={project.link}
+              ></ProjectComponent>
+            ))
+        )}
             <div className="project">
             
                 <div className="project-details">
