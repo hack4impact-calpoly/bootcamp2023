@@ -13,16 +13,26 @@ export default function Blog({ params }: { params: { slug: string } }) {
     name: "",
     comment: "",
   });
+  const [loading, setLoading] = useState(true);
 
   const slug = params.slug;
   let paragraphs = [];
   let i = 0;
 
+  // const data = await fetchBlog(slug);
+  // setBlog(data);
+
   useEffect(() => {
     const fetchBlogData = async () => {
-      const data = await fetchBlog(slug);
-      console.log("data fetched and set!");
-      setBlog(data);
+      try {
+        const data = await fetchBlog(slug);
+        console.log("data fetched and set!");
+        setBlog(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchBlogData();
@@ -66,6 +76,10 @@ export default function Blog({ params }: { params: { slug: string } }) {
       paragraphs.push(<br />);
       i++;
     }
+  }
+
+  if (loading) {
+    return <div>Loading...</div>;
   }
 
   return (
