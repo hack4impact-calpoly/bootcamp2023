@@ -39,8 +39,8 @@ export default async function Blog(params: Props) {
       <small>{new Date(blog.date).toLocaleDateString("US")}</small>
       <p>{blog.description}</p>
       <Image src={`${blog.src}`} alt={`${blog.alt}`} width="250" height="250" />
-      {blog.comments.map((comment: Comment) => (
-        <CommentComponent comment={comment} />
+      {blog.comments.map((comment: Comment, idx: number) => (
+        <CommentComponent comment={comment} key={idx} />
       ))}
     </>
   )
