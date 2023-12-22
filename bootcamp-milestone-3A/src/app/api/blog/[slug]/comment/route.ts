@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
 	}
 	await connectDB()
 	try {
-		const blog = await fetch(`http://localhost:3000/api/blog/${BlogSlug}`)
+		const blog = await fetch(process.env.URL + `/api/blog/${BlogSlug}`)
 		var result=blogSchema.collection.updateOne({
 			"slug":BlogSlug
 		},{
