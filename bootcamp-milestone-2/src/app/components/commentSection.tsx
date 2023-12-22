@@ -42,9 +42,11 @@ function CommentSection({
   return (
     <div>
       <div>
-        {comments.map((comment: IComment, index: number) => (
-          <Comment key={index} comment={comment} />
-        ))}
+        {comments && Array.isArray(comments)
+          ? comments.map((comment: IComment, index: number) => (
+              <Comment key={index} comment={comment} />
+            ))
+          : null}
       </div>
       <div className={style.commentSection}>
         <form onSubmit={onCommentCreate} className={style.new}>

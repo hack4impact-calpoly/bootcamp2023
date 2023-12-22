@@ -1,5 +1,6 @@
 import { Schema } from "mongoose";
 import mongoose from "mongoose";
+import { IComment } from "./commentSchema";
 
 // typescript type (can also be an interface)
 export type IProject = {
@@ -7,7 +8,13 @@ export type IProject = {
   slug: string;
   description: string;
   image: string;
-  comments: mongoose.Types.ObjectId;
+  comments: IComment[];
+};
+
+const comment = {
+  user: { type: String, required: true },
+  comment: { type: String, required: true },
+  time: { type: Date, required: false, default: new Date() },
 };
 
 // mongoose schema
@@ -16,11 +23,28 @@ const projectSchema = new Schema<IProject>({
   slug: { type: String, required: true },
   description: { type: String, required: true },
   image: { type: String, required: false },
-  comments: [],
+  comments: [comment],
 });
 
 // defining the collection and model
-const Project =
-  mongoose.models["projects"] || mongoose.model("projects", projectSchema);
+export const Project = mongoose.models["projects"] || mongoose.model("projects", projectSchema);
 
-export default Project;
+const projectCommentSchema = new mongoose.Schema<IComment>({
+  user: {
+    type: String,
+    required: true,
+  },
+  comment: {
+    type: String,
+    required: true,
+  },
+  time: {
+    type: Date,
+    required: false,
+    default: new Date(),
+  },
+});
+
+export const ProjectComment =
+  mongoose.models["projectcomment"] ||
+  mongoose.model("projectcomment", projectCommentSchema);

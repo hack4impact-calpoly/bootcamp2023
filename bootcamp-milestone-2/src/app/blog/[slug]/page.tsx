@@ -2,10 +2,8 @@
 import React, { useState, useEffect } from "react";
 import style from "../blog.module.css";
 import Image from "next/image";
-import Comment from "@/app/components/comment";
 import CommentSection from "@/app/components/commentSection";
 import { IBlog } from "../../database/blogSchema";
-import { IComment } from "../../database/commentSchema";
 
 type Props = {
   slug: string;
@@ -69,17 +67,18 @@ export default function Blog({ params }: { params: { slug: string } }) {
         }
       );
       if (!res.ok) {
-        throw new Error("Failed to create comment");
+        throw new Error("Failed to create comment.");
       }
       const data = await res.json();
       setBlog(data);
       return true;
     } catch (err) {
+      setError("Failed to create comment.");
       return false;
     }
   }
 
-  if (error) return <p>Error: {error}</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <div>
@@ -87,8 +86,8 @@ export default function Blog({ params }: { params: { slug: string } }) {
         <div>
           <h1 className={style.pageTitle}>{blog.title}</h1>
           <div className={style.blog}>
-          <Image src={blog.image} alt="" height={300} width={250}></Image>
-            <p>{blog.description}</p> 
+            <Image src={blog.image} alt="" height={300} width={250}></Image>
+            <p>{blog.description}</p>
           </div>
           <div>
             <div className={style.comments}>
@@ -106,4 +105,3 @@ export default function Blog({ params }: { params: { slug: string } }) {
     </div>
   );
 }
-
