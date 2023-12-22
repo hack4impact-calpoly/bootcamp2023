@@ -4,7 +4,7 @@ import connectDB from "../../helpers/db";
 import ProjectComp from "../../database/projectSchema";
 
 async function getProjects() {
-  const connection = await connectDB();
+  await connectDB();
 
   try {
     const projects = await ProjectComp.find().sort({ date: -1 }).orFail();
@@ -20,7 +20,6 @@ export default async function Portfolio() {
   if (projectItems) {
     return (
       <div>
-        {/*content goes here */}
         <main>
           <h1 className={style.pageTitle}>Portfolio</h1>
           <div className={style.projectList}>

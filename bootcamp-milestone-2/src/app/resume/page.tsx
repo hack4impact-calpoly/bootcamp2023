@@ -168,7 +168,7 @@ export default function Resume() {
             </div>
             <div className={style.entry}>
               <h3 className={style.entryTitle}>
-                AI Research - DeepMind's AlphaStar
+                AI Research - DeepMind AlphaStar
               </h3>
               <p className={style.entryInfo}></p>
               <p className={style.entryDescription}>

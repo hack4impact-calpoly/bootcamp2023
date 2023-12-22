@@ -25,7 +25,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
     };
 
     fetchBlogData();
-  }, [slug]);
+  }, []);
 
   // checks that blog exists
   if (!blog) {
