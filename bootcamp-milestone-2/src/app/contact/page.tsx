@@ -54,7 +54,6 @@ export default function Contact() {
               required
             />
             <br />
-            <br />
             <label className="all" htmlFor="email">
               Email
             </label>
@@ -66,7 +65,6 @@ export default function Contact() {
               placeholder="Email"
               required
             />
-            <br />
             <br />
             <label className="all" htmlFor="message">
               Message
@@ -80,7 +78,6 @@ export default function Contact() {
               required
             ></textarea>
             <br />
-            <br />
             <button className="submitButton" type="submit" disabled={loading}>
               Submit
             </button>
@@ -88,12 +85,12 @@ export default function Contact() {
           <div className={style.links}>
             <p>Email: snguy212@calpoly.edu</p>
             <div className={style.linksButtons}>
-              <Link href="https://www.linkedin.com/in/seanmnguyen/">
+              <Link href="https://www.linkedin.com/in/seanmnguyen/" target="_blank">
                 LinkedIn
               </Link>
             </div>
             <div className={style.linksButtons}>
-              <Link href="https://github.com/seanmnguyen">GitHub</Link>
+              <Link href="https://github.com/seanmnguyen" target="_blank">GitHub</Link>
             </div>
           </div>
         </div>

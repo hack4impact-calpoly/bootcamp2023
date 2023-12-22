@@ -5,8 +5,8 @@
   width: 70%;
 
   /* debugging */
-  border-color: white;
-  border-width: 3px;
+  /* border-color: white;
+  border-width: 3px; */
 }
 
 .pageTitle {
@@ -14,11 +14,18 @@
   justify-content: center;
   font-size: 40px;
   font-family: Georgia;
+  margin-bottom: 10px;
 }
 
 .contactForm {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   margin: 0 auto;
+
+  background-color: white;
+  border-radius: 15px; 
+  padding: 20px;
 
   /* debugging */
   /* border-color: black;
@@ -30,42 +37,47 @@
   margin-bottom: 8px;
   width: 100%;
 
+  font-size: 18px;
   font-family: Georgia;
   font-weight: bold;
-  
+
   /* debugging */
   /* border-color: red;
   border-width: 3px; */
 }
 
 .contactForm input {
-  display: block;
+  display: flex;
   width: 100%;
   border-radius: 7px;
   text-indent: 2%;
+  font-size: 16px;
+  height: 42px;
+
+  background-color: #eee;
+  border: 1px solid #ccc;
 }
 
 .contactForm textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 7px;
   font-size: 16px;
   resize: none;
+  background-color: #eee;
 }
 
 .contactForm button {
   display: flex;
   flex-direction: row;
   flex: 1;
-  justify-self: center;
   align-self: center;
-  text-align: center;
 
-  background-color: white;
+  background-color: #eee;
   border-radius: 7px;
-  padding: 5px;
+  padding: 7px;
+  font-size: 18px;
 
   /* debugging */
   /* border-color: green;
@@ -82,8 +94,13 @@
   text-align: center;
 }
 
-.links linksButtons {
+.links .linksButtons {
   background-color: #eee;
+  width: 120px;
+  font-size: 24px;
+  margin-top: 10px;
+
+  align-self: center;
 
   border-color: #eee;
   border-radius: 3px;
