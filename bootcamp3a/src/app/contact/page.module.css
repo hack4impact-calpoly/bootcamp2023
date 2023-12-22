@@ -1,0 +1,40 @@
+.main{
+  background: rgb(226, 236, 229);
+  padding: 0 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Georgia'
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  margin-top:10px;
+  font-family: 'Georgia';
+  font-weight: bold;
+}
+
+.input[type="text"],
+.input[type="email"],
+.textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+}
+
+.contact_header{
+  color: rgb(27, 92, 47)
+}
+
+
+/* Add some spacing to the form */
+.form {
+  width: 500px;
+  margin: 0 auto;
+}
