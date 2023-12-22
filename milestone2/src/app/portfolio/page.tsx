@@ -12,7 +12,7 @@ type IPortfolio = {
   date: Date;
   description: string;
   content: string;
-  image: { type: String };
+  image: string;
   comments: [
     {
       user: { type: String; required: true };
@@ -36,7 +36,7 @@ export default function PortfolioComponent() {
     comment: "",
     time: new Date(),
   });
-  const handleInput = (e) => {
+  const handleInput = (e: any) => {
     const fieldName = e.target.name;
     const fieldValue = e.target.value;
     setFormData((prevState) => ({

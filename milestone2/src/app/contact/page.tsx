@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 const ContactUs = () => {
-  const form = useRef();
+  const form = useRef(null);
   const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
   const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
   const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
@@ -11,7 +11,7 @@ const ContactUs = () => {
   const sendEmail = (e: any) => {
     console.log("here");
     e.preventDefault();
-    if (serviceId && templateId && publicKey) {
+    if (serviceId && templateId && publicKey && form.current) {
       emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
         (result) => {
           console.log(result.text);

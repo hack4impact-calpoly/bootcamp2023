@@ -29,7 +29,7 @@ function Comment({ comment }: CommentProps) {
     <div>
       <h4>{comment.user}</h4>
       <p>{comment.comment}</p>
-      <span>{parseCommentTime(comment.time)}</span>
+      <span>{comment.time.toLocaleString()}</span>
     </div>
   );
 }
