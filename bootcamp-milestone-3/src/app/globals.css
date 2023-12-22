@@ -1,0 +1,80 @@
+/* general styling (on multiple) */
+h1,  #resume h3, h2 {
+    text-align: center;
+}
+
+main {
+    margin-top: 80px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #D5D5D5!important;
+    min-height: calc(100vh);
+}
+
+.learn_more_btn {
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    width: 45%;
+    transition: all 0.5s;
+    margin: 5px;
+    padding: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.learn_more_btn:hover {
+    color: #20275B;
+}
+
+/* portfolio page styling */
+#dte div {
+    text-align: center;
+    margin: 20px;
+}
+
+.port-btn {
+    background-color: #919C7B;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* contact page styling */
+.form-container {
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.form-container h3 {
+    font-size: larger;
+}
+
+.form-input {
+    margin-top: 5px;
+}
+
+#name, #email {
+    width: 45%;
+}
+
+#subject, #message {
+    width: 91%;
+}
+
+#message {
+    height: 10em;
+    margin-bottom: 10px;
+}
+
+.form-container i {
+    font-size: large;
+}
+
+/* blog page (element) styling */
+.qplus-btn {
+    background-color: #C9B7C4;
+}
