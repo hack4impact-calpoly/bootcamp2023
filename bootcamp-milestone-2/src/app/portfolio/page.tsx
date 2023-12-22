@@ -23,18 +23,22 @@ export default async function Portfolio() {
         <main>
           <h1 className={style.pageTitle}>Portfolio</h1>
           <div className={style.projectList}>
-            {projectItems.map((project, index) => (
-              <ProjectInfo
-                title={project.title}
-                slug={project.slug}
-                date={project.date}
-                description={project.description}
-                image={project.image}
-                alt={project.alt}
-                order={project.order}
-                key={index}
-              />
-            ))}
+            <ul>
+              {projectItems.map((project, index) => (
+                <li key={index}>
+                  <ProjectInfo
+                    title={project.title}
+                    slug={project.slug}
+                    date={project.date}
+                    description={project.description}
+                    image={project.image}
+                    alt={project.alt}
+                    order={project.order}
+                    key={index}
+                  />
+                </li>
+              ))}
+            </ul>
           </div>
         </main>
       </div>
