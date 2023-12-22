@@ -19,17 +19,17 @@ export default function Home() {
           </div>
           <div className={style.aboutText}>
             <p id={style.aboutText}>
-              Hi there! I&apos;sm <strong>Kayla Tran</strong>. I am originally
+              Hi there! I&apos;m <strong>Kayla Tran</strong>. I am originally
               from Oakland, CA, but I now reside in San Luis Obispo (SLO) where
               I am a <em>software engineering major</em> in my{" "}
               <em>third year</em> at Cal Poly SLO.
               <br />
               My journey is fueled by my passion for creativity and innovation!
-              Right now, I am dedicated to earning my degree. Whether I&apos;sm
+              Right now, I am dedicated to earning my degree. Whether I&apos;m
               studying or hanging out with friends, I always strive to put out
               into the world what I want in return.
               <br />
-              <strong>What you&apos;sll find on this site:</strong> <br /> my
+              <strong>What you&apos;ll find on this site:</strong> <br /> my
               portfolio, resume, contact, and a blog.
               <br />
               Please explore and share any thoughts with me on the content! I
