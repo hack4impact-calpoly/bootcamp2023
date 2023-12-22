@@ -9,7 +9,7 @@ export default function BlogPreview(props: Blog) {
     // with your code from earlier milestones
     <div className={style.div}>
       <h2>
-        <Link href={props.slug}>{props.title}</Link>{" "}
+        <Link href={`/blog/${props.slug}`}> {props.title}</Link>
       </h2>
       <div>
         <p>{props.date}</p>

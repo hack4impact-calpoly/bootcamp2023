@@ -29,7 +29,7 @@ export default async function Blog() {
               date={JSON.stringify(blog.date)}
               description={blog.description}
               content={blog.content}
-              comments={blog.content}
+              comments={blog.comments}
               image={blog.image}
             />
           ))}
