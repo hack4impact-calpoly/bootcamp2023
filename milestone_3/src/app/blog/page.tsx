@@ -34,6 +34,7 @@ export default async function Blog() {
                 date={blog.date}
                 description={blog.description}
                 slug={blog.slug}
+                comments = {blog.comments}
               />
             ))}
           </main>
