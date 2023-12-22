@@ -26,10 +26,10 @@ function parseCommentTime(time: Date) {
 
 function Comment({ comment }: CommentProps) {
   return (
-    <div>
-      <h4>{comment.user}</h4>
-      <p>{comment.comment}</p>
-      <span>{comment.time.toLocaleString()}</span>
+    <div className="comment">
+      <h4 className="author">{comment.user}</h4>
+      <p className="content">{comment.comment}</p>
+      <span className="timestamp">{comment.time.toLocaleString()}</span>
     </div>
   );
 }

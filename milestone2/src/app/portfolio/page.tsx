@@ -75,15 +75,19 @@ export default function PortfolioComponent() {
   if (portfolio) {
     return (
       <>
-        <h1>{portfolio[0].name}</h1>
-        <h1>{portfolio[0].description}</h1>
-        <h1>{portfolio[0].content}</h1>
-        <Image
-          src={portfolio[0].image}
-          width={500}
-          height={500}
-          alt="Homepage"
-        ></Image>
+        <div className="portfoliocontent">
+          <h1>{portfolio[0].name}</h1>
+          <h1>{portfolio[0].description}</h1>
+          <h1>{portfolio[0].content}</h1>
+          <Image
+            src={portfolio[0].image}
+            width={500}
+            height={500}
+            alt="Homepage"
+          ></Image>
+        </div>
+        <hr></hr>
+        <h1>Comments</h1>
         {portfolio &&
           portfolio[0].comments.map((comment: any, index: any) => (
             <Comment key={index} comment={comment} />

@@ -1,6 +1,5 @@
 import React from "react";
 
-
 export default function Resume() {
   return (
     <>
@@ -61,8 +60,6 @@ export default function Resume() {
             </ul>
           </section>
         </div>
-        <p>Hello World! This is my website.</p>
-        <p>This is a sentence.</p>
       </main>
       <footer className="footer">
         © 2023 Tammy Si&apos;s Personal Website | All Rights Reserved

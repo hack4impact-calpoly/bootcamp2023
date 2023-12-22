@@ -13,6 +13,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Helvetica", "Arial", "sans-serif";
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -86,3 +88,209 @@ main {
   width: auto\9; /* ie8 */
 }
 
+/* form styling */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: lightcyan;
+  padding: 5px;
+  border-radius: 12pt;
+  margin-bottom: 100px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: #4caf50; /* Green color */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049; /* Darker green color on hover */
+}
+
+.comment {
+  background-color: #f5f5f5; /* Light background color */
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+/* comments */
+.comment .author {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style for the comment content */
+.comment .content {
+  margin-top: 8px;
+  color: #555;
+}
+
+/* Style for the timestamp */
+.comment .timestamp {
+  font-size: 0.8em;
+  color: #888;
+}
+
+hr {
+  border: 0; /* Remove the default border */
+  height: 2px; /* Set the height of the line */
+  background-color: black; /* Color of the line */
+  margin: 20px 0; /* Margin above and below the line */
+}
+
+.blogcontent {
+  max-width: 800px;
+  margin: 1em auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Style for the blog post title */
+.blogcontent h1 {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* Style for the blog post date */
+.blogcontent h2 {
+  color: #888;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* Style for the blog post description */
+.blogcontent h3 {
+  color: #555;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+/* Style for the blog post content */
+.blogcontent p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Style for the container of each portfolio item */
+.portfoliocontent {
+  max-width: 800px;
+  margin: 1em auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Style for the portfolio item name */
+.portfoliocontent h1 {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* Style for the portfolio item description */
+.portfoliocontent h2 {
+  color: #555;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+/* Style for the portfolio item content */
+.portfoliocontent p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Style for the portfolio item image */
+.portfoliocontent img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Style for the horizontal rule */
+hr {
+  border: 0;
+  height: 2px;
+  background-color: black;
+  margin: 10px 0;
+}
+/* General styles for the resume container */
+.resume {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Arial", sans-serif;
+  background-color: white;
+  padding: 12px;
+  border-radius: 12pt;
+}
+
+/* Styles for each resume section */
+.section {
+  margin-bottom: 30px;
+}
+
+/* Styles for section titles */
+.section-title {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+/* Styles for each entry (job, education, etc.) */
+.entry {
+  margin-bottom: 15px;
+}
+
+/* Styles for entry information */
+.entry-info {
+  color: #555;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Styles for entry description */
+.entry-description {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Styles for skill and course lists */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Styles for individual skills and courses */
+li {
+  color: #333;
+  margin-bottom: 5px;
+}

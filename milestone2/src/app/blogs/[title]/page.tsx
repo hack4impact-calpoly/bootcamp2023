@@ -89,10 +89,12 @@ export default function Blog({ params: { title } }: Props) {
   if (blog) {
     return (
       <div>
-        <h1>{blog.title}</h1>
-        <h2>{blog.date.toLocaleString()} </h2>
-        <h3>{blog.description}</h3>
-        <p>{blog.content}</p>
+        <div className="blogcontent">
+          <h1>{blog.title}</h1>
+          <h2>{blog.date.toLocaleString()} </h2>
+          <h3>{blog.description}</h3>
+          <p>{blog.content}</p>
+        </div>
 
         <hr></hr>
         <h2> Comments </h2>
