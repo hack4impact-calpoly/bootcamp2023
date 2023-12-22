@@ -22,32 +22,11 @@ export default function Home() {
 			</div>
 
 			<div>
-			<picture>
-				<source
-				id="profile_pic"
-				src="images/profile_rect.png"
-				media="(max-width: 400px)"
-				/>
-				<source
-				id="profile_pic"
-				src="images/profile_circle.png"
-				media="(max-width: 1200px)"
-				/>
-				<source
-				id="profile_pic"
-				src="images/profile_large_screens.png"
-				media="(max-width: 1500)"
-				/>
-				<source
-				id="profile_pic"
-				src="images/profile_large_screens.png"
-				/>
 				<img
 				id="profile_pic"
 				src="images/profile_large_screens.png"
 				alt="Sophia Peckner profile picture"
 				/>
-			</picture>
 			</div>
 		</div>
 	  </>
