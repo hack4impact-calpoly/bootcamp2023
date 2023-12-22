@@ -117,7 +117,10 @@ export default function Projects() {
       {projects.map((project, index) => (
         <Project key={index} project={project} />
       ))}
-      <CommentSection comments={comments} createComment={createComment} />
+      <div className={style.comments}>
+        <h2 className={style.commentTitle}>Comments</h2>
+        <CommentSection comments={comments} createComment={createComment} />
+      </div>
     </div>
   );
 }

@@ -51,6 +51,15 @@
   border: 4px solid black;
 }
 
+.comments {
+  margin: 3rem 3rem;
+  background-color: white;
+  opacity: 0.85;
+  display: block;
+  position: relative;
+  border: 4px solid black;
+}
+
 .commentTitle {
   margin-top: 2rem;
   margin-left: 1rem;

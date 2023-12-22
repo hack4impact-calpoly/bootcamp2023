@@ -8,7 +8,6 @@ export type IProject = {
   slug: string;
   description: string;
   image: string;
-  comments: IComment[];
 };
 
 const comment = {
@@ -23,7 +22,6 @@ const projectSchema = new Schema<IProject>({
   slug: { type: String, required: true },
   description: { type: String, required: true },
   image: { type: String, required: false },
-  comments: [comment],
 });
 
 // defining the collection and model

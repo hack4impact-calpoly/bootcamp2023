@@ -27,16 +27,12 @@ const extractFormData = (formData: FormData): IComment | null => {
 export async function GET(req: NextRequest) {
   await connectDB();
   try {
-    console.log("Fetching comments...");
     const comments = await ProjectComment.find({});
-    console.log("Fetched comments:", comments);
     return NextResponse.json(comments);
   } catch (err) {
-    console.error("Error fetching comments:", err);
     return NextResponse.json("Failed to fetch comments.", { status: 404 });
   }
 }
-
 
 export async function POST(req: NextRequest) {
   try {
