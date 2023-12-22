@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import emailjs from "@emailjs/browser";
+import axios from "axios";
+
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
     const formData = await req.json();
@@ -11,15 +12,16 @@ export async function POST(req: NextRequest, res: NextResponse) {
       email: formData.email,
       message: formData.message,
     };
-
-    console.log(template_params);
-    const response = await emailjs.send(
-      process.env.EMAILJS_SERVICE_ID || "",
-      process.env.EMAILJS_TEMPLATE_ID || "",
-      template_params,
-      process.env.EMAILJS_USER_ID
+    const response = await axios.post(
+      "https://api.emailjs.com/api/v1.0/email/send",
+      {
+        service_id: process.env.EMAILJS_SERVICE_ID,
+        template_id: process.env.EMAILJS_TEMPLATE_ID,
+        user_id: process.env.EMAILJS_USER_ID,
+        template_params: template_params,
+        accessToken: process.env.EMAILJS_PRIVATE_KEY,
+      }
     );
-    console.log(response);
     if (response.status === 200) {
       return NextResponse.json(
         { message: "Message sent successfully" },
