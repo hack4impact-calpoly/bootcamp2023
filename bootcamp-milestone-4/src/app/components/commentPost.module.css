@@ -1,0 +1,60 @@
+.background{
+        /* Component Block */
+        background-color: #f8f8f8;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        font-family: Arial, Helvetica, sans-serif; 
+        width: fit-content;
+        margin: 15px;
+
+        padding: 8px; /* of the outside things */
+        padding-right: 10px;
+        width: 300px;
+}
+
+
+.org{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; removing this gives that comment vibe  */ 
+    justify-content: flex-start ;
+    /* margin-bottom: 15px; */
+    gap: 8px; /*Between the inside divs */
+    margin-bottom: 0px;
+    /* resize: none; */    
+}
+
+.user_image {
+    border: 1px solid #ccc;
+    border-radius: 25%;
+}
+
+.content {
+    line-height: 1px;
+    
+    /* align-items: center; removing this gives that comment vibe  */ 
+    /* margin-bottom: 15px; */
+    /* resize: none; */
+}
+
+.content h4 {
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+    font-weight: 700; 
+}
+
+.content p {
+    color: black;
+    font-size: 10px;
+    font-weight: 700; 
+}
+
+.date{
+    color: slategray;
+    font-size: 10px;
+    text-align: center;
+}
+
+

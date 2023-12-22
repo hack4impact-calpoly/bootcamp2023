@@ -23,7 +23,7 @@ export type IComment = {
 }
 
 // schema for comments
-const commentSchema = new Schema<IComment>({
+export const commentSchema = new Schema<IComment>({
     user: {type: String, required: true},
     comment: {type: String, required: true},
     image: {type: String, required: true, default: "/images/profile.jpeg"},

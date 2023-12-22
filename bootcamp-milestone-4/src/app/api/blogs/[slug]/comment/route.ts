@@ -73,7 +73,6 @@ export async function POST(request : NextRequest, {params} : Params) {
 
     // push the comment to the database 
     const {slug} = params; // get the slug
-    console.log(slug) 
 
     await connectDB();
     const db = mongoose.connection // get that connection in a variable
