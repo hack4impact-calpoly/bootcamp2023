@@ -1,41 +1,63 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import styles from "./submitCommentForm.module.css";
-import postComment from "../helpers/postcomment";
-import IComment from "../database/blogSchema";
+import postComment from "../helpers/postComment";
+import { IComment } from "../database/blogSchema";
 
-interface submitCommentFormParams {
+interface SubmitCommentFormParams {
   slug: string;
   comment: IComment;
 }
 
-export default function submitCommentForm(props: submitCommentFormParams) {
-  const form = useRef();
+export default function SubmitCommentForm(props: SubmitCommentFormParams) {
+  //these values are updated EVERY time their respective input fields are updated
+  const [user, setUser] = useState(""); //holds & updates the value of the user input field
+  const [comment, setComment] = useState(""); //holds & updates the value of the comment input field
 
-  const OnSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  //specific React event specified to avoid type error
+  //async before params
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); //default form submit stopped
 
-    const formData = new FormData(event.currentTarget);
-    const comment: IComment = {
-      user: formData.get("name") as string,
-      comment: formData.get("message") as string,
+    const finalComment: IComment = {
+      //creates comment object with final values
+      user: user,
+      comment: comment,
       time: new Date(),
     };
 
-    console.log("comment: ", comment);
+    console.log("Comment to Append: ", finalComment);
 
-    const response = await postComment(props.slug, comment);
-    console.log("Response: ", response);
+    const response = await postComment(props.slug, finalComment); //adds to database
+    console.log("Response: ", response); //database response
+
+    setUser("");
+    setComment("");
   };
 
   return (
     <div className={styles.componentContainer}>
       <h3 className={styles.header}>Leave a Comment!</h3>
-      <form ref={form} onSubmit={OnSubmit} className={styles.formContainer}>
+      <form onSubmit={handleSubmit} className={styles.formContainer}>
         <label className={styles.label}>Name</label>
-        <input type="text" name="name" className={styles.inputText} />
+        <input
+          onChange={(e) => {
+            setUser(e.target.value);
+          }}
+          value={user}
+          type="text"
+          name="name"
+          className={styles.inputText}
+        />
         <label className={styles.label}>Message</label>
-        <textarea name="message" className={styles.inputMessage} />
+        <textarea
+          onChange={(e) => {
+            setComment(e.target.value);
+          }}
+          value={comment}
+          name="comment"
+          className={styles.inputMessage}
+        />
         <input type="submit" value="Send" className={styles.inputSubmit} />
       </form>
     </div>

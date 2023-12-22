@@ -1,10 +1,10 @@
 "use client";
 import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
 import styles from "./ContactUs.module.css";
+import emailjs from "@emailjs/browser";
 
 // Define the TemplateParams interface
-interface TemplateParams {
+export interface TemplateParams {
   from_name: string;
   email_id: string;
   message: string;
@@ -13,8 +13,9 @@ interface TemplateParams {
 export default function ContactUs() {
   const form = useRef();
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
+
     emailjs
       .sendForm(
         "service_usd3zbd",
@@ -25,28 +26,11 @@ export default function ContactUs() {
       .then(
         (result) => {
           console.log(result.text);
-          e.target.reset();
         },
         (error) => {
           console.log(error.text);
         }
       );
-  };
-
-  // Handle form submission
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault(); // Prevent the default form submission
-
-    // Access form elements using form.current
-    const formData = new FormData(form.current);
-    const templateParams: TemplateParams = {
-      from_name: formData.get("from_name") as string,
-      email_id: formData.get("email_id") as string,
-      message: formData.get("message") as string,
-    };
-
-    // Call the sendEmail function with the templateParams
-    sendEmail(templateParams);
   };
 
   return (

@@ -1,9 +1,10 @@
 async function postComment(
   slug: string,
-  comment: { user: string; message: string; time: Date }
+  comment: { user: string; comment: string; time: Date }
 ) {
-  console.log("COMMENT WITHIN POSTCOMMENT");
+
   try {
+    //creates a POST request at the api endpoint with the specified comment
     const res = await fetch(`http://localhost:3000/api/blog/${slug}/comment`, {
       method: "POST",
       headers: {
@@ -18,6 +19,7 @@ async function postComment(
       return null;
     }
     return res;
+
   } catch (err: unknown) {
     console.log(`error: ${err}`);
     return null;

@@ -1,6 +1,6 @@
 import * as mongoose from "mongoose";
 
-type IComment = {
+export interface IComment {
   user: string;
   comment: string;
   time: Date;
