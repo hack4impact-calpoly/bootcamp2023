@@ -15,10 +15,6 @@ export default function Blog({ params }: { params: { slug: string } }) {
   });
 
   const slug = params.slug;
-  console.log("Blog Post opened, printing slug: ");
-  console.log(slug);
-  console.log("Params.slug = ");
-  console.log(params.slug);
   let paragraphs = [];
   let i = 0;
 
@@ -29,8 +25,6 @@ export default function Blog({ params }: { params: { slug: string } }) {
     };
 
     fetchBlogData();
-    console.log("testing useEffect in page");
-    console.log(blog);
   }, [slug]);
 
   // checks that blog exists
@@ -52,7 +46,6 @@ export default function Blog({ params }: { params: { slug: string } }) {
 
   function handleCommentUpload(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log("submit pressed");
     const newComment = {
       user: inputCommentData.name,
       comment: inputCommentData.comment,

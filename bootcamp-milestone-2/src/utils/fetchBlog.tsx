@@ -1,5 +1,4 @@
 export const fetchBlog = async (slug: string) => {
-  console.log("inside fetch utils");
     try {
       const res = await fetch(`http://localhost:3000/api/${slug}`, {
         cache: "no-store",

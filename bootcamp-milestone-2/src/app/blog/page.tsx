@@ -5,7 +5,6 @@ import BlogComp from "../../database/blogSchema";
 // import BlogPage from "./[slug]/page";
 
 async function getBlogs() {
-  console.log("fetching blogs...");
   const connection = await connectDB(); // function from db.ts before
 
   try {

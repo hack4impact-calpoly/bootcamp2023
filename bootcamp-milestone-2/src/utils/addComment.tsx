@@ -1,8 +1,6 @@
 import { Comment as CommentType } from "../database/blogSchema";
 
 export const addComment = async (slug: string, comment: CommentType) => {
-  console.log("inside addComment util");
-  console.log(slug);
   try {
     const res = await fetch(`http://localhost:3000/api/comment/${slug}`, {
       method: "PUT",
