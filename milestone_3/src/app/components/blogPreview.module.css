@@ -1,0 +1,35 @@
+.container {
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin: 16px 0;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .date {
+    color: #888;
+    font-size: 14px;
+  }
+  
+  .description {
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+  
+  .readMore {
+    margin-top: 16px;
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .readMore:hover {
+    background-color: #2980b9;
+  }
