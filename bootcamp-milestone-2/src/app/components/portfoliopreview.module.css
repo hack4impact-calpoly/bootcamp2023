@@ -9,3 +9,10 @@
 .learn-more {
     text-align: center;
 }
+
+.screenshot {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+

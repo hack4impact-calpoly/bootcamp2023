@@ -93,7 +93,7 @@ class Contact extends React.Component<
   handleSubmit(event: any) {
     console.log("I'm here: ", this.state);
     event.preventDefault();
-    fetch("http://localhost:3001/send", {
+    fetch("http://localhost:3000/send", {
       method: "POST",
       body: JSON.stringify(this.state), // where the error is!
       headers: {
