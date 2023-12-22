@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
 
-    <main id="homepage">
+    <main id="homepage" className={styles.background}>
       <div>
         <h1>Hi I'm Brandon Eng</h1>
 

@@ -464,3 +464,8 @@ form {
 .blog-content a:hover {
   color: #555;
 }
+
+.blog-page{
+  
+  padding-bottom: 5%;
+}

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/helpers/db";
-import Blogs, { IComment } from "@/database/blogSchema";
+import Blog, { IComment } from "@/database/blogSchema";
 
 type IParams = {
     params: {
@@ -23,10 +23,14 @@ type IParams = {
 export async function GET(req: NextRequest, { params }: IParams) {
     await connectDB(); // function from db.ts before
     const { slug } = params; // another destructure
+    console.log("route");
+
 
     try {
-        const blog = await Blogs.findOne({ slug: slug }).orFail();
-        return NextResponse.json(blog, { status: 200 });
+        const blog = await Blog.findOne({ slug: slug }).lean().orFail();
+        return NextResponse.json(blog, { status: 200, headers: {
+            'Cache-Control': 'no-store'  
+          } });
     } catch (err) {
         return NextResponse.json("Blog not found.", { status: 404 });
     }

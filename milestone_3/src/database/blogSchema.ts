@@ -14,6 +14,7 @@ export type IBlog = {
   content: string; // for individual blog page
     image: string; // 
     link: string;
+    comments: IComment[];
 };
 
 const commentSchema = new Schema<IComment>({
@@ -32,6 +33,7 @@ const blogSchema = new Schema<IBlog>({
     content: { type: String, required: true },
     image: { type: String, required: false },
     link: { type: String, required: false },
+    comments: [{ type: commentSchema, required: true }],
 })
 
 

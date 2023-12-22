@@ -1,6 +1,7 @@
 import Image from "next/image"
 import {GET} from "../../api/blog/[slug]/route"
-
+import Comment from "@/components/comment";
+import { IComment } from "@/database/blogSchema";
 
 type IParams = {
     params: {
@@ -11,9 +12,13 @@ type IParams = {
 
 export default async function BlogPage({ params }: IParams) {
     const { slug } = params // another destructure
-    const res = await fetch(`http://localhost:3000/api/blog/${slug}`)
-    const blog = await res.json()
-    console.log(blog)
+    console.log(slug);
+    const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
+        cache : "no-cache"
+    });
+    const blog = await res.json();
+    console.log("slug page")
+    console.log(blog);
 
   return (
         <main>        
@@ -37,8 +42,13 @@ export default async function BlogPage({ params }: IParams) {
                     </div>
                 </div>
             </div>
+            <div>
 
 
+            {blog.comments.map((comment:IComment, index:number) => (
+                            <Comment key={index} comment={comment} />
+                        ))}
+        </div>
         </main>
 
   )

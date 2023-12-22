@@ -21,6 +21,8 @@ async function getBlogs(){
 
 export default async function BlogPage() {
   const blogs = await getBlogs();
+  console.log("preview page");
+  console.log(blogs);
   if (blogs == null) {
     return (
       <main>
@@ -30,9 +32,8 @@ export default async function BlogPage() {
       </main>
     );
   } else {
-    console.log(blogs);
     return (
-      <main>
+      <main className="blog-page">
         <PageTitle title="Blog"/>
           {blogs.map((blog) => (
             <BlogPreview 
@@ -43,6 +44,7 @@ export default async function BlogPage() {
               content={blog.content}
               image={blog.image}
               link={blog.link}
+              comments={blog.comments}
             />
           ))}
       </main>
