@@ -1,8 +1,7 @@
 "use client";
 import style from "./contact.module.css";
-import React, { useRef } from "react";
+import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import emailjs from "@emailjs/browser";
 
 type Inputs = {
   name: string;
@@ -18,8 +17,23 @@ export default function contact() {
     formState: { errors },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = async (data: Inputs) => {
-    console.log(data);
-    reset();
+    try {
+      const res = await fetch(`http://localhost:3000/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (res.status === 200) {
+        alert("Message sent successfully");
+        reset();
+      } else {
+        alert("Message not sent");
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <>
