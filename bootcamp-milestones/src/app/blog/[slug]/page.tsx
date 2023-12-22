@@ -1,3 +1,5 @@
+import Comment from "@/components/comment";
+import type { IComment } from "@/database/commentSchema";
 
 type Props = {
     params: { slug: string }
@@ -30,6 +32,18 @@ export default async function Blog({ params : {slug} }: Props) {
                 <h1>{blog.title}</h1>
                 {/* <p>{blog.date}</p> */}
                 <p>{blog.content}</p>
+                <h2>Comments</h2>
+                <>
+                    {blog.comments.map((comment: IComment) => (
+                        <Comment
+                            comment={{
+                                user: comment.user,
+                                comment: comment.comment,
+                                date: comment.date,
+                            }}
+                        />
+                    ))}
+                </>
             </>
         );
     }

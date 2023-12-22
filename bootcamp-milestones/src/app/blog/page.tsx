@@ -28,6 +28,7 @@ export default function Blog() {
                         description={blog.description}
                         content={blog.content}
                         image={blog.image}
+                        comments={blog.comments}
                     />
                 ))}
             </>
