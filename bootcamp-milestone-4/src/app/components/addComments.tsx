@@ -55,7 +55,7 @@ export default function AddComments({ params: { slug, type } }: IParams) {
           className={style.form_input_name}
         />
         {errors.user && <span>This field is required</span>}
-        <input
+        <textarea
           {...register("comment", { required: true })}
           placeholder="Enter your comment..."
           className={style.form_input_comment}

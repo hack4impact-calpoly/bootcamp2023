@@ -16,7 +16,7 @@ export default function PortfolioPreview(props: IPortfolio) {
         <div className={style.about_text}>
           <h5 className={style.project_name}>{props.title}</h5>
           <p className={style.project_description}>{props.description}</p>
-          <Link href={props.slug}>Learn More</Link>
+          <Link href={`portfolio/${props.slug}`}>Learn More</Link>
         </div>
       </div>
     </>

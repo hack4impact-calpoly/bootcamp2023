@@ -22,35 +22,37 @@ export default function contact() {
     reset();
   };
   return (
-    <div className={style.contact_container}>
-      <h1 className={style.page_title}>Contact</h1>
-      <form onSubmit={handleSubmit(onSubmit)} className={style.contact_form}>
-        <input
-          className={style.form_input_name}
-          type="text"
-          placeholder="name"
-          {...register("name", { required: true })}
-        />
-        {errors.name && <span>This field is required</span>}
+    <>
+      <h1 className={style.title}>Contact</h1>
 
-        <input
-          className={style.form_input_email}
-          type="email"
-          id="email"
-          placeholder="email"
-          {...register("email", { required: true })}
-        />
-        {errors.email && <span>This field is required</span>}
+      <div className={style.contact_container}>
+        <form onSubmit={handleSubmit(onSubmit)} className={style.contact_form}>
+          <input
+            className={style.form_input_name}
+            type="text"
+            placeholder="name"
+            {...register("name", { required: true })}
+          />
+          {errors.name && <span>This field is required</span>}
 
-        <input
-          className={style.form_input_message}
-          type="text"
-          placeholder="message"
-          {...register("message", { required: true })}
-        ></input>
-        {errors.message && <span>This field is required</span>}
-        <input className={style.submit} type="submit" />
-      </form>
-    </div>
+          <input
+            className={style.form_input_email}
+            type="email"
+            id="email"
+            placeholder="email"
+            {...register("email", { required: true })}
+          />
+          {errors.email && <span>This field is required</span>}
+
+          <textarea
+            className={style.form_input_message}
+            placeholder="message"
+            {...register("message", { required: true })}
+          ></textarea>
+          {errors.message && <span>This field is required</span>}
+          <input className={style.submit} type="submit" />
+        </form>
+      </div>
+    </>
   );
 }

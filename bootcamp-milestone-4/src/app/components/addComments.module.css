@@ -26,16 +26,16 @@
     width: 100%;
     margin-bottom: 0.5rem;
     border-radius: 5px;
-    border-color: var(--cg-dark-iory);
     padding: 0.5rem;
+    border-width: 1px;
     font-size: 1rem;
 }
 .form_input_comment{
     width: 100%;
-    height: 3rem;
+    height: 5rem;
     margin-bottom: 0.5rem;
     border-radius: 5px;
-    border-color: var(--cg-dark-iory);
+    border-width: 1px;
     padding: 0.5rem;
     font-size: 1rem;
 }
