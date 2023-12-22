@@ -27,9 +27,9 @@ const blogSchema = new Schema<IBlog>({
   description: { type: String, required: true },
   content: { type: String, required: true },
   comments: {
-      user: {type: String, required: true},
-      comment: {type: String, required: true},
-      time: {type: Date, required: false, default: new Date()}
+    user: {type: String, required: true},
+    comment: {type: String, required: true},
+    time: {type: Date, required: false, default: new Date()}
   },
   src: { type: String, required: true },
   alt: { type: String, required: true }

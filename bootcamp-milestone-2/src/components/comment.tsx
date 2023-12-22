@@ -4,7 +4,6 @@ type CommentProps = {
   comment: IComment;
 }
 
-
 function parseCommentTime(time: Date){
   const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',

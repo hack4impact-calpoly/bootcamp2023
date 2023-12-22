@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CommentComponent from "../comment";
+import CommentComponent from "../../../components/comment";
 import { Comment } from "@/app/commentData";
 
 type Props = {
@@ -32,7 +32,7 @@ export default async function Blog(params: Props) {
       <div>Blog not found</div>
     )
   }
-  
+
   return (
     <>
       <h1 className="blog-title">{blog.title}</h1>
@@ -40,7 +40,7 @@ export default async function Blog(params: Props) {
       <p>{blog.description}</p>
       <Image src={`${blog.src}`} alt={`${blog.alt}`} width="250" height="250" />
       {blog.comments.map((comment: Comment) => (
-          <CommentComponent comment={comment} />
+        <CommentComponent comment={comment} />
       ))}
     </>
   )
