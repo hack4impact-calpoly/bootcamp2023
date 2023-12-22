@@ -24,9 +24,9 @@ export default function Blog({ params }: { params: { slug: string } }) {
       if (slug) {
         try {
           // Use encodeURI to handle potential special characters in the slug
-          const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/blog/${encodeURIComponent(
-            slug
-          )}`;
+          const apiUrl = `${
+            process.env.NEXT_PUBLIC_API_URL
+          }/blog/${encodeURIComponent(slug)}`;
           console.log("Fetching blog with URL:", apiUrl);
 
           const res = await fetch(apiUrl, {
@@ -61,10 +61,13 @@ export default function Blog({ params }: { params: { slug: string } }) {
     formData.append("comment", commentText);
     formData.append("user", user);
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog/${slug}/comment`, {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/blog/${slug}/comment`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
       if (!res.ok) {
         throw new Error("Failed to create comment");
       }
@@ -82,18 +85,20 @@ export default function Blog({ params }: { params: { slug: string } }) {
     <div>
       {blog ? (
         <div>
-          <h1>{blog.title}</h1>
-          <p>{new Date(blog.date).toLocaleDateString()}</p>
-          <p>{blog.description}</p>
-          <div>
-            {blog.comments.map((comment: IComment, index: number) => (
-              <Comment key={index} comment={comment} />
-            ))}
+          <h1 className={style.pageTitle}>{blog.title}</h1>
+          <div className={style.blog}>
+          <Image src={blog.image} alt="" height={300} width={250}></Image>
+            <p>{blog.description}</p> 
           </div>
-          <CommentSection
-            comments={blog.comments}
-            createComment={createComment}
-          />
+          <div>
+            <div className={style.comments}>
+              <h2 className={style.commentTitle}>Comments</h2>
+              <CommentSection
+                comments={blog.comments}
+                createComment={createComment}
+              />
+            </div>
+          </div>
         </div>
       ) : (
         <p>Blog not found.</p>
@@ -102,51 +107,3 @@ export default function Blog({ params }: { params: { slug: string } }) {
   );
 }
 
-// if (blog == null) {
-//   return (
-//     <main>
-//       <p>Blog not found.</p>
-//     </main>
-//   );
-// } else {
-//   return (
-//     <main>
-//       <div>
-//         <h1 className={style.pageTitle}>{blog.title}</h1>
-//         <div className={style.blog}>
-//           <Image src={blog.image} alt="" height={300} width={250}></Image>
-//           <p>{blog.content}</p>
-//         </div>
-//       </div>
-//       <div className={style.comments}>
-//         <h2 className={style.commentTitle}>Comments</h2>
-//         {blog.comments.map(
-//           (comment: any, index: React.Key | null | undefined) => (
-//             <Comment key={index} comment={comment} />
-//           )
-//         )}
-
-//         <div className={style.newComments}>
-//           <form className={style.new}>
-//             <input
-//               type="text"
-//               className={style.newName}
-//               name="name"
-//               placeholder="Name"
-//             />
-//             <textarea
-//               className={style.newComment}
-//               rows={5}
-//               id={style.message}
-//               name="message"
-//               placeholder="Type your comment here"
-//             ></textarea>
-//             <button type="submit" className={style.button}>
-//               Submit
-//             </button>
-//           </form>
-//         </div>
-//       </div>
-//     </main>
-//   );
-// }

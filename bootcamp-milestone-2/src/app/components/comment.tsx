@@ -16,7 +16,7 @@ type CommentProps = {
 		Makes your code look nicer and allows for better readability.
 	*/
 }
-function parseCommentTime(time: Date) {
+export function parseCommentTime(time: Date) {
   let timeP = new Date(time);
   const formattedT = timeP.toLocaleDateString("en", {
     year: "numeric",
