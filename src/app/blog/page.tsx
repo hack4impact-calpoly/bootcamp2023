@@ -22,6 +22,7 @@ export default async function Blogs() {
           <h1 className={style.pageTitle}>Blog</h1>
           {blogs.map((blog) => (
             <BlogPreview
+              key={blog.slug}
               title={blog.title}
               description={blog.description}
               date={blog.date}
