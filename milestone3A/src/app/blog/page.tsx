@@ -22,9 +22,10 @@ export default async function Blogs() {
                   slug={blog.slug}
                   description={blog.description}
                   title={blog.title}
-                  date={blog.date} 
+                  date={blog.date}
                   content={""}
-                  comments={[]}              /> // This is how we call the component
+                  imageSlug={blog.imageSlug}  
+                  comments={[]}             /> // This is how we call the component
               )}
               </div>
           </main>

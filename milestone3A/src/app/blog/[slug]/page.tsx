@@ -1,24 +1,39 @@
 import React from "react";
+import Comment from "@/components/comment";
+import { IComment } from "@/database/blogSchema";
+import style from "./page.module.css";
+import { parseCommentTime } from "@/components/comment";
 
 export default async function Page({ params }: { params: { slug: string } }) {
-    const res = await fetch(`http://localhost:3000/api/blog/${params.slug}`, {cache: "no-store"});
+    const res = await fetch(`http://localhost:3000/api/blog/${params.slug}`,
+        {cache: "no-store"});
+
     const blogData = await res.json();
 
-    if(blogData != null) {
+    if(res.ok) {
         return(
-            <div>
-                <p>Debug Slug: {blogData.slug}</p>
-                <p>Title: {blogData.title}</p>
-                <p>Date: {blogData.date}</p>
-                <p>Description: {blogData.description}</p>
-                <p>Content: {blogData.content}</p>
-                <p>Comments: {blogData.comments}</p>
+            <main>
+            <div className={style.blog}>
+                <h1 className={style.title}> {blogData.title} </h1>
+                <p className={style.date}> {parseCommentTime(blogData.date)} </p>
+                <p className={style.description}> {blogData.description} </p>
+                <div className={style.blogContent}>
+                    <img src={blogData.imageSlug} className={style.image}></img>
+                    <p className={style.content}> {blogData.content} </p>
+                </div>
+                
+                <div className={style.commentSection}>
+                        {blogData.comments.map((comment: IComment, index: number) => (
+                            <Comment key={index} comment={comment} />
+                        ))}
+                </div>
             </div>
+            </main>
         )
     }
     else {
         return(
-            "Can't Find Blog"
+            <div className="blogNotFound">"Blog Not Found"</div>
         )
     }
   }

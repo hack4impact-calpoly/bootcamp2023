@@ -10,3 +10,21 @@
     font-size: 15pt;
     margin: 0 5px;
 }
+
+.innerPreview{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.blogImage{
+    max-width: 50px;
+    max-height: 50px;
+    height: auto;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 20pt;
+}

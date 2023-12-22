@@ -1,10 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; // You can change the font to anything you want.
+import { EB_Garamond } from "next/font/google"; // You can change the font to anything you want.
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = EB_Garamond({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "James' Personal Website",
