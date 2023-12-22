@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import { IComment } from "./commentSchema";
 
 // typescript type (can also be an interface)
 export type IBlog = {
@@ -8,8 +9,8 @@ export type IBlog = {
     description: string; // for preview
     content: string; // for individual blog page
     image: string;
+    comments: IComment[]; 
 };
-
 
 // mongoose schema 
 const blogSchema = new Schema<IBlog>({
@@ -19,6 +20,12 @@ const blogSchema = new Schema<IBlog>({
     description: { type: String, required: true },
     content: { type: String, required: true },
     image: { type: String },
+    comments: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "comments",
+        },
+    ],
 })
 
 // defining the collection and model
