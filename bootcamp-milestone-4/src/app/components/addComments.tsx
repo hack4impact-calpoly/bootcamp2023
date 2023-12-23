@@ -23,7 +23,6 @@ export default function AddComments({ params: { slug, type } }: IParams) {
     formState: { errors },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = async (data: Inputs) => {
-    console.log(data);
     try {
       const res = await fetch(
         `http://localhost:3000/api/${type}/${slug}/comment`,

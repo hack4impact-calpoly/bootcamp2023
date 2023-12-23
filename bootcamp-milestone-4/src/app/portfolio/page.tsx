@@ -22,7 +22,6 @@ export default async function Portfolio() {
       {portfolioData ? (
         portfolioData.map(
           (project: IPortfolio, index: number) => (
-            console.log(project),
             (
               <PortfolioPreview
                 key={index}
