@@ -7,7 +7,7 @@ export default function Resume() {
     <div>
       <main>
             <h1 className="page-title">Resume</h1>
-            <Link className = 'resume-pdf' href="resume.pdf" download >Download Resume</Link>
+            {/* <Link className = 'resume-pdf' href="resume.pdf" download >Download Resume</Link> */}
             <div className="resume">
                 <section className="section">
                     <h2 className="section-title">Education</h2>
