@@ -1,10 +1,10 @@
 import React from "react";
-import type { Blog } from "../../database/legacyData/blogData.ts";
+import type { IBlog } from "@/database/blogSchema";
 import style from "./blogPreview.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function BlogPreview(props: Blog) {
+export default function BlogPreview(props: IBlog) {
   // This way our sizez are proprotional
 
   console.log(props);
@@ -28,7 +28,7 @@ export default function BlogPreview(props: Blog) {
           <h1 className={style.blog_title}>{props.title}</h1>{" "}
         </Link>
         <h2 className={style.blog_description}>{props.preview}</h2>
-        <h3 className={style.blog_date}>{props.date}</h3>
+        <h3 className={style.blog_date}>{"" + props.date}</h3>
         {/* <h3 className={style.blog_description}>{props.description}</h3> */}
       </div>
     </div>

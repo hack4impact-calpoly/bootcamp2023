@@ -1,5 +1,5 @@
 import styles from "./page.module.css"
-import { blogSchema } from '../../database/blogSchema';
+import { blogSchema, IBlog } from '../../database/blogSchema';
 import BlogPreview from '../components/blogPreview';
 import connectDB from "../../helpers/db";
 
@@ -26,7 +26,8 @@ async function getBlogs() {
 
 
 // Fix the date so it is correctly being shown
-const parseDate = (date: string) => {
+const parseDate = (datee: Date | string) => {
+  const date = "" + datee
   let tLocation = date.indexOf("T")
   let newDate = date.slice(0, tLocation)
   let year = newDate.slice(2, newDate.indexOf("-"))
@@ -56,7 +57,7 @@ async function Blog() {
       <>
       <h1>Blog Catalog</h1>
       <div className={styles.search}>
-      { blogs.map( (blog : blogSchema) => {
+      { blogs.map( (blog : IBlog) => {
           blog.date = parseDate(blog.date);
           return (<BlogPreview 
                     {...blog}

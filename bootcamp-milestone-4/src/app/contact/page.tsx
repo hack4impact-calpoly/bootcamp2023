@@ -59,7 +59,8 @@ export default function Contact() {
         <>
         {/* <div className={styles.contact}> */}
         <h1>Contact</h1>
-            <form ref={form} onSubmit={sendEmail} className={styles.myForm}id="contact-form" autoComplete="off">                       
+            {/*ref={form}*/}
+            <form onSubmit={sendEmail} className={styles.myForm}id="contact-form" autoComplete="off">                       
                 <label className={styles.myLabel} htmlFor="name">Name:</label>         
                 <input 
                     onChange={(e) => setName(e.target.value)} // keep track of what is written through getting value

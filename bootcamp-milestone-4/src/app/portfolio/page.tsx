@@ -5,6 +5,7 @@ import { IProject } from "@/database/projectSchema.ts"
 import Comment from "@/app/components/commentPost.tsx";
 import { IComment } from "@/database/blogSchema.ts";
 import CommentSection from "../components/commentSection.tsx";
+import { useRef } from "react";
 
 
 async function getProjects() {
@@ -25,6 +26,7 @@ async function getProjects() {
 
 
 export default async function Portfolio() {
+  const counter = useRef(0)
   const {projects} = await getProjects();
   if (projects == null) {   // Handle the null case
     return(
@@ -38,6 +40,7 @@ export default async function Portfolio() {
     const element = comments.push(project.comments[comment]);
   }})
 
+
   const slug = "my-personal-website"
   return (
     <div className={styles.catalog}>
@@ -50,9 +53,10 @@ export default async function Portfolio() {
             )}
        <h1>Discussion</h1>
        <CommentSection slug={"projects/" + slug}></CommentSection>
-      {comments.map((comment : IComment) => 
-        <Comment comment={comment}/>
-      )}
+      {comments.map((comment : IComment) => {
+        <Comment comment={comment} key={counter.current}/>;
+        counter.current++;
+      })}
 
   
     </div>

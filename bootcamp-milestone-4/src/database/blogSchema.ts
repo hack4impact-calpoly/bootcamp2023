@@ -1,11 +1,12 @@
 import mongoose, { Schema } from "mongoose";
 
 // typescript type (can also be an interface)
+
 export type IBlog = {
   id: string;
   title: string;
   image: string;
-  date: Date;
+  date: Date | string;
   image_alt: string;
   width: number;
   height: number;

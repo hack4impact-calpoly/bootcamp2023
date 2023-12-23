@@ -21,8 +21,8 @@ export type CommentProps = {
 // In blog, will set up the maping for the comments, for now we are just worring about the front end of a comment
 // Geta profile image for this and in public
 
-function parseCommentTime(date : Date){
-    
+function parseCommentTime(datee : Date ){
+    const date = "" + datee
     let months = ['dummy month for 1 to 1 ordering', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     let tLocation = date.indexOf("T")
     
