@@ -15,7 +15,7 @@ export default function Resume() {
             <section className="section">
                 <h2 className="section-title">Education</h2>
                 <div className="entry">
-                    <h3 className="entry-title">Bachelor's of Science in Computer Science</h3>
+                    <h3 className="entry-title">Bachelor&apos;s of Science in Computer Science</h3>
                     <p className="entry-info">California Polytechnic State University San Luis Obispo | Expected Graduation June 2025</p>
                 </div>
             </section>

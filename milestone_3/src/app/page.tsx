@@ -12,11 +12,11 @@ export default function Home() {
     }}>
     <main id="homepage">
       <div>
-        <h1>Hi I'm Brandon Eng</h1>
+        <h1>Hi I&apos;m Brandon Eng</h1>
 
       <div className="home-detail">
         <p>
-          I'm a 3rd Year Computer Science Major at Cal Poly SLO with interests in Software Development and AI. 
+          I&apos;m a 3rd Year Computer Science Major at Cal Poly SLO with interests in Software Development and AI. 
         </p>
       
 

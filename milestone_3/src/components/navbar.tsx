@@ -7,7 +7,7 @@ export default function Navbar() {
     <header>
          <nav className="navbar">
         <h1 className="logo">
-          <Link href="/">Bdon's Website</Link>
+          <Link href="/">Bdon&apos;s Website</Link>
         </h1>
 
         <ul className="nav-list">

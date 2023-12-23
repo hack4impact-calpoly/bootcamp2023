@@ -45,6 +45,7 @@ export default async function BlogPage() {
               image={blog.image}
               link={blog.link}
               comments={blog.comments}
+              key=""
             />
           ))}
       </main>

@@ -15,8 +15,7 @@ export async function POST(req: NextRequest, { params }: IParams ) {
     const comment = body.comment;
     await connectDB();
         if (!body) {
-            return "invalid body"
-        }
+            return new Response("Invalid body", {status: 400})         }
         try {
             const blog = await Project.findOneAndUpdate(
                 {slug: slug},

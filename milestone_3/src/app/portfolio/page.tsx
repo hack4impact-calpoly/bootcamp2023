@@ -41,6 +41,7 @@ export default async function ProjectPage() {
               image={project.image}
               link={project.link}
               comments={project.comments}
+              key=""
             />
           ))}
       </main>
