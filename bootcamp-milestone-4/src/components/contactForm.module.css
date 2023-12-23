@@ -1,0 +1,32 @@
+/* ContactForm.module.css */
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #e3e3e3;
+    background-color: #fff;
+  }
+  
+  .label {
+    margin-bottom: 5px;
+    color: #fc90a0; /* Pink color */
+  }
+  
+  .input,
+  .textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .submitButton {
+    background-color: #fc90a0; /* Pink color */
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+  }
+  

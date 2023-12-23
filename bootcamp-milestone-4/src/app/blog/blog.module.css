@@ -1,10 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
-.blog-text {
-    color: var(--cg-pink);
-    font-family: 'Satisfy', cursive;
-    font-size: 50px;
-    padding: 80px 100px;
-    background-color: var(--cg-white);
-  }
+
+.blogText {
+  /* Additional cute girl styles */
+  background-color: #f9e8f3; /* Light pink background */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.blogPreview {
+  /* Style for each blog preview */
+  background-color: #fff; /* White background */
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.blogTitle {
+  /* Style for the blog title */
+  font-size: 24px;
+  color: #ff69b4; /* Pink color for title */
+}
+
+
   

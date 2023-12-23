@@ -1,0 +1,40 @@
+
+.project {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project a {
+    margin-right: 20px;
+    text-decoration: none;
+  }
+  
+  .projectDetails {
+    flex-grow: 1;
+  }
+  
+  .projectName {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .projectDescription {
+    font-size: 14px;
+    color: #555; /* Dark gray text color */
+  }
+  
+  .projectDetails a {
+    text-decoration: underline;
+    color: #007bff; /* Blue link color */
+  }
+  
+  .projectDetails a:hover {
+    color: #0056b3; /* Darker blue color on hover */
+  }
+  

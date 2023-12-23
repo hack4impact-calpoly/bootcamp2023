@@ -1,0 +1,49 @@
+
+.formContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formLabel {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333; /* Dark text color */
+  }
+  
+  .formInput {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .formTextArea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .formButton {
+    background-color: #4c61af; 
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .formButton:hover {
+    background-color: #1737ac; 
+  }
+  

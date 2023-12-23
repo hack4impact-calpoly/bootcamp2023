@@ -1,35 +1,36 @@
-.post-preview {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 20px 0;
+.postPreview {
+  border: 1px solid #ddd;
   padding: 20px;
-  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.post-title {
+.postTitle {
   font-size: 24px;
-  color: var(--cg-pink); 
-  margin: 0;
+  color: #333; /* Dark text color */
+  margin-bottom: 10px;
 }
 
-.post-subtitle {
-  font-size: 16px;
-  color: #666;
-  margin: 5px 0;
+.postDescription {
+  color: #555; /* Medium gray text color */
+  margin-bottom: 10px;
 }
 
-.post-description {
-  font-size: 18px;
-  color: var(--cg-black); 
-  margin: 10px 0;
+.postedInfo {
+  color: #777; /* Light gray text color */
+  margin-bottom: 10px;
 }
 
-.post-preview a {
+.readMoreLink {
+  color: #ff69b4; /* Pink color for links */
   text-decoration: none;
-  color: var(--cg-pink); 
+  display: inline-block;
+  padding: 5px;
+  border-bottom: 2px solid #ff69b4; /* Pink border bottom on hover */
+  transition: border-bottom 0.3s ease;
 }
 
-.post-preview a:hover {
-  text-decoration: underline;
-}  
+.readMoreLink:hover {
+  border-bottom: 2px solid transparent; /* Remove border bottom on hover */
+}

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, ChangeEvent, FormEvent } from 'react';
+import styles from './commentForm.module.css';
 
 interface CommentFormProps {
   onCommentSubmit: (commentData: { user: string; comment: string; time: Date }) => void;
@@ -45,16 +46,18 @@ const CommentForm: React.FC<CommentFormProps> = ({ onCommentSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form className={styles.formContainer} onSubmit={handleSubmit}>
+      <label className={styles.formLabel}>
         Your Name:
-        <input type="text" value={user} onChange={handleChangeUser} />
+        <input type="text" className={styles.formInput} value={user} onChange={handleChangeUser} />
       </label>
-      <label>
+      <label className={styles.formLabel}>
         Comment:
-        <textarea value={body} onChange={handleChangeBody} />
+        <textarea className={styles.formTextArea} value={body} onChange={handleChangeBody} />
       </label>
-      <button type="submit">Submit Comment</button>
+      <button type="submit" className={styles.formButton}>
+        Submit Comment
+      </button>
     </form>
   );
 };

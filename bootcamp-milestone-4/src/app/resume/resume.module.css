@@ -1,49 +1,66 @@
+/* resume.module.css */
+
 .resume {
-    padding: 20px 20px;
-    width: 70%;
-    margin: 20px;
-    background-color: var(--cg-white);
-    text-align: left;
-  }
-  
-  .section {
-    margin-bottom: 20px;
-  }
-  
-  .section-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: var(--cg-pink);
-  }
-  
-  .entry {
-    margin-bottom: 15px;
-  }
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  .entry-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .entry-info {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 5px;
-  }
-  
-  .entry-description {
-    font-size: 16px;
-    color: #333;
-  }
+.section {
+  margin-bottom: 40px;
+}
 
-  .skill-list, .course-list {
-    margin-top: 10px;
-  }
-  
-  .skill-list li, .course-list li {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 5px;
-  }
+.sectionTitle {
+  font-size: 24px;
+  color: #e91e63; /* Pink color for section titles */
+  margin-bottom: 10px;
+}
+
+.entryTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333; /* Dark text color for entry titles */
+  margin-bottom: 5px;
+}
+
+.entryInfo {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.entryInfo strong {
+  color: #e91e63; /* Pink color for strong text */
+}
+
+.entryDescription {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.skillList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skillList li {
+  font-size: 16px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  color: #333; /* Dark text color for skills */
+}
+
+.courseList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.courseList li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333; /* Dark text color for courses */
+}
+

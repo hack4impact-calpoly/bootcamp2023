@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../../components/header";
-import Layout from "../layout";
 import Styles from './resume.module.css';
 
 export default function Resume() {
