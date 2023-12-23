@@ -23,8 +23,9 @@ export default async function Blog() {
     <div className={style.blog}>
       <h1 className={style.title}>Blogs</h1>
       {blogData ? (
-        blogData.map((blog: IBlog) => (
+        blogData.map((blog: IBlog, index: number) => (
           <BlogPreview
+            key={index}
             slug={blog.slug}
             title={blog.title}
             description={blog.description}
