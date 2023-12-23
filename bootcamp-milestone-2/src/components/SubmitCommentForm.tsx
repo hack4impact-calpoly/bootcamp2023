@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import styles from "./submitCommentForm.module.css";
-import postComment from "../helpers/postComment";
+import styles from "./SubmitCommentForm.module.css";
+import postComment from "../helpers/postcomment";
 import { IComment } from "../database/blogSchema";
 
 interface SubmitCommentFormParams {
