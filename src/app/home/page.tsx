@@ -5,7 +5,7 @@ import "../styles/website.css"
 export default function Home() {
     return(
         <main>
-            <h1 className="page-title">Aarav's Website</h1>
+            <h1 className="page-title">Aarav&apos;s Website</h1>
             <div className="about">
                 <div className="about-text">
                     <p>Hello my name is <strong>Aarav Sharma</strong> and I am from Fremont, CA. I am a second year <em>computer science</em> major at Cal Poly.</p>

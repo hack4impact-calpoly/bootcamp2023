@@ -28,9 +28,9 @@ export default async function Portfolio() {
                     No Projects Yet
                 </div>):
                 <div>
-                    {projects.map(project =>
-                        <PortfolioPreview  {...project.toObject()} />
-                    )}
+                    {projects.map(project => (
+                        <PortfolioPreview key={project._id} {...project.toObject()} />
+                    ))}
                 </div>
             }
         </div>
