@@ -28,9 +28,10 @@ export default async function Home() {
               Hey There!
             </h1>
             <p>
-              I'm <span className="green-emphasis">Aidan</span>, a
+              I&apos;m <span className="green-emphasis">Aidan</span>, a
               <em> fourth-year Graphic Communication student (UX)</em> with a
-              <em> Computer Science minor</em>, and I'm from Tustin, California!
+              <em> Computer Science minor</em>, and I&apos;m from Tustin,
+              California!
             </p>
             <p className="underline">
               To the left is a picture of me in the Redwoods from my roadtrip up

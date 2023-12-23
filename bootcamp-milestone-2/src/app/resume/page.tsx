@@ -151,8 +151,8 @@ export default function Resume() {
                 </li>
                 <li>
                   <p className="entry-description">
-                    Gained experience creating "cards" in CSS and learned basic
-                    HTML and CSS principles.
+                    Gained experience creating &quot;cards&quot; in CSS and
+                    learned basic HTML and CSS principles.
                   </p>
                 </li>
               </ul>
@@ -213,7 +213,7 @@ export default function Resume() {
             <h2 className="section-title">Awards</h2>
             <ul className="award-list">
               <li>
-                <h3 className="list-title">President's List</h3>
+                <h3 className="list-title">President&apos;s List</h3>
                 <p className="list-description">
                   Awarded for the 2020-2021, 2021-2022, 2022-2023 Academic Years
                 </p>
@@ -228,14 +228,14 @@ export default function Resume() {
                 <h3 className="list-title">Cal Poly Spikeball</h3>
                 <p className="list-description">
                   I played with the competitive club team during the 2022 – 2023
-                  school year, and I also manage the club's social media.
+                  school year, and I also manage the club&apos;s social media.
                 </p>
               </li>
               <li>
                 <h3 className="list-title">Reading</h3>
                 <p className="list-description">
-                  I made a goal last new year's to read more and use social
-                  media less; I've since read over 12 books!
+                  I made a goal last new year&apos;s to read more and use social
+                  media less; I&apos;ve since read over 12 books!
                 </p>
               </li>
               <li>
