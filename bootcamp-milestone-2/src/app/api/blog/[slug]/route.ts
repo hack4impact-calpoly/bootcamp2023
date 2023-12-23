@@ -1,11 +1,7 @@
-
 import { NextRequest, NextResponse } from 'next/server'
 import connectDB from "@/helpers/db"
 import Blog from '@/database/blogSchema';
-import { getBlog } from '@/app/blog/[slug]/page';
-import { error } from 'console';
 
-import Blogs, { IComment } from "@/database/blogSchema";
 type IParams = {
 		params: {
 			slug: string

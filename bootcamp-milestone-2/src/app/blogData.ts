@@ -30,7 +30,6 @@ export interface Blog {
 //         slug: "blog1.html",
 // 	},
 
-//getBlogs()
  //];
 
  async function getBlogs(){
