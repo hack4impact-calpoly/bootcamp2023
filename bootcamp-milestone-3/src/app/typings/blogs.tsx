@@ -1,2 +1,3 @@
 // styles gradient
-import '../styles';
+import '../../styles';
+import "../styles/globals.css";

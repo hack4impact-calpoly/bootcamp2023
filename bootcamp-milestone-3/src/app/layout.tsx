@@ -1,4 +1,4 @@
-import "./globals.css";
+import "../styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google"; // You can change the font to anything you want.
 import Navbar from "@components/navbar";

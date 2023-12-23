@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '@components/footer';
 import Navbar from '@components/navbar';
 import Image from 'next/image';
+import "../styles/globals.css";
 
 // You can name the function within page.tsx anything you want.
 export default function Home() {
