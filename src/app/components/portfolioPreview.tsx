@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import style from './PortfolioPreview.module.css';
+import style from './portfolioPreview.module.css';
 import {IProject} from '@/database/projectSchema'
 
 export default function PortfolioPreview(props: IProject) {
