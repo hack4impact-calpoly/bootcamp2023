@@ -29,8 +29,7 @@ export default function BlogPage({ params:{slug} }: IParams) {
         time: '',
     });
     const submitComment = async () => {
-        const response = await fetch(`http://bdons-website-seven-psi.vercel.app/api/blog/${slug}/comments`, {
-        //const response = await fetch(`http://localhost:3000/api/blog/${slug}/comments`, {
+        const response = await fetch(`https://bdons-website.vercel.app/api/blog/${slug}/comments`, {
 
         method: 'POST',
         headers: {
@@ -54,7 +53,7 @@ export default function BlogPage({ params:{slug} }: IParams) {
 
     useEffect(() => {
         const fetchBlogData = async () => {
-          const response = await fetch(`http://bdons-website-seven-psi.vercel.app/api/blog/${slug}`);
+          const response = await fetch(`https://bdons-website.vercel.app/api/blog/${slug}`);
           //const response = await fetch(`http://localhost:3000/api/blog/${slug}`);
 
           const data = await response.json();
