@@ -1,4 +1,5 @@
 import CommentPreview from "@/components/CommentPreview/CommentPreview";
+import PostComment from "@/components/PostComment/PostComment";
 import Image from "next/image";
 import { Key } from "react";
 
@@ -14,7 +15,7 @@ async function getBlog(slug: string) {
 
     return res.json();
   } catch (err: unknown) {
-    console.log(`error: ${err}`);
+    console.log(`Error: ${err}`);
     return null;
   }
 }
@@ -46,6 +47,8 @@ export default async function Blog({ params }: { params: { slug: string } }) {
           <h3 className="text-center text-2xl">{blog.title}</h3>
           <h4 className="text-center text-lg italic">{blog.date}</h4>
           <p className="my-5 text-[#adb5bd] font-light">{blog.content}</p>
+          <h6 className="text-center text-2xl">Comments</h6>
+          <PostComment slug={slug} />
           {comments?.map(
             (
               comment: { user: string; comment: string; time: Date },

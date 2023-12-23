@@ -9,9 +9,9 @@ export default function CommentPreview({
   time,
 }: CommentPreviewProps) {
   return (
-    <div>
-      <h4>{user}</h4>
-      <p>{comment}</p>
+    <div className="py-2.5">
+      <p className="text-[#adb5bd] font-light">Comment From: {user}</p>
+      <p className="text-[#adb5bd] font-light">{comment}</p>
     </div>
   );
 }
