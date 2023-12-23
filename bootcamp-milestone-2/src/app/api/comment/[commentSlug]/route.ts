@@ -9,7 +9,6 @@ export async function PUT(req: NextRequest, params: Params) {
 
   try {
     const blog = await blogSchema.findOne({ slug }).orFail();
-    const newComment = req.body;  
     const { comment } = await req.json();
 
     blog.comments.push(comment);
