@@ -16,9 +16,9 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const service_id = 'service_g0dkj6n'
-    const template_id = 'template_8989d1d'
-    const pub_key = 'srjuFPyyAfmZBWnM2'
+    const service_id = process.env.NEXT_PUBLIC_SERVICE_ID
+    const template_id = process.env.NEXT_PUBLIC_TEMPLATE_ID
+    const pub_key = process.env.NEXT_PUBLIC_PUB_KEY
 
     const templateParams = {
       from_name: name,
@@ -27,7 +27,7 @@ export default function Contact() {
       message: message
     };
 
-    emailjs.send(service_id, template_id, templateParams, pub_key)
+    emailjs.send(service_id || "", template_id || "", templateParams, pub_key)
             .then((response) => {
                 console.log("Success!" , response)
                 setName('');
