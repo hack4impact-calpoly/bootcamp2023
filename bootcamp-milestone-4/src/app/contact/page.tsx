@@ -46,6 +46,7 @@ export default function Contact() {
       setName("");
       setEmail("");
       setMessage("");
+      alert("Message Sent")
    }, (err) => {
       console.log('FAILED...', err);
       alert("Message Failed: Try directly emailing.")

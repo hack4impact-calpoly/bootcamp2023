@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown"; // Good for wanting the flexibility 
 import { IComment } from "@/database/blogSchema.ts";
 import Comment, { CommentProps } from "@/app/components/commentPost.tsx"
 import { Key } from "react";
+import CommentSection from "@/app/components/commentSection.tsx";
 
 // My old way of getting params for personal notes
 // type Props = {
@@ -81,10 +82,15 @@ export default async function IndvidualBlog({ params: { slug } }: Props) {
       <h1>Blog Post</h1>
       <BlogPost {...blog} />
       {/* comment Logic */}
+      <br/>
+      <h1>Discussion</h1>
+      <CommentSection slug={"blogs/" + slug}></CommentSection>
       {blog.comments.map((comment : IComment, index: Key | null | undefined ) => (
         <Comment key={index} comment={comment} />
       ))}
+  
       </>
+
   )
 }
 
