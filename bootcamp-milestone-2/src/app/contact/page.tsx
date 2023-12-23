@@ -14,7 +14,7 @@ export default function Contact() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     const service_id = process.env.NEXT_PUBLIC_SERVICE_ID
     const template_id = process.env.NEXT_PUBLIC_TEMPLATE_ID
