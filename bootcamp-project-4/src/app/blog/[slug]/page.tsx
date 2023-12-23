@@ -30,6 +30,7 @@ function parseCommentTime(time: Date) {
 }
 
 export default function Blog({ params: { slug } }: Props) {
+  const [isLoading, setIsLoading] = useState(true);
   const [blog, setBlog] = useState<IBlog | null>(null);
 
   async function getBlog(slug: string) {
@@ -42,12 +43,20 @@ export default function Blog({ params: { slug } }: Props) {
         throw new Error("Failed to fetch blog");
       }
 
-      return res.json();
+      const blog = await res.json();
+      setBlog(blog);
+      setIsLoading(false); // Set loading to false when blog has been fetched
+
+      return blog;
     } catch (err: unknown) {
       console.log(`error: ${err}`);
       return null;
     }
   }
+
+  useEffect(() => {
+    getBlog(slug);
+  }, [slug]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -103,49 +112,55 @@ export default function Blog({ params: { slug } }: Props) {
 
   return (
     <main>
-      {blog ? (
+      {isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
         <div>
-          <div className={style.page_title}>
-            <h1>{blog.title}</h1>
-          </div>
-          <div className={style.blog_container}>
-            <h2 className={style.post_subtitle}>
-              {parseCommentTime(blog.date)}
-            </h2>
-            <p className={style.post_description}>{blog.content}</p>
-            <div className={style.row}>
-              <div className={style.blog_image}>
-                <Image
-                  src={blog.image}
-                  alt="img"
-                  width={250}
-                  height={300}
-                ></Image>
+          {blog ? (
+            <div>
+              <div className={style.page_title}>
+                <h1>{blog.title}</h1>
               </div>
-
               <div className={style.blog_container}>
-                <h2>Comments</h2>
-                {blog.comments.map((comment: IComment, index: number) => (
-                  <Comment key={index} comment={comment} />
-                ))}
-                <h3>Leave a Comment!</h3>
-                <form onSubmit={handleSubmit}>
-                  <label>
-                    Name:
-                    <input type="text" name="name" placeholder="name" />
-                  </label>
-                  <label>
-                    Comment:
-                    <textarea name="comment" placeholder="comment" />
-                  </label>
-                  <input type="submit" value="Submit" />
-                </form>
+                <h2 className={style.post_subtitle}>
+                  {parseCommentTime(blog.date)}
+                </h2>
+                <p className={style.post_description}>{blog.content}</p>
+                <div className={style.row}>
+                  <div className={style.blog_image}>
+                    <Image
+                      src={blog.image}
+                      alt="img"
+                      width={250}
+                      height={300}
+                    ></Image>
+                  </div>
+
+                  <div className={style.blog_container}>
+                    <h2>Comments</h2>
+                    {blog.comments.map((comment: IComment, index: number) => (
+                      <Comment key={index} comment={comment} />
+                    ))}
+                    <h3>Leave a Comment!</h3>
+                    <form onSubmit={handleSubmit}>
+                      <label>
+                        Name:
+                        <input type="text" name="name" placeholder="name" />
+                      </label>
+                      <label>
+                        Comment:
+                        <textarea name="comment" placeholder="comment" />
+                      </label>
+                      <input type="submit" value="Submit" />
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <h1>Blog not found</h1>
+          )}
         </div>
-      ) : (
-        <h1>Blog not found</h1>
       )}
     </main>
   );
