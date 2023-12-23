@@ -10,7 +10,7 @@ import { useRef } from "react";
 
 async function getProjects() {
   try {
-    const res = await fetch(process.env.MY_API + "/api/projects", {
+    const res = await fetch(process.env.MY_API + `/api/projects`, {
       cache: 'no-store' // so if we add new blogs, they will show up when the page is refreshed
     })
     if (!res.ok){
