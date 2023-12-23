@@ -10,9 +10,9 @@ export default function Resume() {
                 <a href="PlaceholderPage.pdf" download className="text-white"> Download Resume </a>
 
                 <div className="resume">
-                    {resumeEntryList.map(entry =>
+                    {resumeEntryList.map((entry,index) =>
 
-                        <div className="entry">
+                        <div className="entry" key={index}>
                             <h3 className="entry-title">{entry.entryTitle}</h3>
                             <p className="entry-info">{entry.entryInfo}</p>
                             <p className="entry-description">{entry.entryDescription}</p>

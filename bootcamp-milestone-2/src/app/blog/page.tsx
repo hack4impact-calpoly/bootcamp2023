@@ -25,8 +25,8 @@ export default async function BlogPage() {
                 </div>)
                 :
                 <div>
-                    {blogs.map(blog =>
-                        <BlogPreview  {...blog.toObject()} /> // This is how we call the component
+                    {blogs.map((blog, index) => 
+                        <BlogPreview key={index} {...blog.toObject()} />
                     )}
                 </div>
             }

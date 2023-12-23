@@ -49,8 +49,8 @@ export default async function PortfolioPage() {
                 :
                 (<div>
                     <h1 className="page-title">My Personal Website</h1>
-                    {projects.map((project) =>
-                        <ProjectPreview  {...project.toObject()} /> // This is how we call the component
+                    {projects.map((project:any, index:number) =>
+                        <ProjectPreview  key={index} {...project.toObject()} /> // This is how we call the component
                     )}
                 </div>)}
             <div>

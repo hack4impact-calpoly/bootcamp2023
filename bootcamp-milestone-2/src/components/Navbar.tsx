@@ -7,7 +7,7 @@ export default function Navbar() {
         <header className={`${style.navbar} ${style.navList} }`} >
 
             <nav className="navbar">
-                <h1 className="logo"><Link href="/">Brandon's Personal Website</Link></h1>
+                <h1 className="logo"><Link href="/">Brandon&apos;s Personal Website</Link></h1>
                 <ul className="nav-list">
                     <li><Link href="/">Home</Link></li>
                     <li><Link href="/blog">Blog</Link></li>
