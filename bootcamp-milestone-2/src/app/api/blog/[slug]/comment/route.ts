@@ -24,7 +24,7 @@ export async function POST(req: NextRequest, { params }: IParams) {
 
   try {
     const blog = await Blog.findOne({ slug: slug }).orFail();
-    blog.comments.push({ user: username, comment: commentContent, time: new Date(givenTime) });
+    blog.comments.push({ user: username, comment: commentContent, time: new Date().toISOString()});
     await blog.save();
     return NextResponse.json("Comment successfully added");
 
@@ -32,20 +32,4 @@ export async function POST(req: NextRequest, { params }: IParams) {
     console.log(err);
     return NextResponse.json("Blog Error");
   }
-  
-  // TODO: REMOVE
-  // push comment object to document
-
-  // const reqBody = await req.json()
-  // const username = reqBody.name
-  // const commentContent = reqBody.comment
-
-  // const body = req.body
-  // // validate body
-  // if (body not valid) {
-  // 	return some error
-  // }
-
-  // // push comment object to document
-  // Blog.update(...)
 }

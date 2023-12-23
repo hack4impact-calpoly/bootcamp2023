@@ -33,7 +33,7 @@ export default async function PortfolioPage() {
                         <ProjectPreview  {...project.toObject()} /> // This is how we call the component
                     )}
                 </div>)}
-
+{/* Add Load comments here */}
         </>
     )
 }

@@ -6,7 +6,7 @@ export type IComment = {
   time: Date;
 }
 //temp
-const commentSchema = new Schema<IComment>({
+export const commentSchema = new Schema<IComment>({
   user: { type: String, required: true },
   comment: { type: String, required: true },
   time: { type: Date, required: true },
@@ -33,11 +33,10 @@ export const blogSchema = new Schema<IBlog>({
   imagePath: { type: String, required: true },
   content: { type: String, required: true },
   comments: [{ type: commentSchema, required: true }],
-})
+});
 
 // defining the collection and model
-const Blog = mongoose.models['blogs'] ||
-  mongoose.model('blogs', blogSchema);
+const Blog = mongoose.models["blogs"] || mongoose.model("blogs", blogSchema);
 
-  
+// const Comments = mongoose.models["comments"] || mongoose.model("comments", commentSchema);
 export default Blog;
