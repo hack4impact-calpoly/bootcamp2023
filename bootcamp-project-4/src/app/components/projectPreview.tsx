@@ -36,7 +36,7 @@ export default function BlogPreview(props: IProject) {
       </Link>
 
       <div className={style.blog_list}>
-        <Image src={props.image} alt="img" width={250} height={300}></Image>
+        <Image src={props.image} alt="img" width={150} height={200}></Image>
         <p>{props.description}</p>
         <p>{parseCommentTime(props.date)}</p>
       </div>
