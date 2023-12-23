@@ -15,7 +15,7 @@ export async function POST(req: NextRequest, { params }: IParams) {
   const body = await req.json(); //maybe need to update
   const username = body.user;
   const commentContent = body.comment;
-  const givenTime = body.time; 
+  const givenTime = body.time;
 
   // validate body
   if (body === null) {
@@ -24,10 +24,13 @@ export async function POST(req: NextRequest, { params }: IParams) {
 
   try {
     const blog = await Blog.findOne({ slug: slug }).orFail();
-    blog.comments.push({ user: username, comment: commentContent, time: new Date().toISOString()});
+    blog.comments.push({
+      user: username,
+      comment: commentContent,
+      time: new Date().toISOString(),
+    });
     await blog.save();
     return NextResponse.json("Comment successfully added");
-
   } catch (err) {
     console.log(err);
     return NextResponse.json("Blog Error");

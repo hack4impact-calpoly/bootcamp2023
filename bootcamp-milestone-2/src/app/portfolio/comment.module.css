@@ -1,0 +1,7 @@
+.CommentWrapper {
+    width: 100%;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid orange;
+    margin-bottom: 10px;
+}

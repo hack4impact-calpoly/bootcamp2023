@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Comment from "@/components/comment";
 import { IComment } from "@/database/blogSchema";
+import PostComment from "@/components/postComment";
 
 type IParams = {
     params: {
@@ -65,6 +66,9 @@ export default async function BlogPage({ params }: IParams) {
                     </div>
                 </main>
             )}
+            <h1>Post a comment!</h1>
+            <PostComment PostURL={`http://localhost:3000/api/blog/${slug}/comment`} />
+
         </>
     );
 }
