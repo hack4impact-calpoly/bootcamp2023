@@ -28,11 +28,11 @@ export default async function Project() {
         projectData.map((project) => (
           <ProjectPreview
             key={project.projectID}
+            _id={project._id}
             title={project.title}
-            date={project.date}
             description={project.description}
             content={project.content}
-            slug={project.slug}
+            comments={project.comments}
           />
         ))}
     </div>
