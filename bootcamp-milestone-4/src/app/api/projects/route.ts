@@ -11,6 +11,7 @@ export async function GET() {
         return NextResponse.json({projects});
     } catch(error){
         console.log(error)
-        return null
+        return NextResponse.json("Failed to fetch blogs", { status: 500 });
+
     }    
 }

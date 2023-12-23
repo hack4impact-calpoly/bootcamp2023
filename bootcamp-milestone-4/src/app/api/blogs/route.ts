@@ -25,6 +25,6 @@ export async function POST(request : NextRequest) {
         return NextResponse.json({message: "Blog Created"}, {status: 201});
     } catch (error) {
         console.log(error)
-        return NextResponse.json("Failed to fetch blogs", { status: 500 });
+        return NextResponse.json("Failed to create blog", { status: 500 });
     }
 }
