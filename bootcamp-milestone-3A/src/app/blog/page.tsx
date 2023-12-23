@@ -1,10 +1,14 @@
 import Blog from "@/database/blogSchema";
 import connectDB from "@/helpers/db";
-import Link from "next/link";
-import { NextRequest, NextResponse } from 'next/server';
-import blogSchema from '@/database/blogSchema';
-import IBlog from '@/blogData';
 import BlogPreview from "../../../components/blogPreview";
+import mongoose from "mongoose";
+import { NextRequest, NextResponse } from 'next/server';
+import router from "next/navigation";
+import IBlog from "@/blogData";
+
+const url: string = process.env.MONGO_URI as string;
+let connection: typeof mongoose;
+const slug = url.split("/").pop();
 
 type Props = {
   params: { slug: string }
@@ -18,46 +22,43 @@ async function getBlogs() {
     return blogs;
   } catch (error) {
     console.error('Error fetching blogs:', error);
-    throw error; // Re-throw the error to handle it elsewhere if needed
+    throw error;
   }
 }
 
-async function getBlog(slug: string) {
-	try {
-		const res = await fetch(`http://localhost:3000/blog/{slug}`, {
-			cache: "no-store",	
-		})
 
-		if (!res.ok) {
-			throw new Error("Failed to fetch blog");
-		}
-
-		return res.json();
-	} catch (err: unknown) {
-		console.log(`error: ${err}`);
-		return null;
-	}
-}
-
-export default async function blog({ params }: Props) {
-  const slug = params.slug;
-  const b = await getBlog(slug);
+export default async function blog(slug: string) {
   const blogs = await getBlogs();
-  if (!blogs) {
-    return(
-      <div>Blog Not Found</div>
-    );
+  var b = null;
+  for (const blog of blogs) {
+    if (blog.slug === slug) {
+      b = blog; // Found the blog with the specified slug
+    }
   }
 
-  
-  return (
+  if (b) {
+    return (
+      <div style={{ textAlign: 'center', fontSize: '25px', paddingBottom: '100px' }}>
+        <BlogPreview
+          title={b.title}
+          date={b.date}
+          description={b.description}
+          image={b.image}
+          slug={b.slug}
+          comments={b.comments}
+        />
+      </div>
+    )
+  } else {
+     return (
     <div>
-      <main style={{textAlign: 'center'}}>
-        <h1 style={{textDecoration: 'underline'}}>Welcome to my Blog</h1>
-        <div id="blog-posts" style={{margin: '50px;'}}></div>
+      <main style={{ textAlign: 'center' }}>
+        <h1 style={{ textDecoration: 'underline' }}>Welcome to my Blog</h1>
+        <div id="blog-posts" style={{ margin: '50px' }}></div>
       </main>
-      {blogs.map((blog) => 
-        <div style={{textAlign: 'center', fontSize: '25px', paddingBottom: '100px'}}>
+      {/* Display other blogs */}
+      {blogs.map((blog) => (
+        <div key={blog.slug} style={{ textAlign: 'center', fontSize: '25px', paddingBottom: '100px' }}>
           <BlogPreview
             title={blog.title}
             date={blog.date}
@@ -67,10 +68,9 @@ export default async function blog({ params }: Props) {
             comments={blog.comments}
           />
         </div>
-        )
-      }
+      ))}
     </div>
-  ); 
+  );
+  }  
 }
 
-//href={`/blog/${blog.slug}`}
