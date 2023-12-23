@@ -22,7 +22,7 @@ export default async function Portfolio() {
     return (
       <>
         <main>
-          <h1 className="page-title">Angela&aposs Portfolio</h1>
+          <h1 className="page-title">Angela&apos;s Portfolio</h1>
           {projects.map((project) => (
             <ProjectPreview
               title={project.title}
