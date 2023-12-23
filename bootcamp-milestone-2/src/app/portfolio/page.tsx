@@ -1,5 +1,4 @@
 import ProjectPreview from "@/components/ProjectPreview/ProjectPreview";
-// import { projects } from "../data/portfolioData";
 import connectDB from "@/helpers/db";
 import Project from "@/database/projectSchema";
 
