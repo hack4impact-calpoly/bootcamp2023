@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import connectDB from "../../../helpers/db";
-import blogSchema from "../../../database/blogSchema";
+import connectDB from "../../../../helpers/db";
+import blogSchema from "../../../../database/blogSchema";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 
 export async function PUT(req: NextRequest, params: Params) {

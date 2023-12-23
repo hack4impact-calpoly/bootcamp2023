@@ -2,7 +2,7 @@ import { Comment as CommentType } from "../database/blogSchema";
 
 export const addComment = async (slug: string, comment: CommentType) => {
   try {
-    const res = await fetch(`https://seanmnguyen.vercel.app/api/${slug}`, {
+    const res = await fetch(`https://seanmnguyen.vercel.app/api/comment/${slug}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
