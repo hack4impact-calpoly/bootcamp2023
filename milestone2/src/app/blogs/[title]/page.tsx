@@ -22,7 +22,7 @@ type IBlog = {
 
 async function getBlog(title: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/blog/${title}`);
+    const res = await fetch(`/api/blog/${title}`);
     if (!res.ok) {
       throw new Error("Failed to fetch blog");
     }

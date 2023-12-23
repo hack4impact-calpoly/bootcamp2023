@@ -113,7 +113,7 @@ export default function PortfolioComponent() {
 
 async function getPortfolio() {
   try {
-    const res = await fetch(`http://localhost:3000/api/portfolio/`);
+    const res = await fetch(`/api/portfolio/`);
     if (!res.ok) {
       throw new Error("Failed to fetch portfolio");
     }
