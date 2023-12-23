@@ -5,6 +5,7 @@ import Comment from "../../components/comment";
 import { IProject } from "../../database/projectSchema";
 import { IComment } from "../../database/blogSchema";
 import style from "../../blog/blog.module.css";
+import { set } from "mongoose";
 
 type Props = {
   params: { slug: string };
@@ -31,6 +32,7 @@ function parseCommentTime(time: Date) {
 }
 
 export default function Project({ params: { slug } }: Props) {
+  const [isLoading, setIsLoading] = useState(true);
   const [project, setProject] = useState<IProject | null>(null);
 
   async function getProject(slug: string) {
@@ -43,7 +45,10 @@ export default function Project({ params: { slug } }: Props) {
         throw new Error("Failed to fetch project");
       }
 
-      return res.json();
+      const project = await res.json();
+      setProject(project);
+      setIsLoading(false); // Set loading to false when blog has been fetched
+      return project;
     } catch (err: unknown) {
       console.log(`error: ${err}`);
       return null;
@@ -99,49 +104,57 @@ export default function Project({ params: { slug } }: Props) {
 
   return (
     <main>
-      {project ? (
+      {isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
         <div>
-          <div className={style.page_title}>
-            <h1>{project.title}</h1>
-          </div>
-          <div className={style.blog_container}>
-            <h2 className={style.post_subtitle}>
-              {parseCommentTime(project.date)}
-            </h2>
-            <p className={style.post_description}>{project.description}</p>
-            <div className={style.row}>
-              <div className={style.blog_image}>
-                <Image
-                  src={project.image}
-                  alt="img"
-                  width={250}
-                  height={300}
-                ></Image>
+          {project ? (
+            <div>
+              <div className={style.page_title}>
+                <h1>{project.title}</h1>
               </div>
-
               <div className={style.blog_container}>
-                <h2>Comments</h2>
-                {project.comments.map((comment: IComment, index: number) => (
-                  <Comment key={index} comment={comment} />
-                ))}
-                <h3>Leave a Comment!</h3>
-                <form onSubmit={handleSubmit}>
-                  <label>
-                    Name:
-                    <input type="text" name="name" placeholder="name" />
-                  </label>
-                  <label>
-                    Comment:
-                    <textarea name="comment" placeholder="comment" />
-                  </label>
-                  <input type="submit" value="Submit" />
-                </form>
+                <h2 className={style.post_subtitle}>
+                  {parseCommentTime(project.date)}
+                </h2>
+                <p className={style.post_description}>{project.description}</p>
+                <div className={style.row}>
+                  <div className={style.blog_image}>
+                    <Image
+                      src={project.image}
+                      alt="img"
+                      width={250}
+                      height={300}
+                    ></Image>
+                  </div>
+
+                  <div className={style.blog_container}>
+                    <h2>Comments</h2>
+                    {project.comments.map(
+                      (comment: IComment, index: number) => (
+                        <Comment key={index} comment={comment} />
+                      )
+                    )}
+                    <h3>Leave a Comment!</h3>
+                    <form onSubmit={handleSubmit}>
+                      <label>
+                        Name:
+                        <input type="text" name="name" placeholder="name" />
+                      </label>
+                      <label>
+                        Comment:
+                        <textarea name="comment" placeholder="comment" />
+                      </label>
+                      <input type="submit" value="Submit" />
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <h1>Project not found</h1>
+          )}
         </div>
-      ) : (
-        <h1>Project not found</h1>
       )}
     </main>
   );
