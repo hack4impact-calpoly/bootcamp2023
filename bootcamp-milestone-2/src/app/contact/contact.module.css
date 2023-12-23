@@ -6,6 +6,10 @@
     color: #113946;
     font-size:20px;
   }
+
+  .background {
+    color: #EAD7BB;
+  }
   
   .input,
   .textarea {
