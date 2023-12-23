@@ -8,45 +8,45 @@ import Image from "next/image";
 //         slug: string
 //     }
 //   }
-  
-  async function getBlog(slug: string) {
-      try {
-          const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
-              cache: "no-store",	
-          })
-  
-          if (!res.ok) {
-              throw new Error("Failed to fetch blog");
-          }
-  
-          return res.json();
-      } catch (err: unknown) {
-          console.log(`error: ${err}`);
-          return null;
-      }
+
+async function getBlog(slug: string) {
+  try {
+    const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch blog");
+    }
+
+    return res.json();
+  } catch (err: unknown) {
+    console.log(`error: ${err}`);
+    return null;
   }
-  
-  function parseCommentTime(time: Date) {
-    /*
+}
+
+function parseCommentTime(time: Date) {
+  /*
     Parses MongoDB/TS date object
     :param time: date object
     :return: string reprsenting date
     */
-    // Convert to Los Angeles time
-    const losAngelesDate = new Date(
-        time.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })
-    );
-  
-    // Format the date as desired
-    const formattedDate = losAngelesDate.toLocaleString("en-US", {
-        month: "long",
-        day: "numeric",
-        year: "numeric"
-    });
-    return formattedDate;
-  }
+  // Convert to Los Angeles time
+  const losAngelesDate = new Date(
+    time.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })
+  );
+
+  // Format the date as desired
+  const formattedDate = losAngelesDate.toLocaleString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+  return formattedDate;
+}
 // @ts-ignore
-export default async function Blog({ params }: {slug: string}) {
+export default async function Blog({ params }: { slug: string }) {
   const slug = params.slug;
   const blog = await getBlog(slug);
   // render blog if fetched successfully
@@ -62,10 +62,14 @@ export default async function Blog({ params }: {slug: string}) {
           <p className={style.post_description}>{blog.content}</p>
           <div className={style.row}>
             <div className={style.blog_image}>
-                <Image src={blog.image} alt="img" width={250} height={300}></Image>
+              <Image
+                src={blog.image}
+                alt="img"
+                width={250}
+                height={300}
+              ></Image>
             </div>
-            
-            
+
             <div className={style.blog_container}>
               <h2>Comments</h2>
               {blog.comments.map((comment: IComment, index: number) => (
