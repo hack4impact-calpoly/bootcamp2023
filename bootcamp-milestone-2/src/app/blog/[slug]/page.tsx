@@ -5,8 +5,6 @@ import "@/app/full.css"
 import Image from "next/image";
 import Comment from "@/components/commentView";
 import { IComment } from "@/database/blogSchema";
-import next from "next";
-import { NextPage } from "next";
 
 
 type Props = {
@@ -14,7 +12,7 @@ type Props = {
 }
 
 
-export async function getBlog(slug: string) {
+async function getBlog(slug: string) {
 	try {
 		const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
 			cache: "no-store",	
