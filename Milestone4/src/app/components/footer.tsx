@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div>
       <footer className={style.footer}>
-        © 2023 Matthew Bosio's Portfolio | All Rights Reserved
+        © 2023 Matthew Bosio Portfolio | All Rights Reserved
       </footer>
     </div>
   );
