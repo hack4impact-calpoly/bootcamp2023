@@ -1,4 +1,5 @@
 import { IComment } from "../database/blogSchema";
+import style from "./commentPreview.module.css";
 {
   /* When we pass props, the name that we use to pass values
 		is the key for the type
