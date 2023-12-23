@@ -54,7 +54,7 @@ export default async function PortfolioPage() {
                     )}
                 </div>)}
             <div>
-                {comments.length > 0 ? (
+                {
                     comments.map((comment: any, index: number) => (
                         <div className={style.CommentWrapper} key={index}>
                             <p>{comment.user}</p>
@@ -62,9 +62,7 @@ export default async function PortfolioPage() {
                             <p>{comment.time}</p>
                         </div>
                     ))
-                ) : (
-                    <p>There are no comments</p>
-                )}
+                }
             </div>
 
             <h1>Post a comment!</h1>
