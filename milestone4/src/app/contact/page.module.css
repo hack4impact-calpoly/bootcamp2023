@@ -1,5 +1,9 @@
     /* CSS for Contact Page */
-    #contact-form {
+    .page-title{
+        font-size: 25pt;
+        font-weight: bold;
+    }
+    .contact-form {
         display:flex;
         flex-direction: column;
         justify-content: space-between;

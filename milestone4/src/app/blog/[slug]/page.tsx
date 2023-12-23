@@ -34,7 +34,6 @@ export default function Page({ params }: { params: { slug: string } }) {
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const name = e.target.name
-
         setData(prevData => ({
             ...prevData,
             [name]: e.target.value
