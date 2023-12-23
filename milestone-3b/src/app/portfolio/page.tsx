@@ -22,13 +22,14 @@ export default async function Portfolio() {
     return (
       <>
         <main>
-          <h1 className="page-title">Angela's Portfolio</h1>
+          <h1 className="page-title">Angela&aposs Portfolio</h1>
           {projects.map((project) => (
             <ProjectPreview
               title={project.title}
               description={project.description}
               image={project.image}
               slug={project.slug}
+              key={project._id}
             />
           ))}
         </main>

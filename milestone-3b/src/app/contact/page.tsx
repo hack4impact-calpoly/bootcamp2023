@@ -1,8 +1,6 @@
 "use client";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-import style from "./page.module.css";
-import Image from "next/image";
 
 export default function Home() {
   const [email, setEmail] = useState("");

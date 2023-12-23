@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React from "react";
 import BlogPreview from "../components/blogPreview";
 import connectDB from "../helpers/db";
@@ -31,6 +32,7 @@ export default async function Blog() {
               content={blog.content}
               comments={blog.comments}
               image={blog.image}
+              key={blog._id}
             />
           ))}
         </main>
