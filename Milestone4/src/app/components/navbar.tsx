@@ -19,7 +19,7 @@ export default function Navbar() {
             <Link href="/blogs">Blog</Link>
           </li>
           <li>
-            <Link href="/project">Portfolio</Link>
+            <Link href="/portfolio">Portfolio</Link>
           </li>
           <li>
             <Link href="/resume">Resume</Link>
