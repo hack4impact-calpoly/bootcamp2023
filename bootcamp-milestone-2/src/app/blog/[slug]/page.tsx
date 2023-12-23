@@ -6,6 +6,7 @@ import Comment, { IComment } from "../../../components/comment";
 import { fetchBlog } from "../../../utils/fetchBlog";
 import { addComment } from "../../../utils/addComment";
 import { Blog } from "../../blogData";
+import { useRouter } from "next/router";
 
 export default function Blog({ params }: { params: { slug: string } }) {
   const [blog, setBlog] = useState<Blog>();
@@ -14,6 +15,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
     comment: "",
   });
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
   const slug = params.slug;
   let paragraphs = [];
@@ -63,6 +65,12 @@ export default function Blog({ params }: { params: { slug: string } }) {
       time: new Date(),
     };
     addComment(slug, newComment);
+    try {
+      router.reload();
+      console.log("comment uploaded, page reloaded");
+    } catch (error) {
+      console.error("Error with reload: " + error);
+    }
   }
 
   // creates different paragraphs for content
