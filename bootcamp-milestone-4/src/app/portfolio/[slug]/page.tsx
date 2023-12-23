@@ -14,9 +14,12 @@ type IParams = {
 
 async function getProject(slug: string) {
   try {
-    const res = await fetch(`${process.env.BASE_URL}/api/portfolio/${slug}`, {
-      cache: "no-cache",
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/portfolio/${slug}`,
+      {
+        cache: "no-cache",
+      }
+    );
 
     if (!res.ok) {
       throw new Error("Failed to fetch blog");
@@ -30,7 +33,6 @@ async function getProject(slug: string) {
 }
 
 export default async function ProjectPage({ params: { slug } }: IParams) {
-  const [comments, setComments] = useState([]);
   const projectData = await getProject(slug);
   if (!projectData) {
     return <div>Not Found</div>;
@@ -64,7 +66,7 @@ export default async function ProjectPage({ params: { slug } }: IParams) {
           <h6 className={style.date}>No Comments Yet!</h6>
         )}
       </div>
-      <AddComments params={{ slug: slug, type: "portfolio" }} />
+      <AddComments key={1} params={{ slug: slug, type: "portfolio" }} />
     </>
   );
 }
