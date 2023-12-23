@@ -1,7 +1,9 @@
-// import React from 'react';
-// import BlogPreview from '../components/blogPreview';
-// import { blogs } from './blogData';
-// import '../../../styles.css';
+import React from 'react';
+import BlogPreview from '../components/blogPreview';
+import { blogs } from './blogData';
+import '../../../styles.css';
+import connectDB from "@/helpers/db";
+import Blogs from "../database/blogSchema"
 
 // export default function BlogList() {
 //   return (
@@ -12,12 +14,6 @@
 //     </div>
 //   );
 // }
-
-import React from "react";
-import BlogPreview from '@/app/components/blogPreview';
-import "../styles/website.css"
-import connectDB from "@/helpers/db";
-import Blogs from "../database/blogSchema"
 
 async function getBlogs(){
 	await connectDB() // function from db.ts before
