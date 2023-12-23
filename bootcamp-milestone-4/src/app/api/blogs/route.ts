@@ -13,13 +13,18 @@ export async function GET() {
         return NextResponse.json({blogs});
     } catch(error){
         console.log(error)
-        return null
+        return NextResponse.json("Failed to fetch blogs", { status: 500 });
     }    
 }
 
 export async function POST(request : NextRequest) {
-    const {...blog} = await request.json();
-    await connectDB();
-    await Blog.create({...blog});
-    return NextResponse.json({message: "Blog Created"}, {status: 201});
+    try {
+        const {...blog} = await request.json();
+        await connectDB();
+        await Blog.create({...blog});
+        return NextResponse.json({message: "Blog Created"}, {status: 201});
+    } catch (error) {
+        console.log(error)
+        return NextResponse.json("Failed to fetch blogs", { status: 500 });
+    }
 }
