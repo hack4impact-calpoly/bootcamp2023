@@ -1,6 +1,6 @@
 export const fetchBlog = async (slug: string) => {
     try {
-      const res = await fetch(`http://seanmnguyen.vercel.app/api/${slug}`, {
+      const res = await fetch(`https://seanmnguyen.vercel.app/api/${slug}`, {
         cache: "no-store",
       });
 
