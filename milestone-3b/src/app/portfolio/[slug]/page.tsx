@@ -10,9 +10,7 @@ type Props = {
 
 async function getProjectBySlug(slug: string) {
     await connectDB();
-
     try {
-        // Query for a blog with the specified slug
         const project = await Projects.findOne({ slug }).orFail();
         return project;
     } catch (err) {

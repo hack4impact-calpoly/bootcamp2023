@@ -2,7 +2,7 @@
 import React, { useState } from "react"
 import style from '@/app/components/blogPage.module.css';
 
-export default function CreateComment(slug: any) {
+export default function CreateComment(page: any) {
     const [comment, setComment] = useState("");
     const [user, setUser] = useState("");
     const time = new Date()
@@ -12,7 +12,7 @@ export default function CreateComment(slug: any) {
     const addComment = async (event: any) => {
         event.preventDefault();
         const data = { user, comment, time };
-        const response = await fetch(`/api/blog/${slug.slug}/comment`, {
+        const response = await fetch(`/api/${page.content}/${page.slug}/comment`, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
