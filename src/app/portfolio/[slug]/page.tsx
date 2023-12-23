@@ -1,6 +1,5 @@
 import React from "react";
 import ProjectPage from '../../components/projectPreview';
-import "../../styles/website.css"
 import connectDB from "../../../helpers/db";
 import Projects from "../../../database/projectSchema"
 
