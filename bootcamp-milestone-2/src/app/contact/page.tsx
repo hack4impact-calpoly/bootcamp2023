@@ -1,3 +1,4 @@
+import Navbar from "@/components/navbar";
 import Link from "next/link";
 export default function Contact() {
     return (<html>
@@ -8,15 +9,8 @@ export default function Contact() {
             <link rel="stylesheet" href="styles.css"/>
         </head>
         <body>
-            <nav className="navbar">
-                <h1 className="logo"><a href="index.html">keila's website</a></h1>
-                <ul className="nav-list">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="blog.html">Blog</a></li>
-                  <li><a href="portfolio.html">Portfolio</a></li>
-                  <li><a href="resume.html">Resume</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                </ul>
+        <nav className="navbar">
+                {<Navbar/>}
               </nav>
             <main>
                 <h1 className="page-title">contact</h1>

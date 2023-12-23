@@ -1,8 +1,6 @@
 import connectDB from "@/database/db";
-import Link from "next/link";
 import Blog from "@/database/blogSchema";
 import BlogPreview from "@/components/blogPreview";
-import parseTime from "@/helpers/parseTime";
 import Navbar from "@/components/navbar";
 
 
@@ -45,7 +43,7 @@ export default async function BlogPage() {
                             />
                         )) : (
                             <p>
-                                There was an error;
+                                There was an error
                             </p>
                         )
                     }

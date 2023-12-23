@@ -1,6 +1,7 @@
 import Link from "next/link";
 import rentries_jobs from "../resumeData";
 import ResumeEntry from "@/components/resumeEntry";
+import Navbar from "@/components/navbar";
 export default function Resume() {
     return (<div>
             <html>
@@ -11,15 +12,9 @@ export default function Resume() {
                     <link rel="stylesheet" href="styles.css" />
                 </head>
                 <body>
-                    <nav className="navbar">
-                        <h1 className="logo"><a href="index.html">keila's website</a></h1>
-                        <ul className="nav-list">
-                        <Link href="/blog">Blog</Link>
-                        <Link href="/portfolio">Portfolio</Link>
-                        <Link href="/resume">Resume</Link>
-                        <Link href="/contact">Contact</Link>
-                        </ul>
-                    </nav>
+                <nav className="navbar">
+                {<Navbar/>}
+              </nav>
                     <main>
                         <h1 className="page-title">KEILA'S RESUME</h1>
                         <div className="resume">

@@ -1,6 +1,26 @@
-import Link from "next/link";
-export default function Portfolio() {
-    return (<div>
+import Navbar from "@/components/navbar";
+import PortEntry from "@/components/portEntry";
+import connectDB from "@/database/db";
+import Port from "@/database/portfolioSchema";
+
+async function getPort(){
+	await connectDB() // function from db.ts before
+
+	try {
+			// query for all blogs and sort by date
+	    const portfolio = await Port.find().orFail()
+			// send a response as the blogs as the message
+	    return portfolio;
+	} catch (err) {
+        console.log("hi");
+	    return null;
+	}
+}
+
+
+export default async function Portfolio() {
+    const portData = await getPort();
+    return (<>
             <html>
             <head>
                 <title>
@@ -9,28 +29,31 @@ export default function Portfolio() {
                 <link rel="stylesheet" href="styles.css" />
             </head>
             <body>
-                <nav className="navbar">
-                    <h1 className="logo"><a href="index.html">keila's website</a></h1>
-                    <ul className="nav-list">
-                    <Link href="/blog">Blog</Link>
-                    <Link href="/portfolio">Portfolio</Link>
-                    <Link href="/resume">Resume</Link>
-                    <Link href="/contact">Contact</Link>
-                    </ul>
-                </nav>
+            <nav className="navbar">
+                {<Navbar/>}
+              </nav>
                 <main>
                     <h1 className="page-title">portfolio</h1>
                     <div className="project">
                         <a href="index.html"></a>
-                    </div>
-                        <div className="project-details">
-                            <p className ="project-name">My Portfolio of Work!</p>
-                            <p className ="project-description">Here I included an image :)</p>
-                            <a href="index.html">Learn more</a>
+                    {portData ? (
+                    portData.map(port => 
+                                <PortEntry 
+
+                                title={port.title}
+                                description={port.description}
+                                date={port.date}
+                            />
+                        )) : (
+                            <p>
+                                There was an error;
+                            </p>
+                        )
+                    }
                     </div>
                 </main>
                 <footer></footer>
             </body>
         </html>
-        </div>)
+        </>)
   }
