@@ -26,7 +26,7 @@ async function getProjects() {
 
 
 export default async function Portfolio() {
-  const counter = useRef(0)
+  let counter = 0
   const {projects} = await getProjects();
   if (projects == null) {   // Handle the null case
     return(
@@ -54,8 +54,8 @@ export default async function Portfolio() {
        <h1>Discussion</h1>
        <CommentSection slug={"projects/" + slug}></CommentSection>
       {comments.map((comment : IComment) => {
-        <Comment comment={comment} key={counter.current}/>;
-        counter.current++;
+        <Comment comment={comment} key={counter}/>;
+        counter += 1;
       })}
 
   
