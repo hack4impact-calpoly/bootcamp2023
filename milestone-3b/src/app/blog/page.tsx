@@ -27,7 +27,7 @@ export default async function Blog() {
             <BlogPreview
               title={blog.title}
               slug={blog.slug}
-              date={JSON.stringify(blog.date)}
+              date={blog.date}
               description={blog.description}
               content={blog.content}
               comments={blog.comments}

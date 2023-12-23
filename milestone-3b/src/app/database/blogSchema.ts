@@ -15,6 +15,7 @@ export type IBlog = {
   description: string; // for preview
   content: string; // for individual blog page
   comments: IComment[]; // array for comments
+  image: string;
 };
 
 // mongoose schema
