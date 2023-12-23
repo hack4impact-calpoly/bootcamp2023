@@ -32,6 +32,7 @@ export default async function Portfolio() {
                 description={portfolio.description}
                 slug={portfolio.slug}
                 img={portfolio.img}
+                comments={portfolio.comment}
               />
             ))}
           </main>

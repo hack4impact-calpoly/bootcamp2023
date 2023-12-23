@@ -1,10 +1,19 @@
 import mongoose,{ Schema } from "mongoose";
 
+export type IComment = {
+    user: string;
+    comment: string;
+    time: Date
+}
+
+
 export type IPortfolio = {
     title: string;
     slug: string;
     description: string;
     img: string;
+    comments: IComment[]; // array for comments
+
 }
 
 const portfolioSchema = new Schema<IPortfolio>({
@@ -12,6 +21,11 @@ const portfolioSchema = new Schema<IPortfolio>({
     slug: { type: String, required: true },
     description: { type: String, required: true },
     img: { type: String, required: true },
+    comments: {
+        user: {type: String, required: false},
+        comment: {type: String, required: false},
+        time: {type: Date, required: false, default: new Date()}
+    }
 })
 
 const Portfolio = mongoose.models['portfolios'] ||

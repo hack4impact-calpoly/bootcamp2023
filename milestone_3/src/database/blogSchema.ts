@@ -10,7 +10,7 @@ export type IComment = {
 export type IBlog = {
     title: string;
     slug: string; 
-    date: Date;
+    date: string;
     description: string; // for preview
     //content: string; // for individual blog page
     comments: IComment[]; // array for comments
@@ -21,7 +21,7 @@ export type IBlog = {
 const blogSchema = new Schema<IBlog>({
     title: { type: String, required: true },
     slug: { type: String, required: true },
-    date: { type: Date, required: false, default: new Date()},
+    date: { type: String, required: false},
     description: { type: String, required: true },
     //content: { type: String, required: false },
     comments: {

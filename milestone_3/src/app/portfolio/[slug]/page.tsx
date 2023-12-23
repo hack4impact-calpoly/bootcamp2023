@@ -1,42 +1,113 @@
-import { NextRequest, NextResponse } from "next/server"
-import connectDB from "../../../helpers/db";
-import portfolioSchema from "../../../database/portfolioSchema";
+"use client";
+
+import React, {useState, useEffect} from 'react'
 import PortfolioSlug from "../../components/portfolioSlug";
 
 
-type Props = {
-    params: { slug: string };
-};
-
-async function getPortfolio(slug: string) {
-    await connectDB();
-
-    try {
-        const blog = await portfolioSchema.findOne({ slug }).orFail();
-        return blog;
-    } catch (err) {
-        return null;
-    }
+type IParams = {
+		params: {
+			slug: string
+		}
 }
 
-export default async function Portfolio({ params }: Props) {
-    const { slug } = params;
-    const portfolio = await getPortfolio(slug);
+export default function Portfolio({ params: { slug } }: IParams) {
+    
 
-    return (
+    const [userComment, setComment] = useState({
+        user: '',
+        comment: '',
+        date: ''
+
+    });
+
+    const [portfolio, setPortfolio] = useState({
+        title: '',
+        date: '',
+        description: '',
+        comments: [],
+        slug: '',
+        img: ''
+      });
+
+    const addComment = async () => {
+        try {
+          const response = await fetch(`http://localhost:3000/api/portfolio/${slug}/comment`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              user: userComment.user,
+              comment: userComment.comment,
+              date: userComment.date
+            }),
+          });
+      
+          if (!response.ok) {
+            throw new Error('Failed to add comment');
+          }
+      
+          const updateBlog = await response.json();
+          setPortfolio(updateBlog);
+          setComment({ user: '', comment: '', date: '' });
+        } catch (error) {
+          console.error('Error adding comment:');
+        }
+      };
+
+
+      useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await fetch(`http://localhost:3000/api/portfolio/${slug}`);
+            if (!response.ok) {
+              throw new Error('Failed to fetch blog data');
+            }
+            
+            const data = await response.json();
+            setPortfolio(data);
+          } catch (error) {
+            console.error('Error fetching blog data:');
+          }
+        };
+      
+        fetchData();
+      }, [slug]);
+      
+
+    return(  
         <main>
-            {portfolio ? (
-                <div>
+        
+        <div>
                     <PortfolioSlug
                         title={portfolio.title}
-                        description={portfolio.description}
-                        slug={portfolio.slug}
-                        img={portfolio.img}
+                        comments={portfolio.comments}
+                        slug= {portfolio.slug}
+                        description={portfolio.description} 
+                        img = {portfolio.img}
                     />
-                 </div>
-            ) : (
-                <div>No blog found</div>
-            )}
+        <div>
+        <label htmlFor="userName">Name:</label>
+            <textarea
+            id="userName"
+            onChange={(e) => setComment({ ...userComment, user: e.target.value })}
+            value={userComment.user}
+            required
+            />
+
+        <label htmlFor="comment">Comment:</label>
+            <textarea
+            id="comment"
+            onChange={(e) => setComment({ ...userComment, comment: e.target.value })}
+            value={userComment.comment}
+            required
+            />
+
+        <button type="button" onClick={addComment}>
+          Submit Comment
+        </button>
+            </div>
+            </div>
         </main>
-    );
+    )
 }

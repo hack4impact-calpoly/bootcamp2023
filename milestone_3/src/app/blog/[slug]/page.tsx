@@ -1,50 +1,112 @@
-import { NextRequest, NextResponse } from "next/server"
-import connectDB from "../../../helpers/db";
-import blogSchema from "../../../database/blogSchema";
+"use client";
+
+import React, {useState, useEffect} from 'react'
 import BlogSlug from "../../components/blogSlug";
 
 
-type Props = {
-    params: { slug: string };
-};
-
-async function getBlog(slug: string) {
-	try {
-		const res = await fetch(`http://localhost:3000/api/${slug}`, {
-			cache: "no-store",	
-		})
-
-		if (!res.ok) {
-			throw new Error("Failed to fetch blog");
+type IParams = {
+		params: {
+			slug: string
 		}
-
-		return res.json();
-	} catch (err: unknown) {
-		console.log(`error: ${err}`);
-		return null;
-	}
 }
 
-export default async function Blog({ params }: Props) {
-    const { slug } = params;
-    const blog = await getBlog(slug);
+export default function Blog({ params: { slug } }: IParams) {
+    
 
-    return (
+    const [userComment, setComment] = useState({
+        user: '',
+        comment: '',
+        date: ''
+
+    });
+
+    const [blog, setBlog] = useState({
+        title: '',
+        date: '',
+        description: '',
+        comments: [],
+        slug: '',
+      });
+
+    const addComment = async () => {
+        try {
+          const response = await fetch(`http://localhost:3000/api/blog/${slug}/comment`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              user: userComment.user,
+              comment: userComment.comment,
+              date: userComment.date
+            }),
+          });
+      
+          if (!response.ok) {
+            throw new Error('Failed to add comment');
+          }
+      
+          const updateBlog = await response.json();
+          setBlog(updateBlog);
+          setComment({ user: '', comment: '', date: '' });
+        } catch (error) {
+          console.error('Error adding comment:');
+        }
+      };
+
+
+      useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await fetch(`http://localhost:3000/api/blog/${slug}`);
+            if (!response.ok) {
+              throw new Error('Failed to fetch blog data');
+            }
+            
+            const data = await response.json();
+            setBlog(data);
+          } catch (error) {
+            console.error('Error fetching blog data:');
+          }
+        };
+      
+        fetchData();
+      }, [slug]);
+      
+
+    return(  
         <main>
-            {blog ? (
-                <div>
-                    <h2>{blog.title}</h2>
+        
+        <div>
                     <BlogSlug
                         title={blog.title}
-                        date={blog.date}
-                        description={blog.description}
-                        slug={blog.slug}
                         comments={blog.comments}
+                        slug= {blog.slug}
+                        description={blog.description} 
+                        date = {blog.date}
                     />
-                 </div>
-            ) : (
-                <div>No blog found</div>
-            )}
+        <div>
+        <label htmlFor="userName">Name:</label>
+            <textarea
+            id="userName"
+            onChange={(e) => setComment({ ...userComment, user: e.target.value })}
+            value={userComment.user}
+            required
+            />
+
+        <label htmlFor="comment">Comment:</label>
+            <textarea
+            id="comment"
+            onChange={(e) => setComment({ ...userComment, comment: e.target.value })}
+            value={userComment.comment}
+            required
+            />
+
+        <button type="button" onClick={addComment}>
+          Submit Comment
+        </button>
+            </div>
+            </div>
         </main>
-    );
+    )
 }
