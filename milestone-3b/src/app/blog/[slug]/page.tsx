@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import connectDB from "../../helpers/db";
 import Comment from "../../components/commentPreview";
+import CreateComment from "../../components/createComment";
 
 type Props = {
   params: { slug: string };
@@ -56,9 +57,12 @@ export default async function Blog({ params: { slug } }: Props) {
             </div>
           </div>
 
-          {blogInfo.comments.map((comment: typeof IComment, index: number) => (
+          {blogInfo.comments.map((comment, index: number) => (
             <Comment key={index} comment={comment} />
           ))}
+
+          <br></br>
+          <CreateComment slug={blogInfo.slug}></CreateComment>
         </main>
         <footer className="footer">
           © 2023 Angela Chen | All Rights Reserved
