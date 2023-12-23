@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import axios from "axios";
 
 export default function Blog() {
+    const [status, setStatus] = useState<string>("");
+
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
@@ -10,26 +12,46 @@ export default function Blog() {
         const formElement = e.target as HTMLFormElement;
 
         //Collect form submission data
-        const nameInput =
-            formElement.querySelector<HTMLInputElement>(
-                'input[name="name"]'
-            )?.value;
-        const emailInput = formElement.querySelector<HTMLInputElement>(
+        const nameElement =
+            formElement.querySelector<HTMLInputElement>('input[name="name"]');
+        const emailElement = formElement.querySelector<HTMLInputElement>(
             'input[name="email"]'
-        )?.value;
-        const descriptionText = formElement.querySelector<HTMLTextAreaElement>(
-            'textarea[name="description"]'
-        )?.value;
+        );
+        const messageElement = formElement.querySelector<HTMLTextAreaElement>(
+            'textarea[name="message"]'
+        );
 
         //Store form submission data in single JSON to be submitted
-        const data = {
-            name: nameInput,
-            email: emailInput,
-            description: descriptionText,
+        const templateParams = {
+            from_name: nameElement?.value,
+            from_email: emailElement?.value,
+            message: messageElement?.value,
         };
 
-        //Send form data to endpoint
-        const response = axios.post("/api/contact", data);
+        //clean form
+        if (nameElement) nameElement.value = "";
+        if (emailElement) emailElement.value = "";
+        if (messageElement) messageElement.value = "";
+
+        //send email using emailjs api
+        const response = await axios.post(
+            "https://api.emailjs.com/api/v1.0/email/send",
+            {
+                service_id: process.env
+                    .NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+                template_id: process.env
+                    .NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+                user_id: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string,
+                template_params: templateParams,
+            }
+        );
+
+        //check status of email
+        if (response.status == 200) {
+            setStatus("Email sent successfully.");
+        } else {
+            setStatus("Email not sent.");
+        }
     }
 
     return (
@@ -38,8 +60,9 @@ export default function Blog() {
             <form id="contact-form" onSubmit={handleSubmit}>
                 <input type="text" name="name" placeholder="Name" required />
                 <input type="email" name="email" placeholder="email" required />
-                <textarea name="description" required></textarea>
+                <textarea name="message" required></textarea>
                 <input type="submit" />
+                <p>{status}</p>
             </form>
         </main>
     );
