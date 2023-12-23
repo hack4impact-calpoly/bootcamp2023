@@ -10,7 +10,8 @@ let connection: typeof mongoose;
  * @returns {Promise<typeof mongoose>}
  */
 const connectDB = async () => {
-  if (!connection) {
+  console.log("Connecting to MongoDB with URL:", url);
+  if (!connection && typeof url === "string") {
     connection = await mongoose.connect(url);
     return connection;
   }
