@@ -35,7 +35,7 @@ export default async function Blog({ params : {slug} }: Props) {
                 
                 <div className="comment_container">
                     <h2>Comments</h2>
-                    {blog.comments.map((comment: IComment) => (
+                    {blog.mycomments.map((comment: IComment) => (
                         <Comment
                             comment={{
                                 user: comment.user,
