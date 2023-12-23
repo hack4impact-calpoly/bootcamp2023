@@ -1,7 +1,7 @@
 :root {
     /* variables */
     --cg-black: rgb(30, 32, 32);
-    --cg-blue: rgb(36, 94, 255);
+    --cg-blue: rgb(255, 124, 36);
     --cg-grey: rgb(243, 243, 243);
     --cg-white: rgb(255, 255, 255);
   }
@@ -128,7 +128,7 @@
   .project-details {
     display: flex;
     background-color: var(--cg-white);
-    width: 30%;
+    width: 55%;
     height: 500px;
     flex-shrink: 1;
     padding: 0 20px;
