@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import connectDB from "@/helpers/db"
-import portfolioSchema from '@/database/projectSchema'
+import portfolioSchema from '@/models/projectSchema'
 
 type IParams = {
 		params: {

@@ -1,4 +1,4 @@
-import blogSchema from "../../models/blogSchema.ts"
+import blogSchema from "../../models/blogSchema"
 import { NextRequest, NextResponse } from 'next/server'
 import connectDB from "@/helpers/db"
 
