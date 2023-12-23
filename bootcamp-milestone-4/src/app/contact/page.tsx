@@ -75,7 +75,7 @@ export default function Contact() {
                     onChange={(e) => setMessage(e.target.value)}
                     value={message} // Intial Value of the form
                     className={styles.myTextArea}></textarea>
-                <input type="submit"/>  
+                <input className={styles.submit} type="submit"/>  
             </form>
             <br/>
           {/* </div> */}
