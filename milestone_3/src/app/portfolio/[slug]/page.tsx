@@ -29,7 +29,6 @@ export default function PortfolioPage({ params:{slug} }: IParams) {
     });
     const submitComment = async () => {
         const response = await fetch(`https://bdons-website.vercel.app/api/portfolio/${slug}/comments`, {
-        //const response = await fetch(`http://localhost:3000/api/portfolio/${slug}/comments`, {
 
         method: 'POST',
         headers: {
@@ -54,7 +53,6 @@ export default function PortfolioPage({ params:{slug} }: IParams) {
     useEffect(() => {
         const fetchProjectData = async () => {
           const response = await fetch(`https://bdons-website.vercel.app/api/portfolio/${slug}`);
-          //const response = await fetch(`http://localhost:3000/api/portfolio/${slug}`);
 
           const data = await response.json();
           setProjectData(data);
