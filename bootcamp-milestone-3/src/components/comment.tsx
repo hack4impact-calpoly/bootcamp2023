@@ -1,4 +1,4 @@
-import type { IComment } from "../models/blogSchema"
+import type { IComment } from "@models/blogSchema"
 import style from "./comment.module.css"
 
 {/* When we pass props, the name that we use to pass values

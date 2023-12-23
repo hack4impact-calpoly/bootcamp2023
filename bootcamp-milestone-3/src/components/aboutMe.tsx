@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Footer from './footer';
-import "../styles/globals.css";
+import "@styles/globals.css";
 
 const AboutMe = () => {
   return (
