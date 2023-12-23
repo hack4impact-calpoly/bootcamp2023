@@ -11,11 +11,11 @@ type Params = {
 
 // Destructuring is like key and you associate that value with the key
 
-const identity = {
-	name : "Taran",
-	dob : "April 23",
-	age : "57",
-}
+// const identity = {
+// 	name : "Taran",
+// 	dob : "April 23",
+// 	age : "57",
+// }
 
 // descturving the input [slug] as {params} gives us what is inside the label params as the variable params
 // inside params, based on the typing, we know its going to be a slug
@@ -23,7 +23,7 @@ const identity = {
 	// {slug} = params (meaning from the label params, get me whatever the key slugs gives, there can be other key entries or not, but we dont care)
 
 
-const {name, dob, age} = identity 
+// const {name, dob, age} = identity 
 
 
 export async function GET(request : NextRequest, {params} : Params) {
@@ -41,10 +41,10 @@ export async function GET(request : NextRequest, {params} : Params) {
 }
 
 
-export async function PUT(request : NextRequest, {params} : Params) {
-    const {slug} = params;
-    const {Blog} = await request.json();
-    await connectDB();
-    await Blog.findByIdAndUpdate(slug, {Blog})
-    return NextResponse.json({ message: "Blog Updated"}, {status: 200});    
-}
+// export async function PUT(request : NextRequest, {params} : Params) {
+//     const {slug} = params;
+//     const {Blog} = await request.json();
+//     await connectDB();
+//     await Blog.findByIdAndUpdate(slug, {Blog})
+//     return NextResponse.json({ message: "Blog Updated"}, {status: 200});    
+// }
