@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { blogSchema } from "@/database/blogSchema.ts";
+import { IBlog, blogSchema } from "@/database/blogSchema.ts";
 import BlogPreview from "./components/blogPreview.tsx";
 
 async function getBlogs() {
@@ -76,8 +76,8 @@ export default async function Home() {
       <h1 className={styles.index}>Blog Previews</h1>
 
       <div>
-        { blogs.map( (blog : blogSchema) => {
-          blog.date = parseDate(blog.date);
+        { blogs.map( (blog : IBlog) => {
+          blog.date = parseDate("" + blog.date);
           return (<BlogPreview 
                     {...blog}
                     key={blog.slug}
