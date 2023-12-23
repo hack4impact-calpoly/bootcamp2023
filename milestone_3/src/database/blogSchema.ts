@@ -20,7 +20,7 @@ export type IBlog = {
 const commentSchema = new Schema<IComment>({
     user: { type: String, required: true },
     comment: { type: String, required: true },
-    time: { type: Date, required: true },
+    time: { type: Date, required: false },
   });
 
 

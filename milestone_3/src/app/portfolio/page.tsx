@@ -36,9 +36,11 @@ export default async function ProjectPage() {
           {projects.map((project) => (
             <ProjectPreview 
               title={project.title}
+              slug={project.slug}
               description={project.description}
               image={project.image}
               link={project.link}
+              comments={project.comments}
             />
           ))}
       </main>

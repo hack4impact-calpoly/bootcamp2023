@@ -270,12 +270,14 @@ form {
 
 #homepage {
   width: 45%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   padding-top: 15%;
-  padding-left: 10%
+  padding-left: 10%;
+  padding-bottom: 17%
 
 }
 #homepage h1 {
@@ -384,25 +386,34 @@ form {
 
 .comments {
   margin-bottom: 20px;
+  width: 100%;
+  background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .comment {
-  background-color: #f2f2f2;
+  background-color: gainsboro;
+  width: 100%;
+  margin-bottom: 30px;
   padding: 10px;
-  margin-bottom: 10px;
+
+  border-radius: 10px;
 }
 
 .comment-user {
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
+  font-size: 20px;
 }
 
 .comment-content {
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 .comment-form {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .comment-label {
@@ -443,7 +454,6 @@ form {
   align-items: center;
   background-color: #f2f2f2;
   padding: 5%;
-  padding-bottom: 20%;
 }
 
 .blog-content {
@@ -468,4 +478,15 @@ form {
 .blog-page{
   
   padding-bottom: 5%;
+}
+
+.commentTitle {
+
+  background-color: #f2f2f2;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+
+
 }

@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image"
-import {GET} from "../../api/blog/[slug]/route"
 import { IComment } from "@/database/blogSchema";
 import React, {useState, useEffect} from 'react'
 import Comment from "@/components/comment";
@@ -14,12 +13,12 @@ type IParams = {
 
 
 
-export default function BlogPage({ params:{slug} }: IParams) {
-    const [blog, setBlogData] = useState({
+export default function PortfolioPage({ params:{slug} }: IParams) {
+    const [project, setProjectData] = useState({
         title: '',
-        date: '',
-        content: '',
+        description: '',
         image: '',
+        link: '',
         comments: [],
       });
 
@@ -29,7 +28,7 @@ export default function BlogPage({ params:{slug} }: IParams) {
         time: '',
     });
     const submitComment = async () => {
-        const response = await fetch(`http://localhost:3000/api/blog/${slug}/comments`, {
+        const response = await fetch(`http://localhost:3000/api/portfolio/${slug}/comments`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -40,8 +39,8 @@ export default function BlogPage({ params:{slug} }: IParams) {
             time: newComment.time,
         }),
         });
-        const updatedBlogData = await response.json();
-        setBlogData(updatedBlogData);
+        const updatedProjectData = await response.json();
+        setProjectData(updatedProjectData);
 
         setNewComment({
             username: '',
@@ -51,38 +50,37 @@ export default function BlogPage({ params:{slug} }: IParams) {
     }
 
     useEffect(() => {
-        const fetchBlogData = async () => {
-          const response = await fetch(`http://localhost:3000/api/blog/${slug}`);
+        const fetchProjectData = async () => {
+          const response = await fetch(`http://localhost:3000/api/portfolio/${slug}`);
           const data = await response.json();
-          setBlogData(data);
+          setProjectData(data);
         };
 
-        fetchBlogData();
+        fetchProjectData();
       }, [slug]); 
 
   return (
             <div className="content">
                 <div className="blog">
                     <div className="blog-title">
-                        {blog.title}
+                        {project.title}
                     </div>
-                    <div className="blog-date">{blog.date}</div>
                     <div className="blog-image">
                         <Image
-                            src={blog.image}
-                            alt={blog.title}
-                            width="500"
+                            src={project.image}
+                            alt={project.title}
+                            width="800"
                             height="500"
                         />
 
                     </div>
                     <div className="blog-content">
-                        {blog.content}
+                        {project.description}
                     </div>
                 </div>
                 <h3 className ="commentTitle">Comments</h3>
                 <div className="comments">
-                    {blog.comments.map((comment:IComment, index:number) => (
+                    {project.comments.map((comment:IComment, index:number) => (
                             <Comment key={index} comment={comment} />
                         ))}
         </div>

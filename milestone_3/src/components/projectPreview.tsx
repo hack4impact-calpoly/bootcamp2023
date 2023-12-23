@@ -6,14 +6,16 @@ import {IProj} from "@/database/projectSchema"
 
 
 export default function ProjectPreview(props: IProj) {
+  const link = "/portfolio/" + props.slug;
+  console.log(link);
   return (
 
     <div className="project">
       <div className="project-image">
-        <Link href={props.link}><Image src={props.image} alt="img" width={105} height={125} ></Image></Link>
+        <Image src={props.image} alt="img" width={105} height={125} ></Image>
       </div>
       <div className="project-details">
-        <p className="project-name">{props.title}</p>
+        <Link href={link}><p className="project-name">{props.title}</p></Link>
         <p className="project-description">
           {props.description}
         </p>

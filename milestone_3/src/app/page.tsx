@@ -1,13 +1,16 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import bg from '../../public/homepic.png'
 
 
 export default function Home() {
   return (
-    <div>
+    <div style = {{
+      width: '100%',
+      backgroundSize: 'cover',
+      backgroundImage: 'url("/homepic.png")'
 
-    <main id="homepage" className={styles.background}>
+    }}>
+    <main id="homepage">
       <div>
         <h1>Hi I'm Brandon Eng</h1>
 
@@ -17,13 +20,12 @@ export default function Home() {
         </p>
       
 
-        <a href='about.html'><button>Learn More</button></a>
+        <a href='/about'><button>Learn More</button></a>
         <a href='https://www.linkedin.com/in/brandon-eng801/'><button>LinkedIn</button></a>
       </div>
 
       </div>
     </main>
     </div>
-    
   )
 }
