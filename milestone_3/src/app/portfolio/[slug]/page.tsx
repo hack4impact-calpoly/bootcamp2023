@@ -28,7 +28,9 @@ export default function PortfolioPage({ params:{slug} }: IParams) {
         time: '',
     });
     const submitComment = async () => {
-        const response = await fetch(`https://bdons-website-seven-psi.vercel.app/api/portfolio/${slug}/comments`, {
+        const response = await fetch(`http://bdons-website-seven-psi.vercel.app/api/portfolio/${slug}/comments`, {
+        //const response = await fetch(`http://localhost:3000/api/portfolio/${slug}/comments`, {
+
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -51,7 +53,9 @@ export default function PortfolioPage({ params:{slug} }: IParams) {
 
     useEffect(() => {
         const fetchProjectData = async () => {
-          const response = await fetch(`https://bdons-website-seven-psi.vercel.app/api/portfolio/${slug}`);
+          const response = await fetch(`http://bdons-website-seven-psi.vercel.app/api/portfolio/${slug}`);
+          //const response = await fetch(`http://localhost:3000/api/portfolio/${slug}`);
+
           const data = await response.json();
           setProjectData(data);
         };
