@@ -25,11 +25,12 @@ async function getBlogs(){
 
 export default function BlogPage() {
   const blogs = getBlogs();
-
-  return (
-      <div className= {Styles.blogText}>
-        <Header pageTitle='Blog'/>
-        { blogs }
-      </div>
-  );
+  if ({blogs}) {
+    return (
+        <div className= {Styles.blogText}>
+          <Header pageTitle='Blog'/>
+          { blogs }
+        </div>
+    );
+  }
 };

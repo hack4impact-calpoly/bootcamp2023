@@ -12,7 +12,7 @@ export default function BlogPreview({ blog }: any){
         <Image src={blog.image} alt="Blog Image" width={500} height={500} />
         <p className={Styles.postDescription}>{blog.description}</p>
         <p>Posted on {blog.posted}</p>
-        <Link href= {`/${blog.slug}`}>
+        <Link href= {`/blog/${blog.slug}`}>
           Read More
         </Link>
       </div>
