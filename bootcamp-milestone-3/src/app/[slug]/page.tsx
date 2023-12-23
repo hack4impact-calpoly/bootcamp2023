@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import style from "../../page.module.css"
-import Comment from '@/components/comment';
+import Comment from '@components/comment';
 
 type IParams = {
   params: {
@@ -56,4 +56,3 @@ export default async function Blog({ params }: IParams) {
       );
     }
   }
-  
