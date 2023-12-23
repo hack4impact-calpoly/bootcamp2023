@@ -1,0 +1,15 @@
+.blog {
+    border: 2px solid black;
+    margin: 10rem 20rem;
+    padding: 1rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.comments {
+    text-align: center;
+}
