@@ -41,13 +41,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
                 console.error('error during email' , error)
             });
     console.log("3")
-
-    if (resp.status === 200) {
-        return NextResponse.json("Message successfully sent.", { status: 200})
-    }
-    else {
-        return NextResponse.json("some error lol", {status: 400})
-    }
 }
 catch (err){
     console.log("oopsie")
