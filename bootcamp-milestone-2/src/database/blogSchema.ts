@@ -26,7 +26,14 @@ const blogSchema = new Schema<IBlog>({
     description: { type: String, required: true },
     image: {type: String, required: false},
     content: { type: String, required: true },
-})
+    comments: [
+        {
+            user: { type: String, required: true },
+            comment: { type: String, required: true },
+            time: { type: Date, required: false, default: new Date() },
+        },
+    ],
+});
 
 // defining the collection and model
 const Blog = mongoose.models['blogs'] || mongoose.model("blogs", blogSchema);

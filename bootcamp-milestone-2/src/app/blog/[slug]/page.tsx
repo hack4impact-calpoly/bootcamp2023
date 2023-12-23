@@ -12,7 +12,7 @@ type Props = {
 }
 
 
-async function getBlog(slug: string) {
+export async function getBlog(slug: string) {
 	try {
 		const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
 			cache: "no-store",	

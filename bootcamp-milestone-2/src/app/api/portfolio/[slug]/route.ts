@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import connectDB from "@/helpers/db"
 import Projects from '@/database/projectSchema';
 
+
 type IParams = {
 		params: {
 			slug: string
@@ -36,4 +37,53 @@ type IParams = {
 		} catch (err) {
 			return NextResponse.json("Project not found.", { status: 404 });
 		}
+	}
+
+
+
+	export async function POST(req: Request, { params }: IParams) {
+		const body = await req.json()
+	  
+		const { user, comment } = body;
+	
+	  
+		const { slug } = params;
+	  
+		
+		await connectDB()
+		try {
+		  // Validate body
+		  if (await isValid(body)) {
+	
+			const project = await Projects.findOne({ slug: slug }).orFail();
+			if (project !== null) {
+
+				project.comments.push({
+					user: user,
+					comment: comment,
+					time: new Date(),
+				});
+	  
+			  await project.save();
+			  return Response.json({ message: "Comment posted successfully!" }, { status: 200 });
+			} else {
+			  return Response.json({ error: "Blog not found" }, { status: 404 });
+			}
+		  } else {
+			return Response.json({ error: "Invalid comment data" }, { status: 400 } );
+		  }
+		} catch (error) {
+		  console.error("Error:", error);
+		  throw new Error("Internal server error"); // Customize this error message as needed
+		}
+	  }
+	  
+	
+	
+	async function isValid(body: any) {
+		// the issue right now is that the body that comes back seems to be with undefined params, like undefined comment, etc
+		if (!body || typeof body.comment !== 'string' || body.comment.trim() === '' || typeof body.user !== 'string') {
+			return false
+		}
+		return true
 	}

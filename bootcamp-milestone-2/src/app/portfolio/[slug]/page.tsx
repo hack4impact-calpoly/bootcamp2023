@@ -3,6 +3,8 @@ import React from "react";
 import "@/global.css";
 import "@/app/full.css" 
 import Image from "next/image";
+import Comment from "@/components/commentView";
+import { IComment } from "@/database/blogSchema";
 
 
 
@@ -11,7 +13,7 @@ type Props = {
 }
 
 
-async function getBlog(slug: string) {
+export async function getProject(slug: string) {
 	try {
 		const res = await fetch(`http://localhost:3000/api/portfolio/${slug}`, {
 			cache: "no-store",	
@@ -30,7 +32,7 @@ async function getBlog(slug: string) {
 
 export default async function ProjectPost({ params }: Props) {
   const { slug } = params
-  const projectPost = await getBlog(slug)
+  const projectPost = await getProject(slug)
     return (
       <div>
         <main>
@@ -44,6 +46,12 @@ export default async function ProjectPost({ params }: Props) {
 
             <div className="content" id="portfolio">
               <p>{projectPost?.content}</p>
+            </div>
+
+            <div className="comment" id="blog">
+              {projectPost.comments.map((comment: IComment, index: number) => (
+	                <Comment key={index} comment={comment} />
+	            ))}
             </div>
           </main>
           <footer>© 2023 Dhanvi Ganti | All Rights Reserved</footer>

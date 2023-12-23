@@ -97,3 +97,11 @@ footer {
 label {
   color: white
 }
+
+#contact {
+  padding: 10px;
+  display: block; 
+  margin: 10px auto; /* Adjusted margin for centering */
+  max-width: 300px; /* Adjust the maximum width based on design */
+  box-sizing: content-box; /* Include padding and border in the element's total width and height */
+}
