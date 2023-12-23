@@ -25,7 +25,7 @@ export default function AddComments({ params: { slug, type } }: IParams) {
   const onSubmit: SubmitHandler<Inputs> = async (data: Inputs) => {
     try {
       const res = await fetch(
-        `http://localhost:3000/api/${type}/${slug}/comment`,
+        `${process.env.BASE_URL}/api/${type}/${slug}/comment`,
         {
           method: "POST",
           body: JSON.stringify(data),

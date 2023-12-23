@@ -13,7 +13,7 @@ type IParams = {
 
 async function getBlog(slug: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/blogs/${slug}`, {
+    const res = await fetch(`${process.env.BASE_URL}/api/blogs/${slug}`, {
       cache: "no-cache",
     });
 

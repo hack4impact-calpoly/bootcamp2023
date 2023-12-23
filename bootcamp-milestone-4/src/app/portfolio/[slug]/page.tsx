@@ -14,7 +14,7 @@ type IParams = {
 
 async function getProject(slug: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/portfolio/${slug}`, {
+    const res = await fetch(`${process.env.BASE_URL}/api/portfolio/${slug}`, {
       cache: "no-cache",
     });
 

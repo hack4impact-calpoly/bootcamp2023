@@ -18,7 +18,7 @@ export default function contact() {
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = async (data: Inputs) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/contact`, {
+      const res = await fetch(`${process.env.BASE_URL}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
