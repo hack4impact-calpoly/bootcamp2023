@@ -20,7 +20,7 @@ type Props = {
 
 async function getBlog(slug : string) {
   try { // If any errors pop up, they will be caught
-    const res = await fetch(`http://localhost:3000/api/blogs/${slug}`, {
+    const res = await fetch(process.env.MY_API + `/api/blogs/${slug}`, {
       cache: "no-store", // So every time the page loads, it will have to recall the api (so new blogs will show up)
     })
     if (!res.ok) {

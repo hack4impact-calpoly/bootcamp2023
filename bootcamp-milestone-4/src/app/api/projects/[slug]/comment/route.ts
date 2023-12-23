@@ -38,20 +38,22 @@ export async function POST(request : NextRequest, {params} : Params) {
     const {slug} = params; // get the slug
 
     // update the array of comments of the blog to include one more comment
-    const updatedComments = await Project.findOneAndUpdate(
-        {slug : slug}, // Find the blog by slug
-        {
-            $push: {
-                comments: {
-                    user: user,
-                    comment: comment,
-                    photo: photo,
-                    date: date,
-                }
-            }
-        },
-        { new: true } // To return the updated document
-    );
-
-    return NextResponse.json({message: "Comment Created"}, {status: 201});
+   try {
+     const updatedComments = await Project.findOneAndUpdate(
+         {slug : slug}, // Find the blog by slug
+         {
+             $push: {
+                 comments: {
+                     user: user,
+                     comment: comment,
+                     photo: photo,
+                     date: date,
+                 }
+             }
+         },
+         { new: true } // To return the updated document
+     );
+     return NextResponse.json({message: "Comment Created"}, {status: 201});
+   } catch (error) {
+   }
 }

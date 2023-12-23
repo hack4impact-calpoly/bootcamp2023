@@ -7,7 +7,7 @@ import connectDB from "../../helpers/db";
 async function getBlogs() {
   try { // If any errors pop up, they will be caught
     
-    const res = await fetch("http://localhost:3000/api/blogs", {
+    const res = await fetch(process.env.MY_API + "/api/blogs", {
       cache: 'no-store' // so if we add new blogs, they will show up when the page is refreshed
     })
     
@@ -46,6 +46,10 @@ const parseDate = (datee: Date | string) => {
 
 
 async function Blog() { 
+  if (await getBlogs() == null){
+    return <h1>Blog Catalog</h1>
+  }
+  
   const { blogs } = await getBlogs(); // get the blogs
   if (blogs == null) {   // Handle the null case
     return(

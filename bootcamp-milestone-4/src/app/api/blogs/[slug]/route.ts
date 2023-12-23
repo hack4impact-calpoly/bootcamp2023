@@ -33,9 +33,11 @@ export async function GET(request : NextRequest, {params} : Params) {
 	try { // If we don't get a blog, error out
 							// Using the scheme as template, find a blog with this unique attirubte, else fail
 		const blog = await blogSchema.findOne({ slug : slug }).orFail() // Try getting a blog, or throw error
+		console.log("yes it work")
 		return NextResponse.json({blog}, {status: 200}) // return the blog we got
 	} catch (error) {
 		console.log(error)
+		console.log("hello")
 		return NextResponse.json({message: "Blog Not Found"}, { status: 404 })
 	}	
 }

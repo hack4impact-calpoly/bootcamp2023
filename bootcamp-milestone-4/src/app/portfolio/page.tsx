@@ -10,7 +10,7 @@ import { useRef } from "react";
 
 async function getProjects() {
   try {
-    const res = await fetch("http://localhost:3000/api/projects", {
+    const res = await fetch(process.env.MY_API + "/api/projects", {
       cache: 'no-store' // so if we add new blogs, they will show up when the page is refreshed
     })
     if (!res.ok){
@@ -26,6 +26,10 @@ async function getProjects() {
 
 
 export default async function Portfolio() {
+  if (await getProjects() == null) {
+    return  <h1>Projects</h1>
+  }
+
   let counter = 0
   const {projects} = await getProjects();
   if (projects == null) {   // Handle the null case
@@ -40,7 +44,6 @@ export default async function Portfolio() {
     const element = comments.push(project.comments[comment]);
   }})
 
-
   const slug = "my-personal-website"
   return (
     <div className={styles.catalog}>
@@ -54,11 +57,8 @@ export default async function Portfolio() {
        <h1>Discussion</h1>
        <CommentSection slug={"projects/" + slug}></CommentSection>
       {comments.map((comment : IComment) => {
-        <Comment comment={comment} key={counter}/>;
-        counter += 1;
+        return (<Comment comment={comment} key={counter}/>);
       })}
-
-  
     </div>
   );
 }

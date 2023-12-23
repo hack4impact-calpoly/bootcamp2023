@@ -27,7 +27,7 @@ function CommentSection( props: SlugProp) {
         }
         // Make a post request
         try {
-            const res = await fetch("http://localhost:3000/api/" + props.slug + "/comment", {
+            const res = await fetch(process.env.MY_API + "/api/" + props.slug + "/comment", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
@@ -40,7 +40,7 @@ function CommentSection( props: SlugProp) {
             if (res.ok) {
                 // router.reload()
                 router.refresh();
-                // console.log("Ok")
+                console.log("Ok")
             } else {
                 throw new Error("Failed to add comment.")
             }
