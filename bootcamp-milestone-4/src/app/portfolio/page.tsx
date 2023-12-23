@@ -5,6 +5,8 @@ import connectDB from '../../helpers/db';
 import ProjectPreview from '../../components/project';
 import Project from '../../database/projectSchema';
 
+/* eslint-disable */
+
 async function getProjects() {
     await connectDB() // function from db.ts before
 

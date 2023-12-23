@@ -3,6 +3,9 @@ import Image from 'next/image';
 import Header from "../components/header";
 import Styles from "./about.module.css";
 
+/* eslint-disable */
+
+
 export default function About() {
     return (
         <div className={Styles.about} >

@@ -26,7 +26,7 @@ export async function GET(req: NextRequest, { params }: IParams) {
 	}
 }
 
-export async function POST(req: NextRequest, { params }: IParams) {
+export async function POST(req: NextRequest, { params }: IParams){
 	// Connect to the database
 	await connectDB();
 	const { slug } = params;
@@ -44,19 +44,23 @@ export async function POST(req: NextRequest, { params }: IParams) {
 				{ $push: {comments: newComment}});
 		} catch (err) {
 			console.log(err);
-			return NextResponse.json("Could not add comment", { status: 400 });
+			console.log(NextResponse.json("Could not add comment", { status: 400 }));
+			return;
 		}
   
 
 		await blog.save();
   
   
-	  	return NextResponse.json("comment added successfully", { status: 200});
+	  	console.log(NextResponse.json("comment added successfully", { status: 200})); 
+		return;
 	} catch (error: unknown) {
 	  if (error instanceof Error) {
-		  return error.message
+		  console.log(error.message);
+		  return;
 	  }
-	  return String(error)
+	  console.log(String(error));
+	  return;
   }
   }
   

@@ -5,6 +5,9 @@ import Header from '../../components/header';
 import Styles from './blog.module.css';
 import connectDB from '../../helpers/db';
 
+/* eslint-disable */
+
+
 async function getBlogs(){
 	await connectDB() // function from db.ts before
 

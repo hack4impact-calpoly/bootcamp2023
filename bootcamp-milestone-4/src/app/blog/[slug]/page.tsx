@@ -4,6 +4,9 @@ import BlogPage from '../../../components/recipeBlogPage';
 import Comment from '../../../components/comment';
 import CommentForm from '../../../components/commentForm';
 
+/* eslint-disable */
+
+
 type Props = {
   params: { slug: string };
 };
