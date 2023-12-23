@@ -18,7 +18,6 @@ export async function POST(req: NextRequest, { params }: IParams) {
         }
         const blog = await Blogs.findOneAndUpdate({slug: slug}, {$push: {comments: {user: user, comment: comment, time: time}}})
         console.log("Success: Comment Added")
-        await blog.save();
         return NextResponse.json("Success: Comment Added", { status: 200 });
     } 
 

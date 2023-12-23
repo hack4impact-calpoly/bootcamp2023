@@ -2,24 +2,17 @@
 import React, { useState } from "react"
 import style from '@/app/components/blogPage.module.css';
 
-export default function NewComment(slug: any) {
+export default function CreateComment(slug: any) {
     const [comment, setComment] = useState("");
     const [user, setUser] = useState("");
-    const time = new Date().toLocaleString('en-US', {
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-        hour: "numeric",
-        minute: "2-digit",
-        hour12: true,
-    });
+    const time = new Date()
 
     const changeUser = (event: any) => { setUser(event.target.value); }
     const changeComment = (event: any) => { setComment(event.target.value); }
     const addComment = async (event: any) => {
         event.preventDefault();
         const data = { user, comment, time };
-        const response = await fetch(`/api/blog/${slug}/comment`, {
+        const response = await fetch(`/api/blog/${slug.slug}/comment`, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)

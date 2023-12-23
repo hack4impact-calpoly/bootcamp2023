@@ -4,7 +4,7 @@ import Link from 'next/link';
 import style from './blogPage.module.css';
 import { IBlog, IComment } from '@/database/blogSchema';
 import Comment from './comment'
-import NewComment from "@/app/components/createComment";
+import CreateComment from "@/app/components/createComment";
 
 export default function BlogPage(blogpage: IBlog) {
     return (
@@ -26,7 +26,7 @@ export default function BlogPage(blogpage: IBlog) {
                 <Comment key={index} comment={comment} />
             ))}
         </div>
-        <NewComment slug={blogpage.slug}/>
+        <CreateComment slug={blogpage.slug}/>
 	</div>
     )
 }
