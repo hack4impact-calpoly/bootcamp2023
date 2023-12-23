@@ -46,7 +46,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
           <h3 className="text-center text-2xl">{blog.title}</h3>
           <h4 className="text-center text-lg italic">{blog.date}</h4>
           <p className="my-5 text-[#adb5bd] font-light">{blog.content}</p>
-          {comments.map(
+          {comments?.map(
             (
               comment: { user: string; comment: string; time: Date },
               index: Key | null | undefined
