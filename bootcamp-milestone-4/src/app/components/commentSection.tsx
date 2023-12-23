@@ -39,7 +39,9 @@ function CommentSection( props: SlugProp) {
             // Make the user go to the home page
             if (res.ok) {
                 // router.reload()
-                router.refresh();
+                // router.refresh();
+                setName("");
+                setComment("");
                 console.log("Ok")
             } else {
                 throw new Error("Failed to add comment.")
