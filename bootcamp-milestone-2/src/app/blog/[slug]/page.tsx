@@ -11,7 +11,7 @@ type IParams = {
 
 async function getBlog(slug: string) {
     try {
-        const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
+        const res = await fetch(`https://bootcamp-project-2023-chi.vercel.app/api/blog/${slug}`, {
             cache: "no-store",
         });
 
@@ -67,7 +67,7 @@ export default async function BlogPage({ params }: IParams) {
                 </main>
             )}
             <h1>Post a comment!</h1>
-            <PostComment PostURL={`http://localhost:3000/api/blog/${slug}/comment`} />
+            <PostComment PostURL={`https://bootcamp-project-2023-chi.vercel.app/api/blog/${slug}/comment`} />
 
         </>
     );

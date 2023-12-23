@@ -20,7 +20,7 @@ async function getProjects() {
 
 async function getComments() {
     try {
-        const res = await fetch(`http://localhost:3000/api/portfolio/comment`, {
+        const res = await fetch(`https://bootcamp-project-2023-chi.vercel.app/api/portfolio/comment`, {
             cache: "no-store",
         });
 
@@ -68,7 +68,7 @@ export default async function PortfolioPage() {
             </div>
 
             <h1>Post a comment!</h1>
-            <PostComment PostURL={`http://localhost:3000/api/portfolio/comment`} />
+            <PostComment PostURL={`https://bootcamp-project-2023-chi.vercel.app/api/portfolio/comment`} />
 
         </>
     )
