@@ -36,6 +36,7 @@ export default function Portfolio() {
             image={project.image}
             slug={project.slug}
             content={project.content}
+            comments={[]}
           />
         ))}
       </div>
