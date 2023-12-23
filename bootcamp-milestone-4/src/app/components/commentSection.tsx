@@ -27,7 +27,7 @@ function CommentSection( props: SlugProp) {
         }
         // Make a post request
         try {
-            const res = await fetch(`https://personal-w-beta.vercel.app` + `/api/` + props.slug + `/comment`, {
+            const res = await fetch(`/api/` + props.slug + `/comment`, {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
