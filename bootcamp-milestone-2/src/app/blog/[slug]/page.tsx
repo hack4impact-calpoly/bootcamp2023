@@ -5,6 +5,8 @@ import "@/app/full.css"
 import Image from "next/image";
 import Comment from "@/components/commentView";
 import { IComment } from "@/database/blogSchema";
+import next from "next";
+import { NextPage } from "next";
 
 
 type Props = {
