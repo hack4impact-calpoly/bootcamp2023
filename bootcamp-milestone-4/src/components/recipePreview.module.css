@@ -1,0 +1,35 @@
+.post-preview {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-title {
+  font-size: 24px;
+  color: var(--cg-pink); 
+  margin: 0;
+}
+
+.post-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.post-description {
+  font-size: 18px;
+  color: var(--cg-black); 
+  margin: 10px 0;
+}
+
+.post-preview a {
+  text-decoration: none;
+  color: var(--cg-pink); 
+}
+
+.post-preview a:hover {
+  text-decoration: underline;
+}  
