@@ -5,6 +5,7 @@ type IPort = {
     title: string;
     date: Date;
     description: string[]; // for preview
+    intro: string;
     // for individual blog page
     //comments: Comment[]; // array for comments
 };
@@ -14,7 +15,8 @@ type IPort = {
 const portSchema = new Schema<IPort>({
     title: { type: String, required: true },
     date: { type: Date, required: false, default: new Date()},
-    description: { type: [String], required: true }
+    description: { type: [String], required: true },
+    intro: { type: String, required: true}
     //content: { type: String, required: true },
 });
 

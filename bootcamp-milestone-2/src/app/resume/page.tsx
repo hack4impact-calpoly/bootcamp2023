@@ -1,9 +1,10 @@
-import Link from "next/link";
+import courselist from "../resumeData2";
 import rentries_jobs from "../resumeData";
 import ResumeEntry from "@/components/resumeEntry";
 import Navbar from "@/components/navbar";
+import style from "../resume.module.css"
 export default function Resume() {
-    return (<div>
+    return (<>
             <html>
                 <head>
                 <title>
@@ -16,7 +17,7 @@ export default function Resume() {
                 {<Navbar/>}
               </nav>
                     <main>
-                        <h1 className="page-title">KEILA'S RESUME</h1>
+                        <h1 className="pagetitle">KEILA MOHAN</h1>
                         <div className="resume">
                             <section className="section"><h2 className="section-title">Education</h2></section>
                             <div className="entry">
@@ -43,17 +44,26 @@ export default function Resume() {
                                 </ul>
                             </section>
                             
-                            <section className="section"><h2 className="section-title">Coursework</h2></section>
+                            <div className={style.hidden} id="hiddencoursework">
+                                <p>{courselist.map(course => <p>{course}</p>)}</p>
+                            </div>
+                            {/* <script>
+                                function toggleMenu() {
+                                const content = document.getElementById("hidden");
+                                content.classList.toggle("show");
+                                }
+                            </script> */}
+                            {/* <section className="section"><h2 className="section-title">Coursework</h2></section>
                             
                             <ul className="course-list">
                                 Data Structures, Analysis of Algorithms, Systems Programming, Statistical Programming, Computer
             Architecture, Software Engineering I-II, Operating Systems, Databases, Programming Languages, Artificial Intelligence
-                            </ul>
+                            </ul> */}
                         </div>
 
                     </main>
                     <footer className ="footer"></footer>
                 </body>
             </html>
-              </div>) 
+              </>) 
   }

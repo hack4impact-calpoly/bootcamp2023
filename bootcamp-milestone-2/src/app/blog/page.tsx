@@ -25,13 +25,16 @@ export default async function BlogPage() {
             <title>
                 Keila's blog
             </title>
-            <link rel="stylesheet" href="styles.css" />
+            {/* <link rel="stylesheet" href="styles.css" /> */}
         </head>
         <body>
             <nav className="navbar">
                 {<Navbar/>}
               </nav>
             <main>
+
+                <h1 className="pagetitle">blogs</h1>
+                <div className="card">
                 {blogData ? (
                     blogData.map(blog => 
                                 <BlogPreview 
@@ -39,6 +42,7 @@ export default async function BlogPage() {
                                 title={blog.title}
                                 description={blog.description}
                                 date={blog.date.toDateString()}
+                                image={blog.image}
                                 slug={blog.slug}
                             />
                         )) : (
@@ -47,6 +51,7 @@ export default async function BlogPage() {
                             </p>
                         )
                     }
+                </div>
             </main>
             <footer></footer>
         </body>

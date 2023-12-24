@@ -6,7 +6,7 @@ type IBlog = {
   slug: string; 
     date: Date;
     description: string; // for preview
-  content: string; // for individual blog page
+  image: string; // for individual blog page
     comments: Comment[]; // array for comments
 };
 
@@ -21,7 +21,8 @@ const blogSchema = new Schema<IBlog>({
     title: { type: String, required: true },
     slug: { type: String, required: true },
     date: { type: Date, required: false, default: new Date()},
-    description: { type: String, required: true }
+    description: { type: String, required: true },
+    image: {type: String, required:false}
     //content: { type: String, required: true },
 });
 

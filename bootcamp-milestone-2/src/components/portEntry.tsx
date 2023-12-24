@@ -1,3 +1,4 @@
+import style from './portEntry.module.css'
 interface Port {
 	title: string;
 	date: string;
@@ -6,11 +7,11 @@ interface Port {
 
 export default function PortEntry(props: Port){
     return (
-        <div className="project-details">
-                <p className ="project-name">{props.title}</p>
+        <div className="card">
+                <p className ={style.projectname}>{props.title}</p>
                 {/* maybe add date */}
                 <p>{props.date}</p>
-                <p className ="project-description">{props.description}</p>
+                <p className ="project-description">{props.intro}</p>
                 {/* <a href="index.html">Learn more</a> add later*/}
                 
         </div>

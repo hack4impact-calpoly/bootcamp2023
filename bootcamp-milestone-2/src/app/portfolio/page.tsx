@@ -24,7 +24,7 @@ export default async function Portfolio() {
             <html>
             <head>
                 <title>
-                    Keila's resume
+                    Keila's portfolio
                 </title>
                 <link rel="stylesheet" href="styles.css" />
             </head>
@@ -33,16 +33,17 @@ export default async function Portfolio() {
                 {<Navbar/>}
               </nav>
                 <main>
-                    <h1 className="page-title">portfolio</h1>
-                    <div className="project">
+                    <h1 className="pagetitle">portfolio</h1>
+                    <div>
                         <a href="index.html"></a>
                     {portData ? (
                     portData.map(port => 
                                 <PortEntry 
-
+                                key={port.title}
                                 title={port.title}
                                 description={port.description}
                                 date={port.date}
+                                intro={port.intro}
                             />
                         )) : (
                             <p>
