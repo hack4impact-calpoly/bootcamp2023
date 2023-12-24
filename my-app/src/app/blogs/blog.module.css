@@ -1,0 +1,36 @@
+.pageTitle {
+    margin: 3rem 3rem;
+    text-align: center;
+    background-color: white;
+    opacity: 0.85;
+    box-shadow: 5px 5px 5px black;
+    box-sizing: 50%;
+    border: 4px solid black;
+  }
+  
+  .blog {
+    margin: 3rem 3rem;
+    text-align: center;
+    box-sizing: 50%;
+    width: auto;
+    border: 4px solid black;
+    display: block;
+    position: relative;
+    background-color: white;
+    opacity: 0.85;
+    padding: 0.5rem;
+    line-height: 23px;
+  }
+  
+  .commentTitle {
+    margin: 1rem 1rem;
+  }
+  
+  .comments {
+    margin: 3rem 3rem;
+    background-color: white;
+    opacity: 0.85;
+    display: block;
+    position: relative;
+    border: 4px solid black;
+  }

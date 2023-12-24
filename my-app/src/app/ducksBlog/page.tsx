@@ -1,6 +1,11 @@
 import Image from "next/image";
+import style from './blogPage.module.css';
+import Comment from '@/components/comment'
+import connectDB from "@/helpers/db";
 
 export default function Ducks() {
+    
+    
     return(
         <div>
         <main>
@@ -14,3 +19,4 @@ export default function Ducks() {
         </div>
     )
 }
+
