@@ -69,8 +69,6 @@ a {
   height: 100%;
 }
 
-
-
 .blogsHolder h1 {
   margin-bottom: 10px;
 }
@@ -341,7 +339,8 @@ h3.entry-title-end {
   text-align: center;
 }
 
-.blogCommentContainer {
+.blogCommentContainer,
+.portfolioCommentContainer {
   display: flex;
   flex-direction: row;
 }

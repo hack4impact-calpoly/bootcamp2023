@@ -22,19 +22,21 @@ export async function POST(req: NextRequest, { params }: IParams) {
     );
   }
 
- if (request !== null) {
+  if (request !== null) {
     //extract comment params from request
     const comment = request.comment;
     const user = request.user;
     const time = request.time;
 
-    const { slug } = params; // destructure for easier access
-
     try {
       await connectDB(); // connects to DB
 
+      console.log("within ROUTE log");
       const result = await portfolioSchema.updateOne(
-       {
+        {
+          _id: "6587a2f73e7fd036064718a0",
+        },
+        {
           $push: {
             comments: { user, comment, time }, //pushes the following object to 'comments' array
           },
@@ -42,12 +44,13 @@ export async function POST(req: NextRequest, { params }: IParams) {
         { new: true } //returns the entry after it has been updated (as opposed to before the update)
       );
 
-    return NextResponse.json(result);
-  } catch (err) {
-    console.log(err);
-    return NextResponse.json(
-      { error: "Portfolio not found." },
-      { status: 404 }
-    );
+      return NextResponse.json(result);
+    } catch (err) {
+      console.log(err);
+      return NextResponse.json(
+        { error: "Portfolio not found." },
+        { status: 404 }
+      );
+    }
   }
 }

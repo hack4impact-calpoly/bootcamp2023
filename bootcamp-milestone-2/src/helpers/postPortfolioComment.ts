@@ -14,12 +14,16 @@ async function postPortfolioComment(comment: {
       cache: "no-store",
     });
 
+    console.log("res", res);
+
     if (!res.ok) {
+      console.log("ERROR");
       throw new Error("Failed to post comment");
       return null;
     }
     return res;
   } catch (err: unknown) {
+    console.log("ERROR");
     console.log(`error: ${err}`);
     return null;
   }

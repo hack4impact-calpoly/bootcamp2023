@@ -65,9 +65,15 @@ const getCommentsArray = async () => {
 export default async function Home() {
   const portfolios = await getProjectsArray();
   const comments = await getCommentsArray();
-  console.log("comments: ", comments);
+  const message = "hi";
+  const comment = { user: "aidan", comment: "hi", time: new Date() };
+  const comment2 = { user: "aidan", comment: "hi", time: new Date() };
+  const commentList: IComment[] = [comment, comment2];
+  // const singlecomment = comments[0];
+
+  console.log("comments: ", commentList);
   return (
-    <main>
+    <main className="portfolioCommentContainer">
       <div className="portfolio-content">
         <h1 className="page-title">Portfolio</h1>
         {/* Only renders the portfolio content if portfolio data retrieved successfully*/}
@@ -85,7 +91,6 @@ export default async function Home() {
                 />
               ))}
             </div>
-            <CommentSectionPortfolio />
           </div>
         ) : (
           <div className="generalContent">
@@ -95,6 +100,15 @@ export default async function Home() {
           </div>
         )}
       </div>
+      {portfolios && portfolios.length > 0 ? (
+        <CommentSectionPortfolio comments={commentList} />
+      ) : (
+        <div className="generalContent">
+          <p className="contentNotLoaded">
+            There was an issue loading portfolio content.
+          </p>
+        </div>
+      )}
     </main>
   );
 }

@@ -2,19 +2,21 @@
 import React, { useState } from "react";
 import styles from "./CommentSection.module.css";
 import SingleComment from "./SingleComment";
-import SubmitCommentForm from "./SubmitCommentForm";
+import SubmitCommentFormPortfolio from "./SubmitCommentFormPortfolio";
 import { IComment } from "../database/blogSchema";
 
-interface CommentSectionProps {
+type CommentSectionProps = {
   comments: IComment[];
-}
+};
 
-export default function CommentSection({ comments }: CommentSectionProps) {
-  // const [commentList, setCommentList] = useState(comments);
+export default function CommentSectionPortfolio({
+  comments,
+}: CommentSectionProps) {
+  const [commentList, setCommentList] = useState(comments);
 
-  // const addComment = (newComment: IComment) => {
-  //   setCommentList((prevComments) => [...prevComments, newComment]);
-  // };
+  const addComment = (newComment: IComment) => {
+    setCommentList((prevComments) => [...prevComments, newComment]);
+  };
 
   return (
     <div className={styles.commentsContainer}>
@@ -22,13 +24,13 @@ export default function CommentSection({ comments }: CommentSectionProps) {
         <h2>Comments</h2>
       </div>
       <div className={styles.commentsList}>
-        {/* <div className="scrollContainer">
+        <div className="scrollContainer">
           {commentList.map((comment: IComment, index) => (
             <SingleComment key={index} comment={comment} />
           ))}
-        </div> */}
+        </div>
       </div>
-      {/* <SubmitCommentForm  onCommentSubmit={addComment} /> */}
+      <SubmitCommentFormPortfolio onCommentSubmit={addComment} />
     </div>
   );
 }
