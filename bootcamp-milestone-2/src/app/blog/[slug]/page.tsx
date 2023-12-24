@@ -15,7 +15,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
     comment: "",
   });
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
+  // const router = useRouter();
 
   const slug = params.slug;
   let paragraphs = [];
@@ -66,7 +66,8 @@ export default function Blog({ params }: { params: { slug: string } }) {
     };
     addComment(slug, newComment);
     try {
-      router.reload();
+      window.location.reload();
+      // router.reload();
       console.log("comment uploaded, page reloaded");
     } catch (error) {
       console.error("Error with reload: " + error);
