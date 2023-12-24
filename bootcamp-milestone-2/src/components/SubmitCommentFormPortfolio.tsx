@@ -1,11 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./SubmitCommentForm.module.css";
-import postBlogComment from "../helpers/postBlogComment";
+import postPortfolioComment from "../helpers/postPortfolioComment";
 import { IComment } from "../database/blogSchema";
 
 interface SubmitCommentFormParams {
-  slug: string;
   onCommentSubmit: (newComment: IComment) => void;
 }
 
@@ -28,7 +27,7 @@ export default function SubmitCommentForm(props: SubmitCommentFormParams) {
 
     console.log("Comment to Append: ", finalComment);
 
-    const response = await postBlogComment(props.slug, finalComment); //adds to database
+    const response = await postPortfolioComment(finalComment); //adds to database
     console.log("Response: ", response); //database response
 
     setUser("");

@@ -1,4 +1,4 @@
-async function postComment(
+async function postBlogComment(
   slug: string,
   comment: { user: string; comment: string; time: Date }
 ) {
@@ -24,4 +24,4 @@ async function postComment(
   }
 }
 
-export default postComment;
+export default postBlogComment;

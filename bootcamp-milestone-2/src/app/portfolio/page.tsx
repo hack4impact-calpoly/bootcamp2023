@@ -65,15 +65,15 @@ const getCommentsArray = async () => {
 export default async function Home() {
   const portfolios = await getProjectsArray();
   const comments = await getCommentsArray();
-  console.log(comments);
+  console.log("comments: ", comments);
   return (
     <main>
       <div className="portfolio-content">
         <h1 className="page-title">Portfolio</h1>
         {/* Only renders the portfolio content if portfolio data retrieved successfully*/}
         {portfolios && portfolios.length > 0 ? (
-          <div>
-            <div className="generalContent">
+          <div className="generalContent">
+            <div>
               {portfolios.map((portfolio) => (
                 <PortfolioCard
                   key={portfolio.slug}
@@ -85,7 +85,7 @@ export default async function Home() {
                 />
               ))}
             </div>
-            {/* <CommentSectionPortfolio /> */}
+            <CommentSectionPortfolio />
           </div>
         ) : (
           <div className="generalContent">
