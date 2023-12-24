@@ -5,7 +5,8 @@
     "emailjs": "^4.0.3",
     "mongoose": "^8.0.3",
     "react": "^18.2.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vercel": "^33.0.1"
   },
   "name": "bootcamp-project-2023",
   "description": "This is how we will be tracking your milestones throughout bootcamp! By the end of bootcamp, you will have a fullstack personal portfolio website.",
