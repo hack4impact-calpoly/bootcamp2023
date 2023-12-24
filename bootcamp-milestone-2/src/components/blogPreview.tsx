@@ -10,7 +10,9 @@ export default function BlogPreview(props: Blog){
 		// replace everything between the <div> & </div> tags
 		// with your code from earlier milestones
         <div className={style.blogentry}>
-        <h3 className= {style.blogtitle}> {props.title} </h3>
+        <p>
+          <h3 className= {style.blogtitle}> {props.title} </h3>
+        </p>
         <div className = {style.bloginfo}>
           {/* <Image src={props.image} alt="img" width={500} height={500} ></Image> */}
           <p>{props.date}</p>
