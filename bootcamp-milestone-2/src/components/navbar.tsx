@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./navbar.module.css";
 import Link from "next/link";
-import navbarLogo from "public/monogram_logo.svg";
+import navbarLogo from "../../public/monogram_logo.svg";
 import Image from "next/image";
 
 export default function Navbar() {

@@ -1,5 +1,5 @@
 import React from "react";
-import aidan_profile_image from "public/aidan_profile_image.png";
+import aidan_profile_image from "../../../public/aidan_profile_image.png";
 import Image from "next/image";
 import BlogPreview from "../../components/blogPreview";
 import getBlogs from "../../lib/getBlogs";

@@ -1,93 +1,54 @@
+import React from "react";
 import PortfolioCard from "../../components/PortfolioCard";
-import getPortfolios from "../../lib/getPortfolios";
-import { IComment } from "../../database/blogSchema";
+import { IComment } from "../../database/portfolioSchema";
 import { Project } from "../../database/portfolioSchema";
-import CommentSectionPortfolio from "../../components/CommentSectionPortfolio";
+import getProjectsArray from "../../helpers/getProjectsArray";
+import getComments from "../../helpers/getComments";
+import PortfolioCommentSection from "@/components/PortfolioCommentSection";
 
-export const metadata = {
-  title: {
-    default: "Aidan's Portfolio",
-  },
-};
-
-interface PortfolioData {
+type PortfolioData = {
   projects: Project[];
   comments: IComment[];
   // Other properties if there are more in the actual data
-}
-
-//this method is needed because if you try to access the projects from the firstPortfolio variable outside of this function, it thinks it may be null
-const getProjectsArray = async () => {
-  try {
-    const portfolioArray: PortfolioData[] | null = await getPortfolios();
-
-    if (!portfolioArray || portfolioArray.length === 0) {
-      console.error("Error: Portfolio Data is Empty");
-      return null;
-    }
-
-    // the data entry with comments[] and portfolios[]
-    const firstPortfolio = portfolioArray[0];
-    //Array of each project in the portfolio
-    const projectsArray = firstPortfolio["projects"];
-
-    return projectsArray;
-  } catch (error) {
-    console.error("Error", error);
-    // Handle the error case accordingly, e.g., return an error object or rethrow the error
-    throw error;
-  }
 };
 
-//this method is needed because if you try to access the comments from the firstPortfolio variable outside of this function, it thinks it may be null
-const getCommentsArray = async () => {
-  try {
-    const portfolioArray: PortfolioData[] | null = await getPortfolios();
-
-    if (!portfolioArray || portfolioArray.length === 0) {
-      console.error("Error: Portfolio Data is Empty");
-      return null;
-    }
-
-    // the data entry with comments[] and portfolios[]
-    const firstPortfolio = portfolioArray[0];
-    //Array of each project in the portfolio
-    const commentsArray = firstPortfolio["comments"];
-
-    return commentsArray;
-  } catch (error) {
-    console.error("Error", error);
-    // Handle the error case accordingly, e.g., return an error object or rethrow the error
-    throw error;
-  }
+//for some reason, you can't pass the comments with their id props because it needs to be converted from json or something like that
+//removing the id prop before passing gets rid of the 'Maximum call stack exceeded error'
+const cleanComments = (comments: IComment[]): IComment[] => {
+  return comments.map((comment) => {
+    // Access each comment and modify as needed
+    const modifiedComment: IComment = {
+      user: comment.user,
+      comment: comment.comment,
+      time: comment.time,
+    };
+    return modifiedComment;
+  });
 };
 
-export default async function Home() {
-  const portfolios = await getProjectsArray();
-  const comments = await getCommentsArray();
-  const message = "hi";
-  const comment = { user: "aidan", comment: "hi", time: new Date() };
-  const comment2 = { user: "aidan", comment: "hi", time: new Date() };
-  const commentList: IComment[] = [comment, comment2];
-  // const singlecomment = comments[0];
+export default async function Portfolio() {
+  const projects = await getProjectsArray(); //returns array of projects
 
-  console.log("comments: ", commentList);
+  const commentsRetrieved: IComment[] | null = await getComments(); //may be null within this function's scope
+  const commentsNotNull: IComment[] = commentsRetrieved ?? []; //ensures it is not null
+  const commentsFiltered = cleanComments(commentsNotNull); //filters the _id prop from each comment which was causing issues
+
   return (
     <main className="portfolioCommentContainer">
       <div className="portfolio-content">
         <h1 className="page-title">Portfolio</h1>
-        {/* Only renders the portfolio content if portfolio data retrieved successfully*/}
-        {portfolios && portfolios.length > 0 ? (
+        {/* Only renders the project content if project data retrieved successfully*/}
+        {projects && projects.length > 0 ? (
           <div className="generalContent">
             <div>
-              {portfolios.map((portfolio) => (
+              {projects.map((project) => (
                 <PortfolioCard
-                  key={portfolio.slug}
-                  date={portfolio.date}
-                  projectName={portfolio.projectName}
-                  description={portfolio.description}
-                  slug={portfolio.slug}
-                  image={portfolio.image}
+                  key={project.slug}
+                  date={project.date}
+                  projectName={project.projectName}
+                  description={project.description}
+                  slug={project.slug}
+                  image={project.image}
                 />
               ))}
             </div>
@@ -100,8 +61,9 @@ export default async function Home() {
           </div>
         )}
       </div>
-      {portfolios && portfolios.length > 0 ? (
-        <CommentSectionPortfolio comments={commentList} />
+      {/* Only display a comment section if there is a valid portfolio, even if the comment section is empty, as a user can still submit a comment*/}
+      {projects ? (
+        <PortfolioCommentSection comments={commentsFiltered} />
       ) : (
         <div className="generalContent">
           <p className="contentNotLoaded">

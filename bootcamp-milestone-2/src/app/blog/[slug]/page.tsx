@@ -1,14 +1,14 @@
 import React from "react";
 import { IBlog } from "../../../database/blogSchema";
-import { IComment } from "../../../database/blogSchema";
 import Image from "next/image";
 import getBlog from "../../../helpers/getblog";
 import CommentSection from "../../../components/CommentSection";
+
 type Props = {
   params: { slug: string };
 };
 
-//renders the Blog on the page?
+//renders the Blog on the page
 export default async function Blog({ params: { slug } }: Props) {
   try {
     //attempt to declare variables

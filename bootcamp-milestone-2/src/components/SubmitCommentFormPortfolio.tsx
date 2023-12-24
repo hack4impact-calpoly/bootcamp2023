@@ -1,18 +1,21 @@
 "use client";
 import React, { useState } from "react";
-import styles from "./SubmitCommentForm.module.css";
+import styles from "./SubmitCommentFormPortfolio.module.css";
 import postPortfolioComment from "../helpers/postPortfolioComment";
 import { IComment } from "../database/blogSchema";
 
-interface SubmitCommentFormParams {
+interface SubmitCommentFormPortfolioParams {
   onCommentSubmit: (newComment: IComment) => void;
 }
 
-export default function SubmitCommentForm(props: SubmitCommentFormParams) {
+export default function SubmitCommentFormPortfolio(
+  props: SubmitCommentFormPortfolioParams
+) {
   //these values are updated EVERY time their respective input fields are updated
   const [user, setUser] = useState(""); //holds & updates the value of the user input field
   const [comment, setComment] = useState(""); //holds & updates the value of the comment input field
 
+  console.log("Hi from SubmitCommentForm!");
   //specific React event specified to avoid type error
   //async before params
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

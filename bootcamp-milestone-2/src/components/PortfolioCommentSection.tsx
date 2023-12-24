@@ -1,17 +1,17 @@
 "use client";
 import React, { useState } from "react";
-import styles from "./CommentSection.module.css";
-import SingleComment from "./SingleComment";
+import styles from "./PortfolioCommentSection.module.css";
 import SubmitCommentFormPortfolio from "./SubmitCommentFormPortfolio";
-import { IComment } from "../database/blogSchema";
+import { IComment } from "@/database/portfolioSchema";
+import SingleComment from "./SingleComment";
 
-type CommentSectionProps = {
+interface PortfolioCommentSectionProps {
   comments: IComment[];
-};
+}
 
-export default function CommentSectionPortfolio({
+export default function PortfolioCommentSection({
   comments,
-}: CommentSectionProps) {
+}: PortfolioCommentSectionProps) {
   const [commentList, setCommentList] = useState(comments);
 
   const addComment = (newComment: IComment) => {

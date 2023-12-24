@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import styles from "./CommentSection.module.css";
 import SingleComment from "./SingleComment";
-import postComment from "../helpers/postBlogComment";
 import SubmitCommentForm from "./SubmitCommentForm";
 import { IComment } from "../database/blogSchema";
 

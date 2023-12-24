@@ -31,10 +31,9 @@ export async function POST(req: NextRequest, { params }: IParams) {
     try {
       await connectDB(); // connects to DB
 
-      console.log("within ROUTE log");
       const result = await portfolioSchema.updateOne(
         {
-          _id: "6587a2f73e7fd036064718a0",
+          _id: "6587a2f73e7fd036064718a0", //grabs the only portfolio entry
         },
         {
           $push: {

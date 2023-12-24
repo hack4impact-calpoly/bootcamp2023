@@ -1,4 +1,5 @@
 import * as mongoose from "mongoose";
+import { ObjectId } from "mongodb"; // Assuming you're using MongoDB ObjectId
 
 // typescript type (can also be an interface)
 type IPortfolio = {
@@ -10,6 +11,7 @@ export interface IComment {
   user: string;
   comment: string;
   time: Date;
+  _id?: ObjectId; // Optional for MongoDB ObjectId
 }
 
 export interface Project {
