@@ -2,6 +2,7 @@ import PortfolioCard from "../../components/PortfolioCard";
 import getPortfolios from "../../lib/getPortfolios";
 import { IComment } from "../../database/blogSchema";
 import { Project } from "../../database/portfolioSchema";
+import CommentSectionPortfolio from "../../components/CommentSectionPortfolio";
 
 export const metadata = {
   title: {
@@ -15,7 +16,8 @@ interface PortfolioData {
   // Other properties if there are more in the actual data
 }
 
-const handlePortfolios = async () => {
+//this method is needed because if you try to access the projects from the firstPortfolio variable outside of this function, it thinks it may be null
+const getProjectsArray = async () => {
   try {
     const portfolioArray: PortfolioData[] | null = await getPortfolios();
 
@@ -24,14 +26,35 @@ const handlePortfolios = async () => {
       return null;
     }
 
-    // Assuming you are working with the first element of the array
+    // the data entry with comments[] and portfolios[]
     const firstPortfolio = portfolioArray[0];
-    // Access the projects array within firstPortfolio
+    //Array of each project in the portfolio
     const projectsArray = firstPortfolio["projects"];
 
-    console.log("Projects Array:", projectsArray);
+    return projectsArray;
+  } catch (error) {
+    console.error("Error", error);
+    // Handle the error case accordingly, e.g., return an error object or rethrow the error
+    throw error;
+  }
+};
 
-    return firstPortfolio;
+//this method is needed because if you try to access the comments from the firstPortfolio variable outside of this function, it thinks it may be null
+const getCommentsArray = async () => {
+  try {
+    const portfolioArray: PortfolioData[] | null = await getPortfolios();
+
+    if (!portfolioArray || portfolioArray.length === 0) {
+      console.error("Error: Portfolio Data is Empty");
+      return null;
+    }
+
+    // the data entry with comments[] and portfolios[]
+    const firstPortfolio = portfolioArray[0];
+    //Array of each project in the portfolio
+    const commentsArray = firstPortfolio["comments"];
+
+    return commentsArray;
   } catch (error) {
     console.error("Error", error);
     // Handle the error case accordingly, e.g., return an error object or rethrow the error
@@ -40,26 +63,29 @@ const handlePortfolios = async () => {
 };
 
 export default async function Home() {
-  const portfolios = await handlePortfolios();
-
-  console.log(portfolios);
+  const portfolios = await getProjectsArray();
+  const comments = await getCommentsArray();
+  console.log(comments);
   return (
     <main>
       <div className="portfolio-content">
         <h1 className="page-title">Portfolio</h1>
         {/* Only renders the portfolio content if portfolio data retrieved successfully*/}
         {portfolios && portfolios.length > 0 ? (
-          <div className="generalContent">
-            {portfolios.map((portfolio) => (
-              <PortfolioCard
-                key={portfolio.slug}
-                date={portfolio.date}
-                projectName={portfolio.projectName}
-                description={portfolio.description}
-                slug={portfolio.slug}
-                image={portfolio.image}
-              />
-            ))}
+          <div>
+            <div className="generalContent">
+              {portfolios.map((portfolio) => (
+                <PortfolioCard
+                  key={portfolio.slug}
+                  date={portfolio.date}
+                  projectName={portfolio.projectName}
+                  description={portfolio.description}
+                  slug={portfolio.slug}
+                  image={portfolio.image}
+                />
+              ))}
+            </div>
+            {/* <CommentSectionPortfolio /> */}
           </div>
         ) : (
           <div className="generalContent">
