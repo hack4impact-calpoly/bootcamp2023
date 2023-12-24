@@ -1,32 +1,101 @@
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import style from "./contact.module.css";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
-    return(
-        <div>
-        <main>
-            <h1 className="contact-title">Contact Me</h1>
-            <p>If you would like to collaborate on a project together, have some feedback for this website, or just wanna say hi, this is the place to do it!</p>
-            <div className="contact-me">
-                <p>Leave me your info and I'll get back to you. </p>
-                <form id="contact-form">      
-                    <label htmlFor="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Name" required></input>
-                    <br />
-                    <br />
-                    <label htmlFor="email">Email</label>
-                    <input type="text" name="email" id="email" placeholder="Email" required></input>
-                    <br />
-                    <br />
-                    <label htmlFor="message">Message</label>
-                    <textarea name="message" id="message" placeholder="Tell me something ..." required></textarea>
-                    <br />
-                    <br />
-                    <input type="submit" value="submit"></input>
-                    <br /><br />
-                </form>
-            </div>
-            
-        </main>
-        <br />
+  useEffect(() => emailjs.init("LRURgrk1S8kC4SEPv"), []);
+
+  const emailRef = useRef<HTMLInputElement | null>(null);
+  const nameRef = useRef<HTMLInputElement | null>(null);
+  const messageRef = useRef<HTMLTextAreaElement | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
+
+  const validateForm = (): boolean => {
+    if (!emailRef.current!.value) {
+      setError("Email is required.");
+      return false;
+    }
+    if (!nameRef.current!.value) {
+      setError("Name is required.");
+      return false;
+    }
+    if (!messageRef.current!.value) {
+      setError("Message is required.");
+      return false;
+    }
+    return true;
+  };
+
+  const clearForm = () => {
+    emailRef.current!.value = "";
+    nameRef.current!.value = "";
+    messageRef.current!.value = "";
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+    const serviceId = "service_8wj4pwf";
+    const templateId = "template_q3gkyoc";
+    emailjs
+      .send(serviceId, templateId, {
+        name: nameRef.current!.value,
+        email: emailRef.current!.value,
+        message: messageRef.current!.value,
+      })
+      .then(() => {
+        setSuccess("Message send successfully!");
+        clearForm();
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+        setError("Failed to send message");
+      });
+  };
+
+  return (
+    <div>
+      <main>
+        <h1 className="pageTitle">Contact</h1>
+        <div className={style.contact}>
+          <form id={style.contactForm} onSubmit={handleSubmit}>
+            <label className={style.label} htmlFor="name">
+              Name
+            </label>
+            <input
+              type="text"
+              id={style.name}
+              name="name"
+              ref={nameRef}
+              placeholder="Enter your name"
+            />
+            <label className={style.label} htmlFor="email">
+              Email
+            </label>
+            <input
+              type="text"
+              id={style.email}
+              name="email"
+              ref={emailRef}
+              placeholder="Enter your email"
+            />
+            <label className={style.label} htmlFor="message">
+              Message
+            </label>
+            <textarea
+              rows={10}
+              id={style.message}
+              name="message"
+              ref={messageRef}
+              placeholder="Type your message here..."
+            ></textarea>
+
+            <input className={style.submit} type="submit" />
+          </form>
         </div>
-    )
+      </main>
+    </div>
+  );
 }

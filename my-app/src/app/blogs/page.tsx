@@ -70,7 +70,7 @@ export default async function Blogs() {
     return (
       <main>
         <div>
-          <h1 className={style.pageTitle}>Blog</h1>
+          <h1 className={style.pageTitle}>Blogs</h1>
           {blogs.map((blog) => (
             <BlogPreview
               title={blog.title}
