@@ -15,7 +15,6 @@ export default function SubmitCommentFormPortfolio(
   const [user, setUser] = useState(""); //holds & updates the value of the user input field
   const [comment, setComment] = useState(""); //holds & updates the value of the comment input field
 
-  console.log("Hi from SubmitCommentForm!");
   //specific React event specified to avoid type error
   //async before params
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

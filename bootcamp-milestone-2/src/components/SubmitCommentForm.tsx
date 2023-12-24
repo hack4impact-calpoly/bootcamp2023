@@ -26,8 +26,6 @@ export default function SubmitCommentForm(props: SubmitCommentFormParams) {
       time: new Date(),
     };
 
-    console.log("Comment to Append: ", finalComment);
-
     const response = await postBlogComment(props.slug, finalComment); //adds to database
     console.log("Response: ", response); //database response
 
