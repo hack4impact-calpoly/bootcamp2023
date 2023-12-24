@@ -52,6 +52,9 @@
   flex-direction: column;
   display: flex;
   align-items: center;
+  
+  overflow-y: auto;
+  height: 100vh;
 
   /* debugging */
   /* border-color: black; */
@@ -77,8 +80,6 @@
 .pageAddComment {
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  height: 100vh;
 
   width: 80%;
   border-radius: 15px;
