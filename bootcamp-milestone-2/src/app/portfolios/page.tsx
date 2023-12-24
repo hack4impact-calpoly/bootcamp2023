@@ -6,6 +6,7 @@ import connectDB from "../../helpers/db";
 import Portfolio from "../../database/portfolioSchema";
 import PortfolioPreview from "../../components/portfolioPreview";
 
+
 const portfolios: IPortfolio[] = await getPortfolios();
 
 export default function Portfolio1() {
@@ -14,12 +15,13 @@ export default function Portfolio1() {
     <div>
       <main>
         {portfolios.map((portfolio) => (
-          <PortfolioPreview // This is how we call the component
+          <PortfolioPreview 
             title={portfolio.title}
             date={portfolio.date}
             description={portfolio.description}
             slug={portfolio.slug}
             image={portfolio.image}
+            comments={portfolio.comments} 
           />
         ))}
 
@@ -34,12 +36,10 @@ export default function Portfolio1() {
 }
 
 async function getPortfolios() {
-  await connectDB(); // function from db.ts before
+  await connectDB(); 
 
   try {
-    // query for all blogs and sort by date
     const portfolios = await Portfolio.find().sort({ date: -1 }).orFail();
-    // send a response as the blogs as the message
     console.log("success");
     return portfolios;
   } catch (err) {

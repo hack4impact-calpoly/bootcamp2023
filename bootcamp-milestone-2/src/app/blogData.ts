@@ -1,8 +1,6 @@
 import connectDB from '../helpers/db'
 import Blog from '../database/blogSchema'
 import type { IBlog } from '../database/blogSchema'
-
-
   
   const blogs: IBlog[] = await getBlogs()
 
@@ -15,7 +13,7 @@ import type { IBlog } from '../database/blogSchema'
     try {
         // query for all blogs and sort by date
         const blogs = await Blog.find().sort({ date: -1 }).orFail()
-        console.log(blogs)
+      
         // send a response as the blogs as the message
         return blogs
     } catch (err) {

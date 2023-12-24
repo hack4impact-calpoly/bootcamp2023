@@ -9,9 +9,7 @@ export const metadata: Metadata = {
   title: "Dhvani's Personal Website",
   description: "A personal website for Dhvani's.",
 };
-
-
-    
+  
 export default function RootLayout({
   children,
 }: {
