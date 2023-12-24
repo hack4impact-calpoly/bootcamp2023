@@ -102,10 +102,12 @@ export default function Blog({ params }: { params: { slug: string } }) {
         <div className={style.pageContents}>
           <ul className={style.paragraphList}>{paragraphs}</ul>
           <div className={style.pageComments}>
-            <h3 className={style.pageCommentsHeader}>Comments</h3>
-            {blog?.comments.map((comment: IComment, index: number) => (
-              <Comment key={index} comment={comment} />
-            ))}
+            <div className={style.pageUploadedComments}>
+              <h3 className={style.pageCommentsHeader}>Comments</h3>
+              {blog?.comments.map((comment: IComment, index: number) => (
+                <Comment key={index} comment={comment} />
+              ))}
+            </div>
             <form
               className={style.pageAddComment}
               onSubmit={handleCommentUpload}
