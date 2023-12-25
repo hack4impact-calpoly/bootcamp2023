@@ -12,7 +12,7 @@ import CommentForm from "../../../components/CommentFormBlog";
 
 async function getBlog(slug: string) {
   try {
-    const res = await fetch(process.env.NEXT_PUBLIC_VERCEL_URL+`/api/blog/${slug}`, {
+    const res = await fetch('http://'+process.env.NEXT_PUBLIC_VERCEL_URL+`/api/blog/${slug}`, {
       cache: "no-store",
     });
     const data = await res.json();
