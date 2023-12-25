@@ -37,6 +37,13 @@ async function getBlog(slug: string) {
 // ... (existing imports)
 
 export default async function Blog(params: IParams) {
+  
+  return (
+    <div>
+      <h1>hello blog page</h1>
+    </div>
+  )
+  
   const slug: string = params.params.slug;
   const blog = await getBlog(slug);
 
