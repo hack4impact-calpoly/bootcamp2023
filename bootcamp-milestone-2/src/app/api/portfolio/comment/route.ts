@@ -11,6 +11,12 @@ import portfolioSchema from "../../../../database/portfolioSchema";
 	such as the `params` property.
 */
 
+type IParams = {
+  params: {
+    slug: string;
+  };
+};
+
 export async function POST(req: NextRequest, { params }: IParams) {
   const request = await req.json(); //convert request to json
 
