@@ -5,12 +5,12 @@ import emailjs from "@emailjs/browser";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-interface FormValues {
+type FormValues = {
   from_name: string;
   email_id: string;
   message: string;
   to_name: string;
-}
+};
 
 export default function ContactUs() {
   const [buttonState, setButtonState] = useState("Send Message");

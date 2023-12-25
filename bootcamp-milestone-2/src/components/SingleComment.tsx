@@ -23,15 +23,13 @@ function parseCommentTime(time: Date) {
     return <div>Error: Invalid date</div>;
   }
 
-  const options = {
+  return new Date(dateObject).toLocaleDateString("en-US", {
     year: "numeric",
     month: "numeric",
     day: "numeric",
     hour: "2-digit",
     minute: "2-digit",
-  };
-
-  return new Date(dateObject).toLocaleDateString("en-US", options);
+  });
 }
 
 export default function SingleComment({ comment }: CommentProps) {
