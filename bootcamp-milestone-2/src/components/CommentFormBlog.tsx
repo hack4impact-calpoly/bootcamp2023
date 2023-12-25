@@ -27,7 +27,7 @@ const CommentForm: React.FC<CommentFormProps> = ({ usernameprop, commentTextprop
 
   const handleSubmit = async () => {
     try {
-      const url='http://localhost:3000/api/blog/'+blogSlug+'/comment'
+      const url='/api/blog/'+blogSlug+'/comment'
       const response = await fetch(url, {
         method: 'POST',
         headers: {
