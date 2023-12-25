@@ -14,33 +14,51 @@ export default function SubmitCommentFormPortfolio(
   //these values are updated EVERY time their respective input fields are updated
   const [user, setUser] = useState(""); //holds & updates the value of the user input field
   const [comment, setComment] = useState(""); //holds & updates the value of the comment input field
+  const [errorMessage, setErrorMessage] = useState(false);
 
   //specific React event specified to avoid type error
   //async before params
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); //default form submit stopped
 
-    const finalComment: IComment = {
-      //creates comment object with final values
-      user: user,
-      comment: comment,
-      time: new Date(),
-    };
+    if (user !== "" && comment !== "") {
+      const finalComment: IComment = {
+        //creates comment object with final values
+        user: user,
+        comment: comment,
+        time: new Date(),
+      };
 
-    console.log("Comment to Append: ", finalComment);
+      console.log("Comment to Append: ", finalComment);
 
-    const response = await postPortfolioComment(finalComment); //adds to database
-    console.log("Response: ", response); //database response
+      const response = await postPortfolioComment(finalComment); //adds to database
+      console.log("Response: ", response); //database response
 
-    setUser("");
-    setComment("");
+      setUser("");
+      setComment("");
 
-    props.onCommentSubmit(finalComment);
+      props.onCommentSubmit(finalComment);
+      setErrorMessage(false);
+    } else {
+      setErrorMessage(true);
+      //some functionality to say the form isn't good
+    }
   };
 
   return (
     <div className={styles.componentContainer}>
       <h3 className={styles.header}>Leave a Comment!</h3>
+      {errorMessage ? (
+        <div className={styles.errorMessageContainer}>
+          <p className={styles.errorMessage}>
+            Please ensure that you enter a username and a comment.
+          </p>
+        </div>
+      ) : (
+        <div className={styles.errorMessageContainer}>
+          <p className={styles.errorMessage}></p>
+        </div>
+      )}
       <form onSubmit={handleSubmit} className={styles.formContainer}>
         <label className={styles.label}>Name</label>
         <input
