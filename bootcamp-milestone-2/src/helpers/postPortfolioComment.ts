@@ -1,21 +1,21 @@
-async function postPortfolioComment(comment: {
-  user: string;
-  comment: string;
-  time: Date;
-}) {
+async function postPortfolioComment(
+  comment: {
+    user: string;
+    comment: string;
+    time: Date;
+  },
+  api_url: string
+) {
   try {
     //creates a POST request at the api endpoint with the specified comment
-    const res = await fetch(
-      `${process.env.API_URL}/api/portfolio/comment`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(comment),
-        cache: "no-store",
-      }
-    );
+    const res = await fetch(`${api_url}/api/portfolio/comment`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(comment),
+      cache: "no-store",
+    });
 
     console.log("res", res);
 

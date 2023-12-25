@@ -7,10 +7,12 @@ import SingleComment from "./SingleComment";
 
 interface PortfolioCommentSectionProps {
   comments: IComment[];
+  api_url: string;
 }
 
 export default function PortfolioCommentSection({
   comments,
+  api_url,
 }: PortfolioCommentSectionProps) {
   const [commentList, setCommentList] = useState(comments);
 
@@ -30,7 +32,10 @@ export default function PortfolioCommentSection({
           ))}
         </div>
       </div>
-      <SubmitCommentFormPortfolio onCommentSubmit={addComment} />
+      <SubmitCommentFormPortfolio
+        api_url={api_url}
+        onCommentSubmit={addComment}
+      />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import postPortfolioComment from "../helpers/postPortfolioComment";
 import { IComment } from "../database/blogSchema";
 
 interface SubmitCommentFormPortfolioParams {
+  api_url: string;
   onCommentSubmit: (newComment: IComment) => void;
 }
 
@@ -29,9 +30,7 @@ export default function SubmitCommentFormPortfolio(
         time: new Date(),
       };
 
-      console.log("Comment to Append: ", finalComment);
-
-      const response = await postPortfolioComment(finalComment); //adds to database
+      const response = await postPortfolioComment(finalComment, props.api_url); //adds to database
       console.log("Response: ", response); //database response
 
       setUser("");

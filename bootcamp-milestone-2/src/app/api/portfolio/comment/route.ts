@@ -14,6 +14,7 @@ import portfolioSchema from "../../../../database/portfolioSchema";
 type IParams = {
   params: {
     slug: string;
+    portfolio_id: string;
   };
 };
 
@@ -39,7 +40,7 @@ export async function POST(req: NextRequest, { params }: IParams) {
 
       const result = await portfolioSchema.updateOne(
         {
-          _id: "6587a2f73e7fd036064718a0", //grabs the only portfolio entry
+          _id: process.env.PORTFOLIO_ID, //grabs the only portfolio entry
         },
         {
           $push: {

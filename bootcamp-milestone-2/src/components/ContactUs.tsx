@@ -12,14 +12,24 @@ type FormValues = {
   to_name: string;
 };
 
-export default function ContactUs() {
+type ContactUsProps = {
+  props: {
+    admin_email: string;
+    service_id: string;
+    template_id: string;
+    public_key: string;
+  };
+};
+export default function ContactUs({
+  props: { admin_email, service_id, template_id, public_key },
+}: ContactUsProps) {
   const [buttonState, setButtonState] = useState("Send Message");
 
   const formik = useFormik<FormValues>({
     //we have created our initailValues object in a format EmailJS accepts
     initialValues: {
       from_name: "", //user name
-      to_name: "aidannesbitt20@gmail.com", //email id of the admin
+      to_name: admin_email, //email id of the admin
       email_id: "", // user email
       message: "", // message of email
     },
@@ -33,12 +43,7 @@ export default function ContactUs() {
     onSubmit: async (values, { setSubmitting, resetForm }) => {
       try {
         await emailjs
-          .send(
-            "service_usd3zbd",
-            "template_aapedgz",
-            values,
-            "M6apdXlayZJ0dtJfq"
-          )
+          .send(service_id, template_id, values, public_key)
           .then(() => {
             setButtonState("Email Sent!");
             setSubmitting(false);

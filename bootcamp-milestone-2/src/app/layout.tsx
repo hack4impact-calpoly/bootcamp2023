@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"; // You can change the font to anything
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 const inter = Inter({ subsets: ["latin"] });
+require("dotenv").config();
 
 export const metadata = {
   title: "Aidan's Personal Website",

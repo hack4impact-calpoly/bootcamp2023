@@ -6,6 +6,7 @@ import { IComment } from "../database/blogSchema";
 
 interface SubmitCommentFormParams {
   slug: string;
+  api_url: string;
   onCommentSubmit: (newComment: IComment) => void;
 }
 
@@ -14,6 +15,7 @@ export default function SubmitCommentForm(props: SubmitCommentFormParams) {
   const [user, setUser] = useState(""); //holds & updates the value of the user input field
   const [comment, setComment] = useState(""); //holds & updates the value of the comment input field
   const [errorMessage, setErrorMessage] = useState(false);
+  console.log("SUBMIT COMMENT FORM API URL: ", props.api_url);
   //specific React event specified to avoid type error
   //async before params
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -27,7 +29,11 @@ export default function SubmitCommentForm(props: SubmitCommentFormParams) {
         time: new Date(),
       };
 
-      const response = await postBlogComment(props.slug, finalComment); //adds to database
+      const response = await postBlogComment(
+        props.slug,
+        props.api_url,
+        finalComment
+      ); //adds to database
       console.log("Response: ", response); //database response
 
       //reset the inputs

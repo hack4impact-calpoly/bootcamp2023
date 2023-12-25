@@ -10,9 +10,10 @@ type Props = {
 
 //renders the Blog on the page
 export default async function Blog({ params: { slug } }: Props) {
+  const api_url: string = process.env.API_URL!;
   try {
     //attempt to declare variables
-    const blog: IBlog | null = await getBlog(slug);
+    const blog: IBlog | null = await getBlog(slug, api_url);
 
     if (!blog) {
       //handles null blog error
@@ -41,7 +42,7 @@ export default async function Blog({ params: { slug } }: Props) {
             />
           </div>
         </div>
-        <CommentSection blog={blog} slug={slug} />
+        <CommentSection blog={blog} slug={slug} api_url={api_url} />
       </main>
     );
   } catch (error) {

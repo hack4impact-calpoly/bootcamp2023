@@ -1,10 +1,11 @@
 async function postBlogComment(
   slug: string,
+  api_url: string,
   comment: { user: string; comment: string; time: Date }
 ) {
   try {
     //creates a POST request at the api endpoint with the specified comment
-    const res = await fetch(`${process.env.API_URL}/api/blog/${slug}/comment`, {
+    const res = await fetch(`${api_url}/api/blog/${slug}/comment`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

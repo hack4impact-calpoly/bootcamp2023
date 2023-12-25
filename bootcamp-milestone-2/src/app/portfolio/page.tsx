@@ -38,6 +38,7 @@ export default async function Portfolio() {
   const commentsRetrieved: IComment[] | null = await getComments(); //may be null within this function's scope
   const commentsNotNull: IComment[] = commentsRetrieved ?? []; //ensures it is not null
   const commentsFiltered = cleanComments(commentsNotNull); //filters the _id prop from each comment which was causing issues
+  const api_url: string = process.env.API_URL!;
 
   return (
     <main className="portfolioCommentContainer">
@@ -70,7 +71,10 @@ export default async function Portfolio() {
       </div>
       {/* Only display a comment section if there is a valid portfolio, even if the comment section is empty, as a user can still submit a comment*/}
       {projects ? (
-        <PortfolioCommentSection comments={commentsFiltered} />
+        <PortfolioCommentSection
+          api_url={api_url}
+          comments={commentsFiltered}
+        />
       ) : (
         <div className="generalContent">
           <p className="contentNotLoaded">

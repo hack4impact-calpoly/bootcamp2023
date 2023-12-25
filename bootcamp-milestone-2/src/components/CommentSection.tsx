@@ -8,9 +8,14 @@ import { IComment } from "../database/blogSchema";
 interface CommentSectionProps {
   blog: { comments: IComment[] };
   slug: string;
+  api_url: string;
 }
 
-export default function CommentSection({ blog, slug }: CommentSectionProps) {
+export default function CommentSection({
+  blog,
+  slug,
+  api_url,
+}: CommentSectionProps) {
   const [commentList, setCommentList] = useState(blog.comments);
 
   const addComment = (newComment: IComment) => {
@@ -29,7 +34,11 @@ export default function CommentSection({ blog, slug }: CommentSectionProps) {
           ))}
         </div>
       </div>
-      <SubmitCommentForm slug={slug} onCommentSubmit={addComment} />
+      <SubmitCommentForm
+        api_url={api_url}
+        slug={slug}
+        onCommentSubmit={addComment}
+      />
     </div>
   );
 }

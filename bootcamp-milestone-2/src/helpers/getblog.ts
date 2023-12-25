@@ -1,6 +1,7 @@
-async function getBlog(slug: string) {
+async function getBlog(slug: string, api_url: string) {
+  console.log("get blog: ", `${api_url}/api/blog/${slug}`);
   try {
-    const res = await fetch(`${process.env.API_URL}/api/blog/${slug}`, {
+    const res = await fetch(`${api_url}/api/blog/${slug}`, {
       cache: "no-store",
     });
 
