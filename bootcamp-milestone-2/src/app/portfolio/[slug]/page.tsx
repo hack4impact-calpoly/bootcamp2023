@@ -1,16 +1,15 @@
 import CommentPreview from "@/components/CommentPreview/CommentPreview";
 import PostComment from "@/components/PostComment/PostComment";
-import Image from "next/image";
 import { Key } from "react";
 
-async function getBlog(slug: string) {
+async function getProject(slug: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
+    const res = await fetch(`http://localhost:3000/api/portfolio/${slug}`, {
       cache: "no-store",
     });
 
     if (!res.ok) {
-      throw new Error("Failed to fetch blog");
+      throw new Error("Failed to fetch project");
     }
 
     return res.json();
@@ -20,32 +19,24 @@ async function getBlog(slug: string) {
   }
 }
 
-export default async function Blog({ params }: { params: { slug: string } }) {
+export default async function Project({ params }: { params: { slug: string } }) {
   const slug = params.slug;
 
   try {
-    const blog = await getBlog(slug);
-    const comments = blog.comments;
+    const project = await getProject(slug);
+    const comments = project.comments;
 
-    if (!blog) {
+    if (!project) {
       return (
         <div>
-          <p>Blog not found</p>
+          <p>Project not found</p>
         </div>
       );
-    } else if (blog) {
+    } else if (project) {
       return (
-        <main className="flex flex-col px-20 overflow-y-scroll text-white">
-          <Image
-            className="my-5"
-            height={500}
-            width={500}
-            src={blog.img}
-            alt={blog.title}
-          />
-          <h3 className="text-center text-2xl">{blog.title}</h3>
-          <h4 className="text-center text-lg italic">{blog.date}</h4>
-          <p className="my-5 text-[#adb5bd] font-light">{blog.content}</p>
+        <main className="flex flex-col px-20 overflow-y-scroll text-white justify-center">
+          <h3 className="text-center text-2xl">{project.title}</h3>
+          <p className="my-5 text-[#adb5bd] font-light">{project.description}</p>
           <h6 className="text-center text-2xl">Comments</h6>
           <PostComment slug={slug} />
           {comments?.map(
@@ -65,10 +56,10 @@ export default async function Blog({ params }: { params: { slug: string } }) {
       );
     }
   } catch (error) {
-    console.error("Error fetching blog:", error);
+    console.error("Error fetching project:", error);
     return (
       <div>
-        <p>Error fetching blog.</p>
+        <p>Error fetching project.</p>
       </div>
     );
   }

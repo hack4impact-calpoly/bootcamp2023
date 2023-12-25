@@ -9,8 +9,16 @@ export default function PostComment(slug: { slug: string; }) {
     const time = new Date();
   
     const addComment = async (event: any) => {
+      let route;
+
+      if(slug.slug.includes('blog')) {
+        route = `/api/blog/${slug.slug}/comment`;
+      } else {
+        route = `/api/portfolio/${slug.slug}/comment`;
+      }
+
       const data = { user, comment, time };
-      const response = await fetch(`/api/blog/${slug.slug}/comment`, {
+      const response = await fetch(route, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

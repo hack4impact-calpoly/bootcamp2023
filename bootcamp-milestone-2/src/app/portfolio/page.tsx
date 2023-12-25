@@ -2,23 +2,21 @@ import ProjectPreview from "@/components/ProjectPreview/ProjectPreview";
 import connectDB from "@/helpers/db";
 import Project from "@/database/projectSchema";
 
-async function getProjects(){
-  await connectDB() // function from db.ts before
+async function getProjects() {
+  await connectDB(); // function from db.ts before
 
   try {
-      // query for all projects
-      const projects = await Project.find().orFail()
-      // send a response as the blogs as the message
-      return projects
+    // query for all projects
+    const projects = await Project.find().orFail();
+    // send a response as the blogs as the message
+    return projects;
   } catch (err) {
-      return null
+    return null;
   }
 }
 
 export default async function Portfolio() {
-
   let projects = await getProjects();
-  
   return (
     <main className="flex flex-col p-20">
       <h3 className="text-3xl font-semibold text-white px-5 py-5">Projects</h3>
@@ -31,6 +29,7 @@ export default async function Portfolio() {
                 description={project.description}
                 technologies={project.technologies}
                 github={project.github}
+                slug={project.slug}
               />
             </li>
           );

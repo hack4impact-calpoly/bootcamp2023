@@ -3,4 +3,5 @@ interface ProjectPreviewProps {
     description: string
     technologies: string[]
     github: string
+    slug: string
 }
