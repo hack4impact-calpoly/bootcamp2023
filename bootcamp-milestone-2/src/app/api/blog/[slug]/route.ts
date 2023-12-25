@@ -19,6 +19,9 @@ export async function GET(req: NextRequest, { params }: IParams) {
         const blog: IBlog | null = await Blog.findOne({ slug }).orFail();
 
         if (!blog) {
+            return NextResponse.json({
+                "A":"B"
+            })
             throw new Error('Blog not found.');
         }
 

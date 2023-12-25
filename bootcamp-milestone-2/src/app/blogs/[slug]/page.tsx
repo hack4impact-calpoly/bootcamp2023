@@ -14,7 +14,7 @@ async function getBlog(slug: string) {
   try {
     const hostname =  'localhost:3000' || process.env.VERCEL_URL  // Default to localhost for local development
     const protocol = process.env.VERCEL_ENV === 'production' ? 'https' : 'http';
-    const apiUrl = `https://bootcamp-project-2023-ohvaeypva-dhvani-goels-projects.vercel.app/api/blog/${slug}`;
+    const apiUrl = `bootcamp-project-2023-taupe.vercel.app/api/blog/${slug}`;
     console.log('-------Got the URL --------------' + apiUrl);
 
     const res = await fetch(apiUrl, {
