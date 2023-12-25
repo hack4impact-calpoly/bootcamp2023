@@ -4,7 +4,7 @@ import connectDB from "@/helpers/db";
 import Project from "@/database/projectSchema";
 import ProjectPreview from "@/components/projectPreview";
 
-export async function getProjects(){
+async function getProjects(){
 	await connectDB() // function from db.ts before
 
 	try {
