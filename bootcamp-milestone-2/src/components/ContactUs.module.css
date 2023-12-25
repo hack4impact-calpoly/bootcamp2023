@@ -11,6 +11,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  padding: 75px 100px;
 }
 
 .inputSubmit {
@@ -25,4 +26,19 @@
   background-color: rgba(58, 90, 64, 2);
   cursor: pointer;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.inputSubmit:focus {
+  background-color: rgb(102, 195, 119);
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.emailSentMessage {
+  position: absolute;
+  top: 0;
+  background-color: #dff0d8; /* Example background color */
+  text-align: center;
+  width: 100%;
+  padding: 10px 100px;
 }

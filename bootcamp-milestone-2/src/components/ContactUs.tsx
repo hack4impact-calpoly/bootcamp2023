@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./ContactUs.module.css";
 import emailjs from "@emailjs/browser";
 
@@ -12,6 +12,7 @@ export interface TemplateParams {
 
 export default function ContactUs() {
   const form = useRef();
+  const [emailSent, setEmailSent] = useState(false);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,10 +39,26 @@ export default function ContactUs() {
       );
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    sendEmail(e);
+    setEmailSent(true);
+  };
+
   return (
     <div className={styles.componentContainer}>
+      {/* Conditionally render "Email Sent" message based on state */}
+      {emailSent ? (
+        <div className={styles.emailSentMessage}>
+          <p>Email Sent!</p>
+        </div>
+      ) : (
+        <div>
+          <p></p>
+        </div>
+      )}
       <h3 className={styles.header}>Send Me an Email!</h3>
-      <form ref={form} onSubmit={sendEmail} className={styles.formContainer}>
+      <form ref={form} onSubmit={handleSubmit} className={styles.formContainer}>
         <label className={styles.label}>Name</label>
         <input type="text" name="from_name" className={styles.inputText} />
         <label className={styles.label}>Email</label>
