@@ -23,7 +23,7 @@ const CommentForm: React.FC<CommentFormProps> = ({ usernameprop, commentTextprop
 
   const handleSubmit = async () => {
     try {
-      const url='api/portfolio/'+portfolioSlug+'/comment'
+      const url='/api/portfolio/'+portfolioSlug+'/comment'
       console.log("URL:"+ url)
       const response = await fetch(url, {
         method: 'POST',
