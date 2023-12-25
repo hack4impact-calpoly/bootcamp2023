@@ -200,12 +200,18 @@ input[type="submit"] {
 .resume-top-content {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
+}
+
+.resume-top-content a {
+  position: relative;
+  bottom: 8px;
 }
 
 .resume-top-content h1 {
-  margin: 4px;
   width: 175px;
+  display: flex;
+  justify-content: center;
 }
 
 section.section {
