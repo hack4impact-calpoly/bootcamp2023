@@ -9,7 +9,6 @@ const makeRequest = async (api_url: string) => {
     });
 
     if (!res.ok) {
-      console.log("res error");
       throw new Error("Failed to fetch portfolio comments");
     }
 
