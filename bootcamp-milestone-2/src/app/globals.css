@@ -66,7 +66,7 @@ a {
   border-radius: 5px;
   background: #f1f1f1;
   width: 50%;
-  height: 100%;
+  height: 708px;
 }
 
 .blogsHolder h1 {
@@ -268,6 +268,7 @@ h3.entry-title-end {
   width: 50%;
   text-decoration: none;
   color: black;
+  height: 643px;
 }
 
 .portfolio-content h1 {
