@@ -4,7 +4,7 @@ import { Key } from "react";
 
 async function getProject(slug: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/portfolio/${slug}`, {
+    const res = await fetch(`https://hack4impact-asarelcastellanos.vercel.app/portfolio/${slug}`, {
       cache: "no-store",
     });
 
