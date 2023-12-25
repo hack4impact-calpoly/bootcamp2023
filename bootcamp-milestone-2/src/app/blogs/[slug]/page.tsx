@@ -12,7 +12,12 @@ import CommentForm from "../../../components/CommentFormBlog";
 
 async function getBlog(slug: string) {
   try {
-    const res = await fetch(process.env.NEXT_PUBLIC_VERCEL_URL+`/api/blog/${slug}`, {
+    const hostname =  'localhost:3000' || process.env.VERCEL_URL  // Default to localhost for local development
+    const protocol = process.env.VERCEL_ENV === 'production' ? 'https' : 'http';
+    const apiUrl = `https://bootcamp-project-2023-self.vercel.app/api/blog/${slug}`;
+    console.log('-------Got the URL --------------' + apiUrl);
+
+    const res = await fetch(apiUrl, {
       cache: "no-store",
     });
     const data = await res.json();
