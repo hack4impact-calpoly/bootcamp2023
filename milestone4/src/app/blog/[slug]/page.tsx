@@ -89,7 +89,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             <p className={style.date}> {parseCommentTime(blogData.date)} </p>
             <p className={style.description}> {blogData.description} </p>
             <div className={style.blogContent}>
-                <img src={blogData.imageSlug} className={style.image}></img>
+                <img src={blogData.imageSlug} className={style.image} alt="blog image"></img>
                 <p className={style.content}> {blogData.content} </p>
             </div>
 

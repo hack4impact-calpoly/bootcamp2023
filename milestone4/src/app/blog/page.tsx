@@ -18,7 +18,8 @@ export default async function Blogs() {
               <h1 className={style["page-title"]}>Blog</h1>
               <div className={style["blogList"]} id="blogList">
               {blogList.map(blog => 
-              <BlogPreview 
+              <BlogPreview
+                  key={blog.id}
                   slug={blog.slug}
                   description={blog.description}
                   title={blog.title}
