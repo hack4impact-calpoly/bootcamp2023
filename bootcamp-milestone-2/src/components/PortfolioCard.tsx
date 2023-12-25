@@ -5,7 +5,7 @@ import { Project } from "../database/portfolioSchema";
 
 export default function PortfolioCard(props: Project) {
   return (
-    <Link className={styles.link} href={`/portfolio/${props.slug}`}>
+    <Link className={styles.link} href={`/${props.slug}`}>
       <div className={styles.project}>
         <Image
           src={props.image}
