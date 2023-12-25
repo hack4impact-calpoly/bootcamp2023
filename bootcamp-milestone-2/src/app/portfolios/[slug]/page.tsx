@@ -11,7 +11,7 @@ import CommentForm from "../../../components/CommentFormPortfolio";
 
 async function getPortfolio(slug: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/portfolio/${slug}`, {
+    const res = await fetch(process.env.NEXT_PUBLIC_VERCEL_URL+`/api/portfolio/${slug}`, {
       cache: "no-store",
     });
     const data = await res.json();
