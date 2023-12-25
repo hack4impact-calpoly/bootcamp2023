@@ -12,9 +12,7 @@ export type IParams = {
 
 export async function GET(req: NextRequest, { params }: IParams) {
     await connectDB();
-
-    return NextResponse.json({'abc': 'def'});
-
+	
     const { slug } = params;
 
     try {
