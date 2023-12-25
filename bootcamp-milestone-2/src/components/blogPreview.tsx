@@ -11,7 +11,7 @@ export default function BlogPreview(props: IBlog) {
       <Image
         src={props.image}
         className={styles.blogPostImagePreview}
-        alt="img of specific blog"
+        alt={props.imagealt}
         width="500"
         height="500"
       />
