@@ -2,32 +2,32 @@ import getPortfolios from "../lib/getPortfolios";
 import { Project } from "../database/portfolioSchema";
 import { IComment } from "../database/portfolioSchema";
 
-interface PortfolioData {
-  projects: Project[];
-  comments: IComment[];
-  // Other properties if there are more in the actual data
-}
 
-//returns the only entry in the Portfolios db
-const getComments = async () => {
+//handles making the request and returns the json object
+const makeRequest = async (api_url: string) => {
   try {
-    const portfolioArray: PortfolioData[] | null = await getPortfolios();
+    const res = await fetch(`${api_url}/api/portfolio/getcomments`, {
+      cache: "no-store",
+    });
 
-    if (!portfolioArray || portfolioArray.length === 0) {
-      console.error("Error: Portfolio Data is Empty");
-      return null;
+    if (!res.ok) {
+      console.log("res error");
+      throw new Error("Failed to fetch portfolio comments");
     }
 
-    // the data entry with comments[] and portfolios[]
-    const portfolio = portfolioArray[0];
-    //Array of each project in the portfolio
-
-    return portfolio["comments"];
-  } catch (error) {
-    console.error("Error", error);
-    // Handle the error case accordingly, e.g., return an error object or rethrow the error
-    throw error;
+    return res.json();
+  } catch (err: unknown) {
+    console.log(`error: ${err}`);
+    return null;
   }
+};
+
+//splitting this function from the top allows the use of [0] and ["comments"]
+const getComments = async (api_url: string) => {
+  const portfolio = await makeRequest(api_url);
+  const firstObject = portfolio[0];
+  const comments = firstObject["comments"];
+  return comments;
 };
 
 export default getComments;

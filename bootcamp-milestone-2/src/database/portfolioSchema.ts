@@ -2,7 +2,7 @@ import * as mongoose from "mongoose";
 import { ObjectId } from "mongodb"; // Assuming you're using MongoDB ObjectId
 
 // typescript type (can also be an interface)
-type IPortfolio = {
+export interface IPortfolio  {
   projects: Project[];
   comments: IComment[]; // array for comments
 };

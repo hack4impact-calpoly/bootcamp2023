@@ -5,6 +5,7 @@ import { Project } from "../../database/portfolioSchema";
 import getProjectsArray from "../../helpers/getProjectsArray";
 import getComments from "../../helpers/getComments";
 import PortfolioCommentSection from "@/components/PortfolioCommentSection";
+import { comment } from "postcss";
 
 export const metadata = {
   title: {
@@ -34,11 +35,9 @@ const cleanComments = (comments: IComment[]): IComment[] => {
 
 export default async function Portfolio() {
   const projects = await getProjectsArray(); //returns array of projects
-
-  const commentsRetrieved: IComment[] | null = await getComments(); //may be null within this function's scope
-  const commentsNotNull: IComment[] = commentsRetrieved ?? []; //ensures it is not null
-  const commentsFiltered = cleanComments(commentsNotNull); //filters the _id prop from each comment which was causing issues
-  const api_url: string = process.env.API_URL!;
+  const api_url: string = process.env.API_URL!; //defined in server component so that data can be retrieved
+  const comments: IComment[] = await getComments(api_url); //a list of comments from the portfolio object
+  const commentsFiltered = cleanComments(comments); //filters the _id prop from each comment which was causing issues
 
   return (
     <main className="portfolioCommentContainer">
