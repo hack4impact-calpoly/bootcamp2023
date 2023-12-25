@@ -5,14 +5,17 @@ async function postPortfolioComment(comment: {
 }) {
   try {
     //creates a POST request at the api endpoint with the specified comment
-    const res = await fetch(`http://localhost:3000/api/portfolio/comment`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(comment),
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `https://bootcamp-project-2023-nu.vercel.app/api/portfolio/comment`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(comment),
+        cache: "no-store",
+      }
+    );
 
     console.log("res", res);
 

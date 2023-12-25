@@ -4,14 +4,17 @@ async function postBlogComment(
 ) {
   try {
     //creates a POST request at the api endpoint with the specified comment
-    const res = await fetch(`http://localhost:3000/api/blog/${slug}/comment`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(comment),
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `https://bootcamp-project-2023-nu.vercel.app/api/blog/${slug}/comment`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(comment),
+        cache: "no-store",
+      }
+    );
 
     if (!res.ok) {
       throw new Error("Failed to post comment");
