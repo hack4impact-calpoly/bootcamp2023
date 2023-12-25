@@ -1,10 +1,11 @@
 .formContainer {
   display: flex;
   flex-direction: column;
-
-  width: 80%;
+  width: 100%;
   height: 100%;
+  padding: 25px;
 }
+
 .componentContainer {
   display: flex;
   flex-direction: column;
@@ -12,14 +13,19 @@
   align-items: center;
   margin-top: 50px;
   padding: 75px 100px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
 }
 
 .inputSubmit {
   background-color: rgba(58, 90, 64, 1);
+  color: white;
   -webkit-transition: all 200ms linear;
   -moz-transition: all 200ms linear;
   transition: all 200ms linear;
   border: none;
+  padding: 10px 15px;
+  margin-top: 15px;
 }
 
 .inputSubmit:hover {

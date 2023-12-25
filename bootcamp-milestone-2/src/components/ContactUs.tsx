@@ -1,71 +1,126 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import styles from "./ContactUs.module.css";
 import emailjs from "@emailjs/browser";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
-// Define the TemplateParams interface
-export interface TemplateParams {
+interface FormValues {
   from_name: string;
   email_id: string;
   message: string;
+  to_name: string;
 }
 
 export default function ContactUs() {
-  const form = useRef();
-  const [emailSent, setEmailSent] = useState(false);
+  const [buttonState, setButtonState] = useState("Send Message");
 
-  const sendEmail = (e: React.FormEvent) => {
-    e.preventDefault();
+  const formik = useFormik<FormValues>({
+    //we have created our initailValues object in a format EmailJS accepts
+    initialValues: {
+      from_name: "", //user name
+      to_name: "aidannesbitt20@gmail.com", //email id of the admin
+      email_id: "", // user email
+      message: "", // message of email
+    },
+    validationSchema: Yup.object({
+      from_name: Yup.string().required("* Name field is required"),
+      email_id: Yup.string()
+        .email("Invalid email address")
+        .required("* Email field is required"),
+      message: Yup.string().required("* Message field is required"),
+    }),
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
+      try {
+        await emailjs
+          .send(
+            "service_usd3zbd",
+            "template_aapedgz",
+            values,
+            "M6apdXlayZJ0dtJfq"
+          )
+          .then(() => {
+            setButtonState("Email Sent!");
+            setSubmitting(false);
+            resetForm();
+          });
+      } catch {
+        setButtonState("Send Email");
+        setSubmitting(false);
+      }
+    },
+  });
 
-    emailjs
-      .sendForm(
-        "service_usd3zbd",
-        "template_aapedgz",
-        form.current,
-        "M6apdXlayZJ0dtJfq"
-      )
-      .then(
-        (result) => {
-          console.log("Email Sent! Server Response is: ", result.text);
-
-          //resets the three input values
-          form.current[0].value = "";
-          form.current[1].value = "";
-          form.current[2].value = "";
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    sendEmail(e);
-    setEmailSent(true);
-  };
-
+  //the formik class names probably don't exactly fit typescript, fix these.
+  //update class of button (to change color) if email sent
+  //
   return (
     <div className={styles.componentContainer}>
-      {/* Conditionally render "Email Sent" message based on state */}
-      {emailSent ? (
-        <div className={styles.emailSentMessage}>
-          <p>Email Sent!</p>
-        </div>
-      ) : (
-        <div>
-          <p></p>
-        </div>
-      )}
       <h3 className={styles.header}>Send Me an Email!</h3>
-      <form ref={form} onSubmit={handleSubmit} className={styles.formContainer}>
-        <label className={styles.label}>Name</label>
-        <input type="text" name="from_name" className={styles.inputText} />
-        <label className={styles.label}>Email</label>
-        <input type="email" name="email_id" className={styles.inputEmail} />
-        <label className={styles.label}>Message</label>
-        <textarea name="message" className={styles.inputMessage} />
-        <input type="submit" value="Send" className={styles.inputSubmit} />
+      <form onSubmit={formik.handleSubmit} className={styles.formContainer}>
+        <label htmlFor="from_name" className={styles.label}>
+          Name
+        </label>
+        <input
+          type="text"
+          name="from_name"
+          id="from_name"
+          autoComplete="off"
+          className={styles.inputText}
+          onChange={formik.handleChange}
+          value={formik.values.from_name}
+        />
+        <div
+          className={`expandable ${
+            formik.touched.from_name && formik.errors.from_name ? "show" : ""
+          }`}
+        >
+          {formik.errors.from_name}
+        </div>
+        <label htmlFor="email_id" className={styles.label}>
+          Email
+        </label>
+        <input
+          type="email"
+          name="email_id"
+          id="email_id"
+          autoComplete="off"
+          className={styles.inputEmail}
+          onChange={formik.handleChange}
+          value={formik.values.email_id}
+        />
+        <div
+          className={`expandable ${
+            formik.touched.email_id && formik.errors.email_id ? "show" : ""
+          }`}
+        >
+          {formik.errors.email_id}
+        </div>
+        <label htmlFor="message" className={styles.label}>
+          Message
+        </label>
+        <textarea
+          name="message"
+          id="message"
+          autoComplete="off"
+          className={styles.inputMessage}
+          onChange={formik.handleChange}
+          value={formik.values.message}
+        />
+        <div
+          className={`expandable ${
+            formik.touched.message && formik.errors.message ? "show" : ""
+          }`}
+        >
+          {formik.errors.message}
+        </div>
+        <button
+          disabled={formik.isSubmitting}
+          type="submit"
+          className={styles.inputSubmit}
+        >
+          <span>{buttonState}</span>
+        </button>
       </form>
     </div>
   );
