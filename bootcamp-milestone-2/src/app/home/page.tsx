@@ -4,12 +4,6 @@ import Image from "next/image";
 import BlogPreview from "../../components/blogPreview";
 import getBlogs from "../../lib/getBlogs";
 
-export const metadata = {
-  title: {
-    default: "Home Page",
-  },
-};
-
 export default async function Home() {
   const blogPosts = await getBlogs();
   return (
@@ -51,6 +45,9 @@ export default async function Home() {
               description={blog.description}
               slug={blog.slug}
               image={blog.image}
+              imagealt={blog.imagealt}
+              content={blog.content}
+              comments={blog.comments}
             />
           ))}
         </div>

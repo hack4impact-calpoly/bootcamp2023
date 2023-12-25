@@ -6,6 +6,12 @@ import getProjectsArray from "../../helpers/getProjectsArray";
 import getComments from "../../helpers/getComments";
 import PortfolioCommentSection from "@/components/PortfolioCommentSection";
 
+export const metadata = {
+  title: {
+    default: "My Portfolio",
+  },
+};
+
 type PortfolioData = {
   projects: Project[];
   comments: IComment[];
@@ -49,6 +55,7 @@ export default async function Portfolio() {
                   description={project.description}
                   slug={project.slug}
                   image={project.image}
+                  imagealt={project.imagealt}
                 />
               ))}
             </div>
