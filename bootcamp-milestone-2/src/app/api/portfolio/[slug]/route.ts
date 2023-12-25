@@ -5,7 +5,7 @@ import style from '../../../home.module.css';
 
 
 export type IParams = {
-    slug: string;
+    
     params: {
         slug: string;
     };

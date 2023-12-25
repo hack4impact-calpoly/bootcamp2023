@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 
 import CommentForm from "../../../components/CommentFormBlog";
 
+
 async function getBlog(slug: string) {
   try {
     const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
