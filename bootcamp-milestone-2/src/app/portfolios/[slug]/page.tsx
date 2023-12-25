@@ -13,7 +13,7 @@ import CommentForm from "../../../components/CommentFormPortfolio";
 async function getPortfolio(slug: string) {
   try {
     
-    const url = `https://bootcamp-project-2023-taupe.vercel.app/api/blog/${slug}`;
+    const url = `https://bootcamp-project-2023-taupe.vercel.app/api/portfolio/${slug}`;
     console.log('URL: ' + url);
 
     const res = await fetch(url, {
