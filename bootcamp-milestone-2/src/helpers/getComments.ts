@@ -1,7 +1,5 @@
 import getPortfolios from "../lib/getPortfolios";
-import { Project } from "../database/portfolioSchema";
-import { IComment } from "../database/portfolioSchema";
-
+import { IPortfolio } from "../database/portfolioSchema";
 
 //handles making the request and returns the json object
 const makeRequest = async (api_url: string) => {
@@ -25,9 +23,14 @@ const makeRequest = async (api_url: string) => {
 //splitting this function from the top allows the use of [0] and ["comments"]
 const getComments = async (api_url: string) => {
   const portfolio = await makeRequest(api_url);
-  const firstObject = portfolio[0];
-  const comments = firstObject["comments"];
-  return comments;
+
+  if (portfolio !== null) {
+    const firstObject = portfolio[0];
+    const comments = firstObject["comments"];
+    return comments;
+  }
+
+  return null;
 };
 
 export default getComments;
