@@ -6,7 +6,7 @@ async function postPortfolioComment(comment: {
   try {
     //creates a POST request at the api endpoint with the specified comment
     const res = await fetch(
-      `https://bootcamp-project-2023-nu.vercel.app/api/portfolio/comment`,
+      `${process.env.API_URL}/api/portfolio/comment`,
       {
         method: "POST",
         headers: {
