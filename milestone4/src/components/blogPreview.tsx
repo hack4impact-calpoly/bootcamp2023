@@ -11,7 +11,7 @@ export default function BlogPreview(props: IBlog) {
     <div className={style.blogCard}>
       <Link href = {`blog/${props.slug}`}>
         <div className={style.innerPreview}>
-          <img src={props.imageSlug} className={style.blogImage}></img>
+          <img src={props.imageSlug} className={style.blogImage} alt="blog preview image"></img>
           <div>
             <h1 className={style.title}>{props.title}</h1>
             <p>{props.description}</p>

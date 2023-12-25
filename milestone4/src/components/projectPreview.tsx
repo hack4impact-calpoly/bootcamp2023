@@ -7,7 +7,7 @@ export default function ProjectPreview(props: IProject) {
   return (
     <div className={style.projectCard}>
         <h1><strong>{props.title}</strong></h1>
-        <img src={props.linkImage} className={style.projectImage}></img>
+        <img src={props.linkImage} className={style.projectImage} alt="project preview image"></img>
         <p>{props.date}</p>
         <p>{props.description}</p>
         <Link href={props.link}><strong>Visit Here</strong></Link> 

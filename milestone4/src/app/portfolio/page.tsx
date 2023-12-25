@@ -35,7 +35,8 @@ export default async function Portfolio() {
                           description={project.description}
                           title={project.title}
                           date={project.date}
-                          linkImage={project.linkImage}                      
+                          linkImage={project.linkImage}
+                          key={project.id}                 
                           />
                   )}
                   </div>

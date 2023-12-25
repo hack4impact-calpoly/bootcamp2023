@@ -20,17 +20,28 @@ export default function Page({ params }: { params: { slug: string } }) {
         e.preventDefault();
         const currentDate = new Date();
         const { user, comment } = data;
-        const res = await fetch(`http://localhost:3000/api/blog/${params.slug}/comment`, {
-            method: 'POST',  
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                user, comment, date: currentDate,
-            }),
+    
+        try {
+            const res = await fetch(`http://localhost:3000/api/blog/${params.slug}/comment`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user, comment, date: currentDate,
+                }),
             });
-        fetchData();
-    }
+    
+            if (res.ok) {
+                const updatedBlogData = await res.json();
+                setBlogData(updatedBlogData);
+            } else {
+                console.error('Error submitting comment');
+            }
+        } catch (error) {
+            console.error('Error submitting comment', error);
+        }
+    };    
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const name = e.target.name
@@ -39,29 +50,29 @@ export default function Page({ params }: { params: { slug: string } }) {
             [name]: e.target.value
         }))
     }
-    
-    const fetchData = async () => {
-        try {
-            const res = await fetch(`http://localhost:3000/api/blog/${params.slug}`, {
-                cache: "no-store",
-            });
-            const data = await res.json();
-
-            if (res.ok) {
-                setBlogData(data);
-            } else {
-                console.error("Error fetching blog data");
-            }
-        } catch (error) {
-            console.error("Error fetching blog data", error);
-        } finally {
-            setLoading(false);
-        }
-    };
 
     useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await fetch(`http://localhost:3000/api/blog/${params.slug}`, {
+                    cache: "no-store",
+                });
+                const data = await res.json();
+    
+                if (res.ok) {
+                    setBlogData(data);
+                } else {
+                    console.error("Error fetching blog data");
+                }
+            } catch (error) {
+                console.error("Error fetching blog data", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
         fetchData();
-    }, []);
+    }, [params.slug]);
 
     if (loading) {
         return <div>Loading...</div>;
