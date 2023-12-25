@@ -88,7 +88,7 @@ export default function Resume() {
                 <h4>Mar 2022 - May 2023</h4>
               </div>
               <p className="px-10">
-                • Provided comprehensive tutoring support for 80% of SMC's
+                • Provided comprehensive tutoring support for 80% of SMC&apos;s
                 computer science courses, spanning from introductory levels to
                 advanced data structures.
               </p>
