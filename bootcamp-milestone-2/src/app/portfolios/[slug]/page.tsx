@@ -1,3 +1,4 @@
+import "../../global.css";
 import { IParams } from "../../api/portfolio/[slug]/route";
 import connectDB from "@/helpers/db";
 import Comment from "../../../components/commentPreview";
