@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function PostComment(slug) {
+export default function PostComment(slug: { slug: string; }) {
     const [user, setUser] = useState("");
     const [comment, setComment] = useState("");
     const newSlug = slug.slug;
