@@ -36,7 +36,7 @@ async function getBlog(slug: string) {
 
 // ... (existing imports)
 
-export default async function Blog(params: IParams) {
+export default async function Blog(props: IParams) {
   
   return (
     <div>
@@ -44,7 +44,7 @@ export default async function Blog(params: IParams) {
     </div>
   )
   
-  const slug: string = params.params.slug;
+  const slug: string = props.params.slug;
   const blog = await getBlog(slug);
 
   if (blog) {
