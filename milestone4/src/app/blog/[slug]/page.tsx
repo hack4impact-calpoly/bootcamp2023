@@ -22,7 +22,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         const { user, comment } = data;
     
         try {
-            const res = await fetch(`http://localhost:3000/api/blog/${params.slug}/comment`, {
+            const res = await fetch(`/api/blog/${params.slug}/comment`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ export default function Page({ params }: { params: { slug: string } }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch(`http://localhost:3000/api/blog/${params.slug}`, {
+                const res = await fetch(`/api/blog/${params.slug}`, {
                     cache: "no-store",
                 });
                 const data = await res.json();
