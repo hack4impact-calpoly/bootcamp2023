@@ -39,6 +39,7 @@ const CommentForm: React.FC<CommentFormProps> = ({ usernameprop, commentTextprop
       if (response.ok) {
         // Comment posted successfully
         console.log('Comment posted successfully');
+        window.location.reload();
         // You may want to reset the form or perform any other actions here
       } else {
         // Handle error cases
