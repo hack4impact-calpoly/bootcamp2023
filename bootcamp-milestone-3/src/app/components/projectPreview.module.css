@@ -1,7 +1,7 @@
-.blog_post {
+.project_post {
     margin: 20px;
     padding: 20px;
-    background-color: #C9B7C4;
+    background-color: #9ca68a;
     text-align: center;
     border-radius: 5px;
 
@@ -11,25 +11,16 @@
     align-items: center;
 }
 
-.blog_title {
+.project_title {
     text-align: center;
 }
 
-.blog_date {
+.project_date {
     color: #303133;
 }
 
-.blog_img {
+.project_img {
     height: 100%;
     width: 100%;
     border-radius: 2.5px;
-}
-
-.blog_link {
-    text-decoration: none;
-    color: #303133;
-}
-
-.blog_link:hover {
-    color: #A26E94;
 }
