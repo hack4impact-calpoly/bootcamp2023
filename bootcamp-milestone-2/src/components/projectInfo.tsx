@@ -21,7 +21,7 @@ export default function ProjectInfo(props: Props) {
         <Link href={props.slug} target="_blank">
           <Image
             className={style.projectImage}
-            src={props.image}
+            src={"/Drip-Map.jpg"}
             alt={props.alt}
             width="250"
             height="300"
