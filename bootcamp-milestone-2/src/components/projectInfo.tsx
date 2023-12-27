@@ -13,7 +13,8 @@ type Props = {
   order: number;
 };
 export default function ProjectInfo(props: Props) {
-  console.log(props.slug);
+  console.log("image url: ");
+  console.log(props.image);
   if (props.order % 2 == 0) {
     return (
       <div className={style.project}>
