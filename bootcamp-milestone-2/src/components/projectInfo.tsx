@@ -11,10 +11,9 @@ type Props = {
   image: string;
   alt: string;
   order: number;
-  key: number;
 };
-
 export default function ProjectInfo(props: Props) {
+  console.log(props.slug);
   if (props.order % 2 == 0) {
     return (
       <div className={style.project}>
