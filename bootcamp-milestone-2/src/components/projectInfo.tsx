@@ -13,15 +13,13 @@ type Props = {
   order: number;
 };
 export default function ProjectInfo(props: Props) {
-  console.log("image url: ");
-  console.log(props.image);
   if (props.order % 2 == 0) {
     return (
       <div className={style.project}>
         <Link href={props.slug} target="_blank">
           <Image
             className={style.projectImage}
-            src={"/Drip-Map.jpg"}
+            src={props.image}
             alt={props.alt}
             width="250"
             height="300"
