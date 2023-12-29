@@ -21,10 +21,9 @@ export default function Home() {
             <h1 className={style.pageTitle}>About</h1>
             <p>
               Hello, my name is <strong>Sean Nguyen (he/him/his)!</strong> I am
-              currently a<em>second year </em>student at Cal Poly San Luis
-              Obispo majoring in
-              <strong>Computer Science </strong>with a concentration in AI and
-              Machine Learning.
+              currently a <em>second year</em> student at Cal Poly San Luis
+              Obispo majoring in <strong>Computer Science</strong> with a
+              concentration in AI and Machine Learning.
             </p>
             <p>
               This quarter, I am studying Software Engineering abroad in the
