@@ -5,12 +5,11 @@ import connectDB from "../../helpers/db";
 import Blogs from "../../database/blogSchema";
 
 async function getBlogs() {
-  await connectDB(); // function from db.ts before
+  await connectDB();
 
   try {
-    // query for all blogs and sort by date
-    const blogs = await Blogs.find().sort({ date: -1 }).orFail();
-    // send a response as the blogs as the message
+    // const blogs = await Blogs.find().sort({ date: -1 }).orFail();
+    const blogs = await Blogs.find().orFail();
     return blogs;
   } catch (err) {
     return null;
@@ -19,6 +18,7 @@ async function getBlogs() {
 
 export default async function Blog() {
   const blogs = await getBlogs();
+
   return (
     <main>
       <h2 className="page-title">Blogs</h2>
