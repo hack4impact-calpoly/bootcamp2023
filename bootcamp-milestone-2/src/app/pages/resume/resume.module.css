@@ -1,0 +1,17 @@
+.button {
+    background-color: var(--cg-black); /* Ensure these variables are defined */
+    border: none;
+    color: var(--cg-white);
+    font-family: monospace;
+    padding: 5px 7px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.button:hover {
+    background-color: var(--cg-blue); /* Ensure this variable is defined */
+}
+
+.resumeH2 {
+    font-family: Georgia;
+}
