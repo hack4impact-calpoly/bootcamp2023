@@ -25,8 +25,7 @@ export default async function Blog() {
     return (
       <div>
         <main>
-          <h1 className={style.pageTitle}>Blog</h1>
-          <h2 className={style.pageSubtitle}>Posts</h2>
+          <h1 className={style.pageTitle}>Blog Posts</h1>
           <div className={style.blogList} id={style.blogList}></div>
 
           {blogPosts.map((blog) => (

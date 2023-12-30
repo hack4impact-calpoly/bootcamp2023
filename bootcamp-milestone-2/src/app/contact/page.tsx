@@ -83,7 +83,7 @@ export default function Contact() {
             </button>
           </form>
           <div className={style.links}>
-            <p>Email: snguy212@calpoly.edu</p>
+            {/* <p>Email: snguy212@calpoly.edu</p> */}
             <div className={style.linksButtons}>
               <Link href="https://www.linkedin.com/in/seanmnguyen/" target="_blank">
                 LinkedIn

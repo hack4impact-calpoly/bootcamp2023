@@ -20,6 +20,7 @@ body {
   margin: 0;
 
   background-image: linear-gradient(to bottom, #68a3d0, #b3e0f2);
+  /* background-color: #9db4f1; */
   background-repeat: no-repeat;
   background-attachment: fixed;
 
@@ -38,11 +39,12 @@ main {
   align-items: center;
 }
 
-.pageTitle {
+main h1 {
   display: flex;
   justify-content: center;
   font-size: 40px;
   font-family: Georgia;
+  margin-bottom: 7px;
 }
 
 /* CSS for footer */

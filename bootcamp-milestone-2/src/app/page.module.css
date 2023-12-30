@@ -1,12 +1,26 @@
 .about {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
+  flex-direction: column;
+  align-content: center;
   background-color: #f8f8f8;
   border: 1px solid #ccc;
   border-radius: 5px;
+  padding: 20px;
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.about h1 {
+  margin-top: -5px;
+
+  /* debugging */
+  /* border-color: black;
+  border-width: 2px; */
+}
+
+.aboutContents {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .aboutImage img {
@@ -28,6 +42,7 @@
 .aboutText p {
   font-size: 16px;
   line-height: 1.5;
+  margin-bottom: 10px;
 }
 
 .page-title {
