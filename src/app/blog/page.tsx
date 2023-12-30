@@ -28,7 +28,7 @@ export default async function Blog() {
         ) : (
           <div>
             {blogs.map((blog) => (
-              <BlogPreview key={blog.id} {...blog.toObject()} />
+              <BlogPreview key={blog._id} {...blog.toObject()} />
             ))}
           </div>
         )}
