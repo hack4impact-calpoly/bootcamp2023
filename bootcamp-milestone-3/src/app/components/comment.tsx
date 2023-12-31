@@ -1,5 +1,7 @@
 import React from "react";
 import { IComment } from '../../database/blogSchema';
+import 'bootstrap/dist/css/bootstrap.css';
+import style from './comment.module.css'
 
 /* When we pass props, the name that we use to pass values
 		is the key for the type
@@ -27,10 +29,10 @@ function parseCommentTime(time: Date){
 
 function Comment({ comment }: CommentProps) {
     return (
-        <div>
-            <h4>{comment.name}</h4>
-            <p>{comment.comment}</p>
-            <span>{parseCommentTime(comment.time)}</span>
+        <div className={style.comments}>
+            <h5 className={style.title}>{comment.name}</h5>
+            <span className={style.time}>{parseCommentTime(comment.time)}</span>
+            <span className={style.comment}>{comment.comment}</span>
         </div>
     );
 }

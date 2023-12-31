@@ -44,7 +44,7 @@ export default async function BlogPage(pr: Props) {
                         <p>{blog.para2}</p>
                     </div>
                 </div>
-                <div className="comments-wrapper">
+                <div className="comments-wrapper" style={{textAlign: "center"}}>
                     <h4><u>Comments:</u></h4>
                     {blog.comments.map((comment: IComment, index: number) => (
                         <Comment key={index} comment={comment}/>
