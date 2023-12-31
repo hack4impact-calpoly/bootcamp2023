@@ -14,6 +14,7 @@ type IBlog = {
     description: string; // for preview
     content: string; // for individual blog page
     comments: IComment[]; // array for comments
+    image: string;
 };
 
 // mongoose schema 
@@ -27,7 +28,9 @@ const blogSchema = new Schema<IBlog>({
         user: {type: String, required: true},
         comment: {type: String, required: true},
         time: {type: Date, required: false, default: new Date()}
-    }
+    },
+    image: { type: String, required: false }
+
 })
 
 // defining the collection and model

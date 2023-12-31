@@ -2,8 +2,13 @@ import Image from 'next/image';
 import Link from "next/link";
 import React from 'react';
 import { IProject } from '@/database/projectSchema';
+import Comment from "@/components/commentPreview";
+import AddComment from "@/components/addComment";
+import { IComment } from "@/database/blogSchema";
+import ProjectSchema from '@/database/projectSchema';
 
-export default function ProjectPreview(props: IProject) {
+export default function ProjectPreview(props: IProject) 
+{
     //console.log('ProjectPreview Slug:', props); 
     return (
       <div className = "projects">
@@ -16,4 +21,6 @@ export default function ProjectPreview(props: IProject) {
         </div>
       </div>
     );
-  }
+
+
+}
