@@ -22,20 +22,22 @@ async function getBlogs()
 export default async function Blog(){
     const blogs = await getBlogs();
     //console.log('Blogs:', blogs);
-
+    if (blogs) {
     return (
     <main>
         <h2 className="page-title">Blogs</h2>
         <div>
             {blogs?.map(blog => 
-                <BlogPreview  title={blog.title}
+                <BlogPreview  
+                title={blog.title}
                 slug = {blog.slug}
                 date = {(blog.date)}
                 description={blog.description}
                 content={blog.content}
-                comments={blog.comments} />
+                comments={blog.comments} 
+                image = {blog.image}/>
 		    )}
         </div>
     </main>
-    );
+    )};
     };
