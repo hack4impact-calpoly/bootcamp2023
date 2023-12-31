@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/helpers/db";
-import IPortfolio, {
-  IComment,
-  Project,
-} from "../../../../database/portfolioSchema";
+import { IPortfolioSchema } from "../../../../database/portfolioSchema";
 
 /* 
 	In order to use params, you need to have a request parameter before
@@ -17,9 +14,12 @@ import IPortfolio, {
 export async function GET(req: NextRequest) {
   await connectDB(); // function from db.ts before
   try {
-    const portfolios = await IPortfolio.find().orFail();
+    const comments = await IPortfolioSchema.find()
+      .select({ comments: 1, _id: 0 }) // Exclude _id, include comments
+      .populate("comments") // Populate the comments
+      .orFail();
 
-    return NextResponse.json(portfolios);
+    return NextResponse.json(comments);
   } catch (err) {
     return NextResponse.json("Blog not found.", { status: 404 });
   }

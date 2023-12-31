@@ -1,11 +1,9 @@
 import React from "react";
 import PortfolioCard from "../../components/PortfolioCard";
 import { IComment } from "../../database/portfolioSchema";
-import { Project } from "../../database/portfolioSchema";
 import getProjectsArray from "../../helpers/getProjectsArray";
 import getComments from "../../helpers/getComments";
 import PortfolioCommentSection from "@/components/PortfolioCommentSection";
-import { comment } from "postcss";
 
 export const metadata = {
   title: {
@@ -13,32 +11,14 @@ export const metadata = {
   },
 };
 
-type PortfolioData = {
-  projects: Project[];
-  comments: IComment[];
-  // Other properties if there are more in the actual data
-};
-
-//for some reason, you can't pass the comments with their id props because it needs to be converted from json or something like that
-//removing the id prop before passing gets rid of the 'Maximum call stack exceeded error'
-const cleanComments = (comments: IComment[]): IComment[] => {
-  return comments.map((comment) => {
-    // Access each comment and modify as needed
-    const modifiedComment: IComment = {
-      user: comment.user,
-      comment: comment.comment,
-      time: comment.time,
-    };
-    return modifiedComment;
-  });
-};
-
 export default async function Portfolio() {
   const projects = await getProjectsArray(); //returns array of projects
-  const api_url: string = process.env.API_URL!;
-  const comments: IComment[] | null = await getComments(api_url); //returned list may or may not be null within this function's scope
+  const api_url: string = process.env.API_URL!; //defined in server component and passed to client component
+
+  //comments
+  const comments: IComment[] | null = await getComments(api_url);
   const commentsNotNull: IComment[] = comments ?? []; //ensures the comment list is not null
-  const commentsFiltered = cleanComments(commentsNotNull); //filters the _id prop from each comment which was causing issues
+  
   return (
     <main className="portfolioCommentContainer">
       <div className="portfolio-content">
@@ -72,7 +52,7 @@ export default async function Portfolio() {
       {projects ? (
         <PortfolioCommentSection
           api_url={api_url}
-          comments={commentsFiltered}
+          comments={commentsNotNull}
         />
       ) : (
         <div className="generalContent">

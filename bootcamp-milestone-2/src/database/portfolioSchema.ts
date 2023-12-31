@@ -2,10 +2,10 @@ import * as mongoose from "mongoose";
 import { ObjectId } from "mongodb"; // Assuming you're using MongoDB ObjectId
 
 // typescript type (can also be an interface)
-export interface IPortfolio  {
+export interface IPortfolio {
   projects: Project[];
   comments: IComment[]; // array for comments
-};
+}
 
 export interface IComment {
   user: string;
@@ -39,11 +39,24 @@ const portfolioSchema = new mongoose.Schema<IPortfolio>({
       user: { type: String, required: true },
       comment: { type: String, required: true },
       time: { type: Date, required: true },
+      ref: { type: mongoose.Schema.Types.ObjectId, ref: "Comment" }, // Adjust this line
     },
   ],
 });
 
+const commentSchema = new mongoose.Schema<IComment>({
+  user: { type: String, required: true },
+  comment: { type: String, required: true },
+  time: { type: Date, required: true },
+});
+
 // defining the collection and model
 
-export default mongoose.models["portfolios"] ||
+const IPortfolioSchema =
+  mongoose.models["portfolios"] ||
   mongoose.model("portfolios", portfolioSchema);
+
+const CommentSchema =
+  mongoose.models["Comment"] || mongoose.model("Comment", commentSchema);
+
+export { IPortfolioSchema, CommentSchema };

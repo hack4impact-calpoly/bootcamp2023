@@ -1,7 +1,5 @@
-import getPortfolios from "../lib/getPortfolios";
-import { IPortfolio } from "../database/portfolioSchema";
+import { IComment } from "../database/portfolioSchema";
 
-//handles making the request and returns the json object
 const makeRequest = async (api_url: string) => {
   try {
     const res = await fetch(`${api_url}/api/portfolio/getcomments`, {
@@ -19,17 +17,24 @@ const makeRequest = async (api_url: string) => {
   }
 };
 
-//splitting this function from the top allows the use of [0] and ["comments"]
+//for some reason, you can't pass the comments with their id props because it needs to be converted from json or something like that
+//removing the id prop before passing gets rid of the 'Maximum call stack exceeded error'
+const cleanComments = (comments: IComment[]): IComment[] => {
+  return comments.map((comment) => {
+    // Access each comment and modify as needed
+    const modifiedComment: IComment = {
+      user: comment.user,
+      comment: comment.comment,
+      time: comment.time,
+    };
+    return modifiedComment;
+  });
+};
+
 const getComments = async (api_url: string) => {
-  const portfolio = await makeRequest(api_url);
-
-  if (portfolio !== null) {
-    const firstObject = portfolio[0];
-    const comments = firstObject["comments"];
-    return comments;
-  }
-
-  return null;
+  const response = await makeRequest(api_url);
+  const cleanedComments = cleanComments(response[0]["comments"]);
+  return cleanedComments;
 };
 
 export default getComments;

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/helpers/db";
-import portfolioSchema from "../../../../database/portfolioSchema";
+import { IPortfolioSchema } from "../../../../database/portfolioSchema";
 
 /* 
 	In order to use params, you need to have a request parameter before
@@ -38,7 +38,7 @@ export async function POST(req: NextRequest, { params }: IParams) {
     try {
       await connectDB(); // connects to DB
 
-      const result = await portfolioSchema.updateOne(
+      const result = await IPortfolioSchema.updateOne(
         {
           _id: process.env.PORTFOLIO_ID, //grabs the only portfolio entry
         },
