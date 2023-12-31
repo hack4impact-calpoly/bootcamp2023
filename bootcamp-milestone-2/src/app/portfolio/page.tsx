@@ -16,8 +16,7 @@ export default async function Portfolio() {
   const api_url: string = process.env.API_URL!; //defined in server component and passed to client component
 
   //comments
-  const comments: IComment[] | null = await getComments(api_url);
-  const commentsNotNull: IComment[] = comments ?? []; //ensures the comment list is not null
+  const comments: IComment[] | [] = await getComments(api_url);
   
   return (
     <main className="portfolioCommentContainer">
@@ -52,7 +51,7 @@ export default async function Portfolio() {
       {projects ? (
         <PortfolioCommentSection
           api_url={api_url}
-          comments={commentsNotNull}
+          comments={comments}
         />
       ) : (
         <div className="generalContent">

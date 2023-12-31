@@ -31,10 +31,21 @@ const cleanComments = (comments: IComment[]): IComment[] => {
   });
 };
 
+type commentsResponse = {
+  comments: IComment[];
+};
+
 const getComments = async (api_url: string) => {
   const response = await makeRequest(api_url);
-  const cleanedComments = cleanComments(response[0]["comments"]);
-  return cleanedComments;
+  if (response) {
+    const responseObject: commentsResponse = response[0]; // if response not null, grab it's first (and only) object, which is of type comments response
+    const commentsList: IComment[] = responseObject.comments; // grab the list of comments from the responseObject
+    const cleanedComments = cleanComments(commentsList); // clean the comments
+    return cleanedComments;
+  }
+
+  //return empty list if response is null
+  return [];
 };
 
 export default getComments;
