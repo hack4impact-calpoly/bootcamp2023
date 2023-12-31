@@ -1,8 +1,5 @@
 import { IComment } from "../database/portfolioSchema";
 
-//sets revalidation time to 0 (is meant to fix vercel caching)
-export const revalidate = 0;
-
 const makeRequest = async (api_url: string) => {
   try {
     const res = await fetch(`${api_url}/api/portfolio/getcomments`, {
