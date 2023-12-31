@@ -13,7 +13,7 @@ export default function Home()
                     <p> Some of my hobbies include traveling, watching
                     movies (especially murder mysteries and thrillers),
                     and exploring new places to eat. A few countries I've traveled to include Italy, 
-                    Spain, and Canada. Tokyo and Boston are two places that are currently on my bucket list.
+                    Spain, and Canada. Tokyo is one place that is currently on my bucket list.
                      </p>
                     <p> Feel free to explore my website!</p>
                 </div>
