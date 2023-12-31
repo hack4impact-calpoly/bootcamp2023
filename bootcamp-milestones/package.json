@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "env-cmd": "^10.1.0",
     "mongoose": "^8.0.3",
     "next": "14.0.4",
