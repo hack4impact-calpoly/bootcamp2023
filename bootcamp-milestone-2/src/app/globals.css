@@ -184,3 +184,16 @@
     height: 2.5rem;
   }
   
+
+.BoldUsername {
+  font-weight: bold;
+  display: flex;
+  color: var(--cg-black);
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1em; 
+}
