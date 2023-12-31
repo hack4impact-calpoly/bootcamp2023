@@ -1,7 +1,6 @@
-
 import { NextRequest, NextResponse } from 'next/server'
 import connectDB from "@/database/helpers/db";
-import Blogs from "@/database/blogSchema";
+import blogSchema from "@/database/blogSchema";
 
 
 type IParams = {
@@ -31,9 +30,39 @@ export async function GET(req: NextRequest, { params }: IParams) {
 		const { slug } = params // another destructure
 
 	   try {
-	        const blog = await Blogs.findOne({ slug }).orFail()
+	        const blog = await blogSchema.findOne({ slug }).orFail()
 	        return NextResponse.json(blog)
 	    } catch (err) {
 	        return NextResponse.json('Blog not found.', { status: 404 })
 	    }
 }
+
+export async function POST(req: NextRequest, { params }: IParams) {
+	await connectDB();
+	const { slug } = params;
+	const body = await req.json(); 
+
+	if (!body) { 
+	  return NextResponse.json("No body", { status: 400 });
+	}
+	try {
+	  const updatedBlog = await blogSchema.findOneAndUpdate(
+		  { slug },
+		  {
+			  $push: {
+				  comments: {
+					  user: body.user,
+					  comment: body.comment,
+					  time: new Date(),
+				  }
+			  }
+		  },
+		  { new: true},
+	  ).orFail();
+  
+	  return NextResponse.json(updatedBlog);
+	} catch (err) {
+	  return NextResponse.json('Internal Server Error', { status: 500 });
+	}
+  }
+
