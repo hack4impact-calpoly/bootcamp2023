@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/helpers/db";
 import { IPortfolioSchema } from "../../../../database/portfolioSchema";
 
+//sets revalidation time to 0 (is meant to fix vercel caching)
+export const revalidate = 0;
+
 /* 
 	In order to use params, you need to have a request parameter before
 
