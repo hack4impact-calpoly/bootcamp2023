@@ -1,7 +1,7 @@
 import React from 'react';
 import BlogPreview from '../components/blogPreview';
-import Blog from '../database/blogSchema';
-import connectDB from "../helpers/db";
+import Blog from '../../database/blogSchema';
+import connectDB from "../../helpers/db";
 
 async function getBlogs(){
 	await connectDB() // function from db.ts before

@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import style from './projectPreview.module.css'
 import Link from 'next/link';
-import type { IProject } from "../database/projectSchema";
+import type { IProject } from "../../database/projectSchema";
 
 export default function ProjectPreview({title, description, image}: IProject) {
   return (<div className={style.project_post}>

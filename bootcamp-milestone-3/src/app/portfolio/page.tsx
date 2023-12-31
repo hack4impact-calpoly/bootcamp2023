@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
 import ProjectPreview from '../components/projectPreview';
-import Project from '../database/projectSchema';
-import connectDB from "../helpers/db";
+import Project from '../../database/projectSchema';
+import connectDB from "../../helpers/db";
 
 async function getProjects(){
 	await connectDB() // function from db.ts before

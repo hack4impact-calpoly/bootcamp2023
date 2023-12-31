@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import style from './blogPreview.module.css'
 import Link from 'next/link';
-import type { IBlog } from "../database/blogSchema";
+import type { IBlog } from "../../database/blogSchema";
 
 export default function BlogPreview({title, description, date, image, slug}: IBlog) {
   return (<div className={style.blog_post}>
