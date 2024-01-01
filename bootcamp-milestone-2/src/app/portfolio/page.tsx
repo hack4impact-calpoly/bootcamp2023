@@ -24,8 +24,8 @@ export default async function Portfolio() {
         <h1 className="page-title">Portfolio</h1>
         {/* Only renders the project content if project data retrieved successfully*/}
         {projects && projects.length > 0 ? (
-          <div className="generalContent">
-            <div>
+          <div className="generalPortfolioContent">
+            <div className="portfolioCardHolder">
               {projects.map((project) => (
                 <PortfolioCard
                   key={project.slug}

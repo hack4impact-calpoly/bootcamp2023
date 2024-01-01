@@ -12,11 +12,12 @@ export default function PortfolioCard(props: Project) {
           alt="Screenshot of this site's index.html page"
           width="500"
           height="317"
+          layout="responsive"
         />
         <div className={styles.projectDetails}>
-          <h2 className="projectName">{props.projectName}</h2>
-          <p className="projectDate">{props.date}</p>
-          <p className="projectDescription">{props.description}</p>
+          <h2 className={styles.projectName}>{props.projectName}</h2>
+          <p className={styles.projectDate}>{props.date}</p>
+          <p className={styles.projectDescription}>{props.description}</p>
         </div>
       </div>
     </Link>
