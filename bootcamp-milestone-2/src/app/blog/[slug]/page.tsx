@@ -4,6 +4,8 @@ import Comment from "@/components/commentPreview";
 import connectDB from "@/database/helpers/db";
 import AddComment from "@/components/addComment";
 
+//const res = await fetch(`http://localhost:3000/api/blog/${slug}`, 
+
 type Props = {
     params: { slug: string };
   };
@@ -12,7 +14,7 @@ type Props = {
     await connectDB(); // function from db.ts before
   
     try {
-        const res = await fetch(`http://localhost:3000/api/blog/${slug}`, 
+        const res = await fetch(`https://bootcamp-project-2023-seven.vercel.app/api/blog/${slug}`, 
         {
         cache: "no-store",
         });
