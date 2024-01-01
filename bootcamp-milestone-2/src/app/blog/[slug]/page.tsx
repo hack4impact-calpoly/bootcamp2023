@@ -12,12 +12,11 @@ type Props = {
     await connectDB(); // function from db.ts before
   
     try {
-        const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
+        const res = await fetch(`http://localhost:3000/api/blog/${slug}`, 
+        {
         cache: "no-store",
-      });
+        });
   
-      //console.log(slug);
-
       if (!res.ok) {
         throw new Error("Failed to fetch blog");
       }
@@ -31,7 +30,6 @@ type Props = {
 
   export default async function Blog({ params: { slug } }: Props) {
     const blog = await getBlogs(slug);
-    console.log(slug);
 
     if (blog) {
 

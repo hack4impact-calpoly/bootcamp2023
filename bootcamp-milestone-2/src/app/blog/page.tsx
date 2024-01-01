@@ -12,6 +12,7 @@ async function getBlogs()
 			// query for all blogs and sort by date
 	    const blogs = await Blogs.find().sort({ date: -1 }).orFail()
 			// send a response as the blogs as the message
+            //console.log("hello " + blogs)
 	    return blogs
 	} catch (err) 
     {
@@ -21,7 +22,6 @@ async function getBlogs()
 
 export default async function Blog(){
     const blogs = await getBlogs();
-    //console.log('Blogs:', blogs);
     if (blogs) {
     return (
     <main>
@@ -35,7 +35,8 @@ export default async function Blog(){
                 description={blog.description}
                 content={blog.content}
                 comments={blog.comments} 
-                image = {blog.image}/>
+                image = {blog.image}
+                key={blog._id}/>
 		    )}
         </div>
     </main>
