@@ -3,7 +3,6 @@ import { IBlog } from '@/database/blogSchema';
 import Link from "next/link";
 
 export default function BlogPreview(props: IBlog) {
-  //console.log('BlogPreview Slug:', props); 
   return (
     <div className = "bloglist">
       <h2><Link href = {`/blog/${props.slug}`}> {props.title} </Link></h2>
@@ -14,4 +13,3 @@ export default function BlogPreview(props: IBlog) {
     </div>
   );
 }
-//      <h2><Link href = {`blog/${props.slug}`}> {props.title} </Link></h2>

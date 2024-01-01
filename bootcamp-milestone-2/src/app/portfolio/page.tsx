@@ -29,7 +29,9 @@ async function getProjects() {
                 title={project.title}
                 slug={project.slug}
                 description={project.description}
-                image={project.image}/>
+                image={project.image}
+                key={project._id}
+                />
             )}
           </div>
           <br></br>
