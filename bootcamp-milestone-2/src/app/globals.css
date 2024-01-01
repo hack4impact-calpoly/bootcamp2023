@@ -435,8 +435,24 @@ h3.entry-title-end {
     flex-direction: column;
   }
 
+  .blogsHolder {
+    width: 45%;
+  }
+
   .portfolio-content {
     font-size: 13px;
+    margin-bottom: 20px;
+  }
+}
+
+/* CSS for screens with a width less than 750 pixels */
+@media (max-width: 750px) {
+  .blogCommentContainer {
+    flex-direction: column;
+  }
+
+  .blogsHolder {
+    width: 75%;
     margin-bottom: 20px;
   }
 }
