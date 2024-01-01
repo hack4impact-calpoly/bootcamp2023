@@ -8,11 +8,11 @@ export default function Home()
                   <img src = "Profile.jpeg" alt="Profile Picture" />
                 </div>
                 <div className ="about-text">
-                    <p>Hi! My name is <strong>Sriya Adunur</strong> and I'm at 2nd year student
+                    <p>Hi! My name is <strong>Sriya Adunur</strong> and I&#39;m at 2nd year student
                     majoring in Computer Science at <strong>Cal Poly SLO</strong>. </p>
                     <p> Some of my hobbies include traveling, watching
                     movies (especially murder mysteries and thrillers),
-                    and exploring new places to eat. A few countries I've traveled to include Italy, 
+                    and exploring new places to eat. A few countries I&#39;ve traveled to include Italy, 
                     Spain, and Canada. Tokyo is one place that is currently on my bucket list.
                      </p>
                     <p> Feel free to explore my website!</p>

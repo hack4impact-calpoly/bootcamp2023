@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import connectDB from "@/database/helpers/db";
 import ProjectPreview from "@/components/projectPreview";
 import Projects from "@/database/projectSchema";
@@ -22,7 +22,7 @@ async function getProjects() {
 
       return (
           <main>
-            <h2 className="page-title">Sriya's Portfolio</h2>
+            <h2 className="page-title">Sriya&#39;s Portfolio</h2>
             <div>
             {projects?.map((project) => 
               <ProjectPreview

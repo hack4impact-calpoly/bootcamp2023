@@ -16,7 +16,7 @@ export default function Resume() {
               <h2 className="section-title">Education</h2>
               <div className="entry">
                 <h3 className="entry-title">
-                  Bachelor's of Science in Computer Science
+                  Bachelor of Science in Computer Science
                 </h3>
                 <p className="entry-info">
                   California Polytechnic University, San Luis Obispo | Expected Graduation June 2026
