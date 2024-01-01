@@ -7,7 +7,6 @@ export const metadata = {
   },
 };
 
-
 export default async function Home() {
   const blogPosts = await getBlogs();
 
