@@ -11,8 +11,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 25%;
   margin-top: 50px;
-  padding: 75px 100px;
+  padding: 75px 25px;
   border: 1px solid lightgray;
   border-radius: 5px;
   background: #f1f1f1;
@@ -48,4 +49,29 @@
   text-align: center;
   width: 100%;
   padding: 10px 100px;
+}
+
+/* CSS for screens with a width less than 1150 pixels */
+@media (max-width: 1150px) {
+  .componentContainer {
+    width: 37%;
+    margin-top: 100px;
+  }
+}
+
+/* CSS for screens with a width less than 750 pixels */
+@media (max-width: 750px) {
+  .componentContainer {
+    width: 55%;
+    margin-top: 100px;
+  }
+}
+
+/* CSS for screens with a width less than 520 pixels */
+@media (max-width: 520px) {
+  .componentContainer {
+    font-size: 14px;
+    width: 60%;
+    margin-top: 100px;
+  }
 }
