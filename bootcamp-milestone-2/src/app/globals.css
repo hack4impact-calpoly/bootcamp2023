@@ -195,6 +195,7 @@ input[type="submit"] {
   border-radius: 5px;
   background: #f1f1f1;
   padding-top: 20px;
+  margin-top: 3vh;
 }
 
 .resume-top-content {
@@ -355,3 +356,56 @@ h3.entry-title-end {
   padding-bottom: 100px;
 }
 
+/* CSS for screens with a width less than 1300 pixels */
+@media (max-width: 1300px) {
+  .resume-content {
+    margin-top: 5vh;
+  }
+}
+
+/* CSS for screens with a width less than 900 pixels */
+@media (max-width: 900px) {
+  .resume-content {
+    font-size: 14px;
+    margin-top: 8vh;
+    width: 90%;
+  }
+
+  .resume {
+    width: 100%;
+    padding-left: 8%;
+  }
+
+  section.section,
+  section.section-end {
+    width: 100%;
+  }
+
+  .entry {
+    width: 90%;
+  }
+}
+/* CSS for screens with a width less than 500 pixels */
+@media (max-width: 500) {
+  .entry,
+  ul {
+    width: 80%;
+  }
+
+  .resume-content {
+    font-size: 13px;
+  }
+}
+/* CSS for screens with a width less than 450 pixels */
+@media (max-width: 450px) {
+  .resume {
+    padding-left: 10%;
+  }
+  .resume-top-content {
+    align-items: center;
+    flex-direction: column;
+  }
+  h1.page-title {
+    padding-bottom: 15px;
+  }
+}
