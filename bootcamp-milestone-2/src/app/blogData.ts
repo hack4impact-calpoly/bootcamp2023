@@ -5,7 +5,7 @@ export interface Blog {
     slug: string;
 }
 
-const blogPosts: Blog[] = [
+const blogs: Blog[] = [
     {
         title: "Chicken Soup",
         date: "9-25-2023",
@@ -20,4 +20,4 @@ const blogPosts: Blog[] = [
     },
 ];
 
-export default blogPosts;
+export default blogs;

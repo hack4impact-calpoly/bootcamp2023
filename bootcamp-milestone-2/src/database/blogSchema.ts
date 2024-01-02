@@ -13,3 +13,5 @@ const blogSchema = new Schema<Blog>({
 // defining the collection and model
 const Blog = mongoose.models['blogs'] ||
 mongoose.model('blogs', blogSchema);
+
+export default Blog;
