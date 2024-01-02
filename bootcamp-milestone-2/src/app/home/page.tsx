@@ -14,6 +14,7 @@ export default async function Home() {
             src={aidan_profile_image}
             id="profile-image"
             alt="Aidan Nesbitt looking at a Redwood tree"
+            layout="responsive"
           />
         </div>
         <div className="about-text">

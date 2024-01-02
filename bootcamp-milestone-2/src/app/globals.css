@@ -103,6 +103,7 @@ a {
   padding: 32px 12px;
   background: #f1f1f1;
   margin-bottom: 35px;
+  margin-top: 4vh;
 }
 
 #profile-image {
@@ -116,6 +117,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50%;
 }
 
 #hero {
@@ -123,12 +125,15 @@ a {
   padding-bottom: 25px;
 }
 
+.center-hero-content {
+  width: 100%;
+}
 .center-hero-content p {
   margin-bottom: 12px;
 }
 
 .about-text p {
-  width: 600px;
+  width: 100%;
 }
 /* CSS For Selectors */
 
@@ -271,6 +276,7 @@ h3.entry-title-end {
 .about-image {
   position: relative;
   overflow: hidden; /* Clip the image if it overflows the div */
+  width: 35%;
 }
 
 /* CSS For Portfolio Page */
@@ -437,14 +443,20 @@ h3.entry-title-end {
 
 /* CSS for screens with a width less than 1000 pixels */
 @media (max-width: 1000px) {
+  /* portfolio page */
   main.portfolioCommentContainer {
     flex-direction: column;
   }
-
   .portfolio-content {
     width: 80%;
     font-size: 13px;
     margin-bottom: 20px;
+  }
+
+  /* home page */
+  .about {
+    width: 75%;
+    margin-top: 6vh;
   }
 }
 /* CSS for screens with a width less than 900 pixels */
@@ -464,5 +476,29 @@ h3.entry-title-end {
     width: 75%;
     margin-bottom: 20px;
     margin-top: 8vh;
+  }
+
+  /* home page blogs */
+  .blogsPreviewHolder {
+    flex-direction: column;
+  }
+}
+
+/* CSS for screens with a width less than 650 pixels */
+@media (max-width: 650px) {
+  /* home page */
+  .about {
+    margin-top: 8vh;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-text {
+    width: 80%;
+    text-align: center;
+  }
+
+  .about-image {
+    width: 75%;
   }
 }
