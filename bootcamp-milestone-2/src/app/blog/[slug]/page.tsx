@@ -3,6 +3,7 @@ import Image from "next/image";
 import Comment from "@/components/commentPreview";
 import connectDB from "@/database/helpers/db";
 import AddComment from "@/components/addComment";
+import styles from "./page.module.css";
 
 //const res = await fetch(`http://localhost:3000/api/blog/${slug}`, 
 
@@ -45,16 +46,19 @@ type Props = {
             <Image src={blog.image} alt={blog.title} width={400} height={300} />
             </div>
             <p className="entry-info">{blog.content}</p>
-
+            <div className={styles.commentSection}>
             <h2>Comments</h2>
             {blog.comments.map((comment: any, index: number) => (
             <Comment key={index} comment={comment} />
             ))} 
+            <br></br>
             <div>
               <h2>Add a Comment!</h2>
               <AddComment slug={`blog/${slug}`} />
             <br></br>
           </div>
+          </div>
+          <br></br>
             </main>
       );
     } else {
