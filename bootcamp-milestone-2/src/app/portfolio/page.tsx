@@ -9,7 +9,7 @@ async function getProjects() {
 
     try {
      
-      const projs = await projectSchema.find().orFail();
+      const projs = await Projects.find().orFail();
       // send a response as the blogs as the message
       return projs;
     } catch (err) {
@@ -27,9 +27,12 @@ async function getProjects() {
             {projects?.map((project) => 
               <ProjectPreview
                 title={project.title}
-                slug={project.slug}
+                slug = {project.slug}
+                date = {(project.date)}
                 description={project.description}
-                image={project.image}
+                content={project.content}
+                comments={project.comments} 
+                image = {project.image}
                 key={project._id}
                 />
             )}
