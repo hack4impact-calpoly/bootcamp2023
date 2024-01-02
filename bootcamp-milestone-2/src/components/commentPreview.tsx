@@ -29,7 +29,7 @@ function Comment({ comment }: CommentProps) {
         <div className="comment">
         <div className="CommentInfo">
         <div className="CommentInfo">
-           <span className="BoldUsername">{comment.user}</span> <span>{parseCommentTime(comment.time)}</span>
+           <span className="BoldUsername">{comment.user + ":"}</span> <span>{parseCommentTime(comment.time)}</span>
         </div>
          </div>          
         <div className="Text">{comment.comment}</div>

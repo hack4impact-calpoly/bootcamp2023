@@ -71,6 +71,7 @@ export default function Resume() {
               </ul>
             </section>
           </div>
+          <br></br>
         </main>
       </div>
       </header>

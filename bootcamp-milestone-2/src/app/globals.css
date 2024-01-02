@@ -187,13 +187,21 @@
 
 .BoldUsername {
   font-weight: bold;
-  display: flex;
   color: var(--cg-black);
 }
 
 .comment {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   margin-bottom: 1em; 
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;  
+  border: 3px solid rgb(69, 5, 41); 
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  background-color: var(--cg-white);
+
 }
