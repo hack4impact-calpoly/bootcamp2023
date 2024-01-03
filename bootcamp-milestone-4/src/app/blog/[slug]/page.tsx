@@ -1,6 +1,7 @@
-// import styles from "./page.module.css";
+import React, { useState, useEffect } from 'react';
 import { IComment } from '../../../database/blogSchema';
 import Comment from "../../components/comment";
+import NewComment from "../../components/newComment";
 import connectDB from "../../../helpers/db"
 import Blog from '../../../database/blogSchema';
 
@@ -46,9 +47,13 @@ export default async function BlogPage(pr: Props) {
                 </div>
                 <div className="comments-wrapper" style={{textAlign: "center"}}>
                     <h4><u>Comments:</u></h4>
-                    {blog.comments.map((comment: IComment, index: number) => (
+                    {blog.comments ? (blog.comments.map((comment: IComment, index: number) => (
                         <Comment key={index} comment={comment}/>
-                    ))}
+                    ))) : (
+                        <h6>no comments yet!</h6>
+                    )}
+                    <br />
+                    <NewComment slug={blog.slug} />
                 </div>
             </div>
         </main>)
