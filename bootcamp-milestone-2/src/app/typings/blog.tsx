@@ -1,3 +1,5 @@
+import { IComment } from "./comment";
+
 type Blog = {
     title: string;
     date: string;
@@ -7,6 +9,7 @@ type Blog = {
     picSlug1: string;
     picSlug2: string;
     picSlug3: string;
+    comments: IComment[];
 }
 
 export type {Blog};

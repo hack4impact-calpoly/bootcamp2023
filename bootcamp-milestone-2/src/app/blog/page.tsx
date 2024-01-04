@@ -31,6 +31,7 @@ export default async function Blog() {
               picSlug1={blog.picSlug1}
               picSlug2={blog.picSlug2}
               picSlug3={blog.picSlug3}
+              comments={blog.comments}
             />
           ))}
         </main>

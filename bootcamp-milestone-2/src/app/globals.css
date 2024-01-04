@@ -313,3 +313,15 @@ form {
 .content {
   width: 300px;
 }
+
+.comment {
+  text-align: center;
+  border-style: solid;
+  margin: 5px;
+  padding: 5px;
+}
+
+.comment-name{
+  border-bottom: 1px solid #000000;
+  padding-bottom: 5px;
+}

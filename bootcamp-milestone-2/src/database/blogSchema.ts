@@ -1,5 +1,13 @@
 import { Blog } from "@/app/typings/blog";
 import mongoose, { Schema } from "mongoose";
+import { IComment } from "@/app/typings/comment";
+const commentSchema = new Schema<IComment>(
+    {    
+        user: {type: String, required: true},
+        comment: {type: String, required: true},
+        time: {type: Date, required: true},
+    }
+)
 
 const blogSchema = new Schema<Blog>(
     {    
@@ -10,7 +18,8 @@ const blogSchema = new Schema<Blog>(
         pageDescription: {type: String, required: true},
         picSlug1: {type: String, required: true},
         picSlug2: {type: String, required: true},
-        picSlug3: {type: String, required: true}
+        picSlug3: {type: String, required: true},
+        comments: {type: [commentSchema], required:true}
     }
 )
 
