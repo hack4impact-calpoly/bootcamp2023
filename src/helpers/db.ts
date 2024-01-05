@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 // const url: string = process.env.MONGO_URI as string;
 const url: string =
-  "mongodb+srv://newUser:newPassword@cluster0.ybpyrnb.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://newUser:newPassword@cluster0.ybpyrnb.mongodb.net/Test?retryWrites=true&w=majority";
 let connection: typeof mongoose;
 
 /**
@@ -14,7 +14,7 @@ let connection: typeof mongoose;
 const connectDB = async () => {
   if (!connection) {
     connection = await mongoose.connect(url);
-    // console.log("Connected to MongoDB");
+    console.log("Connected to MongoDB");
     return connection;
   }
 };

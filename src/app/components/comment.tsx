@@ -1,41 +1,21 @@
-import { IComment } from "../../database/blogSchema";
-import style from "./blogPage.module.css";
+import React from 'react';
+import type { IComment } from "@/database/commentSchema";
+import style from './comments.module.css'
 
-{
-  /* When we pass props, the name that we use to pass values
+{/* When we pass props, the name that we use to pass values
 		is the key for the type
-*/
-}
+*/}
 type CommentProps = {
-  comment: IComment;
-};
-
-{
-  /* Modularizing code into seperate functions is useful.
-		Makes your code look nicer and allows for better readability.
-	*/
-}
-function parseCommentTime(time: Date) {
-  return new Date(time).toLocaleString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-    hour: "numeric",
-    minute: "2-digit",
-    hour12: true,
-  });
+    comment: IComment;
 }
 
 function Comment({ comment }: CommentProps) {
-  return (
-    <div className={style.blogcomment}>
-      <p>
-        <b>{comment.user}</b>
-      </p>
-      <p>{comment.comment}</p>
-      <span>{parseCommentTime(comment.time)}</span>
-    </div>
-  );
+    return (
+        <div className={style.comment}>
+            <p className={style.comment_header}>{`${comment.user} | ${comment.date}`}</p>
+            <p className={style.comment_body}>{comment.comment}</p>
+        </div>
+    );
 }
 
 export default Comment;

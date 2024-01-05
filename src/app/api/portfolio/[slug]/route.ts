@@ -25,8 +25,8 @@ export async function GET(req: NextRequest, { params }: IParams) {
     const { slug } = params; // another destructure
 
     try {
-        const project = await Projects.findOne({ _id: slug }).orFail();
-        return NextResponse.json(project, { status: 200 });
+        const project = await Projects.findOne({ slug }).orFail();
+        return NextResponse.json(project);
     } catch (err) {
         return NextResponse.json("Project not found.", { status: 404 });
     }

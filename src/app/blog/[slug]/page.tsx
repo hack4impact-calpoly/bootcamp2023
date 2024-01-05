@@ -1,74 +1,58 @@
-// import React from "react";
-// import BlogPage from '../../components/blogPage';
-// import "../../globals.css"
-// import connectDB from "../../../helpers/db";
-// import Blogs from "../../../database/blogSchema"
+import Comment from "../../components/comment";
+import type { IComment } from "@/database/commentSchema";
 
-// type Props = {
-//     params: { slug: string };
-// };
-
-// async function getBlogBySlug(slug: string) {
-//     await connectDB();
-
-//     try {
-//         // Query for a blog with the specified slug
-//         const blog = await Blogs.findOne({ slug }).orFail();
-//         return blog;
-//     } catch (err) {
-//         return null;
-//     }
-// }
-
-// export default async function Blog({ params }: Props) {
-//     const { slug } = params;
-//     const blog = await getBlogBySlug(slug);
-
-//     return (
-//         <main>
-//             {blog ? (
-//                 <div>
-//                     <BlogPage {...blog.toObject()} />
-//                 </div>
-//             ) : (
-//                 <div className="page-title" >No Blog Found</div>
-//             )}
-//         </main>
-//     );
-// }
-
-import { IComment } from "../../../database/blogSchema";
-import BlogPreview from "../../components/blogPreview";
-
-type IParams = {
+type Props = {
     params: { slug: string }
 }
 
-async function getBlog(slug: string) {
+async function getBlog(slug: string) {    
 	try {
-		const res = await fetch(`http://localhost:3000/api/blog/{slug}`, {
+		const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
 			cache: "no-store",	
 		})
 
 		if (!res.ok) {
 			throw new Error("Failed to fetch blog");
 		}
-		
+
 		return res.json();
 	} catch (err: unknown) {
-		console.log(`error: ${err}`);
+		// console.log(`error: ${err}`);
 		return null;
 	}
 }
 
-export default async function Blog({ params }: IParams) {
-	const { slug } = params;
+export default async function Blog({ params : {slug} }: Props) {
+	// now we can access slug
+    // slug = params.slug;
 	const blog = await getBlog(slug);
-	blog.comments = blog.comments.lean()
-	
-	return (
-        <div> 
-            BlogPreview(blog)
-        </div>
-        )
+    if (blog) {
+        return (
+            <>
+                <h1>{blog.title}</h1>
+                {/* <img src={blog.image} alt="Blog Image" /> */}
+                <p>{blog.content}</p>
+			
+                
+                <div className="comment_container">
+                    <h2>Comments</h2>
+                    {blog.comments.map((comment: IComment) => (
+                        <Comment
+                            comment={{
+								user: comment.user,
+                                comment: comment.comment,
+                                date: comment.date,
+                            }}
+                        />
+                    ))}
+                </div>
+            </>
+        );
+    }
+     
+    else {
+        return (
+            <h1> 404 Blog NOT FOUND </h1>
+        );
+    }
 }
