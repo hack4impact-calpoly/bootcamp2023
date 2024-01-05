@@ -30,6 +30,9 @@ export default async function Blog() {
                 date={blog.date}
                 description={blog.description}
                 slug={blog.slug}
+                piccap={blog.piccap}
+                picslug={blog.picslug}
+                comments={blog.comments}
                 />
                 )}
             </main>

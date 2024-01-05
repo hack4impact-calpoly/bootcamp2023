@@ -8,6 +8,8 @@ const blogSchema = new Schema<Blog>({
     date: { type: String, required: true},
     description: { type: String, required: true },
     slug: { type: String, required: true },
+    piccap: { type: String, required: true},
+    picslug: { type: String, required: true}
 })
 
 // defining the collection and model

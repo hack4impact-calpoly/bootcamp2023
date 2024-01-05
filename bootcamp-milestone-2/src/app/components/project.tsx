@@ -18,13 +18,7 @@ export default function ProjectPreview(props: Project) {
                     </Image>
             </Link>
             <p className="project-description">{props.description}</p>
-            <Link href={`/project/${props.slug}`}> Learn More </Link>
+            <Link href={props.slug}> Learn More </Link>
       </div>
   );
 }
-
-// {/* <div class="blog-list">
-// 				<ul id="blog-list" class="blog-list">
-					
-// 				</ul>
-// 			</div> */}
