@@ -20,8 +20,6 @@ function parseCommentTime(time: Date){
 }
 
 function Comment({ user,comment,time }: IComment) {
-    console.log("TIME: " + time)
-    console.log(typeof time)
     return (
         <div className="comment">
             <h4 className="comment-name">{user}</h4>

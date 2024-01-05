@@ -13,7 +13,6 @@ export async function GET(req: NextRequest, { params }: IParams) {
 		const { slug } = params // another destructure
 
 	   try {
-			console.log("slug: " + slug)
 	        const blog = await blogSchema.findOne({ slug }).orFail()
 	        return NextResponse.json(blog)
 	    } catch (err) {
