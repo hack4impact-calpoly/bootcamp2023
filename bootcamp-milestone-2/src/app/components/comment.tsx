@@ -13,16 +13,16 @@ type CommentProps = {
 		Makes your code look nicer and allows for better readability.
 	*/}
 function parseCommentTime(time: Date){
-	const time_str=time.toLocaleDateString('en-us', {year:"numeric", month: "short", day:"numeric", hour:"2-digit", minute:"2-digit"})
+	const time_str=time.toDateString()
     return time_str
 }
 
-function Comment({ comment }: CommentProps) {
+function Comment({ user, comment, time }: IComment) {
     return (
         <div>
-            <h4>{comment.user}</h4>
-            <p>{comment.comment}</p>
-            <span>{parseCommentTime(comment.time)}</span>
+            <h4>{user}</h4>
+            <p>{comment}</p>
+            <span>{parseCommentTime(time)}</span>
         </div>
     );
 }
