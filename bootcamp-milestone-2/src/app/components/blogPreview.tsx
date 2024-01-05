@@ -5,8 +5,6 @@ import type { Blog } from '@/app/typings/blog'
 
 export default function BlogPreview(props: Blog) {
   return (
-		// replace everything between the <div> & </div> tags
-		// with your code from earlier milestones
       <div className='post-preview'>
             <h2 className="post-title">{props.title}</h2>
             <h3 className="post-subtitle">{props.date}</h3>
@@ -15,8 +13,3 @@ export default function BlogPreview(props: Blog) {
       </div>
   );
 }
-{/* <div class="blog-list">
-				<ul id="blog-list" class="blog-list">
-					
-				</ul>
-			</div> */}

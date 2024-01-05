@@ -4,18 +4,6 @@ import styles from './page.module.css'
 export default function Home() {
   return (
     <>
-    {/* <nav className="navbar">
-    <h1 className="logo">
-        <a href="index.html">Amanda Chan's Website </a>
-    </h1>
-    <ul className="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav> */}
 <main>
     <h1 className="page-title">About Me!</h1>
     <div className="about">
