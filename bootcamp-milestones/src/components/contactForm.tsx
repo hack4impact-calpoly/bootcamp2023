@@ -7,22 +7,23 @@ import style from "./contactForm.module.css";
 export const ContactUs = () => {
   const form = useRef();
 
-  const sendEmail = (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
+  // const sendEmail = (e: { preventDefault: () => void; }) => {
+  //   e.preventDefault();
 
-    emailjs.sendForm('service_g12ff8c', 'template_ooxcpky', form.current, 'mjqaWwjgt0rWk5hji')
-      .then((result) => {
-          alert("message received!")
-          form.current.reset();
-      }, (error) => {
-          console.log(error.text);
-      });
-  };
+  //   emailjs.sendForm('service_g12ff8c', 'template_ooxcpky', form.current, 'mjqaWwjgt0rWk5hji')
+  //     .then((result) => {
+  //         alert("message received!")
+  //         form.current.reset();
+  //     }, (error) => {
+  //         console.log(error.text);
+  //     });
+  // };
 
   return (
     <div className={style.contact_container}>
         <h1 className={style.contact_heading}>Subscribe!</h1>
-        <form ref={form} onSubmit={sendEmail}>
+        {/* <form ref={form} onSubmit={sendEmail}> */}
+        <form>
             <br></br>
             <label>Name   </label>
             <input className={style.contact_name} type="text" name="user_name" />
