@@ -7,6 +7,8 @@ import type { IProject } from "@/database/projectSchema";
 import Image from "next/image";
 import Link from "next/link";
 
+
+
 type ProjectProps = {
   project: IProject;
 };
@@ -39,7 +41,7 @@ export default function Projects() {
       try {
         const projectsRes = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/portfolio`
-        );
+        , {mode:"no-cors"});
         if (!projectsRes.ok) {
           throw new Error(
             `Failed to fetch projects. Status: ${projectsRes.status}`
@@ -56,7 +58,7 @@ export default function Projects() {
       try {
         const commentsRes = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/portfolio/comment`
-        );
+        , {mode:"no-cors"});
         if (!commentsRes.ok) {
           throw new Error(
             `Failed to fetch comments. Status: ${commentsRes.status}`
@@ -124,76 +126,3 @@ export default function Projects() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import ProjectComponent from '@/components/project';
-// import ProjectModel from '@/database/projectSchema';
-// import connectDB from '@/helpers/db';
-
-
-// export default function Portfolio() {
-//     async function getProjects() {
-//         await connectDB();
-    
-//         try {
-//           // query for all blogs and sort by date
-//           const projects = await ProjectModel.find().sort({ date: -1 }).orFail();
-//           // send a response as the blogs as the message
-//           return projects;
-//         } catch (err) {
-//           return null;
-//         }
-//       }
-
-//     return(
-//         <>
-//         <main>
-//             <h1 className="index-title">Portfolio</h1>
-//             <div className="project">
-//             {getProjects().then(
-//             (projects) =>
-//                 projects &&
-//                 projects.map((project) => (
-//                 <ProjectComponent
-//                     name={project.name}
-//                     description={project.description}
-//                     image={project.image}
-//                     image_alt={project.image_alt}
-//                     link={project.link}
-//                 ></ProjectComponent>
-//                 ))
-//             )}
-//             </div>
-            
-//         </main>
-//         <br /><br />
-//         </>
-//     )
-// }
-
-// // <Image src="portfolio.png" alt="my-portfolio" width={500} height={500} ></Image>
-
-// {/* <div className="project">
-            
-//             <div className="project-details">
-//                 <p className="project-name">You're looking at it!</p>
-//                 <Image src="/portfolio.png" alt="my-portfolio" width={600} height={300} ></Image>
-//                 <p className="project-description">A forever improving portfolio website</p>
-//                 <Link href="/">learn more</Link>     
-//             </div>
-
-//         </div> */}
