@@ -7,7 +7,7 @@ import style from "./contactForm.module.css";
 export const ContactUs = () => {
   const form = useRef();
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
     emailjs.sendForm('service_g12ff8c', 'template_ooxcpky', form.current, 'mjqaWwjgt0rWk5hji')
