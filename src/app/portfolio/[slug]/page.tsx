@@ -36,8 +36,9 @@ export default async function Project({ params: { slug } }: Props) {
           <h2>Comments</h2>
           {/* You need to modify this part based on how comments are associated with projects */}
           {/* Here, I'm assuming there is a comments property in the project object */}
-          {project.comments.map((comment: IComment) => (
+          {project.comments.map((comment: IComment, index: number) => (
             <Comment
+              key={index}
               comment={{
                 user: comment.user,
                 comment: comment.comment,

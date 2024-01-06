@@ -22,7 +22,7 @@ export default function Blog() {
         <h2 className="page-title">Blogs</h2>
         {blogs?.map((blog) => (
           <BlogPreview
-            key={blog.title}
+            key={blog.slug}
             title={blog.title}
             slug={blog.slug}
             date={blog.date}
