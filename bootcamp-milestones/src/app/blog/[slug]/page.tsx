@@ -7,7 +7,7 @@ type Props = {
 
 async function getBlog(slug: string) {    
 	try {
-		const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
+		const res = await fetch(`https://hack4impact-bootcamp.vercel.app/api/blog/${slug}`, {
 			cache: "no-store",	
 		})
 
