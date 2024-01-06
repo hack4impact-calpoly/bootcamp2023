@@ -1,24 +1,19 @@
 import Comment from "../../components/comment";
 import type { IComment } from "@/database/commentSchema";
 import type { IProject } from "@/database/projectSchema";
+import connectDB from "@/helpers/db";
+import Projects from "@/database/projectSchema";
 
 type Props = {
   params: { slug: string };
 };
 
 async function getProject(slug: string) {
+  await connectDB();
   try {
-    const res = await fetch(`http://localhost:3000/api/portfolio/${slug}`, {
-      cache: "no-store",
-    });
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch project");
-    }
-
-    return res.json();
-  } catch (err: unknown) {
-    // console.log(`error: ${err}`);
+    const project = await Projects.findOne({ slug }).orFail();
+    return project;
+  } catch (err) {
     return null;
   }
 }
