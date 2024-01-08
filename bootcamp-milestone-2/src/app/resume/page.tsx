@@ -31,7 +31,7 @@ export default function Resume() {
                 o Structured HTML canvas functions and classes for annotated photographs and cross-sectional data
                 views to enhance quality of deliverables
                 <br />
-                o Continuously iterated on processors&apos feedback and requests using Trello to prioritize requirements
+                o Continuously iterated on processors&apos; feedback and requests using Trello to prioritize requirements
                 <br />
                 o Scraped old deliverables with Google Drive APIs to populate MongoDB with 8+ years of archives
                 <br />
@@ -65,7 +65,7 @@ export default function Resume() {
               <u>Education</u>
             </h2>
             <div className={style["entry"]}>
-              <b>Cal Poly San Luis Obispo</b> - <i>Bachelor&aposs of Science in Computer Science</i>
+              <b>Cal Poly San Luis Obispo</b> - <i>Bachelor&apos;s of Science in Computer Science</i>
               <p className={style["entry-info"]}>
                 Activities: Hack4Impact??? :)))
               </p>
