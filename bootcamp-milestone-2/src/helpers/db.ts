@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const url: string = 'mongodb+srv://test:test@cluster0.vjrq3wx.mongodb.net/?retryWrites=true&w=majority';
+const url: string = process.env.MONGO_URI as string;
 let connection: typeof mongoose;
 
 /**
