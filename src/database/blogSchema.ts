@@ -8,7 +8,7 @@ export type IComment = {
 };
 
 // typescript type (can also be an interface)
-type IBlog = {
+export type IBlog = {
   title: string;
   slug: string;
   date: Date;
