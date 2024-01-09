@@ -26,7 +26,6 @@ async function getBlogs() {
   }
 }
 
-
 export default async function blog(slug: string) {
   const blogs = await getBlogs();
   var b = null;
@@ -67,6 +66,10 @@ export default async function blog(slug: string) {
             slug={blog.slug}
             comments={blog.comments}
           />
+          <div>
+            
+          </div>
+
         </div>
       ))}
     </div>
