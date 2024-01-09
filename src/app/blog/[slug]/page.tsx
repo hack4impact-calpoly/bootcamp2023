@@ -1,5 +1,5 @@
 import Comment from "../../components/comment";
-import type { IComment } from "@/database/commentSchema";
+import type { IComment } from "@/database/blogSchema";
 import connectDB from "@/helpers/db";
 import Blogs from "@/database/blogSchema";
 
@@ -47,13 +47,13 @@ export default async function Blog({ params: { slug } }: Props) {
 
         <div className="comment_container">
           <h2>Comments</h2>
-          {blog.comments.map((comment: IComment, index: number) => (
+          {blog.comments?.map((user_comment: IComment, index: number) => (
             <Comment
               key={index}
               comment={{
-                user: comment.user,
-                comment: comment.comment,
-                date: comment.date,
+                user: user_comment.user,
+                comment: user_comment.comment,
+                date: user_comment.date,
               }}
             />
           ))}

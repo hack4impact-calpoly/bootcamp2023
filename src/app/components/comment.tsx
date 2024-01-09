@@ -1,5 +1,5 @@
 import React from 'react';
-import type { IComment } from "@/database/commentSchema";
+import type { IComment } from "@/database/blogSchema";
 import style from './comments.module.css'
 
 {/* When we pass props, the name that we use to pass values
