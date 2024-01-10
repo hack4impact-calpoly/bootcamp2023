@@ -28,6 +28,8 @@ export default async function Portfolio() {
   
             {portfolios.map((portfolio) => (
               <PortfolioPreview
+                key={portfolio.slug} // Add a unique key prop
+
                 title={portfolio.title}
                 description={portfolio.description}
                 slug={portfolio.slug}
