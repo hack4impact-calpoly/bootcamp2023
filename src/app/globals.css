@@ -1,0 +1,249 @@
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #dfe5e7;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navbar .nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #706c6b;
+}
+
+.navbar .logo:hover {
+  color: #fff;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-list li {
+  margin-right: 20px;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+  color: #706c6b;
+}
+
+main {
+  flex-grow: 1;
+  width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+h1,
+h2,
+h3 {
+  color: #333;
+}
+
+.project img {
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.about-text p {
+  line-height: 1.5;
+}
+
+.footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.resume {
+  margin-top: 20px;
+}
+
+.resume .section {
+  margin-bottom: 20px;
+}
+
+.resume .section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.resume .entry {
+  margin-top: 10px;
+}
+
+.resume .entry-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.resume .entry-info {
+  font-size: 16px;
+  color: #555;
+}
+
+.resume .entry-description {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.resume .skills {
+  margin-top: 20px;
+}
+
+.resume .skill-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.resume .skill-list li {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #e2e2e2;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.daizen {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.daizen img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.contact-main {
+  text-align: center;
+  padding: 20px;
+}
+
+.contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-field,
+.textarea-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #555;
+}
+
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.blog-entry {
+  display: block; /* or you can use "flex" for more advanced styling */
+  margin-bottom: 20px; /* Adds spacing between entries */
+}
