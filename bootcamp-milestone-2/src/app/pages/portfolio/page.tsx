@@ -6,6 +6,7 @@ import styles from './portfolio.module.css'; // Assuming you have a CSS module f
 
 const PortfolioPage = () => {
     return (
+        
         <Layout>
             <h1>My Portfolio</h1>
             <div className={styles.project}>
