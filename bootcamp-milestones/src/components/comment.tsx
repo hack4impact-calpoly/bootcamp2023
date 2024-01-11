@@ -12,7 +12,7 @@ type CommentProps = {
 function Comment({ comment }: CommentProps) {
     return (
         <div className={style.comment}>
-            <p className={style.comment_header}>{`${comment.user} | ${comment.date}`}</p>
+            <p className={style.comment_header}>{`${comment.user}`}</p>
             <p className={style.comment_body}>{comment.comment}</p>
         </div>
     );
