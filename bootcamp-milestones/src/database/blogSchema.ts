@@ -20,12 +20,7 @@ const blogSchema = new Schema<IBlog>({
     description: { type: String, required: true },
     content: { type: String, required: true },
     image: { type: String },
-    comments: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "comments",
-        },
-    ],
+    comments: { type: Schema.Types.Mixed, required: true },
 })
 
 // defining the collection and model
