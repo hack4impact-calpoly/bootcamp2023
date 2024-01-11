@@ -11,7 +11,9 @@ const AddComment = (slug: any) => {
     const submit = async (e:any) => {
         e.preventDefault(); 
         
-        const res = await fetch(`/api/blog/${slug.slug}`, {
+        // https://hack4impact-bootcamp.vercel.app/api/blog/${slug.slug}
+        // /api/blog/${slug.slug}
+        const res = await fetch(`https://hack4impact-bootcamp.vercel.app/api/blog/${slug.slug}`, {
             method: "POST",
             body: JSON.stringify({user, comment})
         })
