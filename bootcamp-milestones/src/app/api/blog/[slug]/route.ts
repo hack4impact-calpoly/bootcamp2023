@@ -36,3 +36,20 @@ export async function GET(req: NextRequest, { params }: IParams) {
 		return NextResponse.json('Blog not found.', { status: 404 })
 	}
 }
+
+export async function POST(req: NextRequest, { params }: IParams) {
+	await connectDB();
+	const body = await req.json();
+    const slug = { slug: params.slug };
+
+    try {
+        const blog = await Blogs.findOneAndUpdate(slug, {
+			$push: {
+				comments: body,
+			},
+		});
+        return NextResponse.json(blog);
+    } catch (err) {
+        return NextResponse.json("Blog not found.", { status: 404 });
+    }
+}
