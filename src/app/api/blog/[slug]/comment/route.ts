@@ -1,40 +1,42 @@
-import { NextRequest, NextResponse } from 'next/server'
-import connectDB from "@/helpers/db"
-import blogSchema, { IComment } from '@/database/blogSchema'
-import Blog from '@/database/blogSchema';
+import { NextRequest, NextResponse } from "next/server";
+import connectDB from "@/helpers/db";
+import Blogs, { IComment } from "@/database/blogSchema";
 
 type IParams = {
-		params: {
-			slug: string
-		}
-}
+  params: {
+    slug: string;
+  };
+};
 
-export async function POST(req: NextRequest, {params}: IParams) {
-	const body = await req.json();
-    
-	if (body == null) {
-		return NextResponse.json("Blog body not found");
-	}
-    const slug = body.slug; 
+export async function POST(req: NextRequest, { params }: IParams) {
+  await connectDB();
+  const { slug } = params;
 
-    await connectDB();
-    try {
-        const blogPost = await Blog.findOne(slug).orFail()
-        const user = String(body.user);
-        const comment = String(body.comment);
-        const time = new Date();
-        const newComment = { user, comment, time };
-        blogPost.comments.push(newComment);
+  try {
+    const { user, comment, date }: IComment = await req.json();
 
-        await blogPost.save();
-
-        return NextResponse.json("Comment added", { status: 200 });
-    } catch (err) {
-        console.error(err);
-        return NextResponse.json("Turned null");
+    if (!user || !comment || !date) {
+      return NextResponse.json("Failed: Invalid Comment", { status: 400 });
     }
-}
 
-function extractFormData(formData: FormData): IComment | null {
-    throw new Error('Function not implemented.');
+    // Make sure the slug is unique for each blog post
+    const blog = await Blogs.findOneAndUpdate(
+      { slug: slug },
+      {
+        $push: {
+          comments: { user: user, comment: comment, time: date },
+        },
+      }
+    );
+
+    if (!blog) {
+      return NextResponse.json("Failed: Blog not found", { status: 404 });
+    }
+
+    console.log("Success: Comment Added to Blog with Slug", slug);
+    return NextResponse.json("Success: Comment Added", { status: 200 });
+  } catch (err) {
+    console.error("Error adding comment:", err);
+    return NextResponse.json("Failed: Comment Not Added", { status: 400 });
+  }
 }

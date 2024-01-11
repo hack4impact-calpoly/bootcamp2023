@@ -3,7 +3,7 @@ import mongoose, { Schema } from "mongoose";
 export type IComment = {
   user: string;
   comment: string;
-  date: string;
+  date: Date;
 };
 
 export type IProject = {
@@ -19,14 +19,16 @@ const projectSchema = new Schema<IProject>({
   slug: { type: String, required: false },
   date: { type: Date, required: false, default: new Date() },
   description: { type: String, required: true },
-  comments: [{
-    user: { type: String, required: false },
-    comment: { type: String, required: true },
-    date: { type: Date, required: true, default: new Date() }
-}]
+  comments: [
+    {
+      user: { type: String, required: false },
+      comment: { type: String, required: true },
+      date: { type: Date, required: true, default: new Date() },
+    },
+  ],
 });
 
 const Projects =
-  mongoose.models['projects'] || mongoose.model('projects', projectSchema);
+  mongoose.models["projects"] || mongoose.model("projects", projectSchema);
 
 export default Projects;

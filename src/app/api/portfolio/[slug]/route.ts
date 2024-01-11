@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import connectDB from "../../../../helpers/db";
-import Projects from "../../../../database/projectSchema";
+import connectDB from "@/helpers/db";
+import Projects from "@/database/projectSchema";
 
 type IParams = {
     params: {
@@ -25,8 +25,8 @@ export async function GET(req: NextRequest, { params }: IParams) {
     const { slug } = params; // another destructure
 
     try {
-        const project = await Projects.findOne({ slug }).orFail();
-        return NextResponse.json(project);
+        const project = await Projects.findOne({ _id: slug }).orFail();
+        return NextResponse.json(project, { status: 200 });
     } catch (err) {
         return NextResponse.json("Project not found.", { status: 404 });
     }

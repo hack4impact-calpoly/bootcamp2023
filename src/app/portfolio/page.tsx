@@ -1,43 +1,38 @@
 import React from "react";
-import ProjectPreview from "../components/projectPreview";
-import connectDB from "../../helpers/db";
-import Projects from "../../database/projectSchema";
+import PortfolioPreview from "@/app/components/projectPreview";
+import "../globals.css";
+import connectDB from "@/helpers/db";
+import Projects from "@/database/projectSchema";
 
 async function getProjects() {
-  await connectDB();
+  await connectDB(); // function from db.ts before
 
   try {
-    const projects = await Projects.find().orFail();
-    return projects;
+    // query for all blogs and sort by date
+    const blogs = await Projects.find().sort({ date: -1 }).orFail();
+    // send a response as the blogs as the message
+    return blogs;
   } catch (err) {
     return null;
   }
 }
 
-export default function Portfolio() {
-  return getProjects().then((projects) => {
-    return (
-      <main>
-        <h2 className="page-title">Portfolio</h2>
-        <div>
-          {projects === null ? (
-            <div className="no-project">No Projects Yet</div>
-          ) : (
-            <div>
-              {projects.map((project) => (
-                <ProjectPreview
-                  key={project.slug}
-                  title={project.title}
-                  slug={project.slug}
-                  date={project.date}
-                  description={project.description}
-                  comments={project.comments}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-      </main>
-    );
-  });
+export default async function Portfolio() {
+  const projects = await getProjects();
+  return (
+    <main>
+      <h2 className="page-title">Portfolio</h2>
+      <div>
+        {projects == null ? (
+          <div className="no-project">No Projects Yet</div>
+        ) : (
+          <div>
+            {projects.map((project) => (
+              <PortfolioPreview key={project._id} {...project.toObject()} />
+            ))}
+          </div>
+        )}
+      </div>
+    </main>
+  );
 }
