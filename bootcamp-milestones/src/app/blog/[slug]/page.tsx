@@ -1,5 +1,6 @@
 import Comment from "@/components/comment";
 import type { IComment } from "@/database/commentSchema";
+import AddComment from "../../../components/addComment";
 
 type Props = {
     params: { slug: string }
@@ -7,7 +8,9 @@ type Props = {
 
 async function getBlog(slug: string) {    
 	try {
-		const res = await fetch(`https://hack4impact-bootcamp.vercel.app/api/blog/${slug}`, {
+		// https://hack4impact-bootcamp.vercel.app/api/blog/${slug}
+        // http://localhost:3000/api/blog/${slug}
+        const res = await fetch(`https://hack4impact-bootcamp.vercel.app/api/blog/${slug}`, {
 			cache: "no-store",	
 		})
 
@@ -35,7 +38,7 @@ export default async function Blog({ params : {slug} }: Props) {
                 
                 <div className="comment_container">
                     <h2>Comments</h2>
-                    {blog.mycomments.map((comment: IComment) => (
+                    {blog.comments.map((comment: IComment) => (
                         <Comment
                             comment={{
                                 user: comment.user,
@@ -44,7 +47,9 @@ export default async function Blog({ params : {slug} }: Props) {
                             }}
                         />
                     ))}
+                    <AddComment slug={blog.slug} />
                 </div>
+                
             </>
         );
     }
