@@ -1,5 +1,5 @@
 "use client"
-import style from "./portfolio.module.css";
+import style from "/src/app/portfolio/portfolio.module.css";
 import ProjectPreview from "../../../components/projectPreview";
 import CommentForm from "../../../components/commentForm";
 

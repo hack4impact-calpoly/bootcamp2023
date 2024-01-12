@@ -36,10 +36,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-var portfolio_module_css_1 = require("./portfolio.module.css");
+var portfolio_module_css_1 = require("/src/app/portfolio/portfolio.module.css");
 var db_1 = require("@/helpers/db");
 var projectSchema_1 = require("@/database/projectSchema");
-var projectPreview_1 = require("../../../components/projectPreview");
+var projectPreview_1 = require("/Users/holdenevers/Hack4ImpactBootCamp/bootcamp-project-2023/bootcamp-milestone-3A/components/projectPreview.tsx");
 var projectCommentSchema_1 = require("@/database/projectCommentSchema");
 function getProjects() {
     return __awaiter(this, void 0, void 0, function () {
