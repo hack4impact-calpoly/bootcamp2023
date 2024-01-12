@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import connectDB from "@/helpers/db";
 import Blog from "@/database/blogSchema";
 import { IComment } from "@/app/typings/comment";
 
 type IParams = {
   params: {
     slug: string;
-  };
-};
+  }
+}
 
 export async function POST(req: NextRequest, { params }: IParams) {
 	const newComment: IComment = await req.json();

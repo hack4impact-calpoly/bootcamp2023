@@ -31,8 +31,9 @@ async function getBlog(slug: string) {
 
 
 export default function Blog({ params: { slug } }: Props) {
-
+    //array storing comments
     const [allComments, setComments] = useState<IComment[]>([]);
+  
     const [user, setUser] = useState('');
     const [comment, setComment] = useState('');
     const [time, setTime] = useState('');
@@ -43,7 +44,7 @@ export default function Blog({ params: { slug } }: Props) {
       try {
       const fetchedBlog = await getBlog(slug);
       setBlog(fetchedBlog)
-
+      //initialize allComments array to what is already in the database
       setComments(fetchedBlog.comments)
       } catch (error) {
       console.error('Error fetching updated blog:', error);
@@ -77,8 +78,7 @@ export default function Blog({ params: { slug } }: Props) {
       }
     };
 
-      // Fetch the blog when the component mounts
-    useEffect(() => {fetchBlog()}, []); // Re-fetch when the slug changes
+    useEffect(() => {fetchBlog()}, []);
     
     
 
