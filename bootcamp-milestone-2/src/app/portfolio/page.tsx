@@ -24,6 +24,7 @@ export default async function Portfolio() {
                 <main>
                 {portfolioEntries.map(portfolio => 
                               <PortfolioPreview 
+                              key={portfolio._id}
                               title={portfolio.title}
                               description={portfolio.description}
                               slug={portfolio.slug}
