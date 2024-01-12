@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const Layout = ({children}) => {
   return (
-    <div>
+    <body>
       <header>
         <Navbar /> {/* Include the Navbar component here */}
       </header>
@@ -20,7 +20,7 @@ const Layout = ({children}) => {
       <footer>
         {/* Footer content */}
       </footer>
-    </div>
+    </body>
   );
 };
 

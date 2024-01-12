@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './blogPreview.module.css';
-import { Blog } from "@/typings/blog";
+import { Blog } from "../blog/blogData";
 import Link from 'next/link';
 
 export default function BlogPreview(props: Blog) {

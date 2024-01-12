@@ -20,4 +20,4 @@ export type Blog = {
     },
     // Add more blog objects here if needed
   ];
-  
+  export default Blog;
