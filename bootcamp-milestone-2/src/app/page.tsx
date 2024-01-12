@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <main>
-        <h1 className="page-title">About Myself TESTING</h1>
+        <h1 className="page-title">About Myself</h1>
         <div className="about">
           <div className="about-image">
             <img
