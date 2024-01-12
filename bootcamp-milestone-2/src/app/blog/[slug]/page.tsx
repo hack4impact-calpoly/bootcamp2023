@@ -18,7 +18,7 @@ type Props = {
 async function getBlog(slug: string) {
   try {
     console.log(slug)
-    const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
+    const res = await fetch(`https://bootcamp-project-2023-ivana673s-projects.vercel.app/api/blog/${slug}`, {
       cache: "no-store",
     } );
 
@@ -48,6 +48,7 @@ export default function Blog({ params: { slug } }: Props) {
     const fetchBlog = async () => {
       try {
       const fetchedBlog = await getBlog(slug);
+
       setBlog(fetchedBlog)
       //initialize allComments array to what is already in the database
       setComments(fetchedBlog.comments)
@@ -65,7 +66,7 @@ export default function Blog({ params: { slug } }: Props) {
         time: time
       }
       try {
-        const response = await fetch(`http://localhost:3000/api/blog/${slug}/comment`, {
+        const response = await fetch(`https://bootcamp-project-2023-ivana673s-projects.vercel.app/api/blog/${slug}/comment`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
