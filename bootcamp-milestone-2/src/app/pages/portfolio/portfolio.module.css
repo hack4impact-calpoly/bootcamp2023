@@ -4,6 +4,7 @@
     flex-direction: row;
     max-width: 100%;
     margin: 1em 0 2em 0;
+    color: red
     /* ... */
 }
 
@@ -36,7 +37,7 @@
     /* ... */
 }
 
-.projectDetails a {
+.projectDetails link {
     color: var(--cg-black);
     text-decoration: none;
     font-weight: bold;

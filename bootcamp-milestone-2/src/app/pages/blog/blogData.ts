@@ -1,22 +1,24 @@
 export type Blog = {
-    title: string;
-    date: string;
+    name: string;
     description: string;
+    posted: string;
     slug: string;
 }
 
-export const blogList: Blog[] = [
+export const blogs: Blog[] = [
 
     {
-        title: "My day at work",
-        date: "October 19, 2023",
+        name: "My day at work",
         description: "My coworkers really were on my nerves today.",
+        posted: "October 19, 2023",
         slug: "../../../public/blog1.html"
     },
     {
-        title: "Going home this weekend",
-        date: "October 16, 2023",
+        name: "Going home this weekend",
+        posted: "October 16, 2023",
         description: "Driving down the US-101 is a favorite of mine, the vibes are so good.",
         slug: "../../../public/blog2.html"
     }
 ];
+
+export default blogs;
