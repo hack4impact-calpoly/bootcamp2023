@@ -22,6 +22,7 @@ export default async function Blog() {
         <main>
           {blogPosts.map((blog) => (
             <BlogPreview
+              key={blog._id}
               title={blog.title}
               date={blog.date}
               description={blog.description}
