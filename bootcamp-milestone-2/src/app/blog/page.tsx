@@ -1,4 +1,3 @@
-import blogs from "@/app/blogData";
 import BlogPreview from "../components/blogPreview";
 import blogSchema from "@/database/blogSchema";
 import connectDB from "@/helpers/db";
