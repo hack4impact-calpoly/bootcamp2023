@@ -1,8 +1,6 @@
-import IComment from "@/commmentData"
+// import IComment from "/Users/holdenevers/Hack4ImpactBootCamp/bootcamp-project-2023/bootcamp-milestone-3A/src/commmentData"
 
-type CommentProps = {
-  comment: IComment;
-}
+
 function parseCommentTime(time: Date) {
   if (!isValidDate(time)) {
     return 'Invalid date';
@@ -22,7 +20,7 @@ function isValidDate(date: Date) {
   return date instanceof Date && !isNaN(date.getTime());
 }
 
-export default function Comment({ comment }: CommentProps) {
+export default function Comment( comment : any) {
   return (
     <div>
       <span>{parseCommentTime(comment.time)}</span>

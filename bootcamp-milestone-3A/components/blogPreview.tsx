@@ -18,7 +18,8 @@ export default function BlogPreview(blog : IBlog ) {
         <h4>Comments:</h4>
         <div>
         {blog.comments && blog.comments.map((comment) => (
-          <CommentPreview 
+          <CommentPreview
+            key={comment._id}  // Use a unique identifier as the key
             user={comment.user}
             comment={comment.comment}
             time={comment.time}

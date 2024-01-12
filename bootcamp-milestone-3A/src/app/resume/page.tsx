@@ -31,7 +31,7 @@ export default function Resume() {
           <p className={style.entryInfo}>
             I initiated the development of a web application using Spring Boot to help gardeners input their garden yields
             and calculate yearly nutritional values. The tech stack includes MongoDB for the backend and HTML, CSS, and
-            Vanilla JS for the frontend. I've also created a RESTful API to connect these components. It's still a work in
+            Vanilla JS for the frontend. I have also created a RESTful API to connect these components. It it still a work in
             progress and as of right now I am implementing the table that shows the summed nutritional values.
           </p>
           <h3 className={style.entryTitle}>SLO Hacks</h3>
@@ -63,6 +63,7 @@ export default function Resume() {
               <li><strong>CSS</strong> (basic)</li>
             </ul>
           </div>
+          
         </section>
         <section className={style.section}>
           <h2 className={style.sectionTitle}>Experience</h2>
