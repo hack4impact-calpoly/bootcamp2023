@@ -4,6 +4,11 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import Comment from "@/app/components/comment";
 import { Blog } from "@/app/typings/blog";
+import { v4 as uuidv4 } from'uuid';
+
+function generateUniqueId(): string {
+  return uuidv4();
+}
 
 
 type Props = {
@@ -43,6 +48,9 @@ export default function Blog({ params: { slug } }: Props) {
     const fetchBlog = async () => {
       try {
       const fetchedBlog = await getBlog(slug);
+      fetchedBlog.comments.forEach((comment: IComment) => {
+        comment._id = generateUniqueId(); // Using a function to generate IDs
+      });
       setBlog(fetchedBlog)
       //initialize allComments array to what is already in the database
       setComments(fetchedBlog.comments)
@@ -69,7 +77,7 @@ export default function Blog({ params: { slug } }: Props) {
         });
 
         if (response.ok) {
-          setComments([...allComments, {user: commentBody.user, comment: commentBody.comment, time: new Date(commentBody.time)}])
+          setComments([...allComments, {_id: generateUniqueId(), user: commentBody.user, comment: commentBody.comment, time: new Date(commentBody.time)}])
         } else {
           console.error('Failed to add comment:');
         }
@@ -78,7 +86,7 @@ export default function Blog({ params: { slug } }: Props) {
       }
     };
 
-    useEffect(() => {fetchBlog()}, []);
+    useEffect(() => {fetchBlog()}, [fetchBlog]);
     
     
 
@@ -111,10 +119,11 @@ export default function Blog({ params: { slug } }: Props) {
                   <div className="comments">
                     {allComments.map((comment: IComment) => (
                       <Comment
-                      user = {comment.user}
-                      comment = {comment.comment}
-                      time = {new Date(comment.time)}
-                      />
+                        key={comment._id}
+                        user={comment.user}
+                        comment={comment.comment}
+                        time={new Date(comment.time)} 
+                        _id={""}                      />
 
                     )
                   )}
