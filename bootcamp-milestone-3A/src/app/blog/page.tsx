@@ -1,12 +1,34 @@
 "use client"
 import BlogPreview from "../../../components/blogPreview";
 import CommentForm from "../../../components/commentForm";
+import { Link } from 'react-router-dom';
 
 type Props = {
   params: { slug: string }
 }
 
-export default async function blog(slug: Props) {
+
+async function getBlog(slug: string) {
+  try {
+    const res = await fetch(`http://localhost:3000/api/singleBlog/${slug}`, {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch blog");
+    }
+
+    return res.json();
+  } catch (err: unknown) {
+    console.log(`error: ${err}`);
+    return null;
+  }
+}
+
+export default async function blog({ params }: Props) {
+  const slug = params.slug;
+  const blog = await getBlog(slug);
+
   const fetchedBlogs = await fetch("/api/blogs");
 
   if (!fetchedBlogs.ok) {
@@ -17,28 +39,7 @@ export default async function blog(slug: Props) {
   const blogData = await fetchedBlogs.json();
   const blogs = blogData.blogs;
 
-  var b = null;
-  for (const blog of blogs) {
-    if (blog.slug === slug) {
-      b = blog; // Found the blog with the specified slug
-    }
-  }
-
-  if (b) {
     return (
-      <div style={{ textAlign: 'center', fontSize: '25px', paddingBottom: '100px' }}>
-        <BlogPreview
-          title={b.title}
-          date={b.date}
-          description={b.description}
-          image={b.image}
-          slug={b.slug}
-          comments={b.comments}
-        />
-      </div>
-    )
-  } else {
-     return (
       <div>
         <main style={{ textAlign: 'center' }}>
           <h1 style={{ textDecoration: 'underline' }}>Welcome to my Blog</h1>
@@ -59,8 +60,12 @@ export default async function blog(slug: Props) {
             </div>
           </div>
         ))}
-      </div>
+
+       
+        
+       
+    </div>
   );
-  }  
+      
 }
 
