@@ -1,14 +1,19 @@
-import React from 'react';
-import style from './blogPreview.module.css';
-import { Blog } from "../blog/blogData";
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
+import style from "./blogPreview.module.css";
+import { IBlog } from "../database/blogSchema";
 
-export default function BlogPreview(props: Blog) {
+export default function BlogPreview(props: IBlog) {
   return (
-    <div className={style.blogPreview}>
-      <h1>{props.title}</h1>
-      <p>{props.description}</p>
-      <Link href={props.slug}><u>Read More</u></Link>
+    <div className={style.blog}>
+      <div>
+        <h3>{props.title}</h3>
+        {props.date && <p>{props.date.toDateString()}</p>}
+        <p>{props.description}</p>
+        <Link className="Read More" href={`blog/${props.slug}`}>
+          Read More
+        </Link>
+      </div>
     </div>
   );
 }
