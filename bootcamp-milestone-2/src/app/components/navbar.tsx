@@ -9,7 +9,7 @@ export default function Navbar() {
     <div>
       <nav className="navbar">
         <h1 className="logo">
-            <Link href="/">Amanda Chan's Website </Link>
+            <Link href="/">Amanda Chan&lsquo;s Website </Link>
         </h1>
         <ul className="nav-list">
             <li>

@@ -4,7 +4,12 @@ import { IComment } from '@/app/typings/comment';
 import Comment from '@/app/components/comment';
 import React, { useState, useEffect } from 'react';
 import { Blog } from '@/app/typings/blog';
+import { v4 as uuidv4 } from 'uuid';
 
+
+function uniqueID(): string {
+    return uuidv4();
+}
 
 type Props = {
     params: { slug: string }
@@ -12,7 +17,7 @@ type Props = {
 
 async function getBlog(slug: string) {
 	try {
-		const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
+		const res = await fetch(`/api/blog/${slug}`, {
 			cache: "no-store",	
 		})
 
@@ -53,7 +58,7 @@ export default function Blog({ params : {slug}}: Props) {
             time: time
         }
         try {
-          const response = await fetch(`http://localhost:3000/api/blog/${slug}/comment`, {
+          const response = await fetch(`/api/blog/${slug}/comment`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -89,6 +94,7 @@ export default function Blog({ params : {slug}}: Props) {
                 <div className="comments">
                     {allComments.map((comment: IComment) => (
                         <Comment
+                        key = {uniqueID()}
                         user = {comment.user}
                         comment = {comment.comment}
                         time = {new Date(comment.time)}/>

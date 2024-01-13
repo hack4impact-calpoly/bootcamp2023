@@ -17,9 +17,6 @@ export default function Home() {
         </div>
     </div>
 </main>
-<footer className="footer">
-    © 2023 Amanda Chan's Website | All Rights Reserved
-</footer>
 </>
   )
 }

@@ -11,7 +11,7 @@ export default function Resume() {
                 <div className="entry"></div>
                 <h3>California Polytechnic State University, San Luis Obispo CA</h3>
                     <p>Bachelor of Science, Computer Engineering | Expected Graduation June 2026</p>
-                    <p>Dean's List | Fall 2022, Spring 2023</p>
+                    <p>Dean&lsquo;s List | Fall 2022, Spring 2023</p>
                     <p>GPA | 3.7</p>
             </section>
             <section className="section">

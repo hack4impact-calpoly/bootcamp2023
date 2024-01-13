@@ -26,6 +26,7 @@ export default async function Project() {
             <main>
                 {projectPosts.map(project => 
                 <ProjectPreview
+                key = {project._id}
                 title={project.title}
                 date={project.date}
                 description={project.description}
