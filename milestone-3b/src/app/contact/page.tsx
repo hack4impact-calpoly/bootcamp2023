@@ -1,6 +1,7 @@
 "use client";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import { EmailBody } from "../contact";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -8,11 +9,67 @@ export default function Home() {
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    const m: EmailBody = { name: name, email: email, message: message };
+
+    console.log("fetching");
+    console.log(m.email);
+    console.log(m.name);
+    console.log(m.message);
+
+    const res = await fetch(`/api/contact`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(m),
+    });
+
+    console.log(m.email);
+    console.log(m.name);
+    console.log(m.message);
+
+    if (m.email === "" || m.name === "" || m.message == "") {
+      setSuccess(false);
+      setErrorMessage("Invalid fields");
+    } else {
+      const params = {
+        from_name: name,
+        email,
+        to_name: "Angela",
+        message,
+      };
+
+      emailjs
+        .send(
+          "service_50pz82h",
+          "template_i0hikrb",
+          params,
+          "Hu6SVaz9_Nocul6mr"
+        )
+        .then(
+          (res) => {
+            console.log(res);
+            setEmail("");
+            setName("");
+            setMessage("");
+            setSuccess(true);
+          },
+          (error) => {
+            console.log(error);
+            setSuccess(false);
+            setErrorMessage("Failed to send email");
+          }
+        );
+    }
+  };
+
   return (
     <>
       <main>
         <h1 className="page-title">Contact</h1>
-        <form id="contact-form">
+        <form onSubmit={handleSubmit} id="contact-form">
           Name:
           <input
             type="text"
@@ -20,6 +77,8 @@ export default function Home() {
             name="name"
             placeholder="Name"
             required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
           Email:
           <input
@@ -36,47 +95,7 @@ export default function Home() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
-          <input
-            type="submit"
-            required
-            onClick={(e) => {
-              e.preventDefault();
-
-              if (email === "" || name === "" || message == "") {
-                setSuccess(false);
-                setErrorMessage("Invalid fields");
-              } else {
-                const params = {
-                  from_name: name,
-                  email,
-                  to_name: "Angela",
-                  message,
-                };
-
-                emailjs
-                  .send(
-                    "service_50pz82h",
-                    "template_i0hikrb",
-                    params,
-                    "Hu6SVaz9_Nocul6mr"
-                  )
-                  .then(
-                    (res) => {
-                      console.log(res);
-                      setEmail("");
-                      setName("");
-                      setMessage("");
-                      setSuccess(true);
-                    },
-                    (error) => {
-                      console.log(error);
-                      setSuccess(false);
-                      setErrorMessage("Failed to send email");
-                    }
-                  );
-              }
-            }}
-          />
+          <input className="submit" type="submit" value="Send Message" />
         </form>
         {!success && <div>{errorMessage}</div>}
         {success && <div>Sent email successfully</div>}
