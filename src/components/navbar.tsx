@@ -11,7 +11,7 @@ export default function Navbar() {
       <nav className = {style.navlist}>
         <Link href="/about" >About Me</Link>
         <Link href="/blogs" >Blog</Link>
-        <Link href="/projects" >Portfolio</Link>
+        <Link href="/portfolio" >Portfolio</Link>
 		    <Link href="/resume" >Resume</Link>
         <Link href="/contact" >Contact Me</Link>
       </nav>

@@ -4,7 +4,7 @@ import { Schema } from "mongoose";
 export type IComment = {
     user: string;
     comment: string;
-    date: Date;
+    time: Date;
 }
 
 // typescript type (can also be an interface)

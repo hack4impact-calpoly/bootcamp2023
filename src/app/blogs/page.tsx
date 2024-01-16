@@ -37,7 +37,8 @@ export default async function Blog () {
     return <div className="Blog">
 	<h1 className="page-title">Blog</h1>
     {blogData && blogData.map((blog) => 
-		<BlogPreview
+		<BlogPreview 
+		key={blog.slug}
 		title={blog.title}
 		date={blog.date}
 		description={blog.description}

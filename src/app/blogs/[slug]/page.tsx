@@ -14,11 +14,11 @@ type Props = {
 }
 
 export default async function Page({params:{slug}}:Props) {
-  
+  console.log(slug);
 
 
   async function getBlog(slug: string){
-    const res = await fetch(`http://localhost:3000/blogs/${slug}`,
+    const res = await fetch(`/apis/blogs/${slug}`,
     {
         cache:"no-store"
     })
@@ -26,12 +26,12 @@ export default async function Page({params:{slug}}:Props) {
         return res.json()
     }
     return null
-}	
+}
 
 
   const [newBlog, setBlog] = useState<IBlog | null>(null);
 	
-async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         /*
         Handles form submission by clearing form and appending comment
         */
@@ -55,15 +55,15 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
           const newComment: IComment = {
             user: nameInput?.value || "",
             comment: descriptionText?.value || "",
-            date: new Date(),
+            time: new Date()
           };
     
             //Add comment to db and update UI
             const response = await fetch(
-              `/api/blogs/${slug}/comment`, {
+              `/apis/blogs/${slug}/comment`, {
                 method: "POST",
                 headers: { 'Content-Type': "application/json" },
-                body: JSON.stringify(newComment),
+                body: JSON.stringify(newComment)
               });
     
             
@@ -80,7 +80,7 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
                 content: newBlog?.content || "",
                 comments: newBlog
                   ? [...newBlog.comments, newComment]
-                  : [newComment],
+                  : [newComment]
               });
             window.location.reload();
               
@@ -89,7 +89,8 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         }
       }
 
-    const blog = await getBlog(slug)
+    const blog = await getBlog(slug);
+    
     if (blog){
         return (
             <main>

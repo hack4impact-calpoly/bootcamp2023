@@ -7,20 +7,15 @@ import Footer from "@/components/footer";
 
 export default function Contact () {
     return <main>
-        <h1 className="page-title">Contact</h1> 
-        <form id="contact-form">
+        <h1 className="page-title">Contact Me</h1> 
+        <form id="contact-form" action="https://formsubmit.co/bc13e49507cf683f7a5eb8deff1a6b3f" method="POST">
             <label htmlFor="name">Name:</label>
-            <input type="text" id="name"/>
+            <input name="name" type="text" id="name"/>
             <label htmlFor="email">Email:</label>
-            <input type="email" id="email"/>
+            <input name="email" type="email" id="email"/>
             <label htmlFor="message">Message:</label>
-            <textarea id="message"></textarea>
+            <textarea name="message" id="message"></textarea>
             <input type="submit"/>
         </form>
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
     </main>
 }

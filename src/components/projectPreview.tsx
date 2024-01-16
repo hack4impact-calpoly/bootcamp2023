@@ -15,7 +15,7 @@ export default function ProjectPreview(props: IProject) {
         <p>{props.description}</p>
 		    <h6>{props.date.toString()}</h6>
         <Image src={props.content} alt="Project Image" width={500} height={350}/>
-        <Link href={"/projects/" + props.slug}>Read More</Link>
+        <Link href={"/portfolio/" + props.slug}>Read More</Link>
       </div>
 	  </div>
   );

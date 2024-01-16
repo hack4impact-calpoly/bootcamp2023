@@ -1,7 +1,4 @@
 import mongoose from "mongoose";
-import dotenv from "dotenv"
-
-dotenv.config()
 
 const url: string = process.env.MONGO_URI as string;
 let connection: typeof mongoose;
@@ -13,7 +10,7 @@ let connection: typeof mongoose;
  */
 const connectDB = async () => {
   if (!connection) {
-    connection = await mongoose.connect("mongodb+srv://godprogrammer:xSxmiEPahogdEheJ@cluster0.xvl3yuh.mongodb.net/portfolioDB?retryWrites=true&w=majority");
+    connection = await mongoose.connect(url);
     return connection;
   }
 };

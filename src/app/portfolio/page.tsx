@@ -37,6 +37,7 @@ export default async function Project () {
     return <div className="Blog">
     {projectData && projectData.map((project) => 
 		<ProjectPreview
+		key={project.slug}
 		title={project.title}
 		date={project.date}
 		description={project.description}
