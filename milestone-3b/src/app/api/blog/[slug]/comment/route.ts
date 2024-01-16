@@ -30,14 +30,11 @@ export async function POST(req: NextRequest, { params }: IParams) {
       console.log(body.time);
 
       //pushes to database
-      blog.comments.push(body);
+      // blog.comments.push(body);
 
       //error checking
       console.log(body);
-      // await blogSchema.updateOne(
-      //   { slug },
-      //   { $push: { comments: { user, comment, time } } }
-      // );
+      await blogSchema.updateOne({ slug }, { $push: { comments: body } });
     } catch (err) {
       console.log(err);
       return NextResponse.json("Could not push newComment", { status: 400 });
