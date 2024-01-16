@@ -12,7 +12,7 @@
     "@emailjs/browser": "^3.11.0",
     "emailjs-com": "^3.2.0",
     "mongoose": "^8.0.1",
-    "next": "14.0.1",
+    "next": "^14.0.5-canary.59",
     "react": "^18",
     "react-dom": "^18"
   },
