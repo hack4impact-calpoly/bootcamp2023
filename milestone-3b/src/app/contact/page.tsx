@@ -1,7 +1,13 @@
 "use client";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-import { EmailBody } from "../contact";
+// import { EmailBody } from "api/../contact";
+
+interface EmailBody {
+  name: String;
+  email: String;
+  message: String;
+}
 
 export default function Home() {
   const [email, setEmail] = useState("");
