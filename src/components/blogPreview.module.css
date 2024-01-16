@@ -1,0 +1,11 @@
+.blogs {
+    padding: 0 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    background-color: khaki;
+    border-color: black;
+    font-family: "Helvetica";
+}
