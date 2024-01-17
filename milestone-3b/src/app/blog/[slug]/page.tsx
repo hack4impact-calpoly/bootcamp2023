@@ -16,9 +16,12 @@ export default async function Blog({ params: { slug } }: Props) {
     await connectDB(); // function from db.ts before
 
     try {
-      const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
-        cache: "no-store",
-      });
+      const res = await fetch(
+        `https://bootcamp-project-2023-ebon.vercel.app/blog/${slug}`,
+        {
+          cache: "no-store",
+        }
+      );
 
       if (!res.ok) {
         throw new Error("Failed to fetch blog");
