@@ -16,6 +16,7 @@ export default async function Blog({ params: { slug } }: Props) {
     await connectDB(); // function from db.ts before
 
     try {
+      console.log(`${slug}`);
       const res = await fetch(
         `https://bootcamp-project-2023-ebon.vercel.app/blog/${slug}`,
         {
