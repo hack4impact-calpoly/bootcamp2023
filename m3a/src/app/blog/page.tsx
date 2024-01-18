@@ -1,3 +1,4 @@
+import React from "react";
 import BlogPreview from "../components/blogPreview";
 //import blogs from "../blogData";
 import connectDB from "../helpers/db";

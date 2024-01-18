@@ -1,4 +1,5 @@
 // You can name the function within page.tsx anything you want.
+import React from "react";
 
 export default function Home() {
   return (
