@@ -1,0 +1,15 @@
+.blog {
+    display: flex;
+    /* justify-content: center; */
+    flex-flow: column;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    padding: auto;
+    border: 3px solid black;
+}
+
+.title {
+    font-size: x-large;
+}
+
