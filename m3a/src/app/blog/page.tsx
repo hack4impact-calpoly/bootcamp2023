@@ -2,8 +2,6 @@ import BlogPreview from "../components/blogPreview";
 //import blogs from "../blogData";
 import connectDB from "../helpers/db";
 import BlogDB, { IBlog } from "../database/blogSchema";
-import { useState } from "react";
-import { set } from "mongoose";
 
 async function getBlogs() {
   await connectDB(); // function from db.ts before
@@ -19,7 +17,7 @@ async function getBlogs() {
 }
 
 async function Blog() {
-  const blogsDB = await getBlogs();
+  const blogsDB = await getBlogs()
 
     return (
       <div>
@@ -30,10 +28,7 @@ async function Blog() {
             <BlogPreview
               title={blog.title}
               slug={blog.slug}
-              date={blog.date}
               description={blog.description}
-              content={blog.content}
-              comments={blog.comments}
             />
           ))}
         </div>

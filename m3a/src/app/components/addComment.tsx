@@ -1,6 +1,5 @@
 "use client";
-import { useState } from "react";
-import { IComment } from "../database/blogSchema";
+import React, { useState } from "react";
 
 const AddComment = ({ slug }: { slug: string }) => {
   const [comment, setComment] = useState({ title: "", comment: "", date: {} });

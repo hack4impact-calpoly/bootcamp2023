@@ -3,7 +3,7 @@ import { IBlog } from "../database/blogSchema";
 import Link from "next/link";
 import style from "./blogPreview.module.css";
 
-export default function BlogPreview({ title, slug, date, description, content, comments } : IBlog) {
+export default function BlogPreview({ title, slug, description } : IBlog) {
   return (
     <div className={style.blog}>
       <Link href={`/blog/${slug}`}>

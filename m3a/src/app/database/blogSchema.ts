@@ -11,10 +11,10 @@ export type IComment = {
 export type IBlog = {
     title: string;
     slug: string; 
-    date: Date;
+    date?: Date;
     description: string; // for preview
-    content: string; // for individual blog page
-    comments: IComment[]; // array for comments
+    content?: string; // for individual blog page
+    comments?: IComment[]; // array for comments
 };
 
 
