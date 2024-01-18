@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
 export type IComment = {
-    user: string;
+    title: string;
     comment: string;
-    time: Date;
+    date: Date;
 }
 
 // typescript type (can also be an interface)

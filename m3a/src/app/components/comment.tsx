@@ -19,9 +19,9 @@ function parseCommentTime(time: Date){
 function Comment({ comment }: CommentProps) {
   return (
       <div>
-          <h4>{comment.user}</h4>
+          <h4>{comment.title}</h4>
           <p>{comment.comment}</p>
-          <span>{parseCommentTime(comment.time)}</span>
+          <span>{parseCommentTime(comment.date)}</span>
       </div>
   );
 }

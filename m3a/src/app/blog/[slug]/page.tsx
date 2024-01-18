@@ -2,6 +2,7 @@
 import React from "react";
 import style from "./blog.module.css";
 import { IComment } from "@/app/database/blogSchema";
+import AddComment from "@/app/components/addComment";
 
 type Props = {
   params: { slug: string };
@@ -9,7 +10,7 @@ type Props = {
 
 async function getBlog(slug: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/${slug}`, {
+    const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
       cache: "no-store",
     });
 
@@ -36,11 +37,13 @@ export default async function Page({ params: { slug } }: Props) {
           <div className={style.date}>Date Posted: {blog.date}</div>
           <div className={style.content}>{blog.content}</div>
         </div>
+
         <div className={style.comments}>
-          Comments: 
-          {blog.comments.map((comment : IComment) => (
+          <AddComment slug={slug}/>
+          Comments:
+          {blog.comments.map((comment: IComment) => (
             <div className={style.comment}>
-              <div className={style.user}>{comment.user}</div>
+              <div className={style.user}>{comment.title}</div>
               <div className={style.comment}>{comment.comment}</div>
               <div className={style.time}></div>
             </div>
@@ -49,6 +52,6 @@ export default async function Page({ params: { slug } }: Props) {
       </>
     );
   } else {
-    return <>Blog not found.</>;
+    return <> Blog not found. </>;
   }
 }
