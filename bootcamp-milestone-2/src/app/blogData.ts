@@ -1,9 +1,9 @@
 export interface Blog {
   name: string;
-  posted: string;
   description: string;
-  text: string;
   image: string;
+  posted: string;
+  text: string;
 }
 
 const blogs: Blog[] = [
