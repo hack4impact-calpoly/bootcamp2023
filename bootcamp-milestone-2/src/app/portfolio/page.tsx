@@ -1,16 +1,13 @@
-import portrait from "../images/portrait.jpeg";
-import Image from "next/image";
 import connectDB from "../database/db";
 import Project from "../database/projectSchema";
 import PortfolioProject from "../components/portfolioProject";
-
 
 async function getProjects(){
 	await connectDB() // function from db.ts before
 
 	try {
-			// query for all blogs and sort by date
-	    const projects = await Project.find().sort({ date: -1 }).orFail()
+			// query for all project and sort by date
+	    const projects = await Project.find().orFail()
 			// send a response as the blogs as the message
 	    return projects
 	} catch (err) {
@@ -28,12 +25,15 @@ export default async function portfolioLoader() {
             <h1 className="page-title"> Portfolio </h1>
             {portfolioProjects.map ((project) => {
                 return (
+                  <>
                     <PortfolioProject
                     title={project.title}
                     description={project.description}
                     image={project.image}
                     slug={project.slug}
+                    comments={[]}
                     />
+                  </>
                 );
             })}
         </main>

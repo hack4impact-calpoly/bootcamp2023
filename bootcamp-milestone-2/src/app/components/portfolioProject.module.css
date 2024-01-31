@@ -22,3 +22,12 @@
   .projectDescription {
     font-size: 20;
   }
+
+  .link:hover {
+    color:blue;
+    text-decoration:underline;
+}
+
+.link {
+  margin-top:25px;
+}
