@@ -1,4 +1,4 @@
-:root {
+.root {
     /* variables */
     --cg-black: rgb(30, 32, 32);
     --cg-blue: rgb(36, 94, 255);
@@ -6,11 +6,11 @@
     --cg-white: rgb(255, 255, 255);
   }
   
-  html {
+  .html {
     height: 100%;
   }
   
-  body {
+  .body {
     background: var(--cg-grey);
     position: relative;
     min-height: 100vh;
@@ -80,7 +80,7 @@
     text-decoration: None;
   }
   
-  main {
+  .main {
     padding: 0 20px 40px 20px;
     display: flex;
     flex-direction: column;
@@ -199,7 +199,7 @@
     line-height: 1.5;
   }
   
-  /* CSS for resume page */
+  /* CSS for resume page
   
   .button {
     background-color: var(--cg-black);
@@ -222,9 +222,9 @@
     font-family: Georgia;
   }
   
-  /* CSS for contact form */
+  /* CSS for contact form 
   
-  label {
+  .label {
     display: block;
     margin-bottom: 8px;
     font-family: Georgia;
@@ -241,13 +241,15 @@
     border-radius: 4px;
     font-size: 16px;
     resize: none;
-  }
+  } 
   
-  /* Add some spacing to the form */
+  /* Add some spacing to the form 
   form {
     width: 500px;
     margin: 0 auto;
   }
+
+  */
   
   /* CSS for footer */
   
@@ -262,5 +264,3 @@
     width: 100%;
     height: 2.5rem;
   }
-
-  
