@@ -1,0 +1,43 @@
+.addAComment {
+    font-size: 22px;
+    font-style: italic;
+}
+
+.labelContainer {
+    padding-bottom: 5px;
+    padding-top: 12px;
+}
+
+.label {
+    font-size: 18px;
+    color: black;
+}
+
+.input {
+    width: 50%;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid rgb(245, 104, 255);
+    background-color: rgb(254, 203, 255);
+}
+
+.input:focus {
+    background-color:  rgb(226, 185, 254);
+    outline: none;
+    border-bottom: 2px solid rgb(194, 117, 246);
+    
+}
+
+.submit {
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background-color: rgb(253, 119, 255);
+    color: white;
+    border-radius: 5px;
+}
+
+.submit:hover {
+    background-color: rgb(199, 114, 255);
+}
