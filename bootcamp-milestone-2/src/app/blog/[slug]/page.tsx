@@ -100,8 +100,7 @@ export default function Blog({ params: { slug } }: Props) {
               <l-dot-wave
               size="100"
               speed="1" 
-              color="#bc986a">
-              </l-dot-wave>
+              color="#bc986a"/>
             </div>
         )
     } else if (blogPage) {
