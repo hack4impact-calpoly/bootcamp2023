@@ -5,11 +5,13 @@ import React, { useState, useEffect } from "react";
 import Comment from "@/app/components/comment";
 import { Blog } from "@/app/typings/blog";
 import { v4 as uuidv4 } from'uuid';
+import 'ldrs/ring';
+import { dotWave } from "ldrs";
+dotWave.register();
 
 function generateUniqueId(): string {
   return uuidv4();
 }
-
 
 type Props = {
   params: { slug: string };
@@ -45,6 +47,8 @@ export default function Blog({ params: { slug } }: Props) {
 
     const [blogPage, setBlog] = useState<Blog | null>(null);
 
+    const [isLoading, setLoading] = useState(true);
+
     const fetchBlog = async () => {
       try {
       const fetchedBlog = await getBlog(slug);
@@ -54,6 +58,8 @@ export default function Blog({ params: { slug } }: Props) {
       setComments(fetchedBlog.comments)
       } catch (error) {
       console.error('Error fetching updated blog:', error);
+      } finally {
+      setLoading(false);
       }
     };
 
@@ -88,7 +94,17 @@ export default function Blog({ params: { slug } }: Props) {
     
     
 
-    if (blogPage) {
+    if (isLoading) {
+        return (
+            <div className="loading-comp">
+              <l-dot-wave
+              size="100"
+              speed="1" 
+              color="#bc986a">
+              </l-dot-wave>
+            </div>
+        )
+    } else if (blogPage) {
         return (
             <div>
                 <main>
@@ -125,8 +141,8 @@ export default function Blog({ params: { slug } }: Props) {
                     )
                   )}
                   </div>
-                  </main>
-              </div>
+                </main>
+            </div>
         );
     } else {
         return (

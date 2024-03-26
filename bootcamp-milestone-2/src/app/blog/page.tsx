@@ -1,6 +1,6 @@
 import BlogPreview from "../components/blogPreview";
 import blogSchema from "@/database/blogSchema";
-import connectDB from "@/helpers/db";
+import connectDB from "@/database/db";
 
 async function getBlogs() {
   //connect to the database

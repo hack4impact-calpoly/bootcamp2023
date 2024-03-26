@@ -325,3 +325,10 @@ form {
   border-bottom: 1px solid #000000;
   padding-bottom: 5px;
 }
+
+.loading-comp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
