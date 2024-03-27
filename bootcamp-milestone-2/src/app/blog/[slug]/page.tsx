@@ -82,7 +82,7 @@ export default function Blog({ params: { slug } }: Props) {
         });
 
         if (response.ok) {
-          setComments([...allComments, {user: commentBody.user, comment: commentBody.comment, time: new Date(Date.now())}])
+          setComments([...allComments, {user: commentBody.user, comment: commentBody.comment, time: new Date(commentBody.time)}])
         } else {
           console.error('Failed to add comment:');
         }
@@ -142,9 +142,9 @@ export default function Blog({ params: { slug } }: Props) {
                           <label htmlFor="comments">Comment</label>
                           <textarea id="comments" name="comments" placeholder="Enter Comment" value={comment} onChange={e => setComment(e.target.value)} required></textarea>
                           
-                          {/* <label htmlFor="time">Time</label>
+                          <label htmlFor="time">Time</label>
                           <p>year-month-day 0000-00-00</p>
-                          <input type="text" id="time" placeholder="Time" value={time} onChange={e => setTime(e.target.value)} required/> */}
+                          <input type="text" id="time" placeholder="Enter Time in Given Format" value={time} onChange={e => setTime(e.target.value)} required/>
                           <input type="submit" value="Submit Comment"/>
                       </form>
                     </div>
