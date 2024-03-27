@@ -97,10 +97,10 @@ export default function Blog({ params: { slug } }: Props) {
     if (isLoading) {
         return (
             <div className="loading-comp">
-              {/* <l-dot-wave
+              <l-dot-wave
               size="100"
               speed="1" 
-              color="#bc986a"/> */}
+              color="#bc986a"/>
             </div>
         )
     } else if (blogPage) {
