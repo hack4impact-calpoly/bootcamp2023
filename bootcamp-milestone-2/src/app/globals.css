@@ -111,7 +111,7 @@ main {
 
 .hikes {
   display: block;
-  margin: 10px;
+  padding: 5px;
 }
 
 .item-link {
@@ -308,6 +308,7 @@ form {
 
 .hike-description {
   margin-bottom: 20px;
+  width: 75%;
 }
 
 .content {
@@ -331,4 +332,60 @@ form {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.comments-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    background: #f1f1f1;
+    width: 25%;
+    height: 100%;
+    margin-left: 25px;
+    margin-top: 150px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+.blog-page{
+  display: flex;
+  flex-direction: row;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.blog-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background: #f1f1f1;
+  width: 70%;
+  margin-top: 5vh;
+}
+
+.blog-content{
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 25px;
+  padding-left: 30px;
+}
+
+.comments-list{
+  height: 470px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.comment-form{
+  width: auto;
+  /* padding-right: 10px; */
 }

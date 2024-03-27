@@ -97,48 +97,56 @@ export default function Blog({ params: { slug } }: Props) {
     if (isLoading) {
         return (
             <div className="loading-comp">
-              <l-dot-wave
+              {/* <l-dot-wave
               size="100"
               speed="1" 
-              color="#bc986a"/>
+              color="#bc986a"/> */}
             </div>
         )
     } else if (blogPage) {
         return (
             <div>
                 <main>
-                  <h1 className="page-title">{blogPage.title}</h1>
-                  <div className="hike-description">
-                      {blogPage.pageDescription}
-                  </div>
-                  <div className="hikes">
-                  <Image src={`/${blogPage.picSlug1}`} alt="abc" width="500" height="500"/>
-                  <Image src={`/${blogPage.picSlug2}`} alt="abc" width="500" height="500"/>
-                  <Image src={`/${blogPage.picSlug3}`} alt="abc" width="500" height="500"/>
-                  </div>
-                  <form id="contact-form" onSubmit={handleCommentSubmit}>
-                      <label htmlFor="user">User</label>
-                      <input type="text" id="user" placeholder="User" value={user} onChange={e => setUser(e.target.value)} required/>
+                  <div className="blog-page">
+                    <div className="blog-container">
+                    <h1 className="page-title">{blogPage.title}</h1>
+                    <div className="blog-content">
+                        <div className="hike-description">
+                            {blogPage.pageDescription}
+                        </div>
+                        <div className="hikes">
+                          <Image src={`/${blogPage.picSlug1}`} alt="abc" width="500" height="500"/>
+                          <Image src={`/${blogPage.picSlug2}`} alt="abc" width="500" height="500"/>
+                          <Image src={`/${blogPage.picSlug3}`} alt="abc" width="500" height="500"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="comments-container">
+                      <div className="comments-header">
+                        <h2>Comments</h2>
+                      </div>
+                      <div className="comments-list">
+                      {allComments.map((comment: IComment) => (
+                        <Comment
+                          key={generateUniqueId()}
+                          user={comment.user}
+                          comment={comment.comment}
+                          time={new Date(comment.time)}/>
+                      ))}
+                      </div>
+                      <form className="comment-form" onSubmit={handleCommentSubmit}>
+                          <label htmlFor="user">User</label>
+                          <input type="text" id="user" placeholder="User" value={user} onChange={e => setUser(e.target.value)} required/>
 
-                      <label htmlFor="comments">Comments</label>
-                      <textarea id="comments" name="comments" placeholder="Comments" value={comment} onChange={e => setComment(e.target.value)} required></textarea>
-                      
-                      <label htmlFor="time">Time</label>
-                      <p>year-month-day 0000-00-00</p>
-                      <input type="text" id="time" placeholder="Time" value={time} onChange={e => setTime(e.target.value)} required/>
-                      <input type="submit" value="Submit Comment"/>
-
-                  </form>
-                  <div className="comments">
-                    {allComments.map((comment: IComment) => (
-                      <Comment
-                        key={generateUniqueId()}
-                        user={comment.user}
-                        comment={comment.comment}
-                        time={new Date(comment.time)}/>
-
-                    )
-                  )}
+                          <label htmlFor="comments">Comments</label>
+                          <textarea id="comments" name="comments" placeholder="Comments" value={comment} onChange={e => setComment(e.target.value)} required></textarea>
+                          
+                          <label htmlFor="time">Time</label>
+                          <p>year-month-day 0000-00-00</p>
+                          <input type="text" id="time" placeholder="Time" value={time} onChange={e => setTime(e.target.value)} required/>
+                          <input type="submit" value="Submit Comment"/>
+                      </form>
+                    </div>
                   </div>
                 </main>
             </div>
