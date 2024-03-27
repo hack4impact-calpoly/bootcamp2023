@@ -320,6 +320,7 @@ form {
   border-style: solid;
   margin: 5px;
   padding: 5px;
+  width: 200px;
 }
 
 .comment-name{

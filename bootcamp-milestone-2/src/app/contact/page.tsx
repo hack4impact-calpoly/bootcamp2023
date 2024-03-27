@@ -30,13 +30,13 @@ export default function Contact() {
       
         <form id="contact-form" onSubmit={sendEmail} ref={form}>
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" placeholder="Name" name='name'required/>
+            <input type="text" id="name" placeholder="Enter Name" name='name'required/>
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" placeholder="Email" name='email' required/>
+            <input type="email" id="email" placeholder="Enter Email" name='email' required/>
             <label htmlFor="subject">Subject</label>
-            <input type="text" id="subject" placeholder="Subject" name='subject' required/>
-            <label htmlFor="comments">Comments</label>
-            <textarea id="comments" placeholder="Comments" name='message' required></textarea>
+            <input type="text" id="subject" placeholder="Subject of Email" name='subject' required/>
+            <label htmlFor="comments">Message</label>
+            <textarea id="comments" placeholder="Enter Message" name='message' required></textarea>
             <input type="submit" value="Submit"/>
         </form>
 

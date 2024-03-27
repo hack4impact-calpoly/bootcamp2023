@@ -28,7 +28,7 @@ async function getBlog(slug: string) {
       throw new Error("Failed to fetch blog");
     }
 
-    return res.json();
+    return res.clone().json();
   } catch (err: unknown) {
     console.log(`error: ${err}`);
     return null;
@@ -71,6 +71,7 @@ export default function Blog({ params: { slug } }: Props) {
         comment: comment,
         time: time
       }
+      console.log("commentBody")
       try {
         const response = await fetch(`/api/blog/${slug}/comment`, {
           method: 'POST',
@@ -81,7 +82,7 @@ export default function Blog({ params: { slug } }: Props) {
         });
 
         if (response.ok) {
-          setComments([...allComments, {user: commentBody.user, comment: commentBody.comment, time: new Date(commentBody.time)}])
+          setComments([...allComments, {user: commentBody.user, comment: commentBody.comment, time: new Date(Date.now())}])
         } else {
           console.error('Failed to add comment:');
         }
@@ -135,15 +136,15 @@ export default function Blog({ params: { slug } }: Props) {
                       ))}
                       </div>
                       <form className="comment-form" onSubmit={handleCommentSubmit}>
-                          <label htmlFor="user">User</label>
-                          <input type="text" id="user" placeholder="User" value={user} onChange={e => setUser(e.target.value)} required/>
+                          <label htmlFor="user">Name</label>
+                          <input type="text" id="user" placeholder="Enter Name" value={user} onChange={e => setUser(e.target.value)} required/>
 
-                          <label htmlFor="comments">Comments</label>
-                          <textarea id="comments" name="comments" placeholder="Comments" value={comment} onChange={e => setComment(e.target.value)} required></textarea>
+                          <label htmlFor="comments">Comment</label>
+                          <textarea id="comments" name="comments" placeholder="Enter Comment" value={comment} onChange={e => setComment(e.target.value)} required></textarea>
                           
-                          <label htmlFor="time">Time</label>
+                          {/* <label htmlFor="time">Time</label>
                           <p>year-month-day 0000-00-00</p>
-                          <input type="text" id="time" placeholder="Time" value={time} onChange={e => setTime(e.target.value)} required/>
+                          <input type="text" id="time" placeholder="Time" value={time} onChange={e => setTime(e.target.value)} required/> */}
                           <input type="submit" value="Submit Comment"/>
                       </form>
                     </div>

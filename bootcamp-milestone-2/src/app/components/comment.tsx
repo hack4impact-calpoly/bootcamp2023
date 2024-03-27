@@ -15,7 +15,13 @@ type CommentProps = {
 		Makes your code look nicer and allows for better readability.
 	*/}
 function parseCommentTime(time: Date){
-    const time_str = time.toDateString();
+    const time_str = time.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      });
     return time_str
 }
 
