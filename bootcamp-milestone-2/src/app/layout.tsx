@@ -4,7 +4,7 @@ import Navbar from "@/app/components/navbar";
 import Foot from "@/app/components/footer"
 
 export const metadata: Metadata = {
-  title: "Ivan's Personal Wesbite",
+  title: "Ivan's Personal Website",
   description: "A personal website for Ivan Alvarez",
 };
 
