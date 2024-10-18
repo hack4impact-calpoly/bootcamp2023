@@ -15,12 +15,12 @@ export default function Home() {
           </div>
           <div className="about-text">
             <p>
-              I am Ivan Alvarez, a second year student at Cal Poly majoring in{" "}
-              <strong> Computer Engineering</strong>.
+              Hello! I'm Ivan Alvarez, a third year student at Cal Poly majoring in{" "}
+              <strong>Computer Engineering</strong>.
             </p>
             <p>
-              I am a very physically active person and I love to{" "}
-              <strong>weightlift and hike.</strong>{" "}
+              I am physically active and some of my hobbies are{" "}
+              <strong>weightlifting and hiking.</strong>{" "}
             </p>
             <p>
               A fun fact about me is that I have built{" "}
