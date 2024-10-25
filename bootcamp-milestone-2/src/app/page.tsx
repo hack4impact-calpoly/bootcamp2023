@@ -19,7 +19,7 @@ export default function Home() {
               <strong>Computer Engineering</strong>.
             </p>
             <p>
-              I am physically active and some of my hobbies are{" "}
+              Some of my hobbies are{" "}
               <strong>weightlifting and hiking.</strong>{" "}
             </p>
             <p>
