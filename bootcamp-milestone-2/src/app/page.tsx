@@ -15,7 +15,7 @@ export default function Home() {
           </div>
           <div className="about-text">
             <p>
-              Hello! I'm Ivan Alvarez, a third year student at Cal Poly majoring in{" "}
+              Hello! I&apos;m Ivan Alvarez, a third year student at Cal Poly majoring in{" "}
               <strong>Computer Engineering</strong>.
             </p>
             <p>
